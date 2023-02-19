@@ -426,8 +426,8 @@ y=\int_{0}^{\infty} a_k\cos(kx)+b_k\sin(kx)dk
 ```{math}
 \begin{align}
 :label: eq92
-a_k & = \frac{\int_{\infty}^{-\infty}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac{n\pi x}{L})^2dx} \\
-b_k & = \frac{\int_{\infty}^{-\infty}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
+a_k & = \frac{\int_{\infty}^{-\infty}f(x)\cos(kx)dx}{\int_{\infty}^{-\infty}\cos(kx)^2dx} \\
+b_k & = \frac{\int_{\infty}^{-\infty}f(x)\sin(kx)dx}{\int_{\infty}^{-\infty}\sin(kx)^2dx} \\
 \end{align}
 ```
 :::
