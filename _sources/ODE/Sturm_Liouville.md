@@ -412,7 +412,7 @@ b_n & = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac
 \end{align}
 ```
 
-The equation above is so-called Fourier Transform discrete, where we convert $f(x)$ from the physical space to frequency (wave number) space. If we can make the summation form into a integral form (making discrete function into continuous) by assuming $k = \frac{n\pi}{L}$ and domain of integral $[-\infty,\infty]$
+The equation above is so-called Fourier Transform discrete, where we convert $f(x)$ from the physical space to frequency (wave number) space. If we can make the summation form into a integral form (making discrete function into continuous) by assuming $k = \frac{n\pi}{L}$ and domain of integral $[-\infty,\infty]$. 
 
 ```{math}
 y=\sum_{n=0}^{\infty} a_n\cos(\frac{2\pi n x}{(L-(-L))})+b_n\sin(\frac{2\pi n x}{(L-(-L))})
