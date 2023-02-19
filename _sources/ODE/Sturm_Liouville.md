@@ -424,8 +424,8 @@ y=\int_{0}^{\infty} a_k\cos(kx)+b_k\sin(kx)dk
 , which is the Fourier integral. Following the same approach of finding Fourier coefficients, 
 
 ```{math}
-\begin{align}
 :label: eq92
+\begin{align}
 a_k & = \frac{\int_{\infty}^{-\infty}f(x)\cos(kx)dx}{\int_{\infty}^{-\infty}\cos(kx)^2dx} \\
 b_k & = \frac{\int_{\infty}^{-\infty}f(x)\sin(kx)dx}{\int_{\infty}^{-\infty}\sin(kx)^2dx} \\
 \end{align}
