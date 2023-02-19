@@ -391,7 +391,7 @@ One can easily find that they correspond to types I and II boundary conditions. 
 
 Let's have some practices and guess the solutions for the following ODEs. 
 
-:::{admonition} Boundary Conditions for Fourier sin/cos and both series
+:::{admonition} Example 4
 Find the solutions for the following ODE
 ```{math}
 y^{''}+\lambda y = f(x); \; y(-L)=y(L),\;y^{'}(-L)=y^{'}(L)
