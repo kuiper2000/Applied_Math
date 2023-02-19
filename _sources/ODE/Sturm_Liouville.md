@@ -411,7 +411,12 @@ a_n & = \frac{\int_{L}^{-L}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac
 b_n & = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
 \end{align}
 ```
+
+The equation above is so-called Fourier Transform, where we convert $f(x)$ from the physical space to frequency (wave number) space. 
+
 :::
 
 
 ### Power Spectrum, Windows and Gibbs Phenomenon 
+
+
