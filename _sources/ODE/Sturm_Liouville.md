@@ -400,12 +400,14 @@ y^{''}+\lambda y = f(x); \; y(-L)=y(L),\;y^{'}(-L)=y^{'}(L)
 From the discussion above, we know this is a periodic boundary. Therefore, the solutions can be written as 
 
 ```{math}
-y=\sum_{n=0}^{\infty} a_n\cos(\frac{2\pi n x}{(L-(-L))})+b_n\sin(\frac{2\pi n x}{(L-(-L))})
+:label: eq89
+y=\sum_{n=0}^{\infty} a_n\cos(\frac{2\pi n x}{(L-(-L))})+b_n\sin(\frac{2\pi n x}{(L-(-L))}) = \sum_{n=0}^{\infty} a_n\cos(\frac{n\pi  x}{L})+b_n\sin(\frac{n\pi  x}{L})
 ```
 
 where $2\pi$ and $2L$ indicates that the longest wave we can resolve is the wave that complete one cycle (one period) from the left end to the right end of the domain. Now, following the eigenfunction expansion, we can determine the coefficient for different $n$. 
 
 ```{math}
+:label: eq90
 \begin{align}
 a_n & = \frac{\int_{L}^{-L}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac{n\pi x}{L})^2dx} \\
 b_n & = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
@@ -415,6 +417,7 @@ b_n & = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac
 The equation above is so-called discrete Fourier Transform, where we convert $f(x)$ from the physical space to frequency (wave number) space. If we can make the summation form into a integral form (making discrete function into a continuous function) by assuming (1) $k = \frac{n\pi}{L}$ and (2) domain of integral $[-\infty,\infty]$. (Let readers to walk through the derivation) Then, we will have
 
 ```{math}
+:label: eq91
 y=\int_{0}^{\infty} a_k\cos(kx)+b_k\sin(kx)dk
 ```
 
@@ -422,8 +425,9 @@ y=\int_{0}^{\infty} a_k\cos(kx)+b_k\sin(kx)dk
 
 ```{math}
 \begin{align}
-a_k & = \frac{\int_{L}^{-L}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac{n\pi x}{L})^2dx} \\
-b_k & = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
+:label: eq92
+a_k & = \frac{\int_{\infty}^{-\infty}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac{n\pi x}{L})^2dx} \\
+b_k & = \frac{\int_{\infty}^{-\infty}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
 \end{align}
 ```
 :::
