@@ -442,5 +442,10 @@ From the Fourier Transform above, the readers can find that we can determine the
 
 The power spectrum of a given wave number of defined as 
 ```{math}
+:label: eq93
 \textrm{variance explained} = \frac{a_k^2+b_k^2}{2} = \frac{c_k^2}{2}
 ```
+
+{eq}`eq93` evidently has an energy form (squared form) given that we want know the amplitude of a given wave number instead of its sign. It is equivalent to the explained variance of $f(x)$ by certain wave number like what we learn in linear regression. If one looks closely to {eq}`eq89` and {eq}`eq90`, Fourier Transform is indeed a linear regression problem where different types of waves are our predictors and both $a_n$ and $b_n$ are the corresponding regression coefficients. 
+
+
