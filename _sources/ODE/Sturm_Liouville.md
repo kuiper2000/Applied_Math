@@ -401,7 +401,10 @@ From the discussion above, we know this is a periodic boundary. Therefore, the s
 
 ```{math}
 :label: eq89
-y=\sum_{n=0}^{\infty} a_n\cos(\frac{2\pi n x}{(L-(-L))})+b_n\sin(\frac{2\pi n x}{(L-(-L))}) = \sum_{n=0}^{\infty} a_n\cos(\frac{n\pi  x}{L})+b_n\sin(\frac{n\pi  x}{L})
+\begin{align}
+y&=\sum_{n=0}^{\infty} a_n\cos(\frac{2\pi n x}{(L-(-L))})+b_n\sin(\frac{2\pi n x}{(L-(-L))}) \\
+ &= \sum_{n=0}^{\infty} a_n\cos(\frac{n\pi  x}{L})+b_n\sin(\frac{n\pi  x}{L})
+\end{align}
 ```
 
 where $2\pi$ and $2L$ indicates that the longest wave we can resolve is the wave that complete one cycle (one period) from the left end to the right end of the domain. Now, following the eigenfunction expansion, we can determine the coefficient for different $n$. 
