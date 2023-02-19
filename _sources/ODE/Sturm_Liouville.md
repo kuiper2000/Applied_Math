@@ -372,7 +372,8 @@ plot!(reshape(x,length(x),1),reshape(approx_y,length(x),1),xlims=(0,2π),ylims=(
 :::
 
 ## Fourier Analysis 
-In this section, we will introduce the famous Fourier Series to the reader. The Fourier analysis or Fourier Series is, however, nothing new than what we learned previously. Indeed, Fourier series is a special type of Sturm-Liouville problem, where $r(x)=1$, $q(x)=0$, and $r(x)=1$. In addition, it is usually given with a periodic boundary conditions. Physically, the readers can picture this type of Sturm-Liouville problem has a _wave-type_ solution, where higher higher eigen values correspond to higher wave numbers. 
+### Boundary Conditions and Types of Solutions 
+In this section, we will introduce the famous Fourier Series to the reader. The Fourier analysis or Fourier Series is, however, nothing new than what we learned previously. Indeed, Fourier series is a special type of Sturm-Liouville problem, where $r(x)=1$, $q(x)=0$, and $r(x)=1$. In addition, it is usually given with a periodic boundary conditions. Physically, the readers can picture this type of Sturm-Liouville problem has a _wave-like_ solution, where higher higher eigen values correspond to higher wave numbers. We will provide a more strict definition about the existence of Fourier Solutions (i.e., if the solutions can converge) at the chapter of Partial Differential Equations. 
 
 According to the types of boundary conditions, we can decide whether the solution is a Fourier sin function, cos function, or the combination of both. 
 
@@ -410,7 +411,7 @@ a_n & = \frac{\int_{L}^{-L}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac
 b_n & = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
 \end{align}
 ```
-
 :::
 
 
+### Power Spectrum, Windows and Gibbs Phenomenon 

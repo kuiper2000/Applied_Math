@@ -322,6 +322,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#fourier-analysis">
    Fourier Analysis
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boundary-conditions-and-types-of-solutions">
+     Boundary Conditions and Types of Solutions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power-spectrum-windows-and-gibbs-phenomenon">
+     Power Spectrum, Windows and Gibbs Phenomenon
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -356,6 +368,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#fourier-analysis">
    Fourier Analysis
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boundary-conditions-and-types-of-solutions">
+     Boundary Conditions and Types of Solutions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power-spectrum-windows-and-gibbs-phenomenon">
+     Power Spectrum, Windows and Gibbs Phenomenon
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -599,7 +623,9 @@ c_n &amp;= \frac{\int_{0}^{2\pi} f(x) \cos(\frac{n}{2}x) dx}{\int_{0}^{2\pi}\cos
 </div>
 <div class="section" id="fourier-analysis">
 <h2>Fourier Analysis<a class="headerlink" href="#fourier-analysis" title="Permalink to this headline">¶</a></h2>
-<p>In this section, we will introduce the famous Fourier Series to the reader. The Fourier analysis or Fourier Series is, however, nothing new than what we learned previously. Indeed, Fourier series is a special type of Sturm-Liouville problem, where <span class="math notranslate nohighlight">\(r(x)=1\)</span>, <span class="math notranslate nohighlight">\(q(x)=0\)</span>, and <span class="math notranslate nohighlight">\(r(x)=1\)</span>. In addition, it is usually given with a periodic boundary conditions. Physically, the readers can picture this type of Sturm-Liouville problem has a <em>wave-type</em> solution, where higher higher eigen values correspond to higher wave numbers.</p>
+<div class="section" id="boundary-conditions-and-types-of-solutions">
+<h3>Boundary Conditions and Types of Solutions<a class="headerlink" href="#boundary-conditions-and-types-of-solutions" title="Permalink to this headline">¶</a></h3>
+<p>In this section, we will introduce the famous Fourier Series to the reader. The Fourier analysis or Fourier Series is, however, nothing new than what we learned previously. Indeed, Fourier series is a special type of Sturm-Liouville problem, where <span class="math notranslate nohighlight">\(r(x)=1\)</span>, <span class="math notranslate nohighlight">\(q(x)=0\)</span>, and <span class="math notranslate nohighlight">\(r(x)=1\)</span>. In addition, it is usually given with a periodic boundary conditions. Physically, the readers can picture this type of Sturm-Liouville problem has a <em>wave-like</em> solution, where higher higher eigen values correspond to higher wave numbers. We will provide a more strict definition about the existence of Fourier Solutions (i.e., if the solutions can converge) at the chapter of Partial Differential Equations.</p>
 <p>According to the types of boundary conditions, we can decide whether the solution is a Fourier sin function, cos function, or the combination of both.</p>
 <div class="admonition-boundary-conditions-for-fourier-sin-cos-and-both-series admonition">
 <p class="admonition-title">Boundary Conditions for Fourier sin/cos and both series</p>
@@ -626,6 +652,10 @@ c_n &amp;= \frac{\int_{0}^{2\pi} f(x) \cos(\frac{n}{2}x) dx}{\int_{0}^{2\pi}\cos
 a_n &amp; = \frac{\int_{L}^{-L}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac{n\pi x}{L})^2dx} \\
 b_n &amp; = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
 \end{align}\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="power-spectrum-windows-and-gibbs-phenomenon">
+<h3>Power Spectrum, Windows and Gibbs Phenomenon<a class="headerlink" href="#power-spectrum-windows-and-gibbs-phenomenon" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
