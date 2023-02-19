@@ -1,0 +1,848 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 5 and 6: Laplace Transform &#8212; Applied Math 2</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 7 and 8: Sturm-Liouville Theorem: Eigenfunctions and Fourier Series" href="Sturm_Liouville.html" />
+    <link rel="prev" title="Week 3 and 4: 2nd-order ODE" href="2ndODE.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applied Math 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1stODE.html">
+   Week 1 and 2: 1st-order ODE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2ndODE.html">
+   Week 3 and 4: 2nd-order ODE
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 5 and 6: Laplace Transform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Sturm_Liouville.html">
+   Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FODE/Laplace.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ODE/Laplace.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-laplace-transform-and-how-it-works-s-space-and-t-or-x-space">
+   What is a Laplace Transform and how it works? (s space and t or x space)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-value-problem">
+   Initial Value Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heaviside-function-and-shifting-theorem">
+   Heaviside Function and Shifting Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolution">
+   Convolution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#impulse-dirac-delta-function-and-green-s-function-approach">
+   Impulse, Dirac Delta Function and Green’s Function approach
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 5 and 6: Laplace Transform</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-laplace-transform-and-how-it-works-s-space-and-t-or-x-space">
+   What is a Laplace Transform and how it works? (s space and t or x space)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-value-problem">
+   Initial Value Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heaviside-function-and-shifting-theorem">
+   Heaviside Function and Shifting Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolution">
+   Convolution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#impulse-dirac-delta-function-and-green-s-function-approach">
+   Impulse, Dirac Delta Function and Green’s Function approach
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="week-5-and-6-laplace-transform">
+<span id="laplace"></span><h1>Week 5 and 6: Laplace Transform<a class="headerlink" href="#week-5-and-6-laplace-transform" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-a-laplace-transform-and-how-it-works-s-space-and-t-or-x-space">
+<h2>What is a Laplace Transform and how it works? (s space and t or x space)<a class="headerlink" href="#what-is-a-laplace-transform-and-how-it-works-s-space-and-t-or-x-space" title="Permalink to this headline">¶</a></h2>
+<p>From the first two chapters, we know a lot of ODEs share a similar form of solution : i.e., <span class="math notranslate nohighlight">\(c_1e^{s_1t}+c_2e^{s_2t}\)</span>. When we substitute the solution back to the ODEs, we can usually subtract the exponential term and make the entire equation into an <em>algebra problem</em>. This is exactly the goal of <em>Laplace Transform</em>, which can be simplified as the flowchart below.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\textrm{initial value problem (at t space)} &amp; \Longrightarrow \textrm{algebra problem (at s space)} \\
+&amp; \Longrightarrow \textrm{solution of the algebra problem (at s space)} \\ 
+&amp; \Longrightarrow \textrm{solution of the initial value problem (at t space)}
+\end{align}\end{split}\]</div>
+<p>From the flowchart, we can find the role of <em>Laplace Transform</em> is converting the entire equation from <em>t space</em> to the <em>s space</em> and simplify the problem. Mathematically, it can written as</p>
+<div class="math notranslate nohighlight" id="equation-eq62">
+<span class="eqno">(62)<a class="headerlink" href="#equation-eq62" title="Permalink to this equation">¶</a></span>\[\mathcal{L}[f] = \int_0^{\infty} e^{-st}f(t)dt=F(s)\]</div>
+<p>One can consider <a class="reference internal" href="#equation-eq62">(62)</a> as a projection or mapping of <span class="math notranslate nohighlight">\(f(t)\)</span> onto the s space.</p>
+<div class="admonition-example-6 admonition">
+<p class="admonition-title">Example 6</p>
+<p>Let <span class="math notranslate nohighlight">\(f(t)=e^{at}\)</span>, with a non-zero a. The Laplace Transform of <span class="math notranslate nohighlight">\(f(t)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\mathcal{L}[f] &amp; = \int^{\infty}_{0} e^{-st} e^{at} dt \\
+               &amp; = \int^{\infty}_{0} e^{(a-s)t} dt \\
+               &amp; = \frac{1}{(a-s)}e^{(a-s)t}|^{t=\infty}_{t=0} \\
+\end{align}\end{split}\]</div>
+<p>The Laplace Transform exist when <span class="math notranslate nohighlight">\((a-s)&lt;0\)</span>, which will lead to</p>
+<div class="math notranslate nohighlight">
+\[F(s) = \frac{1}{s-a}\]</div>
+<p>One should notice that <span class="math notranslate nohighlight">\((a-s)&lt;0\)</span> is the necessary criteria for the existence of Laplace Transform of a function. That also means, if any function which as a growth rate <span class="math notranslate nohighlight">\(a\)</span> greater than <span class="math notranslate nohighlight">\(s\)</span>, then there is no Laplace Transform of that given function. A very famous example is the function <span class="math notranslate nohighlight">\(e^{t^2}\)</span>, which doesn’t have a Laplace Transform.</p>
+</div>
+<p>Table 1 are some of the widely used Laplace Transforms. Readers can follow the example above to find the Laplace Transform of the corresponding function.</p>
+<div class="admonition-table-1 admonition">
+<p class="admonition-title">Table 1</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+f(t) \Longrightarrow &amp; F(s) \\
+1    \Longrightarrow &amp; \frac{1}{s} \\
+t    \Longrightarrow &amp; \frac{1}{s^2} \\
+t^n  \Longrightarrow &amp; \frac{1}{s^{n+1}} \\
+\frac{1}{\sqrt{t}}  \Longrightarrow &amp; \sqrt{\frac{\pi}{s}} \\
+e^{at} \Longrightarrow &amp; \frac{1}{s-a} \\ 
+te^{at} \Longrightarrow &amp; \frac{1}{(s-a)^2} \\
+t^{n}e^{at} \Longrightarrow &amp; \frac{1}{(s-a)^{n+1}} \\
+\frac{1}{a-b}(e^{at}-e^{bt}) \Longrightarrow &amp; \frac{1}{(s-a)(s-b)} \\
+\sin(at) \Longrightarrow &amp; \frac{a}{s^2+a^2} \\
+\cos(at) \Longrightarrow &amp; \frac{s}{s^2+a^2} \\
+t\sin(at) \Longrightarrow &amp; \frac{2as}{(s^2+a^2)^{2}} \\
+t\cos(at) \Longrightarrow &amp; \frac{s^2-a^2}{(s^2+a^2)^{2}} \\
+e^{at}\sin(bt) \Longrightarrow &amp;  \frac{b}{(s-a)^2+b^2} \\
+e^{at}\cos(bt) \Longrightarrow &amp;  \frac{(s-a)}{(s-a)^2+b^2} \\
+\sinh(at) \Longrightarrow &amp; \frac{a}{s^2-a^2} \\
+\cosh(at) \Longrightarrow &amp; \frac{s}{s^2-a^2} \\
+\end{align}\end{split}\]</div>
+</div>
+<p>One can find that Laplace Transform is linear, indicating any rules applied to a linear operator is also applied to Laplace Transform. i.e., <span class="math notranslate nohighlight">\(\mathcal{L}(f(x)+g(x))=\mathcal{L}(f)+\mathcal{L}(g)\)</span> and <span class="math notranslate nohighlight">\(\mathcal{L}(af(x))=a\mathcal{L}(f(x))\)</span>.</p>
+<p>For the inverse transform, we can setup a problem, where we would like to find a function leads to</p>
+<div class="math notranslate nohighlight" id="equation-eq63">
+<span class="eqno">(63)<a class="headerlink" href="#equation-eq63" title="Permalink to this equation">¶</a></span>\[1 = \int_0^{\infty} e^{-st} \mathcal{L}^{-1} dt\]</div>
+<p>One should notice that <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\)</span> needs to be a function of <span class="math notranslate nohighlight">\(s\)</span> since we would like to transform <span class="math notranslate nohighlight">\(F(s)\)</span> back to <span class="math notranslate nohighlight">\(t\)</span> space.
+By observing <a class="reference internal" href="#equation-eq63">(63)</a>, we can find it with a form of</p>
+<div class="math notranslate nohighlight" id="equation-eq64">
+<span class="eqno">(64)<a class="headerlink" href="#equation-eq64" title="Permalink to this equation">¶</a></span>\[\mathcal{L}^{-1}[F(s)]= \frac{1}{2\pi i}\int_{\alpha-i\infty}^{\alpha+i\infty} e^{st} F(s)ds \]</div>
+<p>If readers still recall the complex roots of a constant coefficient ODE, it usually shares a solution of <span class="math notranslate nohighlight">\(e^{\alpha t}\cos(\beta t)+e^{\alpha t}\sin(\beta t)\)</span>. The <span class="math notranslate nohighlight">\(\alpha\)</span> in the upper/lower bound of the integral is identical to the meaning of <span class="math notranslate nohighlight">\(e^{\alpha t}\)</span>, where we specify a basis for projection should have a certain growth rate <span class="math notranslate nohighlight">\(c\)</span>. On the other hand, <span class="math notranslate nohighlight">\(-i\infty\)</span> and <span class="math notranslate nohighlight">\(i\infty\)</span> indicates we loop over all possible wave number <span class="math notranslate nohighlight">\(\beta\)</span>, because sometimes we can have multiple <span class="math notranslate nohighlight">\(\beta\)</span>. Readers can find the proof of inverse Laplace Transform <a class="reference external" href="https://math.stackexchange.com/questions/2926685/proof-of-inverse-laplace-transform">here</a>. We will cover more details in the chapter of Fourier Transform. (<a class="reference internal" href="#equation-eq63">(63)</a> and <a class="reference internal" href="#equation-eq64">(64)</a> are actually a more general definition of Fourier and inverse Fourier Transforms.</p>
+</div>
+<div class="section" id="initial-value-problem">
+<h2>Initial Value Problem<a class="headerlink" href="#initial-value-problem" title="Permalink to this headline">¶</a></h2>
+<p>To deal with an initial value problem, we first need to know the Laplace transform of a derivative. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq65">
+<span class="eqno">(65)<a class="headerlink" href="#equation-eq65" title="Permalink to this equation">¶</a></span>\[\mathcal{L}[f'](s) = \int_0^{\infty} e^{-st} f' dt \]</div>
+<p>Using integrate by part, we can find</p>
+<div class="math notranslate nohighlight" id="equation-eq66">
+<span class="eqno">(66)<a class="headerlink" href="#equation-eq66" title="Permalink to this equation">¶</a></span>\[\int_0^{\infty} e^{-st} f' dt = -f e^{-st}|^{t=\infty}_{t=0} +s\int^{\infty}_{0} e^{-st}f(t)dt = sF(s)-f(t=0)\]</div>
+<p>Similarly, we can go to higher order derivative</p>
+<div class="math notranslate nohighlight" id="equation-eq67">
+<span class="eqno">(67)<a class="headerlink" href="#equation-eq67" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\int_0^{\infty} e^{-st} f^{''} dt &amp; = f^{'}e^{-st}|^{t=\infty}_{t=0} + s\int^{\infty}_{0} e^{-st}f^{'}(t)dt \\
+                                  &amp; = -f^{'}(t=0) + s(sF(s)-f(t=0)) \\
+                                  &amp; = s^2F(s)-f^{'}(t=0)-sf(t=0)
+\end{align}\end{split}\]</div>
+<p>It is evident that if we would like to calculate the Laplace Transform of the 2nd-order derivative, we need the initial condition from the 0th-order and the 1st-order, which is consistent with what we learn in week 1.</p>
+<p>The readers can try to go to higher order derivative. It can be proofed that</p>
+<div class="math notranslate nohighlight" id="equation-eq68">
+<span class="eqno">(68)<a class="headerlink" href="#equation-eq68" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\mathcal{L}[f^{(n)}](s) = s^{(n)}F(s)-s^{(n-1)}f(0)-s^{(n-2)}f^{(1)}(0)-\cdots-s^{0}f^{(n-1)}(0)
+\end{align}\]</div>
+<div class="admonition-example-1 admonition">
+<p class="admonition-title">Example 1</p>
+<p>Solve the following ODE with Laplace Transform</p>
+<div class="math notranslate nohighlight">
+\[y'-4y=1; \; y(0)=1\]</div>
+<p>As we know <span class="math notranslate nohighlight">\(\mathcal{L}[y'] = sY(s)-y(0)\)</span>, <span class="math notranslate nohighlight">\(\mathcal{L}[y'] = Y(s)\)</span> and <span class="math notranslate nohighlight">\(\mathcal{L}[1] = \frac{1}{s}\)</span>. This leads to</p>
+<div class="math notranslate nohighlight">
+\[(s-4)Y(s)-y(0)=\frac{1}{s}; \; y(0)=1\]</div>
+<p>Rearrange the above equation,</p>
+<div class="math notranslate nohighlight">
+\[Y(s)=\frac{1}{s(s-4)}+\frac{1}{s-4} \]</div>
+<p>From the table above, we know</p>
+<div class="math notranslate nohighlight">
+\[y(t)=\mathcal{L}^{-1}[\frac{1}{s(s-4)}]+\mathcal{L}^{-1}[\frac{1}{s-4}] = \frac{1}{4}(e^{4t}-1)+e^{4t} \]</div>
+<p>(Readers can use integrating factor to have the same answer).</p>
+</div>
+<div class="admonition-example-2 admonition">
+<p class="admonition-title">Example 2</p>
+<p>Solve <span class="math notranslate nohighlight">\(y^{''}+4y^{'}+3y=e^{t}; \; y(0)=0; \; y^{'}(0)=2\)</span></p>
+<p>First, we take Laplace Transform of each term</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\mathcal{L}[y^{''}](s) &amp;= s^2Y(s)-sy(0)-y^{'}(0) \\
+4\mathcal{L}[y^{'}](s) &amp;= 4sY(s)-4y(0) \\
+3\mathcal{L}[y](s) &amp;= 3Y(s) \\
+\mathcal{L}[e^{t}](s) &amp;= \frac{1}{s-1}
+\end{align}\end{split}\]</div>
+<p>which yields</p>
+<div class="math notranslate nohighlight">
+\[s^2Y(s)-2+4sY(s)+3Y(s) = \frac{1}{s-1}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[(s+1)(s+4)Y(s) = \frac{2s-1}{s-1}\]</div>
+<p>reorganize the equation, we can have</p>
+<div class="math notranslate nohighlight">
+\[Y(s) = \frac{1}{8}\frac{1}{s-1}+\frac{3}{4}\frac{1}{s+1}-\frac{7}{8}\frac{1}{s+3}\]</div>
+<p>From the table above, we know</p>
+<div class="math notranslate nohighlight">
+\[y(t) = \frac{1}{8}e^{t}+\frac{3}{4}e^{-t}-\frac{7}{8}e^{-3t}\]</div>
+<p>(hint: Readers can solve this problem by using undetermined coefficients)</p>
+</div>
+</div>
+<div class="section" id="heaviside-function-and-shifting-theorem">
+<h2>Heaviside Function and Shifting Theorem<a class="headerlink" href="#heaviside-function-and-shifting-theorem" title="Permalink to this headline">¶</a></h2>
+<p>Laplace Transform is a unique way of solving an initial value ODE. What it provides that previous methods do not, is its ability of handling discontinuity. i.e., piecewise continuous.</p>
+<p>First, let’s define what is a piecewise continuity. It can be any of the following three conditions.</p>
+<div class="admonition-piecewise-continuity admonition">
+<p class="admonition-title">Piecewise Continuity</p>
+<p>(1) <span class="math notranslate nohighlight">\(f\)</span> is continuous at all but perhaps finitely many points of <span class="math notranslate nohighlight">\([a,b]\)</span> <br />
+(2) if <span class="math notranslate nohighlight">\(f\)</span> is not continuous, then <span class="math notranslate nohighlight">\(f(t)\)</span> has a finite limits as t approaches <span class="math notranslate nohighlight">\(t_0\)</span> from the left and from the right. <br />
+(3) <span class="math notranslate nohighlight">\(f(t)\)</span> has a finite limit as t approaches a from the right and also t approaches b from the left.</p>
+</div>
+<p>Mathematically, this discontinuity can arise from filtering the data. In a real-world case, the localized SST forcing or convection can yield similar effects. One of the impulse forcing experiments, which has been widely used in atmospheric science, is called <em>Green’s function</em> approach. Dr. Yen-Ting Hwang in our department is an expert in this field. On the hand, when we study how the convection over the hurricane eyewall drive the transverse circulation, we use similar approach to handle the problem (more details will be covered in the Chapter of special function).</p>
+<p>To know the connection between impulse and Laplace Transform, we will walk through two shifting theorems first. We will start with the second shifting theorem of Laplace Transform since it’s physically more intuitive. Inspecting <a class="reference internal" href="#equation-eq62">(62)</a>, we can already find the condition for discontinuity in Laplace Transform. The lower bound of the integral starts from 0, indicating any <span class="math notranslate nohighlight">\(f(t)\)</span> with <span class="math notranslate nohighlight">\(s&lt;0\)</span> is discarded. We can consider function <span class="math notranslate nohighlight">\(f(t)\)</span> is multiplied by a unit step, i.e., Heaviside function, which is defined as</p>
+<div class="math notranslate nohighlight" id="equation-eq69">
+<span class="eqno">(69)<a class="headerlink" href="#equation-eq69" title="Permalink to this equation">¶</a></span>\[\begin{split}H(t) = \begin{cases}
+0 &amp; \text{if $t&lt;0$} \\
+1 &amp; \text{if $t&gt;=1$} 
+\end{cases}\end{split}\]</div>
+<p>From the figure below, we can see that Heaviside function acts as an filter.</p>
+<div class="figure align-default" id="fig3">
+<img alt="../_images/Heaviside1.png" src="../_images/Heaviside1.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A schematic of Heaviside function with a jump condition at <span class="math notranslate nohighlight">\(t=0\)</span></span><a class="headerlink" href="#fig3" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now we can picture a new function, where we shift both <span class="math notranslate nohighlight">\(f(t)\)</span> (the function which we would like to apply an Laplace Transform to) and Heaviside function slightly to the right…let’s say by 3. Using a <span class="math notranslate nohighlight">\(\sin(t)\)</span> as an example, the figure below shows the function before (upper panel) and after the shifting (lower panel).</p>
+<div class="figure align-default" id="fig4">
+<img alt="../_images/Heaviside2.png" src="../_images/Heaviside2.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The second shifting theorem</span><a class="headerlink" href="#fig4" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can find the entire function remains the same shape. If we take the Laplace Transform of the function above,</p>
+<div class="math notranslate nohighlight" id="equation-eq70">
+<span class="eqno">(70)<a class="headerlink" href="#equation-eq70" title="Permalink to this equation">¶</a></span>\[\mathcal{L}[H(t-3)f(t-3)](s) = \int_{0}^{\infty} e^{-st} H(t-3)f(t-3) dt = \int_{3}^{\infty} e^{-st} H(t-3)f(t-3) dt  \]</div>
+<p>Here we define a new t coordinate, <span class="math notranslate nohighlight">\(t_{\textrm{new}}\)</span>, where <span class="math notranslate nohighlight">\(t_{\textrm{new}}=t-3\)</span>, and use it to rewrite <a class="reference internal" href="#equation-eq70">(70)</a></p>
+<div class="math notranslate nohighlight" id="equation-eq71">
+<span class="eqno">(71)<a class="headerlink" href="#equation-eq71" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\int_{0}^{\infty} e^{-s(t_{\textrm{new}}+3)} H(t_{\textrm{new}})f(t_{\textrm{new}}) dt_{\textrm{new}} &amp;= e^{-3s}\int_{0}^{\infty} e^{-st_{\textrm{new}}} H(t_{\textrm{new}})f(t_{\textrm{new}}) dt_{\textrm{new}} \\
+&amp;= e^{-3s}\mathcal{L}(f(t)) \\
+&amp; = e^{-3s}F(s) 
+\end{align}\end{split}\]</div>
+<div class="admonition-example-3 admonition">
+<p class="admonition-title">Example 3</p>
+<p>Determine the Laplace Transform of</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}g(t) = \begin{cases}
+0 &amp; \text{if $t&lt;2$} \\
+t^2+1 &amp; \text{if $t&gt;=2$} 
+\end{cases}\end{split}\]</div>
+<p>We can first observe where the discontinuity happens. According the jump condition above, we know it happens at <span class="math notranslate nohighlight">\(t=2\)</span>. Therefore, we can define a new <span class="math notranslate nohighlight">\(t_{\textrm{new}}=t-2\)</span> and rewrite the equation.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}g(t) = \begin{cases}
+0 &amp; \text{if $t&lt;2$} \\
+(t-2)^2+4(t-2)+5 &amp; \text{if $t&gt;=2$} 
+\end{cases}\end{split}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}g(t) = \begin{cases}
+0 &amp; \text{if $t_{\textrm{new}}&lt;0$} \\
+t_{\textrm{new}}^2+4t_{\textrm{new}}+5 &amp; \text{if $t_{\textrm{new}}&gt;=0$} 
+\end{cases}\end{split}\]</div>
+<p>Then we can take Laplace Transform for the equation above, which gives us</p>
+<div class="math notranslate nohighlight">
+\[e^{-2s}\mathcal{L}[t_{\textrm{new}}^2+4t_{\textrm{new}}+5] = e^{-2s} (\frac{1}{s^3}+\frac{4}{s^2}+\frac{5}{s})\]</div>
+</div>
+<p>Now let’s look at a real ODE problem.</p>
+<div class="admonition-example-4 admonition">
+<p class="admonition-title">Example 4</p>
+<p>Consider</p>
+<div class="math notranslate nohighlight">
+\[y^{''}+4y=f(t); \; y(t=0)=y^{'}(t=0)=0\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(t) = \begin{cases}
+0 &amp; \text{if $t&lt;3$} \\
+t &amp; \text{if $t&gt;=3$} 
+\end{cases}\end{split}\]</div>
+<p>Before we dive right in, readers can think about what methods other than Laplace Transform can be applied to this problem. By observing the equation, we can find it can solved by constant coefficient method plus the undetermined coefficients. It is evident that the general solution would be something like,</p>
+<div class="math notranslate nohighlight">
+\[y(t) = c_1 \cos(2t)+c_2 \sin(2t) + At^2+Bt+C\]</div>
+<p>Now let’s define a new coordinate <span class="math notranslate nohighlight">\(t_{\textrm{new}}=t-3\)</span>. This enables us to rewrite the equation</p>
+<div class="math notranslate nohighlight">
+\[y^{''}+4y=f(t_{\textrm{new}}); \; y(t_{\textrm{new}}=-3)=y^{'}(t_{\textrm{new}}=-3)=0\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(t) = \begin{cases}
+0 &amp; \text{if $t_{\textrm{new}}&lt;0$} \\
+t_{\textrm{new}}+3 &amp; \text{if $t_{\textrm{new}}&gt;=0$} 
+\end{cases}\end{split}\]</div>
+<p>Using Laplace Transform,</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[y^{''}+4y] = s^2F(s)-f^{'}(0)-sf(0)+4F(s) = (s^2+4)F(s) = \frac{1}{s^2}+\frac{3}{s} \]</div>
+<p>Rearrange the equation,</p>
+<div class="math notranslate nohighlight">
+\[F(s) = \frac{1}{s^2}\frac{1}{s^2+4}+\frac{3}{s}\frac{1}{s^2+4} \]</div>
+<p>Assume we can decompose the equation above into different linear components</p>
+<div class="math notranslate nohighlight">
+\[F(s) = \frac{A}{s}+\frac{B}{s^2}+\frac{Cs+D}{s^2+4}\]</div>
+<p>(There is a small tip, when we apply such decomposition, we can set the numerator has an order small than the denominator.)</p>
+<p>We will find <span class="math notranslate nohighlight">\(A=\frac{3}{4}\)</span>, <span class="math notranslate nohighlight">\(B=\frac{1}{4}\)</span>, <span class="math notranslate nohighlight">\(C=-\frac{3}{4}\)</span>, and <span class="math notranslate nohighlight">\(D=-\frac{1}{4}\)</span> i.e.,</p>
+<div class="math notranslate nohighlight">
+\[F(s) = \frac{3}{4}\frac{1}{s}+\frac{1}{4}\frac{1}{s^2}-\frac{3}{4}\frac{s}{s^2+4}-\frac{1}{4}\frac{1}{s^2+4}\]</div>
+<p>Take the inverse Transform will lead to the final form of solution</p>
+<div class="math notranslate nohighlight">
+\[f(t_{\textrm{new}}) = \frac{3}{4}-\frac{3}{4}\cos(2t_{\textrm{new}})+\frac{1}{4}t_{\textrm{new}}-\frac{1}{8}\sin(2t_{\textrm{new}}) \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}y(t) = \begin{cases}
+0 &amp; \text{if $t&lt;3$} \\
+\frac{1}{8}[2t-6\cos(2(t-3))-\sin(2(t-3))] &amp; \text{if $t&gt;=3$} 
+\end{cases}\end{split}\]</div>
+<p>which is consistent with our first guess based on constant coefficient + undetermined coefficient methods.</p>
+</div>
+<p>In addition to the shift of function over the t space, we can also shift it over the s space (complex space), which is the first shifting theorem. Inspecting <a class="reference internal" href="#equation-eq62">(62)</a>, we can find to shift a function on s space, we need a function of <span class="math notranslate nohighlight">\(e^{at}\)</span>.</p>
+<p>If we multiply the original function <span class="math notranslate nohighlight">\(f(t)\)</span> by <span class="math notranslate nohighlight">\(e^{at}\)</span> and take the Laplace Transform,</p>
+<div class="math notranslate nohighlight" id="equation-eq72">
+<span class="eqno">(72)<a class="headerlink" href="#equation-eq72" title="Permalink to this equation">¶</a></span>\[\mathcal{L}[e^{at}f](s) = \int_0^{\infty} e^{-st}e^{at}f(t)dt=F(s-a)\]</div>
+<p>we can see the function was shifted by a in s space.</p>
+<p>From equations <a class="reference internal" href="#equation-eq72">(72)</a> and <a class="reference internal" href="#equation-eq71">(71)</a>, one can find some similarity between the first and the second shifting theorems.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\textrm{First shifting theorem} \Longrightarrow &amp; \mathcal{L}[e^{at}f](s) = \int_0^{\infty} e^{-st}e^{at}f(t)dt=F(s-a) \\
+\textrm{Second shifting theorem} \Longrightarrow &amp; \mathcal{L}[H(t-a)f(t-a)](s) = \int_a^{\infty} e^{-st}f(t-a)dt=e^{-as}F(s) \\
+\end{align}\end{split}\]</div>
+<p>If we would like to shift a function over physical space (t space), we need to multiply its Laplace transform (s space counterpart) by <span class="math notranslate nohighlight">\(e^{-as}\)</span>. Similarly, if we would like to shift a function over complex space (s space), we need to multiply the function at the physical space by <span class="math notranslate nohighlight">\(e^{at}\)</span>.</p>
+<div class="admonition-example-5 admonition">
+<p class="admonition-title">Example 5</p>
+<p>Determine</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}^{-1}[\frac{4}{s^2+4s+20}](t)\]</div>
+<p>we can first organize the function into a form of <span class="math notranslate nohighlight">\(e^{at}f(t)\)</span>. Let <span class="math notranslate nohighlight">\(s_{\textrm{new}}=s+2\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\mathcal{L}^{-1}[\frac{4}{(s+2)^2+16}](t) &amp; = \mathcal{L}^{-1}[\mathcal{L}[\sin(4t)](s_{\textrm{new}})](t) \\
+                                          &amp; = \mathcal{L}^{-1}[\mathcal{L}[e^{-2t}\sin(4t)](s)](t) \\
+                                          &amp; = e^{-2t}\sin(4t)
+\end{align}\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="convolution">
+<h2>Convolution<a class="headerlink" href="#convolution" title="Permalink to this headline">¶</a></h2>
+<p>Another widely used technique in atmospheric science, signal processing, and machine learning is called convolution. In atmospheric science, it has another famous nickname: running average or running mean.</p>
+<p>We can start from <a class="reference internal" href="#equation-eq69">(69)</a>. Here we take the difference of two Heaviside function <span class="math notranslate nohighlight">\(H(t-a)\)</span> and <span class="math notranslate nohighlight">\(H(t-b)\)</span> with <span class="math notranslate nohighlight">\(b&gt;a\)</span>. This will create two jump conditions:</p>
+<div class="math notranslate nohighlight" id="equation-eq73">
+<span class="eqno">(73)<a class="headerlink" href="#equation-eq73" title="Permalink to this equation">¶</a></span>\[\begin{split}g(t)=H(t-a)-H(t-b) = \begin{cases}
+0 &amp; \text{if $t&lt;a$} \\
+1 &amp; \text{if $t&gt;=a$ and $t&lt;b$} \\
+0 &amp; \text{if $t&gt;=b$ }
+\end{cases}\end{split}\]</div>
+<p><a class="reference internal" href="#equation-eq73">(73)</a> is visualized in the figure below.</p>
+<div class="figure align-default" id="fig5">
+<img alt="../_images/Heaviside3.png" src="../_images/Heaviside3.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A schematic of Heaviside function with two jump conditions at <span class="math notranslate nohighlight">\(t=3\)</span> and <span class="math notranslate nohighlight">\(t=7\)</span></span><a class="headerlink" href="#fig5" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now we introduce a new operator, <em>convolution</em>
+Mathematically, it is written as</p>
+<div class="math notranslate nohighlight" id="equation-eq74">
+<span class="eqno">(74)<a class="headerlink" href="#equation-eq74" title="Permalink to this equation">¶</a></span>\[(f*g)(t)=\int_0^{\tau} f(t-\tau)g(\tau)d\tau\]</div>
+<p><a class="reference internal" href="#equation-eq74">(74)</a> indicates if we first divide <span class="math notranslate nohighlight">\(f(t)\)</span> into infinite data points <span class="math notranslate nohighlight">\(f(t_i)\)</span> and take the average for the first data point from <span class="math notranslate nohighlight">\(t_1-\frac{b-a}{2}\)</span> to <span class="math notranslate nohighlight">\(t_1+\frac{b-a}{2}\)</span>. After the calculation, we repeat it all over again for <span class="math notranslate nohighlight">\(t_2\)</span> and so and so forth until we loop over the entire <span class="math notranslate nohighlight">\(f(t)\)</span>. This can be visualized with the figure below.</p>
+<div class="figure align-default" id="fig6">
+<img alt="../_images/Heaviside4.png" src="../_images/Heaviside4.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">A schematic of how convolution works when we apply a Heaviside function with a window size of 4 to a noisy data. (top): The Heaviside function used for calculation (middle): the raw time series, <span class="math notranslate nohighlight">\(f(t)\)</span>, and (bottom): <span class="math notranslate nohighlight">\((g*f)(t)\)</span></span><a class="headerlink" href="#fig6" title="Permalink to this image">¶</a></p>
+</div>
+<p>From the figure above, one can find that <span class="math notranslate nohighlight">\((f*g)(t)\)</span> has less wiggles than the original time series <span class="math notranslate nohighlight">\(f(x)\)</span> indicating when we apply a mask with a constant value for convolution, it can smooth out the high frequency noise. We can also have different shape of <span class="math notranslate nohighlight">\(g(t)\)</span> for convolution. (see later examples)</p>
+<p>There are some very important characteristics for the Laplace Transform of a convolution, so-called <em>convolution theorem</em>.</p>
+<div class="math notranslate nohighlight" id="equation-eq75">
+<span class="eqno">(75)<a class="headerlink" href="#equation-eq75" title="Permalink to this equation">¶</a></span>\[\mathcal{L}[(f*g)]=F(s)G(s)\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq76">
+<span class="eqno">(76)<a class="headerlink" href="#equation-eq76" title="Permalink to this equation">¶</a></span>\[\mathcal{L}^{-1}[F(s)G(s)]=(f*g)(t)\]</div>
+<p><a class="reference internal" href="#equation-eq75">(75)</a> tells us the Laplace Transform of convolution of two functions equals the multiplication of each other’s transforms. so does the inverse transform.</p>
+<div class="admonition-example-6 admonition">
+<p class="admonition-title">Example 6</p>
+<p>Find</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}^{-1}[\frac{1}{s(s-4)^2}]\]</div>
+<p>From the convolution theorem, we can assume</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+F(s) &amp; = \frac{1}{s} \\
+G(s) &amp; = \frac{1}{(s-4)^2} 
+\end{align}\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\mathcal{L}^{-1}[F(s)] &amp; = \mathcal{L}^{-1}[\frac{1}{s}]=1 \\
+\mathcal{L}^{-1}[G(s)] &amp; = \mathcal{L}^{-1}[\frac{1}{(s-4)^2}] = te^{4t} 
+\end{align}\end{split}\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\mathcal{L}^{-1}[F(s)G(s)] &amp; = 1*te^{4t} = \int_{0}^{t} \tau e^{4\tau}d\tau \\
+                           &amp; = \frac{1}{4}te^{4t}-\frac{1}{16}e^{4t}+\frac{1}{16}
+\end{align}\end{split}\]</div>
+</div>
+<div class="admonition-example-7 admonition">
+<p class="admonition-title">Example 7</p>
+<p>Find the solution of</p>
+<div class="math notranslate nohighlight">
+\[y^{''}-2y^{'}-8y=f(t); \; y(0)=1,y^{'}(0)=0 \]</div>
+<p>Take the Laplace transform of both sides of the equation, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\mathcal{L}[y^{''}](s) &amp;= s^2Y(s)-sy(0)-y^{'}(0) \\
+-2\mathcal{L}[y^{'}](s) &amp;= -2sY(s)+2y(0) \\
+8\mathcal{L}[y](s) &amp;= 8Y(s) \\
+\mathcal{L}[f(t)](s) &amp;= F(s)
+\end{align}\end{split}\]</div>
+<p>and solve for <span class="math notranslate nohighlight">\(Y(s)\)</span></p>
+<div class="math notranslate nohighlight">
+\[Y(s) = \frac{s-2}{s^2-2s-8}+\frac{1}{s^2-2s-8}F(s)\]</div>
+<p>fractionalize <span class="math notranslate nohighlight">\(Y(s)\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[Y(s) = \frac{1}{3}\frac{1}{s-4}+\frac{2}{3}\frac{1}{s+2}+\frac{1}{6}\frac{1}{s-4}F(s)-\frac{1}{6}\frac{1}{s+2}F(s)\]</div>
+<p>Apply with the inverse transform,</p>
+<div class="math notranslate nohighlight">
+\[y(t) = \frac{1}{3}e^{4t}+\frac{2}{3}e^{-2t}+\frac{1}{6}e^{4t}*f(t)-\frac{1}{6}e^{-2t}*f(t)\]</div>
+<p>Readers can substitute <span class="math notranslate nohighlight">\(f(t)\)</span> with any function of interest to get the final solution.</p>
+</div>
+</div>
+<div class="section" id="impulse-dirac-delta-function-and-green-s-function-approach">
+<h2>Impulse, Dirac Delta Function and Green’s Function approach<a class="headerlink" href="#impulse-dirac-delta-function-and-green-s-function-approach" title="Permalink to this headline">¶</a></h2>
+<p>Following <a class="reference internal" href="#equation-eq73">(73)</a>, if one makes the gap between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> extremely small, let’s say nearly 0. Then, the window in <a class="reference internal" href="#equation-eq73">(73)</a> will become an <em>impulse</em>. Here we define a function, <em>Dirac Delta Function</em>.</p>
+<div class="math notranslate nohighlight" id="equation-eq77">
+<span class="eqno">(77)<a class="headerlink" href="#equation-eq77" title="Permalink to this equation">¶</a></span>\[\delta_{\epsilon}(t)=\frac{1}{\epsilon}[H(t)-H(t-\epsilon)]\]</div>
+<p>when the duration goes to <span class="math notranslate nohighlight">\(0\)</span>, the height of shock goes to infinity. The Laplace transform of the Dirac Delta function also has a very special quantity. For example, if today we have a shifted pulse,</p>
+<div class="math notranslate nohighlight" id="equation-eq78">
+<span class="eqno">(78)<a class="headerlink" href="#equation-eq78" title="Permalink to this equation">¶</a></span>\[\begin{split}\delta_{\epsilon}(t)=\frac{1}{\epsilon}[H(t-a)-H(t-a-\epsilon)] = \begin{cases}
+0 &amp; \text{if $t&lt;a$} \\
+\frac{1}{\epsilon} &amp; \text{if $t&gt;=a$ and $t&lt;a+\epsilon$} \\
+0 &amp; \text{if $t&gt;=a+\epsilon$ }
+\end{cases}\end{split}\]</div>
+<p>and take the Laplace transform,</p>
+<div class="math notranslate nohighlight" id="equation-eq79">
+<span class="eqno">(79)<a class="headerlink" href="#equation-eq79" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\mathcal{L}[\delta_{\epsilon}(t-a)](s)&amp;=\frac{1}{\epsilon}[\frac{1}{s}e^{-as}-\frac{1}{s}e^{-(a+\epsilon)s}] \\
+                                      &amp;=\frac{e^{-as}(1-e^{-\epsilon s})}{\epsilon s} \\
+                                      &amp;=e^{-as}
+\end{align}\end{split}\]</div>
+<p>if we don’t have any shift, <span class="math notranslate nohighlight">\(\mathcal{L}[\delta_{\epsilon}(t)](s) = 1\)</span>.</p>
+<div class="admonition-example-8 admonition">
+<p class="admonition-title">Example 8</p>
+<p>Find the solution for the following</p>
+<div class="math notranslate nohighlight">
+\[y^{''}+2y^{'}+2y=\delta (t-3); \; y(0)=y^{'}(0)=0\]</div>
+<p>Applying Laplace Transform to the differential equation, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\mathcal{L}[y^{''}](s) &amp;= s^2Y(s)-sy(0)-y^{'}(0) \\
+2\mathcal{L}[y^{'}](s) &amp;= 2sY(s)-2y(0) \\
+2\mathcal{L}[y](s) &amp;= 2Y(s) \\
+\mathcal{L}[\delta (t-3)](s) &amp;= e^{-3s}
+\end{align}\end{split}\]</div>
+<p>Reorganize the equation,</p>
+<div class="math notranslate nohighlight">
+\[Y(s)=\frac{1}{s^2+2s+2}e^{-3s}=\frac{1}{(s+1)^2+1}e^{-3s}\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[y(t) = \mathcal{L}^{-1}[Y(s)]\]</div>
+<p>if we focus on <span class="math notranslate nohighlight">\(\frac{1}{(s+1)^2+1}\)</span> first and leverage the first shifting theorem</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}^{-1}[\frac{1}{(s+1)^2+1}] = e^{-t}\sin(t)\]</div>
+<p>then substitute <span class="math notranslate nohighlight">\(e^{-3s}\)</span> back to the equation and use the second shifting theorem, we can have the final form of solution</p>
+<div class="math notranslate nohighlight">
+\[y(t) = H(t-3)e^{-(t-3)}\sin(t-3)\]</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ODE"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="2ndODE.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 3 and 4: 2nd-order ODE</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Sturm_Liouville.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dr. Kai-Chih Tseng<br/>
+  
+      &copy; Copyright 2020.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,913 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 3 and 4: 2nd-order ODE &#8212; Applied Math 2</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 5 and 6: Laplace Transform" href="Laplace.html" />
+    <link rel="prev" title="Week 1 and 2: 1st-order ODE" href="1stODE.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applied Math 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1stODE.html">
+   Week 1 and 2: 1st-order ODE
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 3 and 4: 2nd-order ODE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Laplace.html">
+   Week 5 and 6: Laplace Transform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Sturm_Liouville.html">
+   Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FODE/2ndODE.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ODE/2ndODE.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-basic-theorems-of-2nd-order-ode">
+   Some Basic Theorems of 2nd-order ODE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorem-1-the-existence-of-solutions-of-an-initial-value-problem">
+     Theorem 1: The Existence of Solutions of an Initial Value Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorem-2-the-uniqueness-of-solutions-of-initial-value-problems-and-wronskian-test-for-independence">
+     Theorem 2: The Uniqueness of Solutions of Initial Value Problems and Wronskian Test for Independence
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorem-3-general-and-particular-solutions">
+     Theorem 3: General and Particular Solutions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categories-of-2nd-order-ode">
+   Categories of 2nd-order ODE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constant-coefficient-homogeneous-equation">
+     Constant Coefficient Homogeneous equation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-i-different-but-real-roots">
+       Case I: Different but Real Roots
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-ii-repeated-roots">
+       Case II: Repeated Roots
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-iii-complex-roots">
+       Case III: Complex Roots
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nonhomogeneous-equation">
+     Nonhomogeneous Equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#euler-form">
+     Euler Form
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-i-distinct-but-real-roots">
+       Case I: Distinct but real roots
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Case II: Repeated Roots
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-iii-distinct-but-complex-roots">
+       Case III: Distinct but Complex Roots
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series-solution">
+     Series Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 3 and 4: 2nd-order ODE</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-basic-theorems-of-2nd-order-ode">
+   Some Basic Theorems of 2nd-order ODE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorem-1-the-existence-of-solutions-of-an-initial-value-problem">
+     Theorem 1: The Existence of Solutions of an Initial Value Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorem-2-the-uniqueness-of-solutions-of-initial-value-problems-and-wronskian-test-for-independence">
+     Theorem 2: The Uniqueness of Solutions of Initial Value Problems and Wronskian Test for Independence
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorem-3-general-and-particular-solutions">
+     Theorem 3: General and Particular Solutions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categories-of-2nd-order-ode">
+   Categories of 2nd-order ODE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constant-coefficient-homogeneous-equation">
+     Constant Coefficient Homogeneous equation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-i-different-but-real-roots">
+       Case I: Different but Real Roots
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-ii-repeated-roots">
+       Case II: Repeated Roots
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-iii-complex-roots">
+       Case III: Complex Roots
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nonhomogeneous-equation">
+     Nonhomogeneous Equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#euler-form">
+     Euler Form
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-i-distinct-but-real-roots">
+       Case I: Distinct but real roots
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Case II: Repeated Roots
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-iii-distinct-but-complex-roots">
+       Case III: Distinct but Complex Roots
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series-solution">
+     Series Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="week-3-and-4-2nd-order-ode">
+<span id="ndode"></span><h1>Week 3 and 4: 2nd-order ODE<a class="headerlink" href="#week-3-and-4-2nd-order-ode" title="Permalink to this headline">¶</a></h1>
+<p>The 2nd-order ODE is defined as an ordinary differential equation involving the second order derivative, perhaps the first but no third or higher order derivatives. In general, the 2nd-order ODE shares the following form,</p>
+<div class="math notranslate nohighlight" id="equation-eq27">
+<span class="eqno">(27)<a class="headerlink" href="#equation-eq27" title="Permalink to this equation">¶</a></span>\[y&quot;+p(x)y'+q(x)y=f(x)\]</div>
+<p>where <span class="math notranslate nohighlight">\(p(x)\)</span>, <span class="math notranslate nohighlight">\(q(x)\)</span> and <span class="math notranslate nohighlight">\(f(x)\)</span> can be 0. When <span class="math notranslate nohighlight">\(f(x)=0\)</span>, we call it <em>homogeneous problem</em>. Different from the homogeneous problem in 1st-order ODE, it has another meaning here. In a differential equation, <span class="math notranslate nohighlight">\(f(x)\)</span> can usually be considered as a forcing term. A lot of time, the forcing can be localized. Now you can imagine why <span class="math notranslate nohighlight">\(f(x)=0\)</span> is called homogeneous. For example, if we have a warm SST associated with ENSO, what kind atmospheric response we will get? In this case, the forcing, <span class="math notranslate nohighlight">\(f(x)=0\)</span>, is the warm SST and the atmospheric response is <span class="math notranslate nohighlight">\(y\)</span>. Another example is, if today we have a wok with a heat source (e.g., stove fire) sitting right below it, what kind temperature response will we have? In this case, the fire is the external forcing <span class="math notranslate nohighlight">\(f(x)\)</span> and the temperature is the response <span class="math notranslate nohighlight">\(y(x)\)</span>.</p>
+<p>Similar to the 1st-order, in a 2nd-order ODE problem, we need at least 2 initial conditions (boundary conditions, i.e., <a class="reference internal" href="#equation-eq28">(28)</a>) for <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(y^{'}\)</span> to find the particular solution. Otherwise, we can only find general solutions.</p>
+<div class="math notranslate nohighlight" id="equation-eq28">
+<span class="eqno">(28)<a class="headerlink" href="#equation-eq28" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+y(x_0) &amp;= A \\
+y'(x_0) &amp;= B \\  
+\end{align}\end{split}\]</div>
+<p>For the examples above, the boundary condition of the Earth atmosphere is how much heat was taken by the ocean or emitted to the space through radiation. Of course, all of these problems are way more complicated (we will talk a bit when at the chapter of special function).</p>
+<p>In the following section, we will walk through some fundamental characteristics/theorems of 2nd-order ODE.</p>
+<div class="section" id="some-basic-theorems-of-2nd-order-ode">
+<h2>Some Basic Theorems of 2nd-order ODE<a class="headerlink" href="#some-basic-theorems-of-2nd-order-ode" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="theorem-1-the-existence-of-solutions-of-an-initial-value-problem">
+<h3>Theorem 1: The Existence of Solutions of an Initial Value Problem<a class="headerlink" href="#theorem-1-the-existence-of-solutions-of-an-initial-value-problem" title="Permalink to this headline">¶</a></h3>
+<p>For a 2nd-order ODE, like <a class="reference internal" href="#equation-eq27">(27)</a>, which has <span class="math notranslate nohighlight">\(p(x)\)</span>, <span class="math notranslate nohighlight">\(q(x)\)</span> and <span class="math notranslate nohighlight">\(f(x)\)</span> continuous on an open interval <span class="math notranslate nohighlight">\(I\)</span> (the initial/boundary conditions are included in this interval), the solutions have some very important properties:</p>
+<div class="admonition-properties admonition">
+<p class="admonition-title">Properties</p>
+<p>(1) The combinations of two solutions is still an solution. <br />
+(2) A constant multiple of the solution is still an solution. (and is considered as the same solution)</p>
+</div>
+<p>One can easily find that it shares some similarity with linear function. Indeed, when <a class="reference internal" href="#equation-eq27">(27)</a> is linear, both properties above are also hold.</p>
+</div>
+<div class="section" id="theorem-2-the-uniqueness-of-solutions-of-initial-value-problems-and-wronskian-test-for-independence">
+<h3>Theorem 2: The Uniqueness of Solutions of Initial Value Problems and Wronskian Test for Independence<a class="headerlink" href="#theorem-2-the-uniqueness-of-solutions-of-initial-value-problems-and-wronskian-test-for-independence" title="Permalink to this headline">¶</a></h3>
+<p>However, for a 2nd-order ODE, at least two solutions are required to completely solve the problem. i.e., we can use a set of solution like <span class="math notranslate nohighlight">\(y(x)=\)</span> and <span class="math notranslate nohighlight">\(y'(x)=\)</span>, to represent the given system or using <span class="math notranslate nohighlight">\(y_1(x)=\)</span> and <span class="math notranslate nohighlight">\(y_2(x)=\)</span> as an alternative set of solution. One classic example is the harmonic oscillation. We can use location （displacement), x, and velocity, <span class="math notranslate nohighlight">\(dx/dt\)</span>, to describe the current state of a particle. An alternative way to describe harmonic oscillation is using circular motion, where we have two linear independent coordinates <span class="math notranslate nohighlight">\(\mathbf{x}=[x_i\hat{i},x_j\hat{j}]\)</span></p>
+<p>One key point is: <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span> should be linearly independent. According to linear algebra, we know we can calculate the <em>cross product</em> to test if two solutions are linearly independent. For <span class="math notranslate nohighlight">\(y_1\)</span> we can consider its first and second coordinates as <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y^{'}_1\)</span> and so does <span class="math notranslate nohighlight">\(y_2\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq29">
+<span class="eqno">(29)<a class="headerlink" href="#equation-eq29" title="Permalink to this equation">¶</a></span>\[\begin{split}W[y_1,y_2](x) = \begin{vmatrix}
+y_1(x)   &amp; y_1(x) \\
+y^{'}_1(x) &amp; y^{'}_2(x)   
+\end{vmatrix}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(W[y_1,y_2](x)\)</span> is the <em>Wronskian</em> of two functions, <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span>. If two solutions are independent, their cross product or Wronskian, i.e., the area spanned by two solutions, should be a non-zero value. We will walk through the details about Wronskian later, including how does it server as an additional constrain, which enables us to find the solution.</p>
+</div>
+<div class="section" id="theorem-3-general-and-particular-solutions">
+<h3>Theorem 3: General and Particular Solutions<a class="headerlink" href="#theorem-3-general-and-particular-solutions" title="Permalink to this headline">¶</a></h3>
+<p>The third theorem is related to finding particular solutions in an ODE problem.
+Given that <span class="math notranslate nohighlight">\(p(x)\)</span> and <span class="math notranslate nohighlight">\(q(x)\)</span> are continuous in an open interval <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span> are two independent solutions. Then any general solution can be written as the linear combinations of the two solutions. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq30">
+<span class="eqno">(30)<a class="headerlink" href="#equation-eq30" title="Permalink to this equation">¶</a></span>\[y(x) = c_1y_1(x)+c_2y_2(x)\]</div>
+<p>also, we have the initial/boundary values for <span class="math notranslate nohighlight">\(y\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq31">
+<span class="eqno">(31)<a class="headerlink" href="#equation-eq31" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+y(x_0) &amp; = c_1y_1(x_0)+c_2y_2(x_0) = A \\
+y^{'}(x_0) &amp; = c_1y^{'}_1(x_0)+c_2y^{'}_2(x_0) = B
+\end{align}\end{split}\]</div>
+<p>Using Cramer’s rule, one can find</p>
+<div class="math notranslate nohighlight" id="equation-eq32">
+<span class="eqno">(32)<a class="headerlink" href="#equation-eq32" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+c_1 &amp;= \frac{Ay'_2(x_0)-By_2(x_0)}{W[y_1,y_2](x_0)} \\ 
+c_2 &amp;= \frac{By_1(x_0)-Ay'_1(x_0)}{W[y_1,y_2](x_0)} \\ 
+\end{align}\end{split}\]</div>
+<p>With the choice of <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span>, we can find a corresponding <span class="math notranslate nohighlight">\(y\)</span>. One should notice that as long as we decide what <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span> are, we can find a unique solution of <span class="math notranslate nohighlight">\(y\)</span>. One can also find that if <span class="math notranslate nohighlight">\(W[y_1,y_2](x_0)\)</span> equals 0, <span class="math notranslate nohighlight">\(Ay'_2(x_0)-By_2(x_0)=0\)</span> and <span class="math notranslate nohighlight">\(By_1(x_0)-Ay'_1(x_0)=0\)</span> are also required. At the end, this will lead to trivial solution. Therefore, a non-zero Wronskian is very important for finding an unique solution.</p>
+<div class="admonition-example-1 admonition">
+<p class="admonition-title">Example 1</p>
+<p>We know <span class="math notranslate nohighlight">\(e^x\)</span> and <span class="math notranslate nohighlight">\(e^{2x}\)</span> is a solution of</p>
+<div class="math notranslate nohighlight">
+\[y&quot;-3y'+2y=0\]</div>
+<p>Let the general solution to be the linear combination of <span class="math notranslate nohighlight">\(e^x\)</span> and <span class="math notranslate nohighlight">\(e^{2x}\)</span></p>
+<div class="math notranslate nohighlight">
+\[y=c_1e^{x}+c_2e^{2x}\]</div>
+<p>If today we have an initial condition, <span class="math notranslate nohighlight">\(y(0)=-1\)</span> and <span class="math notranslate nohighlight">\(y'(0)=3\)</span>. We also know the Wronskian</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W[y_1,y_2](x) = \begin{vmatrix}
+e^x &amp; e^{2x} \\
+e^x &amp; 2e^{2x}   
+\end{vmatrix} = e^{3x} = 1\end{split}\]</div>
+<p>Using <a class="reference internal" href="#equation-eq32">(32)</a>, we can find c_1 and c_2</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+c_1 &amp;= \frac{Ay'_2(x_0)-By_2(x_0)}{W[y_1,y_2](x_0)}=\frac{-2*2-3*1}{1}=-7 \\ 
+c_2 &amp;= \frac{By_1(x_0)-Ay'_1(x_0)}{W[y_1,y_2](x_0)}=\frac{3*1+2}{1}=5 \\ 
+\end{align}\end{split}\]</div>
+<p>so the final solution will be <span class="math notranslate nohighlight">\(y=-7e^{x}+5e^{2x}\)</span></p>
+</div>
+<p>From the discussion above, we know how to find general solution along with Wronskian and initial conditions. Now, let’s consider a nonhomogeneous case. Let <span class="math notranslate nohighlight">\(y_p\)</span> to be any solution of the non-homogeneous equation <a class="reference internal" href="#equation-eq27">(27)</a>. We also have the initial condition of <span class="math notranslate nohighlight">\(y(x_0)=A\)</span> and <span class="math notranslate nohighlight">\(y'(x_0)=B\)</span>. Then every particular solution can be written with the following form.</p>
+<div class="math notranslate nohighlight" id="equation-eq33">
+<span class="eqno">(33)<a class="headerlink" href="#equation-eq33" title="Permalink to this equation">¶</a></span>\[Y(x) = c_1y_1(x)+c_2y_2(x)+y_p(x)\]</div>
+<p>One can easily find that it’s the combination of the homogeneous solution and the given particular solution. This can be proved by defining <span class="math notranslate nohighlight">\(Y(x)=y(x)+y_p(x)\)</span>, where <span class="math notranslate nohighlight">\(y(x)\)</span> is the homogeneous solution we mentioned above, and substituting <span class="math notranslate nohighlight">\(Y(x)\)</span> into <a class="reference internal" href="#equation-eq27">(27)</a>. We can find</p>
+<div class="math notranslate nohighlight" id="equation-eq34">
+<span class="eqno">(34)<a class="headerlink" href="#equation-eq34" title="Permalink to this equation">¶</a></span>\[(y^{&quot;}+y^{&quot;}_p)+p(x)(y^{'}+y^{'}_p)+q(x)(y+y_p)=f(x)\]</div>
+<p>and reorganize the equation</p>
+<div class="math notranslate nohighlight" id="equation-eq35">
+<span class="eqno">(35)<a class="headerlink" href="#equation-eq35" title="Permalink to this equation">¶</a></span>\[(y^{&quot;}+p(x)y^{'}+q(x)y)+(y^{&quot;}_p+p(x)y^{'}_p+q(x)y_p)=f(x)\]</div>
+<p>given that <span class="math notranslate nohighlight">\(y\)</span> is the solution for homogeneous equation and <span class="math notranslate nohighlight">\(y_p\)</span> is the solution for the nonhomogeneous equation, the entire equation of <a class="reference internal" href="#equation-eq34">(34)</a> also equals 0 indicating <span class="math notranslate nohighlight">\(Y\)</span> is also an particular solution for <a class="reference internal" href="#equation-eq27">(27)</a>.</p>
+<div class="admonition-example-2 admonition">
+<p class="admonition-title">Example 2</p>
+<p>For a given equation <span class="math notranslate nohighlight">\(y^{&quot;}+4y=8x\)</span>, we know there is one particular solution, <span class="math notranslate nohighlight">\(2x\)</span>. Using theorem 3, we can find all possible particular solutions.</p>
+<p>First, we try to find the general solution of <span class="math notranslate nohighlight">\(y^{&quot;}+4y\)</span>. We can assume the solution shares a form of <span class="math notranslate nohighlight">\(ce^{Ax}\)</span> (we will talk a bit more in the section of solving the constant-homogeneous ODE). By substituting <span class="math notranslate nohighlight">\(ce^{Ax}\)</span> into equation <span class="math notranslate nohighlight">\(y^{&quot;}+4y=0\)</span>, we can find <span class="math notranslate nohighlight">\(A=\pm2i\)</span>, which gives as an general solution of <span class="math notranslate nohighlight">\(ce^{i2x}\)</span></p>
+<p>Then any particular solution can be written as</p>
+<div class="math notranslate nohighlight">
+\[y_p = ce^{i2x}+2x\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="categories-of-2nd-order-ode">
+<h2>Categories of 2nd-order ODE<a class="headerlink" href="#categories-of-2nd-order-ode" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we will introduce some widely seen 2nd-order ODEs and the corresponding way to approach it, including (1) Constant Coefficient Homogeneous equation, (2)non-homogeneous ODE, (3) Euler Form, and (4) Series Solution</p>
+<div class="admonition-forms-of-ode admonition">
+<p class="admonition-title">Forms of ODE</p>
+<p>– Constant Coefficient Homogeneous equation: <span class="math notranslate nohighlight">\(y^{''}+Ay^{'}+By=0\)</span> (<span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constant)<br />
+– Nonhomogeneous ODE: <span class="math notranslate nohighlight">\(y^{''}+p(x)y'+q(x)y=f(x)\)</span> <br />
+– Euler Form: <span class="math notranslate nohighlight">\(x^2y^{''}+xAy'+By=0\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constant<br />
+– Series Solution : <span class="math notranslate nohighlight">\(y^{''}+p(x)y'+q(x)y=f(x)\)</span>, <span class="math notranslate nohighlight">\(y=\sum a_i x^{i}\)</span></p>
+</div>
+<div class="section" id="constant-coefficient-homogeneous-equation">
+<h3>Constant Coefficient Homogeneous equation<a class="headerlink" href="#constant-coefficient-homogeneous-equation" title="Permalink to this headline">¶</a></h3>
+<p>For constant coefficient homogeneous equation, all of the equations share the same form:</p>
+<div class="math notranslate nohighlight" id="equation-eq36">
+<span class="eqno">(36)<a class="headerlink" href="#equation-eq36" title="Permalink to this equation">¶</a></span>\[y^{''}+Ay^{'}+By=0\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constant.
+One simple way to approach it is assuming that the solution shares a form of <span class="math notranslate nohighlight">\(Ce^{kx}\)</span> where c and k are constant. By substituting the solution into <a class="reference internal" href="#equation-eq36">(36)</a> and solve for k, we can find <span class="math notranslate nohighlight">\(k=\frac{-A\pm\sqrt{A^2-4B}}{2}\)</span>. According to the root of <span class="math notranslate nohighlight">\(k\)</span>, we can further categorize the solutions into three different types (1) different but real roots, (2) repeated roots, and (3) complex roots.</p>
+<div class="section" id="case-i-different-but-real-roots">
+<h4>Case I: Different but Real Roots<a class="headerlink" href="#case-i-different-but-real-roots" title="Permalink to this headline">¶</a></h4>
+<p>This is the simplest case, where the solution is written as</p>
+<div class="math notranslate nohighlight" id="equation-eq37">
+<span class="eqno">(37)<a class="headerlink" href="#equation-eq37" title="Permalink to this equation">¶</a></span>\[c_1 e^{\frac{-A+\sqrt{A^2-4B}}{2}x}+c_2 e^{\frac{-A-\sqrt{A^2-4B}}{2}x}\]</div>
+<p>To test if two solutions are linearly independent, we can use Wronskian.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W[y_1,y_2](x) = \begin{vmatrix}
+e^{\frac{-A+\sqrt{A^2-4B}}{2}x}   &amp; e^{\frac{-A-\sqrt{A^2-4B}}{2}x} \\
+\frac{-A+\sqrt{A^2-4B}}{2}e^{\frac{-A+\sqrt{A^2-4B}}{2}x} &amp; \frac{-A-\sqrt{A^2-4B}}{2}e^{\frac{-A-\sqrt{A^2-4B}}{2}x}   
+\end{vmatrix} = -\sqrt{A^2-4B}e^{-Ax}\end{split}\]</div>
+</div>
+<div class="section" id="case-ii-repeated-roots">
+<h4>Case II: Repeated Roots<a class="headerlink" href="#case-ii-repeated-roots" title="Permalink to this headline">¶</a></h4>
+<p>For the case of repeated roots, if we apply the same Wronskian test, we will find that the two solutions are linearly dependent, suggesting we need to find another solution. A simple way to do that is assuming the second solution has a form of</p>
+<div class="math notranslate nohighlight" id="equation-eq38">
+<span class="eqno">(38)<a class="headerlink" href="#equation-eq38" title="Permalink to this equation">¶</a></span>\[c_1 e^{\frac{-A}{2}x}+c_2 xe^{\frac{-A}{2}x}\]</div>
+<p>Readers can use <a class="reference internal" href="#equation-eq38">(38)</a> and walk through Wronskian all over again and see if the answer changes this time.</p>
+</div>
+<div class="section" id="case-iii-complex-roots">
+<h4>Case III: Complex Roots<a class="headerlink" href="#case-iii-complex-roots" title="Permalink to this headline">¶</a></h4>
+<p>The third case is similar to the first case where we have two different roots but both of them are complex (and they are complex conjugates). In this case, we have the same set of solution as the first cases.</p>
+<div class="math notranslate nohighlight" id="equation-eq39">
+<span class="eqno">(39)<a class="headerlink" href="#equation-eq39" title="Permalink to this equation">¶</a></span>\[c_1 e^{(\alpha+i\beta)x}+c_2 e^{(\alpha-i\beta)x}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha=-\frac{A}{2}\)</span> and <span class="math notranslate nohighlight">\(\beta = \frac{\sqrt{4B-A^2}}{2}\)</span>.
+We can go one step further using <em>Euler identify</em> to rewrite <a class="reference internal" href="#equation-eq39">(39)</a></p>
+<div class="math notranslate nohighlight" id="equation-eq40">
+<span class="eqno">(40)<a class="headerlink" href="#equation-eq40" title="Permalink to this equation">¶</a></span>\[e^{i\beta x} = \cos(\beta x)+i\sin(\beta x)\]</div>
+<p>this will lead to</p>
+<div class="math notranslate nohighlight" id="equation-eq41">
+<span class="eqno">(41)<a class="headerlink" href="#equation-eq41" title="Permalink to this equation">¶</a></span>\[y = c_3e^{\alpha x}\cos(\beta x)+c_4e^{\alpha x}\sin(\beta x)\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_3=c_1+c_2\)</span> and <span class="math notranslate nohighlight">\(c_4=i(c_1-c_2)\)</span></p>
+</div>
+</div>
+<div class="section" id="nonhomogeneous-equation">
+<h3>Nonhomogeneous Equation<a class="headerlink" href="#nonhomogeneous-equation" title="Permalink to this headline">¶</a></h3>
+<p>To solve a nonhomogeneous 2nd-order ODE (i.e., <span class="math notranslate nohighlight">\(f(x)\)</span> term exists), we can leverage two methods (1) <em>principle of superposition</em> and (2) <em>Variation of Parameters</em>.
+Before we introduce <em>Principle of superposition</em>, we can first observe if <span class="math notranslate nohighlight">\(f(x)\)</span> in <a class="reference internal" href="#equation-eq27">(27)</a> can be decomposed into the superposition of a few different functions. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq42">
+<span class="eqno">(42)<a class="headerlink" href="#equation-eq42" title="Permalink to this equation">¶</a></span>\[f(x) = f_1(x)+f_2(x)+\cdots+f_n(x)\]</div>
+<p>and <span class="math notranslate nohighlight">\(Y_i\)</span> is the particular solution of the equation <span class="math notranslate nohighlight">\(y^{''}+p(x)y^{'}+q(x)y=f_i(x)\)</span>.</p>
+<p><em>principle of superposition</em> then tells us, if today we have a function <span class="math notranslate nohighlight">\(y_p\)</span> which equals to <span class="math notranslate nohighlight">\(\sum_i Y_i\)</span>, <span class="math notranslate nohighlight">\(y_p\)</span> is also a particular solution of <a class="reference internal" href="#equation-eq27">(27)</a>. Based on this rule, we can decomposition <span class="math notranslate nohighlight">\(f(x)\)</span> into different pieces which is easier for us to approach.</p>
+<p>The second method, <em>variations of parameters</em>, which is a method in combination of the way we solved homogeneous problem and Wronskian. (we will cover more details about how to solve more complicated homogeneous problem than a constant coefficient case but just leave it for convenience at the current stage) For example, if <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span> are the solution of the homogeneous form of <a class="reference internal" href="#equation-eq27">(27)</a>. We can assume that the particular solution has a form</p>
+<div class="math notranslate nohighlight" id="equation-eq43">
+<span class="eqno">(43)<a class="headerlink" href="#equation-eq43" title="Permalink to this equation">¶</a></span>\[y_p(x) = u_1(x)y_1(x) + u_2(x)y_2(x)\]</div>
+<p>This gives us</p>
+<div class="math notranslate nohighlight" id="equation-eq44">
+<span class="eqno">(44)<a class="headerlink" href="#equation-eq44" title="Permalink to this equation">¶</a></span>\[y^{'}_p(x) = u_1^{'}(x)y_1(x)+u_1(x)y^{'}_1(x) + u^{'}_2(x)y_2(x) + u_2(x)y^{'}_2(x)\]</div>
+<p>For convenience, we will first assume we can find certain <span class="math notranslate nohighlight">\(u_1^{'}\)</span> and <span class="math notranslate nohighlight">\(u^{'}_2(x)\)</span> which makes</p>
+<div class="math notranslate nohighlight" id="equation-eq45">
+<span class="eqno">(45)<a class="headerlink" href="#equation-eq45" title="Permalink to this equation">¶</a></span>\[u_1^{'}(x)y_1(x)+u^{'}_2(x)y_2(x) = 0 \]</div>
+<p>Then we take another derivative of <a class="reference internal" href="#equation-eq44">(44)</a>, which gives us</p>
+<div class="math notranslate nohighlight" id="equation-eq46">
+<span class="eqno">(46)<a class="headerlink" href="#equation-eq46" title="Permalink to this equation">¶</a></span>\[y^{''}_p(x) = u_1^{'}(x)y^{'}_1(x)+u_1(x)y^{''}_1(x) + u^{'}_2(x)y^{'}_2(x) + u_2(x)y^{''}_2(x)\]</div>
+<p>Then substitute <a class="reference internal" href="#equation-eq46">(46)</a> and <a class="reference internal" href="#equation-eq44">(44)</a> into <a class="reference internal" href="#equation-eq27">(27)</a>, we can have</p>
+<div class="math notranslate nohighlight" id="equation-eq47">
+<span class="eqno">(47)<a class="headerlink" href="#equation-eq47" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+&amp;u_1^{'}(x)y^{'}_1(x)+u_1(x)y^{''}_1(x) + u^{'}_2(x)y^{'}_2(x) + u_2(x)y^{''}_2(x) \\
+&amp;+p(x)(u_1(x)y^{'}_1(x)+u_2(x)y^{'}_2(x)) \\ 
+&amp;+q(x)(u_1(x)y_1(x) + u_2(x)y_2(x)) =f(x)
+\end{align}\end{split}\]</div>
+<p>Reorganize equation, we can find</p>
+<div class="math notranslate nohighlight" id="equation-eq48">
+<span class="eqno">(48)<a class="headerlink" href="#equation-eq48" title="Permalink to this equation">¶</a></span>\[u_1^{'}(x)y^{'}_1(x)+u^{'}_2(x)y^{'}_2(x) = f(x)\]</div>
+<p>Since both <a class="reference internal" href="#equation-eq45">(45)</a> and <a class="reference internal" href="#equation-eq48">(48)</a> should hold, this will lead to</p>
+<div class="math notranslate nohighlight" id="equation-eq49">
+<span class="eqno">(49)<a class="headerlink" href="#equation-eq49" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+u^{'}_1(x)&amp;=-\frac{y_2(x)f(x)}{W(x)} \\
+u^{'}_2(x)&amp;=\frac{y_1(x)f(x)}{W(x)} \\
+\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(W(x)\)</span> is the Wronskian of <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span>.</p>
+<p>Comparing <a class="reference internal" href="#equation-eq49">(49)</a> with <a class="reference internal" href="#equation-eq32">(32)</a>, it is evident that the <em>variation of parameters</em> is using theorem 3 that we introduced above except that the case in theorem 3 has a constant coefficient.</p>
+<div class="admonition-example-3 admonition">
+<p class="admonition-title">Example 3</p>
+<p>Find the general solution of the following equation</p>
+<div class="math notranslate nohighlight">
+\[y^{''}+4y=sec(x)\]</div>
+<p>Before we solve the differential equation, we can first observe what type of differential equations it is?
+First, without <span class="math notranslate nohighlight">\(\sec(x)\)</span>, it’s a constant coefficient of 2nd-order ODE, which has solution of <span class="math notranslate nohighlight">\(c_1e^{i2x}+c_2e^{i2x}\)</span> (or can be written as <span class="math notranslate nohighlight">\(c_1 \cos(2x)+c_2 \sin(2x)\)</span>).</p>
+<p>Now, we can use <em>variation of parameters</em> to find <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> as a function x. First, the Wronskian is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W[y_1,y_2](x) = \begin{vmatrix}
+\cos(2x)  &amp; \sin(2x) \\
+-2\sin(2x) &amp; 2\cos(2x)  
+\end{vmatrix} = 2\end{split}\]</div>
+<p>using <a class="reference internal" href="#equation-eq49">(49)</a>, we can find</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+u^{'}_1(x)&amp;=-\frac{\sin(2x)\sec(x)}{2} \\
+u^{'}_2(x)&amp;=\frac{\cos(2x)\sec(x)}{2} \\
+\end{align}\end{split}\]</div>
+<p>Given that <span class="math notranslate nohighlight">\(\sin(2x)=2\sin(x)\cos(x)\)</span> and <span class="math notranslate nohighlight">\(\cos(2x)=2\cos(x)^2-1\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+u^{'}_1(x)&amp;=-2\sin(x) \\
+u^{'}_2(x)&amp;=\cos(x)-\frac{1}{2}\sec(x) \\
+\end{align}\end{split}\]</div>
+<p>and integrate both sides of the equation above,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+u_1(x)&amp;=2\cos(x) \\
+u_2(x)&amp;=\sin(x)-\frac{1}{2}\ln |\sec(x)-tan(x)| \\
+\end{align}\end{split}\]</div>
+<p>substitute <span class="math notranslate nohighlight">\(u_1\)</span> and <span class="math notranslate nohighlight">\(u_2\)</span> back to the general solution, we have</p>
+<div class="math notranslate nohighlight">
+\[y_p = 2\cos(x)\cos(2x)+\sin(x)\sin(2x)-\sin(2x)\ln|\sec(x)-\tan(x)|\]</div>
+<p>To find all possible general solution, we use theorem 3: the combination of solutions for homogeneous problem and nonhomogeneous problem will be the general solution for any nonhomogeneous problem. Therefore, we have the final solution</p>
+<div class="math notranslate nohighlight">
+\[y = c_1\cos(2x)+c_2\sin(2x)+2\cos(x)\cos(2x)+y_p\]</div>
+</div>
+<p>There is one special technique, <em>undetermined coefficients</em>, which is usually used along with <em>principle of superposition</em> and theorem 3 (i.e., <span class="math notranslate nohighlight">\(y=y_g+y_p\)</span>, where <span class="math notranslate nohighlight">\(y_g\)</span> is the general solution and <span class="math notranslate nohighlight">\(y_p\)</span> is the particular solution). However, different from <em>variation of parameter</em>, it can only be applied to a constant coefficient ODE. The concept behind it is <em>guessing the <span class="math notranslate nohighlight">\(y_p\)</span> based on <span class="math notranslate nohighlight">\(f(x)\)</span></em>.</p>
+<p>For example, if today <span class="math notranslate nohighlight">\(f(x)\)</span> evolves a trigonometric function, we can simply guess a particular like <span class="math notranslate nohighlight">\(c_1\cos(kx)+c_2\sin(kx)\)</span>. If today <span class="math notranslate nohighlight">\(f(x)\)</span> shares a polynomial form, we can guess a solution of <span class="math notranslate nohighlight">\(Ax^2+B^x+C\)</span>. By substitute these particular solution, we can determine the coefficients such as <span class="math notranslate nohighlight">\(c_1\)</span>, <span class="math notranslate nohighlight">\(c_2\)</span> or <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(C\)</span>. The readers can see the similarity between <em>undetermined coefficients</em> and <em>variation of parameters</em>. The main difference is that all of the coefficients here is <em>constant</em> instead of a function of x. More details will be covered in chapter of <em>Laplace Transform</em>.</p>
+<div class="admonition-example-4 admonition">
+<p class="admonition-title">Example 4</p>
+<p>Using undermined coefficient to solve the following ODE.</p>
+<div class="math notranslate nohighlight">
+\[y^{''}+4y=7e^{3x}\]</div>
+<p>According to <em>undermined coefficients</em>, we can guess a particular solution of <span class="math notranslate nohighlight">\(Ae^{3x}\)</span>. Then substitute <span class="math notranslate nohighlight">\(Ae^{3x}\)</span> into the original equation, we have</p>
+<div class="math notranslate nohighlight">
+\[9Ae^{3x}+4Ae^{3x}=7e^{3x}\]</div>
+<p>indicating <span class="math notranslate nohighlight">\(A=\frac{7}{13}\)</span>. Now, we have one particular solution, <span class="math notranslate nohighlight">\(\frac{7}{13}e^{3x}\)</span>.
+Also, by inspecting the left hand side of the ODE, we know the solution of the homogeneous problem can be written as</p>
+<div class="math notranslate nohighlight">
+\[y = c_1\cos(2x)+c_2\sin(2x)\]</div>
+<p>Therefore, the completed solution is</p>
+<div class="math notranslate nohighlight">
+\[y = c_1\cos(2x)+c_2\sin(2x)+y_p\]</div>
+</div>
+</div>
+<div class="section" id="euler-form">
+<h3>Euler Form<a class="headerlink" href="#euler-form" title="Permalink to this headline">¶</a></h3>
+<p>Euler form is a special case of 2nd-order ODE, where the 2nd-order derivative is multiplied by <span class="math notranslate nohighlight">\(x^2\)</span>. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq50">
+<span class="eqno">(50)<a class="headerlink" href="#equation-eq50" title="Permalink to this equation">¶</a></span>\[x^2y^{''}+xAy'+By=0\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span>, and <span class="math notranslate nohighlight">\(B\)</span> are constant. In such case, we can’t apply the same approach that we used for solving a constant coefficient ODE. To transform the equation back to an constant coefficient ODE. We can first assume the solution shares a form of <span class="math notranslate nohighlight">\(y=x^{r}\)</span>. This results in</p>
+<div class="math notranslate nohighlight" id="equation-eq51">
+<span class="eqno">(51)<a class="headerlink" href="#equation-eq51" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+y^{''} &amp; = r(r-1)x^{r-2} \\
+y^{'} &amp;  = rx^{r-1}
+\end{align}\end{split}\]</div>
+<p>substitute <a class="reference internal" href="#equation-eq51">(51)</a> into <a class="reference internal" href="#equation-eq50">(50)</a>, we will have</p>
+<div class="math notranslate nohighlight" id="equation-eq52">
+<span class="eqno">(52)<a class="headerlink" href="#equation-eq52" title="Permalink to this equation">¶</a></span>\[r^2+(A-1)r+B = 0\]</div>
+<p>Solving for <span class="math notranslate nohighlight">\(r\)</span> in <a class="reference internal" href="#equation-eq52">(52)</a>, we can find the answer for <a class="reference internal" href="#equation-eq50">(50)</a>.
+Similar to a constant coefficient ODE, we will have three different scenarios for <span class="math notranslate nohighlight">\(r\)</span>: (1) distinct but real roots, (2) repeated roots, and (3) complex roots.</p>
+<div class="section" id="case-i-distinct-but-real-roots">
+<h4>Case I: Distinct but real roots<a class="headerlink" href="#case-i-distinct-but-real-roots" title="Permalink to this headline">¶</a></h4>
+<p>This is the simplest case, where the solution can be directly written as</p>
+<div class="math notranslate nohighlight" id="equation-eq53">
+<span class="eqno">(53)<a class="headerlink" href="#equation-eq53" title="Permalink to this equation">¶</a></span>\[y=c_1x^{r_1} +c_2x^{r_2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> are constant. <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_2\)</span> are two roots for <a class="reference internal" href="#equation-eq52">(52)</a></p>
+</div>
+<div class="section" id="id1">
+<h4>Case II: Repeated Roots<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>In the case where we have repeated roots for <a class="reference internal" href="#equation-eq52">(52)</a>, we can assume the second root has a form of</p>
+<div class="math notranslate nohighlight" id="equation-eq54">
+<span class="eqno">(54)<a class="headerlink" href="#equation-eq54" title="Permalink to this equation">¶</a></span>\[y_2 = \ln(x)x^{r_1}\]</div>
+<p>One can find the similarity in repeated-root case between Euler equation and constant coefficient ODE (see <a class="reference internal" href="#equation-eq38">(38)</a>).  This can be proofed by using <em>variation of parameters</em>, where we assume the second solution is</p>
+<div class="math notranslate nohighlight" id="equation-eq55">
+<span class="eqno">(55)<a class="headerlink" href="#equation-eq55" title="Permalink to this equation">¶</a></span>\[y_2 = u(x)x^{r_1}\]</div>
+</div>
+<div class="section" id="case-iii-distinct-but-complex-roots">
+<h4>Case III: Distinct but Complex Roots<a class="headerlink" href="#case-iii-distinct-but-complex-roots" title="Permalink to this headline">¶</a></h4>
+<p>When we have two complex root, the solution can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq56">
+<span class="eqno">(56)<a class="headerlink" href="#equation-eq56" title="Permalink to this equation">¶</a></span>\[y=c_1x^{r_1} +c_2x^{r_2}\]</div>
+<p>as those shown in case I. Here, we can go one step further given that <span class="math notranslate nohighlight">\(e^{a\ln(x)}=x^a\)</span>. This leads to</p>
+<div class="math notranslate nohighlight" id="equation-eq57">
+<span class="eqno">(57)<a class="headerlink" href="#equation-eq57" title="Permalink to this equation">¶</a></span>\[y=c_1e^{r_1 \ln(x)} +c_2e^{r_2 \ln(x)}\]</div>
+<p>Recall <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_2\)</span> need to be each others’ complex conjugate. Therefore, we can rewrite them into <span class="math notranslate nohighlight">\(r_1=a+ib\)</span> and <span class="math notranslate nohighlight">\(r_2=a-ib\)</span>, which results in the final solution of</p>
+<div class="math notranslate nohighlight" id="equation-eq58">
+<span class="eqno">(58)<a class="headerlink" href="#equation-eq58" title="Permalink to this equation">¶</a></span>\[y=c_1e^{a}e^{i\ln(x)} +c_2e^{a}e^{-i\ln(x)}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight" id="equation-eq59">
+<span class="eqno">(59)<a class="headerlink" href="#equation-eq59" title="Permalink to this equation">¶</a></span>\[y=c_3e^{a}\cos(\ln(x)) +c_4e^{a}\sin(\ln(x))\]</div>
+</div>
+</div>
+<div class="section" id="series-solution">
+<h3>Series Solution<a class="headerlink" href="#series-solution" title="Permalink to this headline">¶</a></h3>
+<p>In the section, we will introduce one of the most powerful and general approaches for solving the ODE, <em>Series Solutions</em>.<br />
+Let’s start from what we learn above. For all of the previous ODE categories, we can find many of them share a solution form of <span class="math notranslate nohighlight">\(c_1e^{r_1x}+c_2e^{r_2x}\)</span>. Recall the Taylor expansion of an exponent (center around 0, i.e., <span class="math notranslate nohighlight">\(x_0\)</span>=0) can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq60">
+<span class="eqno">(60)<a class="headerlink" href="#equation-eq60" title="Permalink to this equation">¶</a></span>\[e^{x} = 1+\frac{x^{1}}{1!}+\frac{x^2}{2!}+\cdots\]</div>
+<p>This implies that most of the ODEs that we introduced above can be represented with a polynomial. Indeed, when we have <em>enough</em> terms in the polynomial, we might be able to find a certain combination of these terms to mimic the solution of an ODE (see figure below). On the other hand, by decomposing the solution into different polynomial terms help us better interpret the results. For example, <span class="math notranslate nohighlight">\(y(x) =4e^{-x^3/3}+e^{-x^3/3}\int^{x}_0e^{\xi^3/3}d\xi\)</span> is the solution of the function <span class="math notranslate nohighlight">\(y^{'}+x^2y=1\)</span>, where a closed form doesn’t exist. It’s apparent that understanding this solution is more challenging than analyzing a power series.</p>
+<div class="figure align-default" id="fig2">
+<img alt="../_images/Exp_series.gif" src="../_images/Exp_series.gif" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">A schematic figure shows how the increase of power series to make a better prediction of a given function. <a class="reference external" href="https://en.wikipedia.org/wiki/Taylor_series#:~:text=The%20Taylor%20series%20of%20any%20polynomial%20is%20the%20polynomial%20itself.&amp;text=The%20above%20expansion%20holds%20because,term%20in%20the%20infinite%20sum.">Wikipedia</a></span><a class="headerlink" href="#fig2" title="Permalink to this image">¶</a></p>
+</div>
+<p>To find the series solution of an ODE, we can first assume it has a form of</p>
+<div class="math notranslate nohighlight" id="equation-eq61">
+<span class="eqno">(61)<a class="headerlink" href="#equation-eq61" title="Permalink to this equation">¶</a></span>\[y=\sum a_n x^{n}\]</div>
+<p>By substituting <a class="reference internal" href="#equation-eq61">(61)</a> into <a class="reference internal" href="#equation-eq27">(27)</a>, we can find the corresponding coefficient, <span class="math notranslate nohighlight">\(a_n\)</span>,of each term in the polynomial.</p>
+<div class="admonition-example-5 admonition">
+<p class="admonition-title">Example 5</p>
+<p>Find the polynomial solution of the following 1st-order ODE.</p>
+<div class="math notranslate nohighlight">
+\[y^{'}+2xy=\frac{1}{1-x}\]</div>
+<p>First, assume the solution has a form of <a class="reference internal" href="#equation-eq61">(61)</a>. That also implies</p>
+<div class="math notranslate nohighlight">
+\[y^{'} = \sum_{n=1} a_n (n)x^{n-1} \]</div>
+<p>Inspect the right hand side of ODE, it can be written as <span class="math notranslate nohighlight">\(\sum x^n\)</span> (if the series converges).
+Reorganize the entire equation, we have</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=1} a_n (n)x^{n-1} +  \sum_{n=0} 2a_n x^{n+1} = \sum_{n=0} x^n\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=0} a_{n+1} (n+1)x^{n} +  \sum_{n=1} 2a_{n-1} x^{n} = \sum_{n=0} x^n\]</div>
+<p>For the term of <span class="math notranslate nohighlight">\(x^0\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[a_1 x^{0}  = x^{0}\]</div>
+<p>For other higher order terms, we have a <em>recurrence relation</em></p>
+<div class="math notranslate nohighlight">
+\[a_{n+1} (n+1)x^{n}+ 2a_{n-1}x^{n} = x^{n}\]</div>
+<p>and drop the trivial solution <span class="math notranslate nohighlight">\(x=0\)</span>, we have a sets of final solution</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+(n=0) &amp;\; a_1-1=0 \\
+(n=1) &amp;\; a_2=\frac{1}{2}(1-2a_0) \\
+...    &amp;
+\end{align}\end{split}\]</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ODE"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="1stODE.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 1 and 2: 1st-order ODE</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Laplace.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 5 and 6: Laplace Transform</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dr. Kai-Chih Tseng<br/>
+  
+      &copy; Copyright 2020.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

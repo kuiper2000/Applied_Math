@@ -1,0 +1,771 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 1 and 2: 1st-order ODE &#8212; Applied Math 2</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 3 and 4: 2nd-order ODE" href="2ndODE.html" />
+    <link rel="prev" title="Syllabus" href="../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applied Math 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 1 and 2: 1st-order ODE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2ndODE.html">
+   Week 3 and 4: 2nd-order ODE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Laplace.html">
+   Week 5 and 6: Laplace Transform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Sturm_Liouville.html">
+   Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FODE/1stODE.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ODE/1stODE.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-an-ode">
+   What is an ODE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#st-order-ode">
+   1st-order ODE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categories-of-1st-order-ode">
+   Categories of 1st-order ODE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#separable-form">
+     Separable form
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-ode">
+     Linear ODE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exact-form">
+     Exact Form
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#homogeneous-form">
+     Homogeneous Form
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bernoulli-form">
+     Bernoulli Form
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#riccati-form">
+     Riccati Form
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 1 and 2: 1st-order ODE</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-an-ode">
+   What is an ODE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#st-order-ode">
+   1st-order ODE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categories-of-1st-order-ode">
+   Categories of 1st-order ODE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#separable-form">
+     Separable form
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-ode">
+     Linear ODE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exact-form">
+     Exact Form
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#homogeneous-form">
+     Homogeneous Form
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bernoulli-form">
+     Bernoulli Form
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#riccati-form">
+     Riccati Form
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="week-1-and-2-1st-order-ode">
+<span id="stode"></span><h1>Week 1 and 2: 1st-order ODE<a class="headerlink" href="#week-1-and-2-1st-order-ode" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-an-ode">
+<h2>What is an ODE<a class="headerlink" href="#what-is-an-ode" title="Permalink to this headline">¶</a></h2>
+<p>For any equation, which shares the form of</p>
+<div class="math notranslate nohighlight" id="equation-eq1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq1" title="Permalink to this equation">¶</a></span>\[\frac{dy}{dx}=f(x)\]</div>
+<p>and x is the only independent variable (or in plain language: coordinate), then it’s called an ordinary differential equation. We can also use different forms to represent the differential terms ex: <span class="math notranslate nohighlight">\(y'\)</span> or <span class="math notranslate nohighlight">\(y^{(n)}\)</span>, where n indicates how many times we take the derivative of y with respect to x. An ODE can be found in many places such as calculating the trajectory of a moving object, the temperature/energy change of a system (e.g., how the Earth temperature change in response to greenhouse gas radiative forcing), the transverse circulation of tropical cyclones, the overturning circulation of ITCZ, and even used in a more general concept of <a class="reference external" href="https://kuiper2000.github.io/chaos_and_predictability/intro.html">dynamical systems</a>. Solving an ODE is exactly finding its integrated form e.g., represent y as a function x without any differential operator (<span class="math notranslate nohighlight">\(\frac{d}{dx}\)</span>).</p>
+</div>
+<div class="section" id="st-order-ode">
+<h2>1st-order ODE<a class="headerlink" href="#st-order-ode" title="Permalink to this headline">¶</a></h2>
+<p>According to how many times we take the derivative of y, we can decide the order of differential equations. In general, we are more likely to find the analytical solution in a lower order problem. (and it’s impossible to find an analytical solution when the order is higher than 5. I will leave this question to readers.) Luckily, in most cases, we only need to worry about 1st- and 2nd-order ODEs while higher order problems are relatively rare. More details about how to solve a higher order ODE was covered in Numerical Analysis and the end of this course. Based on the order of ODE, different amounts of boundary (initial) conditions are required. For example, for a moving object with a constant velocity (<span class="math notranslate nohighlight">\(\frac{dx}{dt}=c\)</span>), we need to know where it starts to precisely calculate its path. Otherwise, we can only know how far it travels but have no idea where it ends. From the above example, we can see for an 1st-order ODE, we need at least <em>1 boundary (initial) condition</em> i.e., <span class="math notranslate nohighlight">\(x_0=?\)</span>. Following similar veins, we need 2 initial conditions for a 2nd-order ODE (i.e., <span class="math notranslate nohighlight">\(x^{''}=a\)</span>, if <span class="math notranslate nohighlight">\(x^{''}\)</span> represents acceleration, then <span class="math notranslate nohighlight">\(x(t=0)=x_0\)</span> is the initial condition for <em>location</em> and <span class="math notranslate nohighlight">\(x'(t=0)=x'_0\)</span> is the initial velocity) and so on and so forth…</p>
+<p>For an 1st-order ODE, we can further categorize it according to its forms, which can help us find the proper way to solve it. Some common forms of 1st-order ODE including (but not limited to):</p>
+<div class="admonition-forms-of-ode admonition">
+<p class="admonition-title">Forms of ODE</p>
+<p>– Separable form: <span class="math notranslate nohighlight">\(\frac{dy}{dx}=F(x)G(y)\)</span> <br />
+– Linear form: <span class="math notranslate nohighlight">\(y'+p(x)y=q(x)\)</span> <br />
+– Exact form: <span class="math notranslate nohighlight">\(M(x,y)dx+N(x,y)dy=0\)</span> where <span class="math notranslate nohighlight">\(\frac{d M(x,y)}{d y }=\frac{d N(x,y)}{d x }\)</span><br />
+– Homogeneous form: <span class="math notranslate nohighlight">\(y'=f(y/x)\)</span><br />
+– Bernoulli form: <span class="math notranslate nohighlight">\(y'+P(x)y=R(x)y^n\)</span><br />
+– Riccati form: <span class="math notranslate nohighlight">\(y'=P(x)y^2+Q(x)y+R(x)\)</span></p>
+</div>
+<p>we will walk through each of these in details. One should notice that it is possible to have multiple ways to approach one problem. Categorizing the problems only helps us do it more efficiently but we can certainly solve the problem in different ways.</p>
+</div>
+<div class="section" id="categories-of-1st-order-ode">
+<h2>Categories of 1st-order ODE<a class="headerlink" href="#categories-of-1st-order-ode" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="separable-form">
+<h3>Separable form<a class="headerlink" href="#separable-form" title="Permalink to this headline">¶</a></h3>
+<p>For any ODE, which can be rearranged as the following form,</p>
+<div class="math notranslate nohighlight" id="equation-eq2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq2" title="Permalink to this equation">¶</a></span>\[\frac{dy}{dx}=F(x)G(y)\]</div>
+<p>we call it a separable ODE. There is a very straightforward way to solve this kind ODE. We can simply move all of the terms related to y to the left hand side and the terms related to x to the right hand. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq3" title="Permalink to this equation">¶</a></span>\[\frac{1}{G(y)}dy=F(x)dx\]</div>
+<p>by integrating both sides of <a class="reference internal" href="#equation-eq3">(3)</a>, we can have.</p>
+<div class="math notranslate nohighlight" id="equation-eq4">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq4" title="Permalink to this equation">¶</a></span>\[\int\frac{1}{G(y)}dy=\int F(x)dx\]</div>
+<p>The readers can complete the last few steps to derive a form of <span class="math notranslate nohighlight">\(y=f(x)\)</span>.</p>
+<div class="admonition-example-1 admonition">
+<p class="admonition-title">Example 1</p>
+<p>Using separable form to solve the following ODE, <span class="math notranslate nohighlight">\(\frac{dy}{dx}=(1-y)x\)</span></p>
+<p>We can first reorganize the equation to have</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{1-y}dy=xdx\]</div>
+<p>then replace <span class="math notranslate nohighlight">\(dy\)</span> with <span class="math notranslate nohighlight">\(d(1-y)\)</span> by using the relation <span class="math notranslate nohighlight">\(d(1-y)=-dy\)</span></p>
+<div class="math notranslate nohighlight">
+\[-\frac{1}{1-y}d(1-y)=xdx\]</div>
+<p>Integrate both side of the equation, we can have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}-\int\frac{1}{1-y}d(1-y)=\int xdx \\
+-\mathrm{ln}(|1-y|) = \frac{1}{2}x^2 + c\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[y = -e^{-\frac{1}{2}x^2+c}+1\]</div>
+</div>
+<div class="admonition-example-2 admonition">
+<p class="admonition-title">Example 2</p>
+<p>In this example, we will walk through a more practical case: terminal velocity.
+For a free-falling object, it experiences two forces: gravity (mg) and drag from the air <span class="math notranslate nohighlight">\(\alpha v^2\)</span>. Usually, the drag is proportional to the velocity square and counteracts the gravity (hint: we ignore buoyancy here which is a very important term when the falling object has a density close to the air). Therefore, we can write down the following equation to represent balance between different forces</p>
+<div class="math notranslate nohighlight">
+\[m\frac{dv}{dt} = mg-\alpha v^2\]</div>
+<p>By rearranging the equation, we can have</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{1-\frac{\alpha}{gm} v^2}dv = gdt\]</div>
+<p>We can partition the left hand side and make it into an integratable form</p>
+<div class="math notranslate nohighlight">
+\[(\frac{\frac{1}{2}}{1+\sqrt{\frac{\alpha}{gm}}v}+\frac{\frac{1}{2}}{1-\sqrt{\frac{\alpha}{gm}}v})dv = gdt\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\int (\frac{\frac{1}{2}}{1+\sqrt{\frac{\alpha}{gm}}v}+\frac{\frac{1}{2}}{1-\sqrt{\frac{\alpha}{gm}}v})dv = \int gdt\]</div>
+<p>Similarly, using the relation <span class="math notranslate nohighlight">\(d\sqrt{\frac{\alpha}{gm}}v =\sqrt{\frac{\alpha}{gm}}dv\)</span>, we can have</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2}\sqrt{\frac{gm}{\alpha}} \mathrm{ln}|\frac{1+\sqrt{\frac{\alpha}{gm}}v}{1-\sqrt{\frac{\alpha}{gm}}v}| = gt+c\]</div>
+<p>which gives us</p>
+<div class="math notranslate nohighlight">
+\[\frac{1+\sqrt{\frac{\alpha}{gm}}v}{1-\sqrt{\frac{\alpha}{gm}}v} = \mathrm{e}^{2\sqrt{\frac{g\alpha}{m}}t+c'}\]</div>
+<p>Rearranging the equation again, we can have the final solution</p>
+<div class="math notranslate nohighlight">
+\[v=\sqrt{\frac{gm}{\alpha}}\frac{\mathrm{e}^{2\sqrt{\frac{g\alpha}{m}}t+c'}-1}{\mathrm{e}^{2\sqrt{\frac{g\alpha}{m}}t+c'}+1}\]</div>
+<p>we can test if we derive the right answer by substituting t with <span class="math notranslate nohighlight">\(\infty\)</span>. The corresponding velocity is so-called terminal velocity.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>when all three forces are all considered (gravity, buoyancy, and drag). It will lead to Rayleigh-Bernard convection, which is an important atmospheric phenomenon. The Lorenz 69 chaos model, also know as the butterfly model, is a reduced dimension of Rayleigh-Bernard convection.</p>
+</div>
+</div>
+</div>
+<div class="section" id="linear-ode">
+<h3>Linear ODE<a class="headerlink" href="#linear-ode" title="Permalink to this headline">¶</a></h3>
+<p>Linear 1st-order ODE is one of the most widely used ODEs in our field, since it’s easy to approach and can be solved (numerically or analytically) in most cases. To tell if an ODE is linear or not, we can simply check its operator.</p>
+<p>For example, the following equation</p>
+<div class="math notranslate nohighlight" id="equation-eq5">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq5" title="Permalink to this equation">¶</a></span>\[y'+p(x)y=q(x)\]</div>
+<p>we can find that both 3 operators, <span class="math notranslate nohighlight">\(\frac{d}{dx}\)</span>, <span class="math notranslate nohighlight">\(p(x)\)</span>, and <span class="math notranslate nohighlight">\(q(x)\)</span> are not a function of y. Therefore, this ODE is linear. We can also use traditional way of testing linear operator i.e., <span class="math notranslate nohighlight">\(L(Ay)=AL(y)\)</span>, <span class="math notranslate nohighlight">\(L(-y)=-L(y)\)</span>, and <span class="math notranslate nohighlight">\(L(y_1+y_2)=L(y_1)+L(y_2)\)</span>, where L is the operator that we would like to test, to examine if the whole equation is linear.</p>
+<p>For a linear ODE, the easiest way to approach it is using integrating factor. i.e., multiply the whole equation by  <span class="math notranslate nohighlight">\(\mathrm{e}^{\int p(x)dx}\)</span>. This leads to</p>
+<div class="math notranslate nohighlight" id="equation-eq6">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq6" title="Permalink to this equation">¶</a></span>\[(\mathrm{e}^{\int p(x)dx} y)'=\mathrm{e}^{\int p(x)dx} q(x)\]</div>
+<p>By integrating both side of <a class="reference internal" href="#equation-eq6">(6)</a> and reorganizing it, we can have the final form</p>
+<div class="math notranslate nohighlight" id="equation-eq7">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq7" title="Permalink to this equation">¶</a></span>\[y =\mathrm{e}^{-\int p(x)dx} \int \mathrm{e}^{\int p(x)dx}+c \mathrm{e}^{-\int p(x)dx}\]</div>
+<p>Now let’s take a look of an example in thermodynamics.</p>
+<div class="admonition-example-3 admonition">
+<p class="admonition-title">Example 3</p>
+<p>In the first law of thermodynamics equation, we have</p>
+<div class="math notranslate nohighlight">
+\[c_v \mathrm{dT} = \mathrm{dQ}-\mathrm{Pd\alpha} \]</div>
+<p>where <span class="math notranslate nohighlight">\(c_v\)</span> is specific heat in constant volume, <span class="math notranslate nohighlight">\(\mathrm{dQ}\)</span> is the heat exchange, and <span class="math notranslate nohighlight">\(\mathrm{Pd\alpha}\)</span> is the work done by pressure.</p>
+<p>Using the relation <span class="math notranslate nohighlight">\(\mathrm{dP\alpha} = \mathrm{Pd\alpha}+\mathrm{\alpha dP}\)</span> as well as the ideal gas law, <span class="math notranslate nohighlight">\(\mathrm{P\alpha}=RT\)</span>. we can rewrite the above equation to</p>
+<div class="math notranslate nohighlight">
+\[c_v \mathrm{dT} = \mathrm{dQ}-\mathrm{RdT}+\mathrm{\alpha dP} \]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[c_p \mathrm{dT} = \mathrm{dQ}+\mathrm{RT\frac{dP}{P}} \]</div>
+<p>where <span class="math notranslate nohighlight">\(c_p=c_v+R\)</span></p>
+<p>Then divide the whole equation by <span class="math notranslate nohighlight">\(\mathrm{c_p }\)</span>, we can have</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{dT} = \frac{1}{\mathrm{c_p}}\mathrm{dQ}+\mathrm{\frac{R T}{c_p}\frac{dP}{P}} \]</div>
+<p>By rearranging the equation,</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{dT} - \mathrm{\frac{R}{c_p}\frac{dP}{P}T}  = \frac{1}{\mathrm{c_p}}\mathrm{dQ}\]</div>
+<p>one can find the integrating factor <span class="math notranslate nohighlight">\(=-\mathrm{\frac{R}{c_p}\frac{dP}{P}}\)</span>.</p>
+<p>Following the traditions, we multiply the entire equation by <span class="math notranslate nohighlight">\(\mathrm{e}^{\int{-\mathrm{\frac{R}{c_p}\frac{dP}{P}}}}\)</span> or <span class="math notranslate nohighlight">\(\mathrm{e}^{\int{-\mathrm{\frac{R}{c_p}d ln (p)}}}\)</span> and integrate both side to have the final form of thermodynamics equation</p>
+<div class="math notranslate nohighlight">
+\[(T(\frac{P_s}{P})^{\frac{R}{c_p}})'= [\mathrm{e}^{\int{-\mathrm{\frac{R}{c_p}\frac{dP}{P}}}} \frac{1}{\mathrm{c_p}}\mathrm{dQ}]\]</div>
+<p>One can easily find that as long as <span class="math notranslate nohighlight">\(dQ=0\)</span> (adiabatic), the left hand side of the equation above is always conserved. This term is called <em>potential temperature</em>, which is a very important thermodynamics variable in atmospheric science.</p>
+</div>
+</div>
+<div class="section" id="exact-form">
+<h3>Exact Form<a class="headerlink" href="#exact-form" title="Permalink to this headline">¶</a></h3>
+<p>Exact equation is a special type of ODE, where we can’t implicitly write down a solution as a function of independent variable. For example, <span class="math notranslate nohighlight">\(e^{y}sin(x)+2y=x^2\)</span>, where no differential form exists. In such case, it is usually impossible to approach the problem using <em>integrating factor</em> or <em>separation of variable</em></p>
+<p>It usually shares the form of</p>
+<div class="math notranslate nohighlight" id="equation-eq8">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq8" title="Permalink to this equation">¶</a></span>\[M(x,y)+N(x,y)y'=0\]</div>
+<p>For this type of ODE, we can test if a <em>potential function</em> <span class="math notranslate nohighlight">\(\varphi\)</span> can be found, which satisfies the following definition.</p>
+<div class="math notranslate nohighlight" id="equation-eq9">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq9" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\frac{\partial \varphi}{\partial x} &amp;= M(x,y)  \\
+\frac{\partial \varphi}{\partial y} &amp;= N(x,y)
+\end{align}\end{split}\]</div>
+<p>Then solving for the potential function is equivalent to solving the ODE. This can be proofed by substituting <span class="math notranslate nohighlight">\(M(x,y)\)</span> and <span class="math notranslate nohighlight">\(N(x,y)\)</span> in <a class="reference internal" href="#equation-eq8">(8)</a> with the definitions in <a class="reference internal" href="#equation-eq9">(9)</a>, which gives us</p>
+<div class="math notranslate nohighlight" id="equation-eq10">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq10" title="Permalink to this equation">¶</a></span>\[\frac{\partial \varphi}{\partial x}{dx}+\frac{\partial \varphi}{\partial y}{dy} = \frac{d \varphi}{dx}= \varphi^{'}\]</div>
+<p>One can carry out the integration of <a class="reference internal" href="#equation-eq10">(10)</a> to find the solution.</p>
+<p>Here we provide a quick way to test if a potential function exists or not. By inspecting <a class="reference internal" href="#equation-eq9">(9)</a>, one can easily find that a potential function exists only if <span class="math notranslate nohighlight">\(\frac{\partial M(x,y)}{\partial y}=\frac{\partial N(x,y)}{\partial x}=\frac{\partial ^2 \varphi}{\partial x\partial y}\)</span></p>
+<div class="admonition-example-4 admonition">
+<p class="admonition-title">Example 4</p>
+<p>Use Exact form to solve the following ODE</p>
+<div class="math notranslate nohighlight">
+\[\frac{dy}{dx}=\frac{2x-\mathrm{e^x sin(y)}}{\mathrm{e^x cos(y)}+1}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(M(x,y)=\mathrm{e^x sin(y)}-2x\)</span> and <span class="math notranslate nohighlight">\(N(x,y)=\mathrm{e^x cos(y)}+1\)</span>, we can find that <span class="math notranslate nohighlight">\(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}\)</span> indicating the existence of a potential function.</p>
+<p>To find the corresponding potential function, we can integrate <span class="math notranslate nohighlight">\(M(x,y)\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(N(x,y)\)</span> with respect to <span class="math notranslate nohighlight">\(y\)</span> i.e.,</p>
+<div class="math notranslate nohighlight">
+\[\int M(x,y) dx= \mathrm{e^x sin(y)}-x^2+a(y)+c \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\int N(x,y) dy= \mathrm{e^x sin(y)}+y+b(x)+c \]</div>
+<p>comparing the above two equations, we can see that <span class="math notranslate nohighlight">\(a(y)=y\)</span> and <span class="math notranslate nohighlight">\(b(x)=-x^2\)</span>. Therefore, the potential function is <span class="math notranslate nohighlight">\(\mathrm{e^x sin(y)}-x^2+y+c\)</span></p>
+</div>
+</div>
+<div class="section" id="homogeneous-form">
+<h3>Homogeneous Form<a class="headerlink" href="#homogeneous-form" title="Permalink to this headline">¶</a></h3>
+<p>In applied math and atmospheric science, you will learn a lot <em>homogeneous terms</em>. All of them have different meanings. In ODE, the homogeneous form indicates that the equation follows a certain form or can be rearranged to a certain form. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq11">
+<span class="eqno">(11)<a class="headerlink" href="#equation-eq11" title="Permalink to this equation">¶</a></span>\[y'=f(y/x)\]</div>
+<p>When a equation is characterized with the form of <a class="reference internal" href="#equation-eq11">(11)</a>, we can use <em>separation of equation</em> to solve an ODE. For example, if we let <span class="math notranslate nohighlight">\(u=\frac{y}{x}\)</span>, it leads to <span class="math notranslate nohighlight">\(y'=(ux)'=u'x+u=f(u)\)</span>. The whole equation can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq12">
+<span class="eqno">(12)<a class="headerlink" href="#equation-eq12" title="Permalink to this equation">¶</a></span>\[u'x+u=f(u)\]</div>
+<p>By inspecting <a class="reference internal" href="#equation-eq12">(12)</a>, we can find that it has a separable form</p>
+<div class="math notranslate nohighlight" id="equation-eq13">
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq13" title="Permalink to this equation">¶</a></span>\[\frac{1}{f(u)-u}du=\frac{1}{x}dx\]</div>
+<p>and integrate both sides of <a class="reference internal" href="#equation-eq13">(13)</a> will yield the final solution.</p>
+<div class="admonition-example-5 admonition">
+<p class="admonition-title">Example 5</p>
+<p>Here we use a <em>pursuit problem</em> as an example. A <em>pursuit problem</em> is widely used in ballistics or calculating the trajectory of a moving object, which is usually subject to a constant forcing e.g., gravity or background flow. It also has some applications in atmospheric sciences when we are calculating the direction of Rossby wave energy dispersion.</p>
+<p>Let’s say…if today there is a swimmer who would like to cross a river from point A to point B (see figure below). The current has a constant speed of <span class="math notranslate nohighlight">\(s\)</span>. During his swim, he always faced point B (i.e., the angle of <span class="math notranslate nohighlight">\(\alpha\)</span> is changing). <span class="math notranslate nohighlight">\(\mathrm{v}\)</span> is swimmer’s velocity in a vector form. The question is… can we determine the trajectory of the swimmer i.e., y(x).</p>
+<div class="figure align-default" id="fig1">
+<img alt="../_images/IMG_0606.jpg" src="../_images/IMG_0606.jpg" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">A schematic figure shows the trajectory of the swimmer.</span><a class="headerlink" href="#fig1" title="Permalink to this image">¶</a></p>
+</div>
+<p>To solve this problem, let’s first write down the information that we already had.
+First, we know the x velocity and y velocity can be written as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+x'(t) &amp;=  -v \mathrm{cos}(\alpha) \\
+y'(t) &amp;= s-v \mathrm{sin}(\alpha) \\
+\end{align}\end{split}\]</div>
+<p>by inspecting the equation above, we can find that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are connected through <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span>. From the FIG1, we also know</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\mathrm{tan}(\alpha) &amp;= \frac{y}{x} \\
+\mathrm{sec}(\alpha) &amp;= \frac{\sqrt{x^2+y^2}}{x} = \sqrt{1+(\frac{y}{x})^2}
+\end{align}\end{split}\]</div>
+<p>Combining all of these equations, we have</p>
+<div class="math notranslate nohighlight">
+\[\frac{dy}{dx} = \frac{y'}{x'} = \frac{s-v \mathrm{sin}(\alpha)}{ -v \mathrm{cos}(\alpha)} = \mathrm{tan}(\alpha)-\frac{s}{v}sec(\alpha) = \frac{y}{x}-\frac{s}{v}\sqrt{1+(\frac{y}{x})^2}\]</div>
+<p>Now, we can easily find that it has a homogeneous form, where right hand side is merely a function of <span class="math notranslate nohighlight">\(\frac{y}{x}\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(y=ux\)</span>, and <span class="math notranslate nohighlight">\(y'=u'x+u\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[u'x+u = u - \frac{s}{v}\sqrt{1+u^2}\]</div>
+<p>rearrange the equation</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sqrt{1+u^2}}du = - \frac{s}{v}\frac{1}{x}dx\]</div>
+<p>Integrating both side of the equations can give us</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{ln}|\sqrt{1+u^2}+u| = - \frac{s}{v}\mathrm{ln}|x|+c\]</div>
+<p>and remove <span class="math notranslate nohighlight">\(\mathrm{ln}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\sqrt{1+u^2}+u = \mathrm{e}^{- \frac{s}{v}\mathrm{ln}|x|+c} = K\mathrm{e}^{\mathrm{ln}|x|^{-\frac{s}{v}}}=Kx^{-\frac{s}{v}}\]</div>
+<p>To obtain <span class="math notranslate nohighlight">\(u\)</span>, we can first move <span class="math notranslate nohighlight">\(u\)</span> to the right hand side and take the square of both sides of the equation, which gives us</p>
+<div class="math notranslate nohighlight">
+\[1+u^2 = K^2x^{-2\frac{s}{v}}-2ux^{-2\frac{s}{v}}+u^2\]</div>
+<p>and this leads to the final solution</p>
+<div class="math notranslate nohighlight">
+\[u(x) = \frac{1}{2}K x^{-\frac{s}{v}}-\frac{1}{2}\frac{1}{K}x^{\frac{s}{v}}\]</div>
+<p>from this, we can obtain</p>
+<div class="math notranslate nohighlight">
+\[y(x) = u(x)x = \frac{1}{2}K x^{1-\frac{s}{v}}-\frac{1}{2}\frac{1}{K}x^{1+\frac{s}{v}}\]</div>
+<p>From the boundary value <span class="math notranslate nohighlight">\(y(x=w)=0\)</span>, we know <span class="math notranslate nohighlight">\(K=w^{\frac{s}{v}}\)</span></p>
+</div>
+</div>
+<div class="section" id="bernoulli-form">
+<h3>Bernoulli Form<a class="headerlink" href="#bernoulli-form" title="Permalink to this headline">¶</a></h3>
+<p>While most of the techniques above can be applied to a linear ODE problem, it is necessary to consider non-linear cases. In general, certain coordinate transformation will be applied to the ODE and make it linear at the first place. The following example is the well-known Bernoulli equation,</p>
+<div class="math notranslate nohighlight" id="equation-eq14">
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq14" title="Permalink to this equation">¶</a></span>\[y'+P(x)y=R(x)y^n\]</div>
+<p>where n is an integer.</p>
+<p>An easy way to make it linear is defining another variable <span class="math notranslate nohighlight">\(v=y^{1-n}\)</span>. The derivative of <span class="math notranslate nohighlight">\(v\)</span> is <span class="math notranslate nohighlight">\(v'=(1-n)y^{-n}y'\)</span>. This gives us</p>
+<div class="math notranslate nohighlight" id="equation-eq15">
+<span class="eqno">(15)<a class="headerlink" href="#equation-eq15" title="Permalink to this equation">¶</a></span>\[\frac{1}{1-n}y^n v'+P(x)y=R(x)y^n\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight" id="equation-eq16">
+<span class="eqno">(16)<a class="headerlink" href="#equation-eq16" title="Permalink to this equation">¶</a></span>\[v'+(1-n)P(x)v=(1-n)R(x)\]</div>
+<p>One can easily find that <a class="reference internal" href="#equation-eq15">(15)</a> is a linear ODE which we can approach with <em>integrating factor</em>. By multiplying both sides of equation with <span class="math notranslate nohighlight">\(e^{\int(1-n)R(x)dx}\)</span>. We have</p>
+<div class="math notranslate nohighlight" id="equation-eq17">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq17" title="Permalink to this equation">¶</a></span>\[(e^{\int(1-n)P(x)dx}v)'=e^{\int(1-n)P(x)dx}(1-n)R(x)\]</div>
+<p>which further leads to</p>
+<div class="math notranslate nohighlight" id="equation-eq18">
+<span class="eqno">(18)<a class="headerlink" href="#equation-eq18" title="Permalink to this equation">¶</a></span>\[v=e^{-\int(1-n)P(x)dx} \int e^{\int(1-n)P(x)dx} (1-n)R(x) dx + ce^{-\int(1-n)P(x)dx}\]</div>
+</div>
+<div class="section" id="riccati-form">
+<h3>Riccati Form<a class="headerlink" href="#riccati-form" title="Permalink to this headline">¶</a></h3>
+<p>Riccati form is another special case of 1st-order ODE, which shares a similar form with Bernoulli differential equation and linear ODE.</p>
+<div class="math notranslate nohighlight" id="equation-eq19">
+<span class="eqno">(19)<a class="headerlink" href="#equation-eq19" title="Permalink to this equation">¶</a></span>\[y'=P(x)y^2+Q(x)y+R(x)\]</div>
+<p>One can see that when <span class="math notranslate nohighlight">\(P(x)=0\)</span>, <a class="reference internal" href="#equation-eq19">(19)</a> is linear. On the other hand, if <span class="math notranslate nohighlight">\(R(x)=0\)</span>, we will have a Bernoulli equation. Unfortunately, Riccati form can’t be solved with the approaches that we use to solve the other two equations. However, we can take advantage of both approaches. In applied math I, we have learned that if we can find a particular solution, we can get rid of <span class="math notranslate nohighlight">\(R(x)\)</span>. As long as we get rid of <span class="math notranslate nohighlight">\(R(x)\)</span>, the entire equation can be solved by using the same procedure as we solve the Bernoulli equation.</p>
+<p>Based on this concept, we can first assume the solution is the combination of two solutions. Let</p>
+<div class="math notranslate nohighlight" id="equation-eq20">
+<span class="eqno">(20)<a class="headerlink" href="#equation-eq20" title="Permalink to this equation">¶</a></span>\[y=S(x)+\frac{1}{z}\]</div>
+<p>where <span class="math notranslate nohighlight">\(S(x)\)</span> is a particular solution and <span class="math notranslate nohighlight">\(\frac{1}{z}\)</span> comes from how we solve the Bernoulli form. By substituting <a class="reference internal" href="#equation-eq20">(20)</a> into <a class="reference internal" href="#equation-eq19">(19)</a>, we can have</p>
+<div class="math notranslate nohighlight" id="equation-eq21">
+<span class="eqno">(21)<a class="headerlink" href="#equation-eq21" title="Permalink to this equation">¶</a></span>\[S(x)'-\frac{1}{z^2}z' = P(x) (S(x)+\frac{1}{z})^2+Q(x)(S(x)+\frac{1}{z})+R(x)\]</div>
+<p>Expand the whole equation and we can see that</p>
+<div class="math notranslate nohighlight" id="equation-eq22">
+<span class="eqno">(22)<a class="headerlink" href="#equation-eq22" title="Permalink to this equation">¶</a></span>\[S(x)'-\frac{1}{z^2}z' = P(x) (S(x)^2+2S(x)\frac{1}{z}+\frac{1}{z^2})+Q(x)(S(x)+\frac{1}{z})+R(x)\]</div>
+<p>Since <span class="math notranslate nohighlight">\(S(x)\)</span> is a solution of <a class="reference internal" href="#equation-eq19">(19)</a>, we can rewrite <a class="reference internal" href="#equation-eq22">(22)</a> into.</p>
+<div class="math notranslate nohighlight" id="equation-eq23">
+<span class="eqno">(23)<a class="headerlink" href="#equation-eq23" title="Permalink to this equation">¶</a></span>\[-\frac{1}{z^2}z' = P(x)(2S(x)\frac{1}{z}+\frac{1}{z^2})+Q(x)\frac{1}{z}\]</div>
+<p>By multiplying both sides of equation with <span class="math notranslate nohighlight">\(-\frac{1}{z^2}\)</span> and reorganizing it, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq24">
+<span class="eqno">(24)<a class="headerlink" href="#equation-eq24" title="Permalink to this equation">¶</a></span>\[z'+ (2P(x)S(x)+Q(x))z = -P(x)\]</div>
+<p>Using <em>integrating factor</em> <span class="math notranslate nohighlight">\(e^{\int 2P(x)S(x)+Q(x) dx}\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq25">
+<span class="eqno">(25)<a class="headerlink" href="#equation-eq25" title="Permalink to this equation">¶</a></span>\[(e^{\int 2P(x)S(x)+Q(x) dx}z)' = -e^{\int 2P(x)S(x)+Q(x) dx} P(x)\]</div>
+<p>this will lead to the final solution of z</p>
+<div class="math notranslate nohighlight" id="equation-eq26">
+<span class="eqno">(26)<a class="headerlink" href="#equation-eq26" title="Permalink to this equation">¶</a></span>\[z = -e^{-\int 2P(x)S(x)+Q(x) dx} \int e^{\int 2P(x)S(x)+Q(x) dx} P(x) + C e^{-\int 2P(x)S(x)+Q(x) dx}\]</div>
+<p>then substitute <a class="reference internal" href="#equation-eq26">(26)</a> back to <a class="reference internal" href="#equation-eq20">(20)</a>, we can have the solution of <span class="math notranslate nohighlight">\(y\)</span></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ODE"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Syllabus</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="2ndODE.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 3 and 4: 2nd-order ODE</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dr. Kai-Chih Tseng<br/>
+  
+      &copy; Copyright 2020.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

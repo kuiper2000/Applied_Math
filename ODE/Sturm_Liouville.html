@@ -1,0 +1,692 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 7 and 8: Sturm-Liouville Theorem: Eigenfunctions and Fourier Series &#8212; Applied Math 2</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Week 5 and 6: Laplace Transform" href="Laplace.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applied Math 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1stODE.html">
+   Week 1 and 2: 1st-order ODE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2ndODE.html">
+   Week 3 and 4: 2nd-order ODE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Laplace.html">
+   Week 5 and 6: Laplace Transform
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FODE/Sturm_Liouville.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ODE/Sturm_Liouville.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sturm-liouville-form">
+   Sturm-Liouville form
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenfunction-expansions">
+   Eigenfunction Expansions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fourier-analysis">
+   Fourier Analysis
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sturm-liouville-form">
+   Sturm-Liouville form
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenfunction-expansions">
+   Eigenfunction Expansions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fourier-analysis">
+   Fourier Analysis
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="week-7-and-8-sturm-liouville-theorem-eigenfunctions-and-fourier-series">
+<span id="sturm"></span><h1>Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series<a class="headerlink" href="#week-7-and-8-sturm-liouville-theorem-eigenfunctions-and-fourier-series" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sturm-liouville-form">
+<h2>Sturm-Liouville form<a class="headerlink" href="#sturm-liouville-form" title="Permalink to this headline">¶</a></h2>
+<p>Sturm-Liouville Theorem is named after two great mathematicians, Jacques Charles François Sturm (1803-1855) and Joseph Liouville (1809–1882). Jacque Charles François Sturm  first described how an ordinary differential equation satisfies a certain form can be solved by <em>separation of variables</em> and he used a thermal diffusion in a thin bar as an example. However, during that period, people were more interested in the general solution of that given math problem. The most important contribution from Jacques Charles François Sturm and Joseph Liouville was applying the eigen function approach to find the general solution of ODEs with a  certain form. Later on, people called it <em>Sturm-Liouville Theorem</em>. In addition to the contribution in differential equation, Joseph Liouville was also famous for his achievement in statistical mechanisms and dynamical systems. We will cover more details in another course <em>Chaos and Predictability</em>.</p>
+<p>The solution of Sturm-Liouville form plays an important role in modeling wave and thermal diffusion. Since the <em>Sturm-Liouville</em> era, mathematicians and engineers have found a lot of scientific problems sharing the Sturm-Liouville form, such as Bessel Function, Parabolic Cylinder functions, Hermite Polynomial, Legendre Polynomial, and even the Fourier Series, where we can find a set of eigen functions spanning the entire solution space. These have been applied to find the solution of tropical wave, transverse circulations of ITCZ and hurricane, and the equilibrium temperature of Earth.</p>
+<p>Mathematically, the Sturm-Liouville form can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq80">
+<span class="eqno">(80)<a class="headerlink" href="#equation-eq80" title="Permalink to this equation">¶</a></span>\[y^{''}+R(x)y^{'}+(Q(x)+\lambda P(x))y = 0\]</div>
+<p>using integrating factor, we can multiply the entire equation by</p>
+<div class="math notranslate nohighlight" id="equation-eq81">
+<span class="eqno">(81)<a class="headerlink" href="#equation-eq81" title="Permalink to this equation">¶</a></span>\[r(x) = e^{\int R(x) dx}\]</div>
+<p>to obtain</p>
+<div class="math notranslate nohighlight" id="equation-eq82">
+<span class="eqno">(82)<a class="headerlink" href="#equation-eq82" title="Permalink to this equation">¶</a></span>\[e^{\int R(x) dx}y^{''}+R(x)e^{\int R(x) dx}y^{'}+(Q(x)e^{\int R(x) dx}+\lambda P(x)e^{\int R(x) dx})y = 0\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight" id="equation-eq83">
+<span class="eqno">(83)<a class="headerlink" href="#equation-eq83" title="Permalink to this equation">¶</a></span>\[(r(x)y^{'})^{'}+(q(x)+\lambda p(x))y = 0 \]</div>
+<p>where <span class="math notranslate nohighlight">\(r(x)=e^{\int R(x) dx}\)</span>,  <span class="math notranslate nohighlight">\(q(x)=Q(x)e^{\int R(x) dx}\)</span>, and <span class="math notranslate nohighlight">\(p(x)= P(x)e^{\int R(x) dx}\)</span>. Here, we can setup some extreme cases and test what we can find.</p>
+<p>Let <span class="math notranslate nohighlight">\(r(x)=1\)</span>, <span class="math notranslate nohighlight">\(q(x)=0\)</span>, and <span class="math notranslate nohighlight">\(p(x)\)</span> is a constant. In addition, we have two simple boundary conditions: <span class="math notranslate nohighlight">\(y(0)=0\)</span> and <span class="math notranslate nohighlight">\(y(1)=0\)</span>. The entire equation is reduced to</p>
+<div class="math notranslate nohighlight" id="equation-eq84">
+<span class="eqno">(84)<a class="headerlink" href="#equation-eq84" title="Permalink to this equation">¶</a></span>\[y^{''}+\Lambda y \Longrightarrow Ly=-\Lambda y\]</div>
+<p>where <span class="math notranslate nohighlight">\(L=\frac{d^2}{dx^2}\)</span>. <a class="reference internal" href="#equation-eq84">(84)</a> has a set of solution</p>
+<div class="math notranslate nohighlight" id="equation-eq85">
+<span class="eqno">(85)<a class="headerlink" href="#equation-eq85" title="Permalink to this equation">¶</a></span>\[y=c_1e^{ax}\cos(bx)+c_2e^{ax}\sin(bx)\]</div>
+<p>where <span class="math notranslate nohighlight">\(b=\sqrt{\Lambda}\)</span> (one should notice that we assume <span class="math notranslate nohighlight">\(\Lambda&gt;0\)</span>, more details are provided in the discussion about Fourier Series). If we substitute boundary conditions into <a class="reference internal" href="#equation-eq85">(85)</a>, one can find <span class="math notranslate nohighlight">\(a=0\)</span>, <span class="math notranslate nohighlight">\(c_1=0\)</span>, and <span class="math notranslate nohighlight">\(c_2\sin(\sqrt{\Lambda})=0\)</span>. Since we don’t want a trivial solution (i.e., both <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> are 0), it implies that <span class="math notranslate nohighlight">\(\sin(\sqrt{\Lambda})=0\)</span>. For <span class="math notranslate nohighlight">\(\sin\)</span> function, we can find 0 solution at each multiple <span class="math notranslate nohighlight">\(\pi\)</span> suggesting <span class="math notranslate nohighlight">\(\sqrt{\Lambda}=n\pi\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is an integer. This gives as the final form of solution</p>
+<div class="math notranslate nohighlight" id="equation-eq86">
+<span class="eqno">(86)<a class="headerlink" href="#equation-eq86" title="Permalink to this equation">¶</a></span>\[y=c_2\sin(n\pi x); \; n\in \mathbb{Z}  \]</div>
+<p><a class="reference internal" href="#equation-eq86">(86)</a> is the famous Fourier <span class="math notranslate nohighlight">\(\sin\)</span> function. If one looks closely to <a class="reference internal" href="#equation-eq84">(84)</a>, it is actually an eigen value problem as long as <span class="math notranslate nohighlight">\(L\)</span> is a Hermitian operator (or matrix). Indeed, we can prove the differential operator is an Hermitian operator. It also implies that the eigen functions span the entire solution space and any solution can be the linear combination of the eigen functions. At this moment, readers probably can figure out two most important things in this chapter: (1) what functions share Sturm-Liouville form, and (2) how to find the eigen basis.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>The Hermitian matrix or operator is defined as a self-adjoint matrix (operator) where the eigen functions span the entire vector space of solution. Mathematically, it has a few unique characteristics. First, we can swap the order the operator without changing the results</p>
+<div class="math notranslate nohighlight">
+\[\langle Ax,y \rangle = \langle x,Ay \rangle; \; \textrm{where $\langle,\rangle$ is the inner product} \]</div>
+<p>Second, all of the eigen values from a self-adjoint matrix (operator) are real.
+Third, all of the eigen vectors from a self-adjoint matrix (operator) are orthogonal.</p>
+</div>
+<p>For the first question, any equation satisfies the form <a class="reference internal" href="#equation-eq80">(80)</a> (where <span class="math notranslate nohighlight">\(R(x)\)</span>, <span class="math notranslate nohighlight">\(P(x)\)</span>, and <span class="math notranslate nohighlight">\(Q(x)\)</span> are continuous over the domain of interest) and one of the any following boundary conditions, is a Sturm-Liouville form.</p>
+<div class="admonition-boundary-conditions admonition">
+<p class="admonition-title">Boundary Conditions</p>
+<p>Type I: Regular Sturm-Liouville Problem</p>
+<div class="math notranslate nohighlight">
+\[a_1y(a)+a_2y^{'}(a)=0;\; \textrm{and}\; b_1y(b)+b_2y^{'}(b)=0; \;\; \textrm{with $a_1$ ($b_1$) and $a_2$ ($b_2$) are not both 0} \]</div>
+<p>Type II: Periodic Sturm-Liouville Problem</p>
+<div class="math notranslate nohighlight">
+\[y(a)=y(b);\;\textrm{and};\; y^{'}(a)=y^{'}(b)\]</div>
+<p>Type III: Singular Sturm-Liouville Problem</p>
+<div class="math notranslate nohighlight">
+\[r(a)=0;\; \textrm{or}\; r(b)=0\]</div>
+<p>when <span class="math notranslate nohighlight">\(r(a)=0\)</span>, we need <span class="math notranslate nohighlight">\(b_1y(b)+b_2y^{'}(b)=0\)</span> with <span class="math notranslate nohighlight">\(b_1\)</span> and <span class="math notranslate nohighlight">\(b_2\)</span> not both 0. Similar boundary conditions applied to point <span class="math notranslate nohighlight">\(a\)</span>. <br />
+when <span class="math notranslate nohighlight">\(r(b)=0\)</span>, we need <span class="math notranslate nohighlight">\(a_1y(a)+a_2y^{'}(a)=0\)</span> with <span class="math notranslate nohighlight">\(a_1\)</span> and <span class="math notranslate nohighlight">\(a_2\)</span> not both 0.</p>
+<p>There are a few important characteristics for Sturm-Liouville problem.</p>
+<ol class="simple">
+<li><p>For types I and II, the Sturm-Liouville problem has an infinite number of distinct eigen values <span class="math notranslate nohighlight">\(\Lambda_n\)</span> (some textbooks use <span class="math notranslate nohighlight">\(\lambda_n\)</span>). If these are labeled with increasing order. i.e., <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} \Lambda_n=\infty\)</span></p></li>
+<li><p>The eigen value of Sturm-Liouville is real since it’s operator is Hermitian.</p></li>
+<li><p>For any Sturm-Liouville problem, any non-zero multiple of an eigenfunction is also an eigenfunction corresponding to the same eigen value.</p></li>
+<li><p>For a regular Sturm-Liouville, any two eigen function correspond to the same eigen value must be the be a nonzero multiple of each others. While it’s not the case for periodic Sturm-Liouville.</p></li>
+</ol>
+</div>
+<p>For the second question: how to find proper eigenfunctions, we will walk through a special case with <span class="math notranslate nohighlight">\(r(x)=1\)</span>, <span class="math notranslate nohighlight">\(q(x)=0\)</span>, and <span class="math notranslate nohighlight">\(p(x)\)</span> with type I or II boundary conditions and leave more general cases in the chapter of special functions.</p>
+<div class="admonition-example-1 admonition">
+<p class="admonition-title">Example 1</p>
+<p>Find the solution of the following ODE</p>
+<div class="math notranslate nohighlight">
+\[y^{''}+\lambda y =0; \; y(-L)=y(L); \;y^{'}(-L)=y^{'}(L)\]</div>
+<p>from <a class="reference internal" href="#equation-eq85">(85)</a> with <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> (I will let readers try two other cases), we know the general solutions are written</p>
+<div class="math notranslate nohighlight">
+\[y=c_1\cos(\sqrt{\lambda}x)+c_2\sin(\sqrt{\lambda}x)\]</div>
+<p>and the second order derivative</p>
+<div class="math notranslate nohighlight">
+\[y^{''}=-c_1\lambda\cos(\sqrt{\lambda}x)-c_2\lambda\sin(\sqrt{\lambda}x)\]</div>
+<p>Substituting the boundary into the equations above,</p>
+<div class="math notranslate nohighlight">
+\[y(L)=c_1\cos(\sqrt{\lambda}L)+c_2\sin(\sqrt{\lambda}L)=y(-L)=c_1\cos(\sqrt{\lambda}L)-c_2\sin(\sqrt{\lambda}L)\]</div>
+<p>This implies that <span class="math notranslate nohighlight">\(c_2\sin(\sqrt{\lambda}L)=0\)</span>, and <span class="math notranslate nohighlight">\(\sqrt{\lambda}L=n\pi\)</span>.
+Also, the boundary conditions from the derivative term give us the same conclusion. Therefore, the general solution is</p>
+<div class="math notranslate nohighlight">
+\[y(L)=c_1\cos(\frac{n\pi}{L}x)+c_2\sin(\frac{n\pi}{L}x)\]</div>
+</div>
+<div class="admonition-example-2 admonition">
+<p class="admonition-title">Example 2</p>
+<p>Find the solution of</p>
+<div class="math notranslate nohighlight">
+\[y^{''}+\lambda y =0; \; y(0)=0; \;y^{'}(L)+Ay(L)=0\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is a positive constant. This problem occurs in solving for the temperature of a homogeneous bar, which radiates energy from on end to the surrounding medium.</p>
+<p>Following the example above, we know the equation has a general solution of</p>
+<div class="math notranslate nohighlight">
+\[y(x)=c_1\cos(kx)+c_2\sin(kx)\]</div>
+<p>Substituting the boundary conditions into the equation gives us <span class="math notranslate nohighlight">\(c_1=0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+y^{'}(L)+Ay(L) &amp;= c_2 k \cos(kL) + Ac_2\sin(kL) \\
+               &amp;= c_2(k \cos(kL)+A\sin(kL)) \\
+               &amp;= 0
+\end{align}\end{split}\]</div>
+<p>since we don’t want trivial solution (i.e., <span class="math notranslate nohighlight">\(c_2=0\)</span>), indicating</p>
+<div class="math notranslate nohighlight">
+\[\tan(kL)=-\frac{k}{A}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(kL=z\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\tan(z)=-\frac{z}{AL}\]</div>
+<p>and <span class="math notranslate nohighlight">\(z\)</span> is the eigen value.</p>
+<p>To visualize the solution,</p>
+<div class="figure align-default" id="fig1">
+<img alt="../_images/Sturm1.png" src="../_images/Sturm1.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The solutions of ODE. x-axis represents z in the solution above. The z coordinate of the cross-section between <span class="math notranslate nohighlight">\(\tan(z)\)</span> and <span class="math notranslate nohighlight">\(-\frac{z}{AL}\)</span> is the eigen value of given solutions.</span><a class="headerlink" href="#fig1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="eigenfunction-expansions">
+<h2>Eigenfunction Expansions<a class="headerlink" href="#eigenfunction-expansions" title="Permalink to this headline">¶</a></h2>
+<p>Recall that for every Sturm-Liouville problem, we can find a set of eigenfunctions which spans the entire solution space. Mathematically, it can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq87">
+<span class="eqno">(87)<a class="headerlink" href="#equation-eq87" title="Permalink to this equation">¶</a></span>\[y(x) = \sum_{n=1}^{\infty}c_n \varphi(x)\]</div>
+<p>If the coefficient, <span class="math notranslate nohighlight">\(c_n\)</span>, can be properly chosen and make this series converges to <span class="math notranslate nohighlight">\(y(x)\)</span>. Then it’s called eigen function expansion. The problem is how to determine a proper set of coefficient. Here, we gonna leverage one important characteristic of eigen function in Sturm-Liouville problem: <em>weighted orthogonality</em>. It describes that the <em>weighted</em> inner product of eigenfunctions which share different eigen values equals 0. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq88">
+<span class="eqno">(88)<a class="headerlink" href="#equation-eq88" title="Permalink to this equation">¶</a></span>\[\int_{a}^{b}p(x)\varphi (x)\psi(x)dx= 0\]</div>
+<div class="admonition-proof-of-weighted-orthogonality-of-eigenfunctions admonition">
+<p class="admonition-title">Proof of Weighted Orthogonality of Eigenfunctions</p>
+<p>Proof:</p>
+<div class="math notranslate nohighlight">
+\[\int_{a}^{b}p(x)\varphi (x)\psi(x)dx= 0; \; x \in [a,b]\]</div>
+<p>we know that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; (r\varphi^{'})^{'}+(q+\lambda p)\varphi = 0 \\
+&amp; (r\psi^{'})^{'}+(q+\mu p)\psi = 0 \\
+\end{align}\end{split}\]</div>
+<p>if we multiply the first equation by <span class="math notranslate nohighlight">\(\psi\)</span> and the second equation by <span class="math notranslate nohighlight">\(\varphi\)</span> and take the difference between two, we have</p>
+<div class="math notranslate nohighlight">
+\[(r\varphi^{'})^{'}\psi-(r\psi^{'})^{'}\varphi+(\lambda-\mu)p(x)\varphi\psi = 0\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;(r\varphi^{'}\psi)^{'}-r\varphi^{'}\psi^{'}-((r\psi^{'}\varphi)^{'}-r\varphi^{'}\psi^{'})+(\lambda-\mu)p(x)\varphi\psi \\
+&amp; = (r\varphi^{'}\psi)^{'}-(r\psi^{'}\varphi)^{'} +(\lambda-\mu)p(x)\varphi\psi \\
+&amp; = 0
+\end{align}\end{split}\]</div>
+<p>We also have the Wronskian of <span class="math notranslate nohighlight">\(\varphi\)</span> and <span class="math notranslate nohighlight">\(\psi\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W[\varphi,\psi](x) = \begin{vmatrix}
+\varphi   &amp; \psi \\
+\varphi^{'} &amp; \psi^{'}   
+\end{vmatrix} = \varphi\psi^{'}-\psi\varphi^{'}\end{split}\]</div>
+<p>By observing the last equation above, one can find the second last equation can written as</p>
+<div class="math notranslate nohighlight">
+\[(rW[\varphi,\psi](x))^{'}+(\lambda-\mu)p(x)\varphi\psi = 0\]</div>
+<p>Geometrically, we know the Wronskian represents the area spanned by two solutions (or vector). If the two solutions are orthogonal, it further indicates</p>
+<div class="math notranslate nohighlight">
+\[\int_{a}^{b}(\lambda-\mu)p(x)\varphi\psi = 0\]</div>
+<p>while the two solution share different eigen values. The equation implies</p>
+<div class="math notranslate nohighlight">
+\[\int_{a}^{b}p(x)\varphi\psi dx= 0\]</div>
+<p>The equation above is so-called <em>weighted orthogonality</em>, where <span class="math notranslate nohighlight">\(p(x)\)</span> is the weighting or the stretch of coordinate. (i.e., the space of coordinate can be inhomogeneous)</p>
+</div>
+<p>We have proofed the <em>weighted orthogonality</em> and now we can go a step further showing how to find a proper set of coefficient for each eigen function</p>
+<div class="admonition-finding-coefficients-for-eigenfunctions admonition">
+<p class="admonition-title">Finding Coefficients for Eigenfunctions</p>
+<p>We know</p>
+<div class="math notranslate nohighlight">
+\[f(x)=\sum_{k=1}^{\infty} c_k \varphi_k(x)\]</div>
+<p>if we multiply the entire equation by <span class="math notranslate nohighlight">\(p(x)\varphi_n(x)\)</span> and integrate over the domain of interest</p>
+<div class="math notranslate nohighlight">
+\[\int_{a}^{b} p(x)f(x)\varphi_n(x)dx=\int_{a}^{b}\sum_{k=1}^{\infty} c_k p(x)\varphi_k(x)\varphi_n(x)dx\]</div>
+<p>According to <em>weighted orthogonality</em>, <span class="math notranslate nohighlight">\(\varphi_k(x)\varphi_n(x)\)</span> is 0 as long as <span class="math notranslate nohighlight">\(k\neq n\)</span>. This leads to</p>
+<div class="math notranslate nohighlight">
+\[\int_{a}^{b} p(x)f(x)\varphi_n(x)dx=\int_{a}^{b} c_k p(x)\varphi^{2}_n(x)dx\]</div>
+<p>Reorganize the equation, we can find,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\int_{a}^{b} p(x)f(x)\varphi_n(x)dx}{\int_{a}^{b} p(x)\varphi^{2}_n(x)dx}= c_k \]</div>
+<p>Although the equation above looks complicated, it’s simply the <em>weighted covariance</em> of <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(\varphi_n(x)\)</span> divided by the <em>weighted variance</em> of <span class="math notranslate nohighlight">\(\varphi_n(x)\)</span>.</p>
+</div>
+<div class="admonition-example-3 admonition">
+<p class="admonition-title">Example 3</p>
+<p>Solve</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; y^{''}+\lambda y=f(x); \; y^{'}(0)=y^{'}(2\pi)=0 \\
+&amp; f(t) = \begin{cases}
+x &amp; \text{if $0\leq x&lt;2$} \\
+6 &amp; \text{if $2 \leq t \leq 2\pi$} 
+\end{cases}
+\end{align}\end{split}\]</div>
+<p>From example 2, we know the homogeneous solution is</p>
+<div class="math notranslate nohighlight">
+\[y(x) = a\cos(\frac{n}{2}x)+b\sin(\frac{n}{2}x)\]</div>
+<p>Given the boundary conditions, we know</p>
+<div class="math notranslate nohighlight">
+\[y(x) = a\cos(\frac{n}{2}x);\; \textrm{where $\lambda=\frac{n^2}{4}$ and $n\in 0,1,2,3...$} \]</div>
+<p>or we can written the solution as the linear combinations of different eigen function</p>
+<div class="math notranslate nohighlight">
+\[y(x) = \sum_{n=0}^{\infty}c_n \cos(\frac{n}{2}x) \]</div>
+<p>Using the concept of <em>variation of parameters</em>, we would like to find a proper set of <span class="math notranslate nohighlight">\(c_n\)</span>, which can match the inhomogeneous case.</p>
+<p>For <span class="math notranslate nohighlight">\(n=0\)</span> case,</p>
+<div class="math notranslate nohighlight">
+\[c_0 = \frac{\int_{0}^{2\pi} f(x) \cos(\frac{n}{2}x) dx}{\int_{0}^{2\pi}\cos(\frac{n}{2}x)^2 dx}|_{n=0} = \frac{\frac{1}{2}x^2|^{x=2}_{x=0}+6x|^{x=2\pi}_{x=2}}{2\pi}=6-\frac{5}{\pi}\]</div>
+<p>For <span class="math notranslate nohighlight">\(n=1\)</span> and higher cases,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+c_n &amp;= \frac{\int_{0}^{2\pi} f(x) \cos(\frac{n}{2}x) dx}{\int_{0}^{2\pi}\cos(\frac{n}{2}x)^2 dx} \\
+    &amp;= \frac{\int_{0}^{2}x\cos(\frac{n}{2}x)dx +\int_{2}^{2\pi}6\cos(\frac{n}{2}x)dx}{\int_{0}^{2\pi} \cos(\frac{n}{2}x)^2 dx} \\
+    &amp;= \frac{\frac{2}{n^2}(\frac{n}{2}\sin(\frac{n}{2}x)x+\cos(\frac{n}{2}x))|_{x=0}^{x=2}+\frac{12}{n}\sin(\frac{n}{2}x)|^{x=2\pi}_{x=2}}{\int_{0}^{2\pi} \cos(nx)+\frac{1}{2} dx} \\
+    &amp;= \frac{4(\cos(n)-1+n\sin(n))}{n^2\pi}+\frac{12\sin(n)}{n\pi}
+\end{align}\end{split}\]</div>
+<div class="figure align-default" id="fig8">
+<img alt="../_images/Sturm2.png" src="../_images/Sturm2.png" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">An visualization of solutions with <span class="math notranslate nohighlight">\(n=10\)</span>, <span class="math notranslate nohighlight">\(n=100\)</span>, and <span class="math notranslate nohighlight">\(n=1000\)</span></span><a class="headerlink" href="#fig8" title="Permalink to this image">¶</a></p>
+</div>
+<p>The code below (based on Julia) shows how to implement eigenfunction expansions in an ODE problem practically.</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Plots</span>
+<span class="n">x</span>  <span class="o">=</span> <span class="n">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="nb">π</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="nb">π</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span> 
+<span class="n">y2</span> <span class="o">=</span> <span class="n">one</span><span class="o">.</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">6</span>                 
+<span class="n">f</span>  <span class="o">=</span> <span class="n">zero</span><span class="o">.</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f</span><span class="p">[</span> <span class="mi">0</span> <span class="o">.&lt;=</span> <span class="n">x</span> <span class="o">.&lt;</span> <span class="mi">2</span><span class="p">]</span>  <span class="o">=</span> <span class="n">y1</span><span class="p">[</span> <span class="mi">0</span> <span class="o">.&lt;=</span> <span class="n">x</span> <span class="o">.&lt;</span> <span class="mi">2</span><span class="p">]</span>     <span class="c"># jump condition, when 0&lt;=x&lt;2,   f(x)=x </span>
+<span class="n">f</span><span class="p">[</span> <span class="mi">2</span> <span class="o">.&lt;=</span> <span class="n">x</span> <span class="o">.&lt;=</span> <span class="mi">2</span><span class="nb">π</span><span class="p">]</span><span class="o">=</span> <span class="n">y2</span><span class="p">[</span> <span class="mi">2</span> <span class="o">.&lt;=</span> <span class="n">x</span> <span class="o">.&lt;=</span> <span class="mi">2</span><span class="nb">π</span><span class="p">]</span>   <span class="c"># jump condition, when 2&lt;=x&lt;2pi, f(x)=6</span>
+
+<span class="n">approx_y</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">zero</span><span class="o">.</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span> <span class="n">length</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">n</span>  <span class="k">in</span> <span class="mi">0</span><span class="o">:</span><span class="mi">10</span>
+    <span class="n">f</span>    <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">length</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>          <span class="c"># function f</span>
+    <span class="n">y4</span>   <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">cos</span><span class="o">.</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span> <span class="n">length</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c"># cos basis</span>
+    <span class="n">coef</span> <span class="o">=</span> <span class="n">y4</span><span class="o">*</span><span class="n">transpose</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">y4</span><span class="o">*</span><span class="n">transpose</span><span class="p">(</span><span class="n">y4</span><span class="p">))</span> <span class="c"># calculate the coefficient for each cos function </span>
+    <span class="n">approx_y</span> <span class="o">=</span> <span class="n">approx_y</span><span class="o">+</span><span class="n">coef</span><span class="o">*</span><span class="n">y4</span>               
+<span class="k">end</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="n">xlims</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="nb">π</span><span class="p">),</span><span class="n">ylims</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;f(x)&quot;</span><span class="p">)</span>
+<span class="n">plot!</span><span class="p">(</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">length</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">1</span><span class="p">),</span><span class="n">reshape</span><span class="p">(</span><span class="n">approx_y</span><span class="p">,</span><span class="n">length</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">1</span><span class="p">),</span><span class="n">xlims</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="nb">π</span><span class="p">),</span><span class="n">ylims</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Approximated f(x) with n=10&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fourier-analysis">
+<h2>Fourier Analysis<a class="headerlink" href="#fourier-analysis" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we will introduce the famous Fourier Series to the reader. The Fourier analysis or Fourier Series is, however, nothing new than what we learned previously. Indeed, Fourier series is a special type of Sturm-Liouville problem, where <span class="math notranslate nohighlight">\(r(x)=1\)</span>, <span class="math notranslate nohighlight">\(q(x)=0\)</span>, and <span class="math notranslate nohighlight">\(r(x)=1\)</span>. In addition, it is usually given with a periodic boundary conditions. Physically, the readers can picture this type of Sturm-Liouville problem has a <em>wave-type</em> solution, where higher higher eigen values correspond to higher wave numbers.</p>
+<p>According to the types of boundary conditions, we can decide whether the solution is a Fourier sin function, cos function, or the combination of both.</p>
+<div class="admonition-boundary-conditions-for-fourier-sin-cos-and-both-series admonition">
+<p class="admonition-title">Boundary Conditions for Fourier sin/cos and both series</p>
+<p>In a Sturm-Liouville form, if the function is bounded (i.e., <span class="math notranslate nohighlight">\(\in [a,b]\)</span>), we can tell the types of Fourier solutions based on the boundary conditions</p>
+<ol class="simple">
+<li><p>For Fourier <span class="math notranslate nohighlight">\(\sin\)</span> series, we usually have boundary conditions <span class="math notranslate nohighlight">\(y(a)=0\)</span> and <span class="math notranslate nohighlight">\(y(b)=0\)</span></p></li>
+<li><p>For Fourier <span class="math notranslate nohighlight">\(\cos\)</span> series, we usually have boundary conditions <span class="math notranslate nohighlight">\(y^{'}(a)=0\)</span> and <span class="math notranslate nohighlight">\(y^{'}(b)=0\)</span></p></li>
+<li><p>For the combinations of both <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span>, we have boundary conditions <span class="math notranslate nohighlight">\(a_1y(a)+a_2y^{'}(a)=0\)</span> and <span class="math notranslate nohighlight">\(b_1y(b)+b_2y^{'}(b)=0\)</span>, or <span class="math notranslate nohighlight">\(y(a)=y(b)\)</span> and <span class="math notranslate nohighlight">\(y^{'}(a)=y^{'}(b)\)</span></p></li>
+</ol>
+<p>One can easily find that they correspond to types I and II boundary conditions. An easy way to memorize the three boundary conditions is to find their connections with <span class="math notranslate nohighlight">\(\cos\)</span> and <span class="math notranslate nohighlight">\(\sin\)</span> functions. If we want a solution where the boundary is 0, then it can only be a <span class="math notranslate nohighlight">\(\sin\)</span> function since <span class="math notranslate nohighlight">\(\cos(0)=1\)</span>. Similarly, if we want a function, which always has <span class="math notranslate nohighlight">\(0\)</span> derivative (flat) at the boundary, then it can only be a <span class="math notranslate nohighlight">\(\cos\)</span> function since <span class="math notranslate nohighlight">\(\sin\)</span> function has the maximum/minimum derivative at <span class="math notranslate nohighlight">\(\frac{d \sin(x=0)}{dx}=1\)</span>.</p>
+</div>
+<p>Let’s have some practices and guess the solutions for the following ODEs.</p>
+<div class="admonition-boundary-conditions-for-fourier-sin-cos-and-both-series admonition">
+<p class="admonition-title">Boundary Conditions for Fourier sin/cos and both series</p>
+<p>Find the solutions for the following ODE</p>
+<div class="math notranslate nohighlight">
+\[y^{''}+\lambda y = f(x); \; y(-L)=y(L),\;y^{'}(-L)=y^{'}(L)\]</div>
+<p>From the discussion above, we know this is a periodic boundary. Therefore, the solutions can be written as</p>
+<div class="math notranslate nohighlight">
+\[y=\sum_{n=0}^{\infty} a_n\cos(\frac{2\pi n x}{(L-(-L))})+b_n\sin(\frac{2\pi n x}{(L-(-L))})\]</div>
+<p>where <span class="math notranslate nohighlight">\(2\pi\)</span> and <span class="math notranslate nohighlight">\(2L\)</span> indicates that the longest wave we can resolve is the wave that complete one cycle (one period) from the left end to the right end of the domain. Now, following the eigenfunction expansion, we can determine the coefficient for different <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+a_n &amp; = \frac{\int_{L}^{-L}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac{n\pi x}{L})^2dx} \\
+b_n &amp; = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
+\end{align}\end{split}\]</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ODE"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Laplace.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 5 and 6: Laplace Transform</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dr. Kai-Chih Tseng<br/>
+  
+      &copy; Copyright 2020.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
