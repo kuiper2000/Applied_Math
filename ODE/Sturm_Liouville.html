@@ -652,13 +652,20 @@ c_n &amp;= \frac{\int_{0}^{2\pi} f(x) \cos(\frac{n}{2}x) dx}{\int_{0}^{2\pi}\cos
 a_n &amp; = \frac{\int_{L}^{-L}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac{n\pi x}{L})^2dx} \\
 b_n &amp; = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
 \end{align}\end{split}\]</div>
-<p>The equation above is so-called discrete Fourier Transform, where we convert <span class="math notranslate nohighlight">\(f(x)\)</span> from the physical space to frequency (wave number) space. If we can make the summation form into a integral form (making discrete function into a continuous function) by assuming (1) <span class="math notranslate nohighlight">\(k = \frac{n\pi}{L}\)</span> and (2) domain of integral <span class="math notranslate nohighlight">\([-\infty,\infty]\)</span>. Then, we will have</p>
+<p>The equation above is so-called discrete Fourier Transform, where we convert <span class="math notranslate nohighlight">\(f(x)\)</span> from the physical space to frequency (wave number) space. If we can make the summation form into a integral form (making discrete function into a continuous function) by assuming (1) <span class="math notranslate nohighlight">\(k = \frac{n\pi}{L}\)</span> and (2) domain of integral <span class="math notranslate nohighlight">\([-\infty,\infty]\)</span>. (Let readers to walk through the derivation) Then, we will have</p>
 <div class="math notranslate nohighlight">
 \[y=\int_{0}^{\infty} a_k\cos(kx)+b_k\sin(kx)dk\]</div>
+<p>, which is the Fourier integral. Following the same approach of finding Fourier coefficients,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+a_k &amp; = \frac{\int_{L}^{-L}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac{n\pi x}{L})^2dx} \\
+b_k &amp; = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
+\end{align}\end{split}\]</div>
 </div>
 </div>
 <div class="section" id="power-spectrum-windows-and-gibbs-phenomenon">
 <h3>Power Spectrum, Windows and Gibbs Phenomenon<a class="headerlink" href="#power-spectrum-windows-and-gibbs-phenomenon" title="Permalink to this headline">¶</a></h3>
+<p>From the Fourier Transform above, the readers can find that we can determine the precision of accuracy by truncating the solutions. For example, in Fig. 8, the approximated solution is nearly identical to <span class="math notranslate nohighlight">\(f(x)\)</span> when <span class="math notranslate nohighlight">\(n\)</span> goes to 1000.</p>
 </div>
 </div>
 </div>

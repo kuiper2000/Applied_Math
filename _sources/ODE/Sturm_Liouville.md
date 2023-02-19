@@ -412,15 +412,23 @@ b_n & = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac
 \end{align}
 ```
 
-The equation above is so-called discrete Fourier Transform, where we convert $f(x)$ from the physical space to frequency (wave number) space. If we can make the summation form into a integral form (making discrete function into a continuous function) by assuming (1) $k = \frac{n\pi}{L}$ and (2) domain of integral $[-\infty,\infty]$. Then, we will have
+The equation above is so-called discrete Fourier Transform, where we convert $f(x)$ from the physical space to frequency (wave number) space. If we can make the summation form into a integral form (making discrete function into a continuous function) by assuming (1) $k = \frac{n\pi}{L}$ and (2) domain of integral $[-\infty,\infty]$. (Let readers to walk through the derivation) Then, we will have
 
 ```{math}
 y=\int_{0}^{\infty} a_k\cos(kx)+b_k\sin(kx)dk
 ```
 
+, which is the Fourier integral. Following the same approach of finding Fourier coefficients, 
+
+```{math}
+\begin{align}
+a_k & = \frac{\int_{L}^{-L}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac{n\pi x}{L})^2dx} \\
+b_k & = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
+\end{align}
+```
 :::
 
 
 ### Power Spectrum, Windows and Gibbs Phenomenon 
-
+From the Fourier Transform above, the readers can find that we can determine the precision of accuracy by truncating the solutions. For example, in Fig. 8, the approximated solution is nearly identical to $f(x)$ when $n$ goes to 1000. 
 
