@@ -430,5 +430,5 @@ b_k & = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac
 
 
 ### Power Spectrum, Windows and Gibbs Phenomenon 
-From the Fourier Transform above, the readers can find that we can determine the precision of accuracy by truncating the solutions. For example, in Fig. 8, the approximated solution is nearly identical to $f(x)$ when $n$ goes to 1000. 
+From the Fourier Transform above, the readers can find that we can determine the precision of accuracy by truncating the solutions. For example, in Fig. 8, the approximated solution is nearly identical to $f(x)$ when $n$ goes to 1000. It also indicates that we can filter out the small feature in the solution by heavily truncating the solutions. 
 
