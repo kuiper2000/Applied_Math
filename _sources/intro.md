@@ -43,7 +43,8 @@ __Part II: Sturm-Liouville Theorem__
     * Sturm-Liouville Form 
     * Eigenfunction Expansions 
     * Fourier Analysis
-    * Power Spectrum, Windows and Gibbs Phenomenon 
+        * Boundary Conditions and Types of Solutions 
+        * Power Spectrum, Windows and Gibbs Phenomenon 
 
 * {ref}`Special Functions`
     * Special Functions, Series Solutions and Recurrence Relations
