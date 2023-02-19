@@ -437,5 +437,10 @@ b_k & = \frac{\int_{-\infty}^{\infty}f(x)\sin(kx)dx}{\int_{-\infty}^{\infty}\sin
 
 
 ### Power Spectrum, Windows and Gibbs Phenomenon 
-From the Fourier Transform above, the readers can find that we can determine the precision of accuracy by truncating the solutions. For example, in Fig. 8, the approximated solution is nearly identical to $f(x)$ when $n$ goes to 1000. It also indicates that we can filter out the small feature in the solution by heavily truncating the solutions. 
+From the Fourier Transform above, the readers can find that we can determine the precision of accuracy by truncating the solutions. For example, in Fig. 8, the approximated solution is nearly identical to $f(x)$ when $n$ goes to 1000. It also indicates that we can filter out the small feature in the solution by heavily truncating the solutions. To know what kind of signals is retained, we can apply power spectrum analysis to a given $f(x)$, 
 
+
+The power spectrum of a given wave number of defined as 
+```{math}
+\textrm{variance explained} = \frac{a_k^2+b_k^2}{2} = \frac{c_k^2}{2}
+```
