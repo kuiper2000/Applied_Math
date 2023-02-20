@@ -466,7 +466,7 @@ take the Fourier transform of function $g(x)$, we have
 
 ```{math}
 \begin{align}
-a_k &= \frac{\int^{\infty}_{-\infty} g(x)\cos(kx)dx}{\int^{\infty}_{-\infty} \cos(kx)^2 dx} \\ 
+a_k &= \frac{\int^{\infty}_{-\infty} g(x)\cos(kx)dx}{\int^{\infty}_{-\infty} \cos(kx)^2 dx}= \frac{1}{k\pi}\sin(k)=\frac{1}{\pi}\sinc(k)\\ 
 b_k &= \frac{\int^{\infty}_{-\infty} g(x)\sin(kx)dx}{\int^{\infty}_{-\infty} \sin(kx)^2 dx}
 \end{align}
 ```
