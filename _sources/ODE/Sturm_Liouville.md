@@ -448,4 +448,21 @@ The power spectrum of a given wave number of defined as
 
 {eq}`eq93` evidently has an energy form (squared form) given that we want know the amplitude of a given wave number instead of its sign. It is equivalent to the explained variance of $f(x)$ by certain wave number like what we learn in linear regression. If one looks closely to {eq}`eq89` and {eq}`eq90`, Fourier Transform is indeed a linear regression problem where different types of waves are our predictors and both $a_n$ and $b_n$ are the corresponding regression coefficients. 
 
-Recall that the _Convolution_ in Laplace transform has similar effect. Where we can apply a Heaviside function with 2 jump conditions to filter out the high frequency signals that we don't want. However, Fourier Transform is a more strict way of filtering data. To demonstrate that, we can apply 
+Recall that the _Convolution_ in Laplace transform has similar effect. Where we can apply a Heaviside function with 2 jump conditions to filter out the high frequency signals that we don't want. However, Fourier Transform is a more strict way of filtering data. To demonstrate that, we can apply Fourier transform to a Heaviside function with 2 jump conditions. 
+
+:::{admonition} The Fourier Transform of a Heaviside functions
+Given a Heaviside function, 
+
+```{math}
+g(t)=H(t-0)-H(t-1) = \begin{cases}
+0 & \text{if $t<0$} \\
+1 & \text{if $t>=0$ and $t<1$} \\
+0 & \text{if $t>=1$ }
+\end{cases}
+```
+
+take the Fourier transform of function $g(x)$, we have 
+
+
+
+:::
