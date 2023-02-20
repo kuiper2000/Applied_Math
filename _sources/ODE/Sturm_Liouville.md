@@ -450,7 +450,7 @@ The power spectrum of a given wave number of defined as
 
 Recall that the _Convolution_ in Laplace transform has similar effect. Where we can apply a Heaviside function with 2 jump conditions to filter out the high frequency signals that we don't want. However, Fourier Transform is a more strict way of filtering data. To demonstrate that, we can apply Fourier transform to a Heaviside function with 2 jump conditions. 
 
-:::{admonition} The Fourier Transform of a Heaviside functions
+:::{admonition} The Fourier Transform of a Heaviside function
 Given a Heaviside function, 
 
 ```{math}
@@ -466,8 +466,8 @@ take the Fourier transform of function $g(x)$, we have
 
 ```{math}
 \begin{align}
-a_k &= \frac{\int^{\infty}_{-\infty} g(x)\cos(kx)dx}{\int^{\infty}_{-\infty} \cos(kx)^2 dx}= \frac{1}{k\pi}\sin(k)=\frac{1}{\pi}\sinc(k)\\ 
-b_k &= \frac{\int^{\infty}_{-\infty} g(x)\sin(kx)dx}{\int^{\infty}_{-\infty} \sin(kx)^2 dx}
+a_k &= \frac{\int^{\infty}_{-\infty} g(x)\cos(kx)dx}{\int^{\infty}_{-\infty} \cos(kx)^2 dx}= \frac{1}{k\pi}\sin(k)=\frac{1}{\pi}\textrm{sinc}(k)\\ 
+b_k &= \frac{\int^{\infty}_{-\infty} g(x)\sin(kx)dx}{\int^{\infty}_{-\infty} \sin(kx)^2 dx}=-\frac{1}{k\pi}\cos(k)
 \end{align}
 ```
 

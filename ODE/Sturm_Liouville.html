@@ -571,8 +571,8 @@ b_k &amp; = \frac{\int_{-\infty}^{\infty}f(x)\sin(kx)dx}{\int_{-\infty}^{\infty}
 <span class="eqno">(93)<a class="headerlink" href="#equation-eq93" title="Permalink to this equation">¶</a></span>\[\textrm{variance explained} = \frac{a_k^2+b_k^2}{2} (= \frac{c_k^2}{2})\]</div>
 <p><a class="reference internal" href="#equation-eq93">(93)</a> evidently has an energy form (squared form) given that we want know the amplitude of a given wave number instead of its sign. It is equivalent to the explained variance of <span class="math notranslate nohighlight">\(f(x)\)</span> by certain wave number like what we learn in linear regression. If one looks closely to <a class="reference internal" href="#equation-eq89">(89)</a> and <a class="reference internal" href="#equation-eq90">(90)</a>, Fourier Transform is indeed a linear regression problem where different types of waves are our predictors and both <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> are the corresponding regression coefficients.</p>
 <p>Recall that the <em>Convolution</em> in Laplace transform has similar effect. Where we can apply a Heaviside function with 2 jump conditions to filter out the high frequency signals that we don’t want. However, Fourier Transform is a more strict way of filtering data. To demonstrate that, we can apply Fourier transform to a Heaviside function with 2 jump conditions.</p>
-<div class="admonition-the-fourier-transform-of-a-heaviside-functions admonition">
-<p class="admonition-title">The Fourier Transform of a Heaviside functions</p>
+<div class="admonition-the-fourier-transform-of-a-heaviside-function admonition">
+<p class="admonition-title">The Fourier Transform of a Heaviside function</p>
 <p>Given a Heaviside function,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}g(t)=H(t-0)-H(t-1) = \begin{cases}
@@ -583,8 +583,8 @@ b_k &amp; = \frac{\int_{-\infty}^{\infty}f(x)\sin(kx)dx}{\int_{-\infty}^{\infty}
 <p>take the Fourier transform of function <span class="math notranslate nohighlight">\(g(x)\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-a_k &amp;= \frac{\int^{\infty}_{-\infty} g(x)\cos(kx)dx}{\int^{\infty}_{-\infty} \cos(kx)^2 dx}= \frac{1}{k\pi}\sin(k)=\frac{1}{\pi}\sinc(k)\\ 
-b_k &amp;= \frac{\int^{\infty}_{-\infty} g(x)\sin(kx)dx}{\int^{\infty}_{-\infty} \sin(kx)^2 dx}
+a_k &amp;= \frac{\int^{\infty}_{-\infty} g(x)\cos(kx)dx}{\int^{\infty}_{-\infty} \cos(kx)^2 dx}= \frac{1}{k\pi}\sin(k)=\frac{1}{\pi}\textrm{sinc}(k)\\ 
+b_k &amp;= \frac{\int^{\infty}_{-\infty} g(x)\sin(kx)dx}{\int^{\infty}_{-\infty} \sin(kx)^2 dx}=-\frac{1}{k\pi}\cos(k)
 \end{align}\end{split}\]</div>
 </div>
 </div>
