@@ -455,9 +455,9 @@ Given a Heaviside function,
 
 ```{math}
 g(t)=H(t-0)-H(t-1) = \begin{cases}
-0 & \text{if $t<0$} \\
-1 & \text{if $t>=0$ and $t<1$} \\
-0 & \text{if $t>=1$ }
+0 & \text{if $t<-\frac{T}{2}$} \\
+1 & \text{if $t>=-\frac{T}{2}$ and $t<\frac{T}{2}$} \\
+0 & \text{if $t>=\frac{T}{2}$ }
 \end{cases}
 ```
 
@@ -466,8 +466,8 @@ take the Fourier transform of function $g(x)$, we have
 
 ```{math}
 \begin{align}
-a_k &= \frac{\int^{\infty}_{-\infty} g(x)\cos(kx)dx}{\int^{\infty}_{-\infty} \cos(kx)^2 dx}= \frac{1}{k\pi}\sin(k)=\frac{1}{\pi}\textrm{sinc}(k)\\ 
-b_k &= \frac{\int^{\infty}_{-\infty} g(x)\sin(kx)dx}{\int^{\infty}_{-\infty} \sin(kx)^2 dx}=-\frac{1}{k\pi}\cos(k)
+a_k &= \frac{\int^{\infty}_{-\infty} g(x)\cos(kx)dx}{\int^{\infty}_{-\infty} \cos(kx)^2 dx}=\frac{\int^{\frac{T}{2}}_{-\frac{T}{2}} \cos(kx)dx}{\int^{\pi}_{-\pi} \cos(kx)^2 dx} = \frac{1}{k\pi}\sin(kx)|^{x=\frac{T}{2}}_{x=-\frac{T}{2}}= \frac{2}{\pi}\textrm{sinc(kT/2)}\\ 
+b_k &= \frac{\int^{\infty}_{-\infty} g(x)\sin(kx)dx}{\int^{\infty}_{-\infty} \sin(kx)^2 dx}=\frac{\int^{\frac{T}{2}}_{-\frac{T}{2}} \sin(kx)dx}{\int^{\pi}_{-\pi} \sin(kx)^2 dx} = -\frac{1}{k\pi}\cos(kx)|^{x=\frac{T}{2}}_{x=-\frac{T}{2}} = 0
 \end{align}
 ```
 
