@@ -480,5 +480,5 @@ name: FIG8
 An visualization of sinc function centers around the specified wave number (we shift it to 0). 
 ```
 
-One can find that the signal not only centers around the wave number of interest but also spreads out to its neighbor. This indicates when we use a Heaviside function for filtering, we can't entirely remove the signal outside the wave numbers of interest. This is the famous _Principle of Uncertainty_, where the wiggles on the edge is so-called _Gibbs Phenomenon_. 
+One can find that the signal not only centers around the wave number of interest but also spreads out to its neighbor. This indicates when we use a Heaviside function for filtering, we can't entirely remove the signal outside the wave numbers of interest. This is the famous _Principle of Uncertainty_, where the wiggles on the edge are so-called _Gibbs Phenomenon_. This is similar to Principle of Uncertainty in quantum physics where the _momentum_ (in frequency space) is the Fourier transform of the wave function's _location_.  
 :::
