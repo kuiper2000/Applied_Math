@@ -412,8 +412,8 @@ where $2\pi$ and $2L$ indicates that the longest wave we can resolve is the wave
 ```{math}
 :label: eq90
 \begin{align}
-a_n & = \frac{\int_{L}^{-L}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\cos(\frac{n\pi x}{L})^2dx} \\
-b_n & = \frac{\int_{L}^{-L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{L}^{-L}\sin(\frac{n\pi x}{L})^2dx} \\
+a_n & = \frac{\int_{-L}^{L}f(x)\cos(\frac{n\pi x}{L})dx}{\int_{-L}^{L}\cos(\frac{n\pi x}{L})^2dx} \\
+b_n & = \frac{\int_{-L}^{L}f(x)\sin(\frac{n\pi x}{L})dx}{\int_{-L}^{L}\sin(\frac{n\pi x}{L})^2dx} \\
 \end{align}
 ```
 
@@ -471,4 +471,14 @@ b_k &= \frac{\int^{\infty}_{-\infty} g(x)\sin(kx)dx}{\int^{\infty}_{-\infty} \si
 \end{align}
 ```
 
+One can find we have a $\textrm{sinc}(\frac{kT}{2})$ function. The figure below shows how does it look like on a power spectrum.
+
+```{figure} Sturm3.png
+---
+name: FIG8
+---
+An visualization of sinc function centers around the specified wave number (we shift it to 0). 
+```
+
+One can find that the signal not only centers around the wave number of interest but also spreads out to its neighbor. This indicates when we use a Heaviside function for filtering, we can't entirely remove the signal outside the wave numbers of interest. This is the famous _Principle of Uncertainty_, where the wiggles on the edge is so-called _Gibbs Phenomenon_. 
 :::
