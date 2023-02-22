@@ -46,7 +46,7 @@ __Part II: Sturm-Liouville Theorem__
         * Boundary Conditions and Types of Solutions 
         * Power Spectrum, Windows and Gibbs Phenomenon 
 
-* {ref}`Special Functions`
+* {ref}`SpecialF`
     * Special Functions, Series Solutions and Recurrence Relations
     * Bessel Function 
     * Legendre Polynimial 
