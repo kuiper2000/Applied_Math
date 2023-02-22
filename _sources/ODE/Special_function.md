@@ -7,10 +7,10 @@ Following the discussion of Sturm-Liouville form in the last chapter, we will go
 
 ## Bessel Function 
 
-Bessel function is the solution of Laplace equation on cylindrical coordinate. (or one can consider it as some kinds of diffusion problem on cylindrical cylindrical). 
+Bessel function is the solution of Laplace equation on cylindrical coordinate. (or one can consider it as some kinds of diffusion problem on cylindrical cylindrical). Considering a diffusion equation on a cylindrical coordinate,  
 
 
 ```{math}
 :label: eq94
-\nabla^2 \psi = \frac{1}{r}\frac{\partial}{\partial r} (r \frac{\partial \psi}{\partial r}) + \frac{1}{r^2} \frac{\partial^2 \psi}{\partial \phi^2}+\frac{\partial^2 \psi}{\partial z^2}
+\nabla^2 \psi = \frac{1}{x}\frac{\partial}{\partial x} (x \frac{\partial \psi}{\partial x}) + \frac{1}{r^2} \frac{\partial^2 \psi}{\partial \phi^2}+\frac{\partial^2 \psi}{\partial z^2}
 ```
