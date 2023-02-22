@@ -16,9 +16,10 @@ Bessel function is the solution of Laplace equation on cylindrical coordinate. (
 ```
 
 
-```{figure} cylindrical.png{width=50%}
+```{figure} cylindrical.png
 ---
 name: FIG9
+scale: 30%
 ---
 Cylindrical coordinate. 
 ```
