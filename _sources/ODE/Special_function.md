@@ -55,6 +55,26 @@ x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X+(x^2-\frac{\mu^2}{k^2})X &= 0 \\
 \end{align}
 ``` 
 
-let 
+Observing {eq}`eq97`, one can find that this problem can be solved by combining Euler form with series solutions. By assuming the solution has a form of 
+
+
+```{math}
+:label: eq98
+\sum_{N=0}^{\infty} c_n x^{n+r} = 0
+```
+
+which gives us 
+
+```{math}
+:label: eq99
+y^{'}=\sum_{N=0}^{\infty} (n+r)c_n x^{n+r-1} = 0
+```
+
+and 
+
+```{math}
+:label: eq100
+y^{''}=\sum_{N=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r-2} = 0
+```
 
 
