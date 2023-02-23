@@ -50,7 +50,7 @@ By rearranging {eq}`eq96`, we can have
 :label: eq97
 \begin{align}
 \frac{d^2 }{dx^2}X+\frac{1}{x}\frac{d }{dx}X+(1-\frac{\mu^2}{k^2 x^2})X &= 0 \\
-\textrm{or}
+\textrm{or} &  \\
 x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X+(x^2-\frac{\mu^2}{k^2})X &= 0 \\
 \end{align}
 ``` 
