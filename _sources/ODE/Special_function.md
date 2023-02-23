@@ -23,3 +23,21 @@ scale: 30%
 ---
 Cylindrical coordinate. 
 ```
+
+{eq}`eq94` is a partial differential equation. While we will cover more details in the later chapter, let us assume that {eq}`eq94` can be simplified by introducing separation of variables. i.e., 
+
+```{math}
+:label: eq95
+\psi = X(x)\Phi(\phi)Z(z)
+```
+
+By substituting {eq}`eq95` into equation {eq}`eq94`, we can have 
+
+```{math}
+:label: eq96
+\begin{align}
+\frac{d^2 }{dx^2}X+\frac{1}{x}\frac{d }{dx}X+(k^2-\frac{v^2}{x^2})X &= 0 \\
+\frac{d^2 }{dx^2}X+\frac{1}{x}\frac{d }{dx}X+(k^2-\frac{v^2}{x^2})X &= 0 \\
+\frac{d^2 }{dx^2}X+\frac{1}{x}\frac{d }{dx}X+(k^2-\frac{v^2}{x^2})X &= 0 \\
+\end{align}
+``` 
