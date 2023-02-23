@@ -380,13 +380,23 @@ title="Print to PDF"
 <p><a class="reference internal" href="#equation-eq94">(94)</a> is a partial differential equation. While we will cover more details in the later chapter, let us assume that <a class="reference internal" href="#equation-eq94">(94)</a> can be simplified by introducing separation of variables. i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq95">
 <span class="eqno">(95)<a class="headerlink" href="#equation-eq95" title="Permalink to this equation">¶</a></span>\[\psi = X(x)\Phi(\phi)Z(z)\]</div>
+<p>where <span class="math notranslate nohighlight">\(X(x)\)</span>, <span class="math notranslate nohighlight">\(\Phi(\phi)\)</span> and <span class="math notranslate nohighlight">\(Z(z)\)</span> are radial, tangential and vertical structure of the solution.</p>
 <p>By substituting <a class="reference internal" href="#equation-eq95">(95)</a> into equation <a class="reference internal" href="#equation-eq94">(94)</a>, we can have</p>
 <div class="math notranslate nohighlight" id="equation-eq96">
 <span class="eqno">(96)<a class="headerlink" href="#equation-eq96" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-\frac{d^2 }{dx^2}X+\frac{1}{x}\frac{d }{dx}X+(k^2-\frac{v^2}{x^2})X &amp;= 0 \\
-\frac{d^2 }{d\phi^2}\Phi+\nu^2\Phi &amp;= 0 \\
+\frac{d^2 }{dx^2}X+\frac{1}{x}\frac{d }{dx}X+(k^2-\frac{\mu^2}{x^2})X &amp;= 0 \\
+\frac{d^2 }{d\phi^2}\Phi+\mu^2\Phi &amp;= 0 \\
 \frac{d^2 }{dz^2}Z-k^2 Z &amp;= 0 \\
 \end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span> are eigen values for vertical and tangential solutions respectively. Here, we focus on the radial structure given that the vertical and tangential solutions can be solved using Fourier series.</p>
+<p>By rearranging <a class="reference internal" href="#equation-eq96">(96)</a>, we can have</p>
+<div class="math notranslate nohighlight" id="equation-eq97">
+<span class="eqno">(97)<a class="headerlink" href="#equation-eq97" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\frac{d^2 }{dx^2}X+\frac{1}{x}\frac{d }{dx}X+(1-\frac{\mu^2}{k^2 x^2})X &amp;= 0 \\
+\textrm{or}
+x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X+(x^2-\frac{\mu^2}{k^2})X &amp;= 0 \\
+\end{align}\end{split}\]</div>
+<p>let</p>
 </div>
 </div>
 
