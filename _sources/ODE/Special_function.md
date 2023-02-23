@@ -38,6 +38,6 @@ By substituting {eq}`eq95` into equation {eq}`eq94`, we can have
 \begin{align}
 \frac{d^2 }{dx^2}X+\frac{1}{x}\frac{d }{dx}X+(k^2-\frac{v^2}{x^2})X &= 0 \\
 \frac{d^2 }{d\phi^2}\Phi+\nu^2\Phi &= 0 \\
-\frac{d^2 }{dz^2}Z+k^2 Z &= 0 \\
+\frac{d^2 }{dz^2}Z-k^2 Z &= 0 \\
 \end{align}
 ``` 
