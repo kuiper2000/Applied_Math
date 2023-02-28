@@ -120,10 +120,9 @@ On the other hand, because $c_1=0$, we have
 c_3=c_5=c_7=\cdots=0
 ```
 
-From {eq}`eq104`, we can find the relation between the nth-order term with the term of $n=0$. 
+
+according to {eq}`eq105`, we can the entire equation is an even-indexed function (any odd-indexed term is dropped). This also indicates we can define a new index, $n=2N$, to rewrite {eq}`eq104`. 
+
+ 
 
 
-```{math}
-:label: eq106
-c_n=-\frac{1}{n(n+2\nu)}c_{n-2}=(-1)^2\frac{1}{n(n+2\nu)}\frac{1}{n-2(n-2+2\nu)}c_{n-4}
-```
