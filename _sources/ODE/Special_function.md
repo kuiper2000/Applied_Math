@@ -148,7 +148,7 @@ Therefore, the solution can be written as
 ```{math}
 :label: eq108
 \begin{align}
-y = \sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N+\nu)}c_{2(N-N)} 
+y = c_0\sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N+\nu)} x^{2N+\nu}
 \end{align}
 ```
 
