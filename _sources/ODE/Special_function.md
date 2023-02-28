@@ -112,3 +112,10 @@ from the first equation, we know $r\pm \nu$. This also gives us $c_1=0$ accordin
 :label: eq104
 c_n=-\frac{1}{n(n+2\nu)}c_{n-2}
 ```
+
+On the other hand, because $c_1=0$, we have 
+
+```{math}
+:label: eq105
+c_3=c_5=c_7=\cdots=0
+```
