@@ -125,7 +125,7 @@ according to {eq}`eq105`, we can the entire equation is an even-indexed function
 
 ```{math}
 :label: eq106
-c_2N=-\frac{1}{2N(2N+2\nu)}c_{2(N-1)}
+c_{2N}=-\frac{1}{2N(2N+2\nu)}c_{2(N-1)} = (-1)\frac{1}{2^2 [N(N+\nu)]}c_{2(N-1)} 
 ```
 
 based on {eq}`eq106`, we can find the relation between $2N$th-order term with the $0$th-order term. i.e., 
