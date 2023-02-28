@@ -134,6 +134,11 @@ based on {eq}`eq106`, we can find the relation between $2N$th-order term with th
 
 ```{math}
 :label: eq107
-c_{2N}=-\frac{1}{2N(2N+2\nu)}c_{2(N-1)} = (-1)^2\frac{1}{2^4 [N(N+\nu)][(N-1)(N-1+\nu)]}c_{2(N-2)}=\cdots =  (-1)^N\frac{1}{2^2N [N(N+\nu)][(N-1)(N-1+\nu)]\cdots[(1)(1+\nu)]}c_{2(N-N)} 
+\begin{align}
+c_{2N} & =-\frac{1}{2N(2N+2\nu)}c_{2(N-1)} \\
+       & = (-1)^2\frac{1}{2^4 [N(N+\nu)][(N-1)(N-1+\nu)]}c_{2(N-2)} \\
+       & = \cdots \\
+       & =  (-1)^N\frac{1}{2^2N [N(N+\nu)][(N-1)(N-1+\nu)]\cdots[(1)(1+\nu)]}c_{2(N-N)} 
+\end{align}
 ```
 
