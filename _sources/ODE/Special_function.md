@@ -86,11 +86,13 @@ Substituting {eq}`eq98`, {eq}`eq99`, and {eq}`eq100` into {eq}`eq97`, we can fin
 
 or 
 
+
 ```{math}
-:label: eq101
+:label: eq102
 \begin{align}
 & c_0[r(r-1)+r-\nu^2]x^{r}+ \\ 
-& c_1[(r+1)(r)+(r+1)-\nu^2]x^{r+1}+
+& c_1[(r+1)(r)+(r+1)-\nu^2]x^{r+1}+ \\
+& \sum_{n=2}^{\infty} [[(n+r)(n+r-1)+(n+r)-\nu^2]c_n+c_{n-2}]x^{n+r}=0
 \end{align}
 ```
 
