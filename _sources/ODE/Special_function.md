@@ -51,7 +51,7 @@ By rearranging {eq}`eq96`, we can have
 \begin{align}
 \frac{d^2 }{dx^2}X+\frac{1}{x}\frac{d }{dx}X+(1-\frac{\mu^2}{k^2 x^2})X &= 0 \\
 \textrm{or} &  \\
-x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X+(x^2-\frac{\mu^2}{k^2})X &= 0 \\
+x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X+(x^2-\nu^2)X &= 0 \\
 \end{align}
 ``` 
 
@@ -79,7 +79,10 @@ y^{''}=\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r-2} = 0
 
 Substituting {eq}`eq98`, {eq}`eq99`, and {eq}`eq100` into {eq}`eq97`, we can find 
 
-
+```{math}
+:label: eq100
+\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r} + \sum_{n=0}^{\infty} (n+r)c_n x^{n+r} + \sum_{n=0}^{\infty} c_n x^{n+r+2} - \sum_{n=0}^{\infty} \nu^2 c_n x^{n+r}
+```
 
 
 
