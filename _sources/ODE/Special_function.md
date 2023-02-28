@@ -80,11 +80,16 @@ y^{''}=\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r-2}
 Substituting {eq}`eq98`, {eq}`eq99`, and {eq}`eq100` into {eq}`eq97`, we can find 
 
 ```{math}
-:label: eq100
-\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r} + \sum_{n=0}^{\infty} (n+r)c_n x^{n+r} + \sum_{n=0}^{\infty} c_n x^{n+r+2} - \sum_{n=0}^{\infty} \nu^2 c_n x^{n+r}
+:label: eq101
+\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r} + \sum_{n=0}^{\infty} (n+r)c_n x^{n+r} + \sum_{n=0}^{\infty} c_n x^{n+r+2} - \sum_{n=0}^{\infty} \nu^2 c_n x^{n+r}=0
 ```
 
+or 
 
+```{math}
+:label: eq101
+c_0(r(r-1)+r-\nu^2)x^{r}=0
+```
 
 
 
