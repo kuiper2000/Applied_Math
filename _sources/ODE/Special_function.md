@@ -60,21 +60,21 @@ Observing {eq}`eq97`, one can find that this problem can be solved by combining 
 
 ```{math}
 :label: eq98
-\sum_{n=0}^{\infty} c_n x^{n+r} = 0
+y= \sum_{n=0}^{\infty} c_n x^{n+r} 
 ```
 
 which gives us 
 
 ```{math}
 :label: eq99
-y^{'}=\sum_{n=0}^{\infty} (n+r)c_n x^{n+r-1} = 0
+y^{'}=\sum_{n=0}^{\infty} (n+r)c_n x^{n+r-1} 
 ```
 
 and 
 
 ```{math}
 :label: eq100
-y^{''}=\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r-2} = 0
+y^{''}=\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r-2} 
 ```
 
 Substituting {eq}`eq98`, {eq}`eq99`, and {eq}`eq100` into {eq}`eq97`, we can find 
