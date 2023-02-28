@@ -95,7 +95,7 @@ or
 \end{align}
 ```
 
-To get a non-trivial solution, we need $[r(r-1)+r-\nu^2]=0$, and $[[(n+r)(n+r-1)+(n+r)-\nu^2]c_n+c_{n-2}]=0$. (reader can think why we don't give the same constrain to $[(r+1)(r)+(r+1)-\nu^2]$). This forms a complete set a recurrence relationship. i.e., 
+To get a non-trivial solution, we need $[r(r-1)+r-\nu^2]=0$, and $[[(n+r)(n+r-1)+(n+r)-\nu^2]c_n+c_{n-2}]=0$. (reader can think why we don't give the same constraint to $[(r+1)(r)+(r+1)-\nu^2]$). This forms a complete set a recurrence relationship. i.e., 
 
 ```{math}
 :label: eq103
@@ -142,7 +142,7 @@ c_{2N} & =-\frac{1}{2N(2N+2\nu)}c_{2(N-1)} \\
 \end{align}
 ```
 
-Therefore, the solution can be written as 
+Therefore, the solution of Bessel function can be written as 
 
 
 ```{math}
@@ -151,5 +151,7 @@ Therefore, the solution can be written as
 y = c_0\sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N+\nu)} x^{2N+\nu}
 \end{align}
 ```
+
+
 
 
