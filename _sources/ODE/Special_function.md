@@ -90,8 +90,7 @@ or
 :label: eq101
 \begin{align}
 & c_0[r(r-1)+r-\nu^2]x^{r}+ \\ 
-& c_1[(r+1)(r)+(r+1)-\nu^2]x^{r+1}+\\
-
+& c_1[(r+1)(r)+(r+1)-\nu^2]x^{r+1}+
 \end{align}
 ```
 
