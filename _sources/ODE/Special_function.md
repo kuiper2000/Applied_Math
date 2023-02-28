@@ -106,6 +106,9 @@ To get a non-trivial solution, we need $[r(r-1)+r-\nu^2]=0$, $[(r+1)(r)+(r+1)-\n
 \end{align}
 ```
 
-from the first equation, we know $r\pm \nu$. This also gives us $c_1=0$ according to the second equation of {eq}`eq103`. 
+from the first equation, we know $r\pm \nu$. This also gives us $c_1=0$ according to the second equation of {eq}`eq103`. Similarly, solving for $c_n$, we have a recurrence for $n\geq2$  
 
-
+```{math}
+:label: eq104
+c_n=-\frac{1}{n(n+2\nu)}c_{n-2}
+```
