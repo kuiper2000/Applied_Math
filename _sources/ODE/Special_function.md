@@ -95,7 +95,7 @@ or
 \end{align}
 ```
 
-To get a non-trivial solution, we need $[r(r-1)+r-\nu^2]=0$, $[(r+1)(r)+(r+1)-\nu^2]=0$ and $[[(n+r)(n+r-1)+(n+r)-\nu^2]c_n+c_{n-2}]=0$. This forms a complete set a recurrence relationship. i.e., 
+To get a non-trivial solution, we need $[r(r-1)+r-\nu^2]=0$, and $[[(n+r)(n+r-1)+(n+r)-\nu^2]c_n+c_{n-2}]=0$. (reader can think why we don't give the same constrain to $[(r+1)(r)+(r+1)-\nu^2]$). This forms a complete set a recurrence relationship. i.e., 
 
 ```{math}
 :label: eq103
