@@ -86,7 +86,6 @@ Substituting {eq}`eq98`, {eq}`eq99`, and {eq}`eq100` into {eq}`eq97`, we can fin
 
 or 
 
-
 ```{math}
 :label: eq102
 \begin{align}
@@ -96,5 +95,15 @@ or
 \end{align}
 ```
 
+To get a non-trivial solution, we need $[r(r-1)+r-\nu^2]=0$, $[(r+1)(r)+(r+1)-\nu^2]=0$ and $[[(n+r)(n+r-1)+(n+r)-\nu^2]c_n+c_{n-2}]=0$. This forms a complete set a recurrence relationship. i.e., 
+
+```{math}
+:label: eq103
+\begin{align}
+& r^2-\nu^2=0 \\
+& (2\nu+1)c_1 = 0 \\
+& [(n+r)(n+r+1)+(n+r)-\nu^2]c_n+c_{n-2}=0
+\end{align}
+```
 
 
