@@ -142,5 +142,14 @@ c_{2N} & =-\frac{1}{2N(2N+2\nu)}c_{2(N-1)} \\
 \end{align}
 ```
 
+Therefore, the solution can be written as 
+
+
+```{math}
+:label: eq108
+\begin{align}
+y = \sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N+\nu)}c_{2(N-N)} 
+\end{align}
+```
 
 
