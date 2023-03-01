@@ -173,4 +173,22 @@ One can find that it looks very similar to the Laplace Transform of $t^{x-1}$ in
 \end{align}
 ```
 
-The first term 
+The term $-t^{x-1}e^{-t}|_{t=0}^{t=\infty}$ is apparently 0, suggesting 
+
+```{math}
+:label: eq111
+\begin{align}
+\Gamma(x) = (x-1) \int_{0}^{\infty} t^{x-2}e^{-t} dt =(x-1) \Gamma (x-1)
+\end{align}
+```
+
+If we go all the way to $\Gamma(1)$
+
+```{math}
+:label: eq112
+\begin{align}
+\Gamma(x) = (x-1)!\Gamma(1)
+\end{align}
+```
+
+and given the fact $\Gamma(1)=1$, we find $\Gamma(x)=(x-1)!$. 

@@ -454,7 +454,17 @@ y = c_0\sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N
 <span class="eqno">(110)<a class="headerlink" href="#equation-eq110" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \Gamma(x) = \int_{0}^{\infty} t^{x-1}e^{-t}dt = - t^{x-1}e^{-t}|_{t=0}^{t=\infty} + (x-1) \int_{0}^{\infty} t^{x-2}e^{-t} dt 
 \end{align}\]</div>
-<p>The first term</p>
+<p>The term <span class="math notranslate nohighlight">\(-t^{x-1}e^{-t}|_{t=0}^{t=\infty}\)</span> is apparently 0, suggesting</p>
+<div class="math notranslate nohighlight" id="equation-eq111">
+<span class="eqno">(111)<a class="headerlink" href="#equation-eq111" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\Gamma(x) = (x-1) \int_{0}^{\infty} t^{x-2}e^{-t} dt =(x-1) \Gamma (x-1)
+\end{align}\]</div>
+<p>If we go all the way to <span class="math notranslate nohighlight">\(\Gamma(1)\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq112">
+<span class="eqno">(112)<a class="headerlink" href="#equation-eq112" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\Gamma(x) = (x-1)!\Gamma(1)
+\end{align}\]</div>
+<p>and given the fact <span class="math notranslate nohighlight">\(\Gamma(1)=1\)</span>, we find <span class="math notranslate nohighlight">\(\Gamma(x)=(x-1)!\)</span>.</p>
 </div>
 </div>
 
