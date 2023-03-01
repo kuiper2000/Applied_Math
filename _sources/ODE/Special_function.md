@@ -191,4 +191,16 @@ If we go all the way to $\Gamma(1)$
 \end{align}
 ```
 
-and given the fact $\Gamma(1)=1$, we find $\Gamma(x)=(x-1)!$. 
+and given the fact $\Gamma(1)=1$, we find $\Gamma(x)=(x-1)!$. Similarly, one can prove $\Gamma(x+\nu+1) = (x+\nu)!\Gamma(\nu+1)$. Substitute this relation back to {eq}`eq108`, we have 
+
+
+```{math}
+:label: eq113
+\begin{align}
+y = c_0\sum_{N=0}^{\infty} (-1)^N\frac{\Gamma(\nu+1)}{2^{2N} N!\Gamma(n+\nu+1)} x^{2N+\nu}
+\end{align}
+```
+
+for homogeneous problem, $c_0$ can be a arbitrary (but nonzero) constant. 
+
+
