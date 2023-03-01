@@ -121,7 +121,7 @@ c_3=c_5=c_7=\cdots=0
 ```
 
 
-according to {eq}`eq105`, we can the entire equation is an even-indexed function (any odd-indexed term is dropped). This also indicates we can define a new index, $n=2N$, to rewrite {eq}`eq104`. 
+according to {eq}`eq105`, we can find the entire equation is an even-indexed function (any odd-indexed term is dropped). This also indicates we can define a new index, $n=2N$, to rewrite {eq}`eq104`. 
 
 ```{math}
 :label: eq106
