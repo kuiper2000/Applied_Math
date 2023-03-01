@@ -153,5 +153,24 @@ y = c_0\sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N
 ```
 
 
+This is a nontrivial solution of Bessel function of order $\nu$ for any nonzero choice of constant $c_0$. This solution is usually expressed expressed in terms of the gamma function, which is defined as 
 
 
+```{math}
+:label: eq109
+\begin{align}
+\Gamma = \int_{0}^{\infty} t^{x-1}e^{-t}dt
+\end{align}
+```
+
+One can find that it looks very similar to the Laplace Transform of $t^{x-1}$ indicating that we can solve the problem using integrate by part. 
+
+
+```{math}
+:label: eq110
+\begin{align}
+\Gamma(x) = \int_{0}^{\infty} t^{x-1}e^{-t}dt = - t^{x-1}e^{-t}|_{t=0}^{t=\infty} + (x-1) \int_{0}^{\infty} t^{x-2}e^{-t} dt 
+\end{align}
+```
+
+The first term 
