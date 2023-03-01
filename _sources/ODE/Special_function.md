@@ -191,7 +191,7 @@ If we go all the way to $\Gamma(1)$
 \end{align}
 ```
 
-and given the fact $\Gamma(1)=1$, we find $\Gamma(x)=(x-1)!$. Similarly, one can prove $\Gamma(x+\nu+1) = (x+\nu)!\Gamma(\nu+1)$. Substitute this relation back to {eq}`eq108`, we have 
+and given the fact $\Gamma(1)=1$, we find $\Gamma(x)=(x-1)!$. Similarly, one can prove $\Gamma(x+\nu+1) = (N+\nu)\cdots(3+\nu)(2+\nu)(1+\nu)\Gamma(\nu+1)$. Substitute this relation back to {eq}`eq108`, we have 
 
 
 ```{math}
