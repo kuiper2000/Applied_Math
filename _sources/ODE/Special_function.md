@@ -201,6 +201,13 @@ y = c_0\sum_{N=0}^{\infty} (-1)^N\frac{\Gamma(\nu+1)}{2^{2N} N!\Gamma(n+\nu+1)} 
 \end{align}
 ```
 
-for homogeneous problem, $c_0$ can be a arbitrary (but nonzero) constant. 
+for homogeneous problem, $c_0$ can be a arbitrary (but nonzero) constant. If we choose, $c_0=\frac{1}{2^{\nu}\Gamma(1+\nu)}$, then the entire equation can be written as 
+
+```{math}
+:label: eq114
+\begin{align}
+y = \sum_{N=0}^{\infty} (-1)^N\frac{1}{N!\Gamma(n+\nu+1)} (\frac{x}{2})^{2N+\nu}
+\end{align}
+```
 
 
