@@ -213,3 +213,5 @@ y = \sum_{N=0}^{\infty} (-1)^N\frac{1}{N!\Gamma(n+\nu+1)} (\frac{x}{2})^{2N+\nu}
 
 {eq}`eq114` is so-called _Bessel function of the first kind of order $\nu$_
 
+But don't forget, the Bessel function is a 2nd-order ODE. This indicates we have another set of solution which is linearly independent of {eq}`eq114`. 
+
