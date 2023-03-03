@@ -228,11 +228,14 @@ where $J_{-n}=(-1)^{n}J_{n}$. An alternative form of {eq}`eq115` to represent th
 ```{math}
 :label: eq116
 \begin{align}
-Y_{0} = \frac{2}{\pi} [J_0(x)\ln(x)+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{2^{2n}(n!)^2\phi(n)x^{2n}}] + \frac{2}{\pi}(\gamma-\ln(2))J_0(x)
+Y_{0} = \frac{2}{\pi} [J_0(x)\ln(x)+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{2^{2n}(n!)^2}\phi(n)x^{2n}] + \frac{2}{\pi}(\gamma-\ln(2))J_0(x)
 \end{align}
 ``` 
 
 where $\phi(n)=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}$ and $\gamma=\lim_{n\rightarrow\infty}(\phi-\ln(x))\sim 0.57721566\cdots$
 
 
-Recall that when we deal with Euler differential equation with repeated roots, we multiply the first root by $\ln (x)$ to find the second root. Similar approaches can be applied to finding the second root of Euler equation. 
+Recall that when we deal with Euler differential equation with repeated roots, we multiply the first root by $\ln (x)$ to find the second root. From {eq}`eq116`, we can find similar approach has been applied to find the solution of second kind of Bessel function solution. 
+
+By inspecting {eq}`eq115`, we know it has a singularity at $x\rightarrow 0$, which is a rare condition in geophysical dynamics. 
+
