@@ -222,3 +222,6 @@ But don't forget, the Bessel function is a 2nd-order ODE. This indicates we have
 Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)}
 \end{align}
 ```
+
+
+where $J_{-n}=(-1)^{n}J_{n}$
