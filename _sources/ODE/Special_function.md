@@ -223,5 +223,4 @@ Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)}
 \end{align}
 ```
 
-
-where $J_{-n}=(-1)^{n}J_{n}$
+where $J_{-n}=(-1)^{n}J_{n}$. Recall that when we deal with Euler differential equation with repeated roots, we multiply the first root by $\ln (x)$ to find the second root. Similar approaches can be applied to 
