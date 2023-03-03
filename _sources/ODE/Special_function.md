@@ -60,21 +60,21 @@ Observing {eq}`eq97`, one can find that this problem can be solved by combining 
 
 ```{math}
 :label: eq98
-y= \sum_{n=0}^{\infty} c_n x^{n+r} 
+J= \sum_{n=0}^{\infty} c_n x^{n+r} 
 ```
 
 which gives us 
 
 ```{math}
 :label: eq99
-y^{'}=\sum_{n=0}^{\infty} (n+r)c_n x^{n+r-1} 
+J^{'}=\sum_{n=0}^{\infty} (n+r)c_n x^{n+r-1} 
 ```
 
 and 
 
 ```{math}
 :label: eq100
-y^{''}=\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r-2} 
+J^{''}=\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r-2} 
 ```
 
 Substituting {eq}`eq98`, {eq}`eq99`, and {eq}`eq100` into {eq}`eq97`, we can find 
@@ -148,7 +148,7 @@ Therefore, the solution of Bessel function can be written as
 ```{math}
 :label: eq108
 \begin{align}
-y = c_0\sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N+\nu)} x^{2N+\nu}
+J = c_0\sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N+\nu)} x^{2N+\nu}
 \end{align}
 ```
 
@@ -197,7 +197,7 @@ and given the fact $\Gamma(1)=1$, we find $\Gamma(x)=(x-1)!$. Similarly, one can
 ```{math}
 :label: eq113
 \begin{align}
-y = c_0\sum_{N=0}^{\infty} (-1)^N\frac{\Gamma(\nu+1)}{2^{2N} N!\Gamma(n+\nu+1)} x^{2N+\nu}
+J = c_0\sum_{N=0}^{\infty} (-1)^N\frac{\Gamma(\nu+1)}{2^{2N} N!\Gamma(n+\nu+1)} x^{2N+\nu}
 \end{align}
 ```
 
@@ -206,12 +206,19 @@ for homogeneous problem, $c_0$ can be an arbitrary (but nonzero) constant. If we
 ```{math}
 :label: eq114
 \begin{align}
-y = \sum_{N=0}^{\infty} (-1)^N\frac{1}{N!\Gamma(n+\nu+1)} (\frac{x}{2})^{2N+\nu}
+J = \sum_{N=0}^{\infty} (-1)^N\frac{1}{N!\Gamma(n+\nu+1)} (\frac{x}{2})^{2N+\nu}
 \end{align}
 ```
 
 
 {eq}`eq114` is so-called _Bessel function of the first kind of order $\nu$_
 
-But don't forget, the Bessel function is a 2nd-order ODE. This indicates we have another set of solution which is linearly independent of {eq}`eq114`. 
+But don't forget, the Bessel function is a 2nd-order ODE. This indicates we have another set of solution which is linearly independent of {eq}`eq114`. One such solution is the _Bessel function of the second kind_ of order $\nu$ (also known as Weber function), which is denoted $Y_{\nu}$. It's related to the first kind as follows: 
 
+
+```{math}
+:label: eq115
+\begin{align}
+Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)}
+\end{align}
+```

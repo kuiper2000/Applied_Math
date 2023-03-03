@@ -414,13 +414,13 @@ x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X+(x^2-\nu^2)X &amp;= 0 \\
 \end{align}\end{split}\]</div>
 <p>Observing <a class="reference internal" href="#equation-eq97">(97)</a>, one can find that this problem can be solved by combining Euler form with series solutions (we usually assume the solution has a form of <span class="math notranslate nohighlight">\(e^{At}\)</span>). By assuming the solution has a form of</p>
 <div class="math notranslate nohighlight" id="equation-eq98">
-<span class="eqno">(98)<a class="headerlink" href="#equation-eq98" title="Permalink to this equation">¶</a></span>\[y= \sum_{n=0}^{\infty} c_n x^{n+r} \]</div>
+<span class="eqno">(98)<a class="headerlink" href="#equation-eq98" title="Permalink to this equation">¶</a></span>\[J= \sum_{n=0}^{\infty} c_n x^{n+r} \]</div>
 <p>which gives us</p>
 <div class="math notranslate nohighlight" id="equation-eq99">
-<span class="eqno">(99)<a class="headerlink" href="#equation-eq99" title="Permalink to this equation">¶</a></span>\[y^{'}=\sum_{n=0}^{\infty} (n+r)c_n x^{n+r-1} \]</div>
+<span class="eqno">(99)<a class="headerlink" href="#equation-eq99" title="Permalink to this equation">¶</a></span>\[J^{'}=\sum_{n=0}^{\infty} (n+r)c_n x^{n+r-1} \]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eq100">
-<span class="eqno">(100)<a class="headerlink" href="#equation-eq100" title="Permalink to this equation">¶</a></span>\[y^{''}=\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r-2} \]</div>
+<span class="eqno">(100)<a class="headerlink" href="#equation-eq100" title="Permalink to this equation">¶</a></span>\[J^{''}=\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r-2} \]</div>
 <p>Substituting <a class="reference internal" href="#equation-eq98">(98)</a>, <a class="reference internal" href="#equation-eq99">(99)</a>, and <a class="reference internal" href="#equation-eq100">(100)</a> into <a class="reference internal" href="#equation-eq97">(97)</a>, we can find</p>
 <div class="math notranslate nohighlight" id="equation-eq101">
 <span class="eqno">(101)<a class="headerlink" href="#equation-eq101" title="Permalink to this equation">¶</a></span>\[\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r} + \sum_{n=0}^{\infty} (n+r)c_n x^{n+r} + \sum_{n=0}^{\infty} c_n x^{n+r+2} - \sum_{n=0}^{\infty} \nu^2 c_n x^{n+r}=0\]</div>
@@ -458,7 +458,7 @@ c_{2N} &amp; =-\frac{1}{2N(2N+2\nu)}c_{2(N-1)} \\
 <p>Therefore, the solution of Bessel function can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq108">
 <span class="eqno">(108)<a class="headerlink" href="#equation-eq108" title="Permalink to this equation">¶</a></span>\[\begin{align}
-y = c_0\sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N+\nu)} x^{2N+\nu}
+J = c_0\sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N+\nu)} x^{2N+\nu}
 \end{align}\]</div>
 <p>This is a nontrivial solution of Bessel function of order <span class="math notranslate nohighlight">\(\nu\)</span> for any nonzero choice of constant <span class="math notranslate nohighlight">\(c_0\)</span>. This solution is usually expressed expressed in terms of the gamma function, which is defined as</p>
 <div class="math notranslate nohighlight" id="equation-eq109">
@@ -483,15 +483,19 @@ y = c_0\sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N
 <p>and given the fact <span class="math notranslate nohighlight">\(\Gamma(1)=1\)</span>, we find <span class="math notranslate nohighlight">\(\Gamma(x)=(x-1)!\)</span>. Similarly, one can prove <span class="math notranslate nohighlight">\(\Gamma(x+\nu+1) = (x+\nu)\cdots(3+\nu)(2+\nu)(1+\nu)\Gamma(\nu+1)\)</span>. Substitute this relation back to <a class="reference internal" href="#equation-eq108">(108)</a>, we have</p>
 <div class="math notranslate nohighlight" id="equation-eq113">
 <span class="eqno">(113)<a class="headerlink" href="#equation-eq113" title="Permalink to this equation">¶</a></span>\[\begin{align}
-y = c_0\sum_{N=0}^{\infty} (-1)^N\frac{\Gamma(\nu+1)}{2^{2N} N!\Gamma(n+\nu+1)} x^{2N+\nu}
+J = c_0\sum_{N=0}^{\infty} (-1)^N\frac{\Gamma(\nu+1)}{2^{2N} N!\Gamma(n+\nu+1)} x^{2N+\nu}
 \end{align}\]</div>
 <p>for homogeneous problem, <span class="math notranslate nohighlight">\(c_0\)</span> can be an arbitrary (but nonzero) constant. If we choose, <span class="math notranslate nohighlight">\(c_0=\frac{1}{2^{\nu}\Gamma(1+\nu)}\)</span>, then the entire equation can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq114">
 <span class="eqno">(114)<a class="headerlink" href="#equation-eq114" title="Permalink to this equation">¶</a></span>\[\begin{align}
-y = \sum_{N=0}^{\infty} (-1)^N\frac{1}{N!\Gamma(n+\nu+1)} (\frac{x}{2})^{2N+\nu}
+J = \sum_{N=0}^{\infty} (-1)^N\frac{1}{N!\Gamma(n+\nu+1)} (\frac{x}{2})^{2N+\nu}
 \end{align}\]</div>
 <p><a class="reference internal" href="#equation-eq114">(114)</a> is so-called <em>Bessel function of the first kind of order <span class="math notranslate nohighlight">\(\nu\)</span></em></p>
-<p>But don’t forget, the Bessel function is a 2nd-order ODE. This indicates we have another set of solution which is linearly independent of <a class="reference internal" href="#equation-eq114">(114)</a>.</p>
+<p>But don’t forget, the Bessel function is a 2nd-order ODE. This indicates we have another set of solution which is linearly independent of <a class="reference internal" href="#equation-eq114">(114)</a>. One such solution is the <em>Bessel function of the second kind</em> of order <span class="math notranslate nohighlight">\(\nu\)</span> (also known as Weber function), which is denoted <span class="math notranslate nohighlight">\(Y_{\nu}\)</span>. It’s related to the first kind as follows:</p>
+<div class="math notranslate nohighlight" id="equation-eq115">
+<span class="eqno">(115)<a class="headerlink" href="#equation-eq115" title="Permalink to this equation">¶</a></span>\[\begin{align}
+Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)}
+\end{align}\]</div>
 </div>
 </div>
 </div>
