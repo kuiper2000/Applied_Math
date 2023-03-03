@@ -412,7 +412,7 @@ or
 v'+(1-n)P(x)v=(1-n)R(x)
 ``` 
 
-One can easily find that {eq}`eq15` is a linear ODE which we can approach with _integrating factor_. By multiplying both sides of equation with $e^{\int(1-n)R(x)dx}$. We have 
+One can easily find that {eq}`eq15` is a linear ODE which we can approach with _integrating factor_. By multiplying both sides of equation with $e^{\int(1-n)P(x)dx}$. We have 
 
 
 ```{math}
