@@ -235,13 +235,14 @@ Y_{0} = \frac{2}{\pi} [J_0(x)\ln(x)+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{2^{2n}(
 where $\phi(n)=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}$ and $\gamma=\lim_{n\rightarrow\infty}(\phi-\ln(x))\sim 0.57721566\cdots$
 
 
-Back to {eq}`eq115`, one can easily prove that it is the derivative of $J_{\nu}-J_{-\nu}$ with $\nu\rightarrow n$ i.e., 
+Back to {eq}`eq115`, one can easily prove that it is the derivative of $J_{\nu}-J_{-\nu}$ when $\nu\rightarrow n$ (n is an integer) i.e., 
 
 ```{math}
-:label: eq115
+:label: eq117
 \begin{align}
 Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)} = \lim _{\nu\rightarrow n} [\frac{\partial J_{\nu}}{\partial \nu}-\frac{\partial J_{-\nu}}{\partial \nu}]
 \end{align}
 ```
 
+By substituting $\lim_{\nu\rightarrow n} [\frac{\partial J_{\nu}}{\partial \nu}-\frac{\partial J_{-\nu}}{\partial \nu}]$ back to the second equation of {eq}`eq97`, we can show it is also a solution of Bessel function. 
 
