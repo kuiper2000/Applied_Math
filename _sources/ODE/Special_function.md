@@ -235,7 +235,13 @@ Y_{0} = \frac{2}{\pi} [J_0(x)\ln(x)+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{2^{2n}(
 where $\phi(n)=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}$ and $\gamma=\lim_{n\rightarrow\infty}(\phi-\ln(x))\sim 0.57721566\cdots$
 
 
-Recall that when we deal with Euler differential equation with repeated roots, we multiply the first root by $\ln (x)$ to find the second root. From {eq}`eq116`, we can find similar approach has been applied to find the solution of second kind of Bessel function solution. 
+Back to {eq}`eq115`, one can easily prove that it is the derivative of $J_{\nu}-J_{-\nu}$ with $\nu\rightarrow n$ i.e., 
 
-By inspecting {eq}`eq115`, we know it has a singularity at $x\rightarrow 0$, which is a rare condition in geophysical dynamics. 
+```{math}
+:label: eq115
+\begin{align}
+Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)} = \lim _{\nu\rightarrow n} [\frac{\partial J_{\nu}}{\partial \nu}-\frac{\partial J_{-\nu}}{\partial \nu}]
+\end{align}
+```
+
 
