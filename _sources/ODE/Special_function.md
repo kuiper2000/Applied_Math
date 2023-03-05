@@ -223,7 +223,7 @@ Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)}
 \end{align}
 ```
 
-where $J_{-n}=(-1)^{n}J_{n}$. An alternative form of {eq}`eq115` to represent the second kind of Bessel function solution with $\nu=0$ is 
+where $J_{-N}=(-1)^{N}J_{N}$ (readers can try to prove this equation by assuming $N_{\textrm{new}}=N-\nu$). An alternative form of {eq}`eq115` to represent the second kind of Bessel function solution with $\nu=0$ is 
 
 ```{math}
 :label: eq116
@@ -235,7 +235,7 @@ Y_{0} = \frac{2}{\pi} [J_0(x)\ln(x)+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{2^{2n}(
 where $\phi(n)=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}$ and $\gamma=\lim_{n\rightarrow\infty}(\phi-\ln(x))\sim 0.57721566\cdots$
 
 
-Back to {eq}`eq115`, one can easily prove that it is the derivative of $J_{\nu}-J_{-\nu}$ when $\nu\rightarrow n$ (n is an integer) i.e., 
+Back to {eq}`eq115`, one can easily prove that it is the derivative of $J_{\nu}-J_{-\nu}$ when $\nu\rightarrow N$ (N is an integer) i.e., 
 
 ```{math}
 :label: eq117
@@ -244,5 +244,20 @@ Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)} = \lim _{\nu\right
 \end{align}
 ```
 
-By substituting $\lim_{\nu\rightarrow n} [\frac{\partial J_{\nu}}{\partial \nu}-\frac{\partial J_{-\nu}}{\partial \nu}]$ back to the second equation of {eq}`eq97`, we can show it is also a solution of Bessel function. 
 
+:::{admonition} Notes
+To prove that $Y_{\pm\nu}=\lim _{\nu\rightarrow n} [\frac{\partial J_{\nu}}{\partial \nu}-\frac{\partial J_{-\nu}}{\partial \nu}]$  is a solution of Bessel function, we can take the derivative of the second equation of {eq}`eq97` with respect to $\nu$
+
+```{math}
+\frac{\partial}{\partial \nu}[x^2\frac{d^2 }{dx^2}Y+x\frac{d }{dx}Y+(x^2-\nu^2)Y]= 0 \\
+```
+
+we have 
+
+```{math}
+x^2\frac{d^2 }{dx^2}\frac{\partial}{\partial \nu}Y+x\frac{d }{dx}\frac{\partial}{\partial \nu}Y+(x^2-\nu^2)\frac{\partial}{\partial \nu}Y= 2\nu Y \\
+```
+
+we can find $$Y_{\pm\nu}$ is the solution of 
+
+:::
