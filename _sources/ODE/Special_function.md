@@ -258,6 +258,6 @@ we have
 x^2\frac{d^2 }{dx^2}\frac{\partial}{\partial \nu}X+x\frac{d }{dx}\frac{\partial}{\partial \nu}X+(x^2-\nu^2)\frac{\partial}{\partial \nu}X= 2\nu X \\
 ```
 
-we can find $$Y_{\pm\nu}$ is the solution of 
+if we let $X=Y_{\pm\nu}$, we can find $Y_{\pm\nu}$ is the solution of Bessel function if and only if $2\nu X \rightarrow 0$. 
 
 :::
