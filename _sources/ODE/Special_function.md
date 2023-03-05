@@ -249,13 +249,13 @@ Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)} = \lim _{\nu\right
 To prove that $Y_{\pm\nu}=\lim _{\nu\rightarrow n} [\frac{\partial J_{\nu}}{\partial \nu}-\frac{\partial J_{-\nu}}{\partial \nu}]$  is a solution of Bessel function, we can take the derivative of the second equation of {eq}`eq97` with respect to $\nu$
 
 ```{math}
-\frac{\partial}{\partial \nu}[x^2\frac{d^2 }{dx^2}Y+x\frac{d }{dx}Y+(x^2-\nu^2)Y]= 0 \\
+\frac{\partial}{\partial \nu}[x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X+(x^2-\nu^2)X]= 0 \\
 ```
 
 we have 
 
 ```{math}
-x^2\frac{d^2 }{dx^2}\frac{\partial}{\partial \nu}Y+x\frac{d }{dx}\frac{\partial}{\partial \nu}Y+(x^2-\nu^2)\frac{\partial}{\partial \nu}Y= 2\nu Y \\
+x^2\frac{d^2 }{dx^2}\frac{\partial}{\partial \nu}X+x\frac{d }{dx}\frac{\partial}{\partial \nu}X+(x^2-\nu^2)\frac{\partial}{\partial \nu}X= 2\nu X \\
 ```
 
 we can find $$Y_{\pm\nu}$ is the solution of 
