@@ -240,13 +240,13 @@ Back to {eq}`eq115`, when $\nu\rightarrow N$ (N is an integer), readers can find
 ```{math}
 :label: eq117
 \begin{align}
-Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)} = \lim _{\nu\rightarrow n} [\frac{\partial J_{\nu}}{\partial \nu}-\frac{\partial J_{-\nu}}{\partial \nu}]
+Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)} = \lim _{\nu\rightarrow N} [\frac{\partial J_{\nu}}{\partial \nu}-(-1)^N\frac{\partial J_{-\nu}}{\partial \nu}]
 \end{align}
 ```
 
 
 :::{admonition} Notes
-To prove that $Y_{\pm\nu}=\lim _{\nu\rightarrow n} [\frac{\partial J_{\nu}}{\partial \nu}-\frac{\partial J_{-\nu}}{\partial \nu}]$  is a solution of Bessel function, we can take the derivative of the second equation of {eq}`eq97` with respect to $\nu$
+To prove that $Y_{\pm\nu}=\lim _{\nu\rightarrow N} [\frac{\partial J_{\nu}}{\partial \nu}-(-1)^N\frac{\partial J_{-\nu}}{\partial \nu}]$  is a solution of Bessel function, we can take the derivative of the second equation of {eq}`eq97` with respect to $\nu$
 
 ```{math}
 \frac{\partial}{\partial \nu}[x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X+(x^2-\nu^2)X]= 0 \\
