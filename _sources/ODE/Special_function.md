@@ -258,6 +258,6 @@ we have
 x^2\frac{d^2 }{dx^2}\frac{\partial}{\partial \nu}X+x\frac{d }{dx}\frac{\partial}{\partial \nu}X+(x^2-\nu^2)\frac{\partial}{\partial \nu}X= 2\nu X \\
 ```
 
-if we let $X=J_{\nu}-J_{-\nu}$, we can find $\frac{\partial}{\partial \nu}J_{\pm\nu}$ is the solution of Bessel function if and only if $2\nu X \rightarrow 0$. Since $J_{\pm\nu}=0$, 
+if we let $X=J_{\nu}-(-1)^N J_{-\nu}$, we can find $\frac{\partial}{\partial \nu}J_{\pm\nu}$ is the solution of Bessel function if and only if $2\nu X \rightarrow 0$. Since $J_{\pm\nu}=0$, 
 
 :::
