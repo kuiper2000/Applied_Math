@@ -235,7 +235,7 @@ Y_{0} = \frac{2}{\pi} [J_0(x)\ln(x)+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{2^{2n}(
 where $\phi(n)=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}$ and $\gamma=\lim_{n\rightarrow\infty}(\phi-\ln(x))\sim 0.57721566\cdots$
 
 
-Back to {eq}`eq115`, one can easily prove that it is the derivative of $J_{\nu}-J_{-\nu}$ when $\nu\rightarrow N$ (N is an integer) i.e., 
+when $\nu\rightarrow N$ (N is an integer), readers can easily prove the following relation according to L'Hôpital's rule (I will leave this practice to readers). 
 
 ```{math}
 :label: eq117
