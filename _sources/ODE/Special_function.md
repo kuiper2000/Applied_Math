@@ -292,3 +292,10 @@ The readers can also try to plot Bessel function solution of the second kind and
 
 
 ### Modified Bessel function
+
+There is one special kind of Bessel function where the coordinate is defined on imaginary coordinate i.e., $x=ix$. If we use $ix$ to replace $x$ (or $k$=$ik$) in the first equation of {eq}`eq96`, we can have so-called modified Bessel function. 
+
+Modified Bessel function is a more widely used form in atmospheric science, where the wavy solution in radial direction (i.e., along $x$) becomes an exponent-like function where the solution is one-side bounded. i.e., $X=0$ when $x=0$ or $x=\infty$.
+
+
+
