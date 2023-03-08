@@ -261,3 +261,29 @@ x^2\frac{d^2 }{dx^2}\frac{\partial}{\partial \nu}X+x\frac{d }{dx}\frac{\partial}
 if we let $X=J_{\nu}-(-1)^N J_{-\nu}$, we can find $\frac{\partial}{\partial \nu}J_{\pm\nu}$ is the solution of Bessel function if and only if $2\nu X \rightarrow 0$. It's not hard to find $J_{\pm\nu}=0$, given $(-1)^NJ_{-\nu}= (-1)^{2N}J_{\nu}=J_{\nu}$. 
 
 :::
+
+Based on {eq}`eq114`, we can plot the solution of Bessel function of the first kind with different $\nu$. 
+
+```julia
+using Plots
+using SpecialFunctions
+
+x  = range(0.001, 5π, length=1000)
+bessel_output = zeros(Float64, 5, 1000)
+for nu  in 0:4
+    sum_x = zero.(x)
+    for j in 0:100
+        sum_x = (-1).^j*1/(gamma(j+1)*gamma(j+nu+1))*(x/2).^(2*j+nu)+sum_x
+    end
+    bessel_output[nu+1,:] = sum_x
+end
+
+```
+
+
+```{figure} Bessel_function.png
+---
+name: FIG10
+---
+An visualization of Bessel function solutions of the first kind with $\nu=0-4$
+```

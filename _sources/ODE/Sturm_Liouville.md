@@ -475,7 +475,7 @@ One can find we have a $\textrm{sinc}(\frac{kT}{2})$ function. The figure below 
 
 ```{figure} Sturm3.png
 ---
-name: FIG8
+name: FIG9
 ---
 An visualization of sinc function centers around the specified wave number (we shift it to 0). 
 ```

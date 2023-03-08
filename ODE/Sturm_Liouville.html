@@ -696,9 +696,9 @@ a_k &amp;= \frac{\int^{\infty}_{-\infty} g(x)\cos(kx)dx}{\int^{\infty}_{-\infty}
 b_k &amp;= \frac{\int^{\infty}_{-\infty} g(x)\sin(kx)dx}{\int^{\infty}_{-\infty} \sin(kx)^2 dx}=\frac{\int^{\frac{T}{2}}_{-\frac{T}{2}} \sin(kx)dx}{\int^{\pi}_{-\pi} \sin(kx)^2 dx} = -\frac{1}{k\pi}\cos(kx)|^{x=\frac{T}{2}}_{x=-\frac{T}{2}} = 0
 \end{align}\end{split}\]</div>
 <p>One can find we have a <span class="math notranslate nohighlight">\(\textrm{sinc}(\frac{kT}{2})\)</span> function. The figure below shows how does it look like on a power spectrum.</p>
-<div class="figure align-default" id="id1">
+<div class="figure align-default" id="fig9">
 <img alt="../_images/Sturm3.png" src="../_images/Sturm3.png" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">An visualization of sinc function centers around the specified wave number (we shift it to 0).</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">An visualization of sinc function centers around the specified wave number (we shift it to 0).</span><a class="headerlink" href="#fig9" title="Permalink to this image">¶</a></p>
 </div>
 <p>One can find that the signal not only centers around the wave number of interest but also spreads out to its neighbor. This indicates when we use a Heaviside function for filtering, we can’t entirely remove the signal outside the wave numbers of interest. This is the famous <em>Principle of Uncertainty</em>, where the wiggles on the edge are so-called <em>Gibbs Phenomenon</em>. This is similar to Principle of Uncertainty in quantum physics where the <em>momentum</em> (in frequency space) is the Fourier transform of the wave function’s <em>location</em>.</p>
 </div>

@@ -517,6 +517,25 @@ Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)} = \lim _{\nu\right
 \[\begin{split}x^2\frac{d^2 }{dx^2}\frac{\partial}{\partial \nu}X+x\frac{d }{dx}\frac{\partial}{\partial \nu}X+(x^2-\nu^2)\frac{\partial}{\partial \nu}X= 2\nu X \\\end{split}\]</div>
 <p>if we let <span class="math notranslate nohighlight">\(X=J_{\nu}-(-1)^N J_{-\nu}\)</span>, we can find <span class="math notranslate nohighlight">\(\frac{\partial}{\partial \nu}J_{\pm\nu}\)</span> is the solution of Bessel function if and only if <span class="math notranslate nohighlight">\(2\nu X \rightarrow 0\)</span>. It’s not hard to find <span class="math notranslate nohighlight">\(J_{\pm\nu}=0\)</span>, given <span class="math notranslate nohighlight">\((-1)^NJ_{-\nu}= (-1)^{2N}J_{\nu}=J_{\nu}\)</span>.</p>
 </div>
+<p>Based on <a class="reference internal" href="#equation-eq114">(114)</a>, we can plot the solution of Bessel function of the first kind with different <span class="math notranslate nohighlight">\(\nu\)</span>.</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Plots</span>
+<span class="k">using</span> <span class="n">SpecialFunctions</span>
+
+<span class="n">x</span>  <span class="o">=</span> <span class="n">range</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mi">5</span><span class="nb">π</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">bessel_output</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">nu</span>  <span class="k">in</span> <span class="mi">0</span><span class="o">:</span><span class="mi">4</span>
+    <span class="n">sum_x</span> <span class="o">=</span> <span class="n">zero</span><span class="o">.</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="o">:</span><span class="mi">100</span>
+        <span class="n">sum_x</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.^</span><span class="n">j</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">nu</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.^</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="o">+</span><span class="n">nu</span><span class="p">)</span><span class="o">+</span><span class="n">sum_x</span>
+    <span class="k">end</span>
+    <span class="n">bessel_output</span><span class="p">[</span><span class="n">nu</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">]</span> <span class="o">=</span> <span class="n">sum_x</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="fig10">
+<img alt="../_images/Bessel_function.png" src="../_images/Bessel_function.png" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">An visualization of Bessel function solutions of the first kind with <span class="math notranslate nohighlight">\(\nu=0-4\)</span></span><a class="headerlink" href="#fig10" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 </div>
