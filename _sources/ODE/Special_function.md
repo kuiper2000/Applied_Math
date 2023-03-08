@@ -295,7 +295,12 @@ The readers can also try to plot Bessel function solution of the second kind and
 
 There is one special kind of Bessel function where the coordinate is defined on imaginary coordinate i.e., $x=ix$. If we use $ix$ to replace $x$ (or $k$=$ik$) in the first equation of {eq}`eq96`, we can have so-called modified Bessel function. 
 
-Modified Bessel function is a more widely used form in atmospheric science, where the wavy solution in radial direction (i.e., along $x$) becomes an exponent-like function where the solution is one-side bounded. i.e., $X=0$ when $x=0$ or $x=\infty$.
+Modified Bessel function is a more widely used form in atmospheric science, where the wavy solution in radial direction (i.e., along $x$) becomes an exponent-like function where the solution is one-side bounded. i.e., $X=0$ when $x=0$ or $x=\infty$. On the other hand, the exponent-like function in $z$ direction becomes a Fourier-series problem (i.e., Sturm-Liouville with $p(x)=1$). 
 
+
+```{math}
+:label: eq118
+x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X-(x^2+\nu^2)X = 0 
+``` 
 
 
