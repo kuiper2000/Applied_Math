@@ -306,7 +306,7 @@ The first kind of solution of the modified Bessel function is related to the ori
 
 ```{math}
 :label: eq119
-I_{\nu} \equiv (i)^{\nu}J_{\nu}(ix)
+I_{\nu} \equiv (i)^{-\nu}J_{\nu}(ix)
 ``` 
 
 and so is the second kind 
