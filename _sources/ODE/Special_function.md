@@ -285,5 +285,10 @@ end
 ---
 name: FIG11
 ---
-An visualization of Bessel function solutions of the first kind with $\nu=0-4$
+An visualization of Bessel function solution of the first kind with $\nu=0-4$
 ```
+
+The readers can also try to plot Bessel function solution of the second kind and visualize the result. 
+
+
+### Modified Bessel function
