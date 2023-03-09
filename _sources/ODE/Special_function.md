@@ -344,4 +344,13 @@ is expanded in an infinite series in $t$, then the coefficient coefficient of $t
 e^{\frac{x(t-1/t)}{2}}=\sum_{-\infty}^{\infty}J_n(x)t^n
 ``` 
 
+To find the corresponding coefficient, we can rewrite {eq}`eq122` into 
 
+
+```{math}
+:label: eq123
+\begin{align}
+e^{\frac{x(t-1/t)}{2}}&=e^{\frax{xt}{2}}e^{-\frax{x}{2t}} \\
+                      &=(\sum_{m=0}^{\infty}\frac{1}{m!})
+\end{align}
+``` 
