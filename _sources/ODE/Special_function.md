@@ -312,6 +312,16 @@ I_{\nu} \equiv (i)^{-\nu}J_{\nu}(ix)
 and so is the second kind 
 
 ```{math}
-:label: eq119
+:label: eq120
 K_{\nu} \equiv \frac{\pi}{2}\frac{I_{-\nu}(x)-I_{\nu}(x)}{\sin(\nu \pi)};\ \textrm{with $\nu\rightarrow N$} 
 ``` 
+
+The figure below visualizes the first kind solution of the modified Bessel function. 
+```{figure} Bessel_function.png
+---
+name: FIG12
+---
+An visualization of modified Bessel function solution of the first kind with $\nu=0-4$
+```
+
+One can easily find the solution is bounded on one end but unbounded on the other end. 
