@@ -325,3 +325,23 @@ An visualization of modified Bessel function solution of the first kind with $\n
 ```
 
 One can easily find the solution is bounded on one end but unbounded on the other end. 
+
+A famous example of Bessel function is its application in solving the transverse circulation of tropical cyclone. For more details, readers can refer to paper Schubert and Hack 1982. 
+
+
+### Generating Function and Recurrence Relations 
+For all of these special function, we can find some kinds of generating functions which enable us to calculate the polynomial in a more efficient. For Bessel function, it's generating function is related to 
+
+```{math}
+:label: eq121
+e^{\frac{x(t-1/t)}{2}}
+``` 
+
+is expanded in an infinite series in $t$, then the coefficient coefficient of $t^n$ is $J_{n}(x)$. i.e., 
+
+```{math}
+:label: eq122
+e^{\frac{x(t-1/t)}{2}}=\sum_{-\infty}^{\infty}J_n(x)t^n
+``` 
+
+

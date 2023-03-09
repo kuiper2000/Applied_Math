@@ -333,6 +333,11 @@ title="Print to PDF"
      Modified Bessel function
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generating-function-and-recurrence-relations">
+     Generating Function and Recurrence Relations
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -372,6 +377,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#modified-bessel-function">
      Modified Bessel function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generating-function-and-recurrence-relations">
+     Generating Function and Recurrence Relations
     </a>
    </li>
   </ul>
@@ -566,6 +576,16 @@ Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)} = \lim _{\nu\right
 <p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">An visualization of modified Bessel function solution of the first kind with <span class="math notranslate nohighlight">\(\nu=0-4\)</span></span><a class="headerlink" href="#fig12" title="Permalink to this image">¶</a></p>
 </div>
 <p>One can easily find the solution is bounded on one end but unbounded on the other end.</p>
+<p>A famous example of Bessel function is its application in solving the transverse circulation of tropical cyclone. For more details, readers can refer to paper Schubert and Hack 1982.</p>
+</div>
+<div class="section" id="generating-function-and-recurrence-relations">
+<h3>Generating Function and Recurrence Relations<a class="headerlink" href="#generating-function-and-recurrence-relations" title="Permalink to this headline">¶</a></h3>
+<p>For all of these special function, we can find some kinds of generating functions which enable us to calculate the polynomial in a more efficient. For Bessel function, it’s generating function is related to</p>
+<div class="math notranslate nohighlight" id="equation-eq121">
+<span class="eqno">(121)<a class="headerlink" href="#equation-eq121" title="Permalink to this equation">¶</a></span>\[e^{\frac{x(t-1/t)}{2}}\]</div>
+<p>is expanded in an infinite series in <span class="math notranslate nohighlight">\(t\)</span>, then the coefficient coefficient of <span class="math notranslate nohighlight">\(t^n\)</span> is <span class="math notranslate nohighlight">\(J_{n}(x)\)</span>. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq122">
+<span class="eqno">(122)<a class="headerlink" href="#equation-eq122" title="Permalink to this equation">¶</a></span>\[e^{\frac{x(t-1/t)}{2}}=\sum_{-\infty}^{\infty}J_n(x)t^n\]</div>
 </div>
 </div>
 </div>
