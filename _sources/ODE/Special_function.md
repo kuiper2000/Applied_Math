@@ -351,6 +351,6 @@ To find the corresponding coefficient, we can rewrite {eq}`eq122` into
 :label: eq123
 \begin{align}
 e^{\frac{x(t-1/t)}{2}}&=e^{\frax{xt}{2}}e^{-\frax{x}{2t}} \\
-                      &=(\sum_{m=0}^{\infty}\frac{1}{m!})
+                      &=(\sum_{m=0}^{\infty}\frac{1}{m!}(\frac{xt}{2})^{m})(\sum_{k=0}^{\infty}\frac{1}{k!}(-1)^k(\frac{x}{2t}^k))
 \end{align}
 ``` 
