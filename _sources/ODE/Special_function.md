@@ -317,7 +317,7 @@ K_{\nu} \equiv \frac{\pi}{2}\frac{I_{-\nu}(x)-I_{\nu}(x)}{\sin(\nu \pi)};\ \text
 ``` 
 
 The figure below visualizes the first kind solution of the modified Bessel function. 
-```{figure} Bessel_function.png
+```{figure} Modified_Bessel_function.png
 ---
 name: FIG12
 ---
