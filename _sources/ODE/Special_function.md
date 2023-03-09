@@ -355,3 +355,14 @@ e^{\frac{x(t-1/t)}{2}}&=e^{\frac{xt}{2}}e^{-\frac{x}{2t}} \\
                       &=(1+\frac{xt}{2}+\frac{1}{2!}\frac{x^2t^2}{2^2}+\frac{1}{3!}\frac{x^3t^3}{2^3}\cdots)(1-\frac{x}{2t}+\frac{1}{2!}\frac{x^2}{2^2t^2}-\frac{1}{3!}\frac{x^3}{2^3t^3}\cdots)
 \end{align}
 ``` 
+
+we know $t^4$ happens when $\frac{x^4t^4}{4!}$ term on the left is multiplied by $1$ on the right, $\frac{x^5t^5}{5!}$ on the left is multiplied by $-\frac{x}{2t}$ on the right and so and so forth. The coefficient of $t^4$ in the product of the two series is ...
+
+
+```{math}
+:label: eq124
+\begin{align}
+& \frac{x^4t^4}{2^4 4!}-\frac{x^5t^5}{2^6 5!}+\frac{x^6t^6}{2^8 6!}\frac{x^2}{2!t^2}+\cdots
+& =\sum_{n=0}^{\infty}\frac{(-1)^n}{2^{2n+4}n!(n+4)!}
+\end{align}
+``` 
