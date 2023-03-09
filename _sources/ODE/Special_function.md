@@ -363,6 +363,6 @@ we know $t^4$ happens when $\frac{x^4t^4}{4!}$ term on the left is multiplied by
 :label: eq124
 \begin{align}
 & \frac{x^4t^4}{2^4 4!}-\frac{x^5t^5}{2^6 5!}+\frac{x^6t^6}{2^8 6!}\frac{x^2}{2!t^2}+\cdots
-& =\sum_{n=0}^{\infty}\frac{(-1)^n}{2^{2n+4}n!(n+4)!}
+& =\sum_{n=0}^{\infty}\frac{(-1)^n}{2^{2n+4}n!(n+4)!}x^{2n+4}=J_4(x)
 \end{align}
 ``` 
