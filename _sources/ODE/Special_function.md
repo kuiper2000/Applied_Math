@@ -423,6 +423,5 @@ Again, if we applied separation of variable to {eq}`eq127` and let $\psi=R(r)\Th
 &\frac{1}{R}\frac{d}{r}r^2\frac{dR}{dr} = \lambda \\
 &\frac{1}{\phi}\frac{d^2\Phi}{d\phi^2}  = -m^2 \\
 &\lambda \sin^2\theta+\frac{\sin\theta}{\Theta}\frac{d}{d\theta}(\sin\theta\frac{d\Theta}{d\theta})
-
 \end{align}
 ``` 
