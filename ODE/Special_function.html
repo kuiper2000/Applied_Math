@@ -654,7 +654,12 @@ e^{\frac{x(t-1/t)}{2}} &amp; =e^{\frac{xt}{2}}e^{\frac{-x}{2t}} \\
 <span class="eqno">(127)<a class="headerlink" href="#equation-eq127" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \nabla^2 \psi = \frac{1}{r^2}\frac{\partial }{\partial r}(r^2 \frac{\partial}{\partial r} \psi)+\frac{1}{r^2\cos\theta}\frac{\partial}{\partial \theta}(\cos\theta \frac{\partial}{\partial \theta} \psi)+\frac{1}{r^2 \cos^2\theta} \frac{\partial^2}{\partial \phi^2}\psi
 \end{align}\]</div>
-<p>Again, if we applied separation of variable to <a class="reference internal" href="#equation-eq127">(127)</a> and let <span class="math notranslate nohighlight">\(\psi=R(r)\Theta(\theta)\Phi(\phi)\)</span></p>
+<p>Again, if we applied separation of variable to <a class="reference internal" href="#equation-eq127">(127)</a> and let <span class="math notranslate nohighlight">\(\psi=R(r)\Theta(\theta)\Phi(\phi)\)</span>, we will have a set of ODEs and they are related to each others through eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq128">
+<span class="eqno">(128)<a class="headerlink" href="#equation-eq128" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\begin{split}\begin{align}
+&amp;\frac{1}{R}\frac{d}{r}r^2\frac{dR}{dr} = \lambda \\
+&amp;\frac{1}{\phi}\frac{d^2\Phi}{d\phi^2}  = -m^2 \\
+&amp;\lambda \sin^2\theta+\frac{\sin\theta}{\Theta}\frac{d}{d\theta}(\sin\theta\frac{d\Theta}{d\theta})\end{split}\\\end{align}\end{aligned}\end{align} \]</div>
 </div>
 </div>
 </div>
