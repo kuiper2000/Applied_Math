@@ -425,3 +425,5 @@ Again, if we applied separation of variable to {eq}`eq127` and let $\psi=R(r)\Th
 &\lambda \cos^2\theta+\frac{\cos\theta}{\Theta}\frac{d}{d\theta}(\cos\theta\frac{d\Theta}{d\theta})
 \end{align}
 ``` 
+
+given that $\frac{d}{\sin\theta}=\cos\theta d\theta$
