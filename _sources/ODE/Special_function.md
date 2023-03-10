@@ -432,8 +432,8 @@ given that $\frac{d}{d\sin\theta}=\cos\theta d\theta$, we can rewrite the equati
 ```{math}
 :label: eq129
 \begin{align}
-&\lambda \cos^2\theta+\frac{\cos^2\theta}{\Theta}\frac{d}{d\sin\theta}(\cos^2\theta\frac{d\Theta}{d\sin\theta}) = m^2 
-& \rightarrow \Theta\lambda + \frac{d}{d\sin\theta} (1-\sin^2\theta) \frac{d\Theta}{d\sin\theta} = m^2 \Theta
+&\lambda \cos^2\theta+\frac{\cos^2\theta}{\Theta}\frac{d}{d\sin\theta}(\cos^2\theta\frac{d\Theta}{d\sin\theta}) = m^2 \\
+& \rightarrow \Theta\lambda + \frac{d}{d\sin\theta} (1-\sin^2\theta) \frac{d\Theta}{d\sin\theta} = m^2 \Theta \\
 & \rightarrow 
 \end{align}
 ``` 
