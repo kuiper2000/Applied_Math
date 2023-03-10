@@ -396,4 +396,12 @@ I will leave the proof to the readers. From {eq}`eq126`, one can easily use lowe
 ## Legendre Polynomial 
 Legendre is another very important and widely used function in atmospheric science, ex: the development of dynamical core, studying polar amplification, and solving Hadley circulation on a sphere. One can find that all of them are in a spherical coordinate. Indeed, one of the simplest way to decompose the phenomena on a sphere is using a spherical harmonics where the Fourier decomposition is applied to the zonal direction and the Legendre polynomial is applied to the meridional decomposition. 
 
-  
+### The origins and solutions 
+The Legendre polynomial arises from the spherical harmonics 
+
+```{figure} Spherical_map.png
+---
+name: FIG13
+---
+Spherical Coordinate
+```
