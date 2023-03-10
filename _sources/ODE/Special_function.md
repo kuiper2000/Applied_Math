@@ -389,3 +389,5 @@ and
 \frac{2\nu}{x}J_{\nu}(x)=J_{\nu+1}(x)+J_{\nu-1}(x)
 \end{align}
 ``` 
+
+I will leave the proof to the readers. From {eq}`eq126`, one can easily use lower order Bessel function to retrieve higher order Bessel function. 
