@@ -411,6 +411,6 @@ For Laplace equation on a spherical coordinate, it can be written.
 ```{math}
 :label: eq127
 \begin{align}
-\nabla^2 \psi = 
+\nabla^2 \psi = \frac{1}{r^2}\frac{\partial }{\partial r}(r^2 \frac{\partial}{\partial r} \psi)+\frac{1}{r^2\cos\theta}\frac{\partial}{\partial \theta}(\cos\theta \frac{\partial}{\partial \theta} \psi)
 \end{align}
 ``` 
