@@ -344,25 +344,13 @@ is expanded in an infinite series in $t$, then the coefficient coefficient of $t
 e^{\frac{x(t-1/t)}{2}}=\sum_{-\infty}^{\infty}J_n(x)t^n
 ``` 
 
-To find the corresponding coefficient, we can rewrite {eq}`eq122` into 
-
+For this reason, this is called the generating function for integer order Bessel functions of the first kind. 
+One can further rewrite {eq}`eq122` into 
 
 ```{math}
 :label: eq123
 \begin{align}
-e^{\frac{x(t-1/t)}{2}}&=e^{\frac{xt}{2}}e^{-\frac{x}{2t}} \\
-                      &=(\sum_{m=0}^{\infty}\frac{1}{m!}(\frac{xt}{2})^{m})(\sum_{k=0}^{\infty}\frac{1}{k!}(-1)^k(\frac{x}{2t}^k)) \\
-                      &=(1+\frac{xt}{2}+\frac{1}{2!}\frac{x^2t^2}{2^2}+\frac{1}{3!}\frac{x^3t^3}{2^3}\cdots)(1-\frac{x}{2t}+\frac{1}{2!}\frac{x^2}{2^2t^2}-\frac{1}{3!}\frac{x^3}{2^3t^3}\cdots)
-\end{align}
-``` 
-
-we know $t^4$ happens when $\frac{x^4t^4}{4!}$ term on the left is multiplied by $1$ on the right, $\frac{x^5t^5}{5!}$ on the left is multiplied by $-\frac{x}{2t}$ on the right and so and so forth. The coefficient of $t^4$ in the product of the two series is ...
-
-
-```{math}
-:label: eq124
-\begin{align}
-& \frac{x^4t^4}{2^4 4!}-\frac{x^5t^5}{2^6 5!}+\frac{x^6t^6}{2^8 6!}\frac{x^2}{2!t^2}+\cdots
-& =\sum_{n=0}^{\infty}\frac{(-1)^n}{2^{2n+4}n!(n+4)!}x^{2n+4}=J_4(x)
+e^{\frac{x(t-1/t)}{2}} & =e^{\frac{xt}{2}}e^{\frac{-x}{2t}} \\
+                       & =(\sum_{m=0}^{\infty}\frac{1}{m!}(\frac{xt}{2})^m)(\sum_{k=0}^{\infty}\frac{1}{k!}(-1)^{k}(\frac{x}{2t})^{k})
 \end{align}
 ``` 
