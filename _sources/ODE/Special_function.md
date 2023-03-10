@@ -351,6 +351,9 @@ One can further rewrite {eq}`eq122` into
 :label: eq123
 \begin{align}
 e^{\frac{x(t-1/t)}{2}} & =e^{\frac{xt}{2}}e^{\frac{-x}{2t}} \\
-                       & =(\sum_{m=0}^{\infty}\frac{1}{m!}(\frac{xt}{2})^m)(\sum_{k=0}^{\infty}\frac{1}{k!}(-1)^{k}(\frac{x}{2t})^{k})
+                       & =(\sum_{m=0}^{\infty}\frac{1}{m!}(\frac{xt}{2})^m)(\sum_{k=0}^{\infty}\frac{1}{k!}(-1)^{k}(\frac{x}{2t})^{k}) \\ 
+                       & =(1+\frac{xt}{2}+\frac{1}{2!}\frac{x^2t^2}{2^2}+\frac{1}{3!}\frac{x^3t^3}{2^3}+\cdots)(1+\frac{x}{2t}-\frac{1}{2!}\frac{x^2}{2^2t^2}+\frac{1}{3!}\frac{x^3}{2^3t^3}+\cdots)
 \end{align}
 ``` 
+
+For each n, determine the coefficient of $t^n$, we can find the corresponding Bessel function. To illustrate, look for the coefficient of $t^4$ in this product. To retrieve the $t^4$ term, it can be the multiplication of 
