@@ -402,6 +402,7 @@ The Legendre polynomial arises from the spherical harmonics
 ```{figure} Spherical_map.png
 ---
 name: FIG13
+scale: 30%
 ---
 Spherical Coordinate
 ```
