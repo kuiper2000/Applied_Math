@@ -414,3 +414,5 @@ For Laplace equation on a spherical coordinate, it can be written.
 \nabla^2 \psi = \frac{1}{r^2}\frac{\partial }{\partial r}(r^2 \frac{\partial}{\partial r} \psi)+\frac{1}{r^2\cos\theta}\frac{\partial}{\partial \theta}(\cos\theta \frac{\partial}{\partial \theta} \psi)+\frac{1}{r^2 \cos^2\theta} \frac{\partial^2}{\partial \phi^2}\psi
 \end{align}
 ``` 
+
+Again, if we applied separation of variable to {eq}`eq127` and let $\psi=R(r)\Theta(\theta)\Phi(\phi)$
