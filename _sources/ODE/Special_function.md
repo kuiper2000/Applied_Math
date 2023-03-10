@@ -352,8 +352,40 @@ One can further rewrite {eq}`eq122` into
 \begin{align}
 e^{\frac{x(t-1/t)}{2}} & =e^{\frac{xt}{2}}e^{\frac{-x}{2t}} \\
                        & =(\sum_{m=0}^{\infty}\frac{1}{m!}(\frac{xt}{2})^m)(\sum_{k=0}^{\infty}\frac{1}{k!}(-1)^{k}(\frac{x}{2t})^{k}) \\ 
-                       & =(1+\frac{xt}{2}+\frac{1}{2!}\frac{x^2t^2}{2^2}+\frac{1}{3!}\frac{x^3t^3}{2^3}+\cdots)(1+\frac{x}{2t}-\frac{1}{2!}\frac{x^2}{2^2t^2}+\frac{1}{3!}\frac{x^3}{2^3t^3}+\cdots)
+                       & =(1+\frac{xt}{2}+\frac{1}{2!}\frac{x^2t^2}{2^2}+\frac{1}{3!}\frac{x^3t^3}{2^3}+\cdots)(1-\frac{x}{2t}+\frac{1}{2!}\frac{x^2}{2^2t^2}-\frac{1}{3!}\frac{x^3}{2^3t^3}+\cdots)
 \end{align}
 ``` 
 
-For each n, determine the coefficient of $t^n$, we can find the corresponding Bessel function. To illustrate, look for the coefficient of $t^4$ in this product. To retrieve the $t^4$ term, it can be the multiplication of 
+For each n, determine the coefficient of $t^n$, we can find the corresponding Bessel function. To illustrate, look for the coefficient of $t^4$ in this product. To retrieve the $t^4$ term, it can be the multiplication of $\frac{1}{4!}\frac{x^4t^4}{2^4}$ on the left with 1 on the right, or $\frac{1}{5!}\frac{x^5t^5}{2^5}$ on the left with $\frac{x}{2t}$ on the right...so on and so forth. 
+
+The coefficient of $t^4$ in the product of the two series can be written as 
+
+
+```{math}
+:label: eq124
+\begin{align}
+& \frac{1}{2^4 4!}x^4-\frac{1}{2^6 5!}x^5+\frac{1}{2^8 6!}x^6+\cdots...
+& =\sum_{n=0}^{\infty}\frac{(-1)^n}{2^{2n+4}n!(n+4)!}x^{2n+4}=J_4(x)
+\end{align}
+``` 
+
+
+In addition to the generative function of Bessel function solutions, the Bessel functions with different order ex:$\nu$, $\nu-1$, and $\nu+1$ are related to each other in several important. 
+
+
+```{math}
+:label: eq125
+\begin{align}
+&\frac{d}{dx}(x^{\nu}J_{\nu}(x))  =x^{\nu}J_{\nu-1}(x) \\
+&\frac{d}{dx}(x^{-\nu}J_{\nu}(x)) =-x^{-\nu}J_{\nu+1}(x) 
+\end{align}
+``` 
+
+and 
+
+```{math}
+:label: eq126
+\begin{align}
+\frac{2\nu}{x}J_{\nu}(x)=J_{\nu+1}(x)+J_{\nu-1}(x)
+\end{align}
+``` 
