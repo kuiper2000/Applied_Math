@@ -438,8 +438,20 @@ Here we take the zonal average (average over $\phi$), the second equation become
 since $d\sin\theta=\frac{1}{\cos\theta}d\theta$, we can rewrite the above equation into 
 
 ```{math}
-:label: eq129
+:label: eq130
 \begin{align}
-&\lambda \cos^2\theta \Theta+\frac{\cos^2\theta}{}\frac{d}{d\sin\theta}((1-\sin^2\theta)\frac{d\Theta}{d\sin\theta}) = 0
+&\lambda \cos^2\theta \Theta+\cos^2\theta\frac{d}{d\sin\theta}((1-\sin^2\theta)\frac{d\Theta}{d\sin\theta}) = 0
 \end{align}
 ``` 
+
+Then subtract $\cos^2\theta$ from both terms and let $\sin\theta=x$, we will have  
+
+```{math}
+:label: eq131
+\begin{align}
+&\lambda \Theta+\frac{d}{dx}((1-x^2)\frac{d\Theta}{dx}) = 0
+\end{align}
+``` 
+
+which satisfies the Sturm-Liouville form given that the solution is bounded at both poles. 
+
