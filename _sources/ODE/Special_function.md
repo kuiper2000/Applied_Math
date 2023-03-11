@@ -422,6 +422,15 @@ Again, if we applied separation of variable to {eq}`eq127` and let $\psi=R(r)\Th
 \begin{align}
 &\frac{1}{R}\frac{d}{r}r^2\frac{dR}{dr} = \lambda \\
 &\frac{1}{\phi}\frac{d^2\Phi}{d\phi^2}  = -m^2 \\
-&\lambda \cos^2\theta+\frac{\cos\theta}{\Theta}\frac{d}{d\theta}(\cos\theta\frac{d\Theta}{d\theta})
+&\lambda \cos^2\theta+\frac{\cos\theta}{\Theta}\frac{d}{d\theta}(\cos\theta\frac{d\Theta}{d\theta}) = m^2
+\end{align}
+``` 
+
+Here we take the zonal average (average over $\phi$), the second equation becomes 0 and the third equation can be written as, 
+
+```{math}
+:label: eq128
+\begin{align}
+&\lambda \cos^2\theta+\frac{\cos\theta}{\Theta}\frac{d}{d\theta}(\cos\theta\frac{d\Theta}{d\theta}) = 0
 \end{align}
 ``` 
