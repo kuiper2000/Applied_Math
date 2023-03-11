@@ -429,8 +429,17 @@ Again, if we applied separation of variable to {eq}`eq127` and let $\psi=R(r)\Th
 Here we take the zonal average (average over $\phi$), the second equation becomes 0 and the third equation can be written as, 
 
 ```{math}
-:label: eq128
+:label: eq129
 \begin{align}
 &\lambda \cos^2\theta+\frac{\cos\theta}{\Theta}\frac{d}{d\theta}(\cos\theta\frac{d\Theta}{d\theta}) = 0
+\end{align}
+``` 
+
+since $d\sin\theta=\frac{1}{\cos\theta}d\theta$, we can rewrite the above equation into 
+
+```{math}
+:label: eq129
+\begin{align}
+&\lambda \cos^2\theta \Theta+\frac{\cos^2\theta}{}\frac{d}{d\sin\theta}((1-\sin^2\theta)\frac{d\Theta}{d\sin\theta}) = 0
 \end{align}
 ``` 
