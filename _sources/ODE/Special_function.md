@@ -422,18 +422,6 @@ Again, if we applied separation of variable to {eq}`eq127` and let $\psi=R(r)\Th
 \begin{align}
 &\frac{1}{R}\frac{d}{r}r^2\frac{dR}{dr} = \lambda \\
 &\frac{1}{\phi}\frac{d^2\Phi}{d\phi^2}  = -m^2 \\
-&\lambda \cos^2\theta+\frac{\cos\theta}{\Theta}\frac{d}{d\theta}(\cos\theta\frac{d\Theta}{d\theta}) = m^2
-\end{align}
-``` 
-
-given that $\frac{d}{d\sin\theta}=\cos\theta d\theta$, we can rewrite the equation 
-
-
-```{math}
-:label: eq129
-\begin{align}
-&\lambda \cos^2\theta+\frac{\cos^2\theta}{\Theta}\frac{d}{d\sin\theta}(\cos^2\theta\frac{d\Theta}{d\sin\theta}) = m^2 \\
-& \rightarrow \Theta\lambda + \frac{d}{d\sin\theta} (1-\sin^2\theta) \frac{d\Theta}{d\sin\theta} = m^2 \Theta \\
-& \rightarrow 
+&\lambda \cos^2\theta+\frac{\cos\theta}{\Theta}\frac{d}{d\theta}(\cos\theta\frac{d\Theta}{d\theta})
 \end{align}
 ``` 
