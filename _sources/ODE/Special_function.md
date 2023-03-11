@@ -434,8 +434,7 @@ Here we take the zonal average (average over $\phi$), the second equation become
 &\lambda \cos^2\theta+\frac{\cos\theta}{\Theta}\frac{d}{d\theta}(\cos\theta\frac{d\Theta}{d\theta}) = 0
 \end{align}
 ``` 
-
-since $d\sin\theta=\frac{1}{\cos\theta}d\theta$, we can rewrite the above equation into 
+From the equation above, we know the weighting function is $\cos\theta$. Since $d\sin\theta=\frac{1}{\cos\theta}d\theta$, we can further rewrite the above equation into 
 
 ```{math}
 :label: eq130
