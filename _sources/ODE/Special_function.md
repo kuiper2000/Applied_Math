@@ -504,4 +504,4 @@ we obtain
 \end{align}
 ``` 
 
-One can find, as long as we determine $a_0$ and $a_1$, we determine all of the higher order terms. 
+One can find, as long as we determine $a_0$ and $a_1$, we determine all of the higher order terms. We can find something interesting from the third equation of {eq}`eq136`. The entire equation is truncated when $\lambda = n(n-1)$. 
