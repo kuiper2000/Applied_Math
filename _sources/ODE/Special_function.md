@@ -479,7 +479,7 @@ Substitute {eq}`eq132` and {eq}`eq133` into,
 :label: eq134
 \begin{align}
 &\sum_{n=2}^{\infty} n(n-1) a_nx^{n-2}-2 \sum_{n=1}^{\infty} n a_nx^n + \lambda \sum_{n=0}^{\infty} a_nx^n = 0 \\
-\rightarrow &\sum_{n=0}^{\infty} (n+2)(n+1) a_{n+2}x^n-2 \sum_{n=0}^{\infty} (n+1) a_(n+1)x^{n+1} + \lambda \sum_{n=0}^{\infty} a_nx^n = 0
+\rightarrow &\sum_{n=0}^{\infty} (n+2)(n+1) a_{n+2}x^n-2 \sum_{n=0}^{\infty} (n+1) a_{n+1}x^{n+1} + \lambda \sum_{n=0}^{\infty} a_nx^n = 0
 \end{align}
 ``` 
 
