@@ -528,3 +528,25 @@ P_4(x) & =\frac{1}{8}(35x^4-30x^2+3) \\
 & \cdots 
 \end{align}
 ``` 
+
+
+```julia
+x             = range(-1, 1, length=1000)
+sum_Legendre_even = zeros(Complex, 7, 1000)
+sum_Legendre_even[1,:] .= 1
+count2        = 1
+for n_max in 2:2:10  #give an even number
+    a_even        = 1
+    λ             = (n_max)*(n_max+1)
+    Legendre_even = zeros(Complex, 100, 1000)
+    Legendre_even[1,:] .= a_even
+    count         = 2
+    for n in 0:2:100
+        a_even                 = ((n)*(n+1)-λ)/((n+1)*(n+2))*a_even
+        Legendre_even[count,:] = a_even*x.^(float(n+2))
+        count                  = count+1
+    end
+    sum_Legendre_even[count2+1,:] = sum(Legendre_even,dims=1)
+    count2=count2+1
+end
+```
