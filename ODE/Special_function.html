@@ -690,16 +690,23 @@ e^{\frac{x(t-1/t)}{2}} &amp; =e^{\frac{xt}{2}}e^{\frac{-x}{2t}} \\
 \end{align}\end{split}\]</div>
 <p>Substitute <a class="reference internal" href="#equation-eq132">(132)</a> and <a class="reference internal" href="#equation-eq133">(133)</a> into,</p>
 <div class="math notranslate nohighlight" id="equation-eq134">
-<span class="eqno">(135)<a class="headerlink" href="#equation-eq134" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(134)<a class="headerlink" href="#equation-eq134" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 &amp; \sum_{n=2}^{\infty} n(n-1) a_nx^{n-2} -\sum_{n=2}^{\infty} n(n-1) a_nx^{n}-2\sum_{n=1}^{\infty} n a_nx^{n}+\lambda \sum_{n=0}^{\infty} a_nx^n = 0\\
 &amp; \rightarrow \sum_{n=0}^{\infty} (n+2)(n+1) a_{n+2}x^{n}  -\sum_{n=2}^{\infty} n(n-1) a_nx^{n}-2\sum_{n=1}^{\infty} n a_nx^{n} +\lambda \sum_{n=0}^{\infty} a_nx^n = 0 
 \end{align}\end{split}\]</div>
 <p>Examine each order, we have</p>
-<div class="math notranslate nohighlight" id="equation-eq134">
-<span class="eqno">(135)<a class="headerlink" href="#equation-eq134" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq135">
+<span class="eqno">(135)<a class="headerlink" href="#equation-eq135" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 \textrm{0th order: } &amp; [(2)(1)a_{2}+\lambda a_0] x^0\\
 \textrm{1st order: } &amp; [(3)(2)a_{3}-2(1)a_1+\lambda a_1] x^1\\
 \textrm{nth order (n$\geq$2): } &amp; [(n+2)(n+1)a_{n+2}-n(n-1) a_n-2(n)a_n+\lambda a_n] x^n\\
+\end{align}\end{split}\]</div>
+<p>we obtain</p>
+<div class="math notranslate nohighlight" id="equation-eq136">
+<span class="eqno">(136)<a class="headerlink" href="#equation-eq136" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\textrm{0th order: } &amp; 2a_{2} =-\lambda a_0\\
+\textrm{1st order: } &amp; 6a_{3} =2a_1-\lambda a_1\\
+\textrm{nth order (n$\geq$2): } &amp; a_{n+2}=\frac{n(n-1)-\lambda}{(n+2)(n+1)} a_n \\
 \end{align}\end{split}\]</div>
 </div>
 </div>

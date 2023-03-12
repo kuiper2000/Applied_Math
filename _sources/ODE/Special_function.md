@@ -486,10 +486,20 @@ Substitute {eq}`eq132` and {eq}`eq133` into,
 
 Examine each order, we have 
 ```{math}
-:label: eq134
+:label: eq135
 \begin{align}
 \textrm{0th order: } & [(2)(1)a_{2}+\lambda a_0] x^0\\
 \textrm{1st order: } & [(3)(2)a_{3}-2(1)a_1+\lambda a_1] x^1\\
 \textrm{nth order (n$\geq$2): } & [(n+2)(n+1)a_{n+2}-n(n-1) a_n-2(n)a_n+\lambda a_n] x^n\\
 \end{align}
 ```
+
+we obtain
+```{math}
+:label: eq136
+\begin{align}
+\textrm{0th order: } & 2a_{2} =-\lambda a_0\\
+\textrm{1st order: } & 6a_{3} =2a_1-\lambda a_1\\
+\textrm{nth order (n$\geq$2): } & a_{n+2}=\frac{n(n-1)-\lambda}{(n+2)(n+1)} a_n \\
+\end{align}
+``` 
