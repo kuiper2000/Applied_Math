@@ -503,3 +503,5 @@ we obtain
 \textrm{nth order (n$\geq$2): } & a_{n+2}=\frac{n(n-1)-\lambda}{(n+2)(n+1)} a_n \\
 \end{align}
 ``` 
+
+One can find, as long as we determine $a_0$ and $a_1$, we determine all of the higher order terms. 
