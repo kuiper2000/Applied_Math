@@ -448,7 +448,7 @@ Then subtract $\cos^2\theta$ from both terms and let $\sin\theta=x$, we will hav
 ```{math}
 :label: eq131
 \begin{align}
-&\lambda \Theta+\frac{d}{dx}((1-x^2)\frac{d\Theta}{dx}) = \frac{d^2}{dx^2}\Theta -2x\Theta +\lambda \Theta 
+&\lambda \Theta+\frac{d}{dx}((1-x^2)\frac{d\Theta}{dx}) = (1-x^2)\frac{d^2}{dx^2}\Theta -2x\Theta +\lambda \Theta 
 \end{align}
 ``` 
 
@@ -475,21 +475,5 @@ which gives us
 
 Substitute {eq}`eq132` and {eq}`eq133` into, 
 
-```{math}
-:label: eq134
-\begin{align}
-&\sum_{n=2}^{\infty} n(n-1) a_nx^{n-2}-2 \sum_{n=1}^{\infty} n a_nx^n + \lambda \sum_{n=0}^{\infty} a_nx^n = 0 \\
-\rightarrow &\sum_{n=0}^{\infty} (n+2)(n+1) a_{n+2}x^n-2 \sum_{n=0}^{\infty} (n+1) a_{n+1}x^{n+1} + \lambda \sum_{n=0}^{\infty} a_nx^n = 0
-\end{align}
-``` 
 
-{eq}`eq134` implies the following recurrence relation, 
-```{math}
-:label: eq135
-\begin{align}
-& (2a_2 + \lambda a_0)x^{0} = 0 \\
-& (6a_3-2a_1+\lambda a_1)x^{1} = 0 \\
-& \sum_{n=2}^{\infty} [(n+2)(n+1) a_{n+2}+]= 0 \\
-\end{align}
-``` 
 
