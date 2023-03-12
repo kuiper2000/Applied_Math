@@ -488,7 +488,7 @@ Substitute {eq}`eq132` and {eq}`eq133` into,
 :label: eq135
 \begin{align}
 & (2a_2 + \lambda a_0)x^{0} = 0 \\
-& (6a_3-2a_1 \lambda a_1)x^{0} = 0 \\
+& (6a_3-2a_1 \lambda a_1)x^{1} = 0 \\
 & \sum_{n=2}^{\infty} [(n+2)(n+1) a_{n+2}+]= 0 \\
 \end{align}
 ``` 
