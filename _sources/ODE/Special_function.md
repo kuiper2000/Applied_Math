@@ -509,8 +509,8 @@ One can find, as long as we determine $a_0$ and $a_1$, we determine all of the h
 :label: eq137
 \begin{align}
 \Theta =&\sum_{n=0}^{\infty} a_n x^n \\
-       =&a_0[1+\frac{0(0-1)-\lambda}{(0+2)(0+1)}+\frac{0(0-1)-\lambda}{(0+2)(0+1)}\frac{2(2-1)-\lambda}{(2+2)(2+1)}+\cdots] + \\
-        &a_1[]
+       =&a_0[1+\frac{-\lambda}{2}x^2+\frac{-\lambda}{2}\frac{2(2-1)-\lambda}{(2+2)(2+1)}x^4+\cdots] + \\
+        &a_1[x+\frac{2-\lambda}{6}x^3+\frac{2-\lambda}{6}\frac{3(3-1)-\lambda}{(3+2)(3+1)}x^5+\cdots]
 \end{align}
 ```
 
