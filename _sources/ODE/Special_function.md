@@ -463,5 +463,14 @@ Following the typical procedure of solving Sturm-Liouville problem, assume the s
 \end{align}
 ``` 
 
+which gives us 
 
+```{math}
+:label: eq133
+\begin{align}
+\Theta^{'}&=\sum_{n=0}^{\infty} n a_nx^(n-1) \\
+\Theta^{''}&=\sum_{n=0}^{\infty} n(n-1) a_nx^(n-2) \\
+\end{align}
+``` 
 
+Substitute {eq}`eq132` and {eq}`eq133` into 
