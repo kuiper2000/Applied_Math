@@ -514,14 +514,17 @@ One can find, as long as we determine $a_0$ and $a_1$, we determine all of the h
 \end{align}
 ```
 
-We can find something interesting from the third equation of {eq}`eq136`. The entire equation is truncated when $\lambda = n(n-1)$. If we further set one of $a_0$ or $a_1$ equals 0, all of the even/odd terms vanish. This will form so-called _Legendre Polynomials_ where, 
+We can find something interesting from the second and third lines of {eq}`eq137`. The entire equation is truncated when $\lambda = n(n-1)$. If we further set one of $a_0$ or $a_1$ equals 0, all of the even/odd terms vanish. This will form so-called _Legendre Polynomials_ where, 
 
 
 ```{math}
 :label: eq136
 \begin{align}
-P_0(x) & =a_0  \\
-P_1(x) & =a_1 x \\
-P_2(x) & =a_0 \sum[]
+P_0(x) & =1  \\
+P_1(x) & =x  \\
+P_2(x) & =\frac{1}{2}(3x^2-1) \\ 
+P_3(x) & =\frac{1}{2}(5x^3-3x) \\
+P_4(x) & =\frac{1}{8}(35x^4-30x^2+3) \\
+& cdots 
 \end{align}
 ``` 

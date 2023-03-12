@@ -712,15 +712,18 @@ e^{\frac{x(t-1/t)}{2}} &amp; =e^{\frac{xt}{2}}e^{\frac{-x}{2t}} \\
 <div class="math notranslate nohighlight" id="equation-eq137">
 <span class="eqno">(137)<a class="headerlink" href="#equation-eq137" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 \Theta =&amp;\sum_{n=0}^{\infty} a_n x^n \\
-       =&amp;a_0[1+\frac{0(0-1)-\lambda}{(0+2)(0+1)}x^2+\frac{0(0-1)-\lambda}{(0+2)(0+1)}\frac{2(2-1)-\lambda}{(2+2)(2+1)}x^4+\cdots] + \\
-        &amp;a_1[1+\frac{0(0-1)-\lambda}{(0+2)(0+1)}x^2+\frac{0(0-1)-\lambda}{(0+2)(0+1)}\frac{2(2-1)-\lambda}{(2+2)(2+1)}x^4+\cdots]
+       =&amp;a_0[1+\frac{-\lambda}{2}x^2+\frac{-\lambda}{2}\frac{2(2-1)-\lambda}{(2+2)(2+1)}x^4+\cdots] + \\
+        &amp;a_1[x+\frac{2-\lambda}{6}x^3+\frac{2-\lambda}{6}\frac{3(3-1)-\lambda}{(3+2)(3+1)}x^5+\cdots]
 \end{align}\end{split}\]</div>
-<p>We can find something interesting from the third equation of <a class="reference internal" href="#equation-eq136">(138)</a>. The entire equation is truncated when <span class="math notranslate nohighlight">\(\lambda = n(n-1)\)</span>. If we further set one of <span class="math notranslate nohighlight">\(a_0\)</span> or <span class="math notranslate nohighlight">\(a_1\)</span> equals 0, all of the even/odd terms vanish. This will form so-called <em>Legendre Polynomials</em> where,</p>
+<p>We can find something interesting from the second and third lines of <a class="reference internal" href="#equation-eq137">(137)</a>. The entire equation is truncated when <span class="math notranslate nohighlight">\(\lambda = n(n-1)\)</span>. If we further set one of <span class="math notranslate nohighlight">\(a_0\)</span> or <span class="math notranslate nohighlight">\(a_1\)</span> equals 0, all of the even/odd terms vanish. This will form so-called <em>Legendre Polynomials</em> where,</p>
 <div class="math notranslate nohighlight" id="equation-eq136">
 <span class="eqno">(138)<a class="headerlink" href="#equation-eq136" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-P_0(x) &amp; =a_0  \\
-P_1(x) &amp; =a_1 x \\
-P_2(x) &amp; =a_0 \sum[]
+P_0(x) &amp; =1  \\
+P_1(x) &amp; =x  \\
+P_2(x) &amp; =\frac{1}{2}(3x^2-1) \\ 
+P_3(x) &amp; =\frac{1}{2}(5x^3-3x) \\
+P_4(x) &amp; =\frac{1}{8}(35x^4-30x^2+3) \\
+&amp; cdots 
 \end{align}\end{split}\]</div>
 </div>
 </div>
