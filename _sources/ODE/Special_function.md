@@ -518,7 +518,7 @@ We can find something interesting from the second and third lines of {eq}`eq137`
 
 
 ```{math}
-:label: eq136
+:label: eq138
 \begin{align}
 P_0(x) & =1  \\
 P_1(x) & =x  \\
@@ -557,3 +557,5 @@ name: FIG14
 ---
 An visualization of Legendre Polynomials with $n=0,2,4,6$
 ```
+
+From the figure above 
