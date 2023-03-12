@@ -448,9 +448,20 @@ Then subtract $\cos^2\theta$ from both terms and let $\sin\theta=x$, we will hav
 ```{math}
 :label: eq131
 \begin{align}
-&\lambda \Theta+\frac{d}{dx}((1-x^2)\frac{d\Theta}{dx}) = 0
+&\lambda \Theta+\frac{d}{dx}((1-x^2)\frac{d\Theta}{dx}) = \frac{d^2}{dx^2}\Theta -2x\Theta +\lambda \Theta 
 \end{align}
 ``` 
 
 which satisfies the Sturm-Liouville form given that the solution is bounded at both poles. 
+
+Following the typical procedure of solving Sturm-Liouville problem, assume the solution has a form of 
+
+```{math}
+:label: eq132
+\begin{align}
+\Theta=\sum_{n=0}^{\infty} a_nx^n
+\end{align}
+``` 
+
+
 
