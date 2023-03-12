@@ -551,7 +551,7 @@ for n_max in 2:2:10  #give an even number
 end
 ```
 
-```{figure} Legendre_Polynomials.png
+```{figure} Legendre_Polynomial.png
 ---
 name: FIG14
 ---
