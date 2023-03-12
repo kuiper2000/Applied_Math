@@ -498,8 +498,8 @@ we obtain
 ```{math}
 :label: eq136
 \begin{align}
-\textrm{0th order: } & 2a_{2} =-\lambda a_0\\
-\textrm{1st order: } & 6a_{3} =2a_1-\lambda a_1\\
+\textrm{0th order: } & a_{2} =-\frac{\lambda}{2} a_0\\
+\textrm{1st order: } & a_{3} =\frac{2-\lambda}{6} a_1\\
 \textrm{nth order (n$\geq$2): } & a_{n+2}=\frac{n(n-1)-\lambda}{(n+2)(n+1)} a_n \\
 \end{align}
 ``` 
