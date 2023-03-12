@@ -504,4 +504,24 @@ we obtain
 \end{align}
 ``` 
 
-One can find, as long as we determine $a_0$ and $a_1$, we determine all of the higher order terms. We can find something interesting from the third equation of {eq}`eq136`. The entire equation is truncated when $\lambda = n(n-1)$. 
+One can find, as long as we determine $a_0$ and $a_1$, we determine all of the higher order terms. i.e., 
+```{math}
+:label: eq137
+\begin{align}
+\Theta =&\sum_{n=0}^{\infty} a_n x^n \\
+       =&a_0[1+\frac{0(0-1)-\lambda}{(0+2)(0+1)}+\frac{0(0-1)-\lambda}{(0+2)(0+1)}\frac{2(2-1)-\lambda}{(2+2)(2+1)}+\cdots] + \\
+        &a_1[]
+\end{align}
+```
+
+We can find something interesting from the third equation of {eq}`eq136`. The entire equation is truncated when $\lambda = n(n-1)$. If we further set one of $a_0$ or $a_1$ equals 0, all of the even/odd terms vanish. This will form so-called _Legendre Polynomials_ where, 
+
+
+```{math}
+:label: eq136
+\begin{align}
+P_0(x) & =a_0  \\
+P_1(x) & =a_1 x \\
+P_2(x) & =a_0 \sum[]
+\end{align}
+``` 
