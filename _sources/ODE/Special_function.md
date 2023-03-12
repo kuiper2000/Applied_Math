@@ -550,3 +550,10 @@ for n_max in 2:2:10  #give an even number
     count2=count2+1
 end
 ```
+
+```{figure} Legendre_Polynomials.png
+---
+name: FIG14
+---
+An visualization of Legendre Polynomials with $n=0,2,4,6$
+```
