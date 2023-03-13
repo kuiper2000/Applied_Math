@@ -350,7 +350,7 @@ y_p = 2\cos(x)\cos(2x)+\sin(x)\sin(2x)-\sin(2x)\ln|\sec(x)+\tan(x)|
 To find all possible general solution, we use theorem 3: the combination of solutions for homogeneous problem and nonhomogeneous problem will be the general solution for any nonhomogeneous problem. Therefore, we have the final solution 
 
 ```{math}
-y = c_1\cos(2x)+c_2\sin(2x)+2\cos(x)\cos(2x)+y_p
+y = c_1\cos(2x)+c_2\sin(2x)+y_p
 ```
 
 :::
