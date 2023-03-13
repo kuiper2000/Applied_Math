@@ -558,4 +558,6 @@ name: FIG14
 An visualization of Legendre Polynomials with $n=0,2,4,6$
 ```
 
-From the figure above 
+From the figure above, one can find Legendre polynomials have maximum amplitude at both poles. This feature is caused by uneven weighting function in meridional direction. Recall that $dx=d\sin\theta$, this indicates the grid spacing is much smaller at the poles (or the area is weighted by $\cos\theta$). When the "heat" around the equator is diffused to the pole, the energy will be more concentrated due to the Earth geometry. This geometry effect plays an important in Polar Amplification, where we usually see more significant rising temperature at the pole than the equator (and of course there are many other physical processes lead to this result, but the geometry is the 0th order influence). 
+
+
