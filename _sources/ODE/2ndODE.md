@@ -337,14 +337,14 @@ and integrate both sides of the equation above,
 ```{math}
 \begin{align}
 u_1(x)&=2\cos(x) \\
-u_2(x)&=\sin(x)-\frac{1}{2}\ln |\sec(x)-tan(x)| \\
+u_2(x)&=\sin(x)-\frac{1}{2}\ln |\sec(x)+\tan(x)| \\
 \end{align}
 ```
 
 substitute $u_1$ and $u_2$ back to the general solution, we have 
 
 ```{math}
-y_p = 2\cos(x)\cos(2x)+\sin(x)\sin(2x)-\sin(2x)\ln|\sec(x)-\tan(x)|
+y_p = 2\cos(x)\cos(2x)+\sin(x)\sin(2x)-\sin(2x)\ln|\sec(x)+\tan(x)|
 ```
 
 To find all possible general solution, we use theorem 3: the combination of solutions for homogeneous problem and nonhomogeneous problem will be the general solution for any nonhomogeneous problem. Therefore, we have the final solution 
