@@ -605,7 +605,7 @@ Expand the each of these powers and collect the coefficient of each power of $t$
 \end{align}
 ``` 
 
-The generating function is sometimes useful in deriving general results. For example, we can use the generating function to show that $P_n(-1)=(-1)^n$. I will leave this questions to readers. 
+The generating function is sometimes useful in deriving general results. For example, we can use the generating function to show that $P_n(-1)=(-1)^n$. I will leave this questions to readers (HW). 
 
 
 Similar to Bessel function, there are also a few recurrence relations in Legendre Polynomials
@@ -617,3 +617,4 @@ Similar to Bessel function, there are also a few recurrence relations in Legendr
 \end{align}
 ``` 
 
+This can be proved by an inductive argument (hint: differentiate the generating function with respect to $t$ and multiply both sides with $\sqrt(1-2xt+t^2)$. Then reorganize the equation). I will also let readers to complete the proof. 
