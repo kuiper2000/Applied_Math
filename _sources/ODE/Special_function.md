@@ -604,6 +604,8 @@ Expand the each of these powers and collect the coefficient of each power of $t$
 \end{align}
 ``` 
 
+The generating function is sometimes useful in deriving general results. For example, we can use the generating function to show that $P_n(-1)=(-1)^n$. I will leave this questions to readers. 
+
 
 
 
