@@ -562,3 +562,31 @@ From the figure above, one can find Legendre polynomials have maximum amplitude 
 
 
 ### Generating Function and Recurrence Relations 
+Like Bessel function, Legendre Polynomial also has a generating function. 
+Let 
+
+```{math}
+:label: eq139
+\begin{align}
+L(x,t)=\frac{1}{\sqrt(1-2xt+t^2)}
+\end{align}
+``` 
+
+For a given x, $L(x,t)$ is a function which can be expanded in a power series about $t=0$. When this is done, the coefficient of $t^n$ is $P_n(x)$, i.e., 
+
+
+```{math}
+:label: eq140
+\begin{align}
+L(x,t)=\sum_{n=0}^{\infty} P_n(x)t^n
+\end{align}
+``` 
+
+We can get some feeling for this result by looking at a few terms of the Maclaurin series (Taylor expansion at $t=0$). 
+we know 
+
+```{math}
+\frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots
+``` 
+
+for $-1<w<1$
