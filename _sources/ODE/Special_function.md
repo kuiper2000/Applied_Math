@@ -589,4 +589,9 @@ we know
 \frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots
 ``` 
 
-for $-1<w<1$
+for $-1<w<1$. Put $w=2xt-t^2$ to obtain 
+
+```{math}
+:label: test
+\frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots
+``` 
