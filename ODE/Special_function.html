@@ -765,13 +765,15 @@ P_4(x) &amp; =\frac{1}{8}(35x^4-30x^2+3) \\
 <h3>Generating Function and Recurrence Relations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Like Bessel function, Legendre Polynomial also has a generating function.
 Let</p>
+<div class="math notranslate nohighlight" id="equation-test">
+<span class="eqno">(139)<a class="headerlink" href="#equation-test" title="Permalink to this equation">¶</a></span>\[\frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots\]</div>
 <div class="math notranslate nohighlight" id="equation-eq139">
-<span class="eqno">(139)<a class="headerlink" href="#equation-eq139" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<span class="eqno">(140)<a class="headerlink" href="#equation-eq139" title="Permalink to this equation">¶</a></span>\[\begin{align}
 L(x,t)=\frac{1}{\sqrt(1-2xt+t^2)}
 \end{align}\]</div>
 <p>For a given x, <span class="math notranslate nohighlight">\(L(x,t)\)</span> is a function which can be expanded in a power series about <span class="math notranslate nohighlight">\(t=0\)</span>. When this is done, the coefficient of <span class="math notranslate nohighlight">\(t^n\)</span> is <span class="math notranslate nohighlight">\(P_n(x)\)</span>, i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq140">
-<span class="eqno">(140)<a class="headerlink" href="#equation-eq140" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<span class="eqno">(141)<a class="headerlink" href="#equation-eq140" title="Permalink to this equation">¶</a></span>\[\begin{align}
 L(x,t)=\sum_{n=0}^{\infty} P_n(x)t^n
 \end{align}\]</div>
 <p>We can get some feeling for this result by looking at a few terms of the Maclaurin series (Taylor expansion at <span class="math notranslate nohighlight">\(t=0\)</span>).
@@ -779,8 +781,8 @@ we know</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots\]</div>
 <p>for <span class="math notranslate nohighlight">\(-1&lt;w&lt;1\)</span>. Put <span class="math notranslate nohighlight">\(w=2xt-t^2\)</span> to obtain</p>
-<div class="math notranslate nohighlight" id="equation-test">
-<span class="eqno">(141)<a class="headerlink" href="#equation-test" title="Permalink to this equation">¶</a></span>\[\frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots\]</div>
+<div class="math notranslate nohighlight" id="equation-ode-special-function-0">
+<span class="eqno">(142)<a class="headerlink" href="#equation-ode-special-function-0" title="Permalink to this equation">¶</a></span>\[\frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots\]</div>
 </div>
 </div>
 </div>

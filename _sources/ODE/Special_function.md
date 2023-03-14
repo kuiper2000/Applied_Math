@@ -566,6 +566,11 @@ Like Bessel function, Legendre Polynomial also has a generating function.
 Let 
 
 ```{math}
+:label: test 
+\frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots
+``` 
+
+```{math}
 :label: eq139
 \begin{align}
 L(x,t)=\frac{1}{\sqrt(1-2xt+t^2)}
@@ -592,6 +597,6 @@ we know
 for $-1<w<1$. Put $w=2xt-t^2$ to obtain 
 
 ```{math}
-:label: test
+:label: 
 \frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots
 ``` 
