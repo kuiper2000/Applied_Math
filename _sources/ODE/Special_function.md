@@ -610,5 +610,10 @@ The generating function is sometimes useful in deriving general results. For exa
 
 Similar to Bessel function, there are also a few recurrence relations in Legendre Polynomials
 
-
+```{math}
+:label: Legendre_Recurrence_Relation
+\begin{align}
+(n+1)P_{n+1}(x)-(2n+1)xP_n(x)+nP_{n-1}(x)=0
+\end{align}
+``` 
 
