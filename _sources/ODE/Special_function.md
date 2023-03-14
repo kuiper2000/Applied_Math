@@ -565,10 +565,6 @@ From the figure above, one can find Legendre polynomials have maximum amplitude 
 Like Bessel function, Legendre Polynomial also has a generating function. 
 Let 
 
-```{math}
-:label: test 
-\frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots
-``` 
 
 ```{math}
 :label: eq139
@@ -597,6 +593,19 @@ we know
 for $-1<w<1$. Put $w=2xt-t^2$ to obtain 
 
 ```{math}
-:label: 
-\frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots
+\frac{1}{\sqrt{1-(2xt-t^2)}} = 1+\frac{1}{2}(2xt-t^2)+\frac{3}{8}(2xt-t^2)^2+\frac{15}{48}(2xt-t^2)^3+\cdots
 ``` 
+
+Expand the each of these powers and collect the coefficient of each power of $t$ to obtain 
+```{math}
+\begin{align}
+\frac{1}{\sqrt{1-(2xt-t^2)}} &= 1+xt-\frac{1}{2}t^2+\frac{3}{2}x^2t^2-\frac{3}{2}x^2t^3+\frac{3}{8}t^4+\frac{5}{2}x^3t^3+\cdots \\
+                             &=
+\end{align}
+``` 
+
+
+
+
+
+
