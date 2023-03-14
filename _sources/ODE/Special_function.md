@@ -598,6 +598,7 @@ for $-1<w<1$. Put $w=2xt-t^2$ to obtain
 
 Expand the each of these powers and collect the coefficient of each power of $t$ to obtain 
 ```{math}
+:label: Legendre_generating_function
 \begin{align}
 \frac{1}{\sqrt{1-(2xt-t^2)}} &= 1+xt-\frac{1}{2}t^2+\frac{3}{2}x^2t^2-\frac{3}{2}x^2t^3+\frac{3}{8}t^4+\frac{5}{2}x^3t^3+\cdots \\
                              &= 1+xt+(\frac{3}{2}x^2-\frac{1}{2})t^2+(-\frac{3}{2}x+\frac{5}{2}x^3)t^3+\cdots
@@ -607,7 +608,7 @@ Expand the each of these powers and collect the coefficient of each power of $t$
 The generating function is sometimes useful in deriving general results. For example, we can use the generating function to show that $P_n(-1)=(-1)^n$. I will leave this questions to readers. 
 
 
-
+Similar to Bessel function, there are also a few recurrence relations in Legendre Polynomials
 
 
 
