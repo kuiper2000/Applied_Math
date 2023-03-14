@@ -600,7 +600,7 @@ Expand the each of these powers and collect the coefficient of each power of $t$
 ```{math}
 \begin{align}
 \frac{1}{\sqrt{1-(2xt-t^2)}} &= 1+xt-\frac{1}{2}t^2+\frac{3}{2}x^2t^2-\frac{3}{2}x^2t^3+\frac{3}{8}t^4+\frac{5}{2}x^3t^3+\cdots \\
-                             &=
+                             &= 1+xt+(\frac{3}{2}x^2-\frac{1}{2})t^2+(-\frac{3}{2}x+\frac{5}{2}x^3)t^3+\cdots
 \end{align}
 ``` 
 
