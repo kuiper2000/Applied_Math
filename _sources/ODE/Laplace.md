@@ -131,7 +131,7 @@ Solve the following ODE with Laplace Transform
 ```{math}
 y'-4y=1; \; y(0)=1
 ```
-As we know $\mathcal{L}[y'] = sY(s)-y(0)$, $\mathcal{L}[y'] = Y(s)$ and $\mathcal{L}[1] = \frac{1}{s}$. This leads to 
+As we know $\mathcal{L}[y'] = sY(s)-y(0)$, $\mathcal{L}[y] = Y(s)$ and $\mathcal{L}[1] = \frac{1}{s}$. This leads to 
 
 ```{math}
 (s-4)Y(s)-y(0)=\frac{1}{s}; \; y(0)=1
