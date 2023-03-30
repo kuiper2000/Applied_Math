@@ -50,7 +50,7 @@ Table 1 are some of the widely used Laplace Transforms. Readers can follow the e
 f(t) \Longrightarrow & F(s) \\
 1    \Longrightarrow & \frac{1}{s} \\
 t    \Longrightarrow & \frac{1}{s^2} \\
-t^n  \Longrightarrow & \frac{1}{s^{n+1}} \\
+t^n  \Longrightarrow & \frac{n!}{s^{n+1}} \\
 \frac{1}{\sqrt{t}}  \Longrightarrow & \sqrt{\frac{\pi}{s}} \\
 e^{at} \Longrightarrow & \frac{1}{s-a} \\ 
 te^{at} \Longrightarrow & \frac{1}{(s-a)^2} \\
