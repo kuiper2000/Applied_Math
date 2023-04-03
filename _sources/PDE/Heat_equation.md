@@ -16,7 +16,7 @@ Considering the solutions are bounded in a stick with $0\leq x \leq L$ and $k$ i
 ```{math}
 :label: eq142
 \begin{align}
-& u(0,t) = T_1, \; u(L,t) = T_2 
+& u(0,t) = T_1, \; u(L,t) = T_2  \\
 & u(x,0) = f(x)\; \textrm{for }  \; 0\leq x \leq L
 \end{align}
 ```
@@ -27,7 +27,7 @@ We can also use energy constraint where the temperature at both ends are not nec
 ```{math}
 :label: eq142
 \begin{align}
-& u_x(0,t) = A[u(0,t)-T], \; u_x(L,t) = -A[u(x,t)-T] 
+& u_x(0,t) = A[u(0,t)-T], \; u_x(L,t) = -A[u(x,t)-T]  \\
 & u(x,0) = f(x) \; \textrm{for }  \; 0\leq x \leq L
 \end{align}
 ```   

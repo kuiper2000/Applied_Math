@@ -367,17 +367,17 @@ title="Print to PDF"
 <span class="eqno">(143)<a class="headerlink" href="#equation-eq141" title="Permalink to this equation">¶</a></span>\[\frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}\]</div>
 <p>Considering the solutions are bounded in a stick with <span class="math notranslate nohighlight">\(0\leq x \leq L\)</span> and <span class="math notranslate nohighlight">\(k\)</span> is so-called diffusion coefficient. If we closely observe <a class="reference internal" href="#equation-eq141">(143)</a>, we can find it is the combination of a 1st-order ODE in time and a 2nd-order ODE in space. Therefore, we need at least 1 initial condition and 2 boundary conditions, which usually have form of</p>
 <div class="math notranslate nohighlight" id="equation-eq142">
-<span class="eqno">(145)<a class="headerlink" href="#equation-eq142" title="Permalink to this equation">¶</a></span>\[\begin{align}
-&amp; u(0,t) = T_1, \; u(L,t) = T_2 
+<span class="eqno">(145)<a class="headerlink" href="#equation-eq142" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+&amp; u(0,t) = T_1, \; u(L,t) = T_2  \\
 &amp; u(x,0) = f(x)\; \textrm{for }  \; 0\leq x \leq L
-\end{align}\]</div>
+\end{align}\end{split}\]</div>
 <p>The first two equations of <a class="reference internal" href="#equation-eq142">(145)</a> indicates that the temperature at both ends of the stick equals to their nearby environment.
 We can also use energy constraint where the temperature at both ends are not necessary the same as their environment. Therefore, the temperature difference will cause the heat radiating to its neighbor if the stick has higher temperature than its environment. This can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq142">
-<span class="eqno">(145)<a class="headerlink" href="#equation-eq142" title="Permalink to this equation">¶</a></span>\[\begin{align}
-&amp; u_x(0,t) = A[u(0,t)-T], \; u_x(L,t) = -A[u(x,t)-T] 
+<span class="eqno">(145)<a class="headerlink" href="#equation-eq142" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+&amp; u_x(0,t) = A[u(0,t)-T], \; u_x(L,t) = -A[u(x,t)-T]  \\
 &amp; u(x,0) = f(x) \; \textrm{for }  \; 0\leq x \leq L
-\end{align}\]</div>
+\end{align}\end{split}\]</div>
 <p>where the <span class="math notranslate nohighlight">\(\pm\)</span> sign simply represents</p>
 </div>
 </div>
