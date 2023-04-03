@@ -45,6 +45,9 @@ where the $\pm$ sign simply represents the direction of radiation. One can easil
 or vice versa. 
 
 Now let's take a look of a few cases. 
+
+
+
 :::{admonition} Example 1
 First consider the problem 
 
@@ -153,5 +156,19 @@ u(x,0) = \sum_{n=1}^{\infty} (\frac{2}{L}\int_{0}^{L}f(\xi)\sin(\frac{n\pi \xi}{
 \end{align}
 ```  
 
-From the solution above, one can find it will gradually approach 0 when $t\rightarrow\infty$ because of $e^{-k\frac{n^2\pi^2}{L^2}t}$ 
+From the solution above, one can find it will gradually approach 0 when $t\rightarrow\infty$ because of $e^{-k\frac{n^2\pi^2}{L^2}t}$. This is consistent with physical intuition. Therefore, for a heat diffusion without the existence of external forcing, the solution will gradually be smoothed out. 
+:::
+
+
+:::{admonition} Example 2: Temperature Gradient on a Stick
+Now considering a case where we have temperature gradient on a stick. The first half has temperature of $T$ and the second half has temperature $0$. 
+
+
+```{math}
+f(x) = \begin{cases} 
+& T \textrm{   for 0\leq x \leq \frac{L}{2}} \\
+& 0 \textrm{   for \frac{L}{2}< x \leq L} \\
+\end{cases}
+```
+
 :::
