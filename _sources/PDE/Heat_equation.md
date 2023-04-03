@@ -16,9 +16,20 @@ Considering the solutions are bounded in a stick with $0\leq x \leq L$ and $k$ i
 ```{math}
 :label: eq142
 \begin{align}
-& u(0,t) = T_1, \; u(L,t) = T_1 
-& u(x,0) = f(x)
+& u(0,t) = T_1, \; u(L,t) = T_2 
+& u(x,0) = f(x)\; \textrm{for }  \; 0\leq x \leq L
 \end{align}
 ```
 
-The first two equations of {eq}`eq142` is so-called radiation boundary, where the heat radiates to the environment 
+The first two equations of {eq}`eq142` indicates that the temperature at both ends of the stick equals to their nearby environment. 
+We can also use energy constraint where the temperature at both ends are not necessary the same as their environment. Therefore, the temperature difference will cause the heat radiating to its neighbor if the stick has higher temperature than its environment. This can be written as 
+
+```{math}
+:label: eq142
+\begin{align}
+& u_x(0,t) = A[u(0,t)-T], \; u_x(L,t) = -A[u(x,t)-T] 
+& u(x,0) = f(x) \; \textrm{for }  \; 0\leq x \leq L
+\end{align}
+```   
+
+where the $\pm$ sign simply represents 
