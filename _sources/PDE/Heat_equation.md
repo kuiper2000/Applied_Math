@@ -145,5 +145,11 @@ $b_n$ is the Fourier $\sin$ coefficients for each Fourier mode, which can be der
 b_n = \frac{2}{L}\int_{0}^{L}f(x)\sin(\frac{n\pi x}{L}) dx
 ```  
 
+and the final solution is 
 
+```{math}
+\begin{align}
+u(x,0) = \sum_{n=1}^{\infty} (\frac{2}{L}\int_{0}^{L}f(\xi)\sin(\frac{n\pi \xi}{L}) d\xi) \sin(\frac{n\pi x}{L}) = f(x)
+\end{align}
+```  
 :::
