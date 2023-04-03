@@ -166,8 +166,8 @@ Now considering a case where we have temperature gradient on a stick. The first 
 
 ```{math}
 f(x) = \begin{cases} 
-& T \textrm{   for 0\leq x \leq \frac{L}{2}} \\
-& 0 \textrm{   for \frac{L}{2}< x \leq L} \\
+& T \textrm{   for } 0\leq x \leq \frac{L}{2}\\
+& 0 \textrm{   for } \frac{L}{2}< x \leq L\\
 \end{cases}
 ```
 
