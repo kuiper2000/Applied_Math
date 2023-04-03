@@ -55,4 +55,21 @@ First consider the problem
 & u(x,0) = f(x) 
 \end{align}
 ```   
+
+Using _separation of variable_ of what we did in previous chapter, consists of attempting a solution of the form 
+
+```{math}
+\begin{align}
+u(x,t) = X(x)T(t)
+\end{align}
+```   
+
+Substitute this into the differential equation to get 
+
+```{math}
+\begin{align}
+XT^{'} = kX^{''}T
+\end{align}
+```   
+
 :::
