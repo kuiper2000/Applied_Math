@@ -82,4 +82,31 @@ which is equivalent to
 
 Observing the equation above, we can find the left hand side only depends on $t$ and the right hand side only depends on $x$. We also know that $X(x)$ and $T(t)$ vary independently. Therefore, only possibility exists: the ration of $T^{'}$ and $kT$ is a constant and so do $X^{''}$ and $X$. According to this, we can write down 
 
+
+```{math}
+\begin{align}
+\frac{T^{'}}{kT} = \frac{X^{''}}{X} = -\lambda 
+\end{align}
+```  
+
+One should notice that we can choose $lambda$ on the right in stead. However, to satisfy the Fourier solution is space, we can only have $-\lambda $. (readers can think about why?). 
+
+Now we have two differential equation 
+
+
+```{math}
+\begin{align}
+& X^{''} + \lambda X = 0  \; \textrm{with }  X(0) = X(L) = 0 \\ 
+& T^{'}  + k\lambda T = 0 \; \textrm{with }  T(0) = f(x,0)/X(L) \\ 
+\end{align}
+```  
+
+The first equation has a solution of Fourier $\sin$ function, 
+
+```{math}
+\begin{align}
+X(x) = \sin(\frac{n\pi x}{L}) \; \textrm{for } n=1,2,\cdots
+\end{align}
+```  
+
 :::
