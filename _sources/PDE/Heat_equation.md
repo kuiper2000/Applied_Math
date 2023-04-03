@@ -50,7 +50,9 @@ First consider the problem
 
 ```{math}
 \begin{align}
-u_t = ku_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
+& u_t = ku_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
+& u(0,t) = u(L,t) = 0 \\ 
+& u(x,0) = f(x) 
 \end{align}
 ```   
 :::
