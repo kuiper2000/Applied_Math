@@ -187,7 +187,7 @@ u(x,t) = \sum_{n=0}^{\infty} a_n \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2k}{L^2
 To get the Fourier coefficient, 
 
 ```{math}
-a_n = \frac{2}{L} \int^{\frac{L}{2}}_{0} T \cos(\frac{n\pi  x}{L}) dx
+a_n = \frac{2}{L} \int^{\frac{L}{2}}_{0} T \cos(\frac{n\pi  x}{L}) dx = \frac{2T}{n\pi}\sin(\frac{n\pi}{2})
 ```   
 
 where 
@@ -195,5 +195,8 @@ where
 ```{math}
 a_0 = \frac{T}{2}
 ```   
+
+
+
 
 :::
