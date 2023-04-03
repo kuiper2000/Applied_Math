@@ -139,4 +139,11 @@ u(x,0) = \sum_{n=1}^{\infty} b_n \sin(\frac{n\pi x}{L}) = f(x)
 \end{align}
 ```  
 
+$b_n$ is the Fourier $\sin$ coefficients for each Fourier mode, which can be derived by projecting $f(x)$ onto different Fourier basis
+
+```{math}
+b_n = \frac{2}{L}\int_{0}^{L}f(x)\sin(\frac{n\pi x}{L}) dx
+```  
+
+
 :::
