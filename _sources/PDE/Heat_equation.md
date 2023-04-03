@@ -170,7 +170,10 @@ T \textrm{   for } 0\leq x \leq \frac{L}{2}\\
 \end{cases}
 ```
 
-In addition, because the entire stick is insulted, we can expect that 
+Given the entire stick is insulted, we can expect that the equilibrium temperature will be $\frac{T}{2}$ i.e., half of the heat moves from the left to the right. In addition, the insulted stick will have Fourier $\cos$ function as solution given 0 radiation boundary condition. i.e., 
 
+```{math}
+u_x(0,t) = u_x(L,t) = 0
+```
 
 :::
