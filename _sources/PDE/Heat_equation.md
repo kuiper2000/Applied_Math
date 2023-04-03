@@ -35,9 +35,22 @@ We can also use energy constraint where the temperature at both ends are not nec
 where the $\pm$ sign simply represents the direction of radiation. One can easily find these two kinds of boundary condition fall within the category of type I Sturm-Liouville problem. Therefore, it's also possible to have a mixed boundary condition, where 
 
 ```{math}
-:label: eq145
+:label: eq146
 \begin{align}
 & u_x(0,t) = T_1, \; u_x(L,t) = -A[u(x,t)-T_2]  \\
 & u(x,0) = f(x) \; \textrm{for }  \; 0\leq x \leq L
 \end{align}
 ```   
+
+or vice versa. 
+
+Now let's take a look of a few cases. 
+:::{admonition} Example 1
+First consider the problem 
+
+```{math}
+\begin{align}
+u_t = ku_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
+\end{align}
+```   
+:::
