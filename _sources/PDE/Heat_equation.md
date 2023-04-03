@@ -129,7 +129,7 @@ Put two solutions together, we have
 
 ```{math}
 \begin{align}
-u(x,t) = \sum_{n=1}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2}{L^2}t}
+u(x,t) = \sum_{n=1}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2 k}{L^2}t}
 \end{align}
 ```  
 
@@ -152,7 +152,7 @@ and the final solution is
 
 ```{math}
 \begin{align}
-u(x,0) = \sum_{n=1}^{\infty} (\frac{2}{L}\int_{0}^{L}f(\xi)\sin(\frac{n\pi \xi}{L}) d\xi) \sin(\frac{n\pi x}{L}) = f(x)
+u(x,t) = \sum_{n=1}^{\infty} (\frac{2}{L}\int_{0}^{L}f(\xi)\sin(\frac{n\pi \xi}{L}) d\xi) \sin(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2 k}{L^2}t} 
 \end{align}
 ```  
 
@@ -175,5 +175,13 @@ Given the entire stick is insulted, we can expect that the equilibrium temperatu
 ```{math}
 u_x(0,t) = u_x(L,t) = 0
 ```
+
+The equation above can be considered as that the environment and stick always have the same temperature which leads to 0 heat exchange between sticks and outside environment. For such condition, the solution has a form of Fourier $\cos$ function. Therefore, the solution can be written as
+
+```{math}
+\begin{align}
+u(x,t) = \sum_{n=0}^{\infty} a_n \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2k}{L^2}t}
+\end{align}
+```  
 
 :::
