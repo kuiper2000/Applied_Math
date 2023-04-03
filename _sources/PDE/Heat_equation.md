@@ -160,9 +160,8 @@ From the solution above, one can find it will gradually approach 0 when $t\right
 :::
 
 
-:::{admonition} Example 2: Temperature Gradient on a Stick
-Now considering a case where we have temperature gradient on a stick. The first half has temperature of $T$ and the second half has temperature $0$. 
-
+:::{admonition} Example 2: Temperature Gradient on an Insulted Stick
+Now considering a case where we have temperature gradient on a insulted stick. The first half has temperature of $T$ and the second half has temperature $0$. 
 
 ```{math}
 f(x) = \begin{cases} 
@@ -170,5 +169,8 @@ T \textrm{   for } 0\leq x \leq \frac{L}{2}\\
 0 \textrm{   for } \frac{L}{2}< x \leq L\\
 \end{cases}
 ```
+
+In addition, because the entire stick is insulted, we can expect that 
+
 
 :::
