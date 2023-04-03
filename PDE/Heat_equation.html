@@ -365,7 +365,13 @@ title="Print to PDF"
 <p>The heat equation was first developed by Joseph Fourier in 1822 for the purpose of modeling how heat diffuses over a certain material. Let’s start from a 1D heat equation, which can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq141">
 <span class="eqno">(143)<a class="headerlink" href="#equation-eq141" title="Permalink to this equation">¶</a></span>\[\frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}\]</div>
-<p>Considering the solutions are bounded in a stick with <span class="math notranslate nohighlight">\(0\leq x \leq L \)</span></p>
+<p>Considering the solutions are bounded in a stick with <span class="math notranslate nohighlight">\(0\leq x \leq L\)</span> and <span class="math notranslate nohighlight">\(k\)</span> is so-called diffusion coefficient. If we closely observe <a class="reference internal" href="#equation-eq141">(143)</a>, we can find it is the combination of a 1st-order ODE in time and a 2nd-order ODE in space. Therefore, we need at least 1 initial condition and 2 boundary conditions, which usually have form of</p>
+<div class="math notranslate nohighlight" id="equation-eq142">
+<span class="eqno">(144)<a class="headerlink" href="#equation-eq142" title="Permalink to this equation">¶</a></span>\[\begin{align}
+&amp; u(0,t) = T_1, \; u(L,t) = T_1 
+&amp; u(x,0) = f(x)
+\end{align}\]</div>
+<p>The first two equations of <a class="reference internal" href="#equation-eq142">(144)</a> is so-called radiation boundary, where the heat radiates to the environment</p>
 </div>
 </div>
 

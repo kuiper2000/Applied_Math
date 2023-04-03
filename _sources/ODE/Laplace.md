@@ -54,7 +54,7 @@ t^n  \Longrightarrow & \frac{n!}{s^{n+1}} \\
 \frac{1}{\sqrt{t}}  \Longrightarrow & \sqrt{\frac{\pi}{s}} \\
 e^{at} \Longrightarrow & \frac{1}{s-a} \\ 
 te^{at} \Longrightarrow & \frac{1}{(s-a)^2} \\
-t^{n}e^{at} \Longrightarrow & \frac{1}{(s-a)^{n+1}} \\
+t^{n}e^{at} \Longrightarrow & \frac{n!}{(s-a)^{n+1}} \\
 \frac{1}{a-b}(e^{at}-e^{bt}) \Longrightarrow & \frac{1}{(s-a)(s-b)} \\
 \sin(at) \Longrightarrow & \frac{a}{s^2+a^2} \\
 \cos(at) \Longrightarrow & \frac{s}{s^2+a^2} \\
