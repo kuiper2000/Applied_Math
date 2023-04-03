@@ -152,4 +152,6 @@ and the final solution is
 u(x,0) = \sum_{n=1}^{\infty} (\frac{2}{L}\int_{0}^{L}f(\xi)\sin(\frac{n\pi \xi}{L}) d\xi) \sin(\frac{n\pi x}{L}) = f(x)
 \end{align}
 ```  
+
+From the solution above, one can find it will gradually approach 0 when $t\rightarrow\infty$ because of $e^{-k\frac{n^2\pi^2}{L^2}t}$ 
 :::
