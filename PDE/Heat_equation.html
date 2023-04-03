@@ -374,11 +374,16 @@ title="Print to PDF"
 <p>The first two equations of <a class="reference internal" href="#equation-eq144">(144)</a> indicates that the temperature at both ends of the stick equals to their nearby environment.
 We can also use energy constraint where the temperature at both ends are not necessary the same as their environment. Therefore, the temperature difference will cause the heat radiating to its neighbor if the stick has higher temperature than its environment. This can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq145">
-<span class="eqno">(145)<a class="headerlink" href="#equation-eq145" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(146)<a class="headerlink" href="#equation-eq145" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 &amp; u_x(0,t) = A[u(0,t)-T], \; u_x(L,t) = -A[u(x,t)-T]  \\
 &amp; u(x,0) = f(x) \; \textrm{for }  \; 0\leq x \leq L
 \end{align}\end{split}\]</div>
-<p>where the <span class="math notranslate nohighlight">\(\pm\)</span> sign simply represents</p>
+<p>where the <span class="math notranslate nohighlight">\(\pm\)</span> sign simply represents the direction of radiation. One can easily find these two kinds of boundary condition fall within the category of type I Sturm-Liouville problem. Therefore, it’s also possible to have a mixed boundary condition, where</p>
+<div class="math notranslate nohighlight" id="equation-eq145">
+<span class="eqno">(146)<a class="headerlink" href="#equation-eq145" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+&amp; u_x(0,t) = T_1, \; u_x(L,t) = -A[u(x,t)-T_2]  \\
+&amp; u(x,0) = f(x) \; \textrm{for }  \; 0\leq x \leq L
+\end{align}\end{split}\]</div>
 </div>
 </div>
 
