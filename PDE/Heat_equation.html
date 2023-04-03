@@ -416,17 +416,23 @@ XT^{'} = kX^{''}T
 \frac{T^{'}}{kT} = \frac{X^{''}}{X} = -\lambda 
 \end{align}\]</div>
 <p>One should notice that we can choose <span class="math notranslate nohighlight">\(lambda\)</span> on the right in stead. However, to satisfy the Fourier solution is space, we can only have <span class="math notranslate nohighlight">\(-\lambda \)</span>. (readers can think about why?).</p>
-<p>Now we have two differential equation</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; X^{''} + \lambda X = 0  \; \textrm{with }  X(0) = X(L) = 0 \\ 
-&amp; T^{'}  + k\lambda T = 0 \; \textrm{with }  T(0) = f(x,0)/X(L) \\ 
-\end{align}\end{split}\]</div>
-<p>The first equation has a solution of Fourier <span class="math notranslate nohighlight">\(\sin\)</span> function,</p>
+<p>Now we have two differential equations. For the spatial structure equation,</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-X(x) = \sin(\frac{n\pi x}{L}) \; \textrm{for } n=1,2,\cdots
+&amp; X^{''} + \lambda X = 0  \; \textrm{with }  X(0) = X(L) = 0 
 \end{align}\]</div>
+<p>The first equation has a solution of Fourier <span class="math notranslate nohighlight">\(\sin\)</span> function,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; X_n(x) = \sin(\frac{n\pi x}{L}) \; \textrm{for } n=1,2,\cdots \\
+&amp; \textrm{where} \lambda =\frac{n^2\pi^2}{L^2}
+\end{align}\end{split}\]</div>
+<p>For the temporal structure equation,</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+&amp; T^{'} + k\frac{n^2\pi^2}{L^2} T = 0  \; \textrm{with }  T(0) = f(x)/X_n(x) = 0 
+\end{align}\]</div>
+<p>This implies</p>
 </div>
 </div>
 </div>

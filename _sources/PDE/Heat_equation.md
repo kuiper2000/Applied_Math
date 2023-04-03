@@ -91,13 +91,12 @@ Observing the equation above, we can find the left hand side only depends on $t$
 
 One should notice that we can choose $lambda$ on the right in stead. However, to satisfy the Fourier solution is space, we can only have $-\lambda $. (readers can think about why?). 
 
-Now we have two differential equation 
+Now we have two differential equations. For the spatial structure equation, 
 
 
 ```{math}
 \begin{align}
-& X^{''} + \lambda X = 0  \; \textrm{with }  X(0) = X(L) = 0 \\ 
-& T^{'}  + k\lambda T = 0 \; \textrm{with }  T(0) = f(x,0)/X(L) \\ 
+& X^{''} + \lambda X = 0  \; \textrm{with }  X(0) = X(L) = 0 
 \end{align}
 ```  
 
@@ -105,8 +104,21 @@ The first equation has a solution of Fourier $\sin$ function,
 
 ```{math}
 \begin{align}
-X(x) = \sin(\frac{n\pi x}{L}) \; \textrm{for } n=1,2,\cdots
+& X_n(x) = \sin(\frac{n\pi x}{L}) \; \textrm{for } n=1,2,\cdots \\
+& \textrm{where} \lambda =\frac{n^2\pi^2}{L^2}
 \end{align}
 ```  
+
+For the temporal structure equation, 
+```{math}
+\begin{align}
+& T^{'} + k\frac{n^2\pi^2}{L^2} T = 0  \; \textrm{with }  T(0) = f(x)/X_n(x) = 0 
+\end{align}
+```  
+
+This implies 
+
+
+
 
 :::
