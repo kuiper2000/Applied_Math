@@ -93,7 +93,6 @@ One should notice that we can choose $lambda$ on the right in stead. However, to
 
 Now we have two differential equations. For the spatial structure equation, 
 
-
 ```{math}
 \begin{align}
 & X^{''} + \lambda X = 0  \; \textrm{with }  X(0) = X(L) = 0 
@@ -112,13 +111,32 @@ The first equation has a solution of Fourier $\sin$ function,
 For the temporal structure equation, 
 ```{math}
 \begin{align}
-& T^{'} + k\frac{n^2\pi^2}{L^2} T = 0  \; \textrm{with }  T(0) = f(x)/X_n(x) = 0 
+& T^{'} + k\frac{n^2\pi^2}{L^2} T = 0 
 \end{align}
 ```  
 
 This implies 
+```{math}
+\begin{align}
+T = e^{-k\frac{n^2\pi^2}{L^2}t}
+\end{align}
+```  
+
+Put two solutions together, we have 
+
+```{math}
+\begin{align}
+u(x,t) = \sum_{n=1}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2}{L^2}t}
+\end{align}
+```  
+
+where 
 
 
-
+```{math}
+\begin{align}
+u(x,0) = \sum_{n=1}^{\infty} b_n \sin(\frac{n\pi x}{L}) = f(x)
+\end{align}
+```  
 
 :::
