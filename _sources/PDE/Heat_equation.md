@@ -160,7 +160,7 @@ From the solution above, one can find it will gradually approach 0 when $t\right
 :::
 
 
-:::{admonition} Example 2: Temperature Gradient on an Insulted Stick
+:::{admonition} Example 2: Diffusion on an Insulted Stick
 Now considering a case where we have temperature gradient on a insulted stick. The first half has temperature of $T$ and the second half has temperature $0$. 
 
 ```{math}
