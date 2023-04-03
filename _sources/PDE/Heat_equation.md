@@ -56,7 +56,7 @@ First consider the problem
 \end{align}
 ```   
 
-Using _separation of variable_ of what we did in previous chapter, consists of attempting a solution of the form 
+Using _separation of variable_ of as what we did in previous chapter, consists of attempting a solution of the form 
 
 ```{math}
 \begin{align}
@@ -71,5 +71,15 @@ Substitute this into the differential equation to get
 XT^{'} = kX^{''}T
 \end{align}
 ```   
+
+which is equivalent to 
+
+```{math}
+\begin{align}
+\frac{T^{'}}{kT} = \frac{X^{''}}{X}
+\end{align}
+```   
+
+Observing the equation above, we can find the left hand side only depends on $t$ and the right hand side only depends on $x$. We also know that $X(x)$ and $T(t)$ vary independently. Therefore, only possibility exists: the ration of $T^{'}$ and $kT$ is a constant and so do $X^{''}$ and $X$. According to this, we can write down 
 
 :::
