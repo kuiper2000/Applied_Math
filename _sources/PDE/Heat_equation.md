@@ -196,7 +196,14 @@ where
 a_0 = \frac{T}{2}
 ```   
 
+The solution can be written as 
 
+
+```{math}
+\begin{align}
+u(x,t) = \frac{T}{2}+\frac{2T}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}\sin(\frac{n\pi}{2}) \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2k}{L^2}t}
+\end{align}
+```  
 
 
 :::
