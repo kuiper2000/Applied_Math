@@ -53,8 +53,7 @@ __Part II: Sturm-Liouville Theorem__
     * Hyperbolic Cylinder Function 
 
 __Part III: Partial Differential Equation__
-* Heat Equation
-    * What is an PDE
+* {ref}`Heat`
     * Problem Setup and Boundary Conditions
     * Forced Solutions 
 
