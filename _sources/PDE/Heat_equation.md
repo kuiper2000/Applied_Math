@@ -230,7 +230,21 @@ u(x,t) = v(x,t) + \psi(x)
 \end{align}
 ```  
 
-where $\psi(x)$ can take care of the linear part and $v(x,t)$ will to lead a homogeneous problem. 
+where $\psi(x)$ can take care of the nonhomogeneous temperature of the stick and $v(x,t)$ will to lead a homogeneous problem. i.e., 
+
+```{math}
+\begin{align}
+& v_t = kv_{xx}+ \psi_{xx}(x); \textrm{for }  \; 0\leq x \leq L \\
+& v(0,t) = 0 \\
+& v(L,t) = 0 \\ 
+& v(x,0) = f(x) 
+\end{align}
+```
+
+to make the set of equation above homogeneous, we have $\psi_{xx}(x)=0$. This implies $\psi(x) = Ax+B$. Using the boundary condition,  $\psi(0) = B = T_1$ and $\psi(L) = AL+T_1 = T_2$, we know $\psi(0) = (T_2-T_1)x/L+T_1$. To solve $v$, we can follow the same steps in example 1. 
+
+
+
 
 
 

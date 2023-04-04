@@ -502,7 +502,15 @@ u(x,t) = \frac{T}{2}+\frac{2T}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}\sin(\frac{n\p
 \[\begin{align}
 u(x,t) = v(x,t) + \psi(x)
 \end{align}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\psi(x)\)</span> can take care of the linear part and <span class="math notranslate nohighlight">\(v(x,t)\)</span> will to lead a homogeneous problem.</p>
+<p>where <span class="math notranslate nohighlight">\(\psi(x)\)</span> can take care of the nonhomogeneous temperature of the stick and <span class="math notranslate nohighlight">\(v(x,t)\)</span> will to lead a homogeneous problem. i.e.,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; v_t = kv_{xx}+ \psi_{xx}(x); \textrm{for }  \; 0\leq x \leq L \\
+&amp; v(0,t) = 0 \\
+&amp; v(L,t) = 0 \\ 
+&amp; v(x,0) = f(x) 
+\end{align}\end{split}\]</div>
+<p>to make the set of equation above homogeneous, we have <span class="math notranslate nohighlight">\(\psi_{xx}(x)=0\)</span>. This implies <span class="math notranslate nohighlight">\(\psi(x) = Ax+B\)</span>. Using the boundary condition,  <span class="math notranslate nohighlight">\(\psi(0) = B = T_1\)</span> and <span class="math notranslate nohighlight">\(\psi(L) = AL+T_1 = T_2\)</span>, we know <span class="math notranslate nohighlight">\(\psi(0) = (T_2-T_1)x/L+T_1\)</span>. To solve <span class="math notranslate nohighlight">\(v\)</span>, we can follow the same steps in example 1.</p>
 </div>
 </div>
 </div>
