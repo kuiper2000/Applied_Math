@@ -222,7 +222,7 @@ Solve the following case,
 & u(x,0) = f(x) 
 \end{align}
 ```
-where either $T_1$ or $T_2$ is not 0 (and $T_1\neq T_2$) 
+where either $T_1$ or $T_2$ is not 0 (and $T_1\neq T_2$). Such case can be considered as a nonhomogeneous case. Because the temperature on both ends are different, there is always heat moving from one side to the other side.  
 
 
 
