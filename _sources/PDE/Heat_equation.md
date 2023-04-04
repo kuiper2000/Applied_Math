@@ -256,7 +256,7 @@ We can include convection and other processes,
 \end{align}
 ```
 
-We can first convert it to a form we are familiar with
+We can first convert it to a form which we are familiar with
 
 
 ```{math}
@@ -268,6 +268,22 @@ We can first convert it to a form we are familiar with
 ```
 
 
+Recall that solving the 1st/2nd-order ODE, we usually guess a solution of $e^{\alpha x+\beta t}$ to get a characteristic equation. However, it doesn't satisfy the boundary condition where $u(0,t) = u(L,t) = 0$. Therefore, we can use the same approach of variation of parameters and assume 
+
+```{math}
+\begin{align}
+u(x,t) = v(x,t)e^{\alpha x+\beta t}
+\end{align}
+```
+
+which will lead to 
+```{math}
+\begin{align}
+& u_t(x,t)  = \beta  v(x,t)e^{\alpha x+\beta t}+v_t(x,t)e^{\alpha x+\beta t} \\
+& u_x(x,t)  = \alpha v(x,t)e^{\alpha x+\beta t}+v_x(x,t)e^{\alpha x+\beta t} \\
+& u_xx(x,t) = \alpha^2 v(x,t)e^{\alpha x+\beta t}+2\alpha v_x(x,t)e^{\alpha x+\beta t} + v_xx(x,t)e^{\alpha x+\beta t} \\
+\end{align}
+```
 
 
 :::

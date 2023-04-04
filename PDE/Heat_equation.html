@@ -521,12 +521,24 @@ u(x,t) = v(x,t) + \psi(x)
 &amp; u(0,t) = u(L,t) = 0 \\
 &amp; u(x,0) = f(x) 
 \end{align}\end{split}\]</div>
-<p>We can first convert it to a form we are familiar with</p>
+<p>We can first convert it to a form which we are familiar with</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 &amp; v_t    = kv_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
 &amp; v(0,t) = v(L,t) = 0 \\
 &amp; v(x,0) = g(x) 
+\end{align}\end{split}\]</div>
+<p>Recall that solving the 1st/2nd-order ODE, we usually guess a solution of <span class="math notranslate nohighlight">\(e^{\alpha x+\beta t}\)</span> to get a characteristic equation. However, it doesn’t satisfy the boundary condition where <span class="math notranslate nohighlight">\(u(0,t) = u(L,t) = 0\)</span>. Therefore, we can use the same approach of variation of parameters and assume</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+u(x,t) = v(x,t)e^{\alpha x+\beta t}
+\end{align}\]</div>
+<p>which will lead to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; u_t(x,t)  = \beta  v(x,t)e^{\alpha x+\beta t}+v_t(x,t)e^{\alpha x+\beta t} \\
+&amp; u_x(x,t)  = \alpha v(x,t)e^{\alpha x+\beta t}+v_x(x,t)e^{\alpha x+\beta t} \\
+&amp; u_xx(x,t) = \alpha^2 v(x,t)e^{\alpha x+\beta t}+2\alpha v_x(x,t)e^{\alpha x+\beta t} + v_xx(x,t)e^{\alpha x+\beta t} \\
 \end{align}\end{split}\]</div>
 </div>
 </div>
