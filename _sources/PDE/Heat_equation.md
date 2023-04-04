@@ -293,6 +293,14 @@ and
 \end{align}
 ```
 
+The equation above implies 
+
+```{math}
+\begin{align}
+& k\alpha^2+kA\alpha-\beta+kB = 0 \\
+& 2k\alpha+kA                 = 0
+\end{align}
+```
 
 :::
 
