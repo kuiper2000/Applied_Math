@@ -243,9 +243,29 @@ where $\psi(x)$ can take care of the nonhomogeneous temperature of the stick and
 
 to make the set of equation above homogeneous, we have $\psi_{xx}(x)=0$. This implies $\psi(x) = Ax+B$. Using the boundary condition,  $\psi(0) = B = T_1$ and $\psi(L) = AL+T_1 = T_2$, we know $\psi(0) = (T_2-T_1)x/L+T_1$. To solve $v$, we can follow the same steps in example 1. 
 
+:::
 
 
+:::{admonition} Example 4: Inclusion of Convection and other Processes 
+We can include convection and other processes, 
+```{math}
+\begin{align}
+& u_t = (ku_{xx}+Au_x+Bu) \; \textrm{for }  \; 0\leq x \leq L \\
+& u(0,t) = u(L,t) = 0 \\
+& u(x,0) = f(x) 
+\end{align}
+```
 
+We can first convert it to a form we are familiar with
+
+
+```{math}
+\begin{align}
+& v_t    = kv_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
+& v(0,t) = v(L,t) = 0 \\
+& v(x,0) = g(x) 
+\end{align}
+```
 
 
 

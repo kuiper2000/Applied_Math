@@ -512,6 +512,23 @@ u(x,t) = v(x,t) + \psi(x)
 \end{align}\end{split}\]</div>
 <p>to make the set of equation above homogeneous, we have <span class="math notranslate nohighlight">\(\psi_{xx}(x)=0\)</span>. This implies <span class="math notranslate nohighlight">\(\psi(x) = Ax+B\)</span>. Using the boundary condition,  <span class="math notranslate nohighlight">\(\psi(0) = B = T_1\)</span> and <span class="math notranslate nohighlight">\(\psi(L) = AL+T_1 = T_2\)</span>, we know <span class="math notranslate nohighlight">\(\psi(0) = (T_2-T_1)x/L+T_1\)</span>. To solve <span class="math notranslate nohighlight">\(v\)</span>, we can follow the same steps in example 1.</p>
 </div>
+<div class="admonition-example-4-inclusion-of-convection-and-other-processes admonition">
+<p class="admonition-title">Example 4: Inclusion of Convection and other Processes</p>
+<p>We can include convection and other processes,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; u_t = (ku_{xx}+Au_x+Bu) \; \textrm{for }  \; 0\leq x \leq L \\
+&amp; u(0,t) = u(L,t) = 0 \\
+&amp; u(x,0) = f(x) 
+\end{align}\end{split}\]</div>
+<p>We can first convert it to a form we are familiar with</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; v_t    = kv_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
+&amp; v(0,t) = v(L,t) = 0 \\
+&amp; v(x,0) = g(x) 
+\end{align}\end{split}\]</div>
+</div>
 </div>
 </div>
 
