@@ -222,7 +222,15 @@ Solve the following case,
 & u(x,0) = f(x) 
 \end{align}
 ```
-where either $T_1$ or $T_2$ is not 0 (and $T_1\neq T_2$). Such case can be considered as a nonhomogeneous case. Because the temperature on both ends are different, there is always heat moving from one side to the other side.  
+where either $T_1$ or $T_2$ is not 0 (and $T_1\neq T_2$). Such case can be considered as a nonhomogeneous case. Because the temperature on both ends are different, there is always heat moving from one side to the other side. Thus, this problem is equivalent to a problem with a constant forcing. The simplest way of doing that is assuming $u(x,t)$ has the following form 
+
+```{math}
+\begin{align}
+u(x,t) = v(x,t) + \psi(x)
+\end{align}
+```  
+
+where $\psi(x)$ can take care of the linear part and $v(x,t)$ will to lead a homogeneous problem. 
 
 
 
