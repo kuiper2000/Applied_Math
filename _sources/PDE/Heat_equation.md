@@ -160,8 +160,8 @@ From the solution above, one can find it will gradually approach 0 when $t\right
 :::
 
 
-:::{admonition} Example 2: Diffusion on an Insulted Stick
-Now considering a case where we have temperature gradient on a insulted stick. The first half has temperature of $T$ and the second half has temperature $0$. 
+:::{admonition} Example 2: Diffusion on an Insulated Stick
+Now considering a case where we have temperature gradient on a insulated stick. The first half has temperature of $T$ and the second half has temperature $0$. 
 
 ```{math}
 f(x) = \begin{cases} 
@@ -170,7 +170,7 @@ T \textrm{   for } 0\leq x \leq \frac{L}{2}\\
 \end{cases}
 ```
 
-Given the entire stick is insulted, we can expect that the equilibrium temperature will be $\frac{T}{2}$ i.e., half of the heat moves from the left to the right. In addition, the insulted stick will have Fourier $\cos$ function as solution given 0 radiation boundary condition. i.e., 
+Given the entire stick is insulated, we can expect that the equilibrium temperature will be $\frac{T}{2}$ i.e., half of the heat moves from the left to the right. In addition, the insulated stick will have Fourier $\cos$ function as solution given 0 radiation boundary condition. i.e., 
 
 ```{math}
 u_x(0,t) = u_x(L,t) = 0
@@ -205,5 +205,29 @@ u(x,t) = \frac{T}{2}+\frac{2T}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}\sin(\frac{n\p
 \end{align}
 ```  
 
+One can see that $k$ only appears in $e^{-k\frac{n^2\pi^2k}{L^2}t}$. If we choose a $k$ big enough, the signal will flatten out very quickly. 
+:::
+
+
+From two cases above, the readers can extend to some more complicated cases such as one side has a constant temperature and the other side is radiation boundary condition. I will leave the practice to the readers.   
+
+:::{admonition} Example 3: Nonhomogeneous Problem
+Solve the following case, 
+
+```{math}
+\begin{align}
+& u_t = ku_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
+& u(0,t) = T_1 \\
+& u(L,t) = T_2 \\ 
+& u(x,0) = f(x) 
+\end{align}
+```
+where either $T_1$ or $T_2$ is not 0 (and $T_1\neq T_2$) 
+
+
+
+
 
 :::
+
+
