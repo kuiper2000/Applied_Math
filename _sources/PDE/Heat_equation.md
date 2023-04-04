@@ -285,6 +285,14 @@ which will lead to
 \end{align}
 ```
 
+and 
+
+```{math}
+\begin{align}
+& \beta  v(x,t)  = (k\alpha^2+kA\alpha-\beta+kB)v+(2k\alpha+kA)v_x+kv_{xx}
+\end{align}
+```
+
 
 :::
 
