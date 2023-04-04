@@ -302,6 +302,18 @@ The equation above implies
 \end{align}
 ```
 
+or 
+
+
+```{math}
+\begin{align}
+& \alpha = -\frac{A}{2} \\
+& \beta  = k(B-\frac{A^2}{4})
+\end{align}
+```
+
+With the chosen $\alpha$ and $\beta$, we can reorganize the original equation to a solvable form. 
+
 :::
 
 
