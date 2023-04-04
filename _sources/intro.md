@@ -54,8 +54,9 @@ __Part II: Sturm-Liouville Theorem__
 
 __Part III: Partial Differential Equation__
 * {ref}`Heat`
-    * Problem Setup and Boundary Conditions
+    * Problem Setup
     * Forced Solutions 
+    * Two and Higher Dimensions
 
 * Wave Equations
     * Problem Setup and Initial Conditions
