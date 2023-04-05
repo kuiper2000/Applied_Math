@@ -363,10 +363,8 @@ While {eq}`eq143` takes heat flux as the only process for redistributing heat, w
 It is easy to verify that _separation of variables_ can be applied to the questions above when $F(x,t)$ exist. However, we can do some scale analysis first... One can find that when $F(x,t)$ is small, we can expect the solution has a form of Fourier $\sin$ function. i.e., 
 
 ```{math}
-:label: eq149
+:label: eq150
 \begin{align}
-& \frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}+F(x,t) \; \textrm{for }  \; 0\leq x \leq L \\
-& u(0,t) = u(L,t) = 0 \\
-& u(x,0) = f(x) 
+u(x,t) = \sum_{n=0}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-n^2\pi^2 kt/L^2}
 \end{align}
 ``` 

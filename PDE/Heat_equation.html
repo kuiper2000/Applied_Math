@@ -587,18 +587,16 @@ u(x,t) = v(x,t)e^{\alpha x+\beta t}
 <h2>Forced Solutions<a class="headerlink" href="#forced-solutions" title="Permalink to this headline">¶</a></h2>
 <p>While <a class="reference internal" href="#equation-eq143">(145)</a> takes heat flux as the only process for redistributing heat, we can have additional heat sources, <span class="math notranslate nohighlight">\(F(x,t)\)</span>. Therefore, <a class="reference internal" href="#equation-eq143">(145)</a> is written as</p>
 <div class="math notranslate nohighlight" id="equation-eq149">
-<span class="eqno">(150)<a class="headerlink" href="#equation-eq149" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(149)<a class="headerlink" href="#equation-eq149" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 &amp; \frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}+F(x,t) \; \textrm{for }  \; 0\leq x \leq L \\
 &amp; u(0,t) = u(L,t) = 0 \\
 &amp; u(x,0) = f(x) 
 \end{align}\end{split}\]</div>
 <p>It is easy to verify that <em>separation of variables</em> can be applied to the questions above when <span class="math notranslate nohighlight">\(F(x,t)\)</span> exist. However, we can do some scale analysis first… One can find that when <span class="math notranslate nohighlight">\(F(x,t)\)</span> is small, we can expect the solution has a form of Fourier <span class="math notranslate nohighlight">\(\sin\)</span> function. i.e.,</p>
-<div class="math notranslate nohighlight" id="equation-eq149">
-<span class="eqno">(150)<a class="headerlink" href="#equation-eq149" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-&amp; \frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}+F(x,t) \; \textrm{for }  \; 0\leq x \leq L \\
-&amp; u(0,t) = u(L,t) = 0 \\
-&amp; u(x,0) = f(x) 
-\end{align}\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq150">
+<span class="eqno">(150)<a class="headerlink" href="#equation-eq150" title="Permalink to this equation">¶</a></span>\[\begin{align}
+u(x,t) = \sum_{n=0}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-n^2\pi^2 kt/L^2}
+\end{align}\]</div>
 </div>
 </div>
 
