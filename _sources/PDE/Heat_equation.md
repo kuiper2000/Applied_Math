@@ -31,7 +31,7 @@ Heat diffusion on a stick
 One can notice that the heat flux is proportional to the temperature difference between the stick and its neighbor, which is the key process in determining the energy redistribution. When there is no temperature gradient (and no external heat source), there is no temperature change. Our goal is to understand how the initial temperature, $u(x,t)$, evolve as a function of $x$ and $t$. In some special cases, we can add convective process (advection) and radiation to the problem but we will keep it simple for now. 
 
 
-According to {eq}`Heatmath`, we can rewrite it to 
+{eq}`Heatmath` can be rewritten as  
 
 ```{math}
 :label: eq143
