@@ -18,7 +18,7 @@ if we write it down in a mathematical form
 \frac{\partial c(x)\rho(x)u(x,t)}{\partial t} = -\frac{\partial q}{\partial x} + Q(x,t)
 ```
 
-where $c(x)$ is the specific heat, $\rho(x)$ is the density of the stick and $q$ is the heat flux through the lateral (if other places are insulated) and $Q(x,t)$ is the local heating source, which can come from molecular process (i.e., friction between atom or radiation). One can notice that the heat flux is proportional to the temperature difference between the stick and its neighbor. The equation above can be visualized as follow. 
+where $c(x)$ is the specific heat, $\rho(x)$ is the density of the stick and $q$ is the heat flux through the lateral (if other places are insulated) and $Q(x,t)$ is the local heating source, which can come from molecular process (i.e., friction between atom or radiation). The equation above can be visualized as follow. 
 
 ```{figure} Heat.png
 ---
@@ -28,7 +28,7 @@ scale: 30%
 Heat diffusion on a stick
 ```
 
-Our goal is to understand how the initial temperature, $u(x,t)$, evolve as a function of $x$ and $t$. In some special cases, we can add convective process (advection) and radiation to the problem but we will keep it simple for now. 
+One can notice that the heat flux is proportional to the temperature difference between the stick and its neighbor, which is the key process in determining the energy redistribution. When there is no temperature gradient (and no external heat source), there is no temperature change. Our goal is to understand how the initial temperature, $u(x,t)$, evolve as a function of $x$ and $t$. In some special cases, we can add convective process (advection) and radiation to the problem but we will keep it simple for now. 
 
 
 According to {eq}`Heatmath`, we can rewrite it to 
