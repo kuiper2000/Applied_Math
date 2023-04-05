@@ -409,3 +409,5 @@ B_n(t) = \frac{2}{L}\int_{0}^{L} F(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
 ``` 
 
 
+
+
