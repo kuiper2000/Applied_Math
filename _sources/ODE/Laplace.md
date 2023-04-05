@@ -38,7 +38,7 @@ The Laplace Transform exist when $(a-s)<0$, which will lead to
 F(s) = \frac{1}{s-a}
 ```
 
-One should notice that $(a-s)<0$ is the necessary criteria for the existence of Laplace Transform of a function. That also means, if any function which as a growth rate $a$ greater than $s$, then there is no Laplace Transform of that given function. A very famous example is the function $e^{t^2}$, which doesn't have a Laplace Transform. 
+One should notice that $(a-s)<0$ is the necessary criteria for the existence of Laplace Transform of a function. That also means, if any function which has a growth rate $a$ greater than $s$, then there is no Laplace Transform of that given function. A very famous example is the function $e^{t^2}$, which doesn't have a Laplace Transform. 
 
 :::
 
