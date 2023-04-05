@@ -38,9 +38,9 @@ One can notice that the heat flux is proportional to the temperature difference 
 \frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}
 ```
 
-where $Q(x,t)$ is dropped for simplification and $k=\frac{\kappa}{c\rho}$.  
+where $Q(x,t)$ is dropped for simplification and $k=\frac{\kappa}{c\rho}$, so-called diffusion coefficient.  
 
-Considering the solutions are bounded in a stick with $0\leq x \leq L$ and $k$ is so-called diffusion coefficient. If we closely observe {eq}`eq143`, we can find it is the combination of a 1st-order ODE in time and a 2nd-order ODE in space. Therefore, we need at least 1 initial condition and 2 boundary conditions, which usually have form of 
+Considering the solutions are bounded in a stick with $0\leq x \leq L$. If we closely observe {eq}`eq143`, we can find it is the combination of a 1st-order ODE in time and a 2nd-order ODE in space. Therefore, we need at least 1 initial condition and 2 boundary conditions, which usually have form of 
 
 ```{math}
 :label: eq144
