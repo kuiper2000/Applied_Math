@@ -379,5 +379,12 @@ u(x,t) = \sum_{n=0}^{\infty} T_n(t) \sin(\frac{n\pi x}{L})
 \end{align}
 ``` 
 
-because the spatial structure is constrained by both ends, which ensures the solution is the linear combination of Fourier $\sin$ functions. According to {eq}`eq151`, one can find that $T_n(t)$ is simply the coefficients of Fourier $\sin$ functions.  
+because the spatial structure is constrained by both ends, which ensures the solution is the linear combination of Fourier $\sin$ functions. According to {eq}`eq151`, one can find that $T_n(t)$ is simply the coefficients of Fourier $\sin$ functions. i.e.,  
 
+
+```{math}
+:label: eq151
+\begin{align}
+T_n(t)  = \frac{2}{L}\int_{0}^{L} u(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
+\end{align}
+``` 
