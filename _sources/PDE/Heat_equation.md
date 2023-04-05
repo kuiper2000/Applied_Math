@@ -4,7 +4,7 @@ Heat diffusion equation has important applications in engineering and Earth scie
 
 
 ## History and Formula 
-The heat equation was first developed by Joseph Fourier in 1822 for the purpose of modeling how heat diffuses over a certain material. The heat equation follows a very simple energy conservation law. 
+The heat equation was first developed by Joseph Fourier in 1822 for the purpose of modeling how heat diffuses over a certain material. (later on, the readers will see why the solution of heat diffusion can be approached with Fourier transform.) The heat equation follows a very simple energy conservation law. 
 
 ```{math}
 :label: Heat
@@ -342,7 +342,15 @@ or
 ```
 
 With the chosen $\alpha$ and $\beta$, we can reorganize the original equation to a solvable form. 
-
 :::
 
 
+
+
+## Forced Solutions
+While {eq}`eq143` takes heat flux as the only process for redistributing heat, we can have additional heat sources, $F(x,t)$. Therefore, {eq}`eq143` is written as 
+
+```{math}
+:label: eq144
+\frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}+F(x,t)
+```

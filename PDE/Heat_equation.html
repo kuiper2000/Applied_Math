@@ -323,6 +323,11 @@ title="Print to PDF"
    History and Formula
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forced-solutions">
+   Forced Solutions
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -347,6 +352,11 @@ title="Print to PDF"
    History and Formula
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forced-solutions">
+   Forced Solutions
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -362,7 +372,7 @@ title="Print to PDF"
 <p>Heat diffusion equation has important applications in engineering and Earth science. Especially when it comes to studying the Earth energy balance. In this chapter, we will consider a very simple 1D thermal diffusion problem. We will also demonstrate that we can always go to higher-dimension problem using <em>separation of variable</em>.</p>
 <div class="section" id="history-and-formula">
 <h2>History and Formula<a class="headerlink" href="#history-and-formula" title="Permalink to this headline">¶</a></h2>
-<p>The heat equation was first developed by Joseph Fourier in 1822 for the purpose of modeling how heat diffuses over a certain material. The heat equation follows a very simple energy conservation law.</p>
+<p>The heat equation was first developed by Joseph Fourier in 1822 for the purpose of modeling how heat diffuses over a certain material. (later on, the readers will see why the solution of heat diffusion can be approached with Fourier transform.) The heat equation follows a very simple energy conservation law.</p>
 <div class="math notranslate nohighlight" id="equation-heat">
 <span class="eqno">(143)<a class="headerlink" href="#equation-heat" title="Permalink to this equation">¶</a></span>\[\textrm{heat change rate} = \textrm{heat flux through boundary to neighbor} + \textrm{forcing}\]</div>
 <p>if we write it down in a mathematical form</p>
@@ -380,11 +390,11 @@ title="Print to PDF"
 <p>where <span class="math notranslate nohighlight">\(Q(x,t)\)</span> is dropped for simplification and <span class="math notranslate nohighlight">\(k=\frac{\kappa}{c\rho}\)</span>, so-called diffusion coefficient.</p>
 <p>Considering the solutions are bounded in a stick with <span class="math notranslate nohighlight">\(0\leq x \leq L\)</span>. If we closely observe <a class="reference internal" href="#equation-eq143">(145)</a>, we can find it is the combination of a 1st-order ODE in time and a 2nd-order ODE in space. Therefore, we need at least 1 initial condition and 2 boundary conditions, which usually have form of</p>
 <div class="math notranslate nohighlight" id="equation-eq144">
-<span class="eqno">(146)<a class="headerlink" href="#equation-eq144" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(149)<a class="headerlink" href="#equation-eq144" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 &amp; u(0,t) = T_1, \; u(L,t) = T_2  \\
 &amp; u(x,0) = f(x)\; \textrm{for }  \; 0\leq x \leq L
 \end{align}\end{split}\]</div>
-<p>The first two equations of <a class="reference internal" href="#equation-eq144">(146)</a> indicates that the temperature at both ends of the stick equals to their nearby environment.
+<p>The first two equations of <a class="reference internal" href="#equation-eq144">(149)</a> indicates that the temperature at both ends of the stick equals to their nearby environment.
 We can also use energy constraint where the temperature at both ends are not necessary the same as their environment. Therefore, the temperature difference will cause the heat radiating to its neighbor if the stick has higher temperature than its environment. This can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq145">
 <span class="eqno">(147)<a class="headerlink" href="#equation-eq145" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
@@ -572,6 +582,12 @@ u(x,t) = v(x,t)e^{\alpha x+\beta t}
 \end{align}\end{split}\]</div>
 <p>With the chosen <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, we can reorganize the original equation to a solvable form.</p>
 </div>
+</div>
+<div class="section" id="forced-solutions">
+<h2>Forced Solutions<a class="headerlink" href="#forced-solutions" title="Permalink to this headline">¶</a></h2>
+<p>While <a class="reference internal" href="#equation-eq143">(145)</a> takes heat flux as the only process for redistributing heat, we can have additional heat sources, <span class="math notranslate nohighlight">\(F(x,t)\)</span>. Therefore, <a class="reference internal" href="#equation-eq143">(145)</a> is written as</p>
+<div class="math notranslate nohighlight" id="equation-eq144">
+<span class="eqno">(149)<a class="headerlink" href="#equation-eq144" title="Permalink to this equation">¶</a></span>\[\frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}+F(x,t)\]</div>
 </div>
 </div>
 
