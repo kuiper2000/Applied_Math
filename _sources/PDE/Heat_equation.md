@@ -18,7 +18,7 @@ if we write it down in a mathematical form
 \frac{\partial c(x)\rho(x)u(x,t)}{\partial t} = -\frac{\partial q}{\partial x} + Q(x,t)
 ```
 
-where $c(x)$ is the specific heat, $\rho(x)$ is the density of the stick and $q$ is the heat flux through the lateral (if other places are insulated) and $Q(x,t)$ is the local heating rate. The equation above can be visualized as follow. 
+where $c(x)$ is the specific heat, $\rho(x)$ is the density of the stick and $q$ is the heat flux through the lateral (if other places are insulated) and $Q(x,t)$ is the local heating rate. One can notice that the heat flux is proportional to the temperature between the stick and its neighbor. The equation above can be visualized as follow. 
 
 ```{figure} Heat.png
 ---
@@ -28,16 +28,17 @@ scale: 30%
 Heat diffusion on a stick
 ```
 
+Our goal is to understand how the temperature evolve as a function of $x$ and $t$. In some special cases, we can add convective process (advection) and radiation to the problem but we will keep it simple for now. 
 
 
-
-
-Let's start from a 1D heat equation, which can be written as 
+According to {eq}`eqHeatmath`, we can rewrite it to 
 
 ```{math}
 :label: eq143
 \frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}
 ```
+
+where $Q(x,t)$ is dropped for simplification and $k=\frac{\kappa}{c\rho}$.  
 
 Considering the solutions are bounded in a stick with $0\leq x \leq L$ and $k$ is so-called diffusion coefficient. If we closely observe {eq}`eq143`, we can find it is the combination of a 1st-order ODE in time and a 2nd-order ODE in space. Therefore, we need at least 1 initial condition and 2 boundary conditions, which usually have form of 
 

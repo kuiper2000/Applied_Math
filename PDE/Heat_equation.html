@@ -368,14 +368,16 @@ title="Print to PDF"
 <p>if we write it down in a mathematical form</p>
 <div class="math notranslate nohighlight" id="equation-heatmath">
 <span class="eqno">(144)<a class="headerlink" href="#equation-heatmath" title="Permalink to this equation">¶</a></span>\[\frac{\partial c(x)\rho(x)u(x,t)}{\partial t} = -\frac{\partial q}{\partial x} + Q(x,t)\]</div>
-<p>where <span class="math notranslate nohighlight">\(c(x)\)</span> is the specific heat, <span class="math notranslate nohighlight">\(\rho(x)\)</span> is the density of the stick and <span class="math notranslate nohighlight">\(q\)</span> is the heat flux through the lateral (if other places are insulated) and <span class="math notranslate nohighlight">\(Q(x,t)\)</span> is the local heating rate. The equation above can be visualized as follow.</p>
+<p>where <span class="math notranslate nohighlight">\(c(x)\)</span> is the specific heat, <span class="math notranslate nohighlight">\(\rho(x)\)</span> is the density of the stick and <span class="math notranslate nohighlight">\(q\)</span> is the heat flux through the lateral (if other places are insulated) and <span class="math notranslate nohighlight">\(Q(x,t)\)</span> is the local heating rate. One can notice that the heat flux is proportional to the temperature between the stick and its neighbor. The equation above can be visualized as follow.</p>
 <div class="figure align-default" id="fig10">
 <a class="reference internal image-reference" href="../_images/Heat.png"><img alt="../_images/Heat.png" src="../_images/Heat.png" style="width: 496.2px; height: 281.7px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Heat diffusion on a stick</span><a class="headerlink" href="#fig10" title="Permalink to this image">¶</a></p>
 </div>
-<p>Let’s start from a 1D heat equation, which can be written as</p>
+<p>Our goal is to understand how the temperature evolve as a function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>. In some special cases, we can add convective process (advection) and radiation to the problem but we will keep it simple for now.</p>
+<p>According to <code class="xref eq docutils literal notranslate"><span class="pre">eqHeatmath</span></code>, we can rewrite it to</p>
 <div class="math notranslate nohighlight" id="equation-eq143">
 <span class="eqno">(145)<a class="headerlink" href="#equation-eq143" title="Permalink to this equation">¶</a></span>\[\frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Q(x,t)\)</span> is dropped for simplification and <span class="math notranslate nohighlight">\(k=\frac{\kappa}{c\rho}\)</span>.</p>
 <p>Considering the solutions are bounded in a stick with <span class="math notranslate nohighlight">\(0\leq x \leq L\)</span> and <span class="math notranslate nohighlight">\(k\)</span> is so-called diffusion coefficient. If we closely observe <a class="reference internal" href="#equation-eq143">(145)</a>, we can find it is the combination of a 1st-order ODE in time and a 2nd-order ODE in space. Therefore, we need at least 1 initial condition and 2 boundary conditions, which usually have form of</p>
 <div class="math notranslate nohighlight" id="equation-eq144">
 <span class="eqno">(146)<a class="headerlink" href="#equation-eq144" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
