@@ -368,3 +368,16 @@ It is easy to verify that _separation of variables_ can be applied to the questi
 u(x,t) = \sum_{n=0}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-n^2\pi^2 kt/L^2}
 \end{align}
 ``` 
+
+with the numbers the Fourier $\sin$ coefficients of $f(x)$. This suggests that, for the problem with the term of $F(x,t)$, attempt a solution 
+
+
+```{math}
+:label: eq151
+\begin{align}
+u(x,t) = \sum_{n=0}^{\infty} T_n(t) \sin(\frac{n\pi x}{L})
+\end{align}
+``` 
+
+because the spatial structure is constrained by both ends, which ensures the solution is the linear combination of Fourier $\sin$ functions. According to {eq}`eq151`, one can find that $T_n(t)$ is simply the coefficients of Fourier $\sin$ functions.  
+
