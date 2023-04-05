@@ -360,3 +360,5 @@ While {eq}`eq143` takes heat flux as the only process for redistributing heat, w
 \end{align}
 ```
 
+when $F(x,t)$ is small, we can expect the solution has a form of Fourier $\sin$ function. 
+
