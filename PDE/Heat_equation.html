@@ -390,11 +390,11 @@ title="Print to PDF"
 <p>where <span class="math notranslate nohighlight">\(Q(x,t)\)</span> is dropped for simplification and <span class="math notranslate nohighlight">\(k=\frac{\kappa}{c\rho}\)</span>, so-called diffusion coefficient.</p>
 <p>Considering the solutions are bounded in a stick with <span class="math notranslate nohighlight">\(0\leq x \leq L\)</span>. If we closely observe <a class="reference internal" href="#equation-eq143">(145)</a>, we can find it is the combination of a 1st-order ODE in time and a 2nd-order ODE in space. Therefore, we need at least 1 initial condition and 2 boundary conditions, which usually have form of</p>
 <div class="math notranslate nohighlight" id="equation-eq144">
-<span class="eqno">(149)<a class="headerlink" href="#equation-eq144" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(146)<a class="headerlink" href="#equation-eq144" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 &amp; u(0,t) = T_1, \; u(L,t) = T_2  \\
 &amp; u(x,0) = f(x)\; \textrm{for }  \; 0\leq x \leq L
 \end{align}\end{split}\]</div>
-<p>The first two equations of <a class="reference internal" href="#equation-eq144">(149)</a> indicates that the temperature at both ends of the stick equals to their nearby environment.
+<p>The first two equations of <a class="reference internal" href="#equation-eq144">(146)</a> indicates that the temperature at both ends of the stick equals to their nearby environment.
 We can also use energy constraint where the temperature at both ends are not necessary the same as their environment. Therefore, the temperature difference will cause the heat radiating to its neighbor if the stick has higher temperature than its environment. This can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq145">
 <span class="eqno">(147)<a class="headerlink" href="#equation-eq145" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
@@ -586,8 +586,12 @@ u(x,t) = v(x,t)e^{\alpha x+\beta t}
 <div class="section" id="forced-solutions">
 <h2>Forced Solutions<a class="headerlink" href="#forced-solutions" title="Permalink to this headline">¶</a></h2>
 <p>While <a class="reference internal" href="#equation-eq143">(145)</a> takes heat flux as the only process for redistributing heat, we can have additional heat sources, <span class="math notranslate nohighlight">\(F(x,t)\)</span>. Therefore, <a class="reference internal" href="#equation-eq143">(145)</a> is written as</p>
-<div class="math notranslate nohighlight" id="equation-eq144">
-<span class="eqno">(149)<a class="headerlink" href="#equation-eq144" title="Permalink to this equation">¶</a></span>\[\frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}+F(x,t)\]</div>
+<div class="math notranslate nohighlight" id="equation-eq149">
+<span class="eqno">(149)<a class="headerlink" href="#equation-eq149" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+&amp; \frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}+F(x,t) \; \textrm{for }  \; 0\leq x \leq L \\
+&amp; u(0,t) = u(L,t) = 0 \\
+&amp; u(x,0) = f(x) 
+\end{align}\end{split}\]</div>
 </div>
 </div>
 

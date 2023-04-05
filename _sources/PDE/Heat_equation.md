@@ -350,7 +350,13 @@ With the chosen $\alpha$ and $\beta$, we can reorganize the original equation to
 ## Forced Solutions
 While {eq}`eq143` takes heat flux as the only process for redistributing heat, we can have additional heat sources, $F(x,t)$. Therefore, {eq}`eq143` is written as 
 
+
 ```{math}
-:label: eq144
-\frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}+F(x,t)
+:label: eq149
+\begin{align}
+& \frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}+F(x,t) \; \textrm{for }  \; 0\leq x \leq L \\
+& u(0,t) = u(L,t) = 0 \\
+& u(x,0) = f(x) 
+\end{align}
 ```
+
