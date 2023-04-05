@@ -18,7 +18,7 @@ if we write it down in a mathematical form
 \frac{\partial c(x)\rho(x)u(x,t)}{\partial t} = -\frac{\partial q}{\partial x} + Q(x,t)
 ```
 
-where $c(x)$ is the specific heat, $\rho(x)$ is the density of the stick and $q$ is the heat flux through the lateral (if other places are insulated) and $Q(x,t)$ is the local heating rate. One can notice that the heat flux is proportional to the temperature difference between the stick and its neighbor. The equation above can be visualized as follow. 
+where $c(x)$ is the specific heat, $\rho(x)$ is the density of the stick and $q$ is the heat flux through the lateral (if other places are insulated) and $Q(x,t)$ is the local heating source, which can come from molecular process (i.e., friction between atom or radiation). One can notice that the heat flux is proportional to the temperature difference between the stick and its neighbor. The equation above can be visualized as follow. 
 
 ```{figure} Heat.png
 ---
