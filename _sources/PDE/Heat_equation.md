@@ -28,7 +28,7 @@ scale: 30%
 Heat diffusion on a stick
 ```
 
-Our goal is to understand how the temperature evolve as a function of $x$ and $t$. In some special cases, we can add convective process (advection) and radiation to the problem but we will keep it simple for now. 
+Our goal is to understand how the initial temperature, $u(x,t)$, evolve as a function of $x$ and $t$. In some special cases, we can add convective process (advection) and radiation to the problem but we will keep it simple for now. 
 
 
 According to {eq}`Heatmath`, we can rewrite it to 
