@@ -61,7 +61,7 @@ We can also use energy constraint where the temperature at both ends are not nec
 \end{align}
 ```   
 
-where the $\pm$ sign simply represents the direction of radiation. One can easily find these two kinds of boundary condition fall within the category of type I Sturm-Liouville problem. Therefore, it's also possible to have a mixed boundary condition, where 
+where the $\pm$ sign simply represents the direction of radiation. One can easily find these two kinds of boundary condition fall within the category of type I Sturm-Liouville problem. It's also possible to have a mixed boundary condition, where 
 
 ```{math}
 :label: eq146
