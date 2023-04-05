@@ -383,8 +383,29 @@ because the spatial structure is constrained by both ends, which ensures the sol
 
 
 ```{math}
-:label: eq151
+:label: eq152
 \begin{align}
 T_n(t)  = \frac{2}{L}\int_{0}^{L} u(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
 \end{align}
 ``` 
+
+Following similar veins, we take Fourier transform of the entire heat diffusion equation, which leads to 
+
+```{math}
+:label: eq153
+\begin{align}
+T_n^{'}(t)  & = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + \frac{2}{L}\int_{0}^{L} u(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi \\
+& = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + B_n(t)
+\end{align}
+``` 
+
+where 
+
+```{math}
+:label: eq154
+\begin{align}
+B_n(t) = \frac{2}{L}\int_{0}^{L} F(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
+\end{align}
+``` 
+
+

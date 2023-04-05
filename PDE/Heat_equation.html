@@ -496,13 +496,24 @@ u(x,t) = \sum_{n=0}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-n^2\pi^2 kt/L^2}
 \end{align}\]</div>
 <p>with the numbers the Fourier <span class="math notranslate nohighlight">\(\sin\)</span> coefficients of <span class="math notranslate nohighlight">\(f(x)\)</span>. This suggests that, for the problem with the term of <span class="math notranslate nohighlight">\(F(x,t)\)</span>, attempt a solution</p>
 <div class="math notranslate nohighlight" id="equation-eq151">
-<span class="eqno">(152)<a class="headerlink" href="#equation-eq151" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<span class="eqno">(151)<a class="headerlink" href="#equation-eq151" title="Permalink to this equation">¶</a></span>\[\begin{align}
 u(x,t) = \sum_{n=0}^{\infty} T_n(t) \sin(\frac{n\pi x}{L})
 \end{align}\]</div>
-<p>because the spatial structure is constrained by both ends, which ensures the solution is the linear combination of Fourier <span class="math notranslate nohighlight">\(\sin\)</span> functions. According to <a class="reference internal" href="#equation-eq151">(152)</a>, one can find that <span class="math notranslate nohighlight">\(T_n(t)\)</span> is simply the coefficients of Fourier <span class="math notranslate nohighlight">\(\sin\)</span> functions. i.e.,</p>
-<div class="math notranslate nohighlight" id="equation-eq151">
-<span class="eqno">(152)<a class="headerlink" href="#equation-eq151" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<p>because the spatial structure is constrained by both ends, which ensures the solution is the linear combination of Fourier <span class="math notranslate nohighlight">\(\sin\)</span> functions. According to <a class="reference internal" href="#equation-eq151">(151)</a>, one can find that <span class="math notranslate nohighlight">\(T_n(t)\)</span> is simply the coefficients of Fourier <span class="math notranslate nohighlight">\(\sin\)</span> functions. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq152">
+<span class="eqno">(152)<a class="headerlink" href="#equation-eq152" title="Permalink to this equation">¶</a></span>\[\begin{align}
 T_n(t)  = \frac{2}{L}\int_{0}^{L} u(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
+\end{align}\]</div>
+<p>Following similar veins, we take Fourier transform of the entire heat diffusion equation, which leads to</p>
+<div class="math notranslate nohighlight" id="equation-eq153">
+<span class="eqno">(153)<a class="headerlink" href="#equation-eq153" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+T_n^{'}(t)  &amp; = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + \frac{2}{L}\int_{0}^{L} u(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi \\
+&amp; = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + B_n(t)
+\end{align}\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq154">
+<span class="eqno">(154)<a class="headerlink" href="#equation-eq154" title="Permalink to this equation">¶</a></span>\[\begin{align}
+B_n(t) = \frac{2}{L}\int_{0}^{L} F(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
 \end{align}\]</div>
 </div>
 </div>
