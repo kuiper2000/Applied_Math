@@ -4,7 +4,35 @@ Heat diffusion equation has important applications in engineering and Earth scie
 
 
 ## History and Formula 
-The heat equation was first developed by Joseph Fourier in 1822 for the purpose of modeling how heat diffuses over a certain material. Let's start from a 1D heat equation, which can be written as 
+The heat equation was first developed by Joseph Fourier in 1822 for the purpose of modeling how heat diffuses over a certain material. The heat equation follows a very simple energy conservation law. 
+
+```{math}
+:label: Heat
+\textrm{heat change rate} = \textrm{heat flux through boundary to neighbor} + \textrm{forcing}
+```
+
+if we write it down in a mathematical form 
+
+```{math}
+:label: Heatmath
+\frac{\partial c(x)\rho(x)u(x,t)}{\partial t} = -\frac{\partial q}{\partial x} + Q(x,t)
+```
+
+where $c(x)$ is the specific heat, $\rho(x)$ is the density of the stick and $q$ is the heat flux through the lateral (if other places are insulated) and $Q(x,t)$ is the local heating rate. The equation above can be visualized as follow. 
+
+```{figure} Heat.png
+---
+name: FIG10
+scale: 30%
+---
+Heat diffusion on a stick
+```
+
+
+
+
+
+Let's start from a 1D heat equation, which can be written as 
 
 ```{math}
 :label: eq143
