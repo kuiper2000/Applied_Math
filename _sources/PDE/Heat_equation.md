@@ -445,7 +445,7 @@ we can find the solution for $T_n$
 ```{math}
 :label: eq158
 \begin{align}
-T_n(t) =   \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n(\tau)d\tau+b_ne^{-\frac{kn^2\pi^2(t)}
+T_n(t) =   \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n(\tau)d\tau+b_ne^{-\frac{kn^2\pi^2(t)}{L}}
 \end{align}
 ``` 
 
