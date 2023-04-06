@@ -626,6 +626,22 @@ B_n(t) = \frac{2}{L}\int_{0}^{L} F(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
 &amp;=-\frac{2k n\pi}{L^2} \frac{n\pi}{L}\frac{L}{2}T_n \\
 &amp;=-\frac{k n^2\pi^2}{L^2}T_n
 \end{align}\end{split}\]</div>
+<p>substitute this result back to <a class="reference internal" href="#equation-eq153">(153)</a>, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq156">
+<span class="eqno">(156)<a class="headerlink" href="#equation-eq156" title="Permalink to this equation">¶</a></span>\[\begin{align}
+T_n^{'}(t)   + \frac{k n^2\pi^2}{L^2}T_n(t) =   B_n(t)
+\end{align}\]</div>
+<p>which is a solvable 1st-order ODE.</p>
+<p>With an initial condition of</p>
+<div class="math notranslate nohighlight" id="equation-eq157">
+<span class="eqno">(157)<a class="headerlink" href="#equation-eq157" title="Permalink to this equation">¶</a></span>\[\begin{align}
+T_n(0) =   b_n
+\end{align}\]</div>
+<p>we can find the solution for <span class="math notranslate nohighlight">\(T_n\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq158">
+<span class="eqno">(158)<a class="headerlink" href="#equation-eq158" title="Permalink to this equation">¶</a></span>\[\begin{align}
+T_n(t) =   \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n(\tau)d\tau+b_ne^{-\frac{kn^2\pi^2(t)}
+\end{align}\]</div>
 </div>
 </div>
 

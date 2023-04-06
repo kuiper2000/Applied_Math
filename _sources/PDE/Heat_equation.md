@@ -421,6 +421,33 @@ Evaluate the last integral in {eq}`eq153` by carrying out two integrate by parts
 \end{align}
 ```
 
+substitute this result back to {eq}`eq153`, we have 
+```{math}
+:label: eq156
+\begin{align}
+T_n^{'}(t)   + \frac{k n^2\pi^2}{L^2}T_n(t) =   B_n(t)
+\end{align}
+``` 
+
+which is a solvable 1st-order ODE. 
+
+With an initial condition of 
+
+```{math}
+:label: eq157
+\begin{align}
+T_n(0) =   b_n
+\end{align}
+``` 
+
+we can find the solution for $T_n$ 
+
+```{math}
+:label: eq158
+\begin{align}
+T_n(t) =   \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n(\tau)d\tau+b_ne^{-\frac{kn^2\pi^2(t)}
+\end{align}
+``` 
 
 
 
