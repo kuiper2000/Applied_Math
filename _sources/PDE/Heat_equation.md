@@ -449,6 +449,15 @@ T_n(t) =   \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n(\tau)d\tau+b_ne^{-
 \end{align}
 ``` 
 
+and the final solution is 
+
+
+```{math}
+:label: eq159
+\begin{align}
+u(x,t) =  \sum_{n=0}^{\infty} \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n(\tau)d\tau \sin(\frac{kn\pi}{L}x)+\sum_{n=0}^{\infty}b_ne^{-\frac{kn^2\pi^2(t)}{L^2}}\sin(\frac{kn\pi}{L}x)
+\end{align}
+``` 
 
 
 
