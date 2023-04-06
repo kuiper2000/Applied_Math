@@ -409,5 +409,13 @@ B_n(t) = \frac{2}{L}\int_{0}^{L} F(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
 ``` 
 
 
+Evaluate the last integral in {eq}`eq153` by carrying out two integrate by parts. 
+
+```{math}
+[u_{x}(\xi,t)\sin(\frac{n\pi \xi}{L})]_{0}^{L}-\frac{n\pi}{L}\int_{0}^{L}u_{x}\cos(\frac{n\pi \xi}{L})
+```
+
+
+
 
 
