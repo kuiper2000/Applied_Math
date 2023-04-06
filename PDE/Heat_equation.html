@@ -619,8 +619,11 @@ T_n^{'}(t)  &amp; = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{
 B_n(t) = \frac{2}{L}\int_{0}^{L} F(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
 \end{align}\]</div>
 <p>Evaluate the last integral in <a class="reference internal" href="#equation-eq153">(153)</a> by carrying out two integrate by parts.</p>
-<div class="math notranslate nohighlight">
-\[[u_{x}(\xi,t)\sin(\frac{n\pi \xi}{L})]_{0}^{L}-\frac{n\pi}{L}\int_{0}^{L}u_{x}\cos(\frac{n\pi \xi}{L})\]</div>
+<div class="math notranslate nohighlight" id="equation-eq155">
+<span class="eqno">(155)<a class="headerlink" href="#equation-eq155" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi &amp;= \frac{2k}{L}([u_{x}(\xi,t)\sin(\frac{n\pi \xi}{L})]_{0}^{L}-\frac{n\pi}{L}\int_{0}^{L}u_{x}\cos(\frac{n\pi \xi}{L})d\xi) \\
+&amp;=0-\frac{2k n\pi}{L^2}[[u\cos(\frac{n\pi \xi}{L})]_{0}^{L}+\frac{n\pi}{L}\int_{0}^{L}u\sin(\frac{n\pi \xi}{L})d\xi]
+\end{align}\end{split}\]</div>
 </div>
 </div>
 
