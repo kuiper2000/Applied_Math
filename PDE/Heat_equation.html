@@ -494,7 +494,7 @@ T \textrm{   for } 0\leq x \leq \frac{L}{2}\\
 <p>The equation above can be considered as that the environment and stick always have the same temperature which leads to 0 heat exchange between sticks and outside environment. For such condition, the solution has a form of Fourier <span class="math notranslate nohighlight">\(\cos\)</span> function. Therefore, the solution can be written as</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-u(x,t) = \sum_{n=0}^{\infty} a_n \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2k}{L^2}t}
+u(x,t) = \sum_{n=0}^{\infty} a_n \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2}{L^2}t}
 \end{align}\]</div>
 <p>To get the Fourier coefficient,</p>
 <div class="math notranslate nohighlight">
@@ -505,9 +505,9 @@ u(x,t) = \sum_{n=0}^{\infty} a_n \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2k}{L^2
 <p>The solution can be written as</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-u(x,t) = \frac{T}{2}+\frac{2T}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}\sin(\frac{n\pi}{2}) \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2k}{L^2}t}
+u(x,t) = \frac{T}{2}+\frac{2T}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}\sin(\frac{n\pi}{2}) \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2}{L^2}t}
 \end{align}\]</div>
-<p>One can see that <span class="math notranslate nohighlight">\(k\)</span> only appears in <span class="math notranslate nohighlight">\(e^{-k\frac{n^2\pi^2k}{L^2}t}\)</span>. If we choose a <span class="math notranslate nohighlight">\(k\)</span> big enough, the signal will flatten out very quickly.</p>
+<p>One can see that <span class="math notranslate nohighlight">\(k\)</span> only appears in <span class="math notranslate nohighlight">\(e^{-k\frac{n^2\pi^2}{L^2}t}\)</span>. If we choose a <span class="math notranslate nohighlight">\(k\)</span> big enough, the signal will flatten out very quickly.</p>
 </div>
 <p>From two cases above, the readers can extend to some more complicated cases such as one side has a constant temperature and the other side is radiation boundary condition. I will leave the practice to the readers.</p>
 <div class="admonition-example-3-nonhomogeneous-problem admonition">

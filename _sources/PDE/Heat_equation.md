@@ -209,7 +209,7 @@ The equation above can be considered as that the environment and stick always ha
 
 ```{math}
 \begin{align}
-u(x,t) = \sum_{n=0}^{\infty} a_n \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2k}{L^2}t}
+u(x,t) = \sum_{n=0}^{\infty} a_n \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2}{L^2}t}
 \end{align}
 ```  
 
@@ -230,11 +230,11 @@ The solution can be written as
 
 ```{math}
 \begin{align}
-u(x,t) = \frac{T}{2}+\frac{2T}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}\sin(\frac{n\pi}{2}) \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2k}{L^2}t}
+u(x,t) = \frac{T}{2}+\frac{2T}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}\sin(\frac{n\pi}{2}) \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2}{L^2}t}
 \end{align}
 ```  
 
-One can see that $k$ only appears in $e^{-k\frac{n^2\pi^2k}{L^2}t}$. If we choose a $k$ big enough, the signal will flatten out very quickly. 
+One can see that $k$ only appears in $e^{-k\frac{n^2\pi^2}{L^2}t}$. If we choose a $k$ big enough, the signal will flatten out very quickly. 
 :::
 
 
