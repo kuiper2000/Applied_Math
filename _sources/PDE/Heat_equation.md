@@ -416,7 +416,7 @@ Evaluate the last integral in {eq}`eq153` by carrying out two integrate by parts
 \begin{align}
 \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi &= \frac{2k}{L}([u_{x}(\xi,t)\sin(\frac{n\pi \xi}{L})]_{0}^{L}-\frac{n\pi}{L}\int_{0}^{L}u_{x}\cos(\frac{n\pi \xi}{L})d\xi) \\
 &=0-\frac{2k n\pi}{L^2}[[u\cos(\frac{n\pi \xi}{L})]_{0}^{L}+\frac{n\pi}{L}\int_{0}^{L}u\sin(\frac{n\pi \xi}{L})d\xi] \\
-&=-\frac{2k n\pi}{L^2} \frac{n\pi}{L}\frac{L}{2}T_n
+&=-\frac{2k n\pi}{L^2} \frac{n\pi}{L}\frac{L}{2}T_n \\
 &=-\frac{k n^2\pi^2}{L^2}T_n
 \end{align}
 ```
