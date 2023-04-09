@@ -466,7 +466,7 @@ For certain cases, the heat diffusion does not necessarily happen on a stick or 
 ```{math}
 :label: eq160
 \begin{align}
-f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{-i n\pi x}{L}} = \sum_{n=-\infty}^{\infty} c_n e^{-i k(n) x} \; n\in 	\mathbb{N} \textrm{ and }\; \; k\in 	\mathbb{R}
+f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{i n\pi x}{L}} = \sum_{n=-\infty}^{\infty} c_n e^{i k(n) x} \; n\in 	\mathbb{N} \textrm{ and }\; \; k\in 	\mathbb{R}
 \end{align}
 ``` 
 
@@ -486,7 +486,7 @@ Here we introduce a small trick. If we let $L\rightarrow\infty$, we will have $\
 ```{math}
 :label: eq160
 \begin{align}
-f(x) = \int_{k=-\infty}^{\infty} c_k e^{-i k x} dk\; n\in 	\mathbb{N} \textrm{ and }\; \; k\in 	\mathbb{R}
+f(x) = \int_{k=-\infty}^{\infty} \frac{1}{2\pi}F(k) e^{i k x} dk\; k\in \mathbb{R}
 \end{align}
 ``` 
 
@@ -495,7 +495,7 @@ and
 ```{math}
 :label: eq161
 \begin{align}
-c_n = \frac{1}{2\pi}\int_{-L \rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx
+F(k) = \int_{-L \rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx
 \end{align}
 ``` 
 
