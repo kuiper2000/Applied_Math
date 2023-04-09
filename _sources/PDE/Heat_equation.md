@@ -466,7 +466,7 @@ For certain cases, the heat diffusion does not necessarily happen on a stick or 
 ```{math}
 :label: eq160
 \begin{align}
-f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{-i n\pi x}{L}}
+f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{-i n\pi x}{L}} = \sum_{n=-\infty}^{\infty} c_n e^{-i k(n) x}
 \end{align}
 ``` 
 
@@ -476,6 +476,9 @@ where
 ```{math}
 :label: eq161
 \begin{align}
-c_n = \frac{\int_{-L}^{L} f(x)e^{\frac{-i n\pi x}{L}}{\int_{-L}^{L} |e^{\frac{-i n\pi x}{L}|^2 dx} = \frac{1}{2L}
+c_n = \frac{\int_{-L}^{L} f(x)e^{\frac{-i n\pi x}{L}}{\int_{-L}^{L} |e^{\frac{-i n\pi x}{L}|^2 dx} 
 \end{align}
 ``` 
+
+
+Here we introduce a little trick. If we let $L\rightarrow\infty$, we will have $\delta k = k(n+1)-k(n-1) = \frac{\pi}{L} \sim 0 $
