@@ -486,7 +486,7 @@ Here we introduce a small trick. If we let $L\rightarrow\infty$, we will have $\
 ```{math}
 :label: eq160
 \begin{align}
-f(x) = int_{k=-\infty}^{\infty} c_k e^{-i k x} dk\; n\in 	\mathbb{N} \textrm{ and }\; \; k\in 	\mathbb{R}
+f(x) = \int_{k=-\infty}^{\infty} c_k e^{-i k x} dk\; n\in 	\mathbb{N} \textrm{ and }\; \; k\in 	\mathbb{R}
 \end{align}
 ``` 
 
