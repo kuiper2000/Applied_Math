@@ -328,6 +328,11 @@ title="Print to PDF"
    Forced Solutions
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solutions-on-a-real-string">
+   Solutions on a Real String
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -355,6 +360,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#forced-solutions">
    Forced Solutions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solutions-on-a-real-string">
+   Solutions on a Real String
   </a>
  </li>
 </ul>
@@ -646,6 +656,19 @@ T_n(t) =   \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n(\tau)d\tau+b_ne^{-
 <div class="math notranslate nohighlight" id="equation-eq159">
 <span class="eqno">(159)<a class="headerlink" href="#equation-eq159" title="Permalink to this equation">¶</a></span>\[\begin{align}
 u(x,t) =  \sum_{n=0}^{\infty} \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n(\tau)d\tau \sin(\frac{kn\pi}{L}x)+\sum_{n=0}^{\infty}b_ne^{-\frac{kn^2\pi^2(t)}{L^2}}\sin(\frac{kn\pi}{L}x)
+\end{align}\]</div>
+</div>
+<div class="section" id="solutions-on-a-real-string">
+<h2>Solutions on a Real String<a class="headerlink" href="#solutions-on-a-real-string" title="Permalink to this headline">¶</a></h2>
+<p>For certain cases, the heat diffusion does not necessarily happen on a stick or a string but instead…over an infinite domain. We first start with finite domain Fourier transform, where the solution are bounded in <span class="math notranslate nohighlight">\([-L,L]\)</span>. Sturm-Liouville theorem tells us that the solution has a form of:</p>
+<div class="math notranslate nohighlight" id="equation-eq160">
+<span class="eqno">(160)<a class="headerlink" href="#equation-eq160" title="Permalink to this equation">¶</a></span>\[\begin{align}
+f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{-i n\pi x}{L}}
+\end{align}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq161">
+<span class="eqno">(161)<a class="headerlink" href="#equation-eq161" title="Permalink to this equation">¶</a></span>\[\begin{align}
+c_n = \frac{\int_{-L}^{L} f(x)e^{\frac{-i n\pi x}{L}}{\int_{-L}^{L} |e^{\frac{-i n\pi x}{L}|^2 dx} = \frac{1}{2L}
 \end{align}\]</div>
 </div>
 </div>
