@@ -662,18 +662,23 @@ u(x,t) =  \sum_{n=0}^{\infty} \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n
 <h2>Solutions on a Real String<a class="headerlink" href="#solutions-on-a-real-string" title="Permalink to this headline">¶</a></h2>
 <p>For certain cases, the heat diffusion does not necessarily happen on a stick or a string but instead…over an infinite domain. We first start with finite domain Fourier transform, where the solution are bounded in <span class="math notranslate nohighlight">\([-L,L]\)</span>. Sturm-Liouville theorem tells us that the solution has a form of:</p>
 <div class="math notranslate nohighlight" id="equation-eq160">
-<span class="eqno">(160)<a class="headerlink" href="#equation-eq160" title="Permalink to this equation">¶</a></span>\[\begin{align}
-f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{-i n\pi x}{L}} = \sum_{n=-\infty}^{\infty} c_n e^{-i k(n) x} \; A\in 	\mathbb{N} \textrm{ and }\; \; A\in 	\mathbb{R}
+<span class="eqno">(162)<a class="headerlink" href="#equation-eq160" title="Permalink to this equation">¶</a></span>\[\begin{align}
+f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{-i n\pi x}{L}} = \sum_{n=-\infty}^{\infty} c_n e^{-i k(n) x} \; n\in 	\mathbb{N} \textrm{ and }\; \; k\in 	\mathbb{R}
 \end{align}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-eq161">
-<span class="eqno">(162)<a class="headerlink" href="#equation-eq161" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<span class="eqno">(163)<a class="headerlink" href="#equation-eq161" title="Permalink to this equation">¶</a></span>\[\begin{align}
 c_n = \frac{\int_{-L}^{L} f(x)e^{-ikx} dx}{\int_{-L}^{L} |e^{-ikx}|^2 dx} = \frac{1}{2L} \int_{-L}^{L} f(x)e^{-ikx} dx
 \end{align}\]</div>
-<p>Here we introduce a little trick. If we let <span class="math notranslate nohighlight">\(L\rightarrow\infty\)</span>, we will have <span class="math notranslate nohighlight">\(\delta k = k(n+1)-k(n-1) = \frac{\pi}{L} \sim 0 \)</span>. One should notice that, infinite size of domain is equivalent to a limited size domain with infinite wave numbers. Therefore,</p>
+<p>Here we introduce a small trick. If we let <span class="math notranslate nohighlight">\(L\rightarrow\infty\)</span>, we will have <span class="math notranslate nohighlight">\(\delta k = k(n+1)-k(n-1) = \frac{\pi}{L} \sim 0 \)</span>. One should notice that, infinite size of domain is equivalent to a limited size domain with infinite wave numbers. Therefore,</p>
+<div class="math notranslate nohighlight" id="equation-eq160">
+<span class="eqno">(162)<a class="headerlink" href="#equation-eq160" title="Permalink to this equation">¶</a></span>\[\begin{align}
+f(x) = int_{k=-\infty}^{\infty} c_k e^{-i k x} dk\; n\in 	\mathbb{N} \textrm{ and }\; \; k\in 	\mathbb{R}
+\end{align}\]</div>
+<p>and</p>
 <div class="math notranslate nohighlight" id="equation-eq161">
-<span class="eqno">(162)<a class="headerlink" href="#equation-eq161" title="Permalink to this equation">¶</a></span>\[\begin{align}
-c_n = \frac{1}{2\pi}\int_{\rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx
+<span class="eqno">(163)<a class="headerlink" href="#equation-eq161" title="Permalink to this equation">¶</a></span>\[\begin{align}
+c_n = \frac{1}{2\pi}\int_{-L \rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx
 \end{align}\]</div>
 </div>
 </div>
