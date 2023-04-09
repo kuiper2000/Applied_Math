@@ -484,7 +484,7 @@ Here we introduce a small trick. If we let $L\rightarrow\infty$, we will have $\
 
 
 ```{math}
-:label: eq160
+:label: eq162
 \begin{align}
 f(x) = \int_{k=-\infty}^{\infty} \frac{1}{2\pi}F(k) e^{i k x} dk\; k\in \mathbb{R}
 \end{align}
@@ -493,9 +493,11 @@ f(x) = \int_{k=-\infty}^{\infty} \frac{1}{2\pi}F(k) e^{i k x} dk\; k\in \mathbb{
 and 
 
 ```{math}
-:label: eq161
+:label: eq163
 \begin{align}
 F(k) = \int_{-L \rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx
 \end{align}
 ``` 
+
+{eq}`eq163` is the Fourier transform of $f(x)$ over an infinite domain. 
 
