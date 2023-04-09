@@ -476,9 +476,11 @@ where
 ```{math}
 :label: eq161
 \begin{align}
-c_n = \frac{\int_{-L}^{L} f(x)e^{ikx} dx}{\int_{-L}^{L} |e^{ikx}|^2 dx}
+c_n = \frac{\int_{-L}^{L} f(x)e^{ikx} dx}{\int_{-L}^{L} |e^{ikx}|^2 dx} = \frac{1}{2L} \int_{-L}^{L} f(x)e^{ikx} dx
 \end{align}
 ``` 
 
 
 Here we introduce a little trick. If we let $L\rightarrow\infty$, we will have $\delta k = k(n+1)-k(n-1) = \frac{\pi}{L} \sim 0 $. One should notice that, infinite size of domain is equivalent to a limited size domain with infinite wave numbers. 
+
+
