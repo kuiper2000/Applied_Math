@@ -476,7 +476,7 @@ where
 ```{math}
 :label: eq161
 \begin{align}
-c_n = \frac{\int_{-L}^{L} f(x)e^{\frac{-i n\pi x}{L}}}{\int_{-L}^{L} |e^{\frac{-i n\pi x}{L}|^2 dx} 
+c_n = \frac{\int_{-L}^{L} f(x)e^{ikx} dx}{\int_{-L}^{L} |e^{ikx}|^2 dx}
 \end{align}
 ``` 
 
