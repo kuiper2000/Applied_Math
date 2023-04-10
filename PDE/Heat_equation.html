@@ -396,8 +396,8 @@ title="Print to PDF"
 <p>One can notice that the heat flux is proportional to the temperature difference between the stick and its neighbor, which is the key process in determining the energy redistribution. When there is no temperature gradient (and no external heat source), there is no temperature change. Our goal is to understand how the initial temperature, <span class="math notranslate nohighlight">\(u(x,t)\)</span>, evolve as a function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>. In some special cases, we can add convective process (advection) and radiation to the problem but we will keep it simple for now.</p>
 <p><a class="reference internal" href="#equation-heatmath">(144)</a> can be rewritten as</p>
 <div class="math notranslate nohighlight" id="equation-eq143">
-<span class="eqno">(145)<a class="headerlink" href="#equation-eq143" title="Permalink to this equation">¶</a></span>\[\frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}\]</div>
-<p>where <span class="math notranslate nohighlight">\(Q(x,t)\)</span> is dropped for simplification and <span class="math notranslate nohighlight">\(k=\frac{\kappa}{c\rho}\)</span>, so-called diffusion coefficient.</p>
+<span class="eqno">(145)<a class="headerlink" href="#equation-eq143" title="Permalink to this equation">¶</a></span>\[\frac{\partial u}{\partial t} = \alpha^2 \frac{\partial ^2 u}{\partial x^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Q(x,t)\)</span> is dropped for simplification and <span class="math notranslate nohighlight">\(\alpha^2=\frac{\kappa}{c\rho}\)</span>, so-called diffusion coefficient.</p>
 <p>Considering the solutions are bounded in a stick with <span class="math notranslate nohighlight">\(0\leq x \leq L\)</span>. If we closely observe <a class="reference internal" href="#equation-eq143">(145)</a>, we can find it is the combination of a 1st-order ODE in time and a 2nd-order ODE in space. Therefore, we need at least 1 initial condition and 2 boundary conditions, which usually have form of</p>
 <div class="math notranslate nohighlight" id="equation-eq144">
 <span class="eqno">(146)<a class="headerlink" href="#equation-eq144" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
@@ -424,7 +424,7 @@ We can also use energy constraint where the temperature at both ends are not nec
 <p>First consider the problem</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-&amp; u_t = ku_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
+&amp; u_t = \alpha^2 u_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
 &amp; u(0,t) = u(L,t) = 0 \\ 
 &amp; u(x,0) = f(x) 
 \end{align}\end{split}\]</div>
@@ -436,17 +436,17 @@ u(x,t) = X(x)T(t)
 <p>Substitute this into the differential equation to get</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-XT^{'} = kX^{''}T
+XT^{'} = \alpha^2X^{''}T
 \end{align}\]</div>
 <p>which is equivalent to</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-\frac{T^{'}}{kT} = \frac{X^{''}}{X}
+\frac{T^{'}}{\alpha^2T} = \frac{X^{''}}{X}
 \end{align}\]</div>
 <p>Observing the equation above, we can find the left hand side only depends on <span class="math notranslate nohighlight">\(t\)</span> and the right hand side only depends on <span class="math notranslate nohighlight">\(x\)</span>. We also know that <span class="math notranslate nohighlight">\(X(x)\)</span> and <span class="math notranslate nohighlight">\(T(t)\)</span> vary independently. Therefore, only possibility exists: the ration of <span class="math notranslate nohighlight">\(T^{'}\)</span> and <span class="math notranslate nohighlight">\(kT\)</span> is a constant and so do <span class="math notranslate nohighlight">\(X^{''}\)</span> and <span class="math notranslate nohighlight">\(X\)</span>. According to this, we can write down</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-\frac{T^{'}}{kT} = \frac{X^{''}}{X} = -\lambda 
+\frac{T^{'}}{\alpha^2T} = \frac{X^{''}}{X} = -\lambda 
 \end{align}\]</div>
 <p>One should notice that we can choose <span class="math notranslate nohighlight">\(lambda\)</span> on the right in stead. However, to satisfy the Fourier solution is space, we can only have <span class="math notranslate nohighlight">\(-\lambda \)</span>. (readers can think about why?).</p>
 <p>Now we have two differential equations. For the spatial structure equation,</p>
@@ -463,17 +463,17 @@ XT^{'} = kX^{''}T
 <p>For the temporal structure equation,</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-&amp; T^{'} + k\frac{n^2\pi^2}{L^2} T = 0 
+&amp; T^{'} + \alpha^2\frac{n^2\pi^2}{L^2} T = 0 
 \end{align}\]</div>
 <p>This implies</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-T = e^{-k\frac{n^2\pi^2}{L^2}t}
+T = e^{-\alpha^2\frac{n^2\pi^2}{L^2}t}
 \end{align}\]</div>
 <p>Put two solutions together, we have</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-u(x,t) = \sum_{n=1}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2 k}{L^2}t}
+u(x,t) = \sum_{n=1}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-\alpha^2\frac{n^2\pi^2}{L^2}t}
 \end{align}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
@@ -686,11 +686,11 @@ f(x) &amp;= \frac{1}{2L}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx}  \\
      &amp;= \int_{k=-\infty}^{\infty} \frac{1}{2\pi}F(k) e^{i k x} dk\; k\in \mathbb{R}
 \end{align}\end{split}\]</div>
 <p>and</p>
-<div class="math notranslate nohighlight" id="equation-eq163">
-<span class="eqno">(164)<a class="headerlink" href="#equation-eq163" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq164">
+<span class="eqno">(164)<a class="headerlink" href="#equation-eq164" title="Permalink to this equation">¶</a></span>\[\begin{align}
 F(k) = \int_{-L \rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx
 \end{align}\]</div>
-<p><a class="reference internal" href="#equation-eq163">(164)</a> is the Fourier transform of <span class="math notranslate nohighlight">\(f(x)\)</span> over an infinite domain.</p>
+<p><code class="xref eq docutils literal notranslate"><span class="pre">eq163</span></code> is the Fourier transform of <span class="math notranslate nohighlight">\(f(x)\)</span> over an infinite domain.</p>
 </div>
 </div>
 

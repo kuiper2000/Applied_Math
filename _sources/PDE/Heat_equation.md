@@ -35,10 +35,10 @@ One can notice that the heat flux is proportional to the temperature difference 
 
 ```{math}
 :label: eq143
-\frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}
+\frac{\partial u}{\partial t} = \alpha^2 \frac{\partial ^2 u}{\partial x^2}
 ```
 
-where $Q(x,t)$ is dropped for simplification and $k=\frac{\kappa}{c\rho}$, so-called diffusion coefficient.  
+where $Q(x,t)$ is dropped for simplification and $\alpha^2=\frac{\kappa}{c\rho}$, so-called diffusion coefficient.  
 
 Considering the solutions are bounded in a stick with $0\leq x \leq L$. If we closely observe {eq}`eq143`, we can find it is the combination of a 1st-order ODE in time and a 2nd-order ODE in space. Therefore, we need at least 1 initial condition and 2 boundary conditions, which usually have form of 
 
@@ -82,7 +82,7 @@ First consider the problem
 
 ```{math}
 \begin{align}
-& u_t = ku_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
+& u_t = \alpha^2 u_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
 & u(0,t) = u(L,t) = 0 \\ 
 & u(x,0) = f(x) 
 \end{align}
@@ -100,7 +100,7 @@ Substitute this into the differential equation to get
 
 ```{math}
 \begin{align}
-XT^{'} = kX^{''}T
+XT^{'} = \alpha^2X^{''}T
 \end{align}
 ```   
 
@@ -108,7 +108,7 @@ which is equivalent to
 
 ```{math}
 \begin{align}
-\frac{T^{'}}{kT} = \frac{X^{''}}{X}
+\frac{T^{'}}{\alpha^2T} = \frac{X^{''}}{X}
 \end{align}
 ```   
 
@@ -117,7 +117,7 @@ Observing the equation above, we can find the left hand side only depends on $t$
 
 ```{math}
 \begin{align}
-\frac{T^{'}}{kT} = \frac{X^{''}}{X} = -\lambda 
+\frac{T^{'}}{\alpha^2T} = \frac{X^{''}}{X} = -\lambda 
 \end{align}
 ```  
 
@@ -143,14 +143,14 @@ The first equation has a solution of Fourier $\sin$ function,
 For the temporal structure equation, 
 ```{math}
 \begin{align}
-& T^{'} + k\frac{n^2\pi^2}{L^2} T = 0 
+& T^{'} + \alpha^2\frac{n^2\pi^2}{L^2} T = 0 
 \end{align}
 ```  
 
 This implies 
 ```{math}
 \begin{align}
-T = e^{-k\frac{n^2\pi^2}{L^2}t}
+T = e^{-\alpha^2\frac{n^2\pi^2}{L^2}t}
 \end{align}
 ```  
 
@@ -158,7 +158,7 @@ Put two solutions together, we have
 
 ```{math}
 \begin{align}
-u(x,t) = \sum_{n=1}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2 k}{L^2}t}
+u(x,t) = \sum_{n=1}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-\alpha^2\frac{n^2\pi^2}{L^2}t}
 \end{align}
 ```  
 
@@ -510,7 +510,7 @@ f(x) &= \frac{1}{2L}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx}  \\
 and 
 
 ```{math}
-:label: eq163
+:label: eq164
 \begin{align}
 F(k) = \int_{-L \rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx
 \end{align}
