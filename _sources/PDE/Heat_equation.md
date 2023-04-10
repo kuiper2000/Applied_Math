@@ -477,7 +477,7 @@ It is equivalent to
 
 
 ```{math}
-:label: eq160
+:label: eq161
 \begin{align}
 f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{i n\pi x}{L}} = \sum_{n=-\infty}^{\infty} c_n e^{i k(n) x} \; n\in 	\mathbb{N} \textrm{ and }\; \; k\in 	\mathbb{R}
 \end{align}
@@ -487,21 +487,13 @@ where
 
 
 ```{math}
-:label: eq160
+:label: eq162
 \begin{align}
-c_n & = \frac{a_n-ib_n}{2} \\
+c_n & = \frac{a_n-ib_n}{2} \frac{\int_{-L}^{L} f(x)e^{-ikx} dx}{\int_{-L}^{L} |e^{-ikx}|^2 dx} = \frac{1}{2L} \int_{-L}^{L} f(x)e^{-ikx} dx \\
 a_n & = \frac{1}{L} \int_{-L}^{L}f(x)\cos(\frac{n\pi x}{L}) dx = \frac{1}{L} A_n\\
 b_n & = \frac{1}{L} \int_{-L}^{L}f(x)\sin(\frac{n\pi x}{L}) dx = \frac{1}{L} B_n\\
 \end{align}
 ```  
-
-
-```{math}
-:label: eq161
-\begin{align}
-c_n = \frac{\int_{-L}^{L} f(x)e^{-ikx} dx}{\int_{-L}^{L} |e^{-ikx}|^2 dx} = \frac{1}{2L} \int_{-L}^{L} f(x)e^{-ikx} dx
-\end{align}
-``` 
 
 Here we introduce a small trick. If we let $L\rightarrow\infty$, we will have $\delta k = k(n+1)-k(n-1) = \frac{\pi}{L} \sim 0 $. One should notice that, infinite size of domain is equivalent to a limited size domain with infinite wave numbers. Therefore, 
 
