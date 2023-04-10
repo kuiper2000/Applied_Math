@@ -469,7 +469,7 @@ For certain cases, the heat diffusion does not necessarily happen on a stick or 
 :label: eq160
 \begin{align}
 f(x) &= \sum_{n=-\infty}^{\infty} a_n\cos(\frac{n\pi x}{L})+b_n\sin(\frac{n\pi x}{L}) \\
-     &= a_n\cos(kx)+b_n\sin(kx) \; n\in 	\mathbb{Z} \textrm{ and }\; \; k\in 	\mathbb{R}
+     &= \sum_{n=-\infty}^{\infty} a_n\cos(kx)+b_n\sin(kx) \; n\in 	\mathbb{Z} \textrm{ and }\; \; k\in 	\mathbb{R}
 \end{align}
 ``` 
 
@@ -489,9 +489,9 @@ where
 ```{math}
 :label: eq160
 \begin{align}
-c_n & = \frac{a-ib}{2} \\
-a_n & = \frac{1}{L} \int_{-L}^{L}f(x)\cos(\frac{n\pi x}{L}) dx \\
-b_n & = \frac{1}{L} \int_{-L}^{L}f(x)\sin(\frac{n\pi x}{L}) dx \\
+c_n & = \frac{a_n-ib_n}{2} \\
+a_n & = \frac{1}{L} \int_{-L}^{L}f(x)\cos(\frac{n\pi x}{L}) dx = \frac{1}{L} A_n\\
+b_n & = \frac{1}{L} \int_{-L}^{L}f(x)\sin(\frac{n\pi x}{L}) dx = \frac{1}{L} B_n\\
 \end{align}
 ```  
 

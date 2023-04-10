@@ -664,7 +664,7 @@ u(x,t) =  \sum_{n=0}^{\infty} \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n
 <div class="math notranslate nohighlight" id="equation-eq160">
 <span class="eqno">(162)<a class="headerlink" href="#equation-eq160" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 f(x) &amp;= \sum_{n=-\infty}^{\infty} a_n\cos(\frac{n\pi x}{L})+b_n\sin(\frac{n\pi x}{L}) \\
-     &amp;= a_n\cos(kx)+b_n\sin(kx) \; n\in 	\mathbb{Z} \textrm{ and }\; \; k\in 	\mathbb{R}
+     &amp;= \sum_{n=-\infty}^{\infty} a_n\cos(kx)+b_n\sin(kx) \; n\in 	\mathbb{Z} \textrm{ and }\; \; k\in 	\mathbb{R}
 \end{align}\end{split}\]</div>
 <p>It is equivalent to</p>
 <div class="math notranslate nohighlight" id="equation-eq160">
@@ -674,9 +674,9 @@ f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{i n\pi x}{L}} = \sum_{n=-\infty}^{
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-eq160">
 <span class="eqno">(162)<a class="headerlink" href="#equation-eq160" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-c_n &amp; = \frac{a-ib}{2} \\
-a_n &amp; = \frac{1}{L} \int_{-L}^{L}f(x)\cos(\frac{n\pi x}{L}) dx \\
-b_n &amp; = \frac{1}{L} \int_{-L}^{L}f(x)\sin(\frac{n\pi x}{L}) dx \\
+c_n &amp; = \frac{a_n-ib_n}{2} \\
+a_n &amp; = \frac{1}{L} \int_{-L}^{L}f(x)\cos(\frac{n\pi x}{L}) dx = \frac{1}{L} A_n\\
+b_n &amp; = \frac{1}{L} \int_{-L}^{L}f(x)\sin(\frac{n\pi x}{L}) dx = \frac{1}{L} B_n\\
 \end{align}\end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq161">
 <span class="eqno">(163)<a class="headerlink" href="#equation-eq161" title="Permalink to this equation">¶</a></span>\[\begin{align}
