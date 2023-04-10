@@ -489,7 +489,7 @@ where
 ```{math}
 :label: eq162
 \begin{align}
-c_n & = \frac{a_n-ib_n}{2} \frac{\int_{-L}^{L} f(x)e^{-ikx} dx}{\int_{-L}^{L} |e^{-ikx}|^2 dx} = \frac{1}{2L} \int_{-L}^{L} f(x)e^{-ikx} dx \\
+c_n & = \frac{a_n-ib_n}{2} =\frac{\int_{-L}^{L} f(x)e^{-ikx} dx}{\int_{-L}^{L} |e^{-ikx}|^2 dx} = \frac{1}{2L} \int_{-L}^{L} f(x)e^{-ikx} dx \\
 a_n & = \frac{1}{L} \int_{-L}^{L}f(x)\cos(\frac{n\pi x}{L}) dx = \frac{1}{L} A_n\\
 b_n & = \frac{1}{L} \int_{-L}^{L}f(x)\sin(\frac{n\pi x}{L}) dx = \frac{1}{L} B_n\\
 \end{align}
