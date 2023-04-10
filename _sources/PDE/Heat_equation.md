@@ -117,7 +117,7 @@ Observing the equation above, we can find the left hand side only depends on $t$
 
 ```{math}
 \begin{align}
-\frac{T^{'}}{\kappa_{c}^2T} = \frac{X^{''}}{X} = -\lambda 
+\frac{T^{'}}{\kappa_{c}T} = \frac{X^{''}}{X} = -\lambda 
 \end{align}
 ```  
 
