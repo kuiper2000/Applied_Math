@@ -680,9 +680,11 @@ b_n &amp; = \frac{1}{L} \int_{-L}^{L}f(x)\sin(\frac{n\pi x}{L}) dx = \frac{1}{L}
 \end{align}\end{split}\]</div>
 <p>Here we introduce a small trick. If we let <span class="math notranslate nohighlight">\(L\rightarrow\infty\)</span>, we will have <span class="math notranslate nohighlight">\(\delta k = k(n+1)-k(n-1) = \frac{\pi}{L} \sim 0 \)</span>. One should notice that, infinite size of domain is equivalent to a limited size domain with infinite wave numbers. Therefore,</p>
 <div class="math notranslate nohighlight" id="equation-eq162">
-<span class="eqno">(163)<a class="headerlink" href="#equation-eq162" title="Permalink to this equation">¶</a></span>\[\begin{align}
-f(x) = \int_{k=-\infty}^{\infty} \frac{1}{2\pi}F(k) e^{i k x} dk\; k\in \mathbb{R}
-\end{align}\]</div>
+<span class="eqno">(163)<a class="headerlink" href="#equation-eq162" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+f(x) &amp;= \frac{1}{2L}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx}  \\
+     &amp;= \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx} \nabla k\\
+     &amp;= \int_{k=-\infty}^{\infty} \frac{1}{2\pi}F(k) e^{i k x} dk\; k\in \mathbb{R}
+\end{align}\end{split}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eq163">
 <span class="eqno">(164)<a class="headerlink" href="#equation-eq163" title="Permalink to this equation">¶</a></span>\[\begin{align}

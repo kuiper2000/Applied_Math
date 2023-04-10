@@ -501,7 +501,9 @@ Here we introduce a small trick. If we let $L\rightarrow\infty$, we will have $\
 ```{math}
 :label: eq162
 \begin{align}
-f(x) = \int_{k=-\infty}^{\infty} \frac{1}{2\pi}F(k) e^{i k x} dk\; k\in \mathbb{R}
+f(x) &= \frac{1}{2L}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx}  \\
+     &= \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx} \nabla k\\
+     &= \int_{k=-\infty}^{\infty} \frac{1}{2\pi}F(k) e^{i k x} dk\; k\in \mathbb{R}
 \end{align}
 ``` 
 
