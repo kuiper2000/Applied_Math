@@ -469,7 +469,7 @@ For certain cases, the heat diffusion does not necessarily happen on a stick or 
 :label: eq160
 \begin{align}
 f(x) &= \sum_{n=-\infty}^{\infty} a_n\cos(\frac{n\pi x}{L})+b_n\sin(\frac{n\pi x}{L}) \\
-     &= a_n\cos(kx)+b_n\sin(kx) \; n\in 	\mathbb{N} \textrm{ and }\; \; k\in 	\mathbb{R}
+     &= a_n\cos(kx)+b_n\sin(kx) \; n\in 	\mathbb{Z} \textrm{ and }\; \; k\in 	\mathbb{R}
 \end{align}
 ``` 
 
