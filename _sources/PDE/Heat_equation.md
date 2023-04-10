@@ -181,11 +181,11 @@ and the final solution is
 
 ```{math}
 \begin{align}
-u(x,t) = \sum_{n=1}^{\infty} (\frac{2}{L}\int_{0}^{L}f(\xi)\sin(\frac{n\pi \xi}{L}) d\xi) \sin(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2 k}{L^2}t} 
+u(x,t) = \sum_{n=1}^{\infty} (\frac{2}{L}\int_{0}^{L}f(\xi)\sin(\frac{n\pi \xi}{L}) d\xi) \sin(\frac{n\pi x}{L})e^{-\alpha^2\frac{n^2\pi^2}{L^2}t} 
 \end{align}
 ```  
 
-From the solution above, one can find it will gradually approach 0 when $t\rightarrow\infty$ because of $e^{-k\frac{n^2\pi^2}{L^2}t}$. This is consistent with physical intuition. Therefore, for a heat diffusion without the existence of external forcing, the solution will gradually be smoothed out. 
+From the solution above, one can find it will gradually approach 0 when $t\rightarrow\infty$ because of $e^{-\alpha^2\frac{n^2\pi^2}{L^2}t}$. This is consistent with physical intuition. Therefore, for a heat diffusion without the existence of external forcing, the solution will gradually be smoothed out. 
 :::
 
 
