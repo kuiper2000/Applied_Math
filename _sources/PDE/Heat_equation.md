@@ -463,6 +463,18 @@ u(x,t) =  \sum_{n=0}^{\infty} \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n
 ## Solutions on a Real String
 For certain cases, the heat diffusion does not necessarily happen on a stick or a string but instead...over an infinite domain. We first start with finite domain Fourier transform, where the solution are bounded in $[-L,L]$. Sturm-Liouville theorem tells us that the solution has a form of:  
 
+
+
+```{math}
+:label: eq160
+\begin{align}
+f(x) = \sum_{n=-\infty}^{\infty} a_n\cos(\frac{n\pi x}{L})+b_n\sin(\frac{n\pi x}{L}) = a_n\cos(kx)+b_n\sin(kx) \; n\in 	\mathbb{N} \textrm{ and }\; \; k\in 	\mathbb{R}
+\end{align}
+``` 
+
+It is equivalent to 
+
+
 ```{math}
 :label: eq160
 \begin{align}
@@ -470,7 +482,17 @@ f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{i n\pi x}{L}} = \sum_{n=-\infty}^{
 \end{align}
 ``` 
 
-where 
+where
+
+
+```{math}
+:label: eq160
+\begin{align}
+c_n & = \frac{a-ib}{2} \\
+a_n & = \frac{1}{L} \int_{-L}^{L}f(x)\cos(\frac{n\pi x}{L}) dx \\
+b_n & = \frac{1}{L} \int_{-L}^{L}f(x)\sin(\frac{n\pi x}{L}) dx \\
+\end{align}
+```  
 
 
 ```{math}
