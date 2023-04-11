@@ -209,7 +209,7 @@ The equation above can be considered as that the environment and stick always ha
 
 ```{math}
 \begin{align}
-u(x,t) = \sum_{n=0}^{\infty} a_n \cos(\frac{n\pi x}{L})e^{-k\frac{n^2\pi^2}{L^2}t}
+u(x,t) = \sum_{n=0}^{\infty} a_n \cos(\frac{n\pi x}{L})e^{-\kappa_c\frac{n^2\pi^2}{L^2}t}
 \end{align}
 ```  
 
@@ -512,7 +512,7 @@ and
 ```{math}
 :label: eq164
 \begin{align}
-F(k) = \int_{-L \rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx
+F(k) = \int_{-L \rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx =\mathcal{F}[f(x)]
 \end{align}
 ``` 
 
