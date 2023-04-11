@@ -499,7 +499,7 @@ Here we introduce a small trick. If we let $L\rightarrow\infty$, we will have $\
 
 
 ```{math}
-:label: eq162
+:label: eq163
 \begin{align}
 f(x) &= \frac{1}{2L}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx}  \\
      &= \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx} \Delta k\\
@@ -516,5 +516,19 @@ F(k) = \int_{-L \rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx =\ma
 \end{align}
 ``` 
 
-{eq}`eq163` is the Fourier transform of $f(x)$ over an infinite domain. 
+{eq}`eq164` is the Fourier transform of $f(x)$ over an infinite domain. 
 
+
+Now we can use the Fourier transform in an infinite domain to solve the heat diffusion equation. 
+
+
+:::{admonition} Example 4
+
+Solve 
+```{math}
+\begin{align}
+u_t    & = \kappa_c u_{xx} \;\;\textrm{for }\infty<x\infty, t>0 \\
+u(x,0) & =f(x)
+\end{align}
+``` 
+:::

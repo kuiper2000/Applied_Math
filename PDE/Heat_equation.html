@@ -673,14 +673,14 @@ f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{i n\pi x}{L}} = \sum_{n=-\infty}^{
 \end{align}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-eq162">
-<span class="eqno">(163)<a class="headerlink" href="#equation-eq162" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(162)<a class="headerlink" href="#equation-eq162" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 c_n &amp; = \frac{a_n-ib_n}{2} =\frac{\int_{-L}^{L} f(x)e^{-ikx} dx}{\int_{-L}^{L} |e^{-ikx}|^2 dx} = \frac{1}{2L} \int_{-L}^{L} f(x)e^{-ikx} dx \\
 a_n &amp; = \frac{1}{L} \int_{-L}^{L}f(x)\cos(\frac{n\pi x}{L}) dx = \frac{1}{L} A_n\\
 b_n &amp; = \frac{1}{L} \int_{-L}^{L}f(x)\sin(\frac{n\pi x}{L}) dx = \frac{1}{L} B_n\\
 \end{align}\end{split}\]</div>
 <p>Here we introduce a small trick. If we let <span class="math notranslate nohighlight">\(L\rightarrow\infty\)</span>, we will have <span class="math notranslate nohighlight">\(\delta k = k(n+1)-k(n-1) = \frac{\pi}{L} \sim 0 \)</span>. One should notice that, infinite size of domain is equivalent to a limited size domain with infinite wave numbers. Therefore,</p>
-<div class="math notranslate nohighlight" id="equation-eq162">
-<span class="eqno">(163)<a class="headerlink" href="#equation-eq162" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq163">
+<span class="eqno">(163)<a class="headerlink" href="#equation-eq163" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 f(x) &amp;= \frac{1}{2L}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx}  \\
      &amp;= \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx} \Delta k\\
      &amp;= \int_{k=-\infty}^{\infty} \frac{1}{2\pi}F(k) e^{i k x} dk\; k\in \mathbb{R}
@@ -690,7 +690,17 @@ f(x) &amp;= \frac{1}{2L}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx}  \\
 <span class="eqno">(164)<a class="headerlink" href="#equation-eq164" title="Permalink to this equation">¶</a></span>\[\begin{align}
 F(k) = \int_{-L \rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx =\mathcal{F}[f(x)]
 \end{align}\]</div>
-<p><code class="xref eq docutils literal notranslate"><span class="pre">eq163</span></code> is the Fourier transform of <span class="math notranslate nohighlight">\(f(x)\)</span> over an infinite domain.</p>
+<p><a class="reference internal" href="#equation-eq164">(164)</a> is the Fourier transform of <span class="math notranslate nohighlight">\(f(x)\)</span> over an infinite domain.</p>
+<p>Now we can use the Fourier transform in an infinite domain to solve the heat diffusion equation.</p>
+<div class="admonition-example-4 admonition">
+<p class="admonition-title">Example 4</p>
+<p>Solve</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+u_t    &amp; = \kappa_c u_{xx} \;\;\textrm{for }\infty&lt;x\infty, t&gt;0 \\
+u(x,0) &amp; =f(x)
+\end{align}\end{split}\]</div>
+</div>
 </div>
 </div>
 
