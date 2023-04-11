@@ -704,14 +704,19 @@ u(x,0) &amp; =f(x)
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 \mathcal{F}[u(x,t)]      &amp; = \hat{u}(k,t) \\
-\mathcal{F}[u_x(x,t)]    &amp; = ik \hat{u}_x(k,t) \\
-\mathcal{F}[u_{xx}(x,t)] &amp; = -k^2 \hat{u}_{xx}(k,t) \\
+\mathcal{F}[u_x(x,t)]    &amp; = ik \hat{u}(k,t) \\
+\mathcal{F}[u_{xx}(x,t)] &amp; = -k^2 \hat{u}(k,t) \\
 \end{align}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{u}\)</span> is <span class="math notranslate nohighlight">\(u\)</span> in wave number space.</p>
 <p>This leads to</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-\frac{d}{dt} \hat{u} = 
+\frac{d}{dt} \hat{u} = -\kappa_c k^2 \hat{u}(k,t)
+\end{align}\]</div>
+<p>and the solution is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\hat{u}(k,t) = \hat{u}(k,0)e^{-\kappa_c k^2 t} 
 \end{align}\]</div>
 </div>
 </div>

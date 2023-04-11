@@ -538,8 +538,8 @@ Now we take Fourier transform with respect to _space_.
 ```{math}
 \begin{align}
 \mathcal{F}[u(x,t)]      & = \hat{u}(k,t) \\
-\mathcal{F}[u_x(x,t)]    & = ik \hat{u}_x(k,t) \\
-\mathcal{F}[u_{xx}(x,t)] & = -k^2 \hat{u}_{xx}(k,t) \\
+\mathcal{F}[u_x(x,t)]    & = ik \hat{u}(k,t) \\
+\mathcal{F}[u_{xx}(x,t)] & = -k^2 \hat{u}(k,t) \\
 \end{align}
 ```
 
@@ -549,8 +549,17 @@ This leads to
 
 ```{math}
 \begin{align}
-\frac{d}{dt} \hat{u} = 
+\frac{d}{dt} \hat{u} = -\kappa_c k^2 \hat{u}(k,t)
 \end{align}
 ```
+
+and the solution is 
+
+```{math}
+\begin{align}
+\hat{u}(k,t) = \hat{u}(k,0)e^{-\kappa_c k^2 t} 
+\end{align}
+```
+
 
 :::
