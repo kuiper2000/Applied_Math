@@ -591,3 +591,32 @@ u(x,t) =  \frac{1}{2\sqrt{\kappa_c \pi t}}e^{-\frac{x^2}{4\kappa_c t}}*u(x,0)
 
 
 ## Heat Diffusion on a 2D Plane
+
+
+Thus far we have considered the heat equation in one space variable. In two space dimensions the heat equation is 
+
+```{math}
+:label: eq165
+\begin{align}
+u_t = \kappa_c (u_{xx}+u_{yy})
+\end{align}
+``` 
+
+Suppose that we want a temperature distribution on a square plate occupying the regions of $0\leq x\leq L$ and $0\leq y\leq K$. A zero environmental temperature condition is given i.e., 
+
+```{math}
+:label: eq166
+\begin{align}
+u(x,0,t) & = u(x,K,t) = 0 \\
+u(0,y,t) & = u(L,y,t) = 0 \\
+\end{align}
+``` 
+
+also assume an initial condition, 
+
+```{math}
+:label: eq167
+\begin{align}
+u(x,y,0) = f(x,y)
+\end{align}
+``` 

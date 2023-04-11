@@ -54,9 +54,10 @@ __Part II: Sturm-Liouville Theorem__
 
 __Part III: Partial Differential Equation__
 * {ref}`Heat`
-    * Problem Setup
+    * History and Formula 
     * Forced Solutions 
-    * Two and Higher Dimensions
+    * Solutions on a Real String
+    * Heat Diffusion on a 2D Plane 
 
 * Wave Equations
     * Problem Setup and Initial Conditions
