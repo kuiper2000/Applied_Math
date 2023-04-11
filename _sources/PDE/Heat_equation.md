@@ -531,4 +531,14 @@ u_t    & = \kappa_c u_{xx} \;\;\textrm{for }\infty<x\infty, t>0 \\
 u(x,0) & =f(x)
 \end{align}
 ``` 
+
+
+Now we take Fourier transform with respect to _space_. 
+
+```{math}
+\begin{align}
+\mathcal{F}[f(x)] & = k \hat{u}(k,t) \\
+\end{align}
+```
+
 :::
