@@ -567,7 +567,7 @@ Then we take the inverse transform of the equation above,
 
 ```{math}
 \begin{align}
-\mathcal{F}^{-1}[\hat{u}(k,t)] = \mathcal{F}^{-1}[\hat{u}(k,0)e^{-\kappa_c k^2 t}] =  \mathcal{F}^{-1}[\hat{u}(k,0)]*\mathcal{F}^{-1}[e^{-\kappa_c k^2 t}]] 
+\mathcal{F}^{-1}[\hat{u}(k,t)] = \mathcal{F}^{-1}[\hat{u}(k,0)e^{-\kappa_c k^2 t}] =  \mathcal{F}^{-1}[\hat{u}(k,0)]*\mathcal{F}^{-1}[e^{-\kappa_c k^2 t}] 
 \end{align}
 ```
 
@@ -575,10 +575,16 @@ One interesting fact is, the inverse Fourier transform of a Gaussian function is
 
 ```{math}
 \begin{align}
-\mathcal{F}^{-1}[e^{-\kappa_c k^2 t}]] = \frac{1}{2\sqrt{\kappa_c \pi t}}e^{-\frac{x^2}{4\kappa_c t}}
+\mathcal{F}^{-1}[e^{-\kappa_c k^2 t}] = \frac{1}{2\sqrt{\kappa_c \pi t}}e^{-\frac{x^2}{4\kappa_c t}}
 \end{align}
 ```
 
+The entire solution is 
 
 
+```{math}
+\begin{align}
+u(x,t) = e^{-\frac{x^2}{4\kappa_c t}}*u(x,0)
+\end{align}
+```
 :::
