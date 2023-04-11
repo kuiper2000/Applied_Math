@@ -561,5 +561,15 @@ and the solution is
 \end{align}
 ```
 
+$e^{-\kappa_c k^2 t} $ is so-called _diffusion kernel_, which is a Gaussian function. 
+
+Then we take the inverse transform of the equation above, 
+
+```{math}
+\begin{align}
+\mathcal{F}^{-1}[\hat{u}(k,t)] = \mathcal{F}^{-1}[\hat{u}(k,0)e^{-\kappa_c k^2 t}] =  \mathcal{F}^{-1}[\hat{u}(k,0)]*\mathcal{F}^{-1}[e^{-\kappa_c k^2 t}]] 
+\end{align}
+```
+
 
 :::
