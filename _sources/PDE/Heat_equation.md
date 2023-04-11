@@ -584,7 +584,10 @@ The entire solution is
 
 ```{math}
 \begin{align}
-u(x,t) = e^{-\frac{x^2}{4\kappa_c t}}*u(x,0)
+u(x,t) =  \frac{1}{2\sqrt{\kappa_c \pi t}}e^{-\frac{x^2}{4\kappa_c t}}*u(x,0)
 \end{align}
 ```
 :::
+
+
+## Heat Diffusion on a 2D Plane
