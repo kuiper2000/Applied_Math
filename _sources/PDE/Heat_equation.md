@@ -537,7 +537,9 @@ Now we take Fourier transform with respect to _space_.
 
 ```{math}
 \begin{align}
-\mathcal{F}[f(x)] & = k \hat{u}(k,t) \\
+\mathcal{F}[u(x,t)]   & = \hat{u}(k,t) \\
+\mathcal{F}[u_x(x,t)] & = ik \hat{u}_x(k,t) \\
+\mathcal{F}[u_{xx}(x,t)] & = -k^2 \hat{u}_{xx}(k,t) \\
 \end{align}
 ```
 
