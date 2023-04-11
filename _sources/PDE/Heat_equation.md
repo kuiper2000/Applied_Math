@@ -571,5 +571,14 @@ Then we take the inverse transform of the equation above,
 \end{align}
 ```
 
+One interesting fact is, the inverse Fourier transform of a Gaussian function is also a Gaussian function. (I will leave this practice to readers). 
+
+```{math}
+\begin{align}
+\mathcal{F}^{-1}[e^{-\kappa_c k^2 t}]] = \frac{1}{2\sqrt{\kappa_c \pi t}}e^{-\frac{x^2}{4\kappa_c t}}
+\end{align}
+```
+
+
 
 :::
