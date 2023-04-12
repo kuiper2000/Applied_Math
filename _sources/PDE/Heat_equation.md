@@ -620,3 +620,22 @@ also assume an initial condition,
 u(x,y,0) = f(x,y)
 \end{align}
 ``` 
+
+
+We first attempt separation of variables in the heat equation, putting $u(x,y,t) = X(x)Y(y)T(t)$ to get 
+
+```{math}
+:label: eq167
+\begin{align}
+XYT' = \kappa_c(X^{''}YT+XY^{''}T)
+\end{align}
+``` 
+
+Divide by $XYT$ and rearrange the equation 
+
+```{math}
+:label: eq168
+\begin{align}
+\frac{X^{''}}{X} = \frac{T^{'}}{\kappa_c T}-\frac{Y^{''}}{Y}
+\end{align}
+``` 
