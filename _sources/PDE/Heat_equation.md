@@ -639,3 +639,25 @@ Divide by $XYT$ and rearrange the equation
 \frac{X^{''}}{X} = \frac{T^{'}}{\kappa_c T}-\frac{Y^{''}}{Y}
 \end{align}
 ``` 
+
+while the left-hand-side of the equation only depends on $X$ and right-hand-side of the equation only depends on $T$ and $Y$. That means both side of the equation will equal to the same constant. This is the only way that two independent equations are always equivalent.  
+
+indicating 
+
+
+```{math}
+:label: eq169
+\begin{align}
+\frac{X^{''}}{X} = \frac{T^{'}}{\kappa_c T}-\frac{Y^{''}}{Y}=-\lambda
+\end{align}
+```
+
+or 
+
+```{math}
+:label: eq170
+\begin{align}
+X^{''}+\lambda X & = 0 \\
+\frac{T^{'}}{\kappa_c T}+\lambda &= \frac{Y^{''}}{Y}
+\end{align}
+```
