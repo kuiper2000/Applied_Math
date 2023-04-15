@@ -47,7 +47,7 @@ y(0,t) & = y(L,t) = 0 \\
 ```
 
 
-Using separation of variable, one can expect that the solution shares a form of 
+Using separation of variable, one can expect that the solution shares a form of (leave this practice to readers)
 
 ```{math}
 :label: eq179
