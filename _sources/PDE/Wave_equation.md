@@ -32,7 +32,7 @@ Here we will consider a slightly more complicated case where the propagating ove
 ```{math}
 :label: eq177
 \begin{align}
-y_{tt} = c^2 y_{xx}
+y_{tt} = c^2 y_{xx} ;\ \textrm{for   } 0<x<L,t>0
 \end{align}
 ```
 
