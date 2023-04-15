@@ -678,7 +678,7 @@ Now,
 :label: eq172
 \begin{align}
 Y^{''}+\mu Y & = 0 \\
-T^{''}+(\lambda+\mu)kT & = 0 \\
+T^{'}+(\lambda+\mu)\kappa_cT & = 0 \\
 \end{align}
 ```
 
