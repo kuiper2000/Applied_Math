@@ -1,5 +1,6 @@
 (Wave)=
 # Week 12:  Wave Equation  
+## Problem Setup and Initial Conditions
 Waves are ubiquitous and especially central to atmospheric sciences. Vibration on any material with restoring forces can generate waves. The existence of restoring force implies the existence of 2nd-order derivatives in time. One of the most well-known wave equation is Hooke's Law
 
 
@@ -10,4 +11,40 @@ Waves are ubiquitous and especially central to atmospheric sciences. Vibration o
 \end{align}
 ```
 
-where the restoring force is equivalent to how much the material is stretched except with an opposite sign. This suggesting the force is always going against to the stretched direction. It's not hard to find the solutions share a form  
+where the restoring force is equivalent to how much the material is stretched except with an opposite sign. This suggesting the force is always going against to the stretched direction. It's not hard to find the solutions share a form of 
+
+
+
+```{math}
+:label: eq176
+\begin{align}
+x = a_n \cos(\sqrt{k}t)+ b_n \sin(\sqrt{k}t)
+\end{align}
+```
+
+The coefficients in {eq}`eq175` will be determined by the given initial values of $x$ and $x_t$. This is the general setup of wave solutions. 
+
+
+
+Here we will consider a slightly more complicated case where the propagating over a space (i.e., we are observing wave at both space and time.). Therefore, the original equation can be rewritten as 
+
+
+```{math}
+:label: eq177
+\begin{align}
+y_{tt} = c^2 y_{xx}
+\end{align}
+```
+
+with initial and boundary conditions 
+
+```{math}
+:label: eq178
+\begin{align}
+y(x,0) & = f(x), ;\ y_t(x,0) = g(x) \\ 
+y(0,t) & = y(L,t) = 0 \\ 
+\end{align}
+```
+
+
+
