@@ -661,3 +661,13 @@ X^{''}+\lambda X & = 0 \\
 \frac{T^{'}}{\kappa_c T}+\lambda &= \frac{Y^{''}}{Y}
 \end{align}
 ```
+
+Similarily, the second equation also implies 
+
+
+```{math}
+:label: eq171
+\begin{align}
+
+\end{align}
+```
