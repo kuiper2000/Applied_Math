@@ -22,10 +22,10 @@ x = a_n \cos(\sqrt{k}t)+ b_n \sin(\sqrt{k}t)
 \end{align}
 ```
 
-The coefficients in {eq}`eq175` will be determined by the given initial values of $x$ and $x_t$. This is the general setup of wave solutions. 
+The coefficients in {eq}`eq175` will be determined by the given initial values of $x$ and $x_t$. This is the general setup of wave solutions, where only the temporal structure is considered.  
 
 
-
+## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
 Here we will consider a slightly more complicated case where the propagating over a space (i.e., we are observing wave at both space and time.). Therefore, the original equation can be rewritten as 
 
 
