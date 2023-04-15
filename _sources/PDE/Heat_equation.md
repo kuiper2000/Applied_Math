@@ -698,6 +698,9 @@ Also, the solutions for T are
 ```{math}
 :label: eq172
 \begin{align}
-T_{nm} (t) = e^{-\alpha_{nm}t} ;\ \textrm{where} \alpha = \frac{n^2\pi^2}{L^2}+\frac{m^2\pi^2}{K^2}
+T_{nm} (t) = e^{-\alpha_{nm}t} ;\ \textrm{where   } \alpha = \frac{n^2\pi^2}{L^2}+\frac{m^2\pi^2}{K^2}
 \end{align}
 ```
+
+
+
