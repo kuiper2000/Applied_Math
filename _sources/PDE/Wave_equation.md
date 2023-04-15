@@ -47,4 +47,13 @@ y(0,t) & = y(L,t) = 0 \\
 ```
 
 
+Using separation of variable, one can expect that the solution shares a form of 
+
+```{math}
+:label: eq179
+\begin{align}
+y_n(t) = X_n(x)T_n(t) = [a_n\cos(\frac{n\pi ct}{L})+b_n\sin(\frac{n\pi ct}{L})]\sin(\frac{n\pi x}{L})
+\end{align}
+```
+
 
