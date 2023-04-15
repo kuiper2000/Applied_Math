@@ -668,6 +668,17 @@ Similarily, the second equation also implies
 ```{math}
 :label: eq171
 \begin{align}
-
+\frac{T^{'}}{\kappa_c T}+\lambda &= \frac{Y^{''}}{Y} = \mu
 \end{align}
 ```
+
+Now, 
+
+```{math}
+:label: eq172
+\begin{align}
+Y^{''}+\mu Y & = 0 \\
+T^{''}+(\lambda+\mu)kT & = 0 \\
+\end{align}
+```
+
