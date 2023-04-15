@@ -704,5 +704,5 @@ T_{nm} (t) = e^{-\alpha_{nm}t} ;\ \textrm{where   } \alpha = \frac{n^2\pi^2}{L^2
 
 
 Combining all three solutions together, we can have the final solution of heat diffusion on a 2D-plane. 
-
+The readers can also try to think about the forced solution on a 2D-plane. What should it look like?
 
