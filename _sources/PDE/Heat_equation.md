@@ -688,8 +688,8 @@ Along with the boundary conditions, we know the eigen solutions for X and Y ares
 ```{math}
 :label: eq172
 \begin{align}
-X_n(x) = \sin(\frac{n\pi x}{L}) ;\ for n=1,2,3... \\ 
-Y_n(x) = \sin(\frac{m\pi x}{K}) ;\ for m=1,2,3... \\ 
+X_n(x) = \sin(\frac{n\pi x}{L}) ;\ \textrm{where   } n=1,2,3... \\ 
+Y_n(x) = \sin(\frac{m\pi x}{K}) ;\ \textrm{where   } m=1,2,3... \\ 
 \end{align}
 ```
 
@@ -702,5 +702,7 @@ T_{nm} (t) = e^{-\alpha_{nm}t} ;\ \textrm{where   } \alpha = \frac{n^2\pi^2}{L^2
 \end{align}
 ```
 
+
+Combining all three solutions together, we can have the final solution of heat diffusion on a 2D-plane. 
 
 
