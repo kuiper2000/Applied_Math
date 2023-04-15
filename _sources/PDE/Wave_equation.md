@@ -56,4 +56,14 @@ y_n(t) = X_n(x)T_n(t) = [a_n\cos(\frac{n\pi ct}{L})+b_n\sin(\frac{n\pi ct}{L})]\
 \end{align}
 ```
 
+In most cases, we can satisfy the initial condition with finite sum of $a_n$ and $b_n$. We therefore attempt a solutions 
+
+```{math}
+:label: eq180
+\begin{align}
+y(x,t) &= \sum_{n=1}^{\infty} y_n(x,t) \\
+       &= \sum_{n=1}^{\infty}[a_n\cos(\frac{n\pi ct}{L})+b_n\sin(\frac{n\pi ct}{L})]\sin(\frac{n\pi x}{L})
+\end{align}
+```
+
 
