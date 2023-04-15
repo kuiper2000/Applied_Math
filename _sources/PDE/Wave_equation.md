@@ -66,4 +66,31 @@ y(x,t) &= \sum_{n=1}^{\infty} y_n(x,t) \\
 \end{align}
 ```
 
+using initial condition, we know 
+
+```{math}
+:label: eq181
+\begin{align}
+y(x,0) &= \sum_{n=1}^{\infty}a_n \sin(\frac{n\pi x}{L}) = f(x)
+\end{align}
+```
+
+indicating 
+
+```{math}
+:label: eq182
+\begin{align}
+a_n = \frac{2}{L} \int_{0}^{L} f(\xi)\sin(\frac{n\pi \xi}{L})d\xi
+\end{align}
+```
+
+and 
+
+
+```{math}
+:label: eq182
+\begin{align}
+\frac{n\pi c}{L}b_n = \frac{2}{L} \int_{0}^{L} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi
+\end{align}
+```
 
