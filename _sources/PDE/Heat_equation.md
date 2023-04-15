@@ -682,3 +682,22 @@ T^{'}+(\lambda+\mu)\kappa_cT & = 0 \\
 \end{align}
 ```
 
+
+Along with the boundary conditions, we know the eigen solutions for X and Y ares 
+
+```{math}
+:label: eq172
+\begin{align}
+X_n(x) = \sin(\frac{n\pi x}{L}) ;\ for n=1,2,3... \\ 
+Y_n(x) = \sin(\frac{m\pi x}{K}) ;\ for m=1,2,3... \\ 
+\end{align}
+```
+
+Also, the solutions for T are
+
+```{math}
+:label: eq172
+\begin{align}
+T_{nm} (t) = e^{-\alpha_{nm}t} ;\ where \alpha = \frac{n^2\pi^2}{L^2}+\frac{m^2\pi^2}{K^2}
+\end{align}
+```
