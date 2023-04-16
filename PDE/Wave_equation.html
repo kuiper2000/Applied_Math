@@ -431,10 +431,28 @@ a_n = \frac{2}{L} \int_{0}^{L} f(\xi)\sin(\frac{n\pi \xi}{L})d\xi
 <p class="admonition-title">Example 1</p>
 <p>Suppose a string with fixed ends at <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=\pi\)</span>, with initial conditions of</p>
 <div class="math notranslate nohighlight" id="equation-eq183">
-<span class="eqno">(185)<a class="headerlink" href="#equation-eq183" title="Permalink to this equation">¶</a></span>\[\begin{split}f(x) = \begin{cases} 
+<span class="eqno">(186)<a class="headerlink" href="#equation-eq183" title="Permalink to this equation">¶</a></span>\[\begin{split}f(x) = \begin{cases} 
 x     \textrm{   for } 0\leq x \leq \frac{\pi}{2}\\
 \pi-x \textrm{   for } \frac{\pi}{2}&lt; x \leq \pi\\
 \end{cases} \end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq183">
+<span class="eqno">(186)<a class="headerlink" href="#equation-eq183" title="Permalink to this equation">¶</a></span>\[g(x) = x (1-\cos(x))\]</div>
+<p>We also assume <span class="math notranslate nohighlight">\(c=1\)</span>, which represents the propagating speed of waves</p>
+<p>From <a class="reference internal" href="#equation-eq180">(181)</a>, we know the solution has a form of</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+y(x,t) = \sum_{n=1}^{\infty}[a_n\cos(nt)+b_n\sin(nt)]\sin(nx)
+\end{align}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+a_n = \frac{2}{\pi} \int_{0}^{\pi} f(\xi)\sin(\frac{n\pi \xi}{L})d\xi 
+\end{align}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[b_n = \frac{2}{n}\int_{0}^{\pi} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi 
+\end{cases}\]</div>
 </div>
 </div>
 </div>

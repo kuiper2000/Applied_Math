@@ -107,4 +107,39 @@ x     \textrm{   for } 0\leq x \leq \frac{\pi}{2}\\
 \pi-x \textrm{   for } \frac{\pi}{2}< x \leq \pi\\
 \end{cases} 
 ```
+
+and 
+
+```{math}
+:label: eq183
+g(x) = x (1-\cos(x))
+```
+
+We also assume $c=1$, which represents the propagating speed of waves 
+
+
+From {eq}`eq180`, we know the solution has a form of 
+
+```{math}
+\begin{align}
+y(x,t) = \sum_{n=1}^{\infty}[a_n\cos(nt)+b_n\sin(nt)]\sin(nx)
+\end{align}
+```
+
+where 
+
+```{math}
+\begin{align}
+a_n = \frac{2}{\pi} \int_{0}^{\pi} f(\xi)\sin(\frac{n\pi \xi}{L})d\xi 
+\end{align}
+```
+
+and 
+
+```{math}
+b_n = \frac{2}{n}\int_{0}^{\pi} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi 
+\end{cases}
+```
+
+
 :::
