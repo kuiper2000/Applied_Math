@@ -94,3 +94,17 @@ and
 \end{align}
 ```
 
+
+
+:::{admonition} Example 1
+
+Suppose a string with fixed ends at $x=0$ and $x=\pi$, with initial conditions of 
+
+```{math}
+:label: eq183
+f(x) = \begin{cases} 
+x     \textrm{   for } 0\leq x \leq \frac{\pi}{2}\\
+\pi-x \textrm{   for } \frac{\pi}{2}< x \leq \pi\\
+\end{cases} 
+```
+:::
