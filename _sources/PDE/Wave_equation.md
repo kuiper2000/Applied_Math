@@ -243,5 +243,32 @@ y_t(x,0) &= g(x)
 \end{align} 
 ```
 
+Similarly, using separation of variable, we have 
 
+```{math}
+:label: eq195
+\begin{align} 
+X^{''}+\lambda X &= 0 \\
+T^{''}+\lambda c^2T &= 0 \\
+\end{align} 
+```
+
+
+The first equation has a solution of 
+
+```{math}
+:label: eq196
+\begin{align} 
+X = \sum_{n=0}^{\infty} a_n\cos(kL)+ b_n\sin(kL)
+\end{align} 
+```
+
+where 
+
+```{math}
+:label: eq196
+\begin{align} 
+k=\frac{n\pi}{L}
+\end{align} 
+```
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
