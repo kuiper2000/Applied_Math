@@ -232,7 +232,16 @@ Y_t(x,0) &=x(1+\cos(\frac{\pi x}{L})) = g(x)
 
 We know how to solve this problem. 
 
-
+## Wave Motion in an Unbounded Medium
+Consider the problem 
+```{math}
+:label: eq194
+\begin{align} 
+y_{tt}   &= c^2y_{xx};\ \textrm{for } \infty <x< \infty, t>0 \\
+y(x,0)   &= f(x)\\
+y_t(x,0) &= g(x)
+\end{align} 
+```
 
 
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
