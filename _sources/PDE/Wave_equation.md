@@ -185,4 +185,27 @@ Integrating {eq}`eq187` twice, we have
 \psi(x) = -\frac{x^3}{6c^2}+\alpha x +\beta
 ```
 
+Now, look at boundary conditions, 
+
+```{math}
+:label: eq189
+y(0,t) = 0 = c^2(Y(0,t)+\psi(0)) = c^2 Y(0,t)+c^\beta
+```
+
+To make {eq}`eq189` a homogeneous problem, we choose $beta=0$. 
+For the other boundary condition, 
+
+```{math}
+:label: eq190
+y(L,t) = 0 = c^2(Y(L,t)+\psi(L)) = c^2 Y(L,t)-\frac{L^3}{6c^2}+\alpha L
+```
+
+
+Let 
+
+```{math}
+:label: eq191
+\alpha  = \frac{L^2}{6c^2}
+```
+
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
