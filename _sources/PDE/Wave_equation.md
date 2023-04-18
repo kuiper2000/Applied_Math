@@ -148,8 +148,10 @@ Now considering a more complicated case, where we have external forcing. i.e.,
 ```{math}
 :label: eq184
 \begin{align} 
-x     \textrm{   for } 0\leq x \leq \frac{\pi}{2}\\
-\pi-x \textrm{   for } \frac{\pi}{2}< x \leq \pi\\
+y_{tt} &= c^2y_{xx}+x;\ \textrm{for } 0 <x< L, t>0 \\
+y(0,t) &=y(L,t) = 0, \\
+y(x,0) &=x(L-x) = f(x) \\
+y_t(x,0) &=x(1+\cos(\frac{\pi x}{L})) = g(x)
 \end{align} 
 ```
 
