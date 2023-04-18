@@ -469,7 +469,7 @@ b_n &amp;= \frac{2}{n\pi c}\int_{0}^{\pi} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi \\
 </div>
 <p>Now considering a more complicated case, where we have external forcing. i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq184">
-<span class="eqno">(185)<a class="headerlink" href="#equation-eq184" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align} 
+<span class="eqno">(194)<a class="headerlink" href="#equation-eq184" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align} 
 y_{tt} &amp;= c^2y_{xx}+x;\ \textrm{for } 0 &lt;x&lt; L, t&gt;0 \\
 y(0,t) &amp;=y(L,t) = 0, \\
 y(x,0) &amp;=x(L-x) = f(x) \\
@@ -478,7 +478,7 @@ y_t(x,0) &amp;=x(1+\cos(\frac{\pi x}{L})) = g(x)
 <p>Similar to how we deal with heat equation with external forcing, we can assume the solution shares a form of</p>
 <div class="math notranslate nohighlight" id="equation-eq185">
 <span class="eqno">(186)<a class="headerlink" href="#equation-eq185" title="Permalink to this equation">¶</a></span>\[y(x,t) = Y(x,t) + \psi(x)\]</div>
-<p>Substitute <a class="reference internal" href="#equation-eq185">(186)</a> back to <a class="reference internal" href="#equation-eq184">(185)</a>, we can have a homogeneous equation for <span class="math notranslate nohighlight">\(Y(x,t)\)</span>.</p>
+<p>Substitute <a class="reference internal" href="#equation-eq185">(186)</a> back to <a class="reference internal" href="#equation-eq184">(194)</a>, we can have a homogeneous equation for <span class="math notranslate nohighlight">\(Y(x,t)\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-eq186">
 <span class="eqno">(187)<a class="headerlink" href="#equation-eq186" title="Permalink to this equation">¶</a></span>\[Y_{tt} = c^2Y_{xx} \]</div>
 <p>and an 2nd-order ODE for the forcing term i.e.,</p>
@@ -501,6 +501,14 @@ For the other boundary condition,</p>
 <p><a class="reference internal" href="#equation-eq191">(192)</a> indicates that</p>
 <div class="math notranslate nohighlight" id="equation-eq192">
 <span class="eqno">(193)<a class="headerlink" href="#equation-eq192" title="Permalink to this equation">¶</a></span>\[\psi  = -\frac{x^3}{6c^2}+\frac{L^2}{6c^2}x = \frac{x}{6c^2}(L^2-x^2)\]</div>
+<p>With the result above, we can rewrite the entire set of wave equation to</p>
+<div class="math notranslate nohighlight" id="equation-eq184">
+<span class="eqno">(194)<a class="headerlink" href="#equation-eq184" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align} 
+Y_{tt} &amp;= c^2Y_{xx};\ \textrm{for } 0 &lt;x&lt; L, t&gt;0 \\
+Y(0,t) &amp;=Y(L,t) = 0, \\
+Y(x,0) &amp;=x(L-x)-\psi = x(L-x)- \frac{x}{6c^2}(L^2-x^2)\\
+y_t(x,0) &amp;=x(1+\cos(\frac{\pi x}{L})) = g(x)
+\end{align} \end{split}\]</div>
 </div>
 <div class="section" id="d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship">
 <h2>D’Alembert’s Solutions, Characteristic Lines, and Dispersion Relationship<a class="headerlink" href="#d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship" title="Permalink to this headline">¶</a></h2>

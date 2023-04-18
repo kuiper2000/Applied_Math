@@ -218,8 +218,16 @@ we can have the same homogeneous equation at the second boundary.
 \psi  = -\frac{x^3}{6c^2}+\frac{L^2}{6c^2}x = \frac{x}{6c^2}(L^2-x^2)
 ```
 
+With the result above, we can rewrite the entire set of wave equation to 
 
-
-
+```{math}
+:label: eq184
+\begin{align} 
+Y_{tt} &= c^2Y_{xx};\ \textrm{for } 0 <x< L, t>0 \\
+Y(0,t) &=Y(L,t) = 0, \\
+Y(x,0) &=x(L-x)-\psi = x(L-x)- \frac{x}{6c^2}(L^2-x^2)\\
+y_t(x,0) &=x(1+\cos(\frac{\pi x}{L})) = g(x)
+\end{align} 
+```
 
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
