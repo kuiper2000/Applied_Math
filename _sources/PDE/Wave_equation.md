@@ -259,7 +259,7 @@ The first equation has a solution of
 ```{math}
 :label: eq196
 \begin{align} 
-X = \sum_{n=0}^{\infty} a_n\cos(kL)+ b_n\sin(kL)
+X = \sum_{n=0}^{\infty} a_n\cos(kx)+ b_n\sin(kx)
 \end{align} 
 ```
 
@@ -277,7 +277,17 @@ Here we make the increment between two adjacent wave numbers small ($\sim 0$). i
 ```{math}
 :label: eq198
 \begin{align} 
-dk=\frac{\pi}{L} ;\ \textrm{where } L\rightarrow \infty
+dk=\frac{\pi}{L}\sim 0 ;\ \textrm{where } L\rightarrow \infty
+\end{align} 
+```
+
+
+We can rewrite {eq}`eq196` into 
+
+```{math}
+:label: eq196
+\begin{align} 
+X = \frac{2}{\pi} \sum_{n=0}^{\infty} a_n\cos(kx)+ b_n\sin(kx) dk = \frac{1}{\pi} \int_{k=-\infty}^{\infty} a_k \cos(kx)+b_k\sin(kx) dk
 \end{align} 
 ```
 

@@ -538,8 +538,8 @@ T^{''}+\lambda c^2T &amp;= 0 \\
 \end{align} \end{split}\]</div>
 <p>The first equation has a solution of</p>
 <div class="math notranslate nohighlight" id="equation-eq196">
-<span class="eqno">(197)<a class="headerlink" href="#equation-eq196" title="Permalink to this equation">¶</a></span>\[\begin{align} 
-X = \sum_{n=0}^{\infty} a_n\cos(kL)+ b_n\sin(kL)
+<span class="eqno">(200)<a class="headerlink" href="#equation-eq196" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+X = \sum_{n=0}^{\infty} a_n\cos(kx)+ b_n\sin(kx)
 \end{align} \]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-eq197">
@@ -549,7 +549,12 @@ k=\frac{n\pi}{L}
 <p>Here we make the increment between two adjacent wave numbers small (<span class="math notranslate nohighlight">\(\sim 0\)</span>). i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq198">
 <span class="eqno">(199)<a class="headerlink" href="#equation-eq198" title="Permalink to this equation">¶</a></span>\[\begin{align} 
-dk=\frac{\pi}{L} ;\ \textrm{where } L\rightarrow \infty
+dk=\frac{\pi}{L}\sim 0 ;\ \textrm{where } L\rightarrow \infty
+\end{align} \]</div>
+<p>We can rewrite <a class="reference internal" href="#equation-eq196">(200)</a> into</p>
+<div class="math notranslate nohighlight" id="equation-eq196">
+<span class="eqno">(200)<a class="headerlink" href="#equation-eq196" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+X = \frac{2}{\pi} \sum_{n=0}^{\infty} a_n\cos(kx)+ b_n\sin(kx) dk = \frac{1}{\pi} \int_{k=-\infty}^{\infty} a_k \cos(kx)+b_k\sin(kx) dk
 \end{align} \]</div>
 </div>
 <div class="section" id="d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship">
