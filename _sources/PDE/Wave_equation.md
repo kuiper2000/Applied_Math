@@ -139,7 +139,7 @@ and
 ```{math}
 \begin{align}
 b_n &= \frac{2}{n\pi c}\int_{0}^{\pi} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi \\
-    &= \frac{-2}{n^2}(-1)^{n} + \frac{2(-1)^{n}}{n^2-1}
+    &= \frac{-2}{n^2}(-1)^{n} + \frac{2(-1)^{n}}{n^2-1} \\
     &= \frac{2}{n^2(n^2-1)}(-1)^{n}  
 \end{align}
 ```
