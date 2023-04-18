@@ -387,49 +387,49 @@ title="Print to PDF"
 <div class="section" id="problem-setup-and-initial-conditions">
 <h2>Problem Setup and Initial Conditions<a class="headerlink" href="#problem-setup-and-initial-conditions" title="Permalink to this headline">¶</a></h2>
 <p>Waves are ubiquitous and especially central to atmospheric sciences. Vibration on any material with restoring forces can generate waves. The existence of restoring force implies the existence of 2nd-order derivatives in time. One of the most well-known wave equation is Hooke’s Law</p>
-<div class="math notranslate nohighlight" id="equation-eq175">
-<span class="eqno">(176)<a class="headerlink" href="#equation-eq175" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq176">
+<span class="eqno">(176)<a class="headerlink" href="#equation-eq176" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{d^2x}{dt^2} = -kx
 \end{align}\]</div>
 <p>where the restoring force is equivalent to how much the material is stretched except with an opposite sign. This suggesting the force is always going against to the stretched direction. It’s not hard to find the solutions share a form of</p>
-<div class="math notranslate nohighlight" id="equation-eq176">
-<span class="eqno">(177)<a class="headerlink" href="#equation-eq176" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq177">
+<span class="eqno">(177)<a class="headerlink" href="#equation-eq177" title="Permalink to this equation">¶</a></span>\[\begin{align}
 x = a_n \cos(\sqrt{k}t)+ b_n \sin(\sqrt{k}t)
 \end{align}\]</div>
-<p>The coefficients in <a class="reference internal" href="#equation-eq175">(176)</a> will be determined by the given initial values of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x_t\)</span>. This is the general setup of wave solutions, where only the temporal structure is considered.</p>
+<p>The coefficients in <a class="reference internal" href="Heat_equation.html#equation-eq175">(175)</a> will be determined by the given initial values of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x_t\)</span>. This is the general setup of wave solutions, where only the temporal structure is considered.</p>
 </div>
 <div class="section" id="wave-solution-with-space-and-time-structures">
 <h2>Wave Solution with Space and Time Structures<a class="headerlink" href="#wave-solution-with-space-and-time-structures" title="Permalink to this headline">¶</a></h2>
 <p>Here we will consider a slightly more complicated case where the propagating over a space (i.e., we are observing wave at both space and time.). Therefore, the original equation can be rewritten as</p>
-<div class="math notranslate nohighlight" id="equation-eq177">
-<span class="eqno">(178)<a class="headerlink" href="#equation-eq177" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq178">
+<span class="eqno">(178)<a class="headerlink" href="#equation-eq178" title="Permalink to this equation">¶</a></span>\[\begin{align}
 y_{tt} = c^2 y_{xx} ;\ \textrm{for   } 0&lt;x&lt;L,t&gt;0
 \end{align}\]</div>
 <p>with initial and boundary conditions</p>
-<div class="math notranslate nohighlight" id="equation-eq178">
-<span class="eqno">(179)<a class="headerlink" href="#equation-eq178" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq179">
+<span class="eqno">(179)<a class="headerlink" href="#equation-eq179" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 y(x,0) &amp; = f(x), ;\ y_t(x,0) = g(x) \\ 
 y(0,t) &amp; = y(L,t) = 0 \\ 
 \end{align}\end{split}\]</div>
 <p>Using separation of variable, one can expect that the solution shares a form of (leave this practice to readers)</p>
-<div class="math notranslate nohighlight" id="equation-eq179">
-<span class="eqno">(180)<a class="headerlink" href="#equation-eq179" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq180">
+<span class="eqno">(180)<a class="headerlink" href="#equation-eq180" title="Permalink to this equation">¶</a></span>\[\begin{align}
 y_n(t) = X_n(x)T_n(t) = [a_n\cos(\frac{n\pi ct}{L})+b_n\sin(\frac{n\pi ct}{L})]\sin(\frac{n\pi x}{L})
 \end{align}\]</div>
 <p>In most cases, we can satisfy the initial condition with finite sum of <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>. We therefore attempt a solutions</p>
-<div class="math notranslate nohighlight" id="equation-eq180">
-<span class="eqno">(181)<a class="headerlink" href="#equation-eq180" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq181">
+<span class="eqno">(181)<a class="headerlink" href="#equation-eq181" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 y(x,t) &amp;= \sum_{n=1}^{\infty} y_n(x,t) \\
        &amp;= \sum_{n=1}^{\infty}[a_n\cos(\frac{n\pi ct}{L})+b_n\sin(\frac{n\pi ct}{L})]\sin(\frac{n\pi x}{L})
 \end{align}\end{split}\]</div>
 <p>using initial condition, we know</p>
-<div class="math notranslate nohighlight" id="equation-eq181">
-<span class="eqno">(182)<a class="headerlink" href="#equation-eq181" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq182">
+<span class="eqno">(182)<a class="headerlink" href="#equation-eq182" title="Permalink to this equation">¶</a></span>\[\begin{align}
 y(x,0) &amp;= \sum_{n=1}^{\infty}a_n \sin(\frac{n\pi x}{L}) = f(x)
 \end{align}\]</div>
 <p>indicating</p>
-<div class="math notranslate nohighlight" id="equation-eq182">
-<span class="eqno">(183)<a class="headerlink" href="#equation-eq182" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq183">
+<span class="eqno">(184)<a class="headerlink" href="#equation-eq183" title="Permalink to this equation">¶</a></span>\[\begin{align}
 a_n = \frac{2}{L} \int_{0}^{L} f(\xi)\sin(\frac{n\pi \xi}{L})d\xi
 \end{align}\]</div>
 <p>and</p>
@@ -449,7 +449,7 @@ x     \textrm{   for } 0\leq x \leq \frac{\pi}{2}\\
 <div class="math notranslate nohighlight">
 \[g(x) = x (1-\cos(x))\]</div>
 <p>We also assume <span class="math notranslate nohighlight">\(c=1\)</span>, which represents the propagating speed of waves</p>
-<p>From <a class="reference internal" href="#equation-eq180">(181)</a>, we know the solution has a form of</p>
+<p>From <a class="reference internal" href="#equation-eq181">(181)</a>, we know the solution has a form of</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 y(x,t) = \sum_{n=1}^{\infty}[a_n\cos(nt)+b_n\sin(nt)]\sin(nx)

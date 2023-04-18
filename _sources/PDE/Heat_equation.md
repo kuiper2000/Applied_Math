@@ -625,7 +625,7 @@ u(x,y,0) = f(x,y)
 We first attempt separation of variables in the heat equation, putting $u(x,y,t) = X(x)Y(y)T(t)$ to get 
 
 ```{math}
-:label: eq167
+:label: eq168
 \begin{align}
 XYT' = \kappa_c(X^{''}YT+XY^{''}T)
 \end{align}
@@ -634,7 +634,7 @@ XYT' = \kappa_c(X^{''}YT+XY^{''}T)
 Divide by $XYT$ and rearrange the equation 
 
 ```{math}
-:label: eq168
+:label: eq169
 \begin{align}
 \frac{X^{''}}{X} = \frac{T^{'}}{\kappa_c T}-\frac{Y^{''}}{Y}
 \end{align}
@@ -646,7 +646,7 @@ indicating
 
 
 ```{math}
-:label: eq169
+:label: eq170
 \begin{align}
 \frac{X^{''}}{X} = \frac{T^{'}}{\kappa_c T}-\frac{Y^{''}}{Y}=-\lambda
 \end{align}
@@ -655,7 +655,7 @@ indicating
 or 
 
 ```{math}
-:label: eq170
+:label: eq171
 \begin{align}
 X^{''}+\lambda X & = 0 \\
 \frac{T^{'}}{\kappa_c T}+\lambda &= \frac{Y^{''}}{Y}
@@ -666,7 +666,7 @@ Similarily, the second equation also implies
 
 
 ```{math}
-:label: eq171
+:label: eq172
 \begin{align}
 \frac{T^{'}}{\kappa_c T}+\lambda &= \frac{Y^{''}}{Y} = \mu
 \end{align}
@@ -675,7 +675,7 @@ Similarily, the second equation also implies
 Now, 
 
 ```{math}
-:label: eq172
+:label: eq173
 \begin{align}
 Y^{''}+\mu Y & = 0 \\
 T^{'}+(\lambda+\mu)\kappa_cT & = 0 \\
@@ -686,7 +686,7 @@ T^{'}+(\lambda+\mu)\kappa_cT & = 0 \\
 Along with the boundary conditions, we know the eigen solutions for X and Y ares 
 
 ```{math}
-:label: eq173
+:label: eq174
 \begin{align}
 X_n(x) = \sin(\frac{n\pi x}{L}) ;\ \textrm{where   } n=1,2,3... \\ 
 Y_n(x) = \sin(\frac{m\pi x}{K}) ;\ \textrm{where   } m=1,2,3... \\ 
@@ -696,7 +696,7 @@ Y_n(x) = \sin(\frac{m\pi x}{K}) ;\ \textrm{where   } m=1,2,3... \\
 Also, the solutions for T are
 
 ```{math}
-:label: eq174
+:label: eq175
 \begin{align}
 T_{nm} (t) = e^{-\alpha_{nm}t} ;\ \textrm{where   } \alpha = \frac{n^2\pi^2}{L^2}+\frac{m^2\pi^2}{K^2}
 \end{align}

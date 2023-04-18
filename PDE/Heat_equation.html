@@ -767,51 +767,51 @@ u(0,y,t) &amp; = u(L,y,t) = 0 \\
 \end{align}\end{split}\]</div>
 <p>also assume an initial condition,</p>
 <div class="math notranslate nohighlight" id="equation-eq167">
-<span class="eqno">(168)<a class="headerlink" href="#equation-eq167" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<span class="eqno">(167)<a class="headerlink" href="#equation-eq167" title="Permalink to this equation">¶</a></span>\[\begin{align}
 u(x,y,0) = f(x,y)
 \end{align}\]</div>
 <p>We first attempt separation of variables in the heat equation, putting <span class="math notranslate nohighlight">\(u(x,y,t) = X(x)Y(y)T(t)\)</span> to get</p>
-<div class="math notranslate nohighlight" id="equation-eq167">
-<span class="eqno">(168)<a class="headerlink" href="#equation-eq167" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq168">
+<span class="eqno">(168)<a class="headerlink" href="#equation-eq168" title="Permalink to this equation">¶</a></span>\[\begin{align}
 XYT' = \kappa_c(X^{''}YT+XY^{''}T)
 \end{align}\]</div>
 <p>Divide by <span class="math notranslate nohighlight">\(XYT\)</span> and rearrange the equation</p>
-<div class="math notranslate nohighlight" id="equation-eq168">
-<span class="eqno">(169)<a class="headerlink" href="#equation-eq168" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq169">
+<span class="eqno">(169)<a class="headerlink" href="#equation-eq169" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{X^{''}}{X} = \frac{T^{'}}{\kappa_c T}-\frac{Y^{''}}{Y}
 \end{align}\]</div>
 <p>while the left-hand-side of the equation only depends on <span class="math notranslate nohighlight">\(X\)</span> and right-hand-side of the equation only depends on <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. That means both side of the equation will equal to the same constant. This is the only way that two independent equations are always equivalent.</p>
 <p>indicating</p>
-<div class="math notranslate nohighlight" id="equation-eq169">
-<span class="eqno">(170)<a class="headerlink" href="#equation-eq169" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq170">
+<span class="eqno">(170)<a class="headerlink" href="#equation-eq170" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{X^{''}}{X} = \frac{T^{'}}{\kappa_c T}-\frac{Y^{''}}{Y}=-\lambda
 \end{align}\]</div>
 <p>or</p>
-<div class="math notranslate nohighlight" id="equation-eq170">
-<span class="eqno">(171)<a class="headerlink" href="#equation-eq170" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq171">
+<span class="eqno">(171)<a class="headerlink" href="#equation-eq171" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 X^{''}+\lambda X &amp; = 0 \\
 \frac{T^{'}}{\kappa_c T}+\lambda &amp;= \frac{Y^{''}}{Y}
 \end{align}\end{split}\]</div>
 <p>Similarily, the second equation also implies</p>
-<div class="math notranslate nohighlight" id="equation-eq171">
-<span class="eqno">(172)<a class="headerlink" href="#equation-eq171" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq172">
+<span class="eqno">(172)<a class="headerlink" href="#equation-eq172" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{T^{'}}{\kappa_c T}+\lambda &amp;= \frac{Y^{''}}{Y} = \mu
 \end{align}\]</div>
 <p>Now,</p>
-<div class="math notranslate nohighlight" id="equation-eq172">
-<span class="eqno">(173)<a class="headerlink" href="#equation-eq172" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq173">
+<span class="eqno">(173)<a class="headerlink" href="#equation-eq173" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 Y^{''}+\mu Y &amp; = 0 \\
 T^{'}+(\lambda+\mu)\kappa_cT &amp; = 0 \\
 \end{align}\end{split}\]</div>
 <p>Along with the boundary conditions, we know the eigen solutions for X and Y ares</p>
-<div class="math notranslate nohighlight" id="equation-eq173">
-<span class="eqno">(174)<a class="headerlink" href="#equation-eq173" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq174">
+<span class="eqno">(174)<a class="headerlink" href="#equation-eq174" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 X_n(x) = \sin(\frac{n\pi x}{L}) ;\ \textrm{where   } n=1,2,3... \\ 
 Y_n(x) = \sin(\frac{m\pi x}{K}) ;\ \textrm{where   } m=1,2,3... \\ 
 \end{align}\end{split}\]</div>
 <p>Also, the solutions for T are</p>
-<div class="math notranslate nohighlight" id="equation-eq174">
-<span class="eqno">(175)<a class="headerlink" href="#equation-eq174" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq175">
+<span class="eqno">(175)<a class="headerlink" href="#equation-eq175" title="Permalink to this equation">¶</a></span>\[\begin{align}
 T_{nm} (t) = e^{-\alpha_{nm}t} ;\ \textrm{where   } \alpha = \frac{n^2\pi^2}{L^2}+\frac{m^2\pi^2}{K^2}
 \end{align}\]</div>
 <p>Combining all three solutions together, we can have the final solution of heat diffusion on a 2D-plane.

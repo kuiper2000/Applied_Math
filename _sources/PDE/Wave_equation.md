@@ -5,7 +5,7 @@ Waves are ubiquitous and especially central to atmospheric sciences. Vibration o
 
 
 ```{math}
-:label: eq175
+:label: eq176
 \begin{align}
 \frac{d^2x}{dt^2} = -kx
 \end{align}
@@ -16,7 +16,7 @@ where the restoring force is equivalent to how much the material is stretched ex
 
 
 ```{math}
-:label: eq176
+:label: eq177
 \begin{align}
 x = a_n \cos(\sqrt{k}t)+ b_n \sin(\sqrt{k}t)
 \end{align}
@@ -30,7 +30,7 @@ Here we will consider a slightly more complicated case where the propagating ove
 
 
 ```{math}
-:label: eq177
+:label: eq178
 \begin{align}
 y_{tt} = c^2 y_{xx} ;\ \textrm{for   } 0<x<L,t>0
 \end{align}
@@ -39,7 +39,7 @@ y_{tt} = c^2 y_{xx} ;\ \textrm{for   } 0<x<L,t>0
 with initial and boundary conditions 
 
 ```{math}
-:label: eq178
+:label: eq179
 \begin{align}
 y(x,0) & = f(x), ;\ y_t(x,0) = g(x) \\ 
 y(0,t) & = y(L,t) = 0 \\ 
@@ -50,7 +50,7 @@ y(0,t) & = y(L,t) = 0 \\
 Using separation of variable, one can expect that the solution shares a form of (leave this practice to readers)
 
 ```{math}
-:label: eq179
+:label: eq180
 \begin{align}
 y_n(t) = X_n(x)T_n(t) = [a_n\cos(\frac{n\pi ct}{L})+b_n\sin(\frac{n\pi ct}{L})]\sin(\frac{n\pi x}{L})
 \end{align}
@@ -59,7 +59,7 @@ y_n(t) = X_n(x)T_n(t) = [a_n\cos(\frac{n\pi ct}{L})+b_n\sin(\frac{n\pi ct}{L})]\
 In most cases, we can satisfy the initial condition with finite sum of $a_n$ and $b_n$. We therefore attempt a solutions 
 
 ```{math}
-:label: eq180
+:label: eq181
 \begin{align}
 y(x,t) &= \sum_{n=1}^{\infty} y_n(x,t) \\
        &= \sum_{n=1}^{\infty}[a_n\cos(\frac{n\pi ct}{L})+b_n\sin(\frac{n\pi ct}{L})]\sin(\frac{n\pi x}{L})
@@ -69,7 +69,7 @@ y(x,t) &= \sum_{n=1}^{\infty} y_n(x,t) \\
 using initial condition, we know 
 
 ```{math}
-:label: eq181
+:label: eq182
 \begin{align}
 y(x,0) &= \sum_{n=1}^{\infty}a_n \sin(\frac{n\pi x}{L}) = f(x)
 \end{align}
@@ -78,7 +78,7 @@ y(x,0) &= \sum_{n=1}^{\infty}a_n \sin(\frac{n\pi x}{L}) = f(x)
 indicating 
 
 ```{math}
-:label: eq182
+:label: eq183
 \begin{align}
 a_n = \frac{2}{L} \int_{0}^{L} f(\xi)\sin(\frac{n\pi \xi}{L})d\xi
 \end{align}
@@ -116,7 +116,7 @@ g(x) = x (1-\cos(x))
 We also assume $c=1$, which represents the propagating speed of waves 
 
 
-From {eq}`eq180`, we know the solution has a form of 
+From {eq}`eq181`, we know the solution has a form of 
 
 ```{math}
 \begin{align}
