@@ -318,7 +318,7 @@ and the completed equation is
 ```{math}
 :label: eq202
 \begin{align} 
-y(x,t) = \int_{k=-\infty}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) dk
+y(x,t) = \frac{1}{\pi}\int_{k=-\infty}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) dk
 \end{align} 
 ```
 
