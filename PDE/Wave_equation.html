@@ -528,7 +528,7 @@ Y_t(x,0) &amp;=x(1+\cos(\frac{\pi x}{L})) = g(x)
 <span class="eqno">(195)<a class="headerlink" href="#equation-eq194" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align} 
 y_{tt}   &amp;= c^2y_{xx};\ \textrm{for } \infty &lt;x&lt; \infty, t&gt;0 \\
 y(x,0)   &amp;= f(x)\\
-y_t(x,0) &amp;= g(x)
+y_t(x,0) &amp;= 0
 \end{align} \end{split}\]</div>
 <p>Similarly, using separation of variable, we have</p>
 <div class="math notranslate nohighlight" id="equation-eq195">
@@ -538,7 +538,7 @@ T^{''}+\lambda c^2T &amp;= 0 \\
 \end{align} \end{split}\]</div>
 <p>The first equation has a solution of</p>
 <div class="math notranslate nohighlight" id="equation-eq196">
-<span class="eqno">(200)<a class="headerlink" href="#equation-eq196" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<span class="eqno">(197)<a class="headerlink" href="#equation-eq196" title="Permalink to this equation">¶</a></span>\[\begin{align} 
 X = \sum_{n=0}^{\infty} a_n\cos(kx)+ b_n\sin(kx)
 \end{align} \]</div>
 <p>where</p>
@@ -551,11 +551,17 @@ k=\frac{n\pi}{L}
 <span class="eqno">(199)<a class="headerlink" href="#equation-eq198" title="Permalink to this equation">¶</a></span>\[\begin{align} 
 dk=\frac{\pi}{L}\sim 0 ;\ \textrm{where } L\rightarrow \infty
 \end{align} \]</div>
-<p>We can rewrite <a class="reference internal" href="#equation-eq196">(200)</a> into</p>
-<div class="math notranslate nohighlight" id="equation-eq196">
-<span class="eqno">(200)<a class="headerlink" href="#equation-eq196" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<p>We can rewrite <a class="reference internal" href="#equation-eq196">(197)</a> into</p>
+<div class="math notranslate nohighlight" id="equation-eq199">
+<span class="eqno">(200)<a class="headerlink" href="#equation-eq199" title="Permalink to this equation">¶</a></span>\[\begin{align} 
 X = \frac{2}{\pi} \sum_{n=0}^{\infty} a_n\cos(kx)+ b_n\sin(kx) dk = \frac{1}{\pi} \int_{k=-\infty}^{\infty} a_k \cos(kx)+b_k\sin(kx) dk
 \end{align} \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq200">
+<span class="eqno">(201)<a class="headerlink" href="#equation-eq200" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+T_k = \cos(kct)
+\end{align} \]</div>
+<p>(readers can think about why T has a constant multiple of Fourier consine function as its solution?)</p>
 </div>
 <div class="section" id="d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship">
 <h2>D’Alembert’s Solutions, Characteristic Lines, and Dispersion Relationship<a class="headerlink" href="#d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship" title="Permalink to this headline">¶</a></h2>

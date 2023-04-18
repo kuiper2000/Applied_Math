@@ -239,7 +239,7 @@ Consider the problem
 \begin{align} 
 y_{tt}   &= c^2y_{xx};\ \textrm{for } \infty <x< \infty, t>0 \\
 y(x,0)   &= f(x)\\
-y_t(x,0) &= g(x)
+y_t(x,0) &= 0
 \end{align} 
 ```
 
@@ -285,12 +285,22 @@ dk=\frac{\pi}{L}\sim 0 ;\ \textrm{where } L\rightarrow \infty
 We can rewrite {eq}`eq196` into 
 
 ```{math}
-:label: eq196
+:label: eq199
 \begin{align} 
 X = \frac{2}{\pi} \sum_{n=0}^{\infty} a_n\cos(kx)+ b_n\sin(kx) dk = \frac{1}{\pi} \int_{k=-\infty}^{\infty} a_k \cos(kx)+b_k\sin(kx) dk
 \end{align} 
 ```
 
+and 
+
+```{math}
+:label: eq200
+\begin{align} 
+T_k = \cos(kct)
+\end{align} 
+```
+
+(readers can think about why T has a constant multiple of Fourier consine function as its solution?)
 
 
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
