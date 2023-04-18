@@ -266,11 +266,21 @@ X = \sum_{n=0}^{\infty} a_n\cos(kL)+ b_n\sin(kL)
 where 
 
 ```{math}
-:label: eq196
+:label: eq197
 \begin{align} 
 k=\frac{n\pi}{L}
 \end{align} 
 ```
 
-Here we make the increment between two adjacent wave numbers small. ($\sim 0$)
+Here we make the increment between two adjacent wave numbers small ($\sim 0$). i.e., 
+
+```{math}
+:label: eq198
+\begin{align} 
+dk=\frac{\pi}{L} ;\ \textrm{where } L\rightarrow \infty
+\end{align} 
+```
+
+
+
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
