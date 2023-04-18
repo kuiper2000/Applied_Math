@@ -168,7 +168,7 @@ Substitute {eq}`eq185` back to {eq}`eq184`, we can have a homogeneous equation f
 
 ```{math}
 :label: eq186
-Y_{tt} &= c^2Y_{xx} 
+Y_{tt} = c^2Y_{xx} 
 ```
 
 and an 2nd-order ODE for the forcing term i.e., 
