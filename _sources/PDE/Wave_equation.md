@@ -208,4 +208,18 @@ Let
 \alpha  = \frac{L^2}{6c^2}
 ```
 
+we can have the same homogeneous equation at the second boundary. 
+
+
+{eq}`eq191` indicates that 
+
+```{math}
+:label: eq192
+\psi  = -\frac{x^3}{6c^2}+\frac{L^2}{6c^2}x = \frac{x}{6c^2}(L^2-x^2)
+```
+
+
+
+
+
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
