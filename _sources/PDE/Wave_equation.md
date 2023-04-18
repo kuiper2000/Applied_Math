@@ -144,7 +144,8 @@ b_n &= \frac{2}{n\pi c}\int_{0}^{\pi} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi \\
 :::
 
 
-Now considering a more complicated case, where we have external forcing. i.e., 
+Now considering a more complicated case, where we have external forcing. i.e.,
+
 ```{math}
 :label: eq184
 \begin{align} 
@@ -153,6 +154,35 @@ y(0,t) &=y(L,t) = 0, \\
 y(x,0) &=x(L-x) = f(x) \\
 y_t(x,0) &=x(1+\cos(\frac{\pi x}{L})) = g(x)
 \end{align} 
+```
+
+Similar to how we deal with heat equation with external forcing, we can assume the solution shares a form of 
+
+
+```{math}
+:label: eq185
+y(x,t) = Y(x,t) + \psi(x)
+```
+
+Substitute {eq}`eq185` back to {eq}`eq184`, we can have a homogeneous equation for $Y(x,t)$. 
+
+```{math}
+:label: eq186
+Y_{tt} &= c^2Y_{xx} 
+```
+
+and an 2nd-order ODE for the forcing term i.e., 
+
+```{math}
+:label: eq187
+c^2\psi^{''} = -x 
+```
+
+Integrating {eq}`eq187` twice, we have 
+
+```{math}
+:label: eq188
+\psi(x) = -\frac{x^3}{6c^2}+\alpha x +\beta
 ```
 
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 

@@ -475,6 +475,18 @@ y(0,t) &amp;=y(L,t) = 0, \\
 y(x,0) &amp;=x(L-x) = f(x) \\
 y_t(x,0) &amp;=x(1+\cos(\frac{\pi x}{L})) = g(x)
 \end{align} \end{split}\]</div>
+<p>Similar to how we deal with heat equation with external forcing, we can assume the solution shares a form of</p>
+<div class="math notranslate nohighlight" id="equation-eq185">
+<span class="eqno">(186)<a class="headerlink" href="#equation-eq185" title="Permalink to this equation">¶</a></span>\[y(x,t) = Y(x,t) + \psi(x)\]</div>
+<p>Substitute <a class="reference internal" href="#equation-eq185">(186)</a> back to <a class="reference internal" href="#equation-eq184">(185)</a>, we can have a homogeneous equation for <span class="math notranslate nohighlight">\(Y(x,t)\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq186">
+<span class="eqno">(187)<a class="headerlink" href="#equation-eq186" title="Permalink to this equation">¶</a></span>\[Y_{tt} &amp;= c^2Y_{xx} \]</div>
+<p>and an 2nd-order ODE for the forcing term i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq187">
+<span class="eqno">(188)<a class="headerlink" href="#equation-eq187" title="Permalink to this equation">¶</a></span>\[c^2\psi^{''} = -x \]</div>
+<p>Integrating <a class="reference internal" href="#equation-eq187">(188)</a> twice, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq188">
+<span class="eqno">(189)<a class="headerlink" href="#equation-eq188" title="Permalink to this equation">¶</a></span>\[\psi(x) = -\frac{x^3}{6c^2}+\alpha x +\beta\]</div>
 </div>
 <div class="section" id="d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship">
 <h2>D’Alembert’s Solutions, Characteristic Lines, and Dispersion Relationship<a class="headerlink" href="#d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship" title="Permalink to this headline">¶</a></h2>
