@@ -271,4 +271,6 @@ where
 k=\frac{n\pi}{L}
 \end{align} 
 ```
+
+Here we make the increment between two adjacent wave numbers small. ($\sim 0$)
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
