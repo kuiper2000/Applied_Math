@@ -308,7 +308,7 @@ According to {eq}`eq199`,  we know
 ```{math}
 :label: eq201
 \begin{align} 
-a_n &=\int_{-\infty}^{\infty} f(\xi)\cos(k\xi)d\xi
+a_n &=\int_{-\infty}^{\infty} f(\xi)\cos(k\xi)d\xi \\
 b_n &=\int_{-\infty}^{\infty} f(\xi)\sin(k\xi)d\xi
 \end{align} 
 ```
