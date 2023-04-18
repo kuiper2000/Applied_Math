@@ -329,6 +329,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wave-solution-with-space-and-time-structures">
+   Wave Solution with Space and Time Structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship">
    D’Alembert’s Solutions, Characteristic Lines, and Dispersion Relationship
   </a>
@@ -355,6 +360,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-setup-and-initial-conditions">
    Problem Setup and Initial Conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wave-solution-with-space-and-time-structures">
+   Wave Solution with Space and Time Structures
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -388,8 +398,8 @@ x = a_n \cos(\sqrt{k}t)+ b_n \sin(\sqrt{k}t)
 \end{align}\]</div>
 <p>The coefficients in <a class="reference internal" href="#equation-eq175">(176)</a> will be determined by the given initial values of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x_t\)</span>. This is the general setup of wave solutions, where only the temporal structure is considered.</p>
 </div>
-<div class="section" id="d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship">
-<h2>D’Alembert’s Solutions, Characteristic Lines, and Dispersion Relationship<a class="headerlink" href="#d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="wave-solution-with-space-and-time-structures">
+<h2>Wave Solution with Space and Time Structures<a class="headerlink" href="#wave-solution-with-space-and-time-structures" title="Permalink to this headline">¶</a></h2>
 <p>Here we will consider a slightly more complicated case where the propagating over a space (i.e., we are observing wave at both space and time.). Therefore, the original equation can be rewritten as</p>
 <div class="math notranslate nohighlight" id="equation-eq177">
 <span class="eqno">(178)<a class="headerlink" href="#equation-eq177" title="Permalink to this equation">¶</a></span>\[\begin{align}
@@ -419,25 +429,25 @@ y(x,0) &amp;= \sum_{n=1}^{\infty}a_n \sin(\frac{n\pi x}{L}) = f(x)
 \end{align}\]</div>
 <p>indicating</p>
 <div class="math notranslate nohighlight" id="equation-eq182">
-<span class="eqno">(184)<a class="headerlink" href="#equation-eq182" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<span class="eqno">(183)<a class="headerlink" href="#equation-eq182" title="Permalink to this equation">¶</a></span>\[\begin{align}
 a_n = \frac{2}{L} \int_{0}^{L} f(\xi)\sin(\frac{n\pi \xi}{L})d\xi
 \end{align}\]</div>
 <p>and</p>
-<div class="math notranslate nohighlight" id="equation-eq182">
-<span class="eqno">(184)<a class="headerlink" href="#equation-eq182" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq183">
+<span class="eqno">(184)<a class="headerlink" href="#equation-eq183" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{n\pi c}{L}b_n = \frac{2}{L} \int_{0}^{L} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi
 \end{align}\]</div>
 <div class="admonition-example-1 admonition">
 <p class="admonition-title">Example 1</p>
 <p>Suppose a string with fixed ends at <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=\pi\)</span>, with initial conditions of</p>
-<div class="math notranslate nohighlight" id="equation-eq183">
-<span class="eqno">(186)<a class="headerlink" href="#equation-eq183" title="Permalink to this equation">¶</a></span>\[\begin{split}f(x) = \begin{cases} 
+<div class="math notranslate nohighlight">
+\[\begin{split}f(x) = \begin{cases} 
 x     \textrm{   for } 0\leq x \leq \frac{\pi}{2}\\
 \pi-x \textrm{   for } \frac{\pi}{2}&lt; x \leq \pi\\
 \end{cases} \end{split}\]</div>
 <p>and</p>
-<div class="math notranslate nohighlight" id="equation-eq183">
-<span class="eqno">(186)<a class="headerlink" href="#equation-eq183" title="Permalink to this equation">¶</a></span>\[g(x) = x (1-\cos(x))\]</div>
+<div class="math notranslate nohighlight">
+\[g(x) = x (1-\cos(x))\]</div>
 <p>We also assume <span class="math notranslate nohighlight">\(c=1\)</span>, which represents the propagating speed of waves</p>
 <p>From <a class="reference internal" href="#equation-eq180">(181)</a>, we know the solution has a form of</p>
 <div class="math notranslate nohighlight">
@@ -457,6 +467,15 @@ b_n &amp;= \frac{2}{n\pi c}\int_{0}^{\pi} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi \\
     &amp;= \frac{2}{n^2(n^2-1)}(-1)^{n}  
 \end{align}\end{split}\]</div>
 </div>
+<p>Now considering a more complicated case, where we have external forcing. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq184">
+<span class="eqno">(185)<a class="headerlink" href="#equation-eq184" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align} 
+x     \textrm{   for } 0\leq x \leq \frac{\pi}{2}\\
+\pi-x \textrm{   for } \frac{\pi}{2}&lt; x \leq \pi\\
+\end{align} \end{split}\]</div>
+</div>
+<div class="section" id="d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship">
+<h2>D’Alembert’s Solutions, Characteristic Lines, and Dispersion Relationship<a class="headerlink" href="#d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

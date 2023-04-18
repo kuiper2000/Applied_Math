@@ -25,7 +25,7 @@ x = a_n \cos(\sqrt{k}t)+ b_n \sin(\sqrt{k}t)
 The coefficients in {eq}`eq175` will be determined by the given initial values of $x$ and $x_t$. This is the general setup of wave solutions, where only the temporal structure is considered.  
 
 
-## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
+## Wave Solution with Space and Time Structures
 Here we will consider a slightly more complicated case where the propagating over a space (i.e., we are observing wave at both space and time.). Therefore, the original equation can be rewritten as 
 
 
@@ -88,7 +88,7 @@ and
 
 
 ```{math}
-:label: eq182
+:label: eq183
 \begin{align}
 \frac{n\pi c}{L}b_n = \frac{2}{L} \int_{0}^{L} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi
 \end{align}
@@ -101,7 +101,6 @@ and
 Suppose a string with fixed ends at $x=0$ and $x=\pi$, with initial conditions of 
 
 ```{math}
-:label: eq183
 f(x) = \begin{cases} 
 x     \textrm{   for } 0\leq x \leq \frac{\pi}{2}\\
 \pi-x \textrm{   for } \frac{\pi}{2}< x \leq \pi\\
@@ -111,7 +110,6 @@ x     \textrm{   for } 0\leq x \leq \frac{\pi}{2}\\
 and 
 
 ```{math}
-:label: eq183
 g(x) = x (1-\cos(x))
 ```
 
@@ -143,5 +141,16 @@ b_n &= \frac{2}{n\pi c}\int_{0}^{\pi} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi \\
     &= \frac{2}{n^2(n^2-1)}(-1)^{n}  
 \end{align}
 ```
-
 :::
+
+
+Now considering a more complicated case, where we have external forcing. i.e., 
+```{math}
+:label: eq184
+\begin{align} 
+x     \textrm{   for } 0\leq x \leq \frac{\pi}{2}\\
+\pi-x \textrm{   for } \frac{\pi}{2}< x \leq \pi\\
+\end{align} 
+```
+
+## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
