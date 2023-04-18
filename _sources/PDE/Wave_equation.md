@@ -303,4 +303,24 @@ T_k = \cos(kct)
 (readers can think about why T has a constant multiple of Fourier consine function as its solution?)
 
 
+According to {eq}`eq199`,  we know 
+
+```{math}
+:label: eq201
+\begin{align} 
+a_n &=\int_{-\infty}^{\infty} f(\xi)\cos(k\xi)d\xi
+b_n &=\int_{-\infty}^{\infty} f(\xi)\sin(k\xi)d\xi
+\end{align} 
+```
+
+and the completed equation is 
+
+```{math}
+:label: eq202
+\begin{align} 
+y(x,t) = \int_{k=-\infty}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) dk
+\end{align} 
+```
+
+
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 

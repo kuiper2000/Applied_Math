@@ -562,6 +562,17 @@ X = \frac{2}{\pi} \sum_{n=0}^{\infty} a_n\cos(kx)+ b_n\sin(kx) dk = \frac{1}{\pi
 T_k = \cos(kct)
 \end{align} \]</div>
 <p>(readers can think about why T has a constant multiple of Fourier consine function as its solution?)</p>
+<p>According to <a class="reference internal" href="#equation-eq199">(200)</a>,  we know</p>
+<div class="math notranslate nohighlight" id="equation-eq201">
+<span class="eqno">(202)<a class="headerlink" href="#equation-eq201" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+a_n &amp;=\int_{-\infty}^{\infty} f(\xi)\cos(k\xi)d\xi
+b_n &amp;=\int_{-\infty}^{\infty} f(\xi)\sin(k\xi)d\xi
+\end{align} \]</div>
+<p>and the completed equation is</p>
+<div class="math notranslate nohighlight" id="equation-eq202">
+<span class="eqno">(203)<a class="headerlink" href="#equation-eq202" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+y(x,t) = \int_{k=-\infty}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) dk
+\end{align} \]</div>
 </div>
 <div class="section" id="d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship">
 <h2>D’Alembert’s Solutions, Characteristic Lines, and Dispersion Relationship<a class="headerlink" href="#d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship" title="Permalink to this headline">¶</a></h2>
