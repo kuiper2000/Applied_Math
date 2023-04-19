@@ -318,9 +318,10 @@ and the completed equation is
 ```{math}
 :label: eq202
 \begin{align} 
-y(x,t) = \frac{1}{\pi}\int_{k=-\infty}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) dk
+y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) dk
 \end{align} 
 ```
+
 
 
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
