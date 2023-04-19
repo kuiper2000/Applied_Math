@@ -323,5 +323,15 @@ y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) d
 ```
 
 
+:::{admonition} Example 2
+
+Solve the problem on a real line 
+
+```{math}
+y(x,0) = f(x) = e^{-\abs{x}}
+```
+
+:::
+
 
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
