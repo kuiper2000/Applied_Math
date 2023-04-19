@@ -328,7 +328,13 @@ y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) d
 Solve the problem on a real line 
 
 ```{math}
-y(x,0) = f(x) = e^{-\abs{x}}
+y(x,0) = f(x) = e^{-|x|}
+```
+
+All we have to do is calculate the Fourier integral for $A_n$ and $B_n$. These are 
+
+```{math}
+A_n = \frac{1}{\pi} \int_{-\infty}^{\infty} e^{-|\xi|}\cos(k\xi)d\xi = 
 ```
 
 :::
