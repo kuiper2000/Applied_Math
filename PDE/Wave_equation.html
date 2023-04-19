@@ -575,12 +575,19 @@ y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) d
 \end{align} \]</div>
 <div class="admonition-example-2 admonition">
 <p class="admonition-title">Example 2</p>
-<p>Solve the problem on a real line</p>
+<p>Solve the problem on a real line with initial displacement of <span class="math notranslate nohighlight">\(f(x)\)</span> and 0 initial velocity</p>
 <div class="math notranslate nohighlight">
 \[y(x,0) = f(x) = e^{-|x|}\]</div>
 <p>All we have to do is calculate the Fourier integral for <span class="math notranslate nohighlight">\(A_n\)</span> and <span class="math notranslate nohighlight">\(B_n\)</span>. These are</p>
 <div class="math notranslate nohighlight">
-\[A_n = \frac{1}{\pi} \int_{-\infty}^{\infty} e^{-|\xi|}\cos(k\xi)d\xi = \frac{2}{\pi (1+\omega^2)}\]</div>
+\[A_n = \frac{1}{\pi} \int_{-\infty}^{\infty} e^{-|\xi|}\cos(k\xi)d\xi = \frac{2}{\pi (1+k^2)}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[B_n = 0 \]</div>
+<p>because <span class="math notranslate nohighlight">\(e^{-|x|\sin(\k x)}\)</span> is an odd function.</p>
+<p>The solution is</p>
+<div class="math notranslate nohighlight">
+\[y(x,t) = \frac{2}{\pi} \int_{0}^{\infty} \frac{1}{1+k^2}\cos(kx)\cos(kct)dk\]</div>
 </div>
 </div>
 <div class="section" id="d-alembert-s-solutions-characteristic-lines-and-dispersion-relationship">

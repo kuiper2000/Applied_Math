@@ -325,7 +325,7 @@ y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) d
 
 :::{admonition} Example 2
 
-Solve the problem on a real line 
+Solve the problem on a real line with initial displacement of $f(x)$ and 0 initial velocity
 
 ```{math}
 y(x,0) = f(x) = e^{-|x|}
@@ -334,8 +334,23 @@ y(x,0) = f(x) = e^{-|x|}
 All we have to do is calculate the Fourier integral for $A_n$ and $B_n$. These are 
 
 ```{math}
-A_n = \frac{1}{\pi} \int_{-\infty}^{\infty} e^{-|\xi|}\cos(k\xi)d\xi = \frac{2}{\pi (1+\omega^2)}
+A_n = \frac{1}{\pi} \int_{-\infty}^{\infty} e^{-|\xi|}\cos(k\xi)d\xi = \frac{2}{\pi (1+k^2)}
 ```
+
+and 
+
+```{math}
+B_n = 0 
+```
+
+because $e^{-|x|\sin(\k x)}$ is an odd function. 
+
+The solution is 
+
+```{math}
+y(x,t) = \frac{2}{\pi} \int_{0}^{\infty} \frac{1}{1+k^2}\cos(kx)\cos(kct)dk
+```
+
 
 :::
 
