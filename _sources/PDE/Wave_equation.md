@@ -287,7 +287,7 @@ We can rewrite {eq}`eq196` into
 ```{math}
 :label: eq199
 \begin{align} 
-X = \frac{2}{\pi} \sum_{n=0}^{\infty} a_n\cos(kx)+ b_n\sin(kx) dk = \frac{1}{\pi} \int_{k=-\infty}^{\infty} a_k \cos(kx)+b_k\sin(kx) dk
+X = \frac{1}{\pi} \sum_{n=0}^{\infty} A_n\cos(kx)+ B_n\sin(kx) dk = \frac{1}{\pi} \int_{k=0}^{\infty} A_k \cos(kx)+B_k\sin(kx) dk
 \end{align} 
 ```
 
@@ -308,8 +308,8 @@ According to {eq}`eq199`,  we know
 ```{math}
 :label: eq201
 \begin{align} 
-a_n &=\int_{-\infty}^{\infty} f(\xi)\cos(k\xi)d\xi \\
-b_n &=\int_{-\infty}^{\infty} f(\xi)\sin(k\xi)d\xi
+A_n &=\int_{-\infty}^{\infty} f(\xi)\cos(k\xi)d\xi \\
+B_n &=\int_{-\infty}^{\infty} f(\xi)\sin(k\xi)d\xi
 \end{align} 
 ```
 
