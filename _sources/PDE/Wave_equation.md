@@ -343,14 +343,13 @@ and
 B_n = 0 
 ```
 
-because $e^{-|x|\sin(\k x)}$ is an odd function. 
+because $e^{-|x|\sin(k x)}$ is an odd function. 
 
 The solution is 
 
 ```{math}
 y(x,t) = \frac{2}{\pi} \int_{0}^{\infty} \frac{1}{1+k^2}\cos(kx)\cos(kct)dk
 ```
-
 
 :::
 
