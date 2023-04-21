@@ -355,3 +355,27 @@ y(x,t) = \frac{2}{\pi} \int_{0}^{\infty} \frac{1}{1+k^2}\cos(kx)\cos(kct)dk
 
 
 ## D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
+
+Jean Le D'Alembert (1717-1783) developed a simple method to approach the wave equations, known as the D'Alembert's Wave Solutions. In optical physics and atmospheric wave dynamics, it has a special name _dispersion relationships_. i.e., the relation between wave length and wave speed. 
+
+
+Specifically, the D'Alembert's wave solution describes 
+
+```{math}
+:label: eq203
+y(x,y) = F(\xi)+G(\eta)
+```
+
+where 
+
+```{math}
+:label: eq203
+\begin{align}
+\xi &= x-ct \\
+\eta &= x+ct \\
+\end{align}
+```
+
+To prove that, 
+
+
