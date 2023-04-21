@@ -363,19 +363,26 @@ Specifically, the D'Alembert's wave solution describes
 
 ```{math}
 :label: eq203
-y(x,y) = F(\xi)+G(\eta) = \frac{1}{2}[f(x-ct)+f(x+ct)]+\frac{1}{2c}\int_{x-ct}^{x+ct}g(\xi)d\xi
+y(x,t) = F(\xi)+G(\eta) = \frac{1}{2}[f(x-ct)+f(x+ct)]+\frac{1}{2c}\int_{x-ct}^{x+ct}g(\xi)d\xi
 ```
 
 where 
 
 ```{math}
-:label: eq203
+:label: eq204
 \begin{align}
 \xi &= x-ct \\
 \eta &= x+ct \\
 \end{align}
 ```
 
-To prove that, 
+To show that, we first observe `eq`{eq195} and the following two characteristic equation can be found
 
 
+```{math}
+:label: eq205
+\begin{align}
+(\frac{\partial }{\partial t}-c\frac{\partial }{\partial x})u &= 0 \\
+(\frac{\partial }{\partial t}+c\frac{\partial }{\partial x})u &= 0 \\
+\end{align}
+```

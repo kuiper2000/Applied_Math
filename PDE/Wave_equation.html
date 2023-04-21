@@ -595,14 +595,19 @@ y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) d
 <p>Jean Le D’Alembert (1717-1783) developed a simple method to approach the wave equations, known as the D’Alembert’s Wave Solutions. In optical physics and atmospheric wave dynamics, it has a special name <em>dispersion relationships</em>. i.e., the relation between wave length and wave speed.</p>
 <p>Specifically, the D’Alembert’s wave solution describes</p>
 <div class="math notranslate nohighlight" id="equation-eq203">
-<span class="eqno">(205)<a class="headerlink" href="#equation-eq203" title="Permalink to this equation">¶</a></span>\[y(x,y) = F(\xi)+G(\eta) = \frac{1}{2}[f(x-ct)+f(x+ct)]+\frac{1}{2c}\int_{x-ct}^{x+ct}g(\xi)d\xi\]</div>
+<span class="eqno">(204)<a class="headerlink" href="#equation-eq203" title="Permalink to this equation">¶</a></span>\[y(x,t) = F(\xi)+G(\eta) = \frac{1}{2}[f(x-ct)+f(x+ct)]+\frac{1}{2c}\int_{x-ct}^{x+ct}g(\xi)d\xi\]</div>
 <p>where</p>
-<div class="math notranslate nohighlight" id="equation-eq203">
-<span class="eqno">(205)<a class="headerlink" href="#equation-eq203" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq204">
+<span class="eqno">(205)<a class="headerlink" href="#equation-eq204" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 \xi &amp;= x-ct \\
 \eta &amp;= x+ct \\
 \end{align}\end{split}\]</div>
-<p>To prove that,</p>
+<p>To show that, we first observe <code class="docutils literal notranslate"><span class="pre">eq</span></code>{eq195} and the following two characteristic equation can be found</p>
+<div class="math notranslate nohighlight" id="equation-eq205">
+<span class="eqno">(206)<a class="headerlink" href="#equation-eq205" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+(\frac{\partial }{\partial t}-c\frac{\partial }{\partial x})u &amp;= 0 \\
+(\frac{\partial }{\partial t}+c\frac{\partial }{\partial x})u &amp;= 0 \\
+\end{align}\end{split}\]</div>
 </div>
 </div>
 
