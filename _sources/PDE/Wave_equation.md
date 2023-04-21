@@ -363,7 +363,7 @@ Specifically, the D'Alembert's wave solution describes
 
 ```{math}
 :label: eq203
-y(x,y) = F(\xi)+G(\eta)
+y(x,y) = F(\xi)+G(\eta) = \frac{1}{2}[f(x-ct)+f(x+ct)]+\frac{1}{2c}\int_{x-ct}^{x+ct}g(\xi)d\xi
 ```
 
 where 
