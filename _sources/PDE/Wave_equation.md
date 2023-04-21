@@ -382,7 +382,27 @@ To show that, we first observe `eq`{eq195} and the following two characteristic 
 ```{math}
 :label: eq205
 \begin{align}
-(\frac{\partial }{\partial t}-c\frac{\partial }{\partial x})u &= 0 \\
-(\frac{\partial }{\partial t}+c\frac{\partial }{\partial x})u &= 0 \\
+(\frac{\partial }{\partial t}-c\frac{\partial }{\partial x})y &= 0 \\
+(\frac{\partial }{\partial t}+c\frac{\partial }{\partial x})y &= 0 \\
 \end{align}
 ```
+
+
+or write the equation in a form of inner product, 
+
+```{math}
+:label: eq206
+\begin{align}
+<(-c,1)|(y_x,y_t)> &= 0 \\
+<(c,1)|(y_x,y_t)> &= 0 \\
+\end{align}
+```
+
+$y_x$ and $y_t$ represent how $y$ changes with respect to $x$ and $t$. If we assign the first coordinate as $x$ and the second coordinate as $t$, the first equation above indicates that $y$ is constant along the direction of $(-c,1)$. or 
+
+```{math}
+:label: eq206
+\begin{align}
+
+\end{align}
+``` 
