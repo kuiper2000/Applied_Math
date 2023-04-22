@@ -787,7 +787,7 @@ where
 \end{align}
 ```
 
-To show that, we first observe `eq`{eq195} and the following two characteristic equation can be found
+To show that, we first observe {eq}`eq195` and the following two characteristic equations
 
 
 ```{math}
@@ -803,12 +803,12 @@ while {eq}`eq205` is a slightly more complicated form, we can try to convert it 
 ```{math}
 :label: eq206
 \begin{align}
-\frac{\partial }{\partial d}y &= 0 \\
-\frac{\partial }{\partial d^{*}}y &= 0 \\
+\frac{\partial }{\partial \xi}y &= 0 \\
+\frac{\partial }{\partial \eta}y &= 0 \\
 \end{align}
 ```
 
-{eq}`eq206` is an ODE for $y$, which can be solved with direct integration. One can easily find y is independent of $d$ and $d*$. That means we gonna apply certain linear transform from $x,t$ plane to $d,d^{*}$ plane where $y$ is a constant along $d$ and $d^{*}$.  
+{eq}`eq206` is an ODE for $y$, which can be solved with direct integration. One can easily find y is independent of $\xi$ and $\eta$. That means we gonna apply certain linear transform from $x,t$ plane to $\xi,\eta$ plane where $y$ is a constant along $\xi$ and $\eta$.  
 
 
 To find the corresponding Jacobian matrix, we can first observe the original equation. 
@@ -822,4 +822,15 @@ To find the corresponding Jacobian matrix, we can first observe the original equ
 \end{align}
 ```
 
-$y_x$ and $y_t$ represent how $y$ changes with respect to $x$ and $t$. If we assign the first coordinate as $x$ and the second coordinate as $t$, the first equation above indicates that $y$ is constant along the direction of $(-c,1)$ or $y$ is conserved along each line of $x=-ct+d$. As long as $d$ is given, we know the solution of $y$, which implies that $y$ is a function of $d$. 
+$y_x$ and $y_t$ represent how $y$ changes with respect to $x$ and $t$. If we assign the first coordinate as $x$ and the second coordinate as $t$, the first equation above indicates that $y$ is constant along the direction of $(-c,1)$ or $y$ is conserved along each line of $x=-ct+\eta$. As long as $\eta$ is given, we know the solution of $y$, which implies that $y$ is a function of $\eta$. The same idea can be applied to $\xi$. 
+
+```{figure} DAlambert.png
+---
+name: FIG11
+scale: 30%
+---
+The D'Alambert's wave solution. 
+```
+
+
+

@@ -902,7 +902,7 @@ y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) d
 \xi &amp;= x-ct \\
 \eta &amp;= x+ct \\
 \end{align}\end{split}\]</div>
-<p>To show that, we first observe <code class="docutils literal notranslate"><span class="pre">eq</span></code>{eq195} and the following two characteristic equation can be found</p>
+<p>To show that, we first observe <a class="reference internal" href="#equation-eq195">(229)</a> and the following two characteristic equations</p>
 <div class="math notranslate nohighlight" id="equation-eq205">
 <span class="eqno">(239)<a class="headerlink" href="#equation-eq205" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 (\frac{\partial }{\partial t}-c\frac{\partial }{\partial x})y &amp;= 0 \\
@@ -911,10 +911,10 @@ y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) d
 <p>while <a class="reference internal" href="#equation-eq205">(239)</a> is a slightly more complicated form, we can try to convert it into a simpler question</p>
 <div class="math notranslate nohighlight" id="equation-eq206">
 <span class="eqno">(240)<a class="headerlink" href="#equation-eq206" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-\frac{\partial }{\partial d}y &amp;= 0 \\
-\frac{\partial }{\partial d^{*}}y &amp;= 0 \\
+\frac{\partial }{\partial \xi}y &amp;= 0 \\
+\frac{\partial }{\partial \eta}y &amp;= 0 \\
 \end{align}\end{split}\]</div>
-<p><a class="reference internal" href="#equation-eq206">(240)</a> is an ODE for <span class="math notranslate nohighlight">\(y\)</span>, which can be solved with direct integration. One can easily find y is independent of <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(d*\)</span>. That means we gonna apply certain linear transform from <span class="math notranslate nohighlight">\(x,t\)</span> plane to <span class="math notranslate nohighlight">\(d,d^{*}\)</span> plane where <span class="math notranslate nohighlight">\(y\)</span> is a constant along <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(d^{*}\)</span>.</p>
+<p><a class="reference internal" href="#equation-eq206">(240)</a> is an ODE for <span class="math notranslate nohighlight">\(y\)</span>, which can be solved with direct integration. One can easily find y is independent of <span class="math notranslate nohighlight">\(\xi\)</span> and <span class="math notranslate nohighlight">\(\eta\)</span>. That means we gonna apply certain linear transform from <span class="math notranslate nohighlight">\(x,t\)</span> plane to <span class="math notranslate nohighlight">\(\xi,\eta\)</span> plane where <span class="math notranslate nohighlight">\(y\)</span> is a constant along <span class="math notranslate nohighlight">\(\xi\)</span> and <span class="math notranslate nohighlight">\(\eta\)</span>.</p>
 <p>To find the corresponding Jacobian matrix, we can first observe the original equation.
 <a class="reference internal" href="#equation-eq205">(239)</a> can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq207">
@@ -922,7 +922,11 @@ y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) d
 &lt;(-c,1)|(y_x,y_t)&gt; &amp;= 0 \\
 &lt;(c,1)|(y_x,y_t)&gt; &amp;= 0 \\
 \end{align}\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(y_x\)</span> and <span class="math notranslate nohighlight">\(y_t\)</span> represent how <span class="math notranslate nohighlight">\(y\)</span> changes with respect to <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>. If we assign the first coordinate as <span class="math notranslate nohighlight">\(x\)</span> and the second coordinate as <span class="math notranslate nohighlight">\(t\)</span>, the first equation above indicates that <span class="math notranslate nohighlight">\(y\)</span> is constant along the direction of <span class="math notranslate nohighlight">\((-c,1)\)</span> or <span class="math notranslate nohighlight">\(y\)</span> is conserved along each line of <span class="math notranslate nohighlight">\(x=-ct+d\)</span>. As long as <span class="math notranslate nohighlight">\(d\)</span> is given, we know the solution of <span class="math notranslate nohighlight">\(y\)</span>, which implies that <span class="math notranslate nohighlight">\(y\)</span> is a function of <span class="math notranslate nohighlight">\(d\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(y_x\)</span> and <span class="math notranslate nohighlight">\(y_t\)</span> represent how <span class="math notranslate nohighlight">\(y\)</span> changes with respect to <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>. If we assign the first coordinate as <span class="math notranslate nohighlight">\(x\)</span> and the second coordinate as <span class="math notranslate nohighlight">\(t\)</span>, the first equation above indicates that <span class="math notranslate nohighlight">\(y\)</span> is constant along the direction of <span class="math notranslate nohighlight">\((-c,1)\)</span> or <span class="math notranslate nohighlight">\(y\)</span> is conserved along each line of <span class="math notranslate nohighlight">\(x=-ct+\eta\)</span>. As long as <span class="math notranslate nohighlight">\(\eta\)</span> is given, we know the solution of <span class="math notranslate nohighlight">\(y\)</span>, which implies that <span class="math notranslate nohighlight">\(y\)</span> is a function of <span class="math notranslate nohighlight">\(\eta\)</span>. The same idea can be applied to <span class="math notranslate nohighlight">\(\xi\)</span>.</p>
+<div class="figure align-default" id="fig11">
+<a class="reference internal image-reference" href="../_images/DAlambert.png"><img alt="../_images/DAlambert.png" src="../_images/DAlambert.png" style="width: 732.6px; height: 472.79999999999995px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">The D’Alambert’s wave solution.</span><a class="headerlink" href="#fig11" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 
