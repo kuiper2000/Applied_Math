@@ -822,7 +822,7 @@ To find the corresponding Jacobian matrix, we can first observe the original equ
 \end{align}
 ```
 
-$y_x$ and $y_t$ represent how $y$ changes with respect to $x$ and $t$. If we assign the first coordinate as $x$ and the second coordinate as $t$, the first equation above indicates that $y$ is constant along the direction of $(-c,1)$ or $y$ is conserved along each line of $x=-ct+\eta$. As long as $\eta$ is given, we know the solution of $y$, which implies that $y$ is a function of $\eta$. The same idea can be applied to $\xi$. 
+$y_x$ and $y_t$ represent how $y$ changes with respect to $x$ and $t$. If we assign the first coordinate as $x$ and the second coordinate as $t$, the first equation above indicates that $y$ is constant along the direction of $(-c,1)$ or $y$ is conserved along each line of $x=-ct+\eta$. As long as $\eta$ is given, we know the solution of $y$. This also implies that $y$ is a function of $\eta$. The same idea can be applied to $\xi$. 
 
 ```{figure} DAlambert.png
 ---
