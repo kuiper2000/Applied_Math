@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Week 11: Heat Equation &#8212; Applied Math 2</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,8 +18,12 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -28,26 +31,26 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Week 12: Wave Equation" href="Wave_equation.html" />
@@ -59,21 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -103,15 +91,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Syllabus
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ODE/1stODE.html">
    Week 1 and 2: 1st-order ODE
@@ -150,17 +137,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -168,162 +150,77 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPDE/Heat_equation.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/PDE/Heat_equation.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/PDE/Heat_equation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPDE/Heat_equation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#history-and-formula">
    History and Formula
@@ -346,11 +243,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Week 11:  Heat Equation</h1>
@@ -389,11 +287,10 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <div class="section" id="week-11-heat-equation">
+  <div class="tex2jax_ignore mathjax_ignore section" id="week-11-heat-equation">
 <span id="heat"></span><h1>Week 11:  Heat Equation<a class="headerlink" href="#week-11-heat-equation" title="Permalink to this headline">¶</a></h1>
 <p>Heat diffusion equation has important applications in engineering and Earth science. Especially when it comes to studying the Earth energy balance. In this chapter, we will consider a very simple 1D thermal diffusion problem. We will also demonstrate that we can always go to higher-dimension problem using <em>separation of variable</em>.</p>
 <div class="section" id="history-and-formula">
@@ -562,7 +459,7 @@ u(x,t) = v(x,t) + \psi(x)
 <p>to make the set of equation above homogeneous, we have <span class="math notranslate nohighlight">\(\psi_{xx}(x)=0\)</span>. This implies <span class="math notranslate nohighlight">\(\psi(x) = Ax+B\)</span>. Using the boundary condition,  <span class="math notranslate nohighlight">\(\psi(0) = B = T_1\)</span> and <span class="math notranslate nohighlight">\(\psi(L) = AL+T_1 = T_2\)</span>, we know <span class="math notranslate nohighlight">\(\psi(0) = (T_2-T_1)x/L+T_1\)</span>. To solve <span class="math notranslate nohighlight">\(v\)</span>, we can follow the same steps in example 1.</p>
 </div>
 <div class="admonition-example-4-inclusion-of-convection-and-other-processes admonition">
-<p class="admonition-title">Example 4: Inclusion of Convection and other Processes</p>
+<p class="admonition-title">Example 4: Inclusion of Convection and other Processes </p>
 <p>We can include convection and other processes,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
@@ -841,11 +738,9 @@ The readers can also try to think about the forced solution on a 2D-plane. What 
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="../ODE/Special_function.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -861,915 +756,24 @@ The readers can also try to think about the forced solution on a 2D-plane. What 
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Dr. Kai-Chih Tseng<br/>
-  
-      &copy; Copyright 2020.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Dr. Kai-Chih Tseng<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
-
-  </body>
-</html>
-<!DOCTYPE html>
-
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 11: Heat Equation &#8212; Applied Math 2</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Week 12: Wave Equation" href="Wave_equation.html" />
-    <link rel="prev" title="Week 9 and 10: Special Functions" href="../ODE/Special_function.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-  </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Applied Math 2</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Syllabus
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ODE/1stODE.html">
-   Week 1 and 2: 1st-order ODE
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ODE/2ndODE.html">
-   Week 3 and 4: 2nd-order ODE
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ODE/Laplace.html">
-   Week 5 and 6: Laplace Transform
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ODE/Sturm_Liouville.html">
-   Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ODE/Special_function.html">
-   Week 9 and 10:  Special Functions
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Week 11:  Heat Equation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Wave_equation.html">
-   Week 12:  Wave Equation
-  </a>
- </li>
-</ul>
-
-    </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPDE/Heat_equation.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/PDE/Heat_equation.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
-</div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#history-and-formula">
-   History and Formula
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#forced-solutions">
-   Forced Solutions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solutions-on-a-real-string">
-   Solutions on a Real String
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#heat-diffusion-on-a-2d-plane">
-   Heat Diffusion on a 2D Plane
-  </a>
- </li>
-</ul>
-
-    </nav>
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Week 11:  Heat Equation</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#history-and-formula">
-   History and Formula
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#forced-solutions">
-   Forced Solutions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solutions-on-a-real-string">
-   Solutions on a Real String
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#heat-diffusion-on-a-2d-plane">
-   Heat Diffusion on a 2D Plane
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <main id="main-content" role="main">
-                
-              <div>
-                
-  <div class="section" id="week-11-heat-equation">
-<span id="heat"></span><h1>Week 11:  Heat Equation<a class="headerlink" href="#week-11-heat-equation" title="Permalink to this headline">¶</a></h1>
-<p>Heat diffusion equation has important applications in engineering and Earth science. Especially when it comes to studying the Earth energy balance. In this chapter, we will consider a very simple 1D thermal diffusion problem. We will also demonstrate that we can always go to higher-dimension problem using <em>separation of variable</em>.</p>
-<div class="section" id="history-and-formula">
-<h2>History and Formula<a class="headerlink" href="#history-and-formula" title="Permalink to this headline">¶</a></h2>
-<p>The heat equation was first developed by Joseph Fourier in 1822 for the purpose of modeling how heat diffuses over a certain material. (later on, the readers will see why the solution of heat diffusion can be approached with Fourier transform.) The heat equation follows a very simple energy conservation law.</p>
-<div class="math notranslate nohighlight" id="equation-heat">
-<span class="eqno">(143)<a class="headerlink" href="#equation-heat" title="Permalink to this equation">¶</a></span>\[\textrm{heat change rate} = \textrm{heat flux through boundary to neighbor} + \textrm{forcing}\]</div>
-<p>if we write it down in a mathematical form</p>
-<div class="math notranslate nohighlight" id="equation-heatmath">
-<span class="eqno">(144)<a class="headerlink" href="#equation-heatmath" title="Permalink to this equation">¶</a></span>\[\frac{\partial c(x)\rho(x)u(x,t)}{\partial t} = -\frac{\partial q}{\partial x} + Q(x,t)\]</div>
-<p>where <span class="math notranslate nohighlight">\(c(x)\)</span> is the specific heat, <span class="math notranslate nohighlight">\(\rho(x)\)</span> is the density of the stick and <span class="math notranslate nohighlight">\(q\)</span> is the heat flux through the lateral (if other places are insulated) and <span class="math notranslate nohighlight">\(Q(x,t)\)</span> is the local heating source, which can come from molecular process (i.e., friction between atom or radiation). The equation above can be visualized as follow.</p>
-<div class="figure align-default" id="fig10">
-<a class="reference internal image-reference" href="../_images/Heat.png"><img alt="../_images/Heat.png" src="../_images/Heat.png" style="width: 496.2px; height: 281.7px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Heat diffusion on a stick</span><a class="headerlink" href="#fig10" title="Permalink to this image">¶</a></p>
-</div>
-<p>One can notice that the heat flux is proportional to the temperature difference between the stick and its neighbor, which is the key process in determining the energy redistribution. When there is no temperature gradient (and no external heat source), there is no temperature change. Our goal is to understand how the initial temperature, <span class="math notranslate nohighlight">\(u(x,t)\)</span>, evolve as a function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>. In some special cases, we can add convective process (advection) and radiation to the problem but we will keep it simple for now.</p>
-<p><a class="reference internal" href="#equation-heatmath">(144)</a> can be rewritten as</p>
-<div class="math notranslate nohighlight" id="equation-eq143">
-<span class="eqno">(145)<a class="headerlink" href="#equation-eq143" title="Permalink to this equation">¶</a></span>\[\frac{\partial u}{\partial t} = \kappa_{c} \frac{\partial ^2 u}{\partial x^2}\]</div>
-<p>where <span class="math notranslate nohighlight">\(Q(x,t)\)</span> is dropped for simplification and <span class="math notranslate nohighlight">\(\kappa_{c}=\frac{\kappa}{c\rho}\)</span>, so-called diffusion coefficient.  Again, here we use <span class="math notranslate nohighlight">\(\kappa\)</span> for simplicity.</p>
-<p>Considering the solutions are bounded in a stick with <span class="math notranslate nohighlight">\(0\leq x \leq L\)</span>. If we closely observe <a class="reference internal" href="#equation-eq143">(145)</a>, we can find it is the combination of a 1st-order ODE in time and a 2nd-order ODE in space. Therefore, we need at least 1 initial condition and 2 boundary conditions, which usually have form of</p>
-<div class="math notranslate nohighlight" id="equation-eq144">
-<span class="eqno">(146)<a class="headerlink" href="#equation-eq144" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-&amp; u(0,t) = T_1, \; u(L,t) = T_2  \\
-&amp; u(x,0) = f(x)\; \textrm{for }  \; 0\leq x \leq L
-\end{align}\end{split}\]</div>
-<p>The first two equations of <a class="reference internal" href="#equation-eq144">(146)</a> indicates that the temperature at both ends of the stick equals to their nearby environment.
-We can also use energy constraint where the temperature at both ends are not necessary the same as their environment. Therefore, the temperature difference will cause the heat radiating to its neighbor if the stick has higher temperature than its environment. This can be written as</p>
-<div class="math notranslate nohighlight" id="equation-eq145">
-<span class="eqno">(147)<a class="headerlink" href="#equation-eq145" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-&amp; u_x(0,t) = A[u(0,t)-T], \; u_x(L,t) = -A[u(x,t)-T]  \\
-&amp; u(x,0) = f(x) \; \textrm{for }  \; 0\leq x \leq L
-\end{align}\end{split}\]</div>
-<p>where the <span class="math notranslate nohighlight">\(\pm\)</span> sign simply represents the direction of radiation. One can easily find these two kinds of boundary condition fall within the category of type I Sturm-Liouville problem. It’s also possible to have a mixed boundary condition, where</p>
-<div class="math notranslate nohighlight" id="equation-eq146">
-<span class="eqno">(148)<a class="headerlink" href="#equation-eq146" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-&amp; u_x(0,t) = T_1, \; u_x(L,t) = -A[u(x,t)-T_2]  \\
-&amp; u(x,0) = f(x) \; \textrm{for }  \; 0\leq x \leq L
-\end{align}\end{split}\]</div>
-<p>or vice versa.</p>
-<p>Now let’s take a look of a few cases.</p>
-<div class="admonition-example-1 admonition">
-<p class="admonition-title">Example 1</p>
-<p>First consider the problem</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; u_t = \kappa_{c} u_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
-&amp; u(0,t) = u(L,t) = 0 \\ 
-&amp; u(x,0) = f(x) 
-\end{align}\end{split}\]</div>
-<p>Using <em>separation of variable</em> of as what we did in previous chapter, consists of attempting a solution of the form</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-u(x,t) = X(x)T(t)
-\end{align}\]</div>
-<p>Substitute this into the differential equation to get</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-XT^{'} = \kappa_{c}X^{''}T
-\end{align}\]</div>
-<p>which is equivalent to</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-\frac{T^{'}}{\kappa_{c}T} = \frac{X^{''}}{X}
-\end{align}\]</div>
-<p>Observing the equation above, we can find the left hand side only depends on <span class="math notranslate nohighlight">\(t\)</span> and the right hand side only depends on <span class="math notranslate nohighlight">\(x\)</span>. We also know that <span class="math notranslate nohighlight">\(X(x)\)</span> and <span class="math notranslate nohighlight">\(T(t)\)</span> vary independently. Therefore, only possibility exists: the ration of <span class="math notranslate nohighlight">\(T^{'}\)</span> and <span class="math notranslate nohighlight">\(kT\)</span> is a constant and so do <span class="math notranslate nohighlight">\(X^{''}\)</span> and <span class="math notranslate nohighlight">\(X\)</span>. According to this, we can write down</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-\frac{T^{'}}{\kappa_{c}T} = \frac{X^{''}}{X} = -\lambda 
-\end{align}\]</div>
-<p>One should notice that we can choose <span class="math notranslate nohighlight">\(lambda\)</span> on the right in stead. However, to satisfy the Fourier solution is space, we can only have <span class="math notranslate nohighlight">\(-\lambda \)</span>. (readers can think about why?).</p>
-<p>Now we have two differential equations. For the spatial structure equation,</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-&amp; X^{''} + \lambda X = 0  \; \textrm{with }  X(0) = X(L) = 0 
-\end{align}\]</div>
-<p>The first equation has a solution of Fourier <span class="math notranslate nohighlight">\(\sin\)</span> function,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; X_n(x) = \sin(\frac{n\pi x}{L}) \; \textrm{for } n=1,2,\cdots \\
-&amp; \textrm{where} \lambda =\frac{n^2\pi^2}{L^2}
-\end{align}\end{split}\]</div>
-<p>For the temporal structure equation,</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-&amp; T^{'} + \kappa_{c}\frac{n^2\pi^2}{L^2} T = 0 
-\end{align}\]</div>
-<p>This implies</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-T = e^{-\kappa_{c}\frac{n^2\pi^2}{L^2}t}
-\end{align}\]</div>
-<p>Put two solutions together, we have</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-u(x,t) = \sum_{n=1}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-\kappa_{c}\frac{n^2\pi^2}{L^2}t}
-\end{align}\]</div>
-<p>where</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-u(x,0) = \sum_{n=1}^{\infty} b_n \sin(\frac{n\pi x}{L}) = f(x)
-\end{align}\]</div>
-<p><span class="math notranslate nohighlight">\(b_n\)</span> is the Fourier <span class="math notranslate nohighlight">\(\sin\)</span> coefficients for each Fourier mode, which can be derived by projecting <span class="math notranslate nohighlight">\(f(x)\)</span> onto different Fourier basis</p>
-<div class="math notranslate nohighlight">
-\[b_n = \frac{2}{L}\int_{0}^{L}f(x)\sin(\frac{n\pi x}{L}) dx\]</div>
-<p>and the final solution is</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-u(x,t) = \sum_{n=1}^{\infty} (\frac{2}{L}\int_{0}^{L}f(\xi)\sin(\frac{n\pi \xi}{L}) d\xi) \sin(\frac{n\pi x}{L})e^{-\kappa_{c}\frac{n^2\pi^2}{L^2}t} 
-\end{align}\]</div>
-<p>From the solution above, one can find it will gradually approach 0 when <span class="math notranslate nohighlight">\(t\rightarrow\infty\)</span> because of <span class="math notranslate nohighlight">\(e^{-\kappa_{c}\frac{n^2\pi^2}{L^2}t}\)</span>. This is consistent with physical intuition. Therefore, for a heat diffusion without the existence of external forcing, the solution will gradually be smoothed out.</p>
-</div>
-<div class="admonition-example-2-diffusion-on-an-insulated-stick admonition">
-<p class="admonition-title">Example 2: Diffusion on an Insulated Stick</p>
-<p>Now considering a case where we have temperature gradient on a insulated stick. The first half has temperature of <span class="math notranslate nohighlight">\(T\)</span> and the second half has temperature <span class="math notranslate nohighlight">\(0\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}f(x) = \begin{cases} 
-T \textrm{   for } 0\leq x \leq \frac{L}{2}\\
-0 \textrm{   for } \frac{L}{2}&lt; x \leq L\\
-\end{cases}\end{split}\]</div>
-<p>Given the entire stick is insulated, we can expect that the equilibrium temperature will be <span class="math notranslate nohighlight">\(\frac{T}{2}\)</span> i.e., half of the heat moves from the left to the right. In addition, the insulated stick will have Fourier <span class="math notranslate nohighlight">\(\cos\)</span> function as solution given 0 radiation boundary condition. i.e.,</p>
-<div class="math notranslate nohighlight">
-\[u_x(0,t) = u_x(L,t) = 0\]</div>
-<p>The equation above can be considered as that the environment and stick always have the same temperature which leads to 0 heat exchange between sticks and outside environment. For such condition, the solution has a form of Fourier <span class="math notranslate nohighlight">\(\cos\)</span> function. Therefore, the solution can be written as</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-u(x,t) = \sum_{n=0}^{\infty} a_n \cos(\frac{n\pi x}{L})e^{-\kappa_c\frac{n^2\pi^2}{L^2}t}
-\end{align}\]</div>
-<p>To get the Fourier coefficient,</p>
-<div class="math notranslate nohighlight">
-\[a_n = \frac{2}{L} \int^{\frac{L}{2}}_{0} T \cos(\frac{n\pi  x}{L}) dx = \frac{2T}{n\pi}\sin(\frac{n\pi}{2})\]</div>
-<p>where</p>
-<div class="math notranslate nohighlight">
-\[a_0 = \frac{T}{2}\]</div>
-<p>The solution can be written as</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-u(x,t) = \frac{T}{2}+\frac{2T}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}\sin(\frac{n\pi}{2}) \cos(\frac{n\pi x}{L})e^{-\kappa_{c}\frac{n^2\pi^2}{L^2}t}
-\end{align}\]</div>
-<p>One can see that <span class="math notranslate nohighlight">\(k\)</span> only appears in <span class="math notranslate nohighlight">\(e^{-\kappa_{c}\frac{n^2\pi^2}{L^2}t}\)</span>. If we choose a <span class="math notranslate nohighlight">\(k\)</span> big enough, the signal will flatten out very quickly.</p>
-</div>
-<p>From two cases above, the readers can extend to some more complicated cases such as one side has a constant temperature and the other side is radiation boundary condition. I will leave the practice to the readers.</p>
-<div class="admonition-example-3-nonhomogeneous-problem admonition">
-<p class="admonition-title">Example 3: Nonhomogeneous Problem</p>
-<p>Solve the following case,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; u_t = ku_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
-&amp; u(0,t) = T_1 \\
-&amp; u(L,t) = T_2 \\ 
-&amp; u(x,0) = f(x) 
-\end{align}\end{split}\]</div>
-<p>where either <span class="math notranslate nohighlight">\(T_1\)</span> or <span class="math notranslate nohighlight">\(T_2\)</span> is not 0 (and <span class="math notranslate nohighlight">\(T_1\neq T_2\)</span>). Such case can be considered as a nonhomogeneous case. Because the temperature on both ends are different, there is always heat moving from one side to the other side. Thus, this problem is equivalent to a problem with a constant forcing. The simplest way of doing that is assuming <span class="math notranslate nohighlight">\(u(x,t)\)</span> has the following form</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-u(x,t) = v(x,t) + \psi(x)
-\end{align}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\psi(x)\)</span> can take care of the nonhomogeneous temperature of the stick and <span class="math notranslate nohighlight">\(v(x,t)\)</span> will to lead a homogeneous problem. i.e.,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; v_t = kv_{xx}+ \psi_{xx}(x); \textrm{for }  \; 0\leq x \leq L \\
-&amp; v(0,t) = 0 \\
-&amp; v(L,t) = 0 \\ 
-&amp; v(x,0) = f(x) 
-\end{align}\end{split}\]</div>
-<p>to make the set of equation above homogeneous, we have <span class="math notranslate nohighlight">\(\psi_{xx}(x)=0\)</span>. This implies <span class="math notranslate nohighlight">\(\psi(x) = Ax+B\)</span>. Using the boundary condition,  <span class="math notranslate nohighlight">\(\psi(0) = B = T_1\)</span> and <span class="math notranslate nohighlight">\(\psi(L) = AL+T_1 = T_2\)</span>, we know <span class="math notranslate nohighlight">\(\psi(0) = (T_2-T_1)x/L+T_1\)</span>. To solve <span class="math notranslate nohighlight">\(v\)</span>, we can follow the same steps in example 1.</p>
-</div>
-<div class="admonition-example-4-inclusion-of-convection-and-other-processes admonition">
-<p class="admonition-title">Example 4: Inclusion of Convection and other Processes</p>
-<p>We can include convection and other processes,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; u_t = (ku_{xx}+Au_x+Bu) \; \textrm{for }  \; 0\leq x \leq L \\
-&amp; u(0,t) = u(L,t) = 0 \\
-&amp; u(x,0) = f(x) 
-\end{align}\end{split}\]</div>
-<p>We can first convert it to a form which we are familiar with</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; v_t    = kv_{xx} \; \textrm{for }  \; 0\leq x \leq L \\
-&amp; v(0,t) = v(L,t) = 0 \\
-&amp; v(x,0) = g(x) 
-\end{align}\end{split}\]</div>
-<p>Recall that solving the 1st/2nd-order ODE, we usually guess a solution of <span class="math notranslate nohighlight">\(e^{\alpha x+\beta t}\)</span> to get a characteristic equation. However, it doesn’t satisfy the boundary condition where <span class="math notranslate nohighlight">\(u(0,t) = u(L,t) = 0\)</span>. Therefore, we can use the same approach of variation of parameters and assume</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-u(x,t) = v(x,t)e^{\alpha x+\beta t}
-\end{align}\]</div>
-<p>which will lead to</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; u_t(x,t)  = \beta  v(x,t)e^{\alpha x+\beta t}+v_t(x,t)e^{\alpha x+\beta t} \\
-&amp; u_x(x,t)  = \alpha v(x,t)e^{\alpha x+\beta t}+v_x(x,t)e^{\alpha x+\beta t} \\
-&amp; u_xx(x,t) = \alpha^2 v(x,t)e^{\alpha x+\beta t}+2\alpha v_x(x,t)e^{\alpha x+\beta t} + v_xx(x,t)e^{\alpha x+\beta t} \\
-\end{align}\end{split}\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-&amp; \beta  v(x,t)  = (k\alpha^2+kA\alpha-\beta+kB)v+(2k\alpha+kA)v_x+kv_{xx}
-\end{align}\]</div>
-<p>The equation above implies</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; k\alpha^2+kA\alpha-\beta+kB = 0 \\
-&amp; 2k\alpha+kA                 = 0
-\end{align}\end{split}\]</div>
-<p>or</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; \alpha = -\frac{A}{2} \\
-&amp; \beta  = k(B-\frac{A^2}{4})
-\end{align}\end{split}\]</div>
-<p>With the chosen <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, we can reorganize the original equation to a solvable form.</p>
-</div>
-</div>
-<div class="section" id="forced-solutions">
-<h2>Forced Solutions<a class="headerlink" href="#forced-solutions" title="Permalink to this headline">¶</a></h2>
-<p>While <a class="reference internal" href="#equation-eq143">(145)</a> takes heat flux as the only process for redistributing heat, we can have additional heat sources, <span class="math notranslate nohighlight">\(F(x,t)\)</span>. Therefore, <a class="reference internal" href="#equation-eq143">(145)</a> is written as</p>
-<div class="math notranslate nohighlight" id="equation-eq149">
-<span class="eqno">(149)<a class="headerlink" href="#equation-eq149" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-&amp; \frac{\partial u}{\partial t} = k \frac{\partial ^2 u}{\partial x^2}+F(x,t) \; \textrm{for }  \; 0\leq x \leq L \\
-&amp; u(0,t) = u(L,t) = 0 \\
-&amp; u(x,0) = f(x) 
-\end{align}\end{split}\]</div>
-<p>It is easy to verify that <em>separation of variables</em> can be applied to the questions above when <span class="math notranslate nohighlight">\(F(x,t)\)</span> exist. However, we can do some scale analysis first… One can find that when <span class="math notranslate nohighlight">\(F(x,t)\)</span> is small, we can expect the solution has a form of Fourier <span class="math notranslate nohighlight">\(\sin\)</span> function. i.e.,</p>
-<div class="math notranslate nohighlight" id="equation-eq150">
-<span class="eqno">(150)<a class="headerlink" href="#equation-eq150" title="Permalink to this equation">¶</a></span>\[\begin{align}
-u(x,t) = \sum_{n=0}^{\infty} b_n \sin(\frac{n\pi x}{L})e^{-n^2\pi^2 kt/L^2}
-\end{align}\]</div>
-<p>with the numbers the Fourier <span class="math notranslate nohighlight">\(\sin\)</span> coefficients of <span class="math notranslate nohighlight">\(f(x)\)</span>. This suggests that, for the problem with the term of <span class="math notranslate nohighlight">\(F(x,t)\)</span>, attempt a solution</p>
-<div class="math notranslate nohighlight" id="equation-eq151">
-<span class="eqno">(151)<a class="headerlink" href="#equation-eq151" title="Permalink to this equation">¶</a></span>\[\begin{align}
-u(x,t) = \sum_{n=0}^{\infty} T_n(t) \sin(\frac{n\pi x}{L})
-\end{align}\]</div>
-<p>because the spatial structure is constrained by both ends, which ensures the solution is the linear combination of Fourier <span class="math notranslate nohighlight">\(\sin\)</span> functions. According to <a class="reference internal" href="#equation-eq151">(151)</a>, one can find that <span class="math notranslate nohighlight">\(T_n(t)\)</span> is simply the coefficients of Fourier <span class="math notranslate nohighlight">\(\sin\)</span> functions. i.e.,</p>
-<div class="math notranslate nohighlight" id="equation-eq152">
-<span class="eqno">(152)<a class="headerlink" href="#equation-eq152" title="Permalink to this equation">¶</a></span>\[\begin{align}
-T_n(t)  = \frac{2}{L}\int_{0}^{L} u(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
-\end{align}\]</div>
-<p>Following similar veins, we take Fourier transform of the entire heat diffusion equation, which leads to</p>
-<div class="math notranslate nohighlight" id="equation-eq153">
-<span class="eqno">(153)<a class="headerlink" href="#equation-eq153" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-T_n^{'}(t)  &amp; = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + \frac{2}{L}\int_{0}^{L} u(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi \\
-&amp; = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + B_n(t)
-\end{align}\end{split}\]</div>
-<p>where</p>
-<div class="math notranslate nohighlight" id="equation-eq154">
-<span class="eqno">(154)<a class="headerlink" href="#equation-eq154" title="Permalink to this equation">¶</a></span>\[\begin{align}
-B_n(t) = \frac{2}{L}\int_{0}^{L} F(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
-\end{align}\]</div>
-<p>Evaluate the last integral in <a class="reference internal" href="#equation-eq153">(153)</a> by carrying out two integrate by parts.</p>
-<div class="math notranslate nohighlight" id="equation-eq155">
-<span class="eqno">(155)<a class="headerlink" href="#equation-eq155" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-\frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi &amp;= \frac{2k}{L}([u_{x}(\xi,t)\sin(\frac{n\pi \xi}{L})]_{0}^{L}-\frac{n\pi}{L}\int_{0}^{L}u_{x}\cos(\frac{n\pi \xi}{L})d\xi) \\
-&amp;=0-\frac{2k n\pi}{L^2}[[u\cos(\frac{n\pi \xi}{L})]_{0}^{L}+\frac{n\pi}{L}\int_{0}^{L}u\sin(\frac{n\pi \xi}{L})d\xi] \\
-&amp;=-\frac{2k n\pi}{L^2} \frac{n\pi}{L}\frac{L}{2}T_n \\
-&amp;=-\frac{k n^2\pi^2}{L^2}T_n
-\end{align}\end{split}\]</div>
-<p>substitute this result back to <a class="reference internal" href="#equation-eq153">(153)</a>, we have</p>
-<div class="math notranslate nohighlight" id="equation-eq156">
-<span class="eqno">(156)<a class="headerlink" href="#equation-eq156" title="Permalink to this equation">¶</a></span>\[\begin{align}
-T_n^{'}(t)   + \frac{k n^2\pi^2}{L^2}T_n(t) =   B_n(t)
-\end{align}\]</div>
-<p>which is a solvable 1st-order ODE.</p>
-<p>With an initial condition of</p>
-<div class="math notranslate nohighlight" id="equation-eq157">
-<span class="eqno">(157)<a class="headerlink" href="#equation-eq157" title="Permalink to this equation">¶</a></span>\[\begin{align}
-T_n(0) =   b_n
-\end{align}\]</div>
-<p>we can find the solution for <span class="math notranslate nohighlight">\(T_n\)</span></p>
-<div class="math notranslate nohighlight" id="equation-eq158">
-<span class="eqno">(158)<a class="headerlink" href="#equation-eq158" title="Permalink to this equation">¶</a></span>\[\begin{align}
-T_n(t) =   \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n(\tau)d\tau+b_ne^{-\frac{kn^2\pi^2(t)}{L^2}}
-\end{align}\]</div>
-<p>and the final solution is</p>
-<div class="math notranslate nohighlight" id="equation-eq159">
-<span class="eqno">(159)<a class="headerlink" href="#equation-eq159" title="Permalink to this equation">¶</a></span>\[\begin{align}
-u(x,t) =  \sum_{n=0}^{\infty} \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n(\tau)d\tau \sin(\frac{kn\pi}{L}x)+\sum_{n=0}^{\infty}b_ne^{-\frac{kn^2\pi^2(t)}{L^2}}\sin(\frac{kn\pi}{L}x)
-\end{align}\]</div>
-</div>
-<div class="section" id="solutions-on-a-real-string">
-<h2>Solutions on a Real String<a class="headerlink" href="#solutions-on-a-real-string" title="Permalink to this headline">¶</a></h2>
-<p>For certain cases, the heat diffusion does not necessarily happen on a stick or a string but instead…over an infinite domain. We first start with finite domain Fourier transform, where the solution are bounded in <span class="math notranslate nohighlight">\([-L,L]\)</span>. Sturm-Liouville theorem tells us that the solution has a form of:</p>
-<div class="math notranslate nohighlight" id="equation-eq160">
-<span class="eqno">(160)<a class="headerlink" href="#equation-eq160" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-f(x) &amp;= \sum_{n=-\infty}^{\infty} a_n\cos(\frac{n\pi x}{L})+b_n\sin(\frac{n\pi x}{L}) \\
-     &amp;= \sum_{n=-\infty}^{\infty} a_n\cos(kx)+b_n\sin(kx) \; n\in 	\mathbb{Z} \textrm{ and }\; \; k\in 	\mathbb{R}
-\end{align}\end{split}\]</div>
-<p>It is equivalent to</p>
-<div class="math notranslate nohighlight" id="equation-eq161">
-<span class="eqno">(161)<a class="headerlink" href="#equation-eq161" title="Permalink to this equation">¶</a></span>\[\begin{align}
-f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{i n\pi x}{L}} = \sum_{n=-\infty}^{\infty} c_n e^{i k(n) x} \; n\in 	\mathbb{N} \textrm{ and }\; \; k\in 	\mathbb{R}
-\end{align}\]</div>
-<p>where</p>
-<div class="math notranslate nohighlight" id="equation-eq162">
-<span class="eqno">(162)<a class="headerlink" href="#equation-eq162" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-c_n &amp; = \frac{a_n-ib_n}{2} =\frac{\int_{-L}^{L} f(x)e^{-ikx} dx}{\int_{-L}^{L} |e^{-ikx}|^2 dx} = \frac{1}{2L} \int_{-L}^{L} f(x)e^{-ikx} dx \\
-a_n &amp; = \frac{1}{L} \int_{-L}^{L}f(x)\cos(\frac{n\pi x}{L}) dx = \frac{1}{L} A_n\\
-b_n &amp; = \frac{1}{L} \int_{-L}^{L}f(x)\sin(\frac{n\pi x}{L}) dx = \frac{1}{L} B_n\\
-\end{align}\end{split}\]</div>
-<p>Here we introduce a small trick. If we let <span class="math notranslate nohighlight">\(L\rightarrow\infty\)</span>, we will have <span class="math notranslate nohighlight">\(\delta k = k(n+1)-k(n-1) = \frac{\pi}{L} \sim 0 \)</span>. One should notice that, infinite size of domain is equivalent to a limited size domain with infinite wave numbers. Therefore,</p>
-<div class="math notranslate nohighlight" id="equation-eq163">
-<span class="eqno">(163)<a class="headerlink" href="#equation-eq163" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-f(x) &amp;= \frac{1}{2L}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx}  \\
-     &amp;= \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} (A_n-iB_n) e^{ikx} \Delta k\\
-     &amp;= \int_{k=-\infty}^{\infty} \frac{1}{2\pi}F(k) e^{i k x} dk\; k\in \mathbb{R}
-\end{align}\end{split}\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight" id="equation-eq164">
-<span class="eqno">(164)<a class="headerlink" href="#equation-eq164" title="Permalink to this equation">¶</a></span>\[\begin{align}
-F(k) = \int_{-L \rightarrow -\infty}^{L \rightarrow \infty} f(x)e^{-ikx} dx =\mathcal{F}[f(x)]
-\end{align}\]</div>
-<p><a class="reference internal" href="#equation-eq164">(164)</a> is the Fourier transform of <span class="math notranslate nohighlight">\(f(x)\)</span> over an infinite domain.</p>
-<p>Now we can use the Fourier transform in an infinite domain to solve the heat diffusion equation.</p>
-<div class="admonition-example-4 admonition">
-<p class="admonition-title">Example 4</p>
-<p>Solve</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-u_t    &amp; = \kappa_c u_{xx} \;\;\textrm{for }\infty&lt;x\infty, t&gt;0 \\
-u(x,0) &amp; =f(x)
-\end{align}\end{split}\]</div>
-<p>Now we take Fourier transform with respect to <em>space</em>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-\mathcal{F}[u(x,t)]      &amp; = \hat{u}(k,t) \\
-\mathcal{F}[u_x(x,t)]    &amp; = ik \hat{u}(k,t) \\
-\mathcal{F}[u_{xx}(x,t)] &amp; = -k^2 \hat{u}(k,t) \\
-\end{align}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\hat{u}\)</span> is <span class="math notranslate nohighlight">\(u\)</span> in wave number space.</p>
-<p>This leads to</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-\frac{d}{dt} \hat{u} = -\kappa_c k^2 \hat{u}(k,t)
-\end{align}\]</div>
-<p>and the solution is</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-\hat{u}(k,t) = \hat{u}(k,0)e^{-\kappa_c k^2 t} 
-\end{align}\]</div>
-<p><span class="math notranslate nohighlight">\(e^{-\kappa_c k^2 t} \)</span> is so-called <em>diffusion kernel</em>, which is a Gaussian function.</p>
-<p>Then we take the inverse transform of the equation above,</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-\mathcal{F}^{-1}[\hat{u}(k,t)] = \mathcal{F}^{-1}[\hat{u}(k,0)e^{-\kappa_c k^2 t}] =  \mathcal{F}^{-1}[\hat{u}(k,0)]*\mathcal{F}^{-1}[e^{-\kappa_c k^2 t}] 
-\end{align}\]</div>
-<p>One interesting fact is, the inverse Fourier transform of a Gaussian function is also a Gaussian function. (I will leave this practice to readers).</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-\mathcal{F}^{-1}[e^{-\kappa_c k^2 t}] = \frac{1}{2\sqrt{\kappa_c \pi t}}e^{-\frac{x^2}{4\kappa_c t}}
-\end{align}\]</div>
-<p>The entire solution is</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-u(x,t) =  \frac{1}{2\sqrt{\kappa_c \pi t}}e^{-\frac{x^2}{4\kappa_c t}}*u(x,0)
-\end{align}\]</div>
-</div>
-</div>
-<div class="section" id="heat-diffusion-on-a-2d-plane">
-<h2>Heat Diffusion on a 2D Plane<a class="headerlink" href="#heat-diffusion-on-a-2d-plane" title="Permalink to this headline">¶</a></h2>
-<p>Thus far we have considered the heat equation in one space variable. In two space dimensions the heat equation is</p>
-<div class="math notranslate nohighlight" id="equation-eq165">
-<span class="eqno">(165)<a class="headerlink" href="#equation-eq165" title="Permalink to this equation">¶</a></span>\[\begin{align}
-u_t = \kappa_c (u_{xx}+u_{yy})
-\end{align}\]</div>
-<p>Suppose that we want a temperature distribution on a square plate occupying the regions of <span class="math notranslate nohighlight">\(0\leq x\leq L\)</span> and <span class="math notranslate nohighlight">\(0\leq y\leq K\)</span>. A zero environmental temperature condition is given i.e.,</p>
-<div class="math notranslate nohighlight" id="equation-eq166">
-<span class="eqno">(166)<a class="headerlink" href="#equation-eq166" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-u(x,0,t) &amp; = u(x,K,t) = 0 \\
-u(0,y,t) &amp; = u(L,y,t) = 0 \\
-\end{align}\end{split}\]</div>
-<p>also assume an initial condition,</p>
-<div class="math notranslate nohighlight" id="equation-eq167">
-<span class="eqno">(167)<a class="headerlink" href="#equation-eq167" title="Permalink to this equation">¶</a></span>\[\begin{align}
-u(x,y,0) = f(x,y)
-\end{align}\]</div>
-<p>We first attempt separation of variables in the heat equation, putting <span class="math notranslate nohighlight">\(u(x,y,t) = X(x)Y(y)T(t)\)</span> to get</p>
-<div class="math notranslate nohighlight" id="equation-eq168">
-<span class="eqno">(168)<a class="headerlink" href="#equation-eq168" title="Permalink to this equation">¶</a></span>\[\begin{align}
-XYT' = \kappa_c(X^{''}YT+XY^{''}T)
-\end{align}\]</div>
-<p>Divide by <span class="math notranslate nohighlight">\(XYT\)</span> and rearrange the equation</p>
-<div class="math notranslate nohighlight" id="equation-eq169">
-<span class="eqno">(169)<a class="headerlink" href="#equation-eq169" title="Permalink to this equation">¶</a></span>\[\begin{align}
-\frac{X^{''}}{X} = \frac{T^{'}}{\kappa_c T}-\frac{Y^{''}}{Y}
-\end{align}\]</div>
-<p>while the left-hand-side of the equation only depends on <span class="math notranslate nohighlight">\(X\)</span> and right-hand-side of the equation only depends on <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. That means both side of the equation will equal to the same constant. This is the only way that two independent equations are always equivalent.</p>
-<p>indicating</p>
-<div class="math notranslate nohighlight" id="equation-eq170">
-<span class="eqno">(170)<a class="headerlink" href="#equation-eq170" title="Permalink to this equation">¶</a></span>\[\begin{align}
-\frac{X^{''}}{X} = \frac{T^{'}}{\kappa_c T}-\frac{Y^{''}}{Y}=-\lambda
-\end{align}\]</div>
-<p>or</p>
-<div class="math notranslate nohighlight" id="equation-eq171">
-<span class="eqno">(171)<a class="headerlink" href="#equation-eq171" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-X^{''}+\lambda X &amp; = 0 \\
-\frac{T^{'}}{\kappa_c T}+\lambda &amp;= \frac{Y^{''}}{Y}
-\end{align}\end{split}\]</div>
-<p>Similarily, the second equation also implies</p>
-<div class="math notranslate nohighlight" id="equation-eq172">
-<span class="eqno">(172)<a class="headerlink" href="#equation-eq172" title="Permalink to this equation">¶</a></span>\[\begin{align}
-\frac{T^{'}}{\kappa_c T}+\lambda &amp;= \frac{Y^{''}}{Y} = \mu
-\end{align}\]</div>
-<p>Now,</p>
-<div class="math notranslate nohighlight" id="equation-eq173">
-<span class="eqno">(173)<a class="headerlink" href="#equation-eq173" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-Y^{''}+\mu Y &amp; = 0 \\
-T^{'}+(\lambda+\mu)\kappa_cT &amp; = 0 \\
-\end{align}\end{split}\]</div>
-<p>Along with the boundary conditions, we know the eigen solutions for X and Y ares</p>
-<div class="math notranslate nohighlight" id="equation-eq174">
-<span class="eqno">(174)<a class="headerlink" href="#equation-eq174" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-X_n(x) = \sin(\frac{n\pi x}{L}) ;\ \textrm{where   } n=1,2,3... \\ 
-Y_n(x) = \sin(\frac{m\pi x}{K}) ;\ \textrm{where   } m=1,2,3... \\ 
-\end{align}\end{split}\]</div>
-<p>Also, the solutions for T are</p>
-<div class="math notranslate nohighlight" id="equation-eq175">
-<span class="eqno">(175)<a class="headerlink" href="#equation-eq175" title="Permalink to this equation">¶</a></span>\[\begin{align}
-T_{nm} (t) = e^{-\alpha_{nm}t} ;\ \textrm{where   } \alpha = \frac{n^2\pi^2}{L^2}+\frac{m^2\pi^2}{K^2}
-\end{align}\]</div>
-<p>Combining all three solutions together, we can have the final solution of heat diffusion on a 2D-plane.
-The readers can also try to think about the forced solution on a 2D-plane. What should it look like?</p>
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./PDE"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../ODE/Special_function.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Week 9 and 10:  Special Functions</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="Wave_equation.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Week 12:  Wave Equation</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Dr. Kai-Chih Tseng<br/>
-  
-      &copy; Copyright 2020.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
-      </div>
-    </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

@@ -80,17 +80,8 @@ indicating
 ```{math}
 :label: eq183
 \begin{align}
-a_n = \frac{2}{L} \int_{0}^{L} f(\xi)\sin(\frac{n\pi \xi}{L})d\xi
-\end{align}
-```
-
-and 
-
-
-```{math}
-:label: eq183
-\begin{align}
-\frac{n\pi c}{L}b_n = \frac{2}{L} \int_{0}^{L} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi
+a_n &= \frac{2}{L} \int_{0}^{L} f(\xi)\sin(\frac{n\pi \xi}{L})d\xi \\ 
+b_n &= \frac{n\pi c}{L}b_n = \frac{2}{L} \int_{0}^{L} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi
 \end{align}
 ```
 
