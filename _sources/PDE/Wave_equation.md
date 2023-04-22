@@ -376,7 +376,7 @@ where
 \end{align}
 ```
 
-To show that, we first observe {eq}`eq195` and the following two characteristic equations
+To show that, we first observe {eq}`eq195` and we can find the following two characteristic equations
 
 
 ```{math}
