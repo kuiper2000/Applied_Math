@@ -412,5 +412,25 @@ scale: 30%
 The D'Alambert's wave solution. 
 ```
 
+Combining both, we have 
 
 
+```{math}
+:label: eq208
+\begin{align}
+u(x,t) = F(\xi)+ G(\eta)
+\end{align}
+```
+
+Here we demonstrate how to derive the D'Alambert's wave solution. 
+According to the initial condition of the wave position, we know 
+
+
+
+```{math}
+:label: eq209
+\begin{align}
+y(x,0)   &= F(\xi)+ G(\eta) \\
+y_t(x,0) &= \frac{\partial F(\xi)}{\partial \xi}\frac{\partial \xi}{\partial t}+ \frac{\partial G(\eta)}{\partial \eta}\frac{\partial \eta}{\partial t}  = -cF^{'}(\xi)+cG^{'}(\eta)\\
+\end{align}
+```
