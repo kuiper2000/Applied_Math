@@ -426,11 +426,45 @@ Here we demonstrate how to derive the D'Alambert's wave solution.
 According to the initial condition of the wave position, we know 
 
 
-
 ```{math}
 :label: eq209
 \begin{align}
-y(x,0)   &= F(\xi)+ G(\eta) \\
-y_t(x,0) &= \frac{\partial F(\xi)}{\partial \xi}\frac{\partial \xi}{\partial t}+ \frac{\partial G(\eta)}{\partial \eta}\frac{\partial \eta}{\partial t}  = -cF^{'}(\xi)+cG^{'}(\eta)\\
+y(x,0)   &= F(\xi)+ G(\eta) = f(x)\\
+y_t(x,0) &= \frac{\partial F(\xi)}{\partial \xi}\frac{\partial \xi}{\partial t}+ \frac{\partial G(\eta)}{\partial \eta}\frac{\partial \eta}{\partial t}  = -cF^{'}(\xi)+cG^{'}(\eta) = g(x)\\
 \end{align}
 ```
+
+
+Here if we properly choose an integral for the second equation (I will show that in a seconds), we will have 
+
+
+```{math}
+:label: eq210
+\begin{align}
+y(x,0)   &= F(x)+ G(x) = f(x)\\
+\int_{x_0}^{x} g(w) dw &= -c F(x) + cG(x)\\
+\end{align}
+```
+
+Then we can represent $y$ with the linear combination of the two equations above. 
+
+
+```{math}
+:label: eq211
+\begin{align}
+F(x-ct)   &= \frac{1}{2}f(x-ct)-\frac{1}{2c}\int_{x_0}^{x-ct} g(w) dw\\
+G(x+ct)   &= \frac{1}{2}f(x+ct)+\frac{1}{2c}\int_{x_0}^{x+ct} g(w) dw\\
+\end{align}
+```
+
+
+Adding both together, we have solutions 
+
+```{math}
+:label: eq212
+\begin{align}
+u(x,t) = F(x-ct) + G(x+ct) = \frac{1}{2}[f(x-ct)+f(x+ct)]+\frac{1}{2c} \int_{x-ct}^{x+ct} g(w) dw
+\end{align}
+```
+
+

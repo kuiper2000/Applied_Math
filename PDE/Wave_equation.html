@@ -632,9 +632,26 @@ u(x,t) = F(\xi)+ G(\eta)
 According to the initial condition of the wave position, we know</p>
 <div class="math notranslate nohighlight" id="equation-eq209">
 <span class="eqno">(209)<a class="headerlink" href="#equation-eq209" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-y(x,0)   &amp;= F(\xi)+ G(\eta) \\
-y_t(x,0) &amp;= \frac{\partial F(\xi)}{\partial \xi}\frac{\partial \xi}{\partial t}+ \frac{\partial G(\eta)}{\partial \eta}\frac{\partial \eta}{\partial t}  = -cF^{'}(\xi)+cG^{'}(\eta)\\
+y(x,0)   &amp;= F(\xi)+ G(\eta) = f(x)\\
+y_t(x,0) &amp;= \frac{\partial F(\xi)}{\partial \xi}\frac{\partial \xi}{\partial t}+ \frac{\partial G(\eta)}{\partial \eta}\frac{\partial \eta}{\partial t}  = -cF^{'}(\xi)+cG^{'}(\eta) = g(x)\\
 \end{align}\end{split}\]</div>
+<p>Here if we properly choose an integral for the second equation (I will show that in a seconds), we will have</p>
+<div class="math notranslate nohighlight" id="equation-eq210">
+<span class="eqno">(210)<a class="headerlink" href="#equation-eq210" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+y(x,0)   &amp;= F(x)+ G(x) = f(x)\\
+\int_{x_0}^{x} g(w) dw &amp;= -c F(x) + cG(x)\\
+\end{align}\end{split}\]</div>
+<p>Then we can represent <span class="math notranslate nohighlight">\(y\)</span> with the linear combination of the two equations above.</p>
+<div class="math notranslate nohighlight" id="equation-eq211">
+<span class="eqno">(211)<a class="headerlink" href="#equation-eq211" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+F(x-ct)   &amp;= \frac{1}{2}f(x-ct)-\frac{1}{2c}\int_{x_0}^{x-ct} g(w) dw\\
+G(x+ct)   &amp;= \frac{1}{2}f(x+ct)+\frac{1}{2c}\int_{x_0}^{x+ct} g(w) dw\\
+\end{align}\end{split}\]</div>
+<p>Adding both together, we have solutions</p>
+<div class="math notranslate nohighlight" id="equation-eq212">
+<span class="eqno">(212)<a class="headerlink" href="#equation-eq212" title="Permalink to this equation">¶</a></span>\[\begin{align}
+u(x,t) = F(x-ct) + G(x+ct) = \frac{1}{2}[f(x-ct)+f(x+ct)]+\frac{1}{2c} \int_{x-ct}^{x+ct} g(w) dw
+\end{align}\]</div>
 </div>
 </div>
 
