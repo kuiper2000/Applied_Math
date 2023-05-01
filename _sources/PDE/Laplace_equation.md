@@ -7,10 +7,20 @@ While Laplace equation is nothing new to readers since we have introduced two re
 Let's begin with a diffusion problem on a Retangle (figure below),
 
 
-```{figure} Dirichlet.png
+```{figure} Dirichlet_1.png
 ---
 name: FIG12
 scale: 30%
 ---
 The Dirichlet problem on a retangle. 
 ```   
+
+the figure above can be written as {eq}`eq213`
+
+```{math}
+:label: eq213
+\begin{align}
+\nabla ^2 u &= 0 \\
+
+\end{align}
+```
