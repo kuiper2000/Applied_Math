@@ -282,6 +282,22 @@ u(x,0)      &amp;= 0 ;\;\ \textrm{  for  } 0\leq x\leq L \\
 u(0,y)      &amp;= u(L,y) = 0 ;\;\ \textrm{  for  } 0\leq y\leq K \\
 u(x,K)      &amp;= f(x) ;\;\ \textrm{  for  } 0\leq x\leq L 
 \end{align}\end{split}\]</div>
+<p>The retangle is defined as domain <span class="math notranslate nohighlight">\(\Omega\)</span>. In such problem, we want a function that is harmonic on <span class="math notranslate nohighlight">\(\Omega\)</span>, equals <span class="math notranslate nohighlight">\(f(x)\)</span> on the upper side and zero on the lower side  and two vertical side. Using the same technique of <em>separation of variable</em>, we can assume the structure of <span class="math notranslate nohighlight">\(u\)</span> follows</p>
+<div class="math notranslate nohighlight" id="equation-eq214">
+<span class="eqno">(214)<a class="headerlink" href="#equation-eq214" title="Permalink to this equation">¶</a></span>\[\begin{align}
+u(x,y) = X(x)Y(y)
+\end{align}\]</div>
+<p>we have</p>
+<div class="math notranslate nohighlight" id="equation-eq215">
+<span class="eqno">(216)<a class="headerlink" href="#equation-eq215" title="Permalink to this equation">¶</a></span>\[\begin{align}
+X^{''}Y+XY^{''}=0
+\end{align}\]</div>
+<p>Dividing the entire <a class="reference internal" href="#equation-eq215">(216)</a> by <span class="math notranslate nohighlight">\(XY\)</span>, we can get</p>
+<div class="math notranslate nohighlight" id="equation-eq215">
+<span class="eqno">(216)<a class="headerlink" href="#equation-eq215" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\frac{X^{''}}{X}+\frac{Y^{''}}{Y}=0
+\end{align}\]</div>
+<p>Similar to how we deal with heat and wave equations, the first part is only related to <span class="math notranslate nohighlight">\(x\)</span> and the second part is only related to <span class="math notranslate nohighlight">\(y\)</span>.</p>
 </div>
 </div>
 

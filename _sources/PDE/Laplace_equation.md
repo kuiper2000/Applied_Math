@@ -27,4 +27,33 @@ u(x,K)      &= f(x) ;\;\ \textrm{  for  } 0\leq x\leq L
 \end{align}
 ```
 
+The retangle is defined as domain $\Omega$. In such problem, we want a function that is harmonic on $\Omega$, equals $f(x)$ on the upper side and zero on the lower side  and two vertical side. Using the same technique of _separation of variable_, we can assume the structure of $u$ follows 
 
+
+```{math}
+:label: eq214
+\begin{align}
+u(x,y) = X(x)Y(y)
+\end{align}
+```
+
+we have 
+
+```{math}
+:label: eq215
+\begin{align}
+X^{''}Y+XY^{''}=0
+\end{align}
+```
+
+Dividing the entire {eq}`eq215` by $XY$, we can get  
+
+
+```{math}
+:label: eq215
+\begin{align}
+\frac{X^{''}}{X}+\frac{Y^{''}}{Y}=0
+\end{align}
+```
+
+Similar to how we deal with heat and wave equations, the first part is only related to $x$ and the second part is only related to $y$. 
