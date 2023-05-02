@@ -75,3 +75,24 @@ It's not hard to find that {eq}`eq217` has a solution of (also see solution )
 \lambda_n = \frac{n^2\pi^2}{L^2},X_n(x)=\sin(\frac{n\pi x}{L})
 \end{align}
 ```
+
+For solution in $y$ direction, 
+
+```{math}
+:label: eq219
+\begin{align}
+Y_n(y)=\sinh (\frac{n\pi y}{L})
+\end{align}
+```
+
+The whole equation can therefore be written as 
+
+
+```{math}
+:label: eq220
+\begin{align}
+u(x,y) = \sum_{n=1}^{n=\infty} c_n \sin(\frac{n\pi x}{L})\sinh(\frac{n\pi y}{L})
+\end{align}
+```
+
+
