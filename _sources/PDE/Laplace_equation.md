@@ -50,10 +50,20 @@ Dividing the entire {eq}`eq215` by $XY$, we can get
 
 
 ```{math}
-:label: eq215
+:label: eq216
 \begin{align}
 \frac{X^{''}}{X}+\frac{Y^{''}}{Y}=0
 \end{align}
 ```
 
-Similar to how we deal with heat and wave equations, the first part is only related to $x$ and the second part is only related to $y$. 
+Similar to how we deal with heat and wave equations, the first part is only related to $x$ and the second part is only related to $y$. This indicates that both are the same constant with opposite sign. i.e., 
+
+
+
+```{math}
+:label: eq217
+\begin{align}
+\frac{X^{''}}{X}+\lambda & =0 \\
+\frac{Y^{''}}{Y}-\lambda & =0 \\
+\end{align}
+```
