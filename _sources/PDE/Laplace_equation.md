@@ -20,10 +20,10 @@ the figure above can be written as {eq}`eq213`
 ```{math}
 :label: eq213
 \begin{align}
-\nabla ^2 u &= 0 ;\;\ \textrm{  for  } 0<x<L,0<y<K \\
-u(x,0)      &= 0 ;\;\ \textrm{  for  } 0\leq x\leq L \\
-u(0,y)      &= u(L,y) = 0 ;\;\ \textrm{  for  } 0\leq y\leq K \\
-u(x,K)      &= f(x) ;\;\ \textrm{  for  } 0\leq x\leq L 
+\nabla ^2 u &= 0 \;\; \textrm{  for  } 0<x<L,0<y<K \\
+u(x,0)      &= 0 \;\; \textrm{  for  } 0\leq x\leq L \\
+u(0,y)      &= u(L,y) = 0 \;\; \textrm{  for  } 0\leq y\leq K \\
+u(x,K)      &= f(x) \;\; \textrm{  for  } 0\leq x\leq L 
 \end{align}
 ```
 
@@ -67,7 +67,7 @@ Similar to how we deal with heat and wave equations, the first part is only rela
 ```
 
 
-It's not hard to find that {eq}`eq217` has a solution of 
+It's not hard to find that {eq}`eq217` has a solution of (also see solution )
 
 ```{math}
 :label: eq218
