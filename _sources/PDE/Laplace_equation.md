@@ -85,7 +85,7 @@ Y_n(y)=\sinh (\frac{n\pi y}{L})
 \end{align}
 ```
 
-The whole equation can therefore be written as 
+The whole solution can therefore be written as 
 
 
 ```{math}
@@ -94,5 +94,34 @@ The whole equation can therefore be written as
 u(x,y) = \sum_{n=1}^{n=\infty} c_n \sin(\frac{n\pi x}{L})\sinh(\frac{n\pi y}{L})
 \end{align}
 ```
+
+For the boundary condition at $y=K$, we know 
+
+```{math}
+:label: eq221
+\begin{align}
+u(x,K) = \sum_{n=1}^{n=\infty} c_n \sin(\frac{n\pi x}{L})\sinh(\frac{n\pi K}{L})
+\end{align}
+```
+
+which infers that 
+
+
+```{math}
+:label: eq222
+\begin{align}
+c_n \sinh(\frac{n\pi K}{L}) = \frac{2}{L}\int_{0}^{L}  f(\xi)\sin(\frac{n\pi \xi}{L})d\xi
+\end{align}
+```
+
+Substitute {eq}`eq222` back to {eq}`eq220`, we have 
+
+```{math}
+:label: eq223
+\begin{align}
+u(x,y) = \sum_{1}^{\infty}  \frac{2}{L}\int_{0}^{L}  (f(\xi)\sin(\frac{n\pi \xi}{L})d\xi ) \sin(\frac{n\pi x}{L})\frac{\sinh(\frac{n\pi y }{L})}{\sinh (\frac{n\pi K }{L})}
+\end{align}
+```
+
 
 

@@ -313,10 +313,25 @@ X^{''}Y+XY^{''}=0
 <span class="eqno">(219)<a class="headerlink" href="#equation-eq219" title="Permalink to this equation">¶</a></span>\[\begin{align}
 Y_n(y)=\sinh (\frac{n\pi y}{L})
 \end{align}\]</div>
-<p>The whole equation can therefore be written as</p>
+<p>The whole solution can therefore be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq220">
 <span class="eqno">(220)<a class="headerlink" href="#equation-eq220" title="Permalink to this equation">¶</a></span>\[\begin{align}
 u(x,y) = \sum_{n=1}^{n=\infty} c_n \sin(\frac{n\pi x}{L})\sinh(\frac{n\pi y}{L})
+\end{align}\]</div>
+<p>For the boundary condition at <span class="math notranslate nohighlight">\(y=K\)</span>, we know</p>
+<div class="math notranslate nohighlight" id="equation-eq221">
+<span class="eqno">(221)<a class="headerlink" href="#equation-eq221" title="Permalink to this equation">¶</a></span>\[\begin{align}
+u(x,K) = \sum_{n=1}^{n=\infty} c_n \sin(\frac{n\pi x}{L})\sinh(\frac{n\pi K}{L})
+\end{align}\]</div>
+<p>which infers that</p>
+<div class="math notranslate nohighlight" id="equation-eq222">
+<span class="eqno">(222)<a class="headerlink" href="#equation-eq222" title="Permalink to this equation">¶</a></span>\[\begin{align}
+c_n \sinh(\frac{n\pi K}{L}) = \frac{2}{L}\int_{0}^{L}  f(\xi)\sin(\frac{n\pi \xi}{L})d\xi
+\end{align}\]</div>
+<p>Substitute <a class="reference internal" href="#equation-eq222">(222)</a> back to <a class="reference internal" href="#equation-eq220">(220)</a>, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq223">
+<span class="eqno">(223)<a class="headerlink" href="#equation-eq223" title="Permalink to this equation">¶</a></span>\[\begin{align}
+u(x,y) = \sum_{1}^{\infty}  \frac{2}{L}\int_{0}^{L}  (f(\xi)\sin(\frac{n\pi \xi}{L})d\xi ) \sin(\frac{n\pi x}{L})\frac{\sinh(\frac{n\pi y }{L})}{\sinh (\frac{n\pi K }{L})}
 \end{align}\]</div>
 </div>
 </div>
