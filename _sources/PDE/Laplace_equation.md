@@ -58,12 +58,20 @@ Dividing the entire {eq}`eq215` by $XY$, we can get
 
 Similar to how we deal with heat and wave equations, the first part is only related to $x$ and the second part is only related to $y$. This indicates that both are the same constant with opposite sign. i.e., 
 
-
-
 ```{math}
 :label: eq217
 \begin{align}
-\frac{X^{''}}{X}+\lambda & =0 \\
-\frac{Y^{''}}{Y}-\lambda & =0 \\
+\frac{X^{''}}{X}+\lambda & =0 \;\; \textrm{  for } X(0)=X(L)=0\\
+\frac{Y^{''}}{Y}-\lambda & =0 \;\; \textrm{  for } Y(0)=0 \\
+\end{align}
+```
+
+
+It's not hard to find that {eq}`eq217` has a solution of 
+
+```{math}
+:label: eq218
+\begin{align}
+\lambda_n = \frac{n^2\pi^2}{L^2},X_n(x)=\sin(\frac{n\pi x}{L})
 \end{align}
 ```
