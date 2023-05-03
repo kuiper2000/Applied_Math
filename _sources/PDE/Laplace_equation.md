@@ -215,6 +215,6 @@ Substituting {eq}`eq229` and {eq}`eq230` back to {eq}`eq227`, the complete equat
 :label: eq231
 \begin{align}
 U(r,\theta) = & \frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)d\xi + \\
-& \frac{1}{\pi}\sum_{n=1}^{\infty} (\frac{r}{R})^n \int_{-\pi}^{\pi} (a_n f(\xi)\cos(n\xi)\cos(n\theta)+f(\xi)\cos(n\xi)\sin(n\theta)) d\xi
+& \frac{1}{\pi}\sum_{n=1}^{\infty} (\frac{r}{R})^n \int_{-\pi}^{\pi} (f(\xi)\cos(n\xi)\cos(n\theta)+f(\xi)\cos(n\xi)\sin(n\theta)) d\xi
 \end{align}
 ```
