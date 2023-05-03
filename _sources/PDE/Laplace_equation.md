@@ -4,7 +4,9 @@
 While Laplace equation is nothing new to readers since we have introduced two related special functions in the chapter of {ref}`SpecialF`, Legendre polynomial and Bessel function. While those special functions form a complete set of solution of diffusion equation for the corresponding coordinate, there is an alternative way of solving diffusion problem when certain boundary conditions are satisfied. (i.e., Sturm-Liouville theorem is satisfied). 
 
 
-Let's begin with a diffusion problem on a Retangle (figure below),
+
+## Dirichlet Problem for a Rectangle
+Let's begin with a diffusion problem on a Rectangle (figure below),
 
 
 ```{figure} Dirichlet_1.png
@@ -12,7 +14,7 @@ Let's begin with a diffusion problem on a Retangle (figure below),
 name: FIG12
 scale: 20%
 ---
-The Dirichlet problem on a retangle. 
+The Dirichlet problem on a rectangle. 
 ```   
 
 the figure above can be written as {eq}`eq213`
@@ -27,7 +29,7 @@ u(x,K)      &= f(x) \;\; \textrm{  for  } 0\leq x\leq L
 \end{align}
 ```
 
-The retangle is defined as domain $\Omega$. In such problem, we want a function that is harmonic on $\Omega$, equals $f(x)$ on the upper side and zero on the lower side  and two vertical side. Using the same technique of _separation of variable_, we can assume the structure of $u$ follows 
+The rectangle is defined as domain $\Omega$. In such problem, we want a function that is harmonic on $\Omega$, equals $f(x)$ on the upper side and zero on the lower side  and two vertical side. Using the same technique of _separation of variable_, we can assume the structure of $u$ follows 
 
 
 ```{math}
@@ -132,7 +134,7 @@ While we only specify boundary condition at the upper end, we can approach the p
 name: FIG13
 scale: 20%
 ---
-The Dirichlet problem on a retangle with four specified boundaries. 
+The Dirichlet problem on a rectangle with four specified boundaries. 
 ```   
 
 The solution for the condition above can be decomposed into four cases and each case with only one boundary specified (The lower panel of {ref}`FIG13`).  The total solution is the linear combination of the four solution above. i.e., 
@@ -143,4 +145,6 @@ The solution for the condition above can be decomposed into four cases and each 
 u(x,y) = \sum_{i=1}^{4}  u_i(x,y)
 \end{align}
 ```
+
+## Dirichlet Problem for a Disk
 

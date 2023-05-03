@@ -333,6 +333,16 @@ title="Print to PDF"
    Problem Setup and Initial Conditions
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dirichlet-problem-for-a-rectangle">
+   Dirichlet Problem for a Rectangle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dirichlet-problem-for-a-disk">
+   Dirichlet Problem for a Disk
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -357,6 +367,16 @@ title="Print to PDF"
    Problem Setup and Initial Conditions
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dirichlet-problem-for-a-rectangle">
+   Dirichlet Problem for a Rectangle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dirichlet-problem-for-a-disk">
+   Dirichlet Problem for a Disk
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -372,10 +392,13 @@ title="Print to PDF"
 <div class="section" id="problem-setup-and-initial-conditions">
 <h2>Problem Setup and Initial Conditions<a class="headerlink" href="#problem-setup-and-initial-conditions" title="Permalink to this headline">¶</a></h2>
 <p>While Laplace equation is nothing new to readers since we have introduced two related special functions in the chapter of <a class="reference internal" href="../ODE/Special_function.html#specialf"><span class="std std-ref">Week 9 and 10:  Special Functions</span></a>, Legendre polynomial and Bessel function. While those special functions form a complete set of solution of diffusion equation for the corresponding coordinate, there is an alternative way of solving diffusion problem when certain boundary conditions are satisfied. (i.e., Sturm-Liouville theorem is satisfied).</p>
-<p>Let’s begin with a diffusion problem on a Retangle (figure below),</p>
+</div>
+<div class="section" id="dirichlet-problem-for-a-rectangle">
+<h2>Dirichlet Problem for a Rectangle<a class="headerlink" href="#dirichlet-problem-for-a-rectangle" title="Permalink to this headline">¶</a></h2>
+<p>Let’s begin with a diffusion problem on a Rectangle (figure below),</p>
 <div class="figure align-default" id="fig12">
 <a class="reference internal image-reference" href="../_images/Dirichlet_1.png"><img alt="../_images/Dirichlet_1.png" src="../_images/Dirichlet_1.png" style="width: 435.40000000000003px; height: 363.8px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">The Dirichlet problem on a retangle.</span><a class="headerlink" href="#fig12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">The Dirichlet problem on a rectangle.</span><a class="headerlink" href="#fig12" title="Permalink to this image">¶</a></p>
 </div>
 <p>the figure above can be written as <a class="reference internal" href="#equation-eq213">(213)</a></p>
 <div class="math notranslate nohighlight" id="equation-eq213">
@@ -385,7 +408,7 @@ u(x,0)      &amp;= 0 \;\; \textrm{  for  } 0\leq x\leq L \\
 u(0,y)      &amp;= u(L,y) = 0 \;\; \textrm{  for  } 0\leq y\leq K \\
 u(x,K)      &amp;= f(x) \;\; \textrm{  for  } 0\leq x\leq L 
 \end{align}\end{split}\]</div>
-<p>The retangle is defined as domain <span class="math notranslate nohighlight">\(\Omega\)</span>. In such problem, we want a function that is harmonic on <span class="math notranslate nohighlight">\(\Omega\)</span>, equals <span class="math notranslate nohighlight">\(f(x)\)</span> on the upper side and zero on the lower side  and two vertical side. Using the same technique of <em>separation of variable</em>, we can assume the structure of <span class="math notranslate nohighlight">\(u\)</span> follows</p>
+<p>The rectangle is defined as domain <span class="math notranslate nohighlight">\(\Omega\)</span>. In such problem, we want a function that is harmonic on <span class="math notranslate nohighlight">\(\Omega\)</span>, equals <span class="math notranslate nohighlight">\(f(x)\)</span> on the upper side and zero on the lower side  and two vertical side. Using the same technique of <em>separation of variable</em>, we can assume the structure of <span class="math notranslate nohighlight">\(u\)</span> follows</p>
 <div class="math notranslate nohighlight" id="equation-eq214">
 <span class="eqno">(214)<a class="headerlink" href="#equation-eq214" title="Permalink to this equation">¶</a></span>\[\begin{align}
 u(x,y) = X(x)Y(y)
@@ -439,13 +462,16 @@ u(x,y) = \sum_{n=1}^{\infty}  \frac{2}{L}\int_{0}^{L}  (f(\xi)\sin(\frac{n\pi \x
 <p>While we only specify boundary condition at the upper end, we can approach the problem the same way if other edges have non-zero boundary conditions. (see figure below)</p>
 <div class="figure align-default" id="fig13">
 <a class="reference internal image-reference" href="../_images/Dirichlet_3.png"><img alt="../_images/Dirichlet_3.png" src="../_images/Dirichlet_3.png" style="width: 863.4000000000001px; height: 482.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The Dirichlet problem on a retangle with four specified boundaries.</span><a class="headerlink" href="#fig13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The Dirichlet problem on a rectangle with four specified boundaries.</span><a class="headerlink" href="#fig13" title="Permalink to this image">¶</a></p>
 </div>
-<p>The solution for the condition above can be decomposed into four cases and each case with only one boundary specified (The lower panel of <a class="reference internal" href="#fig13"><span class="std std-ref">The Dirichlet problem on a retangle with four specified boundaries.</span></a>).  The total solution is the linear combination of the four solution above. i.e.,</p>
+<p>The solution for the condition above can be decomposed into four cases and each case with only one boundary specified (The lower panel of <a class="reference internal" href="#fig13"><span class="std std-ref">The Dirichlet problem on a rectangle with four specified boundaries.</span></a>).  The total solution is the linear combination of the four solution above. i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq224">
 <span class="eqno">(224)<a class="headerlink" href="#equation-eq224" title="Permalink to this equation">¶</a></span>\[\begin{align}
 u(x,y) = \sum_{i=1}^{4}  u_i(x,y)
 \end{align}\]</div>
+</div>
+<div class="section" id="dirichlet-problem-for-a-disk">
+<h2>Dirichlet Problem for a Disk<a class="headerlink" href="#dirichlet-problem-for-a-disk" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
