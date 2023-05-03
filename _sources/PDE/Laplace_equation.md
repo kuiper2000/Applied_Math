@@ -119,9 +119,20 @@ Substitute {eq}`eq222` back to {eq}`eq220`, we have
 ```{math}
 :label: eq223
 \begin{align}
-u(x,y) = \sum_{1}^{\infty}  \frac{2}{L}\int_{0}^{L}  (f(\xi)\sin(\frac{n\pi \xi}{L})d\xi ) \sin(\frac{n\pi x}{L})\frac{\sinh(\frac{n\pi y }{L})}{\sinh (\frac{n\pi K }{L})}
+u(x,y) = \sum_{n=1}^{\infty}  \frac{2}{L}\int_{0}^{L}  (f(\xi)\sin(\frac{n\pi \xi}{L})d\xi ) \sin(\frac{n\pi x}{L})\frac{\sinh(\frac{n\pi y }{L})}{\sinh (\frac{n\pi K }{L})}
 \end{align}
 ```
 
 
+While we only specify boundary condition at the upper end, we can approach the problem the same way if other edges have non-zero boundary conditions. (see figure below)
 
+
+```{figure} Dirichlet_3.png
+---
+name: FIG13
+scale: 20%
+---
+The Dirichlet problem on a retangle with four specified boundaries. 
+```   
+
+The solution for the condition above can be decomposed into four cases with only one boundary specified. (The lower panel of {ref}`FIG13`) 
