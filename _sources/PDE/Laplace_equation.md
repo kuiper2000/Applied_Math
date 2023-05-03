@@ -208,3 +208,12 @@ a_n &= \frac{1}{\pi R^n} \int_{-\pi}^{\pi}f(\xi)\cos(n\xi)d\xi \\
 b_n &= \frac{1}{\pi R^n} \int_{-\pi}^{\pi}f(\xi)\sin(n\xi)d\xi \\
 \end{align}
 ```
+
+Substituting {eq}`eq229` and {eq}`eq230` back to {eq}`eq227`, the complete equation can be written as 
+
+```{math}
+:label: eq231
+\begin{align}
+U(r,\theta) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)d\xi + \frac{1}{\pi}\sum_{n=1}^{\infty} (\frac{r}{R})^n \int_{-\pi}^{\pi} (a_n f(\xi)\cos(n\xi)d\xi\cos(n\theta)+f(\xi)\cos(n\xi)\sin(n\theta)) d\xi
+\end{align}
+```
