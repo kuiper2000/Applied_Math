@@ -169,3 +169,13 @@ We can first apply chain rule to find the diffusion in polar coordinate. (see {r
 \end{align}
 ```
 
+For {eq}`eq226`, we know three basis form a completed solution space. 
+
+
+```{math}
+:label: eq227
+\begin{align}
+1,r^n\cos(n\theta),r^n\sin(n\theta)
+\end{align}
+```
+
