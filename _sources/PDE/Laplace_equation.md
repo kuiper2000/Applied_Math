@@ -135,4 +135,12 @@ scale: 20%
 The Dirichlet problem on a retangle with four specified boundaries. 
 ```   
 
-The solution for the condition above can be decomposed into four cases with only one boundary specified. (The lower panel of {ref}`FIG13`) 
+The solution for the condition above can be decomposed into four cases and each case with only one boundary specified (The lower panel of {ref}`FIG13`).  The total solution is the linear combination of the four solution above. i.e., 
+
+```{math}
+:label: eq224
+\begin{align}
+u(x,y) = \sum_{i=1}^{4}  u_i(x,y)
+\end{align}
+```
+
