@@ -169,13 +169,42 @@ We can first apply chain rule to find the diffusion in polar coordinate. (see {r
 \end{align}
 ```
 
-For {eq}`eq226`, we know three basis form a completed solution space. 
+For {eq}`eq226`, we know three basis, $1,r^n\cos(n\theta),r^n\sin(n\theta)$. form a completed solution space. i.e., 
 
 
 ```{math}
 :label: eq227
 \begin{align}
-1,r^n\cos(n\theta),r^n\sin(n\theta)
+U(r,\theta) = \frac{1}{2}a_0+\sum_{n=1}^{\infty} (a_n r^{n}\cos(n\theta)+b_n r^{n}\sin(n\theta))
 \end{align}
 ```
 
+Using the boundary condition 
+
+
+```{math}
+:label: eq228
+\begin{align}
+U(R,\theta) = \frac{1}{2}a_0+\sum_{n=1}^{\infty} (a_n R^{n}\cos(n\theta)+b_n R^{n}\sin(n\theta))
+\end{align}
+```
+
+$a_0$ and $a_n$ are simply the corresponding Fourier coefficients. 
+
+
+```{math}
+:label: eq229
+\begin{align}
+a_0 = \frac{1}{\pi} \int_{\-pi}^{\pi}f(\xi)d\xi
+\end{align}
+```
+
+and 
+
+```{math}
+:label: eq230
+\begin{align}
+a_n &= \frac{1}{\pi R^n} \int_{\-pi}^{\pi}f(\xi)\cos(n\xi)d\xi \\
+b_n &= \frac{1}{\pi R^n} \int_{\-pi}^{\pi}f(\xi)\sin(n\xi)d\xi \\
+\end{align}
+```

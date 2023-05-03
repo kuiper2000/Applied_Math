@@ -483,11 +483,27 @@ u(x,y) = f(x,y) \; \textrm{  for  } x^2+y^2 = R^2
 <span class="eqno">(226)<a class="headerlink" href="#equation-eq226" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \nabla^2 U(r,\theta) = U_{rr}+\frac{1}{r}U_r+\frac{1}{r^2}U_{\theta\theta} \; \textrm{  for  } -\pi\leq \theta \leq \pi
 \end{align}\]</div>
-<p>For <a class="reference internal" href="#equation-eq226">(226)</a>, we know three basis form a completed solution space.</p>
+<p>For <a class="reference internal" href="#equation-eq226">(226)</a>, we know three basis, <span class="math notranslate nohighlight">\(1,r^n\cos(n\theta),r^n\sin(n\theta)\)</span>. form a completed solution space. i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq227">
 <span class="eqno">(227)<a class="headerlink" href="#equation-eq227" title="Permalink to this equation">¶</a></span>\[\begin{align}
-1,r^n\cos(n\theta),r^n\sin(n\theta)
+U(r,\theta) = \frac{1}{2}a_0+\sum_{n=1}^{\infty} (a_n r^{n}\cos(n\theta)+b_n r^{n}\sin(n\theta))
 \end{align}\]</div>
+<p>Using the boundary condition</p>
+<div class="math notranslate nohighlight" id="equation-eq228">
+<span class="eqno">(228)<a class="headerlink" href="#equation-eq228" title="Permalink to this equation">¶</a></span>\[\begin{align}
+U(R,\theta) = \frac{1}{2}a_0+\sum_{n=1}^{\infty} (a_n R^{n}\cos(n\theta)+b_n R^{n}\sin(n\theta))
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_n\)</span> are simply the corresponding Fourier coefficients.</p>
+<div class="math notranslate nohighlight" id="equation-eq229">
+<span class="eqno">(229)<a class="headerlink" href="#equation-eq229" title="Permalink to this equation">¶</a></span>\[\begin{align}
+a_0 = \frac{1}{\pi} \int_{\-pi}^{\pi}f(\xi)d\xi
+\end{align}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq230">
+<span class="eqno">(230)<a class="headerlink" href="#equation-eq230" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+a_n &amp;= \frac{1}{\pi R^n} \int_{\-pi}^{\pi}f(\xi)\cos(n\xi)d\xi \\
+b_n &amp;= \frac{1}{\pi R^n} \int_{\-pi}^{\pi}f(\xi)\sin(n\xi)d\xi \\
+\end{align}\end{split}\]</div>
 </div>
 </div>
 
