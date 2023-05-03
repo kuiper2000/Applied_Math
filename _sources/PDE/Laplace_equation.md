@@ -195,7 +195,7 @@ $a_0$ and $a_n$ are simply the corresponding Fourier coefficients.
 ```{math}
 :label: eq229
 \begin{align}
-a_0 = \frac{1}{\pi} \int_{\-pi}^{\pi}f(\xi)d\xi
+a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi}f(\xi)d\xi
 \end{align}
 ```
 
@@ -204,7 +204,7 @@ and
 ```{math}
 :label: eq230
 \begin{align}
-a_n &= \frac{1}{\pi R^n} \int_{\-pi}^{\pi}f(\xi)\cos(n\xi)d\xi \\
-b_n &= \frac{1}{\pi R^n} \int_{\-pi}^{\pi}f(\xi)\sin(n\xi)d\xi \\
+a_n &= \frac{1}{\pi R^n} \int_{-\pi}^{\pi}f(\xi)\cos(n\xi)d\xi \\
+b_n &= \frac{1}{\pi R^n} \int_{-\pi}^{\pi}f(\xi)\sin(n\xi)d\xi \\
 \end{align}
 ```
