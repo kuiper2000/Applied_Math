@@ -148,3 +148,5 @@ u(x,y) = \sum_{i=1}^{4}  u_i(x,y)
 
 ## Dirichlet Problem for a Disk
 
+If today, we setup a problem on a disk. It's a rare case when we use Cartesian coordinate but not so rare when we are using polar coordinate i.e., $x=r\cos(\theta)$ and $y=r\sin(\theta)$
+
