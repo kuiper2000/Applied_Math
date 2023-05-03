@@ -472,10 +472,16 @@ u(x,y) = \sum_{i=1}^{4}  u_i(x,y)
 </div>
 <div class="section" id="dirichlet-problem-for-a-disk">
 <h2>Dirichlet Problem for a Disk<a class="headerlink" href="#dirichlet-problem-for-a-disk" title="Permalink to this headline">¶</a></h2>
-<p>If today, we setup a problem on a disk (<span class="math notranslate nohighlight">\(\Omega \; \in x^2+y^2&lt;R^2\)</span>). It’s a rare case when we use Cartesian coordinate but not so rare when we are using polar coordinate i.e., <span class="math notranslate nohighlight">\(x=r\cos(\theta)\)</span> and <span class="math notranslate nohighlight">\(y=r\sin(\theta)\)</span>. With given boundary condition,</p>
+<p>If today, we setup a problem on a disk (<span class="math notranslate nohighlight">\(\Omega \; \in x^2+y^2&lt;R^2\)</span>). It’s a rare case when we use Cartesian coordinate but not so rare when we are using polar coordinate i.e., <span class="math notranslate nohighlight">\(x=r\cos(\theta)\)</span> and <span class="math notranslate nohighlight">\(y=r\sin(\theta)\)</span>. One can consider Dirichlet’s approach is an alternative way to solve the polar coordinate diffusion problem.</p>
+<p>With given boundary condition,</p>
 <div class="math notranslate nohighlight" id="equation-eq225">
 <span class="eqno">(225)<a class="headerlink" href="#equation-eq225" title="Permalink to this equation">¶</a></span>\[\begin{align}
 u(x,y) = f(x,y) \; \textrm{  for  } x^2+y^2 = R^2
+\end{align}\]</div>
+<p>We can first apply chain rule to find the diffusion in polar coordinate. (see <a class="reference internal" href="../ODE/Special_function.html#specialf"><span class="std std-ref">Week 9 and 10:  Special Functions</span></a>)</p>
+<div class="math notranslate nohighlight" id="equation-eq226">
+<span class="eqno">(226)<a class="headerlink" href="#equation-eq226" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\nabla^2 U(r,\theta) = U_{rr}+\frac{1}{r}U_r+\frac{1}{r^2}U_{\theta\theta} \; \textrm{  for  } -\pi\leq \theta \leq \pi
 \end{align}\]</div>
 </div>
 </div>
