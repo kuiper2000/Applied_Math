@@ -391,7 +391,7 @@ title="Print to PDF"
 <span id="laplace"></span><h1>Week 13:  Laplace Equation<a class="headerlink" href="#week-13-laplace-equation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="problem-setup-and-initial-conditions">
 <h2>Problem Setup and Initial Conditions<a class="headerlink" href="#problem-setup-and-initial-conditions" title="Permalink to this headline">¶</a></h2>
-<p>While Laplace equation is nothing new to readers since we have introduced two related special functions in the chapter of <a class="reference internal" href="../ODE/Special_function.html#specialf"><span class="std std-ref">Week 9 and 10:  Special Functions</span></a>, Legendre polynomial and Bessel function. While those special functions form a complete set of solution of diffusion equation for the corresponding coordinate, there is an alternative way of solving diffusion problem when certain boundary conditions are satisfied. (i.e., Sturm-Liouville theorem is satisfied).</p>
+<p>Laplace equation is nothing new to readers since we have introduced two related special functions in the chapter of <a class="reference internal" href="../ODE/Special_function.html#specialf"><span class="std std-ref">Week 9 and 10:  Special Functions</span></a>, Legendre polynomial and Bessel function. While those special functions form a complete set of solution of diffusion equation for the corresponding coordinate, there is an alternative way of solving diffusion problem when certain boundary conditions are satisfied. (i.e., Sturm-Liouville theorem is satisfied).</p>
 </div>
 <div class="section" id="dirichlet-problem-for-a-rectangle">
 <h2>Dirichlet Problem for a Rectangle<a class="headerlink" href="#dirichlet-problem-for-a-rectangle" title="Permalink to this headline">¶</a></h2>
@@ -461,7 +461,7 @@ u(x,y) = \sum_{n=1}^{\infty}  \frac{2}{L}\int_{0}^{L}  (f(\xi)\sin(\frac{n\pi \x
 \end{align}\]</div>
 <p>While we only specify boundary condition at the upper end, we can approach the problem the same way if other edges have non-zero boundary conditions. (see figure below)</p>
 <div class="figure align-default" id="fig13">
-<a class="reference internal image-reference" href="../_images/Dirichlet_3.png"><img alt="../_images/Dirichlet_3.png" src="../_images/Dirichlet_3.png" style="width: 863.4000000000001px; height: 482.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/Dirichlet_3.png"><img alt="../_images/Dirichlet_3.png" src="../_images/Dirichlet_3.png" style="width: 895.4000000000001px; height: 482.0px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The Dirichlet problem on a rectangle with four specified boundaries.</span><a class="headerlink" href="#fig13" title="Permalink to this image">¶</a></p>
 </div>
 <p>The solution for the condition above can be decomposed into four cases and each case with only one boundary specified (The lower panel of <a class="reference internal" href="#fig13"><span class="std std-ref">The Dirichlet problem on a rectangle with four specified boundaries.</span></a>).  The total solution is the linear combination of the four solution above. i.e.,</p>
@@ -472,7 +472,7 @@ u(x,y) = \sum_{i=1}^{4}  u_i(x,y)
 </div>
 <div class="section" id="dirichlet-problem-for-a-disk">
 <h2>Dirichlet Problem for a Disk<a class="headerlink" href="#dirichlet-problem-for-a-disk" title="Permalink to this headline">¶</a></h2>
-<p>If today, we setup a problem on a disk (<span class="math notranslate nohighlight">\(\Omega \; \in x^2+y^2&lt;R^2\)</span>). It’s a rare case when we use Cartesian coordinate but not so rare when we are using polar coordinate i.e., <span class="math notranslate nohighlight">\(x=r\cos(\theta)\)</span> and <span class="math notranslate nohighlight">\(y=r\sin(\theta)\)</span>. One can consider Dirichlet’s approach is an alternative way to solve the polar coordinate diffusion problem.</p>
+<p>If today, we setup a problem on a disk ( <span class="math notranslate nohighlight">\(\Omega \in x^2+y^2 \leq R^2\)</span>). It’s a rare case when we use Cartesian coordinate but not so rare when we are using polar coordinate i.e., <span class="math notranslate nohighlight">\(x=r\cos(\theta)\)</span> and <span class="math notranslate nohighlight">\(y=r\sin(\theta)\)</span>. One can consider Dirichlet’s approach is an alternative way to solve the polar coordinate diffusion problem.</p>
 <p>With given boundary condition,</p>
 <div class="math notranslate nohighlight" id="equation-eq225">
 <span class="eqno">(225)<a class="headerlink" href="#equation-eq225" title="Permalink to this equation">¶</a></span>\[\begin{align}
@@ -510,6 +510,10 @@ b_n &amp;= \frac{1}{\pi R^n} \int_{-\pi}^{\pi}f(\xi)\sin(n\xi)d\xi \\
 U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)d\xi + \\
 &amp; \frac{1}{\pi}\sum_{n=1}^{\infty} (\frac{r}{R})^n \int_{-\pi}^{\pi} (f(\xi)\cos(n\xi)\cos(n\theta)+f(\xi)\cos(n\xi)\sin(n\theta)) d\xi
 \end{align}\end{split}\]</div>
+<div class="admonition-example-1 admonition">
+<p class="admonition-title">Example 1</p>
+<p>Find the solution</p>
+</div>
 </div>
 </div>
 

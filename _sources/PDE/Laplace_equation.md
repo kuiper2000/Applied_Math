@@ -1,7 +1,7 @@
 (Laplace)=
 # Week 13:  Laplace Equation  
 ## Problem Setup and Initial Conditions
-While Laplace equation is nothing new to readers since we have introduced two related special functions in the chapter of {ref}`SpecialF`, Legendre polynomial and Bessel function. While those special functions form a complete set of solution of diffusion equation for the corresponding coordinate, there is an alternative way of solving diffusion problem when certain boundary conditions are satisfied. (i.e., Sturm-Liouville theorem is satisfied). 
+Laplace equation is nothing new to readers since we have introduced two related special functions in the chapter of {ref}`SpecialF`, Legendre polynomial and Bessel function. While those special functions form a complete set of solution of diffusion equation for the corresponding coordinate, there is an alternative way of solving diffusion problem when certain boundary conditions are satisfied. (i.e., Sturm-Liouville theorem is satisfied). 
 
 
 
@@ -148,7 +148,7 @@ u(x,y) = \sum_{i=1}^{4}  u_i(x,y)
 
 ## Dirichlet Problem for a Disk
 
-If today, we setup a problem on a disk ($\Omega \; \in x^2+y^2<R^2$). It's a rare case when we use Cartesian coordinate but not so rare when we are using polar coordinate i.e., $x=r\cos(\theta)$ and $y=r\sin(\theta)$. One can consider Dirichlet's approach is an alternative way to solve the polar coordinate diffusion problem. 
+If today, we setup a problem on a disk ( $\Omega \in x^2+y^2 \leq R^2$). It's a rare case when we use Cartesian coordinate but not so rare when we are using polar coordinate i.e., $x=r\cos(\theta)$ and $y=r\sin(\theta)$. One can consider Dirichlet's approach is an alternative way to solve the polar coordinate diffusion problem. 
 
 
 With given boundary condition, 
@@ -218,3 +218,8 @@ U(r,\theta) = & \frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)d\xi + \\
 & \frac{1}{\pi}\sum_{n=1}^{\infty} (\frac{r}{R})^n \int_{-\pi}^{\pi} (f(\xi)\cos(n\xi)\cos(n\theta)+f(\xi)\cos(n\xi)\sin(n\theta)) d\xi
 \end{align}
 ```
+
+
+:::{admonition} Example 1
+Find the solution 
+:::
