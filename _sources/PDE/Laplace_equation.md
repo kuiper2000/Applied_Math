@@ -237,11 +237,11 @@ U(r,\theta) = & \frac{1}{2\pi}\int_{-\pi}^{\pi}\xi^2 d\xi + \\
 The integration used are 
 
 ```{math}
-\frac{1}{\pi} \int_{-\pi}^{\pi} \xi^2 cos(n\xi)d\xi = \frac{4(-1)^n}{n^2}
+\frac{1}{\pi} \int_{-\pi}^{\pi} \xi^2 \cos(n\xi)d\xi = \frac{4(-1)^n}{n^2}
 ```
 
 and 
 ```{math}
-\frac{1}{\pi} \int_{-\pi}^{\pi} \xi^2 sin(n\xi)d\xi = 0
+\frac{1}{\pi} \int_{-\pi}^{\pi} \xi^2 \sin(n\xi)d\xi = 0
 ```
 :::
