@@ -229,7 +229,7 @@ If the disk has radius $R=4$ and $U(4,\theta) = \theta^2$, then the solution by 
 
 \begin{align}
 U(r,\theta) = & \frac{1}{2\pi}\int_{-\pi}^{\pi}\xi^2 d\xi + \\
-& \frac{1}{\pi}\sum_{n=1}^{\infty} (\frac{r}{4})^n \int_{-\pi}^{\pi} (\xi^2\cos(n\xi)\cos(n\theta)+\xi^2\cos(n\xi)\sin(n\theta)) d\xi
+& \frac{1}{\pi}\sum_{n=1}^{\infty} (\frac{r}{4})^n \int_{-\pi}^{\pi} (\xi^2\cos(n\xi)\cos(n\theta)+\xi^2\cos(n\xi)\sin(n\theta)) d\xi \\
 = & \frac{1}{3}\pi^2 + \sum_{n=1}^{\infty}\frac{4(-1)^n}{n^2}
 \end{align}
 ```
@@ -277,7 +277,12 @@ so
 
 ```{math}
 \begin{align}
-U(3,\theta) = 3^2\cos^2(\theta)\times 3^2\sin^2(\theta)
+U(3,\theta) = 3^2\cos^2(\theta)\times 3^2\sin^2(\theta) = f(\theta)
 \end{align}
 ```
+
+
+Solve the problem using {eq}`eq231`
+
+
 :::
