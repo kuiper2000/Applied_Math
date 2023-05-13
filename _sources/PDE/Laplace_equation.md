@@ -380,3 +380,10 @@ This leads to the final form of _Poisson Integral_
 U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{1-r^2}{1+r^2-2r\cos(\xi-\theta)}f(\xi)d\xi
 ```
 
+
+For a disk with radius R about the origin, a change of variables yields the Poisson solution. 
+
+```{math}
+U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{R^2-r^2}{R^2+r^2-2rR\cos(\xi-\theta)}f(\xi)d\xi
+```
+
