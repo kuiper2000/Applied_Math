@@ -245,3 +245,39 @@ and
 \frac{1}{\pi} \int_{-\pi}^{\pi} \xi^2 \sin(n\xi)d\xi = 0
 ```
 :::
+
+
+
+:::{admonition} Example 2
+Solving the Dirichlet problem
+
+```{math}
+\begin{align}
+& \nabla^2 u(x,y) = 0 \; \; \textrm{for x^2+y^2<9}
+& u(x,y) = x^2y^2
+\end{align}
+```
+
+We first convert this problem to polar coordinate, letting 
+
+```{math}
+\begin{align}
+U(r,\theta) = u(r\cos(\theta),r\sin(\theta))
+\end{align}
+```
+
+and the boundary condition is 
+
+```{math}
+\begin{align}
+x=3\cos(\theta), y=3\sin(\theta)
+\end{align}
+```
+so 
+
+```{math}
+\begin{align}
+U(3,\theta) = 3^2\cos^2(\theta)\times 3^2\sin^2(\theta)
+\end{align}
+```
+:::
