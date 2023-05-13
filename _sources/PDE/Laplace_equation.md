@@ -374,5 +374,9 @@ To find the real part of $\frac{1+re^{i\xi}}{1-re^{i\xi}}$, we can apply the fol
 
 and the real part is $\frac{1-r^2}{1+r^2-2r\cos(\xi)}$
 
+This leads to the final form of _Poisson Integral_
 
+```{math}
+U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{1-r^2}{1+r^2-2r\cos(\xi-\theta)}f(\xi)d\xi
+```
 
