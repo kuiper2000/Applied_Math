@@ -289,4 +289,22 @@ U(r,\theta) = & \frac{1}{2\pi}\int_{-\pi}^{\pi}81\cos^2(\xi)\sin^2(\xi) d\xi + \
 \end{align}
 ```
 
+All we need is to find the integral of 
+
+```{math}
+\begin{align}
+\int_{-\pi}^{\pi} 81\cos^{2}(\xi)\sin^{2}(\xi)d\xi = \frac{81\pi}{4} 
+\end{align}
+```
+
+
+and 
+
+```{math}
+\int^{\pi}_{-\pi} 81\cos^{2}(\xi)\sin^{2}(\xi)d\xi = 
+\begin{cases}
+  0 & \text{if }n\neq 4 \\
+  \frac{-81\pi}{8} & \text{if }n= 4
+\end{cases}
+```
 :::
