@@ -483,14 +483,17 @@ U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}81\cos^2(\xi)\sin^2(\xi) d\xi
 <h2>Poisson Integral Formula<a class="headerlink" href="#poisson-integral-formula" title="Permalink to this headline">¶</a></h2>
 <p>Poisson integral is a technique of writing a series solution into an integral form.</p>
 <p>In a special case, where <span class="math notranslate nohighlight">\(R=1\)</span> and <span class="math notranslate nohighlight">\(U(1,\theta)=f(\theta)\)</span></p>
-<div class="math notranslate nohighlight">
-\[U(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi}[1+2\sum_{n=1}^{\infty}r^n\cos(n(\xi-\theta))]f(\xi)d\xi\]</div>
+<div class="math notranslate nohighlight" id="equation-eq232">
+<span class="eqno">(232)<a class="headerlink" href="#equation-eq232" title="Permalink to this equation">¶</a></span>\[U(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi}[1+2\sum_{n=1}^{\infty}r^n\cos(n(\xi-\theta))]f(\xi)d\xi\]</div>
 <p>Define a <em>Poisson Kernel</em></p>
-<div class="math notranslate nohighlight">
-\[P(r,\xi) = \frac{1}{2\pi}[1+2\sum_{n=1}^{\infty} r^n \cos(n\xi)]\]</div>
+<div class="math notranslate nohighlight" id="equation-eq233">
+<span class="eqno">(233)<a class="headerlink" href="#equation-eq233" title="Permalink to this equation">¶</a></span>\[P(r,\xi) = \frac{1}{2\pi}[1+2\sum_{n=1}^{\infty} r^n \cos(n\xi)]\]</div>
 <p>so</p>
-<div class="math notranslate nohighlight">
-\[U(r,\theta) =\int_{-\pi}^{\pi} P(r,\xi-\theta)f(\xi)d\xi\]</div>
+<div class="math notranslate nohighlight" id="equation-eq234">
+<span class="eqno">(234)<a class="headerlink" href="#equation-eq234" title="Permalink to this equation">¶</a></span>\[U(r,\theta) =\int_{-\pi}^{\pi} P(r,\xi-\theta)f(\xi)d\xi\]</div>
+<p>Thinking of a point inside the unit disk as a complex number and also having a polar coordinates <span class="math notranslate nohighlight">\((r,\xi)\)</span>. Use the Euler’s formula to write</p>
+<div class="math notranslate nohighlight" id="equation-eq235">
+<span class="eqno">(235)<a class="headerlink" href="#equation-eq235" title="Permalink to this equation">¶</a></span>\[z = re^{i\xi} = r\cos(\xi)+i\sin(\xi)\]</div>
 </div>
 </div>
 

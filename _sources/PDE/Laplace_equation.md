@@ -319,17 +319,27 @@ Poisson integral is a technique of writing a series solution into an integral fo
 In a special case, where $R=1$ and $U(1,\theta)=f(\theta)$
 
 ```{math}
+:label: eq232
 U(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi}[1+2\sum_{n=1}^{\infty}r^n\cos(n(\xi-\theta))]f(\xi)d\xi
 ```
 
 Define a _Poisson Kernel_
 
 ```{math}
+:label: eq233
 P(r,\xi) = \frac{1}{2\pi}[1+2\sum_{n=1}^{\infty} r^n \cos(n\xi)]
 ```
 
 so 
 
 ```{math}
+:label: eq234
 U(r,\theta) =\int_{-\pi}^{\pi} P(r,\xi-\theta)f(\xi)d\xi
+```
+
+Thinking of a point inside the unit disk as a complex number and also having a polar coordinates $(r,\xi)$. Use the Euler's formula to write 
+
+```{math}
+:label: eq235
+z = re^{i\xi} = r\cos(\xi)+i\sin(\xi)
 ```
