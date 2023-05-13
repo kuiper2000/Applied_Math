@@ -366,7 +366,8 @@ To find the real part of $\frac{1+re^{i\xi}}{1-re^{i\xi}}$, we can apply the fol
 ```{math}
 :label: eq238
 \frac{1+re^{i\xi}}{1-re^{i\xi}} & = \frac{1+re^{i\xi}}{1-re^{i\xi}}(\frac{1-re^{i\xi}}{1-re^{i\xi}}) \\
-& = \frac{1-r^2+r(e^{i\xi}-e^{i\xi})}{1+r^2-r(e^{i\xi}+e^{i\xi})}
+& = \frac{1-r^2+r(e^{i\xi}-e^{-i\xi})}{1+r^2-r(e^{i\xi}+e^{-i\xi})} \\
+& = \frac{1-r^2+r(\cos(\xi)+i\sin(\xi)-\cos(\xi)+i\sin(\xi))}{1+r^2-r(\cos(\xi)+i\sin(\xi)+\cos(\xi)-i\sin(\xi))}
 ``` 
 
 
