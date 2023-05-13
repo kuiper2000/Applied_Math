@@ -355,7 +355,10 @@ Substitute {eq}`eq236` back into {eq}`eq234`, we can find
 
 ```{math}
 :label: eq236
-1+2\sum_{n=1}^{\infty}\cos(n\xi) =\Re (1+2\sum_{n=1}^{\infty}z^n) = \Re (1+2\frac{z}{1-z}) =\Re (\frac{1+z}{1-z})
+1+2\sum_{n=1}^{\infty}\cos(n\xi) & =\Re (1+2\sum_{n=1}^{\infty}z^n) \\
+&= \Re(1+2\frac{z}{1-z}) \\
+& =\Re(\frac{1+z}{1-z})  \\
+& = \Re(\frac{1+re^{i\xi}}{1-re^{i\xi}})
 ```
 
 
