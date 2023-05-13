@@ -310,3 +310,20 @@ All we need is to find the integral of
 \int^{\pi}_{-\pi} 81\cos^{2}(\xi)\sin^{2}(\xi)\sin(n\xi)d\xi = 0 
 ```
 :::
+
+
+## Poisson Integral Formula
+
+Poisson integral is a technique of writing a series solution into an integral form. 
+
+In a special case, where $R=1$ and $U(1,\theta)=f(\theta)$
+
+```{math}
+U(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi}[1+2\sum_{n=1}^{\infty}r^n]
+```
+
+Define a _Poisson Kernel_
+
+```{math}
+P(r,\xi) = \frac{1}{2\pi}[1+2\sum_{n=1}^{\infty} r^n \cos(n\xi)]
+```
