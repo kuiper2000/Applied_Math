@@ -297,14 +297,16 @@ All we need is to find the integral of
 \end{align}
 ```
 
-
-and 
-
 ```{math}
-\int^{\pi}_{-\pi} 81\cos^{2}(\xi)\sin^{2}(\xi)d\xi = 
+\int^{\pi}_{-\pi} 81\cos^{2}(\xi)\sin^{2}(\xi)\cos(n\xi)d\xi = 
 \begin{cases}
   0 & \text{if }n\neq 4 \\
   \frac{-81\pi}{8} & \text{if }n= 4
 \end{cases}
+```
+,and 
+
+```{math}
+\int^{\pi}_{-\pi} 81\cos^{2}(\xi)\sin^{2}(\xi)\sin(n\xi)d\xi = 0 
 ```
 :::
