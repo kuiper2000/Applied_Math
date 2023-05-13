@@ -222,4 +222,26 @@ U(r,\theta) = & \frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)d\xi + \\
 
 :::{admonition} Example 1
 Find the solution 
+
+If the disk has radius $R=4$ and $U(4,\theta) = \theta^2$, then the solution by {eq}`eq231` is 
+
+```{math}
+
+\begin{align}
+U(r,\theta) = & \frac{1}{2\pi}\int_{-\pi}^{\pi}\xi^2 d\xi + \\
+& \frac{1}{\pi}\sum_{n=1}^{\infty} (\frac{r}{4})^n \int_{-\pi}^{\pi} (\xi^2\cos(n\xi)\cos(n\theta)+\xi^2\cos(n\xi)\sin(n\theta)) d\xi
+= & \frac{1}{3}\pi^2 + \sum_{n=1}^{\infty}\frac{4(-1)^n}{n^2}
+\end{align}
+```
+
+The integration used are 
+
+```{math}
+\frac{1}{\pi} \int_{-\pi}^{\pi} \xi^2 cos(n\xi)d\xi = \frac{4(-1)^n}{n^2}
+```
+
+and 
+```{math}
+\frac{1}{\pi} \int_{-\pi}^{\pi} \xi^2 sin(n\xi)d\xi = 0
+```
 :::
