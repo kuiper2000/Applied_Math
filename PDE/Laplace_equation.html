@@ -496,13 +496,17 @@ U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}81\cos^2(\xi)\sin^2(\xi) d\xi
 <span class="eqno">(235)<a class="headerlink" href="#equation-eq235" title="Permalink to this equation">¶</a></span>\[z = re^{i\xi} = r[\cos(\xi)+i\sin(\xi)]\]</div>
 <p>then</p>
 <div class="math notranslate nohighlight" id="equation-eq236">
-<span class="eqno">(237)<a class="headerlink" href="#equation-eq236" title="Permalink to this equation">¶</a></span>\[z^n = r^n e^{in\xi} = r^n [\cos(n\xi)+i\sin(n\xi)]\]</div>
-<p>Substitute <a class="reference internal" href="#equation-eq236">(237)</a> back into <a class="reference internal" href="#equation-eq234">(234)</a>, we can find</p>
-<div class="math notranslate nohighlight" id="equation-eq236">
-<span class="eqno">(237)<a class="headerlink" href="#equation-eq236" title="Permalink to this equation">¶</a></span>\[\begin{split}1+2\sum_{n=1}^{\infty}\cos(n\xi) &amp; =\Re (1+2\sum_{n=1}^{\infty}z^n) \\
+<span class="eqno">(236)<a class="headerlink" href="#equation-eq236" title="Permalink to this equation">¶</a></span>\[z^n = r^n e^{in\xi} = r^n [\cos(n\xi)+i\sin(n\xi)]\]</div>
+<p>Substitute <a class="reference internal" href="#equation-eq236">(236)</a> back into <a class="reference internal" href="#equation-eq234">(234)</a>, we can find</p>
+<div class="math notranslate nohighlight" id="equation-eq237">
+<span class="eqno">(237)<a class="headerlink" href="#equation-eq237" title="Permalink to this equation">¶</a></span>\[\begin{split}1+2\sum_{n=1}^{\infty}\cos(n\xi) &amp; =\Re (1+2\sum_{n=1}^{\infty}z^n) \\
 &amp;= \Re(1+2\frac{z}{1-z}) \\
 &amp; =\Re(\frac{1+z}{1-z})  \\
 &amp; = \Re(\frac{1+re^{i\xi}}{1-re^{i\xi}})\end{split}\]</div>
+<p>To find the real part of <span class="math notranslate nohighlight">\(\frac{1+re^{i\xi}}{1-re^{i\xi}}\)</span>, we can apply the following algebraic manipulation,</p>
+<div class="math notranslate nohighlight" id="equation-eq238">
+<span class="eqno">(238)<a class="headerlink" href="#equation-eq238" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{1+re^{i\xi}}{1-re^{i\xi}} &amp; = \frac{1+re^{i\xi}}{1-re^{i\xi}}(\frac{1-re^{i\xi}}{1-re^{i\xi}}) \\
+&amp; = \frac{1-r^2+r(e^{i\xi}-e^{i\xi})}{1+r^2-r(e^{i\xi}+e^{i\xi})}\end{split}\]</div>
 </div>
 </div>
 

@@ -354,12 +354,20 @@ z^n = r^n e^{in\xi} = r^n [\cos(n\xi)+i\sin(n\xi)]
 Substitute {eq}`eq236` back into {eq}`eq234`, we can find 
 
 ```{math}
-:label: eq236
+:label: eq237
 1+2\sum_{n=1}^{\infty}\cos(n\xi) & =\Re (1+2\sum_{n=1}^{\infty}z^n) \\
 &= \Re(1+2\frac{z}{1-z}) \\
 & =\Re(\frac{1+z}{1-z})  \\
 & = \Re(\frac{1+re^{i\xi}}{1-re^{i\xi}})
 ```
+
+To find the real part of $\frac{1+re^{i\xi}}{1-re^{i\xi}}$, we can apply the following algebraic manipulation, 
+
+```{math}
+:label: eq238
+\frac{1+re^{i\xi}}{1-re^{i\xi}} & = \frac{1+re^{i\xi}}{1-re^{i\xi}}(\frac{1-re^{i\xi}}{1-re^{i\xi}}) \\
+& = \frac{1-r^2+r(e^{i\xi}-e^{i\xi})}{1+r^2-r(e^{i\xi}+e^{i\xi})}
+``` 
 
 
 
