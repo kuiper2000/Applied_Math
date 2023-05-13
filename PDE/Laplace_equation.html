@@ -484,10 +484,13 @@ U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}81\cos^2(\xi)\sin^2(\xi) d\xi
 <p>Poisson integral is a technique of writing a series solution into an integral form.</p>
 <p>In a special case, where <span class="math notranslate nohighlight">\(R=1\)</span> and <span class="math notranslate nohighlight">\(U(1,\theta)=f(\theta)\)</span></p>
 <div class="math notranslate nohighlight">
-\[U(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi}[1+2\sum_{n=1}^{\infty}r^n]\]</div>
+\[U(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi}[1+2\sum_{n=1}^{\infty}r^n\cos(n(\xi-\theta))]f(\xi)d\xi\]</div>
 <p>Define a <em>Poisson Kernel</em></p>
 <div class="math notranslate nohighlight">
 \[P(r,\xi) = \frac{1}{2\pi}[1+2\sum_{n=1}^{\infty} r^n \cos(n\xi)]\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[U(r,\theta) =\int_{-\pi}^{\pi} P(r,\xi-\theta)f(\xi)d\xi\]</div>
 </div>
 </div>
 

@@ -319,11 +319,17 @@ Poisson integral is a technique of writing a series solution into an integral fo
 In a special case, where $R=1$ and $U(1,\theta)=f(\theta)$
 
 ```{math}
-U(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi}[1+2\sum_{n=1}^{\infty}r^n]
+U(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi}[1+2\sum_{n=1}^{\infty}r^n\cos(n(\xi-\theta))]f(\xi)d\xi
 ```
 
 Define a _Poisson Kernel_
 
 ```{math}
 P(r,\xi) = \frac{1}{2\pi}[1+2\sum_{n=1}^{\infty} r^n \cos(n\xi)]
+```
+
+so 
+
+```{math}
+U(r,\theta) =\int_{-\pi}^{\pi} P(r,\xi-\theta)f(\xi)d\xi
 ```
