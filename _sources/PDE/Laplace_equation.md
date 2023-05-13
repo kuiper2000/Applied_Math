@@ -341,5 +341,22 @@ Thinking of a point inside the unit disk as a complex number and also having a p
 
 ```{math}
 :label: eq235
-z = re^{i\xi} = r\cos(\xi)+i\sin(\xi)
+z = re^{i\xi} = r[\cos(\xi)+i\sin(\xi)]
 ```
+
+then 
+
+```{math}
+:label: eq236
+z^n = r^n e^{in\xi} = r^n [\cos(n\xi)+i\sin(n\xi)]
+```
+
+Substitute {eq}`eq236` back into {eq}`eq234`, we can find 
+
+```{math}
+:label: eq236
+1+2\sum_{n=1}^{\infty}\cos(n\xi) =\Re (1+2\sum_{n=1}^{\infty}z^n)
+```
+
+
+
