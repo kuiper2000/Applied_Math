@@ -625,11 +625,11 @@ U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}81\cos^2(\xi)\sin^2(\xi) d\xi
 &amp; = \frac{1-r^2}{1+r^2-2r\cos(\xi)}+i \frac{2r\sin(\xi)}{1+r^2-2r\cos(\xi)}\end{split}\]</div>
 <p>and the real part is <span class="math notranslate nohighlight">\(\frac{1-r^2}{1+r^2-2r\cos(\xi)}\)</span></p>
 <p>This leads to the final form of <em>Poisson Integral</em></p>
-<div class="math notranslate nohighlight">
-\[U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{1-r^2}{1+r^2-2r\cos(\xi-\theta)}f(\xi)d\xi\]</div>
+<div class="math notranslate nohighlight" id="equation-eq239">
+<span class="eqno">(239)<a class="headerlink" href="#equation-eq239" title="Permalink to this equation">¶</a></span>\[U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{1-r^2}{1+r^2-2r\cos(\xi-\theta)}f(\xi)d\xi\]</div>
 <p>For a disk with radius R about the origin, a change of variables yields the Poisson solution.</p>
-<div class="math notranslate nohighlight">
-\[U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{R^2-r^2}{R^2+r^2-2rR\cos(\xi-\theta)}f(\xi)d\xi\]</div>
+<div class="math notranslate nohighlight" id="equation-eq240">
+<span class="eqno">(240)<a class="headerlink" href="#equation-eq240" title="Permalink to this equation">¶</a></span>\[U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{R^2-r^2}{R^2+r^2-2rR\cos(\xi-\theta)}f(\xi)d\xi\]</div>
 <div class="admonition-example-3 admonition">
 <p class="admonition-title">Example 3</p>
 <p>Find the Poisson Integral of example 1.</p>
@@ -646,6 +646,12 @@ U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}81\cos^2(\xi)\sin^2(\xi) d\xi
 <a class="reference internal image-reference" href="../_images/Neumann.png"><img alt="../_images/Neumann.png" src="../_images/Neumann.png" style="width: 348.20000000000005px; height: 248.4px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">The Neumann boundary condition.</span><a class="headerlink" href="#fig14" title="Permalink to this image">¶</a></p>
 </div>
+<p>Here, we first define the unit normal vector and unit tangent vector.</p>
+<div class="math notranslate nohighlight" id="equation-eq241">
+<span class="eqno">(241)<a class="headerlink" href="#equation-eq241" title="Permalink to this equation">¶</a></span>\[\mathbf{T}(s) = \frac{dx}{ds}\mathbf{i} +\frac{dy}{ds}\mathbf{i}\]</div>
+<p>and the unit normal vector</p>
+<div class="math notranslate nohighlight" id="equation-eq242">
+<span class="eqno">(242)<a class="headerlink" href="#equation-eq242" title="Permalink to this equation">¶</a></span>\[\mathbf{T}(s) = \frac{dx}{ds}\mathbf{i} +\frac{dy}{ds}\mathbf{i}\]</div>
 </div>
 </div>
 

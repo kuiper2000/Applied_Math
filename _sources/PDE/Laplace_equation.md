@@ -377,6 +377,7 @@ and the real part is $\frac{1-r^2}{1+r^2-2r\cos(\xi)}$
 This leads to the final form of _Poisson Integral_
 
 ```{math}
+:label: eq239
 U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{1-r^2}{1+r^2-2r\cos(\xi-\theta)}f(\xi)d\xi
 ```
 
@@ -384,6 +385,7 @@ U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{1-r^2}{1+r^2-2r\cos(\xi-\the
 For a disk with radius R about the origin, a change of variables yields the Poisson solution. 
 
 ```{math}
+:label: eq240
 U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{R^2-r^2}{R^2+r^2-2rR\cos(\xi-\theta)}f(\xi)d\xi
 ```
 
@@ -412,4 +414,16 @@ The Neumann boundary condition.
 ```   
 
 
+Here, we first define the unit normal vector and unit tangent vector. 
 
+```{math}
+:label: eq241
+\mathbf{T}(s) = \frac{dx}{ds}\mathbf{i} +\frac{dy}{ds}\mathbf{i}
+``` 
+
+and the unit normal vector 
+
+```{math}
+:label: eq242
+\mathbf{T}(s) = \frac{dx}{ds}\mathbf{i} +\frac{dy}{ds}\mathbf{i}
+``` 
