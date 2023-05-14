@@ -394,7 +394,7 @@ Following similar veins, we take Fourier transform of the entire heat diffusion 
 ```{math}
 :label: eq153
 \begin{align}
-T_n^{'}(t)  & = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + \frac{2}{L}\int_{0}^{L} u(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi \\
+T_n^{'}(t)  & = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + \frac{2}{L}\int_{0}^{L} F(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi \\
 & = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + B_n(t)
 \end{align}
 ``` 
@@ -468,8 +468,8 @@ For certain cases, the heat diffusion does not necessarily happen on a stick or 
 ```{math}
 :label: eq160
 \begin{align}
-f(x) &= \sum_{n=-\infty}^{\infty} a_n\cos(\frac{n\pi x}{L})+b_n\sin(\frac{n\pi x}{L}) \\
-     &= \sum_{n=-\infty}^{\infty} a_n\cos(kx)+b_n\sin(kx) \; n\in 	\mathbb{Z} \textrm{ and }\; \; k\in 	\mathbb{R}
+f(x) &= \sum_{n=0}^{\infty} a_n\cos(\frac{n\pi x}{L})+b_n\sin(\frac{n\pi x}{L}) \\
+     &= \sum_{n=0}^{\infty} a_n\cos(k_n x)+b_n\sin(k_n x) \; n\in \mathbb{Z} \textrm{ and }\; \; k\in 	\mathbb{R}
 \end{align}
 ``` 
 

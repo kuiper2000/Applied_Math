@@ -538,7 +538,7 @@ T_n(t)  = \frac{2}{L}\int_{0}^{L} u(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi
 <p>Following similar veins, we take Fourier transform of the entire heat diffusion equation, which leads to</p>
 <div class="math notranslate nohighlight" id="equation-eq153">
 <span class="eqno">(153)<a class="headerlink" href="#equation-eq153" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-T_n^{'}(t)  &amp; = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + \frac{2}{L}\int_{0}^{L} u(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi \\
+T_n^{'}(t)  &amp; = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + \frac{2}{L}\int_{0}^{L} F(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi \\
 &amp; = \frac{2k}{L}\int_{0}^{L} u_{xx}(\xi,t) \sin(\frac{n\pi \xi}{L})d\xi + B_n(t)
 \end{align}\end{split}\]</div>
 <p>where</p>
@@ -581,8 +581,8 @@ u(x,t) =  \sum_{n=0}^{\infty} \int_{0}^{t} e^{-\frac{kn^2\pi^2(t-\tau)}{L^2}}B_n
 <p>For certain cases, the heat diffusion does not necessarily happen on a stick or a string but instead…over an infinite domain. We first start with finite domain Fourier transform, where the solution are bounded in <span class="math notranslate nohighlight">\([-L,L]\)</span>. Sturm-Liouville theorem tells us that the solution has a form of:</p>
 <div class="math notranslate nohighlight" id="equation-eq160">
 <span class="eqno">(160)<a class="headerlink" href="#equation-eq160" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
-f(x) &amp;= \sum_{n=-\infty}^{\infty} a_n\cos(\frac{n\pi x}{L})+b_n\sin(\frac{n\pi x}{L}) \\
-     &amp;= \sum_{n=-\infty}^{\infty} a_n\cos(kx)+b_n\sin(kx) \; n\in 	\mathbb{Z} \textrm{ and }\; \; k\in 	\mathbb{R}
+f(x) &amp;= \sum_{n=0}^{\infty} a_n\cos(\frac{n\pi x}{L})+b_n\sin(\frac{n\pi x}{L}) \\
+     &amp;= \sum_{n=0}^{\infty} a_n\cos(k_n x)+b_n\sin(k_n x) \; n\in \mathbb{Z} \textrm{ and }\; \; k\in 	\mathbb{R}
 \end{align}\end{split}\]</div>
 <p>It is equivalent to</p>
 <div class="math notranslate nohighlight" id="equation-eq161">
