@@ -413,7 +413,6 @@ scale: 20%
 The Neumann boundary condition. 
 ```   
 
-
 Here, we first define the unit normal vector and unit tangent vector. 
 
 ```{math}
@@ -427,3 +426,34 @@ and the unit normal vector
 :label: eq242
 \mathbf{n}(s) = \frac{dy}{ds}\mathbf{i} -\frac{dx}{ds}\mathbf{j}
 ``` 
+
+Then the normal derivative of a point on C can be written as 
+
+```{math}
+:label: eq243
+\frac{\partial u}{\partial n} = \frac{\partial u}{\partial x}\frac{dy}{ds}-\frac{\partial u}{\partial y}\frac{dx}{ds}
+``` 
+
+which can be recognized as the dot product of the gradient u with the unit normal vector on C. 
+
+
+Combining with what we learn in previous sector, a complete set of Neumann problem can be written as 
+
+```{math}
+:label: eq244
+\nabla^2 u = 0 \; \; \textrm{for $(x,y)$ interior to D} \\ 
+\frac{\partial u}{\partial n} = g(x,y) \; \; \textrm{for $(x,y)$ on C} \\ 
+``` 
+
+
+The set of equation above says, if we don't consider the heat (or some tracers) transport normal to the boundary, the heat flux integrated over the domain should equal 0 (which physically makes sense because the amount of heat loss for a given grid point is equivalent to the amount of heat received by other grid point).  
+
+
+
+```{math}
+:label: eq244
+& \nabla^2 u = 0 \; \; \textrm{for $(x,y)$ interior to D} \\ 
+& \frac{\partial u}{\partial n} = g(x,y)
+``` 
+
+With $eq$`eq244`, there is a simple condition must be satisfied. 

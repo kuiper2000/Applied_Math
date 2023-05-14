@@ -652,6 +652,19 @@ U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}81\cos^2(\xi)\sin^2(\xi) d\xi
 <p>and the unit normal vector</p>
 <div class="math notranslate nohighlight" id="equation-eq242">
 <span class="eqno">(242)<a class="headerlink" href="#equation-eq242" title="Permalink to this equation">¶</a></span>\[\mathbf{n}(s) = \frac{dy}{ds}\mathbf{i} -\frac{dx}{ds}\mathbf{j}\]</div>
+<p>Then the normal derivative of a point on C can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq243">
+<span class="eqno">(243)<a class="headerlink" href="#equation-eq243" title="Permalink to this equation">¶</a></span>\[\frac{\partial u}{\partial n} = \frac{\partial u}{\partial x}\frac{dy}{ds}-\frac{\partial u}{\partial y}\frac{dx}{ds}\]</div>
+<p>which can be recognized as the dot product of the gradient u with the unit normal vector on C.</p>
+<p>Combining with what we learn in previous sector, a complete set of Neumann problem can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq244">
+<span class="eqno">(245)<a class="headerlink" href="#equation-eq244" title="Permalink to this equation">¶</a></span>\[\begin{split}\nabla^2 u = 0 \; \; \textrm{for $(x,y)$ interior to D} \\ 
+\frac{\partial u}{\partial n} = g(x,y) \; \; \textrm{for $(x,y)$ on C} \\ \end{split}\]</div>
+<p>The set of equation above says, if we don’t consider the heat (or some tracers) transport normal to the boundary, the heat flux integrated over the domain should equal 0 (which physically makes sense because the amount of heat loss for a given grid point is equivalent to the amount of heat received by other grid point).</p>
+<div class="math notranslate nohighlight" id="equation-eq244">
+<span class="eqno">(245)<a class="headerlink" href="#equation-eq244" title="Permalink to this equation">¶</a></span>\[\begin{split}&amp; \nabla^2 u = 0 \; \; \textrm{for $(x,y)$ interior to D} \\ 
+&amp; \frac{\partial u}{\partial n} = g(x,y)\end{split}\]</div>
+<p>With <span class="math notranslate nohighlight">\(eq\)</span><code class="docutils literal notranslate"><span class="pre">eq244</span></code>, there is a simple condition must be satisfied.</p>
 </div>
 </div>
 
