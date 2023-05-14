@@ -461,9 +461,9 @@ With {eq}`eq244`, there is a simple condition must be satisfied.
 ```{math}
 :label: eq245
 \oint_{C} g(x,y) ds &= \oint_{C} \frac{\partial u}{\partial n} ds \\
-&= \oint_{C} [\frac{\partial u}{\partial x}\frac{dy}{ds}-\frac{\partial u}{\partial y}\frac{dx}{ds}]ds \\
+&=  \oint_{C} [\frac{\partial u}{\partial x}\frac{dy}{ds}-\frac{\partial u}{\partial y}\frac{dx}{ds}]ds \\
 &=  \oint_{C} -u_y dx + u_x dy \\
-&=  \int\int_D(u_xx+u_yy) dA \textrm{by Green's theorem} 
+&=  \iint_D(u_xx+u_yy) dA \textrm{by Green's theorem} 
 ```
 
 if $u$ is harmonic on D (i.e., satisfies Sturm-Liouville problem), then $\nabla^2 u = 0$. Then we can conclude that 
