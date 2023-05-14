@@ -470,7 +470,6 @@ if $u$ is harmonic on D (i.e., satisfies Sturm-Liouville problem), then $\nabla^
 
 
 :::{admonition} Example 4
-
 Find if the following set of equation satisfies a Neumann problem
 
 ```{math}
@@ -497,7 +496,41 @@ To test if the problem above is an Neumann problem, we can take the line integra
 ``` 
 
 Immediately, this problem is not a Neumann problem. 
-
-
 :::
 
+
+
+:::{admonition} Example 5
+A very import characteristic of Neumann problem is...there is no unique solution. We will use this example to illustrate the result. 
+
+```{math}
+\begin{cases}
+\nabla^2 u(x,y) &= 0 \textrm{for $0<x<a,0<y<b$} \\
+\frac{\partial u}{\partial y}(x,0) &=      \frac{\partial u}{\partial y} (x,b)=0 \textrm{for $0<x<a$} \\
+\frac{\partial u}{\partial x}(0,y) &= 0    \textrm{for $0<y<a$} \\
+\frac{\partial u}{\partial x}(x,y) &= g(y) \textrm{for $0<y<a$} \\
+\end{cases}
+```
+
+From the very beginning of this chapter, we know the above equations have solution of 
+
+```{math}
+u(x,y) = c+\sum_{n=1}^{\infty} c_n \sinh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})
+```
+
+also, based on the derivative boundary 
+
+```{math}
+u_n(x,y) = \sum_{n=1}^{\infty} \frac{n\pi}{b} c_n \sinh(\frac{n\pi 0}{b})\cos(\frac{n\pi y}{b}) = g(y)
+```
+
+indicating $\frac{n\pi}{b} c_n \sinh(\frac{n\pi 0}{b})$ is the Fourier $\sin$ coefficient of the solution in y structure. i.e., 
+
+```{math}
+\frac{n\pi}{b}c_n\sinh(\frac{n\pi a}{b}) = \frac{2}{b}\int_{0}^{b} g(\xi) \cos(\frac{n\pi\xi}{b}) d\xi \textrm{or...}\\ 
+u(x,y) = c+\sum_{n=1}^{\infty} c_n\cosh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})
+``` 
+
+
+However, the Neumann problem 
+:::
