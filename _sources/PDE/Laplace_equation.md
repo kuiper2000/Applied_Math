@@ -387,3 +387,13 @@ For a disk with radius R about the origin, a change of variables yields the Pois
 U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{R^2-r^2}{R^2+r^2-2rR\cos(\xi-\theta)}f(\xi)d\xi
 ```
 
+:::{admonition} Example 3
+
+Find the Poisson Integral of example 1. 
+
+With $R=4$ and $f(\theta) = \theta^2$
+
+```{math}
+U(r,\theta) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\frac{16-r^2}{16+r^2-8r\cos(\xi-\theta)}\xi^2 d\xi
+```
+:::
