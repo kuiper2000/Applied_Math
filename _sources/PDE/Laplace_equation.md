@@ -466,4 +466,38 @@ With {eq}`eq244`, there is a simple condition must be satisfied.
 &=  \iint_D(u_xx+u_yy) dA \textrm{by Green's theorem} 
 ```
 
-if $u$ is harmonic on D (i.e., satisfies Sturm-Liouville problem), then $\nabla^2 u = 0$. Then we can conclude that 
+if $u$ is harmonic on D (i.e., satisfies Sturm-Liouville problem), then $\nabla^2 u = 0$. Then we can conclude that $\oint_{C} g(x,y) ds=0$. 
+
+
+:::{admonition} Example 4
+
+Find if the following set of equation satisfies a Neumann problem
+
+```{math}
+\begin{align}
+\nabla^2 u & = 0 \textrm{ for $0<x<1,0<y<1$} \\ 
+u_n(x,y) & = 
+\begin{cases}
+0 \textrm{ on the lower, upper, and the left sides} \\ 
+y^2 \textrm{ on the right}
+\end{cases}
+\end{align}
+```
+This indicates that 
+
+```{math}
+u_n(x,0) &= u_n(x,1) =u_n(0,y) = 0 \\
+u_n(1,y) &= y^2\\
+```
+
+To test if the problem above is an Neumann problem, we can take the line integral along the boundary, which leads to 
+
+```{math}
+\oint_{C} g(x,y) ds = \int_{0}^{1}y^2 dy = \frac{1}{3} \neq 0 
+``` 
+
+Immediately, this problem is not a Neumann problem. 
+
+
+:::
+

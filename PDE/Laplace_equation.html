@@ -670,7 +670,28 @@ U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}81\cos^2(\xi)\sin^2(\xi) d\xi
 &amp;=  \oint_{C} [\frac{\partial u}{\partial x}\frac{dy}{ds}-\frac{\partial u}{\partial y}\frac{dx}{ds}]ds \\
 &amp;=  \oint_{C} -u_y dx + u_x dy \\
 &amp;=  \iint_D(u_xx+u_yy) dA \textrm{by Green's theorem} \end{split}\]</div>
-<p>if <span class="math notranslate nohighlight">\(u\)</span> is harmonic on D (i.e., satisfies Sturm-Liouville problem), then <span class="math notranslate nohighlight">\(\nabla^2 u = 0\)</span>. Then we can conclude that</p>
+<p>if <span class="math notranslate nohighlight">\(u\)</span> is harmonic on D (i.e., satisfies Sturm-Liouville problem), then <span class="math notranslate nohighlight">\(\nabla^2 u = 0\)</span>. Then we can conclude that <span class="math notranslate nohighlight">\(\oint_{C} g(x,y) ds=0\)</span>.</p>
+<div class="admonition-example-4 admonition">
+<p class="admonition-title">Example 4</p>
+<p>Find if the following set of equation satisfies a Neumann problem</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\nabla^2 u &amp; = 0 \textrm{ for $0&lt;x&lt;1,0&lt;y&lt;1$} \\ 
+u_n(x,y) &amp; = 
+\begin{cases}
+0 \textrm{ on the lower, upper, and the left sides} \\ 
+y^2 \textrm{ on the right}
+\end{cases}
+\end{align}\end{split}\]</div>
+<p>This indicates that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u_n(x,0) &amp;= u_n(x,1) =u_n(0,y) = 0 \\
+u_n(1,y) &amp;= y^2\\\end{split}\]</div>
+<p>To test if the problem above is an Neumann problem, we can take the line integral along the boundary, which leads to</p>
+<div class="math notranslate nohighlight">
+\[\oint_{C} g(x,y) ds = \int_{0}^{1}y^2 dy = \frac{1}{3} \neq 0 \]</div>
+<p>Immediately, this problem is not a Neumann problem.</p>
+</div>
 </div>
 </div>
 
