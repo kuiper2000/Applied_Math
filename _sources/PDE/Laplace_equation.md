@@ -456,7 +456,7 @@ The set of equation above says, if we don't consider the heat (or some tracers) 
 & \frac{\partial u}{\partial n} = g(x,y)
 ``` 
 
-With $eq$`eq244`, there is a simple condition must be satisfied. 
+With {eq}`eq244`, there is a simple condition must be satisfied. 
 
 ```{math}
 :label: eq245
