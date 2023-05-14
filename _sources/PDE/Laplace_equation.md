@@ -521,16 +521,23 @@ u(x,y) = c+\sum_{n=1}^{\infty} c_n \sinh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})
 also, based on the derivative boundary 
 
 ```{math}
-u_n(x,y) = \sum_{n=1}^{\infty} \frac{n\pi}{b} c_n \sinh(\frac{n\pi 0}{b})\cos(\frac{n\pi y}{b}) = g(y)
+u_n(0,y) = \sum_{n=1}^{\infty} \frac{n\pi}{b} c_n \sinh(\frac{n\pi 0}{b})\cos(\frac{n\pi y}{b}) = g(y)
 ```
 
-indicating $\frac{n\pi}{b} c_n \sinh(\frac{n\pi 0}{b})$ is the Fourier $\sin$ coefficient of the solution in y structure. i.e., 
+indicating $\frac{n\pi}{b} c_n \sinh(\frac{n\pi 0}{b})$ is the Fourier $\cos$ coefficient of the solution in y structure. i.e., 
 
 ```{math}
-\frac{n\pi}{b}c_n\sinh(\frac{n\pi a}{b}) = \frac{2}{b}\int_{0}^{b} g(\xi) \cos(\frac{n\pi\xi}{b}) d\xi \textrm{or...}\\ 
+\frac{n\pi}{b}c_n\sinh(\frac{n\pi a}{b}) = \frac{2}{b}\int_{0}^{b} g(\xi) \cos(\frac{n\pi\xi}{b}) d\xi \; \; \; \textrm{or...}\\ 
 u(x,y) = c+\sum_{n=1}^{\infty} c_n\cosh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})
 ``` 
 
+However, to satisfy Neumann, we also know, 
 
-However, the Neumann problem 
+```{math}
+c=\frac{1}{b} \int_{0}^{b} g(y)dy = 0 
+```
+
+i.e., the line integral of $g(y)$ along the boundary equals 0 (and it's not a Fourier $\cos$ coefficient for wave number 0) 
+
+
 :::
