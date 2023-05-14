@@ -418,12 +418,12 @@ Here, we first define the unit normal vector and unit tangent vector.
 
 ```{math}
 :label: eq241
-\mathbf{T}(s) = \frac{dx}{ds}\mathbf{i} +\frac{dy}{ds}\mathbf{i}
+\mathbf{T}(s) = \frac{dx}{ds}\mathbf{i} +\frac{dy}{ds}\mathbf{j}
 ``` 
 
 and the unit normal vector 
 
 ```{math}
 :label: eq242
-\mathbf{T}(s) = \frac{dx}{ds}\mathbf{i} +\frac{dy}{ds}\mathbf{i}
+\mathbf{n}(s) = \frac{dy}{ds}\mathbf{i} -\frac{dx}{ds}\mathbf{j}
 ``` 
