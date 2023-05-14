@@ -531,11 +531,13 @@ indicating $\frac{n\pi}{b} c_n \sinh(\frac{n\pi 0}{b})$ is the Fourier $\cos$ co
 u(x,y) = c+\sum_{n=1}^{\infty} c_n\cosh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})
 ``` 
 
-However, to satisfy Neumann, we also know, 
+However, to satisfy Neumann condition, we also know, 
 
 ```{math}
 c=\frac{1}{b} \int_{0}^{b} g(y)dy = 0 
 ```
 
-i.e., the line integral of $g(y)$ along the boundary equals 0 (and it's not a Fourier $\cos$ coefficient for wave number 0) 
+i.e., the line integral of $g(y)$ along the boundary equals 0. One should notice that, $c$ is an arbitrary constant and it's not a Fourier $\cos$ coefficient for wave number 0 (otherwise, it will violate the Neumann conditions). This also implies that if $u$ is a solution, $u+c$ will be a constant as well (where $c$ is an arbitrary constant). 
+
+
 :::
