@@ -394,6 +394,22 @@ Find the Poisson Integral of example 1.
 With $R=4$ and $f(\theta) = \theta^2$
 
 ```{math}
-U(r,\theta) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\frac{16-r^2}{16+r^2-8r\cos(\xi-\theta)}\xi^2 d\xi
+U(r,\theta) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\frac{16-r^2}{16+r^2-8r\cos(\xi-\theta)}\xi^2 d\xi = \frac{16-r^2}{2\pi}\int_{-\pi}^{\pi}
 ```
 :::
+
+
+## The Neumann Problem 
+Different from Dirichlet problem where the boundary temperature (value) is directly given, Neumann problem describes the jump condition. Mathematically, a Dirichlet problem usually has a boundary condition like $u(s,t)=f(s)$ where $s$ is the boundary along a closed region $C$. While the Neumann usually has a form of 
+$u_n(s,t)=g(s)$, where $u_n(s,t)$ is the normal derivative (perpendicular) on the boundary. (see figure below)
+
+```{figure} Neumann.png
+---
+name: FIG14
+scale: 20%
+---
+The Neumann boundary condition. 
+```   
+
+
+

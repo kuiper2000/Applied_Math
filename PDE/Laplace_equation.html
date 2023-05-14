@@ -348,6 +348,11 @@ title="Print to PDF"
    Poisson Integral Formula
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-neumann-problem">
+   The Neumann Problem
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -385,6 +390,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#poisson-integral-formula">
    Poisson Integral Formula
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-neumann-problem">
+   The Neumann Problem
   </a>
  </li>
 </ul>
@@ -625,7 +635,16 @@ U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}81\cos^2(\xi)\sin^2(\xi) d\xi
 <p>Find the Poisson Integral of example 1.</p>
 <p>With <span class="math notranslate nohighlight">\(R=4\)</span> and <span class="math notranslate nohighlight">\(f(\theta) = \theta^2\)</span></p>
 <div class="math notranslate nohighlight">
-\[U(r,\theta) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\frac{16-r^2}{16+r^2-8r\cos(\xi-\theta)}\xi^2 d\xi\]</div>
+\[U(r,\theta) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\frac{16-r^2}{16+r^2-8r\cos(\xi-\theta)}\xi^2 d\xi = \frac{16-r^2}{2\pi}\int_{-\pi}^{\pi}\]</div>
+</div>
+</div>
+<div class="section" id="the-neumann-problem">
+<h2>The Neumann Problem<a class="headerlink" href="#the-neumann-problem" title="Permalink to this headline">¶</a></h2>
+<p>Different from Dirichlet problem where the boundary temperature (value) is directly given, Neumann problem describes the jump condition. Mathematically, a Dirichlet problem usually has a boundary condition like <span class="math notranslate nohighlight">\(u(s,t)=f(s)\)</span> where <span class="math notranslate nohighlight">\(s\)</span> is the boundary along a closed region <span class="math notranslate nohighlight">\(C\)</span>. While the Neumann usually has a form of
+<span class="math notranslate nohighlight">\(u_n(s,t)=g(s)\)</span>, where <span class="math notranslate nohighlight">\(u_n(s,t)\)</span> is the normal derivative (perpendicular) on the boundary. (see figure below)</p>
+<div class="figure align-default" id="fig14">
+<a class="reference internal image-reference" href="../_images/Neumann.png"><img alt="../_images/Neumann.png" src="../_images/Neumann.png" style="width: 348.20000000000005px; height: 248.4px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">The Neumann boundary condition.</span><a class="headerlink" href="#fig14" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

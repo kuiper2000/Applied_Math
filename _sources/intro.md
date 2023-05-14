@@ -59,14 +59,15 @@ __Part III: Partial Differential Equation__
     * Solutions on a Real String
     * Heat Diffusion on a 2D Plane 
 
-* Wave Equations
+* {ref}`Wave`
     * Problem Setup and Initial Conditions
-    * D'Alembert's Solutions, Characteristic Lines, and Dispersion Relationship 
-    * Forced Solutions
+    * Wave Solution with Space and Time Structures
+    * Wave Motion in an Unbounded Medium
+    * D’Alembert’s Solutions, Characteristic Lines, and Dispersion Relationship
 
-* Laplace's Equation
-    * Problem Setup, Dirichlet Problems, and Existence of Fourier Series
-    * Boundary Conditions and Neumann Problems 
+* {ref}`Laplace`
+    * Problem Setup and Initial Conditions
+    * Dirichlet Problem for a Rectangle
     * Forced Solution-Poisson Equation
     * Green's Approach in Higher Dimension (Numerical) 
 
