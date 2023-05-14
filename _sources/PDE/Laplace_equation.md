@@ -538,6 +538,4 @@ c=\frac{1}{b} \int_{0}^{b} g(y)dy = 0
 ```
 
 i.e., the line integral of $g(y)$ along the boundary equals 0 (and it's not a Fourier $\cos$ coefficient for wave number 0) 
-
-
 :::
