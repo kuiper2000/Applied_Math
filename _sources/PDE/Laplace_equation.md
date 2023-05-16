@@ -506,16 +506,16 @@ A very import characteristic of Neumann problem is...there is no unique solution
 ```{math}
 \begin{cases}
 \nabla^2 u(x,y) &= 0 \textrm{for $0<x<a,0<y<b$} \\
-\frac{\partial u}{\partial y}(x,0) &=      \frac{\partial u}{\partial y} (x,b)=0 \textrm{for $0<x<a$} \\
-\frac{\partial u}{\partial x}(0,y) &= 0    \textrm{for $0<y<a$} \\
-\frac{\partial u}{\partial x}(x,y) &= g(y) \textrm{for $0<y<a$} \\
+\frac{\partial u}{\partial y}(x,0) &=      \;\;\; \frac{\partial u}{\partial y} (x,b)=0 \textrm{for $0<x<a$} \\
+\frac{\partial u}{\partial x}(0,y) &= 0    \;\;\; \textrm{for $0<y<a$} \\
+\frac{\partial u}{\partial x}(x,y) &= g(y) \;\;\; \textrm{for $0<y<a$} \\
 \end{cases}
 ```
 
 From the very beginning of this chapter, we know the above equations have solution of 
 
 ```{math}
-u(x,y) = c+\sum_{n=1}^{\infty} c_n \sinh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})
+u(x,y) = c+\sum_{n=1}^{\infty} c_n \cosh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})
 ```
 
 also, based on the derivative boundary 
@@ -549,8 +549,14 @@ Suppose $D$ is a disk with a radius $R$ about the origins. The boundary of $D$ i
 ```{math}
 \begin{cases}
 \nabla^2 u(r,\theta) = 0 \;\;\; \textrm{for $\leq r < R,-\pi\leq\theta<\pi$} \\
-\frac{\partial u}{\partial r}(R,\theta) \;\;\; \textrm{for $-\pi\leq \theta\leq \pi$}
+\frac{\partial u}{\partial r}(R,\theta)=f(\theta) \;\;\; \textrm{for $-\pi\leq \theta\leq \pi$}
 \end{cases}
+```
+
+A necessary condition for the existence of a solution is that the line integral of the normal derivative over the boundary is 0. 
+
+```{math}
+\int_{-\pi}^{\pi}f(\theta)d\theta = 0
 ```
 
 

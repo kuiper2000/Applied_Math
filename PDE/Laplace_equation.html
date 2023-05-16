@@ -698,13 +698,13 @@ u_n(1,y) &amp;= y^2\\\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
 \nabla^2 u(x,y) &amp;= 0 \textrm{for $0&lt;x&lt;a,0&lt;y&lt;b$} \\
-\frac{\partial u}{\partial y}(x,0) &amp;=      \frac{\partial u}{\partial y} (x,b)=0 \textrm{for $0&lt;x&lt;a$} \\
-\frac{\partial u}{\partial x}(0,y) &amp;= 0    \textrm{for $0&lt;y&lt;a$} \\
-\frac{\partial u}{\partial x}(x,y) &amp;= g(y) \textrm{for $0&lt;y&lt;a$} \\
+\frac{\partial u}{\partial y}(x,0) &amp;=      \;\;\; \frac{\partial u}{\partial y} (x,b)=0 \textrm{for $0&lt;x&lt;a$} \\
+\frac{\partial u}{\partial x}(0,y) &amp;= 0    \;\;\; \textrm{for $0&lt;y&lt;a$} \\
+\frac{\partial u}{\partial x}(x,y) &amp;= g(y) \;\;\; \textrm{for $0&lt;y&lt;a$} \\
 \end{cases}\end{split}\]</div>
 <p>From the very beginning of this chapter, we know the above equations have solution of</p>
 <div class="math notranslate nohighlight">
-\[u(x,y) = c+\sum_{n=1}^{\infty} c_n \sinh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})\]</div>
+\[u(x,y) = c+\sum_{n=1}^{\infty} c_n \cosh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})\]</div>
 <p>also, based on the derivative boundary</p>
 <div class="math notranslate nohighlight">
 \[u_n(0,y) = \sum_{n=1}^{\infty} \frac{n\pi}{b} c_n \sinh(\frac{n\pi 0}{b})\cos(\frac{n\pi y}{b}) = g(y)\]</div>
@@ -724,8 +724,11 @@ Suppose <span class="math notranslate nohighlight">\(D\)</span> is a disk with a
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
 \nabla^2 u(r,\theta) = 0 \;\;\; \textrm{for $\leq r &lt; R,-\pi\leq\theta&lt;\pi$} \\
-\frac{\partial u}{\partial r}(R,\theta) \;\;\; \textrm{for $-\pi\leq \theta\leq \pi$}
+\frac{\partial u}{\partial r}(R,\theta)=f(\theta) \;\;\; \textrm{for $-\pi\leq \theta\leq \pi$}
 \end{cases}\end{split}\]</div>
+<p>A necessary condition for the existence of a solution is that the line integral of the normal derivative over the boundary is 0.</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\pi}^{\pi}f(\theta)d\theta = 0\]</div>
 </div>
 </div>
 </div>
