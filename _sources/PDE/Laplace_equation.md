@@ -548,8 +548,8 @@ Suppose $D$ is a disk with a radius $R$ about the origins. The boundary of $D$ i
 
 ```{math}
 \begin{cases}
-\nabla^2 u(r,\theta) = 0 \;\;\; \textrm{for \leq r < R,-\pi\leq\theta<\pi} \\
-\frac{\partial u}{\partial r}(R,\theta) \;\;\; \textrm{for -\pi\leq \theta\leq \pi}
+\nabla^2 u(r,\theta) = 0 \;\;\; \textrm{for $\leq r < R,-\pi\leq\theta<\pi$} \\
+\frac{\partial u}{\partial r}(R,\theta) \;\;\; \textrm{for $-\pi\leq \theta\leq \pi$}
 \end{cases}
 ```
 
