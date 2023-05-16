@@ -539,5 +539,19 @@ c=\frac{1}{b} \int_{0}^{b} g(y)dy = 0
 
 i.e., the line integral of $g(y)$ along the boundary equals 0. One should notice that, $c$ is an arbitrary constant and it's not a Fourier $\cos$ coefficient for wave number 0 (otherwise, it will violate the Neumann conditions). This also implies that if $u$ is a solution, $u+c$ will be a constant as well (where $c$ is an arbitrary constant). 
 
+:::
+
+
+:::{admonition} Example 6
+Here is an application of Neumann problem to a disk. 
+Suppose $D$ is a disk with a radius $R$ about the origins. The boundary of $D$ is the circle $C$. In polar coordinate, the Neumann problem for $D$ is 
+
+```{math}
+\begin{cases}
+\nabla^2 u(r,\theta) = 0 \;\;\; \textrm{for \leq r < R,-\pi\leq\theta<\pi} \\
+\frac{\partial u}{\partial r}(R,\theta) \;\;\; \textrm{for -\pi\leq \theta\leq \pi}
+\end{cases}
+```
+
 
 :::
