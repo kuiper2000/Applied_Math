@@ -584,7 +584,12 @@ n b_n R^{n-1} &= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)\sin(n\xi)d\xi \\
 \end{align}
 ```
 
-For $n=1,2,\cdots$
+For $n=1,2,\cdots$. Then
+
+```{math}
+a_n & =\frac{1}{n\pi R^{n-1}}\int^{\pi}_{-\pi}f(\xi)\cos(n\xi)d\xi \\
+b_n & =\frac{1}{n\pi R^{n-1}}\int^{\pi}_{-\pi}f(\xi)\sin(n\xi)d\xi \\
+```
 
 
 :::
