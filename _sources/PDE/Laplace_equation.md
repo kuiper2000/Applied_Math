@@ -601,6 +601,7 @@ the final solution can therefore be written as
 
 ```{math}
 :label: eq250
-u(r,\theta) = c+\frac{R}{r}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int^{\pi}_{-\pi} \int^{\pi}_{-\pi}[\cos(n\xi)\cos(n\theta)+\sin(n\xi)\sin(n\theta)]f(\xi)d\xi = c+\frac{R}{r}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int^{\pi}_{-\pi} \int^{\pi}_{-\pi} \cos(n(\xi-\theta))d\xi
+u(r,\theta) &= c+\frac{R}{r}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int^{\pi}_{-\pi} \int^{\pi}_{-\pi}[\cos(n\xi)\cos(n\theta)+\sin(n\xi)\sin(n\theta)]f(\xi)d\xi \\
+&= c+\frac{R}{r}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int^{\pi}_{-\pi} \int^{\pi}_{-\pi} \cos(n(\xi-\theta))d\xi
 ```
 
