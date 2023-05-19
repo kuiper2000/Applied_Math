@@ -542,11 +542,13 @@ i.e., the line integral of $g(y)$ along the boundary equals 0. One should notice
 :::
 
 
-:::{admonition} Example 6
+
+
 Here is an application of Neumann problem to a disk. 
 Suppose $D$ is a disk with a radius $R$ about the origins. The boundary of $D$ is the circle $C$. In polar coordinate, the Neumann problem for $D$ is 
 
 ```{math}
+:label: eq246
 \begin{cases}
 \nabla^2 u(r,\theta) = 0 \;\;\; \textrm{for $\leq r < R,-\pi\leq\theta<\pi$} \\
 \frac{\partial u}{\partial r}(R,\theta)=f(\theta) \;\;\; \textrm{for $-\pi\leq \theta\leq \pi$}
@@ -568,6 +570,7 @@ u(r,\theta) = \frac{1}{2}a_0+\sum_{n=1}^{\infty} [a_n r^n \cos(n\theta)+b_n r^n\
 Choose a coefficient to satisfy, 
 
 ```{math}
+:label: eq247
 \begin{align}
 \frac{\partial u}{\partial r} (R,\theta) & = f(\theta) \\
 & = \sum_{n=1}^{\infty} [na_nR^{n-1}\cos(n\theta)+nb_nR^{n-1}\sin(n\theta)]
@@ -577,6 +580,7 @@ Choose a coefficient to satisfy,
 Then using the Fourier transform to find the corresponding coefficients $a_n$ and $b_n$. 
 
 ```{math}
+:label: eq248
 \begin{align}
 a_0           &= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)d\xi \\
 n a_n R^{n-1} &= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)\cos(n\xi)d\xi \\
@@ -587,9 +591,9 @@ n b_n R^{n-1} &= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)\sin(n\xi)d\xi \\
 For $n=1,2,\cdots$. Then
 
 ```{math}
+:label: eq249
 a_n & =\frac{1}{n\pi R^{n-1}}\int^{\pi}_{-\pi}f(\xi)\cos(n\xi)d\xi \\
 b_n & =\frac{1}{n\pi R^{n-1}}\int^{\pi}_{-\pi}f(\xi)\sin(n\xi)d\xi \\
 ```
 
 
-:::

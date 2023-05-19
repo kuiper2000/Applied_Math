@@ -717,12 +717,10 @@ u(x,y) = c+\sum_{n=1}^{\infty} c_n\cosh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})\
 \[c=\frac{1}{b} \int_{0}^{b} g(y)dy = 0 \]</div>
 <p>i.e., the line integral of <span class="math notranslate nohighlight">\(g(y)\)</span> along the boundary equals 0. One should notice that, <span class="math notranslate nohighlight">\(c\)</span> is an arbitrary constant and it’s not a Fourier <span class="math notranslate nohighlight">\(\cos\)</span> coefficient for wave number 0 (otherwise, it will violate the Neumann conditions). This also implies that if <span class="math notranslate nohighlight">\(u\)</span> is a solution, <span class="math notranslate nohighlight">\(u+c\)</span> will be a constant as well (where <span class="math notranslate nohighlight">\(c\)</span> is an arbitrary constant).</p>
 </div>
-<div class="admonition-example-6 admonition">
-<p class="admonition-title">Example 6</p>
 <p>Here is an application of Neumann problem to a disk.
 Suppose <span class="math notranslate nohighlight">\(D\)</span> is a disk with a radius <span class="math notranslate nohighlight">\(R\)</span> about the origins. The boundary of <span class="math notranslate nohighlight">\(D\)</span> is the circle <span class="math notranslate nohighlight">\(C\)</span>. In polar coordinate, the Neumann problem for <span class="math notranslate nohighlight">\(D\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{cases}
+<div class="math notranslate nohighlight" id="equation-eq246">
+<span class="eqno">(247)<a class="headerlink" href="#equation-eq246" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{cases}
 \nabla^2 u(r,\theta) = 0 \;\;\; \textrm{for $\leq r &lt; R,-\pi\leq\theta&lt;\pi$} \\
 \frac{\partial u}{\partial r}(R,\theta)=f(\theta) \;\;\; \textrm{for $-\pi\leq \theta\leq \pi$}
 \end{cases}\end{split}\]</div>
@@ -733,23 +731,22 @@ Suppose <span class="math notranslate nohighlight">\(D\)</span> is a disk with a
 <div class="math notranslate nohighlight">
 \[u(r,\theta) = \frac{1}{2}a_0+\sum_{n=1}^{\infty} [a_n r^n \cos(n\theta)+b_n r^n\sin(n\theta)]\]</div>
 <p>Choose a coefficient to satisfy,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq247">
+<span class="eqno">(248)<a class="headerlink" href="#equation-eq247" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 \frac{\partial u}{\partial r} (R,\theta) &amp; = f(\theta) \\
 &amp; = \sum_{n=1}^{\infty} [na_nR^{n-1}\cos(n\theta)+nb_nR^{n-1}\sin(n\theta)]
 \end{align}\end{split}\]</div>
 <p>Then using the Fourier transform to find the corresponding coefficients <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-eq248">
+<span class="eqno">(249)<a class="headerlink" href="#equation-eq248" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 a_0           &amp;= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)d\xi \\
 n a_n R^{n-1} &amp;= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)\cos(n\xi)d\xi \\
 n b_n R^{n-1} &amp;= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)\sin(n\xi)d\xi \\
 \end{align}\end{split}\]</div>
 <p>For <span class="math notranslate nohighlight">\(n=1,2,\cdots\)</span>. Then</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}a_n &amp; =\frac{1}{n\pi R^{n-1}}\int^{\pi}_{-\pi}f(\xi)\cos(n\xi)d\xi \\
+<div class="math notranslate nohighlight" id="equation-eq249">
+<span class="eqno">(250)<a class="headerlink" href="#equation-eq249" title="Permalink to this equation">¶</a></span>\[\begin{split}a_n &amp; =\frac{1}{n\pi R^{n-1}}\int^{\pi}_{-\pi}f(\xi)\cos(n\xi)d\xi \\
 b_n &amp; =\frac{1}{n\pi R^{n-1}}\int^{\pi}_{-\pi}f(\xi)\sin(n\xi)d\xi \\\end{split}\]</div>
-</div>
 </div>
 </div>
 
