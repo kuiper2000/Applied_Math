@@ -559,5 +559,32 @@ A necessary condition for the existence of a solution is that the line integral 
 \int_{-\pi}^{\pi}f(\theta)d\theta = 0
 ```
 
+We first attempt a solution of 
+
+```{math}
+u(r,\theta) = \frac{1}{2}a_0+\sum_{n=1}^{\infty} [a_n r^n \cos(n\theta)+b_n r^n\sin(n\theta)]
+```
+
+Choose a coefficient to satisfy, 
+
+```{math}
+\begin{align}
+\frac{\partial u}{\partial r} (R,\theta) & = f(\theta) \\
+& = \sum_{n=1}^{\infty} [na_nR^{n-1}\cos(n\theta)+nb_nR^{n-1}\sin(n\theta)]
+\end{align}
+```
+
+Then using the Fourier transform to find the corresponding coefficients $a_n$ and $b_n$. 
+
+```{math}
+\begin{align}
+a_0           &= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)d\xi \\
+n a_n R^{n-1} &= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)\cos(n\xi)d\xi \\
+n b_n R^{n-1} &= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)\sin(n\xi)d\xi \\
+\end{align}
+```
+
+For $n=1,2,\cdots$
+
 
 :::

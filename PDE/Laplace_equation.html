@@ -729,6 +729,23 @@ Suppose <span class="math notranslate nohighlight">\(D\)</span> is a disk with a
 <p>A necessary condition for the existence of a solution is that the line integral of the normal derivative over the boundary is 0.</p>
 <div class="math notranslate nohighlight">
 \[\int_{-\pi}^{\pi}f(\theta)d\theta = 0\]</div>
+<p>We first attempt a solution of</p>
+<div class="math notranslate nohighlight">
+\[u(r,\theta) = \frac{1}{2}a_0+\sum_{n=1}^{\infty} [a_n r^n \cos(n\theta)+b_n r^n\sin(n\theta)]\]</div>
+<p>Choose a coefficient to satisfy,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\frac{\partial u}{\partial r} (R,\theta) &amp; = f(\theta) \\
+&amp; = \sum_{n=1}^{\infty} [na_nR^{n-1}\cos(n\theta)+nb_nR^{n-1}\sin(n\theta)]
+\end{align}\end{split}\]</div>
+<p>Then using the Fourier transform to find the corresponding coefficients <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+a_0           &amp;= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)d\xi \\
+n a_n R^{n-1} &amp;= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)\cos(n\xi)d\xi \\
+n b_n R^{n-1} &amp;= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)\sin(n\xi)d\xi \\
+\end{align}\end{split}\]</div>
+<p>For <span class="math notranslate nohighlight">\(n=1,2,\cdots\)</span></p>
 </div>
 </div>
 </div>
