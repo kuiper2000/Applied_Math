@@ -605,3 +605,29 @@ u(r,\theta) &= c+\frac{R}{r}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int
 &= c+\frac{R}{r}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int^{\pi}_{-\pi} \cos(n(\xi-\theta))d\xi
 ```
 
+:::{admonition} Example 6
+Solve the following Neumann problem for a unit disk about the origin: 
+
+```{math}
+& \nabla^2 u(x,y) = 0 \;\;\; \textrm{for $x^2+y^2<1$} \\ 
+& \frac{\partial u}{\partial n} (x,y) = xy^2  \;\;\; \textrm{for $x^2+y^2<1$} \\ 
+```
+
+use polar coordinates, letting 
+
+```{math}
+U(r,\theta) & = u(r\cos(\theta),r\sin(\theta)) \\
+```
+
+Now we turn the problem into
+
+```{math}
+\begin{align}
+\nabla^2 U(r,\theta) &= 0 \;\;\; \textrm{for $0\leqr<1$,$-\pi\leq \theta\leq \pi$} \\ 
+\frac{\partial U}{\partial r}(1,\theta)&=\cos(\theta)\sin^2(\theta)
+\end{align}
+```
+
+
+
+:::
