@@ -623,7 +623,7 @@ Now we turn the problem into
 
 ```{math}
 \begin{align}
-\nabla^2 U(r,\theta) &= 0 \;\;\; \textrm{for $0\leqr<1$,$-\pi\leq \theta\leq \pi$} \\ 
+\nabla^2 U(r,\theta) &= 0 \;\;\; \textrm{for $0\leq r<1$,$-\pi\leq \theta\leq \pi$} \\ 
 \frac{\partial U}{\partial r}(1,\theta)&=\cos(\theta)\sin^2(\theta)
 \end{align}
 ```
