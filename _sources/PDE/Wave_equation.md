@@ -325,7 +325,7 @@ y(x,0) = f(x) = e^{-|x|}
 All we have to do is calculate the Fourier integral for $A_n$ and $B_n$. These are 
 
 ```{math}
-A_n = \frac{1}{\pi} \int_{-\infty}^{\infty} e^{-|\xi|}\cos(k\xi)d\xi = \frac{2}{\pi (1+k^2)}
+A_n = \int_{-\infty}^{\infty} e^{-|\xi|}\cos(k\xi)d\xi = \frac{2}{\pi (1+k^2)}
 ```
 
 and 

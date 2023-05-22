@@ -601,8 +601,8 @@ the final solution can therefore be written as
 
 ```{math}
 :label: eq250
-u(r,\theta) &= c+\frac{R}{r}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int^{\pi}_{-\pi}[\cos(n\xi)\cos(n\theta)+\sin(n\xi)\sin(n\theta)]f(\xi)d\xi \\
-&= c+\frac{R}{r}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int^{\pi}_{-\pi} \cos(n(\xi-\theta))d\xi
+U(r,\theta) &= c+\frac{R}{r}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int^{\pi}_{-\pi}[\cos(n\xi)\cos(n\theta)+\sin(n\xi)\sin(n\theta)]f(\xi)d\xi \\
+&= c+\frac{R}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int^{\pi}_{-\pi} \cos(n(\xi-\theta))d\xi
 ```
 
 :::{admonition} Example 6
@@ -628,6 +628,24 @@ Now we turn the problem into
 \end{align}
 ```
 
+First, we observe that 
 
+```{math}
+\int_{-\pi}^{\pi}\cos(\theta)\sin^2(\theta)d\theta=0
+```
 
+satisfies the Neumann boundary condition. By {eq}`eq250`, we know the solution is 
+
+```{math}
+U(r,\theta) = c+\frac{1}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}(r)^{n}\int^{\pi}_{-\pi} \cos(n(\xi-\theta))\cos(\xi)\sin^2(\xi)d\xi
+```
+
+The integral of the second term is 
+```{math}
+\begin{cases}
+& 0 \;\;\; \textrm{for $n=2,4,5,6,7\cdots$} \\
+& \pi\cos(\theta)/4 \;\;\; \textrm{for $n=1$} \\
+& -\pi\cos^3(\theta)+3\pi\cos(\theta)/4 \;\;\; \textrm{for $n=3$}\\
+\end{cases}
+```
 :::
