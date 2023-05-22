@@ -180,7 +180,7 @@ Now, look at boundary conditions,
 
 ```{math}
 :label: eq189
-y(0,t) = 0 = c^2(Y(0,t)+\psi(0)) = c^2 Y(0,t)+c^\beta
+y(0,t) = 0 = Y(0,t)+\psi(0) = Y(0,t)+\beta
 ```
 
 To make {eq}`eq189` a homogeneous problem, we choose $beta=0$. 
@@ -188,7 +188,7 @@ For the other boundary condition,
 
 ```{math}
 :label: eq190
-y(L,t) = 0 = c^2(Y(L,t)+\psi(L)) = c^2 Y(L,t)-\frac{L^3}{6c^2}+\alpha L
+y(L,t) = 0 = Y(L,t)+\psi(L) = Y(L,t)-\frac{L^3}{6c^2}+\alpha L
 ```
 
 
