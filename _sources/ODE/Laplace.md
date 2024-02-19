@@ -1,4 +1,4 @@
-(Laplace)=
+(Laplace_T)=
 # Week 5 and 6: Laplace Transform
 ## What is a Laplace Transform and how it works? (s space and t or x space)
 From the first two chapters, we know a lot of ODEs share a similar form of solution : i.e., $c_1e^{s_1t}+c_2e^{s_2t}$. When we substitute the solution back to the ODEs, we can usually subtract the exponential term and make the entire equation into an _algebra problem_. This is exactly the goal of _Laplace Transform_, which can be simplified as the flowchart below. 

@@ -29,7 +29,7 @@ __Part I: Ordinary Differential Equation__
         * Euler Form  
         * Series Solution: A more general approach for all of the problems above 
 
-* {ref}`Laplace`
+* {ref}`Laplace_T`
     * What is a Laplace Transform and how it works? (s space and t or x space)
     * Initial Value Problem
     * Heaviside Function and Shifting Theorem 
