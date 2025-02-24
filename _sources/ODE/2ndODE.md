@@ -105,8 +105,8 @@ Using {eq}`eq32`, we can find c_1 and c_2
 
 ```{math}
 \begin{align}
-c_1 &= \frac{Ay'_2(x_0)-By_2(x_0)}{W[y_1,y_2](x_0)}=\frac{-2*2-3*1}{1}=-7 \\ 
-c_2 &= \frac{By_1(x_0)-Ay'_1(x_0)}{W[y_1,y_2](x_0)}=\frac{3*1+2}{1}=5 \\ 
+c_1 &= \frac{Ay'_2(x_0)-By_2(x_0)}{W[y_1,y_2](x_0)}=\frac{-2*2-3*1}{1}=-5 \\ 
+c_2 &= \frac{By_1(x_0)-Ay'_1(x_0)}{W[y_1,y_2](x_0)}=\frac{3*1+2}{1}=4 \\ 
 \end{align}
 ```
 

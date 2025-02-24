@@ -1,0 +1,1888 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Applied Math 2</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applied Math 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ODE/1stODE.html">
+   Week 1 and 2: 1st-order ODE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ODE/2ndODE.html">
+   Week 3 and 4: 2nd-order ODE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ODE/Laplace.html">
+   Week 5 and 6: Laplace Transform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ODE/Sturm_Liouville.html">
+   Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ODE/Special_function.html">
+   Week 9 and 10:  Special Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Heat_equation.html">
+   Week 11:  Heat Equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Wave_equation.html">
+   Week 12:  Wave Equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Laplace_equation.html">
+   Week 13:  Laplace Equation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/PDE/2layer_QG.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPDE/2layer_QG.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/PDE/2layer_QG.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><no title></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;&quot;</span>
+<span class="sd">Nicholas Lutsko -- AOS Program, Princeton</span>
+
+<span class="sd">Zonally truncated 2-layer QG model after Held &amp; Panetta 1988</span>
+<span class="sd">Only keep 1 zonal wavenumber, default is k=0.7</span>
+
+<span class="sd">The non-linear terms are calculated using the</span>
+<span class="sd">Orszag (1971) alias-free transform method. Leapfrog</span>
+<span class="sd">time-stepping is used for all terms except the</span>
+<span class="sd">hyperdiffusion.</span>
+
+<span class="sd">Here it just tracks the growth rate, the</span>
+<span class="sd">domain-mean energy and the domain-mean enstrophy,</span>
+<span class="sd">and also plots the zonal-mean streamfunction as a</span>
+<span class="sd">function of time, but it can be easily modified to</span>
+<span class="sd">do other things.</span>
+
+<span class="sd">Last updated -- July 12th 2016</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+
+
+<span class="c1">#######################################################</span>
+<span class="c1">#  First declare some parameters, arrays, etc.</span>
+
+<span class="n">opt</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 1 = just the linear parts, 2 = just the nonlinear parts, 3 = full model</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">256</span> <span class="c1">#size of spectral decomposition</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">20.</span> <span class="c1">#size of domain -- stick to multiples of 10</span>
+
+<span class="n">nu</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span> <span class="mf">10.</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.</span> <span class="p">)</span> <span class="c1">#viscous dissipation</span>
+<span class="n">km</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1">#Ekman friction -- setting in PH88 is 0.3</span>
+<span class="n">kt</span> <span class="o">=</span> <span class="mf">0.067</span> <span class="c1">#radiative damping -- value in PH88 is 0.067</span>
+<span class="n">bet</span> <span class="o">=</span> <span class="mf">0.15</span> <span class="c1">#beta -- value in PH88 is 0.15</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="c1">#always useful</span>
+
+<span class="c1">#Wavenumbers:</span>
+<span class="c1">#Zonal wavenumbers:</span>
+<span class="n">MK</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.7</span> <span class="o">*</span> <span class="n">L</span> <span class="p">)</span> <span class="c1">#Wavenumber to keep</span>
+<span class="n">zk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">])</span>
+
+<span class="c1">#Meridional wavenumbers:</span>
+<span class="n">ll</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span> <span class="n">N</span> <span class="p">,</span> <span class="n">L</span> <span class="o">/</span> <span class="mf">256.</span> <span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">L</span><span class="p">,</span> <span class="n">N</span> <span class="p">)</span> <span class="c1">#domain size</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.025</span> <span class="c1">#Timestep</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1">#Total timesteps</span>
+<span class="n">lim</span> <span class="o">=</span> <span class="mi">2000</span> <span class="c1">#Start taking averages from here</span>
+
+<span class="c1">#Spectral arrays:</span>
+<span class="c1">#Only need 3 time-steps</span>
+<span class="n">psic_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span> <span class="p">(</span> <span class="mi">3</span> <span class="p">,</span> <span class="mi">2</span> <span class="p">,</span> <span class="n">N</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">complex</span> <span class="p">)</span>
+<span class="n">psic_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span> <span class="p">(</span> <span class="mi">3</span> <span class="p">,</span> <span class="mi">2</span> <span class="p">,</span> <span class="n">N</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">complex</span> <span class="p">)</span>
+<span class="n">qc_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span> <span class="p">(</span> <span class="mi">3</span> <span class="p">,</span> <span class="mi">2</span> <span class="p">,</span> <span class="n">N</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">complex</span> <span class="p">)</span>
+<span class="n">qc_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span> <span class="p">(</span> <span class="mi">3</span> <span class="p">,</span> <span class="mi">2</span> <span class="p">,</span> <span class="n">N</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">complex</span> <span class="p">)</span>
+
+<span class="c1">#Array for saving zonal-mean upper-level streamfunction</span>
+<span class="n">psi_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">N</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="c1">#Track energy, enstrophy and growth rate:</span>
+<span class="n">en</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="n">ts</span> <span class="p">)</span>
+<span class="n">ens</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="n">ts</span> <span class="p">)</span>
+<span class="n">gr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="n">ts</span> <span class="o">-</span> <span class="n">lim</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">N</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+
+
+<span class="c1">#######################################################</span>
+<span class="c1">#  Some functions</span>
+
+<span class="k">def</span> <span class="nf">ft</span><span class="p">(</span> <span class="n">psi</span> <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Fourier Transform and keep relevant coefficients&quot;&quot;&quot;</span>
+    <span class="n">temp1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span> <span class="n">psi</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">temp1</span><span class="p">[:</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">]</span> <span class="o">/</span> <span class="n">N</span> <span class="o">/</span> <span class="n">N</span> <span class="p">,</span> <span class="n">temp1</span><span class="p">[:,</span> <span class="n">MK</span> <span class="p">]</span> <span class="o">/</span> <span class="n">N</span> <span class="o">/</span> <span class="n">N</span>
+
+<span class="k">def</span> <span class="nf">ift</span><span class="p">(</span> <span class="n">psic</span> <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Inverse Fourier Transform&quot;&quot;&quot;</span>
+    <span class="n">temp1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span> <span class="n">psic</span><span class="p">[</span> <span class="mi">0</span> <span class="p">]</span> <span class="p">)</span>
+    <span class="n">temp2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span> <span class="n">psic</span><span class="p">[</span> <span class="mi">1</span> <span class="p">]</span> <span class="p">)</span>
+    <span class="n">ps</span> <span class="o">=</span> <span class="n">temp1</span><span class="p">[</span> <span class="p">:</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span> <span class="p">]</span> <span class="o">+</span> <span class="n">temp2</span> <span class="p">[</span> <span class="p">:</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span> <span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">zk</span><span class="p">[</span><span class="mi">1</span> <span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[:]</span> <span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="n">temp2</span><span class="p">[</span> <span class="p">:</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span> <span class="p">]</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span> <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span><span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">zk</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[:]</span> <span class="p">)</span>
+     <span class="c1">#psi(x,y,t)  =  psi_0(y,t) + (psi_k(y,t)exp(ikx) + c.c)</span>
+    <span class="k">return</span> <span class="n">ps</span>
+
+<span class="k">def</span> <span class="nf">ptq</span><span class="p">(</span><span class="n">ps1</span><span class="p">,</span> <span class="n">ps2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculate PV&quot;&quot;&quot;</span>
+    <span class="n">q1</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">ll</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">zk</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">*</span> <span class="n">ps1</span> <span class="o">-</span> <span class="p">(</span><span class="n">ps1</span> <span class="o">-</span> <span class="n">ps2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span> <span class="c1"># -(k^2 + l^2) * psi_1 -0.5*(psi_1-psi_2)</span>
+    <span class="n">q2</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">ll</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">zk</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">*</span> <span class="n">ps2</span> <span class="o">+</span> <span class="p">(</span><span class="n">ps1</span> <span class="o">-</span> <span class="n">ps2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span> <span class="c1"># -(k^2 + l^2) * psi_2 +0.5*(psi_1-psi_2)</span>
+    <span class="k">return</span> <span class="n">q1</span><span class="p">,</span> <span class="n">q2</span>
+
+<span class="k">def</span> <span class="nf">qtp</span><span class="p">(</span><span class="n">q1_s</span><span class="p">,</span> <span class="n">q2_s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Invert PV&quot;&quot;&quot;</span>
+    <span class="n">psi_bt</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">q1_s</span> <span class="o">+</span> <span class="n">q2_s</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">ll</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">zk</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span>      <span class="c1"># (psi_1 + psi_2)/2</span>
+    <span class="n">psi_bc</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">q1_s</span> <span class="o">-</span> <span class="n">q2_s</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">ll</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">zk</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">1.</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span>  <span class="c1"># (psi_1 - psi_2)/2</span>
+    <span class="n">psi_bt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
+    <span class="n">psi1</span> <span class="o">=</span> <span class="n">psi_bt</span> <span class="o">+</span> <span class="n">psi_bc</span>
+    <span class="n">psi2</span> <span class="o">=</span> <span class="n">psi_bt</span> <span class="o">-</span> <span class="n">psi_bc</span>
+    <span class="k">return</span> <span class="n">psi1</span><span class="p">,</span> <span class="n">psi2</span>
+
+<span class="k">def</span> <span class="nf">calcnl</span><span class="p">(</span> <span class="n">psi</span><span class="p">,</span> <span class="n">qc</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;&quot;Calculate dealiased non-linear terms&quot;&quot;&quot;</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#3/2*the total wavenumbers</span>
+    <span class="n">temp1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="n">ex</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">complex</span> <span class="p">)</span>
+    <span class="n">temp2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="n">ex</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">complex</span> <span class="p">)</span>
+    <span class="n">temp4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="n">N</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">complex</span> <span class="p">)</span>	<span class="c1">#Final array</span>
+    <span class="c1">#Pad values:</span>
+    <span class="n">temp1</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">psi</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span>
+    <span class="n">temp1</span><span class="p">[</span><span class="n">ex</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">):]</span> <span class="o">=</span> <span class="n">psi</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">):]</span>
+    <span class="n">temp2</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">qc</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span>
+    <span class="n">temp2</span><span class="p">[</span><span class="n">ex</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">):]</span> <span class="o">=</span> <span class="n">qc</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">):]</span>
+    <span class="c1">#Fourier transform product, normalize, and filter:</span>
+    <span class="n">temp3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span> <span class="n">temp1</span> <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span> <span class="n">temp2</span> <span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">3.</span> <span class="o">/</span> <span class="mf">2.</span>
+    <span class="n">temp4</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">temp3</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span>
+    <span class="n">temp4</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">):]</span> <span class="o">=</span> <span class="n">temp3</span><span class="p">[</span><span class="n">ex</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">):]</span>
+    <span class="k">return</span> <span class="n">temp4</span>
+
+<span class="k">def</span> <span class="nf">nlterm</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">wpsi</span><span class="p">,</span> <span class="n">psi</span><span class="p">,</span> <span class="n">wqc</span><span class="p">,</span> <span class="n">qc</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;&quot;Calculate non-linear terms&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">NL1</span> <span class="o">=</span> <span class="n">calcnl</span><span class="p">(</span><span class="n">wpsi</span><span class="p">,</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">ll</span> <span class="o">*</span> <span class="n">qc</span><span class="p">)</span> <span class="c1">#ik psi_k * dq_k^*/dy</span>
+        <span class="n">NL2</span> <span class="o">=</span> <span class="n">calcnl</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">ll</span> <span class="o">*</span> <span class="n">wpsi</span><span class="p">)</span> <span class="c1">#ik q_k^* * d(psi_k)/dy</span>
+        <span class="n">NL3</span> <span class="o">=</span> <span class="n">calcnl</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">ll</span> <span class="o">*</span> <span class="n">wqc</span><span class="p">)</span> <span class="c1">#ik psi_k^* * dq_k/dy</span>
+        <span class="n">NL4</span> <span class="o">=</span> <span class="n">calcnl</span><span class="p">(</span><span class="n">wqc</span> <span class="p">,</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">ll</span> <span class="o">*</span> <span class="n">psi</span><span class="p">)</span> <span class="c1">#ik q_k * d(psi_k^*)/dy</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">zk</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">NL4</span> <span class="o">+</span> <span class="n">NL3</span> <span class="o">-</span> <span class="n">NL2</span> <span class="o">-</span> <span class="n">NL1</span><span class="p">))</span><span class="o">.</span><span class="n">real</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">NL1</span> <span class="o">=</span> <span class="n">calcnl</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">ll</span> <span class="o">*</span> <span class="n">wpsi</span><span class="p">)</span> <span class="c1">#q_k * d(psi_0)/dy</span>
+        <span class="n">NL2</span> <span class="o">=</span> <span class="n">calcnl</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">ll</span> <span class="o">*</span> <span class="n">wqc</span><span class="p">)</span> <span class="c1">#psi_k * d(q_0)/dy</span>
+        <span class="k">return</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">zk</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span> <span class="n">NL1</span> <span class="o">-</span> <span class="n">NL2</span> <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">lterm</span><span class="p">(</span><span class="n">lay</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">qc</span><span class="p">,</span> <span class="n">psi</span><span class="p">,</span> <span class="n">opsi</span><span class="p">,</span> <span class="n">upsi</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;&quot;Calculate linear terms&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">lay</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+         <span class="k">return</span> <span class="o">-</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">k1</span> <span class="o">*</span> <span class="n">qc</span> <span class="o">-</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">k1</span> <span class="o">*</span> <span class="p">(</span> <span class="n">bet</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="p">)</span> <span class="o">*</span> <span class="n">psi</span> <span class="o">+</span> <span class="n">kt</span> <span class="o">*</span> <span class="p">(</span><span class="n">psi</span> <span class="o">-</span> <span class="n">upsi</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span>  <span class="o">-</span> <span class="mf">1.</span><span class="n">j</span> <span class="o">*</span> <span class="n">k1</span> <span class="o">*</span> <span class="p">(</span> <span class="n">bet</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="p">)</span> <span class="o">*</span> <span class="n">psi</span> <span class="o">+</span> <span class="n">km</span> <span class="o">*</span> <span class="p">((</span><span class="n">k1</span> <span class="o">+</span> <span class="n">ll</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">opsi</span> <span class="o">+</span> <span class="n">kt</span> <span class="o">*</span> <span class="p">(</span><span class="n">psi</span> <span class="o">-</span> <span class="n">upsi</span><span class="p">)</span>
+
+
+
+<span class="c1">#######################################################</span>
+<span class="c1">#  Initial conditions:</span>
+
+<span class="c1">#Make ICs:</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+<span class="n">psic_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span> <span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">.0001</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">psic_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span> <span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">.0001</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">psic_1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">psic_2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
+
+<span class="c1">#Transfer values:</span>
+<span class="n">psic_1</span><span class="p">[</span> <span class="mi">1</span> <span class="p">,</span> <span class="p">:</span> <span class="p">,</span> <span class="p">:</span> <span class="p">]</span> <span class="o">=</span> <span class="n">psic_1</span><span class="p">[</span> <span class="mi">0</span> <span class="p">,</span> <span class="p">:</span> <span class="p">,</span> <span class="p">:</span> <span class="p">]</span>
+<span class="n">psic_2</span><span class="p">[</span> <span class="mi">1</span> <span class="p">,</span> <span class="p">:</span> <span class="p">,</span> <span class="p">:</span> <span class="p">]</span> <span class="o">=</span> <span class="n">psic_2</span><span class="p">[</span> <span class="mi">0</span> <span class="p">,</span> <span class="p">:</span> <span class="p">,</span> <span class="p">:</span> <span class="p">]</span>
+
+<span class="c1">#Calculate initial PV</span>
+<span class="n">qc_1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">ptq</span><span class="p">(</span><span class="n">psic_1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">psic_2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">ptq</span><span class="p">(</span><span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">psic_2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1">#Take first norms:</span>
+<span class="n">en</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">psic_1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">psic_1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="c1">#Energy</span>
+<span class="n">ens</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">qc_1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">qc_1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">)</span> <span class="c1">#Enstrophy</span>
+
+
+<span class="c1">#######################################################</span>
+<span class="c1">#  Time-stepping functions</span>
+
+<span class="k">def</span> <span class="nf">fs</span><span class="p">(</span><span class="n">ovar</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">det</span><span class="p">,</span> <span class="n">jk</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Forward Step: q^t-1 / ( 1 + 2. * dt * nu * (k^4 + l^4 ) ) + RHS&quot;&quot;&quot;</span>
+    <span class="n">mult</span> <span class="o">=</span> <span class="n">det</span> <span class="o">/</span> <span class="p">(</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">det</span> <span class="o">*</span> <span class="n">nu</span> <span class="o">*</span> <span class="p">(</span><span class="n">zk</span><span class="p">[</span><span class="n">jk</span><span class="p">]</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">ll</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">mult</span> <span class="o">*</span> <span class="p">(</span><span class="n">ovar</span> <span class="o">/</span> <span class="n">det</span> <span class="o">+</span> <span class="n">rhs</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">lf</span><span class="p">(</span><span class="n">oovar</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">det</span><span class="p">,</span> <span class="n">jk</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Leap frog timestepping: q^t-1 / ( 1 + 2. * dt * nu * (k^4 + l^4 ) ) + RHS&quot;&quot;&quot;</span>
+    <span class="n">mult</span> <span class="o">=</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">det</span> <span class="o">/</span> <span class="p">(</span> <span class="mf">1.</span> <span class="o">+</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">det</span> <span class="o">*</span> <span class="n">nu</span> <span class="o">*</span> <span class="p">(</span><span class="n">zk</span><span class="p">[</span><span class="n">jk</span><span class="p">]</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">ll</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">mult</span> <span class="o">*</span> <span class="p">(</span><span class="n">oovar</span> <span class="o">/</span> <span class="n">det</span> <span class="o">/</span> <span class="mf">2.</span> <span class="o">+</span> <span class="n">rhs</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="mf">0.04</span> <span class="c1">#filter coefficient</span>
+<span class="k">def</span> <span class="nf">filt</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">ovar</span><span class="p">,</span> <span class="n">nvar</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Leapfrog filtering&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">var</span> <span class="o">+</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="n">ovar</span> <span class="o">-</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">var</span> <span class="o">+</span> <span class="n">nvar</span> <span class="p">)</span>
+
+
+<span class="c1">#######################################################</span>
+<span class="c1">#  Main time-stepping loop</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Timestep:&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">forc1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">forc2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">nl1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">nl2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">complex</span><span class="p">)</span>
+
+<span class="c1">#Timestepping:</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ts</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Timestep:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot; / &quot;</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+
+    <span class="c1">#Calculate conjugates:</span>
+    <span class="n">qcc_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span> <span class="p">)</span>
+    <span class="n">qcc_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span> <span class="p">)</span>
+    <span class="n">pcc_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span> <span class="p">)</span>
+    <span class="n">pcc_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">psic_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span> <span class="p">)</span>
+
+    <span class="c1">#Calculate timestep</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">opt</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+           <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">nl1</span> <span class="o">=</span> <span class="n">nlterm</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">pcc_1</span><span class="p">,</span> <span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">qcc_1</span><span class="p">)</span>
+                <span class="n">nl2</span> <span class="o">=</span> <span class="n">nlterm</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">psic_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">pcc_2</span><span class="p">,</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">qcc_2</span><span class="p">)</span>
+           <span class="k">else</span><span class="p">:</span>
+                <span class="n">nl1</span> <span class="o">=</span> <span class="n">nlterm</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+                <span class="n">nl2</span> <span class="o">=</span> <span class="n">nlterm</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">psic_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">psic_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">opt</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">forc1</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">lterm</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">zk</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">psic_1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">psic_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">j</span><span class="p">)</span>
+            <span class="n">forc2</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">lterm</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">zk</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">psic_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">psic_2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">j</span><span class="p">)</span>
+
+        <span class="n">rhs1</span> <span class="o">=</span> <span class="n">nl1</span><span class="p">[:]</span> <span class="o">+</span> <span class="n">forc1</span><span class="p">[:]</span>
+        <span class="n">rhs2</span> <span class="o">=</span> <span class="n">nl2</span><span class="p">[:]</span> <span class="o">+</span> <span class="n">forc2</span><span class="p">[:]</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="c1">#Forward step</span>
+        	<span class="n">qc_1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">fs</span><span class="p">(</span><span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">rhs1</span><span class="p">[:],</span> <span class="n">dt</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+        	<span class="n">qc_2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">fs</span><span class="p">(</span><span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">rhs2</span><span class="p">[:],</span> <span class="n">dt</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+		<span class="c1">#Leapfrog step</span>
+        	<span class="n">qc_1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">lf</span><span class="p">(</span><span class="n">qc_1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">rhs1</span><span class="p">[:],</span> <span class="n">dt</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+        	<span class="n">qc_2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">lf</span><span class="p">(</span><span class="n">qc_2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">rhs2</span><span class="p">[:],</span> <span class="n">dt</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="c1">#Leapfrog filter</span>
+                <span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">filt</span><span class="p">(</span><span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">qc_1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">qc_1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+                <span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">filt</span><span class="p">(</span><span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+
+    <span class="c1">#Invert:</span>
+    <span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">psic_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">qtp</span><span class="p">(</span><span class="n">qc_1</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
+    <span class="n">psic_1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">psic_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">qtp</span><span class="p">(</span><span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+
+    <span class="c1">#Growth rate, norms</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">lim</span><span class="p">:</span>
+        <span class="n">gr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">lim</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="nb">abs</span><span class="p">(</span> <span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span> <span class="p">)</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span> <span class="n">psic_1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span> <span class="p">)</span> <span class="p">)</span> <span class="o">/</span> <span class="n">dt</span> <span class="c1">#Growth rate</span>
+    <span class="n">en</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="c1">#Energy</span>
+    <span class="n">ens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="c1">#Enstrophy</span>
+
+
+    <span class="n">psi_1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">ift</span><span class="p">(</span> <span class="n">psic_1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">)</span><span class="o">.</span><span class="n">real</span>
+
+    <span class="c1">#Transfer values:</span>
+    <span class="n">qc_1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+    <span class="n">qc_2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+    <span class="n">qc_1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">qc_1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+    <span class="n">qc_2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">qc_2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ts</span> <span class="o">*</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="mi">256</span> <span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span> <span class="o">-</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mi">100</span> <span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span> <span class="n">left</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="mf">0.9</span> <span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hovmuller plot of upper level streamfunction&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span> <span class="n">time</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span> <span class="n">psi_1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">v</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">RdBu_r</span> <span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">ticks</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">5.</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">5.</span><span class="p">])</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\psi_1$&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span> <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">which</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span> <span class="o">=</span> <span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">which</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span> <span class="o">=</span> <span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mf">100.</span><span class="p">,</span> <span class="mf">250.</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;images/upper_level_streamfunction.png&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 0
+Timestep: 10  /  10000
+Timestep: 20  /  10000
+Timestep: 30  /  10000
+Timestep: 40  /  10000
+Timestep: 50  /  10000
+Timestep: 60  /  10000
+Timestep: 70  /  10000
+Timestep: 80  /  10000
+Timestep: 90  /  10000
+Timestep: 100  /  10000
+Timestep: 110  /  10000
+Timestep: 120  /  10000
+Timestep: 130  /  10000
+Timestep: 140  /  10000
+Timestep: 150  /  10000
+Timestep: 160  /  10000
+Timestep: 170  /  10000
+Timestep: 180  /  10000
+Timestep: 190  /  10000
+Timestep: 200  /  10000
+Timestep: 210  /  10000
+Timestep: 220  /  10000
+Timestep: 230  /  10000
+Timestep: 240  /  10000
+Timestep: 250  /  10000
+Timestep: 260  /  10000
+Timestep: 270  /  10000
+Timestep: 280  /  10000
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_71653/2341826970.py:93: RuntimeWarning: divide by zero encountered in divide
+  psi_bt = -(q1_s + q2_s) / (ll[np.newaxis, :] ** 2 + zk[:, np.newaxis] ** 2) / 2.      # (psi_1 + psi_2)/2
+/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_71653/2341826970.py:93: RuntimeWarning: invalid value encountered in divide
+  psi_bt = -(q1_s + q2_s) / (ll[np.newaxis, :] ** 2 + zk[:, np.newaxis] ** 2) / 2.      # (psi_1 + psi_2)/2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 290  /  10000
+Timestep: 300  /  10000
+Timestep: 310  /  10000
+Timestep: 320  /  10000
+Timestep: 330  /  10000
+Timestep: 340  /  10000
+Timestep: 350  /  10000
+Timestep: 360  /  10000
+Timestep: 370  /  10000
+Timestep: 380  /  10000
+Timestep: 390  /  10000
+Timestep: 400  /  10000
+Timestep: 410  /  10000
+Timestep: 420  /  10000
+Timestep: 430  /  10000
+Timestep: 440  /  10000
+Timestep: 450  /  10000
+Timestep: 460  /  10000
+Timestep: 470  /  10000
+Timestep: 480  /  10000
+Timestep: 490  /  10000
+Timestep: 500  /  10000
+Timestep: 510  /  10000
+Timestep: 520  /  10000
+Timestep: 530  /  10000
+Timestep: 540  /  10000
+Timestep: 550  /  10000
+Timestep: 560  /  10000
+Timestep: 570  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 580  /  10000
+Timestep: 590  /  10000
+Timestep: 600  /  10000
+Timestep: 610  /  10000
+Timestep: 620  /  10000
+Timestep: 630  /  10000
+Timestep: 640  /  10000
+Timestep: 650  /  10000
+Timestep: 660  /  10000
+Timestep: 670  /  10000
+Timestep: 680  /  10000
+Timestep: 690  /  10000
+Timestep: 700  /  10000
+Timestep: 710  /  10000
+Timestep: 720  /  10000
+Timestep: 730  /  10000
+Timestep: 740  /  10000
+Timestep: 750  /  10000
+Timestep: 760  /  10000
+Timestep: 770  /  10000
+Timestep: 780  /  10000
+Timestep: 790  /  10000
+Timestep: 800  /  10000
+Timestep: 810  /  10000
+Timestep: 820  /  10000
+Timestep: 830  /  10000
+Timestep: 840  /  10000
+Timestep: 850  /  10000
+Timestep: 860  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 870  /  10000
+Timestep: 880  /  10000
+Timestep: 890  /  10000
+Timestep: 900  /  10000
+Timestep: 910  /  10000
+Timestep: 920  /  10000
+Timestep: 930  /  10000
+Timestep: 940  /  10000
+Timestep: 950  /  10000
+Timestep: 960  /  10000
+Timestep: 970  /  10000
+Timestep: 980  /  10000
+Timestep: 990  /  10000
+Timestep: 1000  /  10000
+Timestep: 1010  /  10000
+Timestep: 1020  /  10000
+Timestep: 1030  /  10000
+Timestep: 1040  /  10000
+Timestep: 1050  /  10000
+Timestep: 1060  /  10000
+Timestep: 1070  /  10000
+Timestep: 1080  /  10000
+Timestep: 1090  /  10000
+Timestep: 1100  /  10000
+Timestep: 1110  /  10000
+Timestep: 1120  /  10000
+Timestep: 1130  /  10000
+Timestep: 1140  /  10000
+Timestep: 1150  /  10000
+Timestep: 1160  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 1170  /  10000
+Timestep: 1180  /  10000
+Timestep: 1190  /  10000
+Timestep: 1200  /  10000
+Timestep: 1210  /  10000
+Timestep: 1220  /  10000
+Timestep: 1230  /  10000
+Timestep: 1240  /  10000
+Timestep: 1250  /  10000
+Timestep: 1260  /  10000
+Timestep: 1270  /  10000
+Timestep: 1280  /  10000
+Timestep: 1290  /  10000
+Timestep: 1300  /  10000
+Timestep: 1310  /  10000
+Timestep: 1320  /  10000
+Timestep: 1330  /  10000
+Timestep: 1340  /  10000
+Timestep: 1350  /  10000
+Timestep: 1360  /  10000
+Timestep: 1370  /  10000
+Timestep: 1380  /  10000
+Timestep: 1390  /  10000
+Timestep: 1400  /  10000
+Timestep: 1410  /  10000
+Timestep: 1420  /  10000
+Timestep: 1430  /  10000
+Timestep: 1440  /  10000
+Timestep: 1450  /  10000
+Timestep: 1460  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 1470  /  10000
+Timestep: 1480  /  10000
+Timestep: 1490  /  10000
+Timestep: 1500  /  10000
+Timestep: 1510  /  10000
+Timestep: 1520  /  10000
+Timestep: 1530  /  10000
+Timestep: 1540  /  10000
+Timestep: 1550  /  10000
+Timestep: 1560  /  10000
+Timestep: 1570  /  10000
+Timestep: 1580  /  10000
+Timestep: 1590  /  10000
+Timestep: 1600  /  10000
+Timestep: 1610  /  10000
+Timestep: 1620  /  10000
+Timestep: 1630  /  10000
+Timestep: 1640  /  10000
+Timestep: 1650  /  10000
+Timestep: 1660  /  10000
+Timestep: 1670  /  10000
+Timestep: 1680  /  10000
+Timestep: 1690  /  10000
+Timestep: 1700  /  10000
+Timestep: 1710  /  10000
+Timestep: 1720  /  10000
+Timestep: 1730  /  10000
+Timestep: 1740  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 1750  /  10000
+Timestep: 1760  /  10000
+Timestep: 1770  /  10000
+Timestep: 1780  /  10000
+Timestep: 1790  /  10000
+Timestep: 1800  /  10000
+Timestep: 1810  /  10000
+Timestep: 1820  /  10000
+Timestep: 1830  /  10000
+Timestep: 1840  /  10000
+Timestep: 1850  /  10000
+Timestep: 1860  /  10000
+Timestep: 1870  /  10000
+Timestep: 1880  /  10000
+Timestep: 1890  /  10000
+Timestep: 1900  /  10000
+Timestep: 1910  /  10000
+Timestep: 1920  /  10000
+Timestep: 1930  /  10000
+Timestep: 1940  /  10000
+Timestep: 1950  /  10000
+Timestep: 1960  /  10000
+Timestep: 1970  /  10000
+Timestep: 1980  /  10000
+Timestep: 1990  /  10000
+Timestep: 2000  /  10000
+Timestep: 2010  /  10000
+Timestep: 2020  /  10000
+Timestep: 2030  /  10000
+Timestep: 2040  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 2050  /  10000
+Timestep: 2060  /  10000
+Timestep: 2070  /  10000
+Timestep: 2080  /  10000
+Timestep: 2090  /  10000
+Timestep: 2100  /  10000
+Timestep: 2110  /  10000
+Timestep: 2120  /  10000
+Timestep: 2130  /  10000
+Timestep: 2140  /  10000
+Timestep: 2150  /  10000
+Timestep: 2160  /  10000
+Timestep: 2170  /  10000
+Timestep: 2180  /  10000
+Timestep: 2190  /  10000
+Timestep: 2200  /  10000
+Timestep: 2210  /  10000
+Timestep: 2220  /  10000
+Timestep: 2230  /  10000
+Timestep: 2240  /  10000
+Timestep: 2250  /  10000
+Timestep: 2260  /  10000
+Timestep: 2270  /  10000
+Timestep: 2280  /  10000
+Timestep: 2290  /  10000
+Timestep: 2300  /  10000
+Timestep: 2310  /  10000
+Timestep: 2320  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 2330  /  10000
+Timestep: 2340  /  10000
+Timestep: 2350  /  10000
+Timestep: 2360  /  10000
+Timestep: 2370  /  10000
+Timestep: 2380  /  10000
+Timestep: 2390  /  10000
+Timestep: 2400  /  10000
+Timestep: 2410  /  10000
+Timestep: 2420  /  10000
+Timestep: 2430  /  10000
+Timestep: 2440  /  10000
+Timestep: 2450  /  10000
+Timestep: 2460  /  10000
+Timestep: 2470  /  10000
+Timestep: 2480  /  10000
+Timestep: 2490  /  10000
+Timestep: 2500  /  10000
+Timestep: 2510  /  10000
+Timestep: 2520  /  10000
+Timestep: 2530  /  10000
+Timestep: 2540  /  10000
+Timestep: 2550  /  10000
+Timestep: 2560  /  10000
+Timestep: 2570  /  10000
+Timestep: 2580  /  10000
+Timestep: 2590  /  10000
+Timestep: 2600  /  10000
+Timestep: 2610  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 2620  /  10000
+Timestep: 2630  /  10000
+Timestep: 2640  /  10000
+Timestep: 2650  /  10000
+Timestep: 2660  /  10000
+Timestep: 2670  /  10000
+Timestep: 2680  /  10000
+Timestep: 2690  /  10000
+Timestep: 2700  /  10000
+Timestep: 2710  /  10000
+Timestep: 2720  /  10000
+Timestep: 2730  /  10000
+Timestep: 2740  /  10000
+Timestep: 2750  /  10000
+Timestep: 2760  /  10000
+Timestep: 2770  /  10000
+Timestep: 2780  /  10000
+Timestep: 2790  /  10000
+Timestep: 2800  /  10000
+Timestep: 2810  /  10000
+Timestep: 2820  /  10000
+Timestep: 2830  /  10000
+Timestep: 2840  /  10000
+Timestep: 2850  /  10000
+Timestep: 2860  /  10000
+Timestep: 2870  /  10000
+Timestep: 2880  /  10000
+Timestep: 2890  /  10000
+Timestep: 2900  /  10000
+Timestep: 2910  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 2920  /  10000
+Timestep: 2930  /  10000
+Timestep: 2940  /  10000
+Timestep: 2950  /  10000
+Timestep: 2960  /  10000
+Timestep: 2970  /  10000
+Timestep: 2980  /  10000
+Timestep: 2990  /  10000
+Timestep: 3000  /  10000
+Timestep: 3010  /  10000
+Timestep: 3020  /  10000
+Timestep: 3030  /  10000
+Timestep: 3040  /  10000
+Timestep: 3050  /  10000
+Timestep: 3060  /  10000
+Timestep: 3070  /  10000
+Timestep: 3080  /  10000
+Timestep: 3090  /  10000
+Timestep: 3100  /  10000
+Timestep: 3110  /  10000
+Timestep: 3120  /  10000
+Timestep: 3130  /  10000
+Timestep: 3140  /  10000
+Timestep: 3150  /  10000
+Timestep: 3160  /  10000
+Timestep: 3170  /  10000
+Timestep: 3180  /  10000
+Timestep: 3190  /  10000
+Timestep: 3200  /  10000
+Timestep: 3210  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3220  /  10000
+Timestep: 3230  /  10000
+Timestep: 3240  /  10000
+Timestep: 3250  /  10000
+Timestep: 3260  /  10000
+Timestep: 3270  /  10000
+Timestep: 3280  /  10000
+Timestep: 3290  /  10000
+Timestep: 3300  /  10000
+Timestep: 3310  /  10000
+Timestep: 3320  /  10000
+Timestep: 3330  /  10000
+Timestep: 3340  /  10000
+Timestep: 3350  /  10000
+Timestep: 3360  /  10000
+Timestep: 3370  /  10000
+Timestep: 3380  /  10000
+Timestep: 3390  /  10000
+Timestep: 3400  /  10000
+Timestep: 3410  /  10000
+Timestep: 3420  /  10000
+Timestep: 3430  /  10000
+Timestep: 3440  /  10000
+Timestep: 3450  /  10000
+Timestep: 3460  /  10000
+Timestep: 3470  /  10000
+Timestep: 3480  /  10000
+Timestep: 3490  /  10000
+Timestep: 3500  /  10000
+Timestep: 3510  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3520  /  10000
+Timestep: 3530  /  10000
+Timestep: 3540  /  10000
+Timestep: 3550  /  10000
+Timestep: 3560  /  10000
+Timestep: 3570  /  10000
+Timestep: 3580  /  10000
+Timestep: 3590  /  10000
+Timestep: 3600  /  10000
+Timestep: 3610  /  10000
+Timestep: 3620  /  10000
+Timestep: 3630  /  10000
+Timestep: 3640  /  10000
+Timestep: 3650  /  10000
+Timestep: 3660  /  10000
+Timestep: 3670  /  10000
+Timestep: 3680  /  10000
+Timestep: 3690  /  10000
+Timestep: 3700  /  10000
+Timestep: 3710  /  10000
+Timestep: 3720  /  10000
+Timestep: 3730  /  10000
+Timestep: 3740  /  10000
+Timestep: 3750  /  10000
+Timestep: 3760  /  10000
+Timestep: 3770  /  10000
+Timestep: 3780  /  10000
+Timestep: 3790  /  10000
+Timestep: 3800  /  10000
+Timestep: 3810  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3820  /  10000
+Timestep: 3830  /  10000
+Timestep: 3840  /  10000
+Timestep: 3850  /  10000
+Timestep: 3860  /  10000
+Timestep: 3870  /  10000
+Timestep: 3880  /  10000
+Timestep: 3890  /  10000
+Timestep: 3900  /  10000
+Timestep: 3910  /  10000
+Timestep: 3920  /  10000
+Timestep: 3930  /  10000
+Timestep: 3940  /  10000
+Timestep: 3950  /  10000
+Timestep: 3960  /  10000
+Timestep: 3970  /  10000
+Timestep: 3980  /  10000
+Timestep: 3990  /  10000
+Timestep: 4000  /  10000
+Timestep: 4010  /  10000
+Timestep: 4020  /  10000
+Timestep: 4030  /  10000
+Timestep: 4040  /  10000
+Timestep: 4050  /  10000
+Timestep: 4060  /  10000
+Timestep: 4070  /  10000
+Timestep: 4080  /  10000
+Timestep: 4090  /  10000
+Timestep: 4100  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 4110  /  10000
+Timestep: 4120  /  10000
+Timestep: 4130  /  10000
+Timestep: 4140  /  10000
+Timestep: 4150  /  10000
+Timestep: 4160  /  10000
+Timestep: 4170  /  10000
+Timestep: 4180  /  10000
+Timestep: 4190  /  10000
+Timestep: 4200  /  10000
+Timestep: 4210  /  10000
+Timestep: 4220  /  10000
+Timestep: 4230  /  10000
+Timestep: 4240  /  10000
+Timestep: 4250  /  10000
+Timestep: 4260  /  10000
+Timestep: 4270  /  10000
+Timestep: 4280  /  10000
+Timestep: 4290  /  10000
+Timestep: 4300  /  10000
+Timestep: 4310  /  10000
+Timestep: 4320  /  10000
+Timestep: 4330  /  10000
+Timestep: 4340  /  10000
+Timestep: 4350  /  10000
+Timestep: 4360  /  10000
+Timestep: 4370  /  10000
+Timestep: 4380  /  10000
+Timestep: 4390  /  10000
+Timestep: 4400  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 4410  /  10000
+Timestep: 4420  /  10000
+Timestep: 4430  /  10000
+Timestep: 4440  /  10000
+Timestep: 4450  /  10000
+Timestep: 4460  /  10000
+Timestep: 4470  /  10000
+Timestep: 4480  /  10000
+Timestep: 4490  /  10000
+Timestep: 4500  /  10000
+Timestep: 4510  /  10000
+Timestep: 4520  /  10000
+Timestep: 4530  /  10000
+Timestep: 4540  /  10000
+Timestep: 4550  /  10000
+Timestep: 4560  /  10000
+Timestep: 4570  /  10000
+Timestep: 4580  /  10000
+Timestep: 4590  /  10000
+Timestep: 4600  /  10000
+Timestep: 4610  /  10000
+Timestep: 4620  /  10000
+Timestep: 4630  /  10000
+Timestep: 4640  /  10000
+Timestep: 4650  /  10000
+Timestep: 4660  /  10000
+Timestep: 4670  /  10000
+Timestep: 4680  /  10000
+Timestep: 4690  /  10000
+Timestep: 4700  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 4710  /  10000
+Timestep: 4720  /  10000
+Timestep: 4730  /  10000
+Timestep: 4740  /  10000
+Timestep: 4750  /  10000
+Timestep: 4760  /  10000
+Timestep: 4770  /  10000
+Timestep: 4780  /  10000
+Timestep: 4790  /  10000
+Timestep: 4800  /  10000
+Timestep: 4810  /  10000
+Timestep: 4820  /  10000
+Timestep: 4830  /  10000
+Timestep: 4840  /  10000
+Timestep: 4850  /  10000
+Timestep: 4860  /  10000
+Timestep: 4870  /  10000
+Timestep: 4880  /  10000
+Timestep: 4890  /  10000
+Timestep: 4900  /  10000
+Timestep: 4910  /  10000
+Timestep: 4920  /  10000
+Timestep: 4930  /  10000
+Timestep: 4940  /  10000
+Timestep: 4950  /  10000
+Timestep: 4960  /  10000
+Timestep: 4970  /  10000
+Timestep: 4980  /  10000
+Timestep: 4990  /  10000
+Timestep: 5000  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 5010  /  10000
+Timestep: 5020  /  10000
+Timestep: 5030  /  10000
+Timestep: 5040  /  10000
+Timestep: 5050  /  10000
+Timestep: 5060  /  10000
+Timestep: 5070  /  10000
+Timestep: 5080  /  10000
+Timestep: 5090  /  10000
+Timestep: 5100  /  10000
+Timestep: 5110  /  10000
+Timestep: 5120  /  10000
+Timestep: 5130  /  10000
+Timestep: 5140  /  10000
+Timestep: 5150  /  10000
+Timestep: 5160  /  10000
+Timestep: 5170  /  10000
+Timestep: 5180  /  10000
+Timestep: 5190  /  10000
+Timestep: 5200  /  10000
+Timestep: 5210  /  10000
+Timestep: 5220  /  10000
+Timestep: 5230  /  10000
+Timestep: 5240  /  10000
+Timestep: 5250  /  10000
+Timestep: 5260  /  10000
+Timestep: 5270  /  10000
+Timestep: 5280  /  10000
+Timestep: 5290  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 5300  /  10000
+Timestep: 5310  /  10000
+Timestep: 5320  /  10000
+Timestep: 5330  /  10000
+Timestep: 5340  /  10000
+Timestep: 5350  /  10000
+Timestep: 5360  /  10000
+Timestep: 5370  /  10000
+Timestep: 5380  /  10000
+Timestep: 5390  /  10000
+Timestep: 5400  /  10000
+Timestep: 5410  /  10000
+Timestep: 5420  /  10000
+Timestep: 5430  /  10000
+Timestep: 5440  /  10000
+Timestep: 5450  /  10000
+Timestep: 5460  /  10000
+Timestep: 5470  /  10000
+Timestep: 5480  /  10000
+Timestep: 5490  /  10000
+Timestep: 5500  /  10000
+Timestep: 5510  /  10000
+Timestep: 5520  /  10000
+Timestep: 5530  /  10000
+Timestep: 5540  /  10000
+Timestep: 5550  /  10000
+Timestep: 5560  /  10000
+Timestep: 5570  /  10000
+Timestep: 5580  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 5590  /  10000
+Timestep: 5600  /  10000
+Timestep: 5610  /  10000
+Timestep: 5620  /  10000
+Timestep: 5630  /  10000
+Timestep: 5640  /  10000
+Timestep: 5650  /  10000
+Timestep: 5660  /  10000
+Timestep: 5670  /  10000
+Timestep: 5680  /  10000
+Timestep: 5690  /  10000
+Timestep: 5700  /  10000
+Timestep: 5710  /  10000
+Timestep: 5720  /  10000
+Timestep: 5730  /  10000
+Timestep: 5740  /  10000
+Timestep: 5750  /  10000
+Timestep: 5760  /  10000
+Timestep: 5770  /  10000
+Timestep: 5780  /  10000
+Timestep: 5790  /  10000
+Timestep: 5800  /  10000
+Timestep: 5810  /  10000
+Timestep: 5820  /  10000
+Timestep: 5830  /  10000
+Timestep: 5840  /  10000
+Timestep: 5850  /  10000
+Timestep: 5860  /  10000
+Timestep: 5870  /  10000
+Timestep: 5880  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 5890  /  10000
+Timestep: 5900  /  10000
+Timestep: 5910  /  10000
+Timestep: 5920  /  10000
+Timestep: 5930  /  10000
+Timestep: 5940  /  10000
+Timestep: 5950  /  10000
+Timestep: 5960  /  10000
+Timestep: 5970  /  10000
+Timestep: 5980  /  10000
+Timestep: 5990  /  10000
+Timestep: 6000  /  10000
+Timestep: 6010  /  10000
+Timestep: 6020  /  10000
+Timestep: 6030  /  10000
+Timestep: 6040  /  10000
+Timestep: 6050  /  10000
+Timestep: 6060  /  10000
+Timestep: 6070  /  10000
+Timestep: 6080  /  10000
+Timestep: 6090  /  10000
+Timestep: 6100  /  10000
+Timestep: 6110  /  10000
+Timestep: 6120  /  10000
+Timestep: 6130  /  10000
+Timestep: 6140  /  10000
+Timestep: 6150  /  10000
+Timestep: 6160  /  10000
+Timestep: 6170  /  10000
+Timestep: 6180  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6190  /  10000
+Timestep: 6200  /  10000
+Timestep: 6210  /  10000
+Timestep: 6220  /  10000
+Timestep: 6230  /  10000
+Timestep: 6240  /  10000
+Timestep: 6250  /  10000
+Timestep: 6260  /  10000
+Timestep: 6270  /  10000
+Timestep: 6280  /  10000
+Timestep: 6290  /  10000
+Timestep: 6300  /  10000
+Timestep: 6310  /  10000
+Timestep: 6320  /  10000
+Timestep: 6330  /  10000
+Timestep: 6340  /  10000
+Timestep: 6350  /  10000
+Timestep: 6360  /  10000
+Timestep: 6370  /  10000
+Timestep: 6380  /  10000
+Timestep: 6390  /  10000
+Timestep: 6400  /  10000
+Timestep: 6410  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6420  /  10000
+Timestep: 6430  /  10000
+Timestep: 6440  /  10000
+Timestep: 6450  /  10000
+Timestep: 6460  /  10000
+Timestep: 6470  /  10000
+Timestep: 6480  /  10000
+Timestep: 6490  /  10000
+Timestep: 6500  /  10000
+Timestep: 6510  /  10000
+Timestep: 6520  /  10000
+Timestep: 6530  /  10000
+Timestep: 6540  /  10000
+Timestep: 6550  /  10000
+Timestep: 6560  /  10000
+Timestep: 6570  /  10000
+Timestep: 6580  /  10000
+Timestep: 6590  /  10000
+Timestep: 6600  /  10000
+Timestep: 6610  /  10000
+Timestep: 6620  /  10000
+Timestep: 6630  /  10000
+Timestep: 6640  /  10000
+Timestep: 6650  /  10000
+Timestep: 6660  /  10000
+Timestep: 6670  /  10000
+Timestep: 6680  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6690  /  10000
+Timestep: 6700  /  10000
+Timestep: 6710  /  10000
+Timestep: 6720  /  10000
+Timestep: 6730  /  10000
+Timestep: 6740  /  10000
+Timestep: 6750  /  10000
+Timestep: 6760  /  10000
+Timestep: 6770  /  10000
+Timestep: 6780  /  10000
+Timestep: 6790  /  10000
+Timestep: 6800  /  10000
+Timestep: 6810  /  10000
+Timestep: 6820  /  10000
+Timestep: 6830  /  10000
+Timestep: 6840  /  10000
+Timestep: 6850  /  10000
+Timestep: 6860  /  10000
+Timestep: 6870  /  10000
+Timestep: 6880  /  10000
+Timestep: 6890  /  10000
+Timestep: 6900  /  10000
+Timestep: 6910  /  10000
+Timestep: 6920  /  10000
+Timestep: 6930  /  10000
+Timestep: 6940  /  10000
+Timestep: 6950  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6960  /  10000
+Timestep: 6970  /  10000
+Timestep: 6980  /  10000
+Timestep: 6990  /  10000
+Timestep: 7000  /  10000
+Timestep: 7010  /  10000
+Timestep: 7020  /  10000
+Timestep: 7030  /  10000
+Timestep: 7040  /  10000
+Timestep: 7050  /  10000
+Timestep: 7060  /  10000
+Timestep: 7070  /  10000
+Timestep: 7080  /  10000
+Timestep: 7090  /  10000
+Timestep: 7100  /  10000
+Timestep: 7110  /  10000
+Timestep: 7120  /  10000
+Timestep: 7130  /  10000
+Timestep: 7140  /  10000
+Timestep: 7150  /  10000
+Timestep: 7160  /  10000
+Timestep: 7170  /  10000
+Timestep: 7180  /  10000
+Timestep: 7190  /  10000
+Timestep: 7200  /  10000
+Timestep: 7210  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 7220  /  10000
+Timestep: 7230  /  10000
+Timestep: 7240  /  10000
+Timestep: 7250  /  10000
+Timestep: 7260  /  10000
+Timestep: 7270  /  10000
+Timestep: 7280  /  10000
+Timestep: 7290  /  10000
+Timestep: 7300  /  10000
+Timestep: 7310  /  10000
+Timestep: 7320  /  10000
+Timestep: 7330  /  10000
+Timestep: 7340  /  10000
+Timestep: 7350  /  10000
+Timestep: 7360  /  10000
+Timestep: 7370  /  10000
+Timestep: 7380  /  10000
+Timestep: 7390  /  10000
+Timestep: 7400  /  10000
+Timestep: 7410  /  10000
+Timestep: 7420  /  10000
+Timestep: 7430  /  10000
+Timestep: 7440  /  10000
+Timestep: 7450  /  10000
+Timestep: 7460  /  10000
+Timestep: 7470  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 7480  /  10000
+Timestep: 7490  /  10000
+Timestep: 7500  /  10000
+Timestep: 7510  /  10000
+Timestep: 7520  /  10000
+Timestep: 7530  /  10000
+Timestep: 7540  /  10000
+Timestep: 7550  /  10000
+Timestep: 7560  /  10000
+Timestep: 7570  /  10000
+Timestep: 7580  /  10000
+Timestep: 7590  /  10000
+Timestep: 7600  /  10000
+Timestep: 7610  /  10000
+Timestep: 7620  /  10000
+Timestep: 7630  /  10000
+Timestep: 7640  /  10000
+Timestep: 7650  /  10000
+Timestep: 7660  /  10000
+Timestep: 7670  /  10000
+Timestep: 7680  /  10000
+Timestep: 7690  /  10000
+Timestep: 7700  /  10000
+Timestep: 7710  /  10000
+Timestep: 7720  /  10000
+Timestep: 7730  /  10000
+Timestep: 7740  /  10000
+Timestep: 7750  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 7760  /  10000
+Timestep: 7770  /  10000
+Timestep: 7780  /  10000
+Timestep: 7790  /  10000
+Timestep: 7800  /  10000
+Timestep: 7810  /  10000
+Timestep: 7820  /  10000
+Timestep: 7830  /  10000
+Timestep: 7840  /  10000
+Timestep: 7850  /  10000
+Timestep: 7860  /  10000
+Timestep: 7870  /  10000
+Timestep: 7880  /  10000
+Timestep: 7890  /  10000
+Timestep: 7900  /  10000
+Timestep: 7910  /  10000
+Timestep: 7920  /  10000
+Timestep: 7930  /  10000
+Timestep: 7940  /  10000
+Timestep: 7950  /  10000
+Timestep: 7960  /  10000
+Timestep: 7970  /  10000
+Timestep: 7980  /  10000
+Timestep: 7990  /  10000
+Timestep: 8000  /  10000
+Timestep: 8010  /  10000
+Timestep: 8020  /  10000
+Timestep: 8030  /  10000
+Timestep: 8040  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8050  /  10000
+Timestep: 8060  /  10000
+Timestep: 8070  /  10000
+Timestep: 8080  /  10000
+Timestep: 8090  /  10000
+Timestep: 8100  /  10000
+Timestep: 8110  /  10000
+Timestep: 8120  /  10000
+Timestep: 8130  /  10000
+Timestep: 8140  /  10000
+Timestep: 8150  /  10000
+Timestep: 8160  /  10000
+Timestep: 8170  /  10000
+Timestep: 8180  /  10000
+Timestep: 8190  /  10000
+Timestep: 8200  /  10000
+Timestep: 8210  /  10000
+Timestep: 8220  /  10000
+Timestep: 8230  /  10000
+Timestep: 8240  /  10000
+Timestep: 8250  /  10000
+Timestep: 8260  /  10000
+Timestep: 8270  /  10000
+Timestep: 8280  /  10000
+Timestep: 8290  /  10000
+Timestep: 8300  /  10000
+Timestep: 8310  /  10000
+Timestep: 8320  /  10000
+Timestep: 8330  /  10000
+Timestep: 8340  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8350  /  10000
+Timestep: 8360  /  10000
+Timestep: 8370  /  10000
+Timestep: 8380  /  10000
+Timestep: 8390  /  10000
+Timestep: 8400  /  10000
+Timestep: 8410  /  10000
+Timestep: 8420  /  10000
+Timestep: 8430  /  10000
+Timestep: 8440  /  10000
+Timestep: 8450  /  10000
+Timestep: 8460  /  10000
+Timestep: 8470  /  10000
+Timestep: 8480  /  10000
+Timestep: 8490  /  10000
+Timestep: 8500  /  10000
+Timestep: 8510  /  10000
+Timestep: 8520  /  10000
+Timestep: 8530  /  10000
+Timestep: 8540  /  10000
+Timestep: 8550  /  10000
+Timestep: 8560  /  10000
+Timestep: 8570  /  10000
+Timestep: 8580  /  10000
+Timestep: 8590  /  10000
+Timestep: 8600  /  10000
+Timestep: 8610  /  10000
+Timestep: 8620  /  10000
+Timestep: 8630  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8640  /  10000
+Timestep: 8650  /  10000
+Timestep: 8660  /  10000
+Timestep: 8670  /  10000
+Timestep: 8680  /  10000
+Timestep: 8690  /  10000
+Timestep: 8700  /  10000
+Timestep: 8710  /  10000
+Timestep: 8720  /  10000
+Timestep: 8730  /  10000
+Timestep: 8740  /  10000
+Timestep: 8750  /  10000
+Timestep: 8760  /  10000
+Timestep: 8770  /  10000
+Timestep: 8780  /  10000
+Timestep: 8790  /  10000
+Timestep: 8800  /  10000
+Timestep: 8810  /  10000
+Timestep: 8820  /  10000
+Timestep: 8830  /  10000
+Timestep: 8840  /  10000
+Timestep: 8850  /  10000
+Timestep: 8860  /  10000
+Timestep: 8870  /  10000
+Timestep: 8880  /  10000
+Timestep: 8890  /  10000
+Timestep: 8900  /  10000
+Timestep: 8910  /  10000
+Timestep: 8920  /  10000
+Timestep: 8930  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8940  /  10000
+Timestep: 8950  /  10000
+Timestep: 8960  /  10000
+Timestep: 8970  /  10000
+Timestep: 8980  /  10000
+Timestep: 8990  /  10000
+Timestep: 9000  /  10000
+Timestep: 9010  /  10000
+Timestep: 9020  /  10000
+Timestep: 9030  /  10000
+Timestep: 9040  /  10000
+Timestep: 9050  /  10000
+Timestep: 9060  /  10000
+Timestep: 9070  /  10000
+Timestep: 9080  /  10000
+Timestep: 9090  /  10000
+Timestep: 9100  /  10000
+Timestep: 9110  /  10000
+Timestep: 9120  /  10000
+Timestep: 9130  /  10000
+Timestep: 9140  /  10000
+Timestep: 9150  /  10000
+Timestep: 9160  /  10000
+Timestep: 9170  /  10000
+Timestep: 9180  /  10000
+Timestep: 9190  /  10000
+Timestep: 9200  /  10000
+Timestep: 9210  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 9220  /  10000
+Timestep: 9230  /  10000
+Timestep: 9240  /  10000
+Timestep: 9250  /  10000
+Timestep: 9260  /  10000
+Timestep: 9270  /  10000
+Timestep: 9280  /  10000
+Timestep: 9290  /  10000
+Timestep: 9300  /  10000
+Timestep: 9310  /  10000
+Timestep: 9320  /  10000
+Timestep: 9330  /  10000
+Timestep: 9340  /  10000
+Timestep: 9350  /  10000
+Timestep: 9360  /  10000
+Timestep: 9370  /  10000
+Timestep: 9380  /  10000
+Timestep: 9390  /  10000
+Timestep: 9400  /  10000
+Timestep: 9410  /  10000
+Timestep: 9420  /  10000
+Timestep: 9430  /  10000
+Timestep: 9440  /  10000
+Timestep: 9450  /  10000
+Timestep: 9460  /  10000
+Timestep: 9470  /  10000
+Timestep: 9480  /  10000
+Timestep: 9490  /  10000
+Timestep: 9500  /  10000
+Timestep: 9510  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 9520  /  10000
+Timestep: 9530  /  10000
+Timestep: 9540  /  10000
+Timestep: 9550  /  10000
+Timestep: 9560  /  10000
+Timestep: 9570  /  10000
+Timestep: 9580  /  10000
+Timestep: 9590  /  10000
+Timestep: 9600  /  10000
+Timestep: 9610  /  10000
+Timestep: 9620  /  10000
+Timestep: 9630  /  10000
+Timestep: 9640  /  10000
+Timestep: 9650  /  10000
+Timestep: 9660  /  10000
+Timestep: 9670  /  10000
+Timestep: 9680  /  10000
+Timestep: 9690  /  10000
+Timestep: 9700  /  10000
+Timestep: 9710  /  10000
+Timestep: 9720  /  10000
+Timestep: 9730  /  10000
+Timestep: 9740  /  10000
+Timestep: 9750  /  10000
+Timestep: 9760  /  10000
+Timestep: 9770  /  10000
+Timestep: 9780  /  10000
+Timestep: 9790  /  10000
+Timestep: 9800  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 9810  /  10000
+Timestep: 9820  /  10000
+Timestep: 9830  /  10000
+Timestep: 9840  /  10000
+Timestep: 9850  /  10000
+Timestep: 9860  /  10000
+Timestep: 9870  /  10000
+Timestep: 9880  /  10000
+Timestep: 9890  /  10000
+Timestep: 9900  /  10000
+Timestep: 9910  /  10000
+Timestep: 9920  /  10000
+Timestep: 9930  /  10000
+Timestep: 9940  /  10000
+Timestep: 9950  /  10000
+Timestep: 9960  /  10000
+Timestep: 9970  /  10000
+Timestep: 9980  /  10000
+Timestep: 9990  /  10000
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">277</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span> <span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span> <span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">277</span> <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;images/upper_level_streamfunction.png&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nn">File /Users/Shared/miniconda3/envs/default_env2/lib/python3.9/site-packages/matplotlib/pyplot.py:958,</span> in <span class="ni">savefig</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">Figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">956</span> <span class="k">def</span> <span class="nf">savefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">957</span>     <span class="n">fig</span> <span class="o">=</span> <span class="n">gcf</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">958</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>   <span class="c1"># need this if &#39;transparent=True&#39; to reset colors</span>
+<span class="g g-Whitespace">    </span><span class="mi">960</span>     <span class="k">return</span> <span class="n">res</span>
+
+<span class="nn">File /Users/Shared/miniconda3/envs/default_env2/lib/python3.9/site-packages/matplotlib/figure.py:3012,</span> in <span class="ni">Figure.savefig</span><span class="nt">(self, fname, transparent, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3008</span>     <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3009</span>         <span class="n">stack</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3010</span>             <span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">_cm_set</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">))</span>
+<span class="ne">-&gt; </span><span class="mi">3012</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /Users/Shared/miniconda3/envs/default_env2/lib/python3.9/site-packages/matplotlib/backend_bases.py:2314,</span> in <span class="ni">FigureCanvasBase.print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2310</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2311</span>     <span class="c1"># _get_renderer may change the figure dpi (as vector formats</span>
+<span class="g g-Whitespace">   </span><span class="mi">2312</span>     <span class="c1"># force the figure dpi to 72), so we need to set it again here.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2313</span>     <span class="k">with</span> <span class="n">cbook</span><span class="o">.</span><span class="n">_setattr_cm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2314</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">print_method</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2315</span>             <span class="n">filename</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2316</span>             <span class="n">facecolor</span><span class="o">=</span><span class="n">facecolor</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2317</span>             <span class="n">edgecolor</span><span class="o">=</span><span class="n">edgecolor</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2318</span>             <span class="n">orientation</span><span class="o">=</span><span class="n">orientation</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2319</span>             <span class="n">bbox_inches_restore</span><span class="o">=</span><span class="n">_bbox_inches_restore</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2320</span>             <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2321</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2322</span>     <span class="k">if</span> <span class="n">bbox_inches</span> <span class="ow">and</span> <span class="n">restore_bbox</span><span class="p">:</span>
+
+<span class="nn">File /Users/Shared/miniconda3/envs/default_env2/lib/python3.9/site-packages/matplotlib/backend_bases.py:1643,</span> in <span class="ni">_check_savefig_extra_args.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1635</span>     <span class="n">_api</span><span class="o">.</span><span class="n">warn_deprecated</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1636</span>         <span class="s1">&#39;3.3&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1637</span>         <span class="n">message</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">() got unexpected keyword argument &quot;&#39;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1638</span>                 <span class="o">+</span> <span class="n">arg</span> <span class="o">+</span> <span class="s1">&#39;&quot; which is no longer supported as of &#39;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1639</span>                 <span class="s1">&#39;</span><span class="si">%(since)s</span><span class="s1"> and will become an error &#39;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1640</span>                 <span class="s1">&#39;</span><span class="si">%(removal)s</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1641</span>     <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1643</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /Users/Shared/miniconda3/envs/default_env2/lib/python3.9/site-packages/matplotlib/_api/deprecation.py:412,</span> in <span class="ni">delete_parameter.&lt;locals&gt;.wrapper</span><span class="nt">(*inner_args, **inner_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">402</span>     <span class="n">deprecation_addendum</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">403</span>         <span class="sa">f</span><span class="s2">&quot;If any parameter follows </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2">, they should be passed as &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">404</span>         <span class="sa">f</span><span class="s2">&quot;keyword, not positionally.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>     <span class="n">warn_deprecated</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span>         <span class="n">since</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>         <span class="n">name</span><span class="o">=</span><span class="nb">repr</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">410</span>                  <span class="k">else</span> <span class="n">deprecation_addendum</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">412</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inner_args</span><span class="p">,</span> <span class="o">**</span><span class="n">inner_kwargs</span><span class="p">)</span>
+
+<span class="nn">File /Users/Shared/miniconda3/envs/default_env2/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py:541,</span> in <span class="ni">FigureCanvasAgg.print_png</span><span class="nt">(self, filename_or_obj, metadata, pil_kwargs, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span><span class="sd"> Write the figure to a PNG file.</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span><span class="sd">     *metadata*, including the default &#39;Software&#39; key.</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span> <span class="n">FigureCanvasAgg</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">541</span> <span class="n">mpl</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">filename_or_obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_rgba</span><span class="p">(),</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;upper&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">dpi</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">dpi</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">pil_kwargs</span><span class="o">=</span><span class="n">pil_kwargs</span><span class="p">)</span>
+
+<span class="nn">File /Users/Shared/miniconda3/envs/default_env2/lib/python3.9/site-packages/matplotlib/image.py:1675,</span> in <span class="ni">imsave</span><span class="nt">(fname, arr, vmin, vmax, cmap, format, origin, dpi, metadata, pil_kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1673</span> <span class="n">pil_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;format&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1674</span> <span class="n">pil_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;dpi&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">dpi</span><span class="p">,</span> <span class="n">dpi</span><span class="p">))</span>
+<span class="ne">-&gt; </span><span class="mi">1675</span> <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">pil_kwargs</span><span class="p">)</span>
+
+<span class="nn">File /Users/Shared/miniconda3/envs/default_env2/lib/python3.9/site-packages/PIL/Image.py:2428,</span> in <span class="ni">Image.save</span><span class="nt">(self, fp, format, **params)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2426</span>         <span class="n">fp</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;r+b&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2427</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2428</span>         <span class="n">fp</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w+b&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2430</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2431</span>     <span class="n">save_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;images/upper_level_streamfunction.png&#39;
+</pre></div>
+</div>
+<img alt="../_images/2layer_QG_0_37.png" src="../_images/2layer_QG_0_37.png" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./PDE"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dr. Kai-Chih Tseng<br/>
+  
+      &copy; Copyright 2020.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
