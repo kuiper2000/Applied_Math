@@ -1,0 +1,959 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Discrete Fourier Transform &#8212; Applied Math 2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ODE/Fourier_example';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Applied Math 2 - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Applied Math 2 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1stODE.html">Week 1 and 2: 1st-order ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2ndODE.html">Week 3 and 4: 2nd-order ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Laplace.html">Week 5 and 6: Laplace Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sturm_Liouville.html">Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PDE/Heat_equation.html">Week 11:  Heat Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PDE/Wave_equation.html">Week 12:  Wave Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PDE/Laplace_equation.html">Week 13:  Laplace Equation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FODE/Fourier_example.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ODE/Fourier_example.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Discrete Fourier Transform</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Discrete Fourier Transform</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phenomenon">Gibbs phenomenon</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fast-fourier-transform">Fast Fourier Transform</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="discrete-fourier-transform">
+<h1>Discrete Fourier Transform<a class="headerlink" href="#discrete-fourier-transform" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fourier</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">number_of_harmonics</span><span class="p">):</span>
+    <span class="n">x</span>             <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mf">3.14159</span>
+    <span class="c1">#</span>
+    <span class="c1">#print(x)</span>
+    <span class="n">n</span>             <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">number_of_harmonics</span><span class="p">))</span>
+    <span class="n">omega</span>         <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">cos_coef</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="p">))</span>
+    <span class="n">sin_coef</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span><span class="p">))</span>
+    <span class="n">cos_coef</span>      <span class="o">=</span> <span class="n">cos_coef</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+    <span class="n">sin_coef</span>      <span class="o">=</span> <span class="n">sin_coef</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+    <span class="n">cos_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">cos_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">reconstruct</span>   <span class="o">=</span> <span class="n">cos_coef</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">+</span><span class="n">sin_coef</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cos_coef</span><span class="p">,</span><span class="n">sin_coef</span><span class="p">,</span> <span class="n">reconstruct</span><span class="p">,</span> <span class="n">omega</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="mf">3.14159</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">wave_number</span>                   <span class="o">=</span> <span class="mi">100</span>
+<span class="n">cos_coef</span><span class="p">,</span><span class="n">sin_coef</span><span class="p">,</span><span class="n">reconstruct</span><span class="p">,</span> <span class="n">omega</span> <span class="o">=</span> <span class="n">fourier</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">wave_number</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="p">))</span>
+<span class="c1"># plt.scatter(np.arange(0,wave_number),np.array(cos_coef),s=40)</span>
+<span class="c1"># plt.scatter(np.arange(0,wave_number),np.array(sin_coef),s=40)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reconstruct</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cos coef=&#39;</span><span class="p">,</span><span class="n">cos_coef</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sin coef=&#39;</span><span class="p">,</span><span class="n">sin_coef</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cos_coef</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cos coef= [[ 1.00856642e+00  5.00424543e+00  8.72927383e-03  7.00623567e-03
+   9.99601192e-01 -9.63472121e-04  3.14010592e-03  1.98734231e-03
+   6.99162630e-04  2.93671931e-03  3.14368889e-02  4.94707083e-05
+   3.21423853e-04 -1.26407175e-02 -3.10100123e-03 -3.56705444e-03
+   4.69944024e-05 -3.20415152e-03 -3.11859573e-03  2.56195196e-03
+   6.02776896e-03 -1.91853062e-03  2.63783666e-03 -1.02981025e-03
+  -3.41817743e-04 -1.65517342e-03  8.42842675e-04  2.02473602e-03
+   3.92028009e-03 -2.01144253e-03  5.30593571e-03 -2.39046843e-03
+   4.40835585e-03  8.75764981e-04 -2.31781523e-03  7.30584203e-03
+  -3.32577834e-03 -5.81162374e-03 -6.27910695e-03 -5.00492582e-03
+   5.96536721e-03  1.05656513e-02 -8.69266795e-04  3.86873097e-04
+  -7.69656753e-04  1.78389262e-03 -2.22396206e-03 -7.87132476e-03
+  -4.06781211e-03  8.63033257e-04 -4.73153204e-03 -2.82076524e-04
+  -3.65784725e-03  1.68129499e-03  1.24326337e-03 -2.00666710e-03
+   3.81156953e-03  1.20351684e-03 -6.14459047e-03 -4.11402730e-03
+  -1.96009133e-03 -1.48361476e-03  3.31816697e-03  1.87699814e-03
+  -4.82606276e-04  3.81904540e-03 -4.28558404e-03  6.67378261e-03
+  -1.00216453e-02 -3.58463779e-03 -3.99786419e-03  3.46943698e-03
+   2.35093100e-03  5.71636061e-03  1.04713881e-03  3.83242640e-03
+  -4.53157058e-03 -4.15775533e-04 -2.42391932e-03  5.92095298e-03
+  -4.80433933e-03  5.28136676e-03  2.73376448e-03  9.44690673e-03
+  -5.36926673e-04  3.26615571e-03  9.19590327e-04 -6.38270810e-03
+  -4.09727008e-03  3.04992720e-03 -4.85776313e-03  5.48129605e-03
+   3.77118999e-03 -9.78548608e-04 -2.36092343e-03  4.03366638e-03
+   1.47424300e-03  8.12135324e-04 -1.99781500e-03 -2.94656935e-03]]
+sin coef= [[ 0.00000000e+00 -1.95410393e-02  1.95577143e-03  3.83151569e-03
+  -3.06924936e-03  2.27803288e-03 -2.38028773e-03  3.21716802e-03
+   5.89773902e-03  7.50462172e-03  9.98933410e-01 -1.23719583e-02
+  -2.29157582e-03 -2.49999162e-03 -4.92748596e-03 -3.67681076e-03
+   2.49228996e-03 -6.09350640e-03 -2.00183361e-03  3.14497323e-03
+   6.66032415e-03  1.11856753e-03 -5.11549462e-03  1.65611435e-03
+  -6.07694334e-03  6.24144825e-03 -1.38705901e-03 -5.58930094e-03
+  -2.98363189e-03  5.29377796e-03 -3.58750119e-03  3.49297120e-03
+  -5.37810921e-04 -4.80391484e-04  4.75484479e-05 -2.57958413e-03
+   3.28089716e-03 -6.92467413e-04  3.19479662e-03 -1.65110354e-03
+  -7.86359061e-04  2.61988555e-03 -4.65675831e-04  3.92268222e-03
+   3.28136976e-03  4.49816345e-03  3.56292917e-03  1.19559232e-03
+   2.05220659e-03  3.00030217e-04 -4.58035404e-03 -2.59134175e-03
+   2.12704216e-04  3.70674519e-03 -1.94293007e-03  1.65076619e-03
+  -8.67649162e-03 -2.06384663e-03 -1.77890015e-03 -4.84734001e-03
+   9.01105102e-03 -4.82485024e-03 -9.48625691e-03 -3.86682050e-03
+  -8.77657019e-03  2.27105238e-03 -2.98903598e-04 -1.04884257e-03
+  -3.08492493e-03  2.03027578e-03 -1.03161136e-03 -1.10260046e-02
+   2.09545750e-03 -3.01775745e-03  2.07295225e-03 -8.07895591e-04
+   2.22815410e-03 -1.67503802e-03 -1.06420376e-03  3.43957304e-03
+   1.06740539e-03  1.02707112e-03 -6.20844220e-03  6.05351051e-03
+  -2.27217801e-03  6.51636539e-04 -7.40170142e-04  2.17972192e-04
+   1.74242997e-03 -6.30851509e-03 -2.86607902e-03  3.61746914e-03
+  -5.64096914e-04  3.71313930e-04 -8.16892835e-04 -1.13112904e-03
+  -5.37720187e-03 -1.18176078e-03  3.20185308e-03 -1.28610072e-03]]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10d68db50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d68dc70&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d68dd90&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d68deb0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d68dfd0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d68daf0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69a250&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69a370&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69a490&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69a5b0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69a6d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69a7f0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69a910&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69aa30&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69ab50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69ac70&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69ad90&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69aeb0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69afd0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d69a130&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a1250&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a1370&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a1490&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a15b0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a16d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a17f0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a1910&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a1a30&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a1b50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a1c70&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a1d90&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a1eb0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a1fd0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d6a1130&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e105250&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e105370&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e105490&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e1055b0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e1056d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e1057f0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e105910&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e105a30&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e105b50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e105c70&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e105d90&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e105eb0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e105fd0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e105130&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10c250&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10c370&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10c490&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10c5b0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10c6d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10c7f0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10c910&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10ca30&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10cb50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10cc70&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10cd90&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10ceb0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10cfd0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e10c130&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e113220&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e113340&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e113460&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e113580&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e1136a0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e1137c0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e1138e0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e113a00&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e113b20&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e113c40&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e113d60&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e113e80&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e113fa0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e113130&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11b220&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d67fac0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d67fa90&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11b460&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11b580&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11b6a0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11b7c0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11b8e0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11ba00&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11bb20&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11bc40&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11bd60&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11be80&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11bfa0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e11b340&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e121220&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e121340&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e121460&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e121580&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e1216a0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e1217c0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e1218e0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e121a00&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10e121b20&gt;]
+</pre></div>
+</div>
+<img alt="../_images/36bfae736ab23eec59e5b5b8bb4f86a3d826b6d54e4fe64d10ec596a7dc17d20.png" src="../_images/36bfae736ab23eec59e5b5b8bb4f86a3d826b6d54e4fe64d10ec596a7dc17d20.png" />
+<img alt="../_images/4fa02e465a24c110ead6728cdb6f36d0d83bf19f3e61e4891e2bf648f6bf133d.png" src="../_images/4fa02e465a24c110ead6728cdb6f36d0d83bf19f3e61e4891e2bf648f6bf133d.png" />
+<img alt="../_images/aa1d415005b38e6145f72f7ec29231742c44239f6fdcedf5426864b76f082c1b.png" src="../_images/aa1d415005b38e6145f72f7ec29231742c44239f6fdcedf5426864b76f082c1b.png" />
+<img alt="../_images/431e2137f815d894a336d433ba959d804d170ef7f17b5792c0add42d7e950223.png" src="../_images/431e2137f815d894a336d433ba959d804d170ef7f17b5792c0add42d7e950223.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dft</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">n</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="n">y_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">dft</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_hat</span><span class="o">.</span><span class="n">dot</span><span class="p">((</span><span class="n">y_hat</span><span class="o">.</span><span class="n">conjugate</span><span class="p">())</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[14.54683599+0.j]]
+13.529629771421762
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages/matplotlib/cbook.py:1762: ComplexWarning: Casting complex values to real discards the imaginary part
+  return math.isfinite(val)
+/Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages/matplotlib/cbook.py:1398: ComplexWarning: Casting complex values to real discards the imaginary part
+  return np.asarray(x, float)
+</pre></div>
+</div>
+<img alt="../_images/01f900dcf2bfb1cf481f686168d82ccda02e3afb508542a6249f0dfd22edabb6.png" src="../_images/01f900dcf2bfb1cf481f686168d82ccda02e3afb508542a6249f0dfd22edabb6.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="gibbs-phenomenon">
+<h1>Gibbs phenomenon<a class="headerlink" href="#gibbs-phenomenon" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span>        <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft</span><span class="p">(</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="c1"># maskout the data by half</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">500</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft</span><span class="p">(</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10f459c40&gt;]
+</pre></div>
+</div>
+<img alt="../_images/c9c0a472b5446bd0320ca4bc5d65d2d124ac09d76de4afb0ac4fd0930b61178c.png" src="../_images/c9c0a472b5446bd0320ca4bc5d65d2d124ac09d76de4afb0ac4fd0930b61178c.png" />
+</div>
+</div>
+<section id="fast-fourier-transform">
+<h2>Fast Fourier Transform<a class="headerlink" href="#fast-fourier-transform" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fft</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="n">even</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">odd</span>  <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">k</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">odd</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">even</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)]</span> <span class="o">+</span> \
+           <span class="p">[</span><span class="n">even</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fft_recursive</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Length of input must be a power of 2&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">N</span> <span class="o">&lt;=</span> <span class="mi">32</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">even</span> <span class="o">=</span> <span class="n">fft_recursive</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">odd</span> <span class="o">=</span> <span class="n">fft_recursive</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">k</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">odd</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">even</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)]</span> <span class="o">+</span> \
+               <span class="p">[</span><span class="n">even</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="c1">#print(&quot;Input sequence:&quot;, x)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">fft_recursive</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="c1">#print(&quot;FFT result:&quot;, y)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">FFT</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A recursive implementation of</span>
+<span class="sd">    the 1D Cooley-Tukey FFT, the</span>
+<span class="sd">    input should have a length of</span>
+<span class="sd">    power of 2.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">N</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">X_even</span> <span class="o">=</span> <span class="n">FFT</span><span class="p">(</span><span class="n">x</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">X_odd</span>  <span class="o">=</span> <span class="n">FFT</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+
+        <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>\
+            <span class="p">[</span><span class="n">X_even</span><span class="o">+</span><span class="n">factor</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span><span class="o">*</span><span class="n">X_odd</span><span class="p">,</span>
+             <span class="n">X_even</span><span class="o">+</span><span class="n">factor</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">):]</span><span class="o">*</span><span class="n">X_odd</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">X</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sampling rate</span>
+<span class="n">sr</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="c1"># sampling interval</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">sr</span>
+<span class="n">t</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">ts</span><span class="p">)</span>
+
+<span class="n">freq</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">freq</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">freq</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">freq</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">freq</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mf">0.5</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">freq</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8b044e359a8a670bdc384c62c38892e487251c9eb25442d36d21a8c3d4a143b5.png" src="../_images/8b044e359a8a670bdc384c62c38892e487251c9eb25442d36d21a8c3d4a143b5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> X=FFT(x)
+<span class="o">%</span><span class="k">timeit</span> dft(x)
+<span class="c1"># calculate the frequency</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">N</span><span class="o">/</span><span class="n">sr</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">n</span><span class="o">/</span><span class="n">T</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> \
+         <span class="n">markerfmt</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">basefmt</span><span class="o">=</span><span class="s2">&quot;-b&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Freq (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;FFT Amplitude |X(freq)|&#39;</span><span class="p">)</span>
+
+<span class="c1"># Get the one-sided specturm</span>
+<span class="n">n_oneside</span> <span class="o">=</span> <span class="n">N</span><span class="o">//</span><span class="mi">2</span>
+<span class="c1"># get the one side frequency</span>
+<span class="n">f_oneside</span> <span class="o">=</span> <span class="n">freq</span><span class="p">[:</span><span class="n">n_oneside</span><span class="p">]</span>
+
+<span class="c1"># normalize the amplitude</span>
+<span class="n">X_oneside</span> <span class="o">=</span><span class="n">X</span><span class="p">[:</span><span class="n">n_oneside</span><span class="p">]</span><span class="o">/</span><span class="n">n_oneside</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">f_oneside</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">X_oneside</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> \
+         <span class="n">markerfmt</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">basefmt</span><span class="o">=</span><span class="s2">&quot;-b&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Freq (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Normalized FFT Amplitude |X(freq)|&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>582 µs ± 14.2 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251 µs ± 2.48 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;timeit&#39;</span><span class="p">,</span> <span class="s1">&#39;dft(x)&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># calculate the frequency</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">T</span> <span class="o">=</span> <span class="n">N</span><span class="o">/</span><span class="n">sr</span>
+
+<span class="ne">NameError</span>: name &#39;X&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fft</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="n">even</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">odd</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">k</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">odd</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">even</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)]</span> <span class="o">+</span> \
+           <span class="p">[</span><span class="n">even</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Generate a sinusoidal signal with noise</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">f_signal</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Frequency of the signal</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">f_signal</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Adding noise</span>
+
+<span class="c1"># Compute FFT</span>
+<span class="n">fft_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">signal</span><span class="p">),</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Plot the original signal</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">signal</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Original Signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the FFT result (scaled properly)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fft_result</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">signal</span><span class="p">))</span>  <span class="c1"># Normalize FFT by the length of the signal</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;FFT of Signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Limiting x-axis to frequencies up to 10 Hz for clarity</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/41d221a15ea197f64091dea1960a1efca46debfc048efb91a5dad5c50b658ec9.png" src="../_images/41d221a15ea197f64091dea1960a1efca46debfc048efb91a5dad5c50b658ec9.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ODE"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Discrete Fourier Transform</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phenomenon">Gibbs phenomenon</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fast-fourier-transform">Fast Fourier Transform</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. Kai-Chih Tseng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

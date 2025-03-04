@@ -1,0 +1,1565 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Observed Polar Amplification in the Historical Period &#8212; Applied Math 2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ODE/Polar_amplification/Observed_polar_amplification';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Applied Math 2 - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Applied Math 2 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1stODE.html">Week 1 and 2: 1st-order ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2ndODE.html">Week 3 and 4: 2nd-order ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Laplace.html">Week 5 and 6: Laplace Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sturm_Liouville.html">Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PDE/Heat_equation.html">Week 11:  Heat Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PDE/Wave_equation.html">Week 12:  Wave Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PDE/Laplace_equation.html">Week 13:  Laplace Equation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FODE/Polar_amplification/Observed_polar_amplification.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/ODE/Polar_amplification/Observed_polar_amplification.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Observed Polar Amplification in the Historical Period</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="observed-polar-amplification-in-the-historical-period">
+<h1>Observed Polar Amplification in the Historical Period<a class="headerlink" href="#observed-polar-amplification-in-the-historical-period" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mount google drive</span>
+
+<span class="c1">#from google.colab import drive</span>
+<span class="c1">#drive.mount(&#39;/content/drive&#39;)</span>
+<span class="c1">#import sys</span>
+<span class="c1">#sys.path.append(&#39;/content/drive/MyDrive/&#39;)</span>
+
+<span class="c1"># load modules and packages</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># mount google drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#from google.colab import drive</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># load modules and packages</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;xarray&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read NOAAGlobalTemp v6.0.0 (Huang et al. 2023)</span>
+<span class="c1"># (https://www.ncei.noaa.gov/products/land-based-station/noaa-global-temp)</span>
+<span class="c1"># (https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc%3AC01704/html)</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;NOAAGlobalTemp_v6.0.0.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body[data-theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 22MB
+Dimensions:  (time: 2091, lat: 36, lon: 72, z: 1)
+Coordinates:
+  * time     (time) datetime64[ns] 17kB 1850-01-01 1850-02-01 ... 2024-03-01
+  * lat      (lat) float32 144B -87.5 -82.5 -77.5 -72.5 ... 72.5 77.5 82.5 87.5
+  * lon      (lon) float32 288B 2.5 7.5 12.5 17.5 ... 342.5 347.5 352.5 357.5
+  * z        (z) float32 4B 0.0
+Data variables:
+    anom     (time, z, lat, lon) float32 22MB ...
+Attributes: (12/66)
+    Conventions:                     CF-1.6, ACDD-1.3
+    title:                           NOAA Merged Land Ocean Global Surface Te...
+    summary:                         NOAAGlobalTemp is a merged land-ocean su...
+    institution:                     DOC/NOAA/NESDIS/National Centers for Env...
+    id:                               gov.noaa.ncdc:C00934 
+    naming_authority:                 gov.noaa.ncei 
+    ...                              ...
+    time_coverage_duration:          P174Y3M
+    references:                      Vose, R. S., et al., 2012: NOAAs merged ...
+    climatology:                     Climatology is based on 1971-2000 monthl...
+    acknowledgment:                  The NOAA Global Surface Temperature Data...
+    date_modified:                   2024-04-08T19:27:01Z
+    date_issued:                     2024-04-08T19:27:01Z</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-893b0c0d-53e2-4fc5-b6cc-09bc4960837c' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-893b0c0d-53e2-4fc5-b6cc-09bc4960837c' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 2091</li><li><span class='xr-has-index'>lat</span>: 36</li><li><span class='xr-has-index'>lon</span>: 72</li><li><span class='xr-has-index'>z</span>: 1</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-7b40a531-ce5c-4500-b170-54ffd959458f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-7b40a531-ce5c-4500-b170-54ffd959458f' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1850-01-01 ... 2024-03-01</div><input id='attrs-be4427f3-1613-4f85-b776-ae6a53409747' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-be4427f3-1613-4f85-b776-ae6a53409747' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a89e5d24-0480-4f1d-b07e-9f1a86d6004e' class='xr-var-data-in' type='checkbox'><label for='data-a89e5d24-0480-4f1d-b07e-9f1a86d6004e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>reference time of global temperature anomalies</dd><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>coverage_content_type :</span></dt><dd>coordinate</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;1850-01-01T00:00:00.000000000&#x27;, &#x27;1850-02-01T00:00:00.000000000&#x27;,
+       &#x27;1850-03-01T00:00:00.000000000&#x27;, ..., &#x27;2024-01-01T00:00:00.000000000&#x27;,
+       &#x27;2024-02-01T00:00:00.000000000&#x27;, &#x27;2024-03-01T00:00:00.000000000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-87.5 -82.5 -77.5 ... 82.5 87.5</div><input id='attrs-bbe5ccd5-7e59-4847-bddd-510a40cb3ed7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bbe5ccd5-7e59-4847-bddd-510a40cb3ed7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1aecd64a-3de3-4b2f-a90f-e0a38e7a8214' class='xr-var-data-in' type='checkbox'><label for='data-1aecd64a-3de3-4b2f-a90f-e0a38e7a8214' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>coverage_content_type :</span></dt><dd>coordinate</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>grids :</span></dt><dd>Uniform grid from -87.5 to 87.5 by 5</dd><dt><span>valid_min :</span></dt><dd>-87.5</dd><dt><span>valid_max :</span></dt><dd>87.5</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>_CoordinateAxisType :</span></dt><dd>Lat</dd><dt><span>coordinate_defines :</span></dt><dd>center</dd></dl></div><div class='xr-var-data'><pre>array([-87.5, -82.5, -77.5, -72.5, -67.5, -62.5, -57.5, -52.5, -47.5, -42.5,
+       -37.5, -32.5, -27.5, -22.5, -17.5, -12.5,  -7.5,  -2.5,   2.5,   7.5,
+        12.5,  17.5,  22.5,  27.5,  32.5,  37.5,  42.5,  47.5,  52.5,  57.5,
+        62.5,  67.5,  72.5,  77.5,  82.5,  87.5], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>2.5 7.5 12.5 ... 347.5 352.5 357.5</div><input id='attrs-4086f4d5-13f3-4f94-8628-758d617e5a52' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4086f4d5-13f3-4f94-8628-758d617e5a52' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9dde4667-6d3e-4ac6-a3e9-79fd3863406a' class='xr-var-data-in' type='checkbox'><label for='data-9dde4667-6d3e-4ac6-a3e9-79fd3863406a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>coverage_content_type :</span></dt><dd>coordinate</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>grids :</span></dt><dd>Uniform grid from 2.5 to 357.5 by 5</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>valid_min :</span></dt><dd>2.5</dd><dt><span>valid_max :</span></dt><dd>357.5</dd><dt><span>_CoordinateAxisType :</span></dt><dd>Lon</dd><dt><span>coordinate_defines :</span></dt><dd>center</dd></dl></div><div class='xr-var-data'><pre>array([  2.5,   7.5,  12.5,  17.5,  22.5,  27.5,  32.5,  37.5,  42.5,  47.5,
+        52.5,  57.5,  62.5,  67.5,  72.5,  77.5,  82.5,  87.5,  92.5,  97.5,
+       102.5, 107.5, 112.5, 117.5, 122.5, 127.5, 132.5, 137.5, 142.5, 147.5,
+       152.5, 157.5, 162.5, 167.5, 172.5, 177.5, 182.5, 187.5, 192.5, 197.5,
+       202.5, 207.5, 212.5, 217.5, 222.5, 227.5, 232.5, 237.5, 242.5, 247.5,
+       252.5, 257.5, 262.5, 267.5, 272.5, 277.5, 282.5, 287.5, 292.5, 297.5,
+       302.5, 307.5, 312.5, 317.5, 322.5, 327.5, 332.5, 337.5, 342.5, 347.5,
+       352.5, 357.5], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.0</div><input id='attrs-d25f09fc-39a2-4bb3-813c-08912fd6e204' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d25f09fc-39a2-4bb3-813c-08912fd6e204' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-559ba6d7-1e0a-4674-a22b-7cd36bd928be' class='xr-var-data-in' type='checkbox'><label for='data-559ba6d7-1e0a-4674-a22b-7cd36bd928be' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>height of surface temperature</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>coverage_content_type :</span></dt><dd>coordinate</dd><dt><span>geospatial_bounds_vertical_crs :</span></dt><dd>EPSG:5703</dd><dt><span>units :</span></dt><dd>meters</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>valid_min :</span></dt><dd>0.0</dd><dt><span>valid_max :</span></dt><dd>0.0</dd><dt><span>axis :</span></dt><dd>Z</dd><dt><span>_CoordinateAxisType :</span></dt><dd>Height</dd><dt><span>comment :</span></dt><dd>Actual measurement depth of in situ sea surface temperature varies from 0.2 to 10 m, but corrected to the nominal depth of buoy at 0.2 m; for air temperature over land is 2m.</dd></dl></div><div class='xr-var-data'><pre>array([0.], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b08796b3-7607-4530-89ba-667ad1fa6325' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b08796b3-7607-4530-89ba-667ad1fa6325' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>anom</span></div><div class='xr-var-dims'>(time, z, lat, lon)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-95164cda-dc40-4cd2-bfc2-d7a2cd05d089' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-95164cda-dc40-4cd2-bfc2-d7a2cd05d089' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-472d3671-f914-4dd7-b680-06f13aa4de20' class='xr-var-data-in' type='checkbox'><label for='data-472d3671-f914-4dd7-b680-06f13aa4de20' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Global Temperature Anomalies</dd><dt><span>standard_name :</span></dt><dd>surface_temperature_anomaly</dd><dt><span>coverage_content_type :</span></dt><dd>physicalMeasurement</dd><dt><span>units :</span></dt><dd>degrees C</dd><dt><span>valid_min :</span></dt><dd>-40.0</dd><dt><span>valid_max :</span></dt><dd>40.0</dd></dl></div><div class='xr-var-data'><pre>[5419872 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-dbb08269-7482-4948-ac10-fe59fd7ac974' class='xr-section-summary-in' type='checkbox'  ><label for='section-dbb08269-7482-4948-ac10-fe59fd7ac974' class='xr-section-summary' >Indexes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-e4d17762-264e-4540-95d2-1c62f7daa6c1' class='xr-index-data-in' type='checkbox'/><label for='index-e4d17762-264e-4540-95d2-1c62f7daa6c1' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;1850-01-01&#x27;, &#x27;1850-02-01&#x27;, &#x27;1850-03-01&#x27;, &#x27;1850-04-01&#x27;,
+               &#x27;1850-05-01&#x27;, &#x27;1850-06-01&#x27;, &#x27;1850-07-01&#x27;, &#x27;1850-08-01&#x27;,
+               &#x27;1850-09-01&#x27;, &#x27;1850-10-01&#x27;,
+               ...
+               &#x27;2023-06-01&#x27;, &#x27;2023-07-01&#x27;, &#x27;2023-08-01&#x27;, &#x27;2023-09-01&#x27;,
+               &#x27;2023-10-01&#x27;, &#x27;2023-11-01&#x27;, &#x27;2023-12-01&#x27;, &#x27;2024-01-01&#x27;,
+               &#x27;2024-02-01&#x27;, &#x27;2024-03-01&#x27;],
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=2091, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lat</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-221f4c8a-f9c8-418c-b761-08a64cf3bd31' class='xr-index-data-in' type='checkbox'/><label for='index-221f4c8a-f9c8-418c-b761-08a64cf3bd31' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-87.5, -82.5, -77.5, -72.5, -67.5, -62.5, -57.5, -52.5, -47.5, -42.5,
+       -37.5, -32.5, -27.5, -22.5, -17.5, -12.5,  -7.5,  -2.5,   2.5,   7.5,
+        12.5,  17.5,  22.5,  27.5,  32.5,  37.5,  42.5,  47.5,  52.5,  57.5,
+        62.5,  67.5,  72.5,  77.5,  82.5,  87.5],
+      dtype=&#x27;float32&#x27;, name=&#x27;lat&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lon</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-5a702951-f8b1-4021-a515-cd2785131e0e' class='xr-index-data-in' type='checkbox'/><label for='index-5a702951-f8b1-4021-a515-cd2785131e0e' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([  2.5,   7.5,  12.5,  17.5,  22.5,  27.5,  32.5,  37.5,  42.5,  47.5,
+        52.5,  57.5,  62.5,  67.5,  72.5,  77.5,  82.5,  87.5,  92.5,  97.5,
+       102.5, 107.5, 112.5, 117.5, 122.5, 127.5, 132.5, 137.5, 142.5, 147.5,
+       152.5, 157.5, 162.5, 167.5, 172.5, 177.5, 182.5, 187.5, 192.5, 197.5,
+       202.5, 207.5, 212.5, 217.5, 222.5, 227.5, 232.5, 237.5, 242.5, 247.5,
+       252.5, 257.5, 262.5, 267.5, 272.5, 277.5, 282.5, 287.5, 292.5, 297.5,
+       302.5, 307.5, 312.5, 317.5, 322.5, 327.5, 332.5, 337.5, 342.5, 347.5,
+       352.5, 357.5],
+      dtype=&#x27;float32&#x27;, name=&#x27;lon&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>z</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-5a89627f-a166-45e0-a684-f11190433568' class='xr-index-data-in' type='checkbox'/><label for='index-5a89627f-a166-45e0-a684-f11190433568' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([0.0], dtype=&#x27;float32&#x27;, name=&#x27;z&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-650078a0-025d-4e17-a345-898b9037f195' class='xr-section-summary-in' type='checkbox'  ><label for='section-650078a0-025d-4e17-a345-898b9037f195' class='xr-section-summary' >Attributes: <span>(66)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6, ACDD-1.3</dd><dt><span>title :</span></dt><dd>NOAA Merged Land Ocean Global Surface Temperature Analysis (NOAAGlobalTemp)</dd><dt><span>summary :</span></dt><dd>NOAAGlobalTemp is a merged land-ocean surface temperature analysis, formerly abbreviated as MLOST. The SST dataset is the Extended Reconstructed Sea Surface Temperature (ERSST) and the land surface air temperature dataset is from the Global Historical Climatology Network Monthly (GHCN-M) database.</dd><dt><span>institution :</span></dt><dd>DOC/NOAA/NESDIS/National Centers for Environmental Information(NCEI)</dd><dt><span>id :</span></dt><dd> gov.noaa.ncdc:C00934 </dd><dt><span>naming_authority :</span></dt><dd> gov.noaa.ncei </dd><dt><span>project :</span></dt><dd> NOAAGlobalTemp </dd><dt><span>platform :</span></dt><dd>Ships, moored buoys, surface drifting buoys, Argo floats, and weather stations</dd><dt><span>instrument :</span></dt><dd>Conventional thermometers</dd><dt><span>history :</span></dt><dd>Version 5.1.0, blending ERSST V5 and GHCN-M V4.</dd><dt><span>comment :</span></dt><dd>Merged land ocean surface temperature anomalies.</dd><dt><span>product_version :</span></dt><dd>6.0.0</dd><dt><span>source :</span></dt><dd>NOAAGlobalTemp combines a global sea surface temperature with a global land surface air temperature data</dd><dt><span>ncei_template_version :</span></dt><dd>NCEI_NetCDF_Grid_Template_v2.0</dd><dt><span>Metadata_Conventions :</span></dt><dd>Unidata Dataset Discovery v1.0</dd><dt><span>license :</span></dt><dd>These data are available for use without restriction.</dd><dt><span>creator_name :</span></dt><dd>Boyin Huang, Xungang Yin, Ph.D</dd><dt><span>creator_email :</span></dt><dd>Boyin.Huang@noaa.gov, Xungang.Yin@noaa.gov</dd><dt><span>creator_type :</span></dt><dd>group</dd><dt><span>creator_institution :</span></dt><dd>US DOC/NOAA/NESDIS/National Centers for Environmental Information(NCEI)</dd><dt><span>contributor_name :</span></dt><dd>Huai-min Zhang, Ph.D</dd><dt><span>contributor_role :</span></dt><dd>Chief, NOAA/NESDIS/NCEI/CCOG/OSB Ocean Surface Section</dd><dt><span>publisher_name :</span></dt><dd>NCEI</dd><dt><span>publisher_institution :</span></dt><dd>NCEI</dd><dt><span>publisher_url :</span></dt><dd>https://www.ncdc.noaa.gov/</dd><dt><span>publisher_email :</span></dt><dd>ncei.info@noaa.gov</dd><dt><span>publisher_type :</span></dt><dd>institution</dd><dt><span>keywords :</span></dt><dd>Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature, Earth Science &gt; Atmosphere &gt; Atmospheric Temperature &gt; Surface Temperature &gt; Air Temperature</dd><dt><span>keywords_vocabulary :</span></dt><dd>NASA Global Change Master Directory (GCMD) Science Keywords</dd><dt><span>standard_name_vocabulary :</span></dt><dd>Climate and Forecast (CF) Standard Name Table (Version 46, 25 July 2017)</dd><dt><span>date_created :</span></dt><dd>2024-04-08T19:27:01Z</dd><dt><span>necdf_version_id :</span></dt><dd>4.2.1.1</dd><dt><span>netcdf_creator_name :</span></dt><dd>Yongsheng Zhang, Ph.D</dd><dt><span>netcdf_creator_email :</span></dt><dd>yongsheng.zhang@noaa.gov</dd><dt><span>dataset_citation_product :</span></dt><dd>NOAA Merged Land Ocean Global Surface Temperature Analysis (NOAAGlobalTemp)</dd><dt><span>dataset_citation_version :</span></dt><dd>5.1.0</dd><dt><span>dataset_citation_institution :</span></dt><dd>NOAA/NESDIS/NCEI, Asheville, NC, USA</dd><dt><span>dataset_citation_url :</span></dt><dd>https://doi.org/10.25921/9qth-2p70</dd><dt><span>metadata_link :</span></dt><dd>https://doi.org/10.25921/9qth-2p70</dd><dt><span>cdm_data_type :</span></dt><dd>Grid</dd><dt><span>grid_mapping_name :</span></dt><dd>latitude_longitude</dd><dt><span>processing_level :</span></dt><dd>NOAA Processing Level 4</dd><dt><span>geospatial_lon_min :</span></dt><dd>2.5</dd><dt><span>geospatial_lon_max :</span></dt><dd>357.5</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>5.0 degree</dd><dt><span>geospatial_lat_min :</span></dt><dd>-87.5</dd><dt><span>geospatial_lat_max :</span></dt><dd>87.5</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>5.0 degree</dd><dt><span>geospatial_bounds :</span></dt><dd>POLYGON ((2.5 -87.5, 2.5 87.5, 357.5 87.5, 357.5 -87.5, 2.5 -87.5))</dd><dt><span>geospatial_bounds_crs :</span></dt><dd>EPSG:4326</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_max :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_units :</span></dt><dd>meters</dd><dt><span>geospatial_vertical_resolution :</span></dt><dd>0.f</dd><dt><span>geospatial_vertical_positive :</span></dt><dd>up</dd><dt><span>time_coverage_start :</span></dt><dd>1850-01</dd><dt><span>time_coverage_end :</span></dt><dd>2024-03</dd><dt><span>time_coverage_resolution :</span></dt><dd>P1M</dd><dt><span>time_coverage_duration :</span></dt><dd>P174Y3M</dd><dt><span>references :</span></dt><dd>Vose, R. S., et al., 2012: NOAAs merged land-ocean surface temperature analysis. Bulletin of the American Meteorological Society, 93, 1677-1685. doi: 10.1175/BAMS-D-11-00241.1. Huang, B., Peter W. Thorne, et. al, 2017: Extended Reconstructed Sea Surface Temperature version 5 (ERSSTv5), Upgrades, validations, and intercomparisons. J. Climate, 30, 8179-8205. doi: 10.1175/JCLI-D-16-0836.1</dd><dt><span>climatology :</span></dt><dd>Climatology is based on 1971-2000 monthly climatology</dd><dt><span>acknowledgment :</span></dt><dd>The NOAA Global Surface Temperature Dataset is provided by the NOAA National Centers for Environmental Information(NCEI)</dd><dt><span>date_modified :</span></dt><dd>2024-04-08T19:27:01Z</dd><dt><span>date_issued :</span></dt><dd>2024-04-08T19:27:01Z</dd></dl></div></li></ul></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate annual mean</span>
+
+<span class="n">dsym</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">dsym</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body[data-theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 2MB
+Dimensions:  (lat: 36, lon: 72, z: 1, year: 175)
+Coordinates:
+  * lat      (lat) float32 144B -87.5 -82.5 -77.5 -72.5 ... 72.5 77.5 82.5 87.5
+  * lon      (lon) float32 288B 2.5 7.5 12.5 17.5 ... 342.5 347.5 352.5 357.5
+  * z        (z) float32 4B 0.0
+  * year     (year) int64 1kB 1850 1851 1852 1853 1854 ... 2021 2022 2023 2024
+Data variables:
+    anom     (year, z, lat, lon) float32 2MB -0.08197 -0.4426 ... 4.278 4.001
+Attributes: (12/66)
+    Conventions:                     CF-1.6, ACDD-1.3
+    title:                           NOAA Merged Land Ocean Global Surface Te...
+    summary:                         NOAAGlobalTemp is a merged land-ocean su...
+    institution:                     DOC/NOAA/NESDIS/National Centers for Env...
+    id:                               gov.noaa.ncdc:C00934 
+    naming_authority:                 gov.noaa.ncei 
+    ...                              ...
+    time_coverage_duration:          P174Y3M
+    references:                      Vose, R. S., et al., 2012: NOAAs merged ...
+    climatology:                     Climatology is based on 1971-2000 monthl...
+    acknowledgment:                  The NOAA Global Surface Temperature Data...
+    date_modified:                   2024-04-08T19:27:01Z
+    date_issued:                     2024-04-08T19:27:01Z</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-deb12360-78da-41f7-bbdb-d55c41605aea' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-deb12360-78da-41f7-bbdb-d55c41605aea' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 36</li><li><span class='xr-has-index'>lon</span>: 72</li><li><span class='xr-has-index'>z</span>: 1</li><li><span class='xr-has-index'>year</span>: 175</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-c1d87965-35d6-4816-b50a-f56d1db4b525' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c1d87965-35d6-4816-b50a-f56d1db4b525' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-87.5 -82.5 -77.5 ... 82.5 87.5</div><input id='attrs-7646bbd3-7691-46be-8941-1070204d5f70' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7646bbd3-7691-46be-8941-1070204d5f70' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-35a0e424-9d1b-4e75-aacc-241192a67423' class='xr-var-data-in' type='checkbox'><label for='data-35a0e424-9d1b-4e75-aacc-241192a67423' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>coverage_content_type :</span></dt><dd>coordinate</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>grids :</span></dt><dd>Uniform grid from -87.5 to 87.5 by 5</dd><dt><span>valid_min :</span></dt><dd>-87.5</dd><dt><span>valid_max :</span></dt><dd>87.5</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>_CoordinateAxisType :</span></dt><dd>Lat</dd><dt><span>coordinate_defines :</span></dt><dd>center</dd></dl></div><div class='xr-var-data'><pre>array([-87.5, -82.5, -77.5, -72.5, -67.5, -62.5, -57.5, -52.5, -47.5, -42.5,
+       -37.5, -32.5, -27.5, -22.5, -17.5, -12.5,  -7.5,  -2.5,   2.5,   7.5,
+        12.5,  17.5,  22.5,  27.5,  32.5,  37.5,  42.5,  47.5,  52.5,  57.5,
+        62.5,  67.5,  72.5,  77.5,  82.5,  87.5], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>2.5 7.5 12.5 ... 347.5 352.5 357.5</div><input id='attrs-ee7d5240-ba48-47f6-a7fe-cbd62ea4efd9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ee7d5240-ba48-47f6-a7fe-cbd62ea4efd9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-575a419c-93a5-4c5c-b3a7-853243227043' class='xr-var-data-in' type='checkbox'><label for='data-575a419c-93a5-4c5c-b3a7-853243227043' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>coverage_content_type :</span></dt><dd>coordinate</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>grids :</span></dt><dd>Uniform grid from 2.5 to 357.5 by 5</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>valid_min :</span></dt><dd>2.5</dd><dt><span>valid_max :</span></dt><dd>357.5</dd><dt><span>_CoordinateAxisType :</span></dt><dd>Lon</dd><dt><span>coordinate_defines :</span></dt><dd>center</dd></dl></div><div class='xr-var-data'><pre>array([  2.5,   7.5,  12.5,  17.5,  22.5,  27.5,  32.5,  37.5,  42.5,  47.5,
+        52.5,  57.5,  62.5,  67.5,  72.5,  77.5,  82.5,  87.5,  92.5,  97.5,
+       102.5, 107.5, 112.5, 117.5, 122.5, 127.5, 132.5, 137.5, 142.5, 147.5,
+       152.5, 157.5, 162.5, 167.5, 172.5, 177.5, 182.5, 187.5, 192.5, 197.5,
+       202.5, 207.5, 212.5, 217.5, 222.5, 227.5, 232.5, 237.5, 242.5, 247.5,
+       252.5, 257.5, 262.5, 267.5, 272.5, 277.5, 282.5, 287.5, 292.5, 297.5,
+       302.5, 307.5, 312.5, 317.5, 322.5, 327.5, 332.5, 337.5, 342.5, 347.5,
+       352.5, 357.5], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.0</div><input id='attrs-aeceb3d8-b279-4fca-877c-d972af9771c3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-aeceb3d8-b279-4fca-877c-d972af9771c3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d8c6dfd0-0864-4a15-bf7c-a61c6207b7c1' class='xr-var-data-in' type='checkbox'><label for='data-d8c6dfd0-0864-4a15-bf7c-a61c6207b7c1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>height of surface temperature</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>coverage_content_type :</span></dt><dd>coordinate</dd><dt><span>geospatial_bounds_vertical_crs :</span></dt><dd>EPSG:5703</dd><dt><span>units :</span></dt><dd>meters</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>valid_min :</span></dt><dd>0.0</dd><dt><span>valid_max :</span></dt><dd>0.0</dd><dt><span>axis :</span></dt><dd>Z</dd><dt><span>_CoordinateAxisType :</span></dt><dd>Height</dd><dt><span>comment :</span></dt><dd>Actual measurement depth of in situ sea surface temperature varies from 0.2 to 10 m, but corrected to the nominal depth of buoy at 0.2 m; for air temperature over land is 2m.</dd></dl></div><div class='xr-var-data'><pre>array([0.], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>year</span></div><div class='xr-var-dims'>(year)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1850 1851 1852 ... 2022 2023 2024</div><input id='attrs-5ed86ca4-5960-4328-aa0b-23175a1d752c' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-5ed86ca4-5960-4328-aa0b-23175a1d752c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dc55ea0a-4b19-4eea-ab25-6749e178fead' class='xr-var-data-in' type='checkbox'><label for='data-dc55ea0a-4b19-4eea-ab25-6749e178fead' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1850, 1851, 1852, 1853, 1854, 1855, 1856, 1857, 1858, 1859, 1860, 1861,
+       1862, 1863, 1864, 1865, 1866, 1867, 1868, 1869, 1870, 1871, 1872, 1873,
+       1874, 1875, 1876, 1877, 1878, 1879, 1880, 1881, 1882, 1883, 1884, 1885,
+       1886, 1887, 1888, 1889, 1890, 1891, 1892, 1893, 1894, 1895, 1896, 1897,
+       1898, 1899, 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909,
+       1910, 1911, 1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921,
+       1922, 1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933,
+       1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945,
+       1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957,
+       1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969,
+       1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981,
+       1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993,
+       1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
+       2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017,
+       2018, 2019, 2020, 2021, 2022, 2023, 2024])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-1c033b83-5382-4ff7-a9c8-653b4795717e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-1c033b83-5382-4ff7-a9c8-653b4795717e' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>anom</span></div><div class='xr-var-dims'>(year, z, lat, lon)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-0.08197 -0.4426 ... 4.278 4.001</div><input id='attrs-9d190289-6a0a-432a-ba11-7f7d95243a6c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9d190289-6a0a-432a-ba11-7f7d95243a6c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9360e7a7-ced4-434e-8cd1-d6a5badaf613' class='xr-var-data-in' type='checkbox'><label for='data-9360e7a7-ced4-434e-8cd1-d6a5badaf613' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Global Temperature Anomalies</dd><dt><span>standard_name :</span></dt><dd>surface_temperature_anomaly</dd><dt><span>coverage_content_type :</span></dt><dd>physicalMeasurement</dd><dt><span>units :</span></dt><dd>degrees C</dd><dt><span>valid_min :</span></dt><dd>-40.0</dd><dt><span>valid_max :</span></dt><dd>40.0</dd></dl></div><div class='xr-var-data'><pre>array([[[[-8.1971221e-02, -4.4264355e-01, -1.1202008e-01, ...,
+          -2.4856913e-01, -3.2625797e-01, -1.8461032e-01],
+         [-1.1741442e-01, -1.3477500e-01, -7.0519663e-02, ...,
+           9.4141684e-02,  6.1628353e-02, -2.3135014e-01],
+         [-4.2544070e-01, -3.5951820e-01, -6.1615735e-01, ...,
+          -4.4914412e-01, -3.8483086e-01, -4.9821833e-01],
+         ...,
+         [-4.8285875e-01, -5.9172195e-01, -6.1179751e-01, ...,
+          -1.8053332e-02, -2.3769094e-01, -2.2958757e-01],
+         [-1.7553623e-01,  1.7622709e-01, -8.1406176e-02, ...,
+           2.6370013e-01,  1.3786797e-01,  8.5125369e-04],
+         [ 2.7837011e-01,  1.0557888e-01,  2.3223071e-01, ...,
+           8.2769297e-02,  2.2163318e-01,  2.3027757e-02]]],
+
+
+       [[[-4.1034007e-01, -5.3210115e-01, -1.3042572e-01, ...,
+          -4.4464311e-01, -5.1119030e-01, -2.8630674e-01],
+         [-1.8934166e-01, -2.6529157e-01, -4.3846670e-01, ...,
+          -2.9650095e-01, -2.7944973e-01, -3.3767930e-01],
+         [ 5.9153229e-02, -2.7421394e-01, -4.5492923e-01, ...,
+...
+         [ 2.9677670e+00,  2.7257979e+00,  3.8536158e+00, ...,
+           3.1310222e+00,  3.2655575e+00,  2.8354275e+00],
+         [ 2.6811826e+00,  2.5170324e+00,  2.4354985e+00, ...,
+           2.7430542e+00,  2.7815821e+00,  2.3793216e+00]]],
+
+
+       [[[-7.7027208e-01, -1.3942226e+00, -1.4913701e+00, ...,
+          -1.2433640e+00, -1.5271364e+00, -1.5182234e+00],
+         [-1.1144022e+00, -1.2565370e+00, -1.2125638e+00, ...,
+          -1.1719422e+00, -8.2484025e-01, -7.3588973e-01],
+         [-4.0841946e-01, -1.0796885e+00, -5.1058960e-01, ...,
+          -4.1499808e-01, -5.0360674e-01, -7.0077920e-01],
+         ...,
+         [ 2.3164241e+00,  2.2195547e+00,  1.1700001e+00, ...,
+           3.4378102e+00,  6.4615598e+00,  7.9552990e-01],
+         [ 2.4931924e+00,  4.1324325e+00,  4.2356668e+00, ...,
+           3.6520169e+00,  4.0046253e+00,  2.8400002e+00],
+         [ 3.8819494e+00,  3.8435059e+00,  3.7267540e+00, ...,
+           4.4833097e+00,  4.2781749e+00,  4.0008025e+00]]]],
+      dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-cea70034-62f6-4ec4-9cc4-607092504b53' class='xr-section-summary-in' type='checkbox'  ><label for='section-cea70034-62f6-4ec4-9cc4-607092504b53' class='xr-section-summary' >Indexes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>lat</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-fed1389f-a7fc-4eac-9935-c173651cdfa9' class='xr-index-data-in' type='checkbox'/><label for='index-fed1389f-a7fc-4eac-9935-c173651cdfa9' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-87.5, -82.5, -77.5, -72.5, -67.5, -62.5, -57.5, -52.5, -47.5, -42.5,
+       -37.5, -32.5, -27.5, -22.5, -17.5, -12.5,  -7.5,  -2.5,   2.5,   7.5,
+        12.5,  17.5,  22.5,  27.5,  32.5,  37.5,  42.5,  47.5,  52.5,  57.5,
+        62.5,  67.5,  72.5,  77.5,  82.5,  87.5],
+      dtype=&#x27;float32&#x27;, name=&#x27;lat&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lon</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-562f102b-f2ae-4a0c-bcc2-839d1a59bcd7' class='xr-index-data-in' type='checkbox'/><label for='index-562f102b-f2ae-4a0c-bcc2-839d1a59bcd7' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([  2.5,   7.5,  12.5,  17.5,  22.5,  27.5,  32.5,  37.5,  42.5,  47.5,
+        52.5,  57.5,  62.5,  67.5,  72.5,  77.5,  82.5,  87.5,  92.5,  97.5,
+       102.5, 107.5, 112.5, 117.5, 122.5, 127.5, 132.5, 137.5, 142.5, 147.5,
+       152.5, 157.5, 162.5, 167.5, 172.5, 177.5, 182.5, 187.5, 192.5, 197.5,
+       202.5, 207.5, 212.5, 217.5, 222.5, 227.5, 232.5, 237.5, 242.5, 247.5,
+       252.5, 257.5, 262.5, 267.5, 272.5, 277.5, 282.5, 287.5, 292.5, 297.5,
+       302.5, 307.5, 312.5, 317.5, 322.5, 327.5, 332.5, 337.5, 342.5, 347.5,
+       352.5, 357.5],
+      dtype=&#x27;float32&#x27;, name=&#x27;lon&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>z</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-6ae9c9f5-10c1-4587-a411-27ef74a7123e' class='xr-index-data-in' type='checkbox'/><label for='index-6ae9c9f5-10c1-4587-a411-27ef74a7123e' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([0.0], dtype=&#x27;float32&#x27;, name=&#x27;z&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>year</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-9ba25147-1563-4a18-a32d-afc9704fd823' class='xr-index-data-in' type='checkbox'/><label for='index-9ba25147-1563-4a18-a32d-afc9704fd823' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([1850, 1851, 1852, 1853, 1854, 1855, 1856, 1857, 1858, 1859,
+       ...
+       2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      dtype=&#x27;int64&#x27;, name=&#x27;year&#x27;, length=175))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-248b623c-38dc-4f24-b60e-df8f16b8f2d9' class='xr-section-summary-in' type='checkbox'  ><label for='section-248b623c-38dc-4f24-b60e-df8f16b8f2d9' class='xr-section-summary' >Attributes: <span>(66)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6, ACDD-1.3</dd><dt><span>title :</span></dt><dd>NOAA Merged Land Ocean Global Surface Temperature Analysis (NOAAGlobalTemp)</dd><dt><span>summary :</span></dt><dd>NOAAGlobalTemp is a merged land-ocean surface temperature analysis, formerly abbreviated as MLOST. The SST dataset is the Extended Reconstructed Sea Surface Temperature (ERSST) and the land surface air temperature dataset is from the Global Historical Climatology Network Monthly (GHCN-M) database.</dd><dt><span>institution :</span></dt><dd>DOC/NOAA/NESDIS/National Centers for Environmental Information(NCEI)</dd><dt><span>id :</span></dt><dd> gov.noaa.ncdc:C00934 </dd><dt><span>naming_authority :</span></dt><dd> gov.noaa.ncei </dd><dt><span>project :</span></dt><dd> NOAAGlobalTemp </dd><dt><span>platform :</span></dt><dd>Ships, moored buoys, surface drifting buoys, Argo floats, and weather stations</dd><dt><span>instrument :</span></dt><dd>Conventional thermometers</dd><dt><span>history :</span></dt><dd>Version 5.1.0, blending ERSST V5 and GHCN-M V4.</dd><dt><span>comment :</span></dt><dd>Merged land ocean surface temperature anomalies.</dd><dt><span>product_version :</span></dt><dd>6.0.0</dd><dt><span>source :</span></dt><dd>NOAAGlobalTemp combines a global sea surface temperature with a global land surface air temperature data</dd><dt><span>ncei_template_version :</span></dt><dd>NCEI_NetCDF_Grid_Template_v2.0</dd><dt><span>Metadata_Conventions :</span></dt><dd>Unidata Dataset Discovery v1.0</dd><dt><span>license :</span></dt><dd>These data are available for use without restriction.</dd><dt><span>creator_name :</span></dt><dd>Boyin Huang, Xungang Yin, Ph.D</dd><dt><span>creator_email :</span></dt><dd>Boyin.Huang@noaa.gov, Xungang.Yin@noaa.gov</dd><dt><span>creator_type :</span></dt><dd>group</dd><dt><span>creator_institution :</span></dt><dd>US DOC/NOAA/NESDIS/National Centers for Environmental Information(NCEI)</dd><dt><span>contributor_name :</span></dt><dd>Huai-min Zhang, Ph.D</dd><dt><span>contributor_role :</span></dt><dd>Chief, NOAA/NESDIS/NCEI/CCOG/OSB Ocean Surface Section</dd><dt><span>publisher_name :</span></dt><dd>NCEI</dd><dt><span>publisher_institution :</span></dt><dd>NCEI</dd><dt><span>publisher_url :</span></dt><dd>https://www.ncdc.noaa.gov/</dd><dt><span>publisher_email :</span></dt><dd>ncei.info@noaa.gov</dd><dt><span>publisher_type :</span></dt><dd>institution</dd><dt><span>keywords :</span></dt><dd>Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature, Earth Science &gt; Atmosphere &gt; Atmospheric Temperature &gt; Surface Temperature &gt; Air Temperature</dd><dt><span>keywords_vocabulary :</span></dt><dd>NASA Global Change Master Directory (GCMD) Science Keywords</dd><dt><span>standard_name_vocabulary :</span></dt><dd>Climate and Forecast (CF) Standard Name Table (Version 46, 25 July 2017)</dd><dt><span>date_created :</span></dt><dd>2024-04-08T19:27:01Z</dd><dt><span>necdf_version_id :</span></dt><dd>4.2.1.1</dd><dt><span>netcdf_creator_name :</span></dt><dd>Yongsheng Zhang, Ph.D</dd><dt><span>netcdf_creator_email :</span></dt><dd>yongsheng.zhang@noaa.gov</dd><dt><span>dataset_citation_product :</span></dt><dd>NOAA Merged Land Ocean Global Surface Temperature Analysis (NOAAGlobalTemp)</dd><dt><span>dataset_citation_version :</span></dt><dd>5.1.0</dd><dt><span>dataset_citation_institution :</span></dt><dd>NOAA/NESDIS/NCEI, Asheville, NC, USA</dd><dt><span>dataset_citation_url :</span></dt><dd>https://doi.org/10.25921/9qth-2p70</dd><dt><span>metadata_link :</span></dt><dd>https://doi.org/10.25921/9qth-2p70</dd><dt><span>cdm_data_type :</span></dt><dd>Grid</dd><dt><span>grid_mapping_name :</span></dt><dd>latitude_longitude</dd><dt><span>processing_level :</span></dt><dd>NOAA Processing Level 4</dd><dt><span>geospatial_lon_min :</span></dt><dd>2.5</dd><dt><span>geospatial_lon_max :</span></dt><dd>357.5</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>5.0 degree</dd><dt><span>geospatial_lat_min :</span></dt><dd>-87.5</dd><dt><span>geospatial_lat_max :</span></dt><dd>87.5</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>5.0 degree</dd><dt><span>geospatial_bounds :</span></dt><dd>POLYGON ((2.5 -87.5, 2.5 87.5, 357.5 87.5, 357.5 -87.5, 2.5 -87.5))</dd><dt><span>geospatial_bounds_crs :</span></dt><dd>EPSG:4326</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_max :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_units :</span></dt><dd>meters</dd><dt><span>geospatial_vertical_resolution :</span></dt><dd>0.f</dd><dt><span>geospatial_vertical_positive :</span></dt><dd>up</dd><dt><span>time_coverage_start :</span></dt><dd>1850-01</dd><dt><span>time_coverage_end :</span></dt><dd>2024-03</dd><dt><span>time_coverage_resolution :</span></dt><dd>P1M</dd><dt><span>time_coverage_duration :</span></dt><dd>P174Y3M</dd><dt><span>references :</span></dt><dd>Vose, R. S., et al., 2012: NOAAs merged land-ocean surface temperature analysis. Bulletin of the American Meteorological Society, 93, 1677-1685. doi: 10.1175/BAMS-D-11-00241.1. Huang, B., Peter W. Thorne, et. al, 2017: Extended Reconstructed Sea Surface Temperature version 5 (ERSSTv5), Upgrades, validations, and intercomparisons. J. Climate, 30, 8179-8205. doi: 10.1175/JCLI-D-16-0836.1</dd><dt><span>climatology :</span></dt><dd>Climatology is based on 1971-2000 monthly climatology</dd><dt><span>acknowledgment :</span></dt><dd>The NOAA Global Surface Temperature Dataset is provided by the NOAA National Centers for Environmental Information(NCEI)</dd><dt><span>date_modified :</span></dt><dd>2024-04-08T19:27:01Z</dd><dt><span>date_issued :</span></dt><dd>2024-04-08T19:27:01Z</dd></dl></div></li></ul></div></div></div></div>
+</div>
+<p>Note: Data for 2024 only contails 3 months and therefore should be excluded.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select baseline and targeted time period</span>
+
+<span class="n">T0</span><span class="o">=</span><span class="n">dsym</span><span class="o">.</span><span class="n">anom</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="n">T</span><span class="o">=</span><span class="n">dsym</span><span class="o">.</span><span class="n">anom</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">T</span><span class="o">-</span><span class="n">T0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;surface temperature change [K]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;1994-2023 decadal mean relative to 1850&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d462e68fda75be6a529c025e7ef85c22d558812275006f4e00e6a7163fac81ec.png" src="../../_images/d462e68fda75be6a529c025e7ef85c22d558812275006f4e00e6a7163fac81ec.png" />
+</div>
+</div>
+<p>Note: Computing the local linear trend would probably give more smoother spatial pattern.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">openai</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span> 
+
+<span class="k">def</span><span class="w"> </span><span class="nf">load_api_key</span><span class="p">(</span><span class="n">secrets_file</span><span class="o">=</span><span class="s2">&quot;/Users/kaichiht/openai.json&quot;</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">secrets_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">secrets</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">secrets</span><span class="p">[</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">]</span>
+
+<span class="c1"># Set secret API key</span>
+<span class="c1"># Typically, we&#39;d use an environment variable (e.g., echo &quot;export OPENAI_API_KEY=&#39;yourkey&#39;&quot; &gt;&gt; ~/.zshrc)</span>
+<span class="c1"># However, using &quot;internalConsole&quot; in launch.json requires setting it in the code for compatibility with Hebrew</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="n">load_api_key</span><span class="p">()</span>
+<span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
+
+<span class="o">%</span><span class="k">reload_ext</span> jupyter_ai
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">openai</span><span class="o">.</span><span class="n">api_key</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: Line magic function `%%ai` not found.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai</span> chatgpt 
+
+I have a data x(lat), which is a function of lat.  Can you provide a python code using Legendre polynomial to decompose the data?
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="kn">import</span> <span class="n">legendre</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Generate synthetic data</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lat</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span>
+
+<span class="c1"># Define the Legendre polynomial degree</span>
+<span class="n">degree</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Compute Legendre polynomials</span>
+<span class="n">legendre_polynomials</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lat</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">legendre_polynomials</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">legendre</span><span class="p">(</span><span class="n">i</span><span class="p">)(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">))</span>
+
+<span class="c1"># Compute coefficients</span>
+<span class="n">coefficients</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">coefficients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">legendre_polynomials</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">legendre_polynomials</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Reconstruct the data</span>
+<span class="n">x_reconstructed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">coefficients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">legendre_polynomials</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Plot original data and reconstructed data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">x_reconstructed</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Reconstructed Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Data x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Data Decomposition using Legendre Polynomials&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="kn">import</span> <span class="n">legendre</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Generate synthetic data</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lat</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span>
+
+<span class="c1"># Define the Legendre polynomial degree</span>
+<span class="n">degree</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Compute Legendre polynomials</span>
+<span class="n">legendre_polynomials</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lat</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">legendre_polynomials</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">legendre</span><span class="p">(</span><span class="n">i</span><span class="p">)(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">))</span>
+
+<span class="c1"># Compute coefficients</span>
+<span class="n">coefficients</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">coefficients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">legendre_polynomials</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">legendre_polynomials</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Reconstruct the data</span>
+<span class="n">x_reconstructed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">coefficients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">legendre_polynomials</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Plot original data and reconstructed data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">x_reconstructed</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Reconstructed Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Data x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Data Decomposition using Legendre Polynomials&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_7284/4091885872.py:23: DeprecationWarning: Calling np.sum(generator) is deprecated, and in the future will give a different result. Use np.sum(np.fromiter(generator)) or the python sum builtin instead.
+  x_reconstructed = np.sum(coefficients[i]*legendre_polynomials[i,:] for i in range(degree+1))
+</pre></div>
+</div>
+<img alt="../../_images/2e62a166c5adce59da5e398f80e0ac9a9a1b97954b097d0ee1f4f6e1830a6e4d.png" src="../../_images/2e62a166c5adce59da5e398f80e0ac9a9a1b97954b097d0ee1f4f6e1830a6e4d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">legendre_polynomials</span><span class="p">[</span><span class="mi">2</span><span class="p">,:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11d1ba590&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/cb792e4f05797cc5894bcb861eaf8a6f9eefe1f07231dd4dea6cbfa7ae65361b.png" src="../../_images/cb792e4f05797cc5894bcb861eaf8a6f9eefe1f07231dd4dea6cbfa7ae65361b.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ODE/Polar_amplification"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. Kai-Chih Tseng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

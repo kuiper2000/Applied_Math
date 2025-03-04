@@ -1,0 +1,888 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Week 13: Laplace Equation &#8212; Applied Math 2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PDE/Laplace_equation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Week 12: Wave Equation" href="Wave_equation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Applied Math 2 - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Applied Math 2 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ODE/1stODE.html">Week 1 and 2: 1st-order ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ODE/2ndODE.html">Week 3 and 4: 2nd-order ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ODE/Laplace.html">Week 5 and 6: Laplace Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ODE/Sturm_Liouville.html">Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Heat_equation.html">Week 11:  Heat Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Wave_equation.html">Week 12:  Wave Equation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 13:  Laplace Equation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPDE/Laplace_equation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/PDE/Laplace_equation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week 13:  Laplace Equation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-setup-and-initial-conditions">Problem Setup and Initial Conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dirichlet-problem-for-a-rectangle">Dirichlet Problem for a Rectangle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dirichlet-problem-for-a-disk">Dirichlet Problem for a Disk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-integral-formula">Poisson Integral Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-neumann-problem">The Neumann Problem</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week-13-laplace-equation">
+<span id="laplace"></span><h1>Week 13:  Laplace Equation<a class="headerlink" href="#week-13-laplace-equation" title="Link to this heading">#</a></h1>
+<section id="problem-setup-and-initial-conditions">
+<h2>Problem Setup and Initial Conditions<a class="headerlink" href="#problem-setup-and-initial-conditions" title="Link to this heading">#</a></h2>
+<p>Laplace equation is nothing new to readers since we have introduced two related special functions in the chapter of <span class="xref std std-ref">SpecialF</span>, Legendre polynomial and Bessel function. While those special functions form a complete set of solution of diffusion equation for the corresponding coordinate, there is an alternative way of solving diffusion problem when certain boundary conditions are satisfied. (i.e., Sturm-Liouville theorem is satisfied).</p>
+</section>
+<section id="dirichlet-problem-for-a-rectangle">
+<h2>Dirichlet Problem for a Rectangle<a class="headerlink" href="#dirichlet-problem-for-a-rectangle" title="Link to this heading">#</a></h2>
+<p>Let’s begin with a diffusion problem on a Rectangle (figure below),</p>
+<figure class="align-default" id="fig12">
+<a class="reference internal image-reference" href="../_images/Dirichlet_1.png"><img alt="../_images/Dirichlet_1.png" src="../_images/Dirichlet_1.png" style="width: 435.40000000000003px; height: 363.8px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">The Dirichlet problem on a rectangle.</span><a class="headerlink" href="#fig12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>the figure above can be written as <a class="reference internal" href="#equation-eq213">(164)</a></p>
+<div class="math notranslate nohighlight" id="equation-eq213">
+<span class="eqno">(164)<a class="headerlink" href="#equation-eq213" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\nabla ^2 u &amp;= 0 \;\; \textrm{  for  } 0&lt;x&lt;L,0&lt;y&lt;K \\
+u(x,0)      &amp;= 0 \;\; \textrm{  for  } 0\leq x\leq L \\
+u(0,y)      &amp;= u(L,y) = 0 \;\; \textrm{  for  } 0\leq y\leq K \\
+u(x,K)      &amp;= f(x) \;\; \textrm{  for  } 0\leq x\leq L 
+\end{align}\end{split}\]</div>
+<p>The rectangle is defined as domain <span class="math notranslate nohighlight">\(\Omega\)</span>. In such problem, we want a function that is harmonic on <span class="math notranslate nohighlight">\(\Omega\)</span>, equals <span class="math notranslate nohighlight">\(f(x)\)</span> on the upper side and zero on the lower side  and two vertical side. Using the same technique of <em>separation of variable</em>, we can assume the structure of <span class="math notranslate nohighlight">\(u\)</span> follows</p>
+<div class="math notranslate nohighlight" id="equation-eq214">
+<span class="eqno">(165)<a class="headerlink" href="#equation-eq214" title="Link to this equation">#</a></span>\[\begin{align}
+u(x,y) = X(x)Y(y)
+\end{align}\]</div>
+<p>we have</p>
+<div class="math notranslate nohighlight" id="equation-eq215">
+<span class="eqno">(166)<a class="headerlink" href="#equation-eq215" title="Link to this equation">#</a></span>\[\begin{align}
+X^{''}Y+XY^{''}=0
+\end{align}\]</div>
+<p>Dividing the entire <a class="reference internal" href="#equation-eq215">(166)</a> by <span class="math notranslate nohighlight">\(XY\)</span>, we can get</p>
+<div class="math notranslate nohighlight" id="equation-eq216">
+<span class="eqno">(167)<a class="headerlink" href="#equation-eq216" title="Link to this equation">#</a></span>\[\begin{align}
+\frac{X^{''}}{X}+\frac{Y^{''}}{Y}=0
+\end{align}\]</div>
+<p>Similar to how we deal with heat and wave equations, the first part is only related to <span class="math notranslate nohighlight">\(x\)</span> and the second part is only related to <span class="math notranslate nohighlight">\(y\)</span>. This indicates that both are the same constant with opposite sign. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq217">
+<span class="eqno">(168)<a class="headerlink" href="#equation-eq217" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\frac{X^{''}}{X}+\lambda &amp; =0 \;\; \textrm{  for } X(0)=X(L)=0\\
+\frac{Y^{''}}{Y}-\lambda &amp; =0 \;\; \textrm{  for } Y(0)=0 \\
+\end{align}\end{split}\]</div>
+<p>It’s not hard to find that <a class="reference internal" href="#equation-eq217">(168)</a> has a solution of (also see solution )</p>
+<div class="math notranslate nohighlight" id="equation-eq218">
+<span class="eqno">(169)<a class="headerlink" href="#equation-eq218" title="Link to this equation">#</a></span>\[\begin{align}
+\lambda_n = \frac{n^2\pi^2}{L^2},X_n(x)=\sin(\frac{n\pi x}{L})
+\end{align}\]</div>
+<p>For solution in <span class="math notranslate nohighlight">\(y\)</span> direction,</p>
+<div class="math notranslate nohighlight" id="equation-eq219">
+<span class="eqno">(170)<a class="headerlink" href="#equation-eq219" title="Link to this equation">#</a></span>\[\begin{align}
+Y_n(y)=\sinh (\frac{n\pi y}{L})
+\end{align}\]</div>
+<p>The whole solution can therefore be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq220">
+<span class="eqno">(171)<a class="headerlink" href="#equation-eq220" title="Link to this equation">#</a></span>\[\begin{align}
+u(x,y) = \sum_{n=1}^{n=\infty} c_n \sin(\frac{n\pi x}{L})\sinh(\frac{n\pi y}{L})
+\end{align}\]</div>
+<p>For the boundary condition at <span class="math notranslate nohighlight">\(y=K\)</span>, we know</p>
+<div class="math notranslate nohighlight" id="equation-eq221">
+<span class="eqno">(172)<a class="headerlink" href="#equation-eq221" title="Link to this equation">#</a></span>\[\begin{align}
+u(x,K) = \sum_{n=1}^{n=\infty} c_n \sin(\frac{n\pi x}{L})\sinh(\frac{n\pi K}{L})
+\end{align}\]</div>
+<p>which infers that</p>
+<div class="math notranslate nohighlight" id="equation-eq222">
+<span class="eqno">(173)<a class="headerlink" href="#equation-eq222" title="Link to this equation">#</a></span>\[\begin{align}
+c_n \sinh(\frac{n\pi K}{L}) = \frac{2}{L}\int_{0}^{L}  f(\xi)\sin(\frac{n\pi \xi}{L})d\xi
+\end{align}\]</div>
+<p>Substitute <a class="reference internal" href="#equation-eq222">(173)</a> back to <a class="reference internal" href="#equation-eq220">(171)</a>, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq223">
+<span class="eqno">(174)<a class="headerlink" href="#equation-eq223" title="Link to this equation">#</a></span>\[\begin{align}
+u(x,y) = \sum_{n=1}^{\infty}  \frac{2}{L}\int_{0}^{L}  (f(\xi)\sin(\frac{n\pi \xi}{L})d\xi ) \sin(\frac{n\pi x}{L})\frac{\sinh(\frac{n\pi y }{L})}{\sinh (\frac{n\pi K }{L})}
+\end{align}\]</div>
+<p>While we only specify boundary condition at the upper end, we can approach the problem the same way if other edges have non-zero boundary conditions. (see figure below)</p>
+<figure class="align-default" id="fig13">
+<a class="reference internal image-reference" href="../_images/Dirichlet_3.png"><img alt="../_images/Dirichlet_3.png" src="../_images/Dirichlet_3.png" style="width: 895.4000000000001px; height: 482.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">The Dirichlet problem on a rectangle with four specified boundaries.</span><a class="headerlink" href="#fig13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The solution for the condition above can be decomposed into four cases and each case with only one boundary specified (The lower panel of <a class="reference internal" href="#fig13"><span class="std std-ref">The Dirichlet problem on a rectangle with four specified boundaries.</span></a>).  The total solution is the linear combination of the four solution above. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq224">
+<span class="eqno">(175)<a class="headerlink" href="#equation-eq224" title="Link to this equation">#</a></span>\[\begin{align}
+u(x,y) = \sum_{i=1}^{4}  u_i(x,y)
+\end{align}\]</div>
+</section>
+<section id="dirichlet-problem-for-a-disk">
+<h2>Dirichlet Problem for a Disk<a class="headerlink" href="#dirichlet-problem-for-a-disk" title="Link to this heading">#</a></h2>
+<p>If today, we setup a problem on a disk ( <span class="math notranslate nohighlight">\(\Omega \in x^2+y^2 \leq R^2\)</span>). It’s a rare case when we use Cartesian coordinate but not so rare when we are using polar coordinate i.e., <span class="math notranslate nohighlight">\(x=r\cos(\theta)\)</span> and <span class="math notranslate nohighlight">\(y=r\sin(\theta)\)</span>. One can consider Dirichlet’s approach is an alternative way to solve the polar coordinate diffusion problem.</p>
+<p>With given boundary condition,</p>
+<div class="math notranslate nohighlight" id="equation-eq225">
+<span class="eqno">(176)<a class="headerlink" href="#equation-eq225" title="Link to this equation">#</a></span>\[\begin{align}
+u(x,y) = f(x,y) \; \textrm{  for  } x^2+y^2 = R^2
+\end{align}\]</div>
+<p>We can first apply chain rule to find the diffusion in polar coordinate. (see <span class="xref std std-ref">SpecialF</span>)</p>
+<div class="math notranslate nohighlight" id="equation-eq226">
+<span class="eqno">(177)<a class="headerlink" href="#equation-eq226" title="Link to this equation">#</a></span>\[\begin{align}
+\nabla^2 U(r,\theta) = U_{rr}+\frac{1}{r}U_r+\frac{1}{r^2}U_{\theta\theta} \; \textrm{  for  } -\pi\leq \theta \leq \pi
+\end{align}\]</div>
+<p>For <a class="reference internal" href="#equation-eq226">(177)</a>, we know three basis, <span class="math notranslate nohighlight">\(1,r^n\cos(n\theta),r^n\sin(n\theta)\)</span>. form a completed solution space. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq227">
+<span class="eqno">(178)<a class="headerlink" href="#equation-eq227" title="Link to this equation">#</a></span>\[\begin{align}
+U(r,\theta) = \frac{1}{2}a_0+\sum_{n=1}^{\infty} (a_n r^{n}\cos(n\theta)+b_n r^{n}\sin(n\theta))
+\end{align}\]</div>
+<p>Using the boundary condition</p>
+<div class="math notranslate nohighlight" id="equation-eq228">
+<span class="eqno">(179)<a class="headerlink" href="#equation-eq228" title="Link to this equation">#</a></span>\[\begin{align}
+U(R,\theta) = \frac{1}{2}a_0+\sum_{n=1}^{\infty} (a_n R^{n}\cos(n\theta)+b_n R^{n}\sin(n\theta))
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_n\)</span> are simply the corresponding Fourier coefficients.</p>
+<div class="math notranslate nohighlight" id="equation-eq229">
+<span class="eqno">(180)<a class="headerlink" href="#equation-eq229" title="Link to this equation">#</a></span>\[\begin{align}
+a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi}f(\xi)d\xi
+\end{align}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq230">
+<span class="eqno">(181)<a class="headerlink" href="#equation-eq230" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+a_n &amp;= \frac{1}{\pi R^n} \int_{-\pi}^{\pi}f(\xi)\cos(n\xi)d\xi \\
+b_n &amp;= \frac{1}{\pi R^n} \int_{-\pi}^{\pi}f(\xi)\sin(n\xi)d\xi \\
+\end{align}\end{split}\]</div>
+<p>Substituting <a class="reference internal" href="#equation-eq229">(180)</a> and <a class="reference internal" href="#equation-eq230">(181)</a> back to <a class="reference internal" href="#equation-eq227">(178)</a>, the complete equation can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq231">
+<span class="eqno">(182)<a class="headerlink" href="#equation-eq231" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)d\xi + \\
+&amp; \frac{1}{\pi}\sum_{n=1}^{\infty} (\frac{r}{R})^n \int_{-\pi}^{\pi} (f(\xi)\cos(n\xi)\cos(n\theta)+f(\xi)\cos(n\xi)\sin(n\theta)) d\xi
+\end{align}\end{split}\]</div>
+<div class="admonition-example-1 admonition">
+<p class="admonition-title">Example 1</p>
+<p>Find the solution</p>
+<p>If the disk has radius <span class="math notranslate nohighlight">\(R=4\)</span> and <span class="math notranslate nohighlight">\(U(4,\theta) = \theta^2\)</span>, then the solution by <a class="reference internal" href="#equation-eq231">(182)</a> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}\xi^2 d\xi + \\
+&amp; \frac{1}{\pi}\sum_{n=1}^{\infty} (\frac{r}{4})^n \int_{-\pi}^{\pi} (\xi^2\cos(n\xi)\cos(n\theta)+\xi^2\cos(n\xi)\sin(n\theta)) d\xi \\
+= &amp; \frac{1}{3}\pi^2 + \sum_{n=1}^{\infty}\frac{4(-1)^n}{n^2}
+\end{align}\end{split}\]</div>
+<p>The integration used are</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\pi} \int_{-\pi}^{\pi} \xi^2 \cos(n\xi)d\xi = \frac{4(-1)^n}{n^2}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\pi} \int_{-\pi}^{\pi} \xi^2 \sin(n\xi)d\xi = 0\]</div>
+</div>
+<div class="admonition-example-2 admonition">
+<p class="admonition-title">Example 2</p>
+<p>Solving the Dirichlet problem</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+&amp; \nabla^2 u(x,y) = 0 \; \; \textrm{for x^2+y^2&lt;9}
+&amp; u(x,y) = x^2y^2
+\end{align}\]</div>
+<p>We first convert this problem to polar coordinate, letting</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+U(r,\theta) = u(r\cos(\theta),r\sin(\theta))
+\end{align}\]</div>
+<p>and the boundary condition is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+x=3\cos(\theta), y=3\sin(\theta)
+\end{align}\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+U(3,\theta) = 3^2\cos^2(\theta)\times 3^2\sin^2(\theta) = f(\theta)
+\end{align}\]</div>
+<p>Solve the problem using <a class="reference internal" href="#equation-eq231">(182)</a></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+U(r,\theta) = &amp; \frac{1}{2\pi}\int_{-\pi}^{\pi}81\cos^2(\xi)\sin^2(\xi) d\xi + \\
+&amp; \frac{1}{\pi}\sum_{n=1}^{\infty} (\frac{r}{4})^n \int_{-\pi}^{\pi} (81\cos^2(\xi)\sin^2(\xi) \cos(n\xi)\cos(n\theta)+81\cos^2(\xi)\sin^2(\xi)\cos(n\xi)\sin(n\theta)) d\xi \\
+\end{align}\end{split}\]</div>
+<p>All we need is to find the integral of</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\int_{-\pi}^{\pi} 81\cos^{2}(\xi)\sin^{2}(\xi)d\xi = \frac{81\pi}{4} 
+\end{align}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int^{\pi}_{-\pi} 81\cos^{2}(\xi)\sin^{2}(\xi)\cos(n\xi)d\xi = 
+\begin{cases}
+  0 &amp; \text{if }n\neq 4 \\
+  \frac{-81\pi}{8} &amp; \text{if }n= 4
+\end{cases}\end{split}\]</div>
+<p>,and</p>
+<div class="math notranslate nohighlight">
+\[\int^{\pi}_{-\pi} 81\cos^{2}(\xi)\sin^{2}(\xi)\sin(n\xi)d\xi = 0 \]</div>
+</div>
+</section>
+<section id="poisson-integral-formula">
+<h2>Poisson Integral Formula<a class="headerlink" href="#poisson-integral-formula" title="Link to this heading">#</a></h2>
+<p>Poisson integral is a technique of writing a series solution into an integral form.</p>
+<p>In a special case, where <span class="math notranslate nohighlight">\(R=1\)</span> and <span class="math notranslate nohighlight">\(U(1,\theta)=f(\theta)\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq232">
+<span class="eqno">(183)<a class="headerlink" href="#equation-eq232" title="Link to this equation">#</a></span>\[U(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi}[1+2\sum_{n=1}^{\infty}r^n\cos(n(\xi-\theta))]f(\xi)d\xi\]</div>
+<p>Define a <em>Poisson Kernel</em></p>
+<div class="math notranslate nohighlight" id="equation-eq233">
+<span class="eqno">(184)<a class="headerlink" href="#equation-eq233" title="Link to this equation">#</a></span>\[P(r,\xi) = \frac{1}{2\pi}[1+2\sum_{n=1}^{\infty} r^n \cos(n\xi)]\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight" id="equation-eq234">
+<span class="eqno">(185)<a class="headerlink" href="#equation-eq234" title="Link to this equation">#</a></span>\[U(r,\theta) =\int_{-\pi}^{\pi} P(r,\xi-\theta)f(\xi)d\xi\]</div>
+<p>Thinking of a point inside the unit disk as a complex number and also having a polar coordinates <span class="math notranslate nohighlight">\((r,\xi)\)</span>. Use the Euler’s formula to write</p>
+<div class="math notranslate nohighlight" id="equation-eq235">
+<span class="eqno">(186)<a class="headerlink" href="#equation-eq235" title="Link to this equation">#</a></span>\[z = re^{i\xi} = r[\cos(\xi)+i\sin(\xi)]\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight" id="equation-eq236">
+<span class="eqno">(187)<a class="headerlink" href="#equation-eq236" title="Link to this equation">#</a></span>\[z^n = r^n e^{in\xi} = r^n [\cos(n\xi)+i\sin(n\xi)]\]</div>
+<p>Substitute <a class="reference internal" href="#equation-eq236">(187)</a> back into <a class="reference internal" href="#equation-eq234">(185)</a>, we can find</p>
+<div class="math notranslate nohighlight" id="equation-eq237">
+<span class="eqno">(188)<a class="headerlink" href="#equation-eq237" title="Link to this equation">#</a></span>\[\begin{split}1+2\sum_{n=1}^{\infty}\cos(n\xi) &amp; =\Re (1+2\sum_{n=1}^{\infty}z^n) \\
+&amp;= \Re(1+2\frac{z}{1-z}) \\
+&amp; =\Re(\frac{1+z}{1-z})  \\
+&amp; = \Re(\frac{1+re^{i\xi}}{1-re^{i\xi}})\end{split}\]</div>
+<p>To find the real part of <span class="math notranslate nohighlight">\(\frac{1+re^{i\xi}}{1-re^{i\xi}}\)</span>, we can apply the following algebraic manipulation,</p>
+<div class="math notranslate nohighlight" id="equation-eq238">
+<span class="eqno">(189)<a class="headerlink" href="#equation-eq238" title="Link to this equation">#</a></span>\[\begin{split}\frac{1+re^{i\xi}}{1-re^{i\xi}} &amp; = \frac{1+re^{i\xi}}{1-re^{i\xi}}(\frac{1-re^{i\xi}}{1-re^{i\xi}}) \\
+&amp; = \frac{1-r^2+r(e^{i\xi}-e^{-i\xi})}{1+r^2-r(e^{i\xi}+e^{-i\xi})} \\
+&amp; = \frac{1-r^2+r(\cos(\xi)+i\sin(\xi)-\cos(\xi)+i\sin(\xi))}{1+r^2-r(\cos(\xi)+i\sin(\xi)+\cos(\xi)-i\sin(\xi))} \\
+&amp; = \frac{1-r^2+2ir\sin(\xi)}{1+r^2+2r\cos(\xi)} \\ 
+&amp; = \frac{1-r^2}{1+r^2-2r\cos(\xi)}+i \frac{2r\sin(\xi)}{1+r^2-2r\cos(\xi)}\end{split}\]</div>
+<p>and the real part is <span class="math notranslate nohighlight">\(\frac{1-r^2}{1+r^2-2r\cos(\xi)}\)</span></p>
+<p>This leads to the final form of <em>Poisson Integral</em></p>
+<div class="math notranslate nohighlight" id="equation-eq239">
+<span class="eqno">(190)<a class="headerlink" href="#equation-eq239" title="Link to this equation">#</a></span>\[U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{1-r^2}{1+r^2-2r\cos(\xi-\theta)}f(\xi)d\xi\]</div>
+<p>For a disk with radius R about the origin, a change of variables yields the Poisson solution.</p>
+<div class="math notranslate nohighlight" id="equation-eq240">
+<span class="eqno">(191)<a class="headerlink" href="#equation-eq240" title="Link to this equation">#</a></span>\[U(r,\theta) = \frac{1}{2\pi}\int^{\pi}_{-\pi} \frac{R^2-r^2}{R^2+r^2-2rR\cos(\xi-\theta)}f(\xi)d\xi\]</div>
+<div class="admonition-example-3 admonition">
+<p class="admonition-title">Example 3</p>
+<p>Find the Poisson Integral of example 1.</p>
+<p>With <span class="math notranslate nohighlight">\(R=4\)</span> and <span class="math notranslate nohighlight">\(f(\theta) = \theta^2\)</span></p>
+<div class="math notranslate nohighlight">
+\[U(r,\theta) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\frac{16-r^2}{16+r^2-8r\cos(\xi-\theta)}\xi^2 d\xi = \frac{16-r^2}{2\pi}\int_{-\pi}^{\pi}\]</div>
+</div>
+</section>
+<section id="the-neumann-problem">
+<h2>The Neumann Problem<a class="headerlink" href="#the-neumann-problem" title="Link to this heading">#</a></h2>
+<p>Different from Dirichlet problem where the boundary temperature (value) is directly given, Neumann problem describes the jump condition. Mathematically, a Dirichlet problem usually has a boundary condition like <span class="math notranslate nohighlight">\(u(s,t)=f(s)\)</span> where <span class="math notranslate nohighlight">\(s\)</span> is the boundary along a closed region <span class="math notranslate nohighlight">\(C\)</span>. While the Neumann usually has a form of
+<span class="math notranslate nohighlight">\(u_n(s,t)=g(s)\)</span>, where <span class="math notranslate nohighlight">\(u_n(s,t)\)</span> is the normal derivative (perpendicular) on the boundary. (see figure below)</p>
+<figure class="align-default" id="fig14">
+<a class="reference internal image-reference" href="../_images/Neumann.png"><img alt="../_images/Neumann.png" src="../_images/Neumann.png" style="width: 346.40000000000003px; height: 248.4px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">The Neumann boundary condition.</span><a class="headerlink" href="#fig14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Here, we first define the unit normal vector and unit tangent vector.</p>
+<div class="math notranslate nohighlight" id="equation-eq241">
+<span class="eqno">(192)<a class="headerlink" href="#equation-eq241" title="Link to this equation">#</a></span>\[\frac{dx}{ds}\mathbf{i} +\frac{dy}{ds}\mathbf{j}\]</div>
+<p>and the unit normal vector</p>
+<div class="math notranslate nohighlight" id="equation-eq242">
+<span class="eqno">(193)<a class="headerlink" href="#equation-eq242" title="Link to this equation">#</a></span>\[\mathbf{n}(s) = \frac{dy}{ds}\mathbf{i} -\frac{dx}{ds}\mathbf{j}\]</div>
+<p>Then the normal derivative of a point on C can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq243">
+<span class="eqno">(194)<a class="headerlink" href="#equation-eq243" title="Link to this equation">#</a></span>\[\frac{\partial u}{\partial n} = \frac{\partial u}{\partial x}\frac{dy}{ds}-\frac{\partial u}{\partial y}\frac{dx}{ds}\]</div>
+<p>which can be recognized as the dot product of the gradient u with the unit normal vector on C.</p>
+<p>Combining with what we learn in previous sector, a complete set of Neumann problem can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq244">
+<span class="eqno">(196)<a class="headerlink" href="#equation-eq244" title="Link to this equation">#</a></span>\[\begin{split}\nabla^2 u = 0 \; \; \textrm{for $(x,y)$ interior to D} \\ 
+\frac{\partial u}{\partial n} = g(x,y) \; \; \textrm{for $(x,y)$ on C} \\ \end{split}\]</div>
+<p>The set of equation above says, if we don’t consider the heat (or some tracers) transport normal to the boundary, the heat flux integrated over the domain should equal 0 (which physically makes sense because the amount of heat loss for a given grid point is equivalent to the amount of heat received by other grid point).</p>
+<div class="math notranslate nohighlight" id="equation-eq244">
+<span class="eqno">(196)<a class="headerlink" href="#equation-eq244" title="Link to this equation">#</a></span>\[\begin{split}&amp; \nabla^2 u = 0 \; \; \textrm{for $(x,y)$ interior to D} \\ 
+&amp; \frac{\partial u}{\partial n} = g(x,y)\end{split}\]</div>
+<p>With <a class="reference internal" href="#equation-eq244">(196)</a>, there is a simple condition must be satisfied.</p>
+<div class="math notranslate nohighlight" id="equation-eq245">
+<span class="eqno">(197)<a class="headerlink" href="#equation-eq245" title="Link to this equation">#</a></span>\[\begin{split}\oint_{C} g(x,y) ds &amp;= \oint_{C} \frac{\partial u}{\partial n} ds \\
+&amp;=  \oint_{C} [\frac{\partial u}{\partial x}\frac{dy}{ds}-\frac{\partial u}{\partial y}\frac{dx}{ds}]ds \\
+&amp;=  \oint_{C} -u_y dx + u_x dy \\
+&amp;=  \iint_D(u_xx+u_yy) dA \textrm{by Green's theorem} \end{split}\]</div>
+<p>if <span class="math notranslate nohighlight">\(u\)</span> is harmonic on D (i.e., satisfies Sturm-Liouville problem), then <span class="math notranslate nohighlight">\(\nabla^2 u = 0\)</span>. Then we can conclude that <span class="math notranslate nohighlight">\(\oint_{C} g(x,y) ds=0\)</span>.</p>
+<div class="admonition-example-4 admonition">
+<p class="admonition-title">Example 4</p>
+<p>Find if the following set of equation satisfies a Neumann problem</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\nabla^2 u &amp; = 0 \textrm{ for $0&lt;x&lt;1,0&lt;y&lt;1$} \\ 
+u_n(x,y) &amp; = 
+\begin{cases}
+0 \textrm{ on the lower, upper, and the left sides} \\ 
+y^2 \textrm{ on the right}
+\end{cases}
+\end{align}\end{split}\]</div>
+<p>This indicates that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u_n(x,0) &amp;= u_n(x,1) =u_n(0,y) = 0 \\
+u_n(1,y) &amp;= y^2\\\end{split}\]</div>
+<p>To test if the problem above is an Neumann problem, we can take the line integral along the boundary, which leads to</p>
+<div class="math notranslate nohighlight">
+\[\oint_{C} g(x,y) ds = \int_{0}^{1}y^2 dy = \frac{1}{3} \neq 0 \]</div>
+<p>Immediately, this problem is not a Neumann problem.</p>
+</div>
+<div class="admonition-example-5 admonition">
+<p class="admonition-title">Example 5</p>
+<p>A very import characteristic of Neumann problem is…there is no unique solution. We will use this example to illustrate the result.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+\nabla^2 u(x,y) &amp;= 0 \textrm{for $0&lt;x&lt;a,0&lt;y&lt;b$} \\
+\frac{\partial u}{\partial y}(x,0) &amp;=      \;\;\; \frac{\partial u}{\partial y} (x,b)=0 \textrm{for $0&lt;x&lt;a$} \\
+\frac{\partial u}{\partial x}(0,y) &amp;= 0    \;\;\; \textrm{for $0&lt;y&lt;a$} \\
+\frac{\partial u}{\partial x}(x,y) &amp;= g(y) \;\;\; \textrm{for $0&lt;y&lt;a$} \\
+\end{cases}\end{split}\]</div>
+<p>From the very beginning of this chapter, we know the above equations have solution of</p>
+<div class="math notranslate nohighlight">
+\[u(x,y) = c+\sum_{n=1}^{\infty} c_n \cosh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})\]</div>
+<p>also, based on the derivative boundary</p>
+<div class="math notranslate nohighlight">
+\[u_n(0,y) = \sum_{n=1}^{\infty} \frac{n\pi}{b} c_n \sinh(\frac{n\pi 0}{b})\cos(\frac{n\pi y}{b}) = g(y)\]</div>
+<p>indicating <span class="math notranslate nohighlight">\(\frac{n\pi}{b} c_n \sinh(\frac{n\pi 0}{b})\)</span> is the Fourier <span class="math notranslate nohighlight">\(\cos\)</span> coefficient of the solution in y structure. i.e.,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{n\pi}{b}c_n\sinh(\frac{n\pi a}{b}) = \frac{2}{b}\int_{0}^{b} g(\xi) \cos(\frac{n\pi\xi}{b}) d\xi \; \; \; \textrm{or...}\\ 
+u(x,y) = c+\sum_{n=1}^{\infty} c_n\cosh(\frac{n\pi x}{b})\cos(\frac{n\pi y}{b})\end{split}\]</div>
+<p>However, to satisfy Neumann condition, we also know,</p>
+<div class="math notranslate nohighlight">
+\[c=\frac{1}{b} \int_{0}^{b} g(y)dy = 0 \]</div>
+<p>i.e., the line integral of <span class="math notranslate nohighlight">\(g(y)\)</span> along the boundary equals 0. One should notice that, <span class="math notranslate nohighlight">\(c\)</span> is an arbitrary constant and it’s not a Fourier <span class="math notranslate nohighlight">\(\cos\)</span> coefficient for wave number 0 (otherwise, it will violate the Neumann conditions). This also implies that if <span class="math notranslate nohighlight">\(u\)</span> is a solution, <span class="math notranslate nohighlight">\(u+c\)</span> will be a constant as well (where <span class="math notranslate nohighlight">\(c\)</span> is an arbitrary constant).</p>
+</div>
+<p>Here is an application of Neumann problem to a disk.
+Suppose <span class="math notranslate nohighlight">\(D\)</span> is a disk with a radius <span class="math notranslate nohighlight">\(R\)</span> about the origins. The boundary of <span class="math notranslate nohighlight">\(D\)</span> is the circle <span class="math notranslate nohighlight">\(C\)</span>. In polar coordinate, the Neumann problem for <span class="math notranslate nohighlight">\(D\)</span> is</p>
+<div class="math notranslate nohighlight" id="equation-eq246">
+<span class="eqno">(198)<a class="headerlink" href="#equation-eq246" title="Link to this equation">#</a></span>\[\begin{split}\begin{cases}
+\nabla^2 u(r,\theta) = 0 \;\;\; \textrm{for $\leq r &lt; R,-\pi\leq\theta&lt;\pi$} \\
+\frac{\partial u}{\partial r}(R,\theta)=f(\theta) \;\;\; \textrm{for $-\pi\leq \theta\leq \pi$}
+\end{cases}\end{split}\]</div>
+<p>A necessary condition for the existence of a solution is that the line integral of the normal derivative over the boundary is 0.</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\pi}^{\pi}f(\theta)d\theta = 0\]</div>
+<p>We first attempt a solution of</p>
+<div class="math notranslate nohighlight">
+\[u(r,\theta) = \frac{1}{2}a_0+\sum_{n=1}^{\infty} [a_n r^n \cos(n\theta)+b_n r^n\sin(n\theta)]\]</div>
+<p>Choose a coefficient to satisfy,</p>
+<div class="math notranslate nohighlight" id="equation-eq247">
+<span class="eqno">(199)<a class="headerlink" href="#equation-eq247" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\frac{\partial u}{\partial r} (R,\theta) &amp; = f(\theta) \\
+&amp; = \sum_{n=1}^{\infty} [na_nR^{n-1}\cos(n\theta)+nb_nR^{n-1}\sin(n\theta)]
+\end{align}\end{split}\]</div>
+<p>Then using the Fourier transform to find the corresponding coefficients <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq248">
+<span class="eqno">(200)<a class="headerlink" href="#equation-eq248" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+a_0           &amp;= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)d\xi \\
+n a_n R^{n-1} &amp;= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)\cos(n\xi)d\xi \\
+n b_n R^{n-1} &amp;= \frac{1}{\pi}\int^{\pi}_{-\pi}f(\xi)\sin(n\xi)d\xi \\
+\end{align}\end{split}\]</div>
+<p>For <span class="math notranslate nohighlight">\(n=1,2,\cdots\)</span>. Then</p>
+<div class="math notranslate nohighlight" id="equation-eq249">
+<span class="eqno">(201)<a class="headerlink" href="#equation-eq249" title="Link to this equation">#</a></span>\[\begin{split}a_n &amp; =\frac{1}{n\pi R^{n-1}}\int^{\pi}_{-\pi}f(\xi)\cos(n\xi)d\xi \\
+b_n &amp; =\frac{1}{n\pi R^{n-1}}\int^{\pi}_{-\pi}f(\xi)\sin(n\xi)d\xi \\\end{split}\]</div>
+<p>the final solution can therefore be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq250">
+<span class="eqno">(202)<a class="headerlink" href="#equation-eq250" title="Link to this equation">#</a></span>\[\begin{split}U(r,\theta) &amp;= c+\frac{R}{r}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int^{\pi}_{-\pi}[\cos(n\xi)\cos(n\theta)+\sin(n\xi)\sin(n\theta)]f(\xi)d\xi \\
+&amp;= c+\frac{R}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}(\frac{r}{R})^{n}\int^{\pi}_{-\pi} \cos(n(\xi-\theta))d\xi\end{split}\]</div>
+<div class="admonition-example-6 admonition">
+<p class="admonition-title">Example 6</p>
+<p>Solve the following Neumann problem for a unit disk about the origin:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; \nabla^2 u(x,y) = 0 \;\;\; \textrm{for $x^2+y^2&lt;1$} \\ 
+&amp; \frac{\partial u}{\partial n} (x,y) = xy^2  \;\;\; \textrm{for $x^2+y^2&lt;1$} \\ \end{split}\]</div>
+<p>use polar coordinates, letting</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}U(r,\theta) &amp; = u(r\cos(\theta),r\sin(\theta)) \\\end{split}\]</div>
+<p>Now we turn the problem into</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\nabla^2 U(r,\theta) &amp;= 0 \;\;\; \textrm{for $0\leq r&lt;1$,$-\pi\leq \theta\leq \pi$} \\ 
+\frac{\partial U}{\partial r}(1,\theta)&amp;=\cos(\theta)\sin^2(\theta)
+\end{align}\end{split}\]</div>
+<p>First, we observe that</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\pi}^{\pi}\cos(\theta)\sin^2(\theta)d\theta=0\]</div>
+<p>satisfies the Neumann boundary condition. By <a class="reference internal" href="#equation-eq250">(202)</a>, we know the solution is</p>
+<div class="math notranslate nohighlight">
+\[U(r,\theta) = c+\frac{1}{\pi}\sum_{n=1}^{\infty} \frac{1}{n}(r)^{n}\int^{\pi}_{-\pi} \cos(n(\xi-\theta))\cos(\xi)\sin^2(\xi)d\xi\]</div>
+<p>The integral of the second term is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+&amp; 0 \;\;\; \textrm{for $n=2,4,5,6,7\cdots$} \\
+&amp; \pi\cos(\theta)/4 \;\;\; \textrm{for $n=1$} \\
+&amp; -\pi\cos^3(\theta)+3\pi\cos(\theta)/4 \;\;\; \textrm{for $n=3$}\\
+\end{cases}\end{split}\]</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./PDE"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Wave_equation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Week 12:  Wave Equation</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-setup-and-initial-conditions">Problem Setup and Initial Conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dirichlet-problem-for-a-rectangle">Dirichlet Problem for a Rectangle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dirichlet-problem-for-a-disk">Dirichlet Problem for a Disk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-integral-formula">Poisson Integral Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-neumann-problem">The Neumann Problem</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. Kai-Chih Tseng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
