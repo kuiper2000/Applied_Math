@@ -15,52 +15,22 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%timeit X=FFT(x)
-%timeit dft(x)
-# calculate the frequency
-N = len(X)
-n = np.arange(N)
-T = N/sr
-freq = n/T
+#import numpy as np
+from sklearn.decomposition import PCA
 
-plt.figure(figsize = (12, 6))
-plt.subplot(121)
-plt.stem(freq, abs(X), 'b', \
-         markerfmt=" ", basefmt="-b")
-plt.xlabel('Freq (Hz)')
-plt.ylabel('FFT Amplitude |X(freq)|')
+pca = PCA(n_components=10)
+principal_components = pca.fit_transform(y.T)
 
-# Get the one-sided specturm
-n_oneside = N//2
-# get the one side frequency
-f_oneside = freq[:n_oneside]
-
-# normalize the amplitude
-X_oneside =X[:n_oneside]/n_oneside
-
-plt.subplot(122)
-plt.stem(f_oneside, abs(X_oneside), 'b', \
-         markerfmt=" ", basefmt="-b")
-plt.xlabel('Freq (Hz)')
-plt.ylabel('Normalized FFT Amplitude |X(freq)|')
-plt.tight_layout()
-plt.show()
 ------------------
 
------ stdout -----
-602 µs ± 5.76 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
------ stdout -----
-375 µs ± 1.63 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
-------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[7], line 4[0m
-[1;32m      2[0m get_ipython()[38;5;241m.[39mrun_line_magic([38;5;124m'[39m[38;5;124mtimeit[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mdft(x)[39m[38;5;124m'[39m)
-[1;32m      3[0m [38;5;66;03m# calculate the frequency[39;00m
-[0;32m----> 4[0m N [38;5;241m=[39m [38;5;28mlen[39m([43mX[49m)
-[1;32m      5[0m n [38;5;241m=[39m np[38;5;241m.[39marange(N)
-[1;32m      6[0m T [38;5;241m=[39m N[38;5;241m/[39msr
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[2], line 2[0m
+[1;32m      1[0m [38;5;66;03m#import numpy as np[39;00m
+[0;32m----> 2[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdecomposition[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m PCA
+[1;32m      4[0m pca [38;5;241m=[39m PCA(n_components[38;5;241m=[39m[38;5;241m10[39m)
+[1;32m      5[0m principal_components [38;5;241m=[39m pca[38;5;241m.[39mfit_transform(y[38;5;241m.[39mT)
 
-[0;31mNameError[0m: name 'X' is not defined
+[0;31mModuleNotFoundError[0m: No module named 'sklearn'
 
