@@ -101,7 +101,7 @@ Using integrate by part, we can find
 
 ```{math}
 :label: eq66
-\int_0^{\infty} e^{-st} f' dt = -f e^{-st}|^{t=\infty}_{t=0} +s\int^{\infty}_{0} e^{-st}f(t)dt = sF(s)-f(t=0)
+\int_0^{\infty} e^{-st} f' dt = f e^{-st}|^{t=\infty}_{t=0} +s\int^{\infty}_{0} e^{-st}f(t)dt = sF(s)-f(t=0)
 ```
 
 Similarly, we can go to higher order derivative
