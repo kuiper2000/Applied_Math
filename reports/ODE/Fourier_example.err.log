@@ -48,9 +48,9 @@ plt.show()
 ------------------
 
 ----- stdout -----
-586 µs ± 6.92 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+597 µs ± 3.38 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 ----- stdout -----
-260 µs ± 1.69 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+370 µs ± 2.22 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
