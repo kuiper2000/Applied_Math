@@ -322,14 +322,14 @@ Timestep: 200  /  10000
 Timestep: 210  /  10000
 Timestep: 220  /  10000
 Timestep: 230  /  10000
------ stderr -----
-/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_38980/2341826970.py:93: RuntimeWarning: divide by zero encountered in divide
-  psi_bt = -(q1_s + q2_s) / (ll[np.newaxis, :] ** 2 + zk[:, np.newaxis] ** 2) / 2.      # (psi_1 + psi_2)/2
-/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_38980/2341826970.py:93: RuntimeWarning: invalid value encountered in divide
-  psi_bt = -(q1_s + q2_s) / (ll[np.newaxis, :] ** 2 + zk[:, np.newaxis] ** 2) / 2.      # (psi_1 + psi_2)/2
------ stdout -----
 Timestep: 240  /  10000
 Timestep: 250  /  10000
+----- stderr -----
+/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_33034/2341826970.py:93: RuntimeWarning: divide by zero encountered in divide
+  psi_bt = -(q1_s + q2_s) / (ll[np.newaxis, :] ** 2 + zk[:, np.newaxis] ** 2) / 2.      # (psi_1 + psi_2)/2
+/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_33034/2341826970.py:93: RuntimeWarning: invalid value encountered in divide
+  psi_bt = -(q1_s + q2_s) / (ll[np.newaxis, :] ** 2 + zk[:, np.newaxis] ** 2) / 2.      # (psi_1 + psi_2)/2
+----- stdout -----
 Timestep: 260  /  10000
 Timestep: 270  /  10000
 Timestep: 280  /  10000
@@ -352,9 +352,9 @@ Timestep: 440  /  10000
 Timestep: 450  /  10000
 Timestep: 460  /  10000
 Timestep: 470  /  10000
------ stdout -----
 Timestep: 480  /  10000
 Timestep: 490  /  10000
+----- stdout -----
 Timestep: 500  /  10000
 Timestep: 510  /  10000
 Timestep: 520  /  10000
@@ -377,10 +377,10 @@ Timestep: 680  /  10000
 Timestep: 690  /  10000
 Timestep: 700  /  10000
 Timestep: 710  /  10000
------ stdout -----
 Timestep: 720  /  10000
 Timestep: 730  /  10000
 Timestep: 740  /  10000
+----- stdout -----
 Timestep: 750  /  10000
 Timestep: 760  /  10000
 Timestep: 770  /  10000
@@ -402,10 +402,10 @@ Timestep: 920  /  10000
 Timestep: 930  /  10000
 Timestep: 940  /  10000
 Timestep: 950  /  10000
------ stdout -----
 Timestep: 960  /  10000
 Timestep: 970  /  10000
 Timestep: 980  /  10000
+----- stdout -----
 Timestep: 990  /  10000
 Timestep: 1000  /  10000
 Timestep: 1010  /  10000
@@ -426,12 +426,12 @@ Timestep: 1150  /  10000
 Timestep: 1160  /  10000
 Timestep: 1170  /  10000
 Timestep: 1180  /  10000
------ stdout -----
 Timestep: 1190  /  10000
 Timestep: 1200  /  10000
 Timestep: 1210  /  10000
 Timestep: 1220  /  10000
 Timestep: 1230  /  10000
+----- stdout -----
 Timestep: 1240  /  10000
 Timestep: 1250  /  10000
 Timestep: 1260  /  10000
@@ -450,7 +450,6 @@ Timestep: 1380  /  10000
 Timestep: 1390  /  10000
 Timestep: 1400  /  10000
 Timestep: 1410  /  10000
------ stdout -----
 Timestep: 1420  /  10000
 Timestep: 1430  /  10000
 Timestep: 1440  /  10000
@@ -458,6 +457,7 @@ Timestep: 1450  /  10000
 Timestep: 1460  /  10000
 Timestep: 1470  /  10000
 Timestep: 1480  /  10000
+----- stdout -----
 Timestep: 1490  /  10000
 Timestep: 1500  /  10000
 Timestep: 1510  /  10000
@@ -475,7 +475,6 @@ Timestep: 1620  /  10000
 Timestep: 1630  /  10000
 Timestep: 1640  /  10000
 Timestep: 1650  /  10000
------ stdout -----
 Timestep: 1660  /  10000
 Timestep: 1670  /  10000
 Timestep: 1680  /  10000
@@ -484,6 +483,7 @@ Timestep: 1700  /  10000
 Timestep: 1710  /  10000
 Timestep: 1720  /  10000
 Timestep: 1730  /  10000
+----- stdout -----
 Timestep: 1740  /  10000
 Timestep: 1750  /  10000
 Timestep: 1760  /  10000
@@ -500,7 +500,6 @@ Timestep: 1860  /  10000
 Timestep: 1870  /  10000
 Timestep: 1880  /  10000
 Timestep: 1890  /  10000
------ stdout -----
 Timestep: 1900  /  10000
 Timestep: 1910  /  10000
 Timestep: 1920  /  10000
@@ -509,6 +508,7 @@ Timestep: 1940  /  10000
 Timestep: 1950  /  10000
 Timestep: 1960  /  10000
 Timestep: 1970  /  10000
+----- stdout -----
 Timestep: 1980  /  10000
 Timestep: 1990  /  10000
 Timestep: 2000  /  10000
@@ -525,7 +525,6 @@ Timestep: 2100  /  10000
 Timestep: 2110  /  10000
 Timestep: 2120  /  10000
 Timestep: 2130  /  10000
------ stdout -----
 Timestep: 2140  /  10000
 Timestep: 2150  /  10000
 Timestep: 2160  /  10000
@@ -535,6 +534,7 @@ Timestep: 2190  /  10000
 Timestep: 2200  /  10000
 Timestep: 2210  /  10000
 Timestep: 2220  /  10000
+----- stdout -----
 Timestep: 2230  /  10000
 Timestep: 2240  /  10000
 Timestep: 2250  /  10000
@@ -550,7 +550,6 @@ Timestep: 2340  /  10000
 Timestep: 2350  /  10000
 Timestep: 2360  /  10000
 Timestep: 2370  /  10000
------ stdout -----
 Timestep: 2380  /  10000
 Timestep: 2390  /  10000
 Timestep: 2400  /  10000
@@ -559,6 +558,7 @@ Timestep: 2420  /  10000
 Timestep: 2430  /  10000
 Timestep: 2440  /  10000
 Timestep: 2450  /  10000
+----- stdout -----
 Timestep: 2460  /  10000
 Timestep: 2470  /  10000
 Timestep: 2480  /  10000
@@ -575,7 +575,6 @@ Timestep: 2580  /  10000
 Timestep: 2590  /  10000
 Timestep: 2600  /  10000
 Timestep: 2610  /  10000
------ stdout -----
 Timestep: 2620  /  10000
 Timestep: 2630  /  10000
 Timestep: 2640  /  10000
@@ -584,6 +583,7 @@ Timestep: 2660  /  10000
 Timestep: 2670  /  10000
 Timestep: 2680  /  10000
 Timestep: 2690  /  10000
+----- stdout -----
 Timestep: 2700  /  10000
 Timestep: 2710  /  10000
 Timestep: 2720  /  10000
@@ -600,7 +600,6 @@ Timestep: 2820  /  10000
 Timestep: 2830  /  10000
 Timestep: 2840  /  10000
 Timestep: 2850  /  10000
------ stdout -----
 Timestep: 2860  /  10000
 Timestep: 2870  /  10000
 Timestep: 2880  /  10000
@@ -610,6 +609,7 @@ Timestep: 2910  /  10000
 Timestep: 2920  /  10000
 Timestep: 2930  /  10000
 Timestep: 2940  /  10000
+----- stdout -----
 Timestep: 2950  /  10000
 Timestep: 2960  /  10000
 Timestep: 2970  /  10000
@@ -625,7 +625,6 @@ Timestep: 3060  /  10000
 Timestep: 3070  /  10000
 Timestep: 3080  /  10000
 Timestep: 3090  /  10000
------ stdout -----
 Timestep: 3100  /  10000
 Timestep: 3110  /  10000
 Timestep: 3120  /  10000
@@ -636,6 +635,7 @@ Timestep: 3160  /  10000
 Timestep: 3170  /  10000
 Timestep: 3180  /  10000
 Timestep: 3190  /  10000
+----- stdout -----
 Timestep: 3200  /  10000
 Timestep: 3210  /  10000
 Timestep: 3220  /  10000
@@ -650,7 +650,6 @@ Timestep: 3300  /  10000
 Timestep: 3310  /  10000
 Timestep: 3320  /  10000
 Timestep: 3330  /  10000
------ stdout -----
 Timestep: 3340  /  10000
 Timestep: 3350  /  10000
 Timestep: 3360  /  10000
@@ -663,6 +662,7 @@ Timestep: 3420  /  10000
 Timestep: 3430  /  10000
 Timestep: 3440  /  10000
 Timestep: 3450  /  10000
+----- stdout -----
 Timestep: 3460  /  10000
 Timestep: 3470  /  10000
 Timestep: 3480  /  10000
@@ -675,7 +675,6 @@ Timestep: 3540  /  10000
 Timestep: 3550  /  10000
 Timestep: 3560  /  10000
 Timestep: 3570  /  10000
------ stdout -----
 Timestep: 3580  /  10000
 Timestep: 3590  /  10000
 Timestep: 3600  /  10000
@@ -688,6 +687,7 @@ Timestep: 3660  /  10000
 Timestep: 3670  /  10000
 Timestep: 3680  /  10000
 Timestep: 3690  /  10000
+----- stdout -----
 Timestep: 3700  /  10000
 Timestep: 3710  /  10000
 Timestep: 3720  /  10000
@@ -701,7 +701,6 @@ Timestep: 3790  /  10000
 Timestep: 3800  /  10000
 Timestep: 3810  /  10000
 Timestep: 3820  /  10000
------ stdout -----
 Timestep: 3830  /  10000
 Timestep: 3840  /  10000
 Timestep: 3850  /  10000
@@ -713,6 +712,7 @@ Timestep: 3900  /  10000
 Timestep: 3910  /  10000
 Timestep: 3920  /  10000
 Timestep: 3930  /  10000
+----- stdout -----
 Timestep: 3940  /  10000
 Timestep: 3950  /  10000
 Timestep: 3960  /  10000
@@ -726,7 +726,6 @@ Timestep: 4030  /  10000
 Timestep: 4040  /  10000
 Timestep: 4050  /  10000
 Timestep: 4060  /  10000
------ stdout -----
 Timestep: 4070  /  10000
 Timestep: 4080  /  10000
 Timestep: 4090  /  10000
@@ -738,6 +737,7 @@ Timestep: 4140  /  10000
 Timestep: 4150  /  10000
 Timestep: 4160  /  10000
 Timestep: 4170  /  10000
+----- stdout -----
 Timestep: 4180  /  10000
 Timestep: 4190  /  10000
 Timestep: 4200  /  10000
@@ -751,7 +751,6 @@ Timestep: 4270  /  10000
 Timestep: 4280  /  10000
 Timestep: 4290  /  10000
 Timestep: 4300  /  10000
------ stdout -----
 Timestep: 4310  /  10000
 Timestep: 4320  /  10000
 Timestep: 4330  /  10000
@@ -764,6 +763,7 @@ Timestep: 4390  /  10000
 Timestep: 4400  /  10000
 Timestep: 4410  /  10000
 Timestep: 4420  /  10000
+----- stdout -----
 Timestep: 4430  /  10000
 Timestep: 4440  /  10000
 Timestep: 4450  /  10000
@@ -777,7 +777,6 @@ Timestep: 4520  /  10000
 Timestep: 4530  /  10000
 Timestep: 4540  /  10000
 Timestep: 4550  /  10000
------ stdout -----
 Timestep: 4560  /  10000
 Timestep: 4570  /  10000
 Timestep: 4580  /  10000
@@ -791,6 +790,7 @@ Timestep: 4650  /  10000
 Timestep: 4660  /  10000
 Timestep: 4670  /  10000
 Timestep: 4680  /  10000
+----- stdout -----
 Timestep: 4690  /  10000
 Timestep: 4700  /  10000
 Timestep: 4710  /  10000
@@ -801,7 +801,6 @@ Timestep: 4750  /  10000
 Timestep: 4760  /  10000
 Timestep: 4770  /  10000
 Timestep: 4780  /  10000
------ stdout -----
 Timestep: 4790  /  10000
 Timestep: 4800  /  10000
 Timestep: 4810  /  10000
@@ -817,6 +816,7 @@ Timestep: 4900  /  10000
 Timestep: 4910  /  10000
 Timestep: 4920  /  10000
 Timestep: 4930  /  10000
+----- stdout -----
 Timestep: 4940  /  10000
 Timestep: 4950  /  10000
 Timestep: 4960  /  10000
@@ -826,7 +826,6 @@ Timestep: 4990  /  10000
 Timestep: 5000  /  10000
 Timestep: 5010  /  10000
 Timestep: 5020  /  10000
------ stdout -----
 Timestep: 5030  /  10000
 Timestep: 5040  /  10000
 Timestep: 5050  /  10000
@@ -842,6 +841,7 @@ Timestep: 5140  /  10000
 Timestep: 5150  /  10000
 Timestep: 5160  /  10000
 Timestep: 5170  /  10000
+----- stdout -----
 Timestep: 5180  /  10000
 Timestep: 5190  /  10000
 Timestep: 5200  /  10000
@@ -851,7 +851,6 @@ Timestep: 5230  /  10000
 Timestep: 5240  /  10000
 Timestep: 5250  /  10000
 Timestep: 5260  /  10000
------ stdout -----
 Timestep: 5270  /  10000
 Timestep: 5280  /  10000
 Timestep: 5290  /  10000
@@ -868,6 +867,7 @@ Timestep: 5390  /  10000
 Timestep: 5400  /  10000
 Timestep: 5410  /  10000
 Timestep: 5420  /  10000
+----- stdout -----
 Timestep: 5430  /  10000
 Timestep: 5440  /  10000
 Timestep: 5450  /  10000
@@ -876,7 +876,6 @@ Timestep: 5470  /  10000
 Timestep: 5480  /  10000
 Timestep: 5490  /  10000
 Timestep: 5500  /  10000
------ stdout -----
 Timestep: 5510  /  10000
 Timestep: 5520  /  10000
 Timestep: 5530  /  10000
@@ -895,13 +894,13 @@ Timestep: 5650  /  10000
 Timestep: 5660  /  10000
 Timestep: 5670  /  10000
 Timestep: 5680  /  10000
+----- stdout -----
 Timestep: 5690  /  10000
 Timestep: 5700  /  10000
 Timestep: 5710  /  10000
 Timestep: 5720  /  10000
 Timestep: 5730  /  10000
 Timestep: 5740  /  10000
------ stdout -----
 Timestep: 5750  /  10000
 Timestep: 5760  /  10000
 Timestep: 5770  /  10000
@@ -920,13 +919,13 @@ Timestep: 5890  /  10000
 Timestep: 5900  /  10000
 Timestep: 5910  /  10000
 Timestep: 5920  /  10000
+----- stdout -----
 Timestep: 5930  /  10000
 Timestep: 5940  /  10000
 Timestep: 5950  /  10000
 Timestep: 5960  /  10000
 Timestep: 5970  /  10000
 Timestep: 5980  /  10000
------ stdout -----
 Timestep: 5990  /  10000
 Timestep: 6000  /  10000
 Timestep: 6010  /  10000
@@ -945,6 +944,7 @@ Timestep: 6130  /  10000
 Timestep: 6140  /  10000
 Timestep: 6150  /  10000
 Timestep: 6160  /  10000
+----- stdout -----
 Timestep: 6170  /  10000
 Timestep: 6180  /  10000
 Timestep: 6190  /  10000
@@ -952,7 +952,6 @@ Timestep: 6200  /  10000
 Timestep: 6210  /  10000
 Timestep: 6220  /  10000
 Timestep: 6230  /  10000
------ stdout -----
 Timestep: 6240  /  10000
 Timestep: 6250  /  10000
 Timestep: 6260  /  10000
@@ -970,6 +969,7 @@ Timestep: 6370  /  10000
 Timestep: 6380  /  10000
 Timestep: 6390  /  10000
 Timestep: 6400  /  10000
+----- stdout -----
 Timestep: 6410  /  10000
 Timestep: 6420  /  10000
 Timestep: 6430  /  10000
@@ -977,7 +977,6 @@ Timestep: 6440  /  10000
 Timestep: 6450  /  10000
 Timestep: 6460  /  10000
 Timestep: 6470  /  10000
------ stdout -----
 Timestep: 6480  /  10000
 Timestep: 6490  /  10000
 Timestep: 6500  /  10000
@@ -994,6 +993,7 @@ Timestep: 6600  /  10000
 Timestep: 6610  /  10000
 Timestep: 6620  /  10000
 Timestep: 6630  /  10000
+----- stdout -----
 Timestep: 6640  /  10000
 Timestep: 6650  /  10000
 Timestep: 6660  /  10000
@@ -1002,7 +1002,6 @@ Timestep: 6680  /  10000
 Timestep: 6690  /  10000
 Timestep: 6700  /  10000
 Timestep: 6710  /  10000
------ stdout -----
 Timestep: 6720  /  10000
 Timestep: 6730  /  10000
 Timestep: 6740  /  10000
@@ -1019,6 +1018,7 @@ Timestep: 6840  /  10000
 Timestep: 6850  /  10000
 Timestep: 6860  /  10000
 Timestep: 6870  /  10000
+----- stdout -----
 Timestep: 6880  /  10000
 Timestep: 6890  /  10000
 Timestep: 6900  /  10000
@@ -1027,7 +1027,6 @@ Timestep: 6920  /  10000
 Timestep: 6930  /  10000
 Timestep: 6940  /  10000
 Timestep: 6950  /  10000
------ stdout -----
 Timestep: 6960  /  10000
 Timestep: 6970  /  10000
 Timestep: 6980  /  10000
@@ -1043,6 +1042,7 @@ Timestep: 7070  /  10000
 Timestep: 7080  /  10000
 Timestep: 7090  /  10000
 Timestep: 7100  /  10000
+----- stdout -----
 Timestep: 7110  /  10000
 Timestep: 7120  /  10000
 Timestep: 7130  /  10000
@@ -1052,7 +1052,6 @@ Timestep: 7160  /  10000
 Timestep: 7170  /  10000
 Timestep: 7180  /  10000
 Timestep: 7190  /  10000
------ stdout -----
 Timestep: 7200  /  10000
 Timestep: 7210  /  10000
 Timestep: 7220  /  10000
@@ -1068,6 +1067,7 @@ Timestep: 7310  /  10000
 Timestep: 7320  /  10000
 Timestep: 7330  /  10000
 Timestep: 7340  /  10000
+----- stdout -----
 Timestep: 7350  /  10000
 Timestep: 7360  /  10000
 Timestep: 7370  /  10000
@@ -1077,7 +1077,6 @@ Timestep: 7400  /  10000
 Timestep: 7410  /  10000
 Timestep: 7420  /  10000
 Timestep: 7430  /  10000
------ stdout -----
 Timestep: 7440  /  10000
 Timestep: 7450  /  10000
 Timestep: 7460  /  10000
@@ -1093,6 +1092,7 @@ Timestep: 7550  /  10000
 Timestep: 7560  /  10000
 Timestep: 7570  /  10000
 Timestep: 7580  /  10000
+----- stdout -----
 Timestep: 7590  /  10000
 Timestep: 7600  /  10000
 Timestep: 7610  /  10000
@@ -1102,7 +1102,6 @@ Timestep: 7640  /  10000
 Timestep: 7650  /  10000
 Timestep: 7660  /  10000
 Timestep: 7670  /  10000
------ stdout -----
 Timestep: 7680  /  10000
 Timestep: 7690  /  10000
 Timestep: 7700  /  10000
@@ -1119,6 +1118,7 @@ Timestep: 7800  /  10000
 Timestep: 7810  /  10000
 Timestep: 7820  /  10000
 Timestep: 7830  /  10000
+----- stdout -----
 Timestep: 7840  /  10000
 Timestep: 7850  /  10000
 Timestep: 7860  /  10000
@@ -1126,7 +1126,6 @@ Timestep: 7870  /  10000
 Timestep: 7880  /  10000
 Timestep: 7890  /  10000
 Timestep: 7900  /  10000
------ stdout -----
 Timestep: 7910  /  10000
 Timestep: 7920  /  10000
 Timestep: 7930  /  10000
@@ -1145,13 +1144,13 @@ Timestep: 8050  /  10000
 Timestep: 8060  /  10000
 Timestep: 8070  /  10000
 Timestep: 8080  /  10000
+----- stdout -----
 Timestep: 8090  /  10000
 Timestep: 8100  /  10000
 Timestep: 8110  /  10000
 Timestep: 8120  /  10000
 Timestep: 8130  /  10000
 Timestep: 8140  /  10000
------ stdout -----
 Timestep: 8150  /  10000
 Timestep: 8160  /  10000
 Timestep: 8170  /  10000
@@ -1171,12 +1170,12 @@ Timestep: 8300  /  10000
 Timestep: 8310  /  10000
 Timestep: 8320  /  10000
 Timestep: 8330  /  10000
+----- stdout -----
 Timestep: 8340  /  10000
 Timestep: 8350  /  10000
 Timestep: 8360  /  10000
 Timestep: 8370  /  10000
 Timestep: 8380  /  10000
------ stdout -----
 Timestep: 8390  /  10000
 Timestep: 8400  /  10000
 Timestep: 8410  /  10000
@@ -1198,10 +1197,10 @@ Timestep: 8560  /  10000
 Timestep: 8570  /  10000
 Timestep: 8580  /  10000
 Timestep: 8590  /  10000
+----- stdout -----
 Timestep: 8600  /  10000
 Timestep: 8610  /  10000
 Timestep: 8620  /  10000
------ stdout -----
 Timestep: 8630  /  10000
 Timestep: 8640  /  10000
 Timestep: 8650  /  10000
@@ -1223,9 +1222,9 @@ Timestep: 8800  /  10000
 Timestep: 8810  /  10000
 Timestep: 8820  /  10000
 Timestep: 8830  /  10000
+----- stdout -----
 Timestep: 8840  /  10000
 Timestep: 8850  /  10000
------ stdout -----
 Timestep: 8860  /  10000
 Timestep: 8870  /  10000
 Timestep: 8880  /  10000
@@ -1249,8 +1248,8 @@ Timestep: 9050  /  10000
 Timestep: 9060  /  10000
 Timestep: 9070  /  10000
 Timestep: 9080  /  10000
-Timestep: 9090  /  10000
 ----- stdout -----
+Timestep: 9090  /  10000
 Timestep: 9100  /  10000
 Timestep: 9110  /  10000
 Timestep: 9120  /  10000
@@ -1300,8 +1299,8 @@ Timestep: 9540  /  10000
 Timestep: 9550  /  10000
 Timestep: 9560  /  10000
 Timestep: 9570  /  10000
------ stdout -----
 Timestep: 9580  /  10000
+----- stdout -----
 Timestep: 9590  /  10000
 Timestep: 9600  /  10000
 Timestep: 9610  /  10000
@@ -1325,8 +1324,8 @@ Timestep: 9780  /  10000
 Timestep: 9790  /  10000
 Timestep: 9800  /  10000
 Timestep: 9810  /  10000
------ stdout -----
 Timestep: 9820  /  10000
+----- stdout -----
 Timestep: 9830  /  10000
 Timestep: 9840  /  10000
 Timestep: 9850  /  10000

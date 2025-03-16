@@ -211,7 +211,7 @@ To know the connection between impulse and Laplace Transform, we will walk throu
 :label: eq69
 H(t) = \begin{cases}
 0 & \text{if $t<0$} \\
-1 & \text{if $t>=1$} 
+1 & \text{if $t>=0$} 
 \end{cases}
 ```
 
