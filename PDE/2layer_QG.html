@@ -173,6 +173,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ODE/2ndODE.html">Week 3 and 4: 2nd-order ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ODE/Laplace.html">Week 5 and 6: Laplace Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ODE/Sturm_Liouville.html">Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ODE/Special_function.html">Week 9 and 10:  Special Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Heat_equation.html">Week 11:  Heat Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Wave_equation.html">Week 12:  Wave Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Laplace_equation.html">Week 13:  Laplace Equation</a></li>
@@ -688,17 +689,17 @@ Timestep: 200  /  10000
 Timestep: 210  /  10000
 Timestep: 220  /  10000
 Timestep: 230  /  10000
-Timestep: 240  /  10000
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_75872/2341826970.py:93: RuntimeWarning: divide by zero encountered in divide
+  psi_bt = -(q1_s + q2_s) / (ll[np.newaxis, :] ** 2 + zk[:, np.newaxis] ** 2) / 2.      # (psi_1 + psi_2)/2
+/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_75872/2341826970.py:93: RuntimeWarning: invalid value encountered in divide
+  psi_bt = -(q1_s + q2_s) / (ll[np.newaxis, :] ** 2 + zk[:, np.newaxis] ** 2) / 2.      # (psi_1 + psi_2)/2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 240  /  10000
 Timestep: 250  /  10000
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_75345/2341826970.py:93: RuntimeWarning: divide by zero encountered in divide
-  psi_bt = -(q1_s + q2_s) / (ll[np.newaxis, :] ** 2 + zk[:, np.newaxis] ** 2) / 2.      # (psi_1 + psi_2)/2
-/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_75345/2341826970.py:93: RuntimeWarning: invalid value encountered in divide
-  psi_bt = -(q1_s + q2_s) / (ll[np.newaxis, :] ** 2 + zk[:, np.newaxis] ** 2) / 2.      # (psi_1 + psi_2)/2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 260  /  10000
+Timestep: 260  /  10000
 Timestep: 270  /  10000
 Timestep: 280  /  10000
 Timestep: 290  /  10000
@@ -720,12 +721,12 @@ Timestep: 440  /  10000
 Timestep: 450  /  10000
 Timestep: 460  /  10000
 Timestep: 470  /  10000
-Timestep: 480  /  10000
-Timestep: 490  /  10000
-Timestep: 500  /  10000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 510  /  10000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 480  /  10000
+Timestep: 490  /  10000
+Timestep: 500  /  10000
+Timestep: 510  /  10000
 Timestep: 520  /  10000
 Timestep: 530  /  10000
 Timestep: 540  /  10000
@@ -748,11 +749,11 @@ Timestep: 700  /  10000
 Timestep: 710  /  10000
 Timestep: 720  /  10000
 Timestep: 730  /  10000
-Timestep: 740  /  10000
-Timestep: 750  /  10000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 760  /  10000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 740  /  10000
+Timestep: 750  /  10000
+Timestep: 760  /  10000
 Timestep: 770  /  10000
 Timestep: 780  /  10000
 Timestep: 790  /  10000
@@ -776,10 +777,10 @@ Timestep: 960  /  10000
 Timestep: 970  /  10000
 Timestep: 980  /  10000
 Timestep: 990  /  10000
-Timestep: 1000  /  10000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 1010  /  10000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 1000  /  10000
+Timestep: 1010  /  10000
 Timestep: 1020  /  10000
 Timestep: 1030  /  10000
 Timestep: 1040  /  10000
@@ -804,10 +805,10 @@ Timestep: 1220  /  10000
 Timestep: 1230  /  10000
 Timestep: 1240  /  10000
 Timestep: 1250  /  10000
-Timestep: 1260  /  10000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 1270  /  10000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 1260  /  10000
+Timestep: 1270  /  10000
 Timestep: 1280  /  10000
 Timestep: 1290  /  10000
 Timestep: 1300  /  10000
@@ -914,11 +915,11 @@ Timestep: 2240  /  10000
 Timestep: 2250  /  10000
 Timestep: 2260  /  10000
 Timestep: 2270  /  10000
-Timestep: 2280  /  10000
-Timestep: 2290  /  10000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 2300  /  10000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 2280  /  10000
+Timestep: 2290  /  10000
+Timestep: 2300  /  10000
 Timestep: 2310  /  10000
 Timestep: 2320  /  10000
 Timestep: 2330  /  10000
@@ -940,12 +941,12 @@ Timestep: 2480  /  10000
 Timestep: 2490  /  10000
 Timestep: 2500  /  10000
 Timestep: 2510  /  10000
-Timestep: 2520  /  10000
-Timestep: 2530  /  10000
-Timestep: 2540  /  10000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 2550  /  10000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 2520  /  10000
+Timestep: 2530  /  10000
+Timestep: 2540  /  10000
+Timestep: 2550  /  10000
 Timestep: 2560  /  10000
 Timestep: 2570  /  10000
 Timestep: 2580  /  10000
@@ -966,14 +967,14 @@ Timestep: 2720  /  10000
 Timestep: 2730  /  10000
 Timestep: 2740  /  10000
 Timestep: 2750  /  10000
-Timestep: 2760  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 2760  /  10000
 Timestep: 2770  /  10000
 Timestep: 2780  /  10000
 Timestep: 2790  /  10000
 Timestep: 2800  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 2810  /  10000
+Timestep: 2810  /  10000
 Timestep: 2820  /  10000
 Timestep: 2830  /  10000
 Timestep: 2840  /  10000
@@ -992,16 +993,16 @@ Timestep: 2960  /  10000
 Timestep: 2970  /  10000
 Timestep: 2980  /  10000
 Timestep: 2990  /  10000
-Timestep: 3000  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3000  /  10000
 Timestep: 3010  /  10000
 Timestep: 3020  /  10000
 Timestep: 3030  /  10000
 Timestep: 3040  /  10000
 Timestep: 3050  /  10000
 Timestep: 3060  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3070  /  10000
+Timestep: 3070  /  10000
 Timestep: 3080  /  10000
 Timestep: 3090  /  10000
 Timestep: 3100  /  10000
@@ -1020,16 +1021,16 @@ Timestep: 3220  /  10000
 Timestep: 3230  /  10000
 Timestep: 3240  /  10000
 Timestep: 3250  /  10000
-Timestep: 3260  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3260  /  10000
 Timestep: 3270  /  10000
 Timestep: 3280  /  10000
 Timestep: 3290  /  10000
 Timestep: 3300  /  10000
 Timestep: 3310  /  10000
 Timestep: 3320  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3330  /  10000
+Timestep: 3330  /  10000
 Timestep: 3340  /  10000
 Timestep: 3350  /  10000
 Timestep: 3360  /  10000
@@ -1046,7 +1047,9 @@ Timestep: 3460  /  10000
 Timestep: 3470  /  10000
 Timestep: 3480  /  10000
 Timestep: 3490  /  10000
-Timestep: 3500  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3500  /  10000
 Timestep: 3510  /  10000
 Timestep: 3520  /  10000
 Timestep: 3530  /  10000
@@ -1055,9 +1058,7 @@ Timestep: 3550  /  10000
 Timestep: 3560  /  10000
 Timestep: 3570  /  10000
 Timestep: 3580  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3590  /  10000
+Timestep: 3590  /  10000
 Timestep: 3600  /  10000
 Timestep: 3610  /  10000
 Timestep: 3620  /  10000
@@ -1073,7 +1074,9 @@ Timestep: 3710  /  10000
 Timestep: 3720  /  10000
 Timestep: 3730  /  10000
 Timestep: 3740  /  10000
-Timestep: 3750  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3750  /  10000
 Timestep: 3760  /  10000
 Timestep: 3770  /  10000
 Timestep: 3780  /  10000
@@ -1083,9 +1086,7 @@ Timestep: 3810  /  10000
 Timestep: 3820  /  10000
 Timestep: 3830  /  10000
 Timestep: 3840  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3850  /  10000
+Timestep: 3850  /  10000
 Timestep: 3860  /  10000
 Timestep: 3870  /  10000
 Timestep: 3880  /  10000
@@ -1099,7 +1100,9 @@ Timestep: 3950  /  10000
 Timestep: 3960  /  10000
 Timestep: 3970  /  10000
 Timestep: 3980  /  10000
-Timestep: 3990  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 3990  /  10000
 Timestep: 4000  /  10000
 Timestep: 4010  /  10000
 Timestep: 4020  /  10000
@@ -1110,9 +1113,7 @@ Timestep: 4060  /  10000
 Timestep: 4070  /  10000
 Timestep: 4080  /  10000
 Timestep: 4090  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 4100  /  10000
+Timestep: 4100  /  10000
 Timestep: 4110  /  10000
 Timestep: 4120  /  10000
 Timestep: 4130  /  10000
@@ -1125,7 +1126,9 @@ Timestep: 4190  /  10000
 Timestep: 4200  /  10000
 Timestep: 4210  /  10000
 Timestep: 4220  /  10000
-Timestep: 4230  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 4230  /  10000
 Timestep: 4240  /  10000
 Timestep: 4250  /  10000
 Timestep: 4260  /  10000
@@ -1138,9 +1141,7 @@ Timestep: 4320  /  10000
 Timestep: 4330  /  10000
 Timestep: 4340  /  10000
 Timestep: 4350  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 4360  /  10000
+Timestep: 4360  /  10000
 Timestep: 4370  /  10000
 Timestep: 4380  /  10000
 Timestep: 4390  /  10000
@@ -1153,7 +1154,9 @@ Timestep: 4450  /  10000
 Timestep: 4460  /  10000
 Timestep: 4470  /  10000
 Timestep: 4480  /  10000
-Timestep: 4490  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 4490  /  10000
 Timestep: 4500  /  10000
 Timestep: 4510  /  10000
 Timestep: 4520  /  10000
@@ -1166,9 +1169,7 @@ Timestep: 4580  /  10000
 Timestep: 4590  /  10000
 Timestep: 4600  /  10000
 Timestep: 4610  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 4620  /  10000
+Timestep: 4620  /  10000
 Timestep: 4630  /  10000
 Timestep: 4640  /  10000
 Timestep: 4650  /  10000
@@ -1179,7 +1180,9 @@ Timestep: 4690  /  10000
 Timestep: 4700  /  10000
 Timestep: 4710  /  10000
 Timestep: 4720  /  10000
-Timestep: 4730  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 4730  /  10000
 Timestep: 4740  /  10000
 Timestep: 4750  /  10000
 Timestep: 4760  /  10000
@@ -1194,9 +1197,7 @@ Timestep: 4840  /  10000
 Timestep: 4850  /  10000
 Timestep: 4860  /  10000
 Timestep: 4870  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 4880  /  10000
+Timestep: 4880  /  10000
 Timestep: 4890  /  10000
 Timestep: 4900  /  10000
 Timestep: 4910  /  10000
@@ -1207,7 +1208,9 @@ Timestep: 4950  /  10000
 Timestep: 4960  /  10000
 Timestep: 4970  /  10000
 Timestep: 4980  /  10000
-Timestep: 4990  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 4990  /  10000
 Timestep: 5000  /  10000
 Timestep: 5010  /  10000
 Timestep: 5020  /  10000
@@ -1221,9 +1224,7 @@ Timestep: 5090  /  10000
 Timestep: 5100  /  10000
 Timestep: 5110  /  10000
 Timestep: 5120  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 5130  /  10000
+Timestep: 5130  /  10000
 Timestep: 5140  /  10000
 Timestep: 5150  /  10000
 Timestep: 5160  /  10000
@@ -1235,7 +1236,9 @@ Timestep: 5210  /  10000
 Timestep: 5220  /  10000
 Timestep: 5230  /  10000
 Timestep: 5240  /  10000
-Timestep: 5250  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 5250  /  10000
 Timestep: 5260  /  10000
 Timestep: 5270  /  10000
 Timestep: 5280  /  10000
@@ -1249,9 +1252,7 @@ Timestep: 5350  /  10000
 Timestep: 5360  /  10000
 Timestep: 5370  /  10000
 Timestep: 5380  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 5390  /  10000
+Timestep: 5390  /  10000
 Timestep: 5400  /  10000
 Timestep: 5410  /  10000
 Timestep: 5420  /  10000
@@ -1263,7 +1264,9 @@ Timestep: 5470  /  10000
 Timestep: 5480  /  10000
 Timestep: 5490  /  10000
 Timestep: 5500  /  10000
-Timestep: 5510  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 5510  /  10000
 Timestep: 5520  /  10000
 Timestep: 5530  /  10000
 Timestep: 5540  /  10000
@@ -1277,9 +1280,7 @@ Timestep: 5610  /  10000
 Timestep: 5620  /  10000
 Timestep: 5630  /  10000
 Timestep: 5640  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 5650  /  10000
+Timestep: 5650  /  10000
 Timestep: 5660  /  10000
 Timestep: 5670  /  10000
 Timestep: 5680  /  10000
@@ -1291,7 +1292,9 @@ Timestep: 5730  /  10000
 Timestep: 5740  /  10000
 Timestep: 5750  /  10000
 Timestep: 5760  /  10000
-Timestep: 5770  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 5770  /  10000
 Timestep: 5780  /  10000
 Timestep: 5790  /  10000
 Timestep: 5800  /  10000
@@ -1305,9 +1308,7 @@ Timestep: 5870  /  10000
 Timestep: 5880  /  10000
 Timestep: 5890  /  10000
 Timestep: 5900  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 5910  /  10000
+Timestep: 5910  /  10000
 Timestep: 5920  /  10000
 Timestep: 5930  /  10000
 Timestep: 5940  /  10000
@@ -1317,7 +1318,9 @@ Timestep: 5970  /  10000
 Timestep: 5980  /  10000
 Timestep: 5990  /  10000
 Timestep: 6000  /  10000
-Timestep: 6010  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6010  /  10000
 Timestep: 6020  /  10000
 Timestep: 6030  /  10000
 Timestep: 6040  /  10000
@@ -1332,9 +1335,7 @@ Timestep: 6120  /  10000
 Timestep: 6130  /  10000
 Timestep: 6140  /  10000
 Timestep: 6150  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6160  /  10000
+Timestep: 6160  /  10000
 Timestep: 6170  /  10000
 Timestep: 6180  /  10000
 Timestep: 6190  /  10000
@@ -1343,7 +1344,9 @@ Timestep: 6210  /  10000
 Timestep: 6220  /  10000
 Timestep: 6230  /  10000
 Timestep: 6240  /  10000
-Timestep: 6250  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6250  /  10000
 Timestep: 6260  /  10000
 Timestep: 6270  /  10000
 Timestep: 6280  /  10000
@@ -1360,9 +1363,7 @@ Timestep: 6380  /  10000
 Timestep: 6390  /  10000
 Timestep: 6400  /  10000
 Timestep: 6410  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6420  /  10000
+Timestep: 6420  /  10000
 Timestep: 6430  /  10000
 Timestep: 6440  /  10000
 Timestep: 6450  /  10000
@@ -1371,7 +1372,9 @@ Timestep: 6470  /  10000
 Timestep: 6480  /  10000
 Timestep: 6490  /  10000
 Timestep: 6500  /  10000
-Timestep: 6510  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6510  /  10000
 Timestep: 6520  /  10000
 Timestep: 6530  /  10000
 Timestep: 6540  /  10000
@@ -1388,9 +1391,7 @@ Timestep: 6640  /  10000
 Timestep: 6650  /  10000
 Timestep: 6660  /  10000
 Timestep: 6670  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6680  /  10000
+Timestep: 6680  /  10000
 Timestep: 6690  /  10000
 Timestep: 6700  /  10000
 Timestep: 6710  /  10000
@@ -1399,7 +1400,9 @@ Timestep: 6730  /  10000
 Timestep: 6740  /  10000
 Timestep: 6750  /  10000
 Timestep: 6760  /  10000
-Timestep: 6770  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6770  /  10000
 Timestep: 6780  /  10000
 Timestep: 6790  /  10000
 Timestep: 6800  /  10000
@@ -1416,9 +1419,7 @@ Timestep: 6900  /  10000
 Timestep: 6910  /  10000
 Timestep: 6920  /  10000
 Timestep: 6930  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 6940  /  10000
+Timestep: 6940  /  10000
 Timestep: 6950  /  10000
 Timestep: 6960  /  10000
 Timestep: 6970  /  10000
@@ -1426,7 +1427,9 @@ Timestep: 6980  /  10000
 Timestep: 6990  /  10000
 Timestep: 7000  /  10000
 Timestep: 7010  /  10000
-Timestep: 7020  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 7020  /  10000
 Timestep: 7030  /  10000
 Timestep: 7040  /  10000
 Timestep: 7050  /  10000
@@ -1444,9 +1447,7 @@ Timestep: 7160  /  10000
 Timestep: 7170  /  10000
 Timestep: 7180  /  10000
 Timestep: 7190  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 7200  /  10000
+Timestep: 7200  /  10000
 Timestep: 7210  /  10000
 Timestep: 7220  /  10000
 Timestep: 7230  /  10000
@@ -1454,7 +1455,9 @@ Timestep: 7240  /  10000
 Timestep: 7250  /  10000
 Timestep: 7260  /  10000
 Timestep: 7270  /  10000
-Timestep: 7280  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 7280  /  10000
 Timestep: 7290  /  10000
 Timestep: 7300  /  10000
 Timestep: 7310  /  10000
@@ -1471,9 +1474,7 @@ Timestep: 7410  /  10000
 Timestep: 7420  /  10000
 Timestep: 7430  /  10000
 Timestep: 7440  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 7450  /  10000
+Timestep: 7450  /  10000
 Timestep: 7460  /  10000
 Timestep: 7470  /  10000
 Timestep: 7480  /  10000
@@ -1482,7 +1483,9 @@ Timestep: 7500  /  10000
 Timestep: 7510  /  10000
 Timestep: 7520  /  10000
 Timestep: 7530  /  10000
-Timestep: 7540  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 7540  /  10000
 Timestep: 7550  /  10000
 Timestep: 7560  /  10000
 Timestep: 7570  /  10000
@@ -1497,9 +1500,7 @@ Timestep: 7650  /  10000
 Timestep: 7660  /  10000
 Timestep: 7670  /  10000
 Timestep: 7680  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 7690  /  10000
+Timestep: 7690  /  10000
 Timestep: 7700  /  10000
 Timestep: 7710  /  10000
 Timestep: 7720  /  10000
@@ -1510,7 +1511,9 @@ Timestep: 7760  /  10000
 Timestep: 7770  /  10000
 Timestep: 7780  /  10000
 Timestep: 7790  /  10000
-Timestep: 7800  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 7800  /  10000
 Timestep: 7810  /  10000
 Timestep: 7820  /  10000
 Timestep: 7830  /  10000
@@ -1524,9 +1527,7 @@ Timestep: 7900  /  10000
 Timestep: 7910  /  10000
 Timestep: 7920  /  10000
 Timestep: 7930  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 7940  /  10000
+Timestep: 7940  /  10000
 Timestep: 7950  /  10000
 Timestep: 7960  /  10000
 Timestep: 7970  /  10000
@@ -1536,7 +1537,9 @@ Timestep: 8000  /  10000
 Timestep: 8010  /  10000
 Timestep: 8020  /  10000
 Timestep: 8030  /  10000
-Timestep: 8040  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8040  /  10000
 Timestep: 8050  /  10000
 Timestep: 8060  /  10000
 Timestep: 8070  /  10000
@@ -1551,9 +1554,7 @@ Timestep: 8150  /  10000
 Timestep: 8160  /  10000
 Timestep: 8170  /  10000
 Timestep: 8180  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8190  /  10000
+Timestep: 8190  /  10000
 Timestep: 8200  /  10000
 Timestep: 8210  /  10000
 Timestep: 8220  /  10000
@@ -1564,7 +1565,9 @@ Timestep: 8260  /  10000
 Timestep: 8270  /  10000
 Timestep: 8280  /  10000
 Timestep: 8290  /  10000
-Timestep: 8300  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8300  /  10000
 Timestep: 8310  /  10000
 Timestep: 8320  /  10000
 Timestep: 8330  /  10000
@@ -1578,9 +1581,7 @@ Timestep: 8400  /  10000
 Timestep: 8410  /  10000
 Timestep: 8420  /  10000
 Timestep: 8430  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8440  /  10000
+Timestep: 8440  /  10000
 Timestep: 8450  /  10000
 Timestep: 8460  /  10000
 Timestep: 8470  /  10000
@@ -1592,7 +1593,9 @@ Timestep: 8520  /  10000
 Timestep: 8530  /  10000
 Timestep: 8540  /  10000
 Timestep: 8550  /  10000
-Timestep: 8560  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8560  /  10000
 Timestep: 8570  /  10000
 Timestep: 8580  /  10000
 Timestep: 8590  /  10000
@@ -1605,9 +1608,7 @@ Timestep: 8650  /  10000
 Timestep: 8660  /  10000
 Timestep: 8670  /  10000
 Timestep: 8680  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8690  /  10000
+Timestep: 8690  /  10000
 Timestep: 8700  /  10000
 Timestep: 8710  /  10000
 Timestep: 8720  /  10000
@@ -1620,7 +1621,9 @@ Timestep: 8780  /  10000
 Timestep: 8790  /  10000
 Timestep: 8800  /  10000
 Timestep: 8810  /  10000
-Timestep: 8820  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8820  /  10000
 Timestep: 8830  /  10000
 Timestep: 8840  /  10000
 Timestep: 8850  /  10000
@@ -1632,9 +1635,7 @@ Timestep: 8900  /  10000
 Timestep: 8910  /  10000
 Timestep: 8920  /  10000
 Timestep: 8930  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 8940  /  10000
+Timestep: 8940  /  10000
 Timestep: 8950  /  10000
 Timestep: 8960  /  10000
 Timestep: 8970  /  10000
@@ -1648,7 +1649,9 @@ Timestep: 9040  /  10000
 Timestep: 9050  /  10000
 Timestep: 9060  /  10000
 Timestep: 9070  /  10000
-Timestep: 9080  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 9080  /  10000
 Timestep: 9090  /  10000
 Timestep: 9100  /  10000
 Timestep: 9110  /  10000
@@ -1659,9 +1662,7 @@ Timestep: 9150  /  10000
 Timestep: 9160  /  10000
 Timestep: 9170  /  10000
 Timestep: 9180  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 9190  /  10000
+Timestep: 9190  /  10000
 Timestep: 9200  /  10000
 Timestep: 9210  /  10000
 Timestep: 9220  /  10000
@@ -1676,7 +1677,9 @@ Timestep: 9300  /  10000
 Timestep: 9310  /  10000
 Timestep: 9320  /  10000
 Timestep: 9330  /  10000
-Timestep: 9340  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 9340  /  10000
 Timestep: 9350  /  10000
 Timestep: 9360  /  10000
 Timestep: 9370  /  10000
@@ -1686,9 +1689,7 @@ Timestep: 9400  /  10000
 Timestep: 9410  /  10000
 Timestep: 9420  /  10000
 Timestep: 9430  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 9440  /  10000
+Timestep: 9440  /  10000
 Timestep: 9450  /  10000
 Timestep: 9460  /  10000
 Timestep: 9470  /  10000
@@ -1702,7 +1703,9 @@ Timestep: 9540  /  10000
 Timestep: 9550  /  10000
 Timestep: 9560  /  10000
 Timestep: 9570  /  10000
-Timestep: 9580  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 9580  /  10000
 Timestep: 9590  /  10000
 Timestep: 9600  /  10000
 Timestep: 9610  /  10000
@@ -1713,9 +1716,7 @@ Timestep: 9650  /  10000
 Timestep: 9660  /  10000
 Timestep: 9670  /  10000
 Timestep: 9680  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 9690  /  10000
+Timestep: 9690  /  10000
 Timestep: 9700  /  10000
 Timestep: 9710  /  10000
 Timestep: 9720  /  10000
@@ -1730,7 +1731,9 @@ Timestep: 9800  /  10000
 Timestep: 9810  /  10000
 Timestep: 9820  /  10000
 Timestep: 9830  /  10000
-Timestep: 9840  /  10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 9840  /  10000
 Timestep: 9850  /  10000
 Timestep: 9860  /  10000
 Timestep: 9870  /  10000
@@ -1739,9 +1742,7 @@ Timestep: 9890  /  10000
 Timestep: 9900  /  10000
 Timestep: 9910  /  10000
 Timestep: 9920  /  10000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestep: 9930  /  10000
+Timestep: 9930  /  10000
 Timestep: 9940  /  10000
 Timestep: 9950  /  10000
 Timestep: 9960  /  10000
@@ -1831,7 +1832,7 @@ Timestep: 9990  /  10000
 <span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;images/upper_level_streamfunction.png&#39;
 </pre></div>
 </div>
-<img alt="../_images/fa5920074db175516cd79eaa8a57d2bea6beae5b03fdca4a39699fde76757c0c.png" src="../_images/fa5920074db175516cd79eaa8a57d2bea6beae5b03fdca4a39699fde76757c0c.png" />
+<img alt="../_images/56f066117170bf9314bc950366fcd3e9ddb2f94dbb51b6cd4af53663692f1603.png" src="../_images/56f066117170bf9314bc950366fcd3e9ddb2f94dbb51b6cd4af53663692f1603.png" />
 </div>
 </div>
 

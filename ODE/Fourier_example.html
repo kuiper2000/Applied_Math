@@ -173,6 +173,7 @@
 <li class="toctree-l1"><a class="reference internal" href="2ndODE.html">Week 3 and 4: 2nd-order ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Laplace.html">Week 5 and 6: Laplace Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sturm_Liouville.html">Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Special_function.html">Week 9 and 10:  Special Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PDE/Heat_equation.html">Week 11:  Heat Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PDE/Wave_equation.html">Week 12:  Wave Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PDE/Laplace_equation.html">Week 13:  Laplace Equation</a></li>
@@ -428,164 +429,164 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cos coef= [[ 1.00150291e+00  5.00308538e+00  3.62946863e-03  9.45913047e-03
-   9.95129094e-01 -5.40651675e-03  2.11743520e-03 -1.50539116e-03
-   3.71404612e-03  1.57954870e-03  3.41219896e-02 -1.00249049e-02
-   2.82968789e-04 -5.34838914e-04  3.08993552e-03  1.53923489e-03
-  -3.40786776e-03  2.20891652e-03  4.66700780e-05  1.37983095e-04
-  -6.23457146e-03  3.37160095e-03 -9.59848386e-04  1.22147640e-03
-  -6.04105505e-03  3.94831567e-03 -1.99214757e-03 -4.65395595e-03
-   3.43501096e-03  6.13223937e-03  7.30806249e-03  6.11499398e-03
-   2.04105517e-03 -4.59683941e-03 -3.79452719e-03  5.39341707e-03
-   1.68999438e-03 -3.86096007e-05  9.18702371e-03  1.35786032e-02
-  -3.33730506e-03  1.84279126e-03 -1.29393907e-03  5.79965037e-03
-   6.91660878e-03 -6.30704326e-03 -3.78308655e-03  2.96857081e-03
-  -2.25588703e-04  1.30506753e-02  1.94540511e-04  6.31900585e-03
-  -2.45012903e-03  1.16926062e-03 -3.03040120e-03  1.54725395e-03
-  -3.10005808e-03 -6.52105367e-03  5.73864249e-04 -2.77350816e-04
-  -4.05172063e-03 -3.35784818e-03 -1.18363864e-03  3.42474428e-03
-   4.66125079e-04 -2.20940953e-03  4.41117948e-03  3.27465483e-03
-  -9.21017318e-03  3.08394449e-03  8.47090066e-04 -4.04242845e-03
-   2.16634398e-03 -5.53042879e-03 -1.20293291e-03  1.07088705e-03
-  -3.47919454e-03 -3.05810073e-03 -7.74423336e-03 -3.58740896e-03
-  -5.79652233e-05  3.01015031e-03 -6.80062685e-04 -1.95598288e-03
-   1.15752241e-03 -5.50109555e-03 -2.68690845e-03 -7.15821329e-03
-   7.02262863e-03 -4.01228247e-03 -9.20087558e-05  7.30779725e-03
-   3.74955687e-03 -5.28387316e-03  1.91786068e-03 -2.89255866e-03
-  -3.88879925e-03  3.10370324e-03 -2.12938750e-03  2.62539186e-03]]
-sin coef= [[ 0.00000000e+00 -1.59922683e-02 -7.98120857e-03  4.51747548e-04
-  -1.26955884e-02  6.81586961e-03  9.18165635e-04  5.18200321e-04
-   1.05813600e-02  9.50605416e-03  9.99449786e-01 -5.66345420e-03
-  -6.69777212e-03 -3.31983982e-03 -3.95173448e-03  5.92703176e-03
-  -4.10839208e-03  3.45503952e-04 -5.49805173e-03  2.54493272e-03
-  -7.73606950e-03  2.08847334e-04  2.81776907e-03 -4.60233826e-04
-   6.71604578e-04 -6.57394182e-03  1.28708623e-04  1.47354006e-03
-   9.72512664e-05  2.68648432e-03  2.66577641e-03 -3.16297514e-03
-  -4.60704316e-04 -2.09813547e-03  5.46400792e-03 -1.20739537e-02
-  -7.10306565e-03 -4.65123645e-03 -3.44144774e-03 -4.67812786e-03
-   1.59308828e-03 -4.05382529e-03  5.43112498e-03 -4.72415091e-04
-   6.00799967e-03 -4.11595061e-04 -1.98451417e-03  5.99536095e-03
-  -2.61553688e-03 -8.39484494e-03 -1.04607596e-03  1.03905388e-03
-   7.78282817e-05  2.81033420e-04  2.78058667e-03  1.99931120e-03
-  -2.62220373e-03 -8.33731477e-04 -5.61094660e-03  1.47810694e-03
-   5.41778245e-03  5.60159930e-03  7.26892421e-03  1.89458105e-03
-   4.05425432e-03  4.55439047e-03 -1.07053795e-02 -4.86641452e-03
-   5.33840113e-03  3.40991584e-03  2.67016145e-03 -2.35710131e-03
-  -3.08259329e-03 -1.36200338e-03 -6.50739754e-03 -8.43421095e-03
-  -4.11252122e-03 -7.77239847e-04 -8.50457844e-03  2.54196874e-04
-  -1.12840342e-02 -3.40094821e-03 -4.59152255e-03  3.82680056e-03
-  -4.35192830e-03  1.39549956e-03 -3.50196291e-03 -1.60766264e-03
-  -5.34484642e-04 -3.65983515e-03 -1.34957044e-03  2.64428442e-03
-  -4.90436870e-03 -7.95858328e-04 -8.87958312e-03  4.93200566e-03
-   4.13669417e-04  2.26169540e-03  1.30337284e-02  8.99536283e-03]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cos coef= [[ 1.00784671e+00  5.00531313e+00 -2.20673790e-03 -3.90828396e-03
+   1.00195750e+00 -2.40518394e-03 -1.20834481e-03 -1.22076056e-02
+  -2.04699217e-03 -5.54099397e-04  3.46807426e-02 -3.88787967e-03
+   5.39497616e-04 -3.33433121e-03  3.07431108e-03  6.67771653e-03
+  -2.86173529e-03  1.94329456e-06 -2.58723053e-03  5.74731494e-03
+   2.99557845e-03 -1.23120690e-03  3.46436258e-04 -9.44543547e-04
+  -2.29342079e-03  8.81460439e-03  6.79327715e-03  3.41996674e-03
+   4.77525819e-03  3.43299858e-03  9.40116251e-04  9.73476407e-03
+  -1.21880803e-02 -7.57613708e-03  2.84054578e-04 -3.93264607e-03
+   2.78196737e-03  3.95313318e-04  9.44810236e-03 -3.75990949e-03
+  -1.94017708e-03 -5.37620259e-04 -1.65854155e-03 -2.98586892e-03
+   3.13500146e-03  5.47477334e-03 -2.53358954e-03  2.38835114e-03
+  -7.35205107e-03  5.11418985e-03 -4.95588857e-03  3.87480295e-03
+  -9.36766083e-03  3.29540617e-03 -4.48308428e-05 -3.89277595e-03
+   4.06373312e-03  3.98610495e-03 -1.12138807e-02  3.39811565e-03
+   1.40752682e-03  5.46780358e-03  1.96917201e-03  3.85951028e-03
+  -2.66090983e-03 -8.18303448e-05  3.63929964e-03 -7.96753002e-04
+   3.36545588e-03 -3.67595146e-03 -9.10399189e-03 -4.32279579e-03
+   9.85730807e-03 -9.48714647e-04 -6.95954373e-03  7.99746224e-04
+   1.14089201e-03  1.15862818e-02  1.71173594e-03 -3.15293468e-03
+   1.78214109e-03 -2.55282518e-03 -9.10953585e-03  2.24380426e-03
+   1.60825561e-03 -5.78908361e-03  3.73400857e-03 -4.18279932e-03
+   9.36367259e-04  9.08876075e-03  3.48113359e-04 -9.25547322e-03
+   2.98321108e-03 -1.07401449e-03 -3.78085938e-04  1.01279291e-03
+   3.14273197e-03 -6.46320437e-03  1.27814195e-03  1.43003818e-03]]
+sin coef= [[ 0.00000000e+00 -2.12998386e-02  6.98769559e-03 -8.18206416e-03
+  -1.33525075e-02 -7.89950402e-03 -2.06059251e-03  2.79710088e-03
+   5.41033371e-03  9.55572530e-03  9.94257091e-01 -1.01899176e-02
+  -8.61059375e-03  1.69741244e-04 -3.07656205e-03 -7.26320192e-03
+  -6.65570163e-03 -7.02955203e-03  2.86294269e-04 -4.28516328e-03
+  -6.45397282e-04 -2.38604889e-03  5.28468937e-05  1.67987165e-03
+  -3.95034961e-03 -1.08571634e-03 -1.26142611e-03 -3.95016965e-03
+  -4.17550069e-03 -1.45968972e-03 -7.88456099e-03 -8.25487975e-03
+  -8.88862430e-03 -1.00440142e-02 -2.24464930e-03  5.51422482e-03
+   6.07710671e-03 -2.63164108e-03  1.43681137e-02 -6.95439022e-03
+  -5.86332890e-05  4.70168027e-03  5.52497237e-03  1.93771359e-03
+  -5.34141966e-03 -4.18469013e-03 -4.61799503e-03  5.92686484e-03
+   7.57134351e-04 -1.85712124e-03  3.35140577e-03  6.46413833e-03
+   5.28584764e-03  2.79343018e-03  9.46916175e-03  1.32509955e-03
+   1.95137492e-03  1.13635463e-03  1.90346106e-04 -7.22021490e-04
+  -3.41377388e-04 -5.92115558e-03  5.58360622e-03 -1.46219046e-03
+  -8.91240429e-03 -5.90887429e-04 -2.42225970e-03  1.19289595e-03
+  -1.91295158e-03 -5.54176470e-03 -5.96689509e-04  6.93907004e-04
+   1.16921505e-03  3.31553767e-03 -5.74399935e-03  1.53093605e-03
+  -3.36299062e-03 -4.81260692e-03  6.27097472e-03  6.05670898e-03
+   1.24058568e-03 -4.34730790e-03 -3.10409993e-04 -3.82786659e-03
+   2.55444905e-03 -8.71050690e-03 -3.52893896e-03  4.32543180e-03
+  -9.04142264e-04 -5.54667416e-03  8.33368420e-04  3.35388965e-03
+  -2.60423593e-03  1.00672815e-02 -6.55664637e-03  6.24948796e-03
+   3.94906352e-03  2.67999734e-03  4.65288705e-03 -3.88104443e-03]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x116b3a9d0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b3aaf0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b3ac10&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b3ad30&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b3ae50&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b3af70&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b3a970&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b471f0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b47310&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b47430&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b47550&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b47670&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b47790&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b478b0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b479d0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b47af0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b47c10&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b47d30&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b47e50&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b47f70&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b470d0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4e1f0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4e310&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4e430&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4e550&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4e670&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4e790&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4e8b0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4e9d0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4eaf0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4ec10&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4ed30&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4ee50&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4ef70&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b4e0d0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7c1f0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7c310&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7c430&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7c550&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7c670&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7c790&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7c8b0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7c9d0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7caf0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7cc10&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b2b940&gt;,
- &lt;matplotlib.lines.Line2D at 0x116b2b910&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7ce50&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7cf70&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c7cd30&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c851f0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c85310&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c85430&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c85550&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c85670&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c85790&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c858b0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c859d0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c85af0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c85c10&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c85d30&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c85e50&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c85f70&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c850d0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8d1f0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8d310&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8d430&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8d550&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8d670&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8d790&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8d8b0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8d9d0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8daf0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8dc10&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8dd30&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8de50&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8df70&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c8d0d0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c931f0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c93310&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c93430&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c93550&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c93670&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c93790&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c93880&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c939a0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c93ac0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c93be0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c93d00&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c93e20&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c93f40&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c930d0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c9b1c0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c9b2e0&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c9b400&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c9b520&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c9b640&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c9b760&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c9b880&gt;,
- &lt;matplotlib.lines.Line2D at 0x116c9b9a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117b0d8b0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b0d9d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b0daf0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b0dc10&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b0dd30&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b0de50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b0df70&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b0d850&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b191f0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b19310&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b19430&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b19550&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b19670&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b19790&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b198b0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b199d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b19af0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b19c10&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b19d30&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b19e50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b19f70&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b190d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b221f0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b22310&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b22430&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b22550&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b22670&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b22790&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b228b0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b229d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b22af0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b22c10&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b22d30&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b22e50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b22f70&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b220d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a61f0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a6310&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a6430&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a6550&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a6670&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a6790&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a68b0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a69d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a6af0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a6c10&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a6d30&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a6e50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a6f70&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179a60d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179ae1f0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179ae310&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179ae430&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179ae550&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179ae670&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179ae790&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179ae8b0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179ae9d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179aeaf0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179aec10&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179aed30&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179aee50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179aef70&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179ae0d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b61f0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b6310&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b6430&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b6550&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b6670&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b6790&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b68b0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b69d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b6af0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b6c10&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b6d30&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b6e50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b6f70&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179b60d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x117b3d910&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bd1f0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bd310&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bd430&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bd550&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bd670&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bd790&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bd880&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bd9a0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bdac0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bdbe0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bdd00&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bde20&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bdf40&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179bd0d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179c41c0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179c42e0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179c4400&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179c4520&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179c4640&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179c4760&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1179c4880&gt;]
 </pre></div>
 </div>
-<img alt="../_images/97686dcac4084636c32f0e02e4804550ecaf4d6e34e4aafd8f9035304b35adb2.png" src="../_images/97686dcac4084636c32f0e02e4804550ecaf4d6e34e4aafd8f9035304b35adb2.png" />
+<img alt="../_images/0788017403c8658048008e11876e4c9eefd75835ab254b2dceb47733c2b78ddc.png" src="../_images/0788017403c8658048008e11876e4c9eefd75835ab254b2dceb47733c2b78ddc.png" />
 <img alt="../_images/4fa02e465a24c110ead6728cdb6f36d0d83bf19f3e61e4891e2bf648f6bf133d.png" src="../_images/4fa02e465a24c110ead6728cdb6f36d0d83bf19f3e61e4891e2bf648f6bf133d.png" />
-<img alt="../_images/1593f5072aa23e6fdad64a551713f9dc4075d9002d19dab39b88cc51b0dc7abf.png" src="../_images/1593f5072aa23e6fdad64a551713f9dc4075d9002d19dab39b88cc51b0dc7abf.png" />
-<img alt="../_images/39526d1767b871cb0553dea606acb28246991f3bac753d47b32b54ec94f75a57.png" src="../_images/39526d1767b871cb0553dea606acb28246991f3bac753d47b32b54ec94f75a57.png" />
+<img alt="../_images/26ad24fe708fd6bb96dcd8a7652599e928df4def3772a8b387d3b15031344f8e.png" src="../_images/26ad24fe708fd6bb96dcd8a7652599e928df4def3772a8b387d3b15031344f8e.png" />
+<img alt="../_images/3448ad29a59155e205bbbd03a6b50a9a1f7141c05572c6871aa8bb5b643090fa.png" src="../_images/3448ad29a59155e205bbbd03a6b50a9a1f7141c05572c6871aa8bb5b643090fa.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -606,8 +607,8 @@ sin coef= [[ 0.00000000e+00 -1.59922683e-02 -7.98120857e-03  4.51747548e-04
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[14.52370077+0.j]]
-13.520692695619823
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[14.55046782+0.j]]
+13.534712830736774
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages/matplotlib/cbook.py:1762: ComplexWarning: Casting complex values to real discards the imaginary part
@@ -616,7 +617,7 @@ sin coef= [[ 0.00000000e+00 -1.59922683e-02 -7.98120857e-03  4.51747548e-04
   return np.asarray(x, float)
 </pre></div>
 </div>
-<img alt="../_images/87747af90f32e4e0b250f36d854fe4d2d4c4c36eed11518cfc3360be747af57d.png" src="../_images/87747af90f32e4e0b250f36d854fe4d2d4c4c36eed11518cfc3360be747af57d.png" />
+<img alt="../_images/4a4f6d801b913228a305d134be67cb9e9b32fac139516c6759d83d2e77a8df6b.png" src="../_images/4a4f6d801b913228a305d134be67cb9e9b32fac139516c6759d83d2e77a8df6b.png" />
 </div>
 </div>
 </section>
@@ -633,7 +634,7 @@ sin coef= [[ 0.00000000e+00 -1.59922683e-02 -7.98120857e-03  4.51747548e-04
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11728ebe0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1260539a0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/c9c0a472b5446bd0320ca4bc5d65d2d124ac09d76de4afb0ac4fd0930b61178c.png" src="../_images/c9c0a472b5446bd0320ca4bc5d65d2d124ac09d76de4afb0ac4fd0930b61178c.png" />
@@ -771,10 +772,10 @@ sin coef= [[ 0.00000000e+00 -1.59922683e-02 -7.98120857e-03  4.51747548e-04
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>600 µs ± 3.59 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>597 µs ± 3.18 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>363 µs ± 2.57 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>365 µs ± 1.38 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>

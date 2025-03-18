@@ -175,6 +175,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ODE/2ndODE.html">Week 3 and 4: 2nd-order ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ODE/Laplace.html">Week 5 and 6: Laplace Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ODE/Sturm_Liouville.html">Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ODE/Special_function.html">Week 9 and 10:  Special Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Heat_equation.html">Week 11:  Heat Equation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 12:  Wave Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Laplace_equation.html">Week 13:  Laplace Equation</a></li>
@@ -391,48 +392,48 @@
 <h2>Problem Setup and Initial Conditions<a class="headerlink" href="#problem-setup-and-initial-conditions" title="Link to this heading">#</a></h2>
 <p>Waves are ubiquitous and especially central to atmospheric sciences. Vibration on any material with restoring forces can generate waves. The existence of restoring force implies the existence of 2nd-order derivatives in time. One of the most well-known wave equation is Hooke’s Law</p>
 <div class="math notranslate nohighlight" id="equation-eq176">
-<span class="eqno">(127)<a class="headerlink" href="#equation-eq176" title="Link to this equation">#</a></span>\[\begin{align}
+<span class="eqno">(176)<a class="headerlink" href="#equation-eq176" title="Link to this equation">#</a></span>\[\begin{align}
 \frac{d^2x}{dt^2} = -kx
 \end{align}\]</div>
 <p>where the restoring force is equivalent to how much the material is stretched except with an opposite sign. This suggesting the force is always going against to the stretched direction. It’s not hard to find the solutions share a form of</p>
 <div class="math notranslate nohighlight" id="equation-eq177">
-<span class="eqno">(128)<a class="headerlink" href="#equation-eq177" title="Link to this equation">#</a></span>\[\begin{align}
+<span class="eqno">(177)<a class="headerlink" href="#equation-eq177" title="Link to this equation">#</a></span>\[\begin{align}
 x = a_n \cos(\sqrt{k}t)+ b_n \sin(\sqrt{k}t)
 \end{align}\]</div>
-<p>The coefficients in <a class="reference internal" href="Heat_equation.html#equation-eq175">(126)</a> will be determined by the given initial values of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x_t\)</span>. This is the general setup of wave solutions, where only the temporal structure is considered.</p>
+<p>The coefficients in <a class="reference internal" href="Heat_equation.html#equation-eq175">(175)</a> will be determined by the given initial values of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x_t\)</span>. This is the general setup of wave solutions, where only the temporal structure is considered.</p>
 </section>
 <section id="wave-solution-with-space-and-time-structures">
 <h2>Wave Solution with Space and Time Structures<a class="headerlink" href="#wave-solution-with-space-and-time-structures" title="Link to this heading">#</a></h2>
 <p>Here we will consider a slightly more complicated case where the propagating over a space (i.e., we are observing wave at both space and time.). Therefore, the original equation can be rewritten as</p>
 <div class="math notranslate nohighlight" id="equation-eq178">
-<span class="eqno">(129)<a class="headerlink" href="#equation-eq178" title="Link to this equation">#</a></span>\[\begin{align}
+<span class="eqno">(178)<a class="headerlink" href="#equation-eq178" title="Link to this equation">#</a></span>\[\begin{align}
 y_{tt} = c^2 y_{xx} ;\ \textrm{for   } 0&lt;x&lt;L,t&gt;0
 \end{align}\]</div>
 <p>with initial and boundary conditions</p>
 <div class="math notranslate nohighlight" id="equation-eq179">
-<span class="eqno">(130)<a class="headerlink" href="#equation-eq179" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(179)<a class="headerlink" href="#equation-eq179" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 y(x,0) &amp; = f(x), ;\ y_t(x,0) = g(x) \\ 
 y(0,t) &amp; = y(L,t) = 0 \\ 
 \end{align}\end{split}\]</div>
 <p>Using separation of variable, one can expect that the solution shares a form of (leave this practice to readers)</p>
 <div class="math notranslate nohighlight" id="equation-eq180">
-<span class="eqno">(131)<a class="headerlink" href="#equation-eq180" title="Link to this equation">#</a></span>\[\begin{align}
+<span class="eqno">(180)<a class="headerlink" href="#equation-eq180" title="Link to this equation">#</a></span>\[\begin{align}
 y_n(t) = X_n(x)T_n(t) = [a_n\cos(\frac{n\pi ct}{L})+b_n\sin(\frac{n\pi ct}{L})]\sin(\frac{n\pi x}{L})
 \end{align}\]</div>
 <p>In most cases, we can satisfy the initial condition with finite sum of <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>. We therefore attempt a solutions</p>
 <div class="math notranslate nohighlight" id="equation-eq181">
-<span class="eqno">(132)<a class="headerlink" href="#equation-eq181" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(181)<a class="headerlink" href="#equation-eq181" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 y(x,t) &amp;= \sum_{n=1}^{\infty} y_n(x,t) \\
        &amp;= \sum_{n=1}^{\infty}[a_n\cos(\frac{n\pi ct}{L})+b_n\sin(\frac{n\pi ct}{L})]\sin(\frac{n\pi x}{L})
 \end{align}\end{split}\]</div>
 <p>using initial condition, we know</p>
 <div class="math notranslate nohighlight" id="equation-eq182">
-<span class="eqno">(133)<a class="headerlink" href="#equation-eq182" title="Link to this equation">#</a></span>\[\begin{align}
+<span class="eqno">(182)<a class="headerlink" href="#equation-eq182" title="Link to this equation">#</a></span>\[\begin{align}
 y(x,0) &amp;= \sum_{n=1}^{\infty}a_n \sin(\frac{n\pi x}{L}) = f(x)
 \end{align}\]</div>
 <p>indicating</p>
 <div class="math notranslate nohighlight" id="equation-eq183">
-<span class="eqno">(134)<a class="headerlink" href="#equation-eq183" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(183)<a class="headerlink" href="#equation-eq183" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 a_n &amp;= \frac{2}{L} \int_{0}^{L} f(\xi)\sin(\frac{n\pi \xi}{L})d\xi \\ 
 \frac{n\pi c}{L}b_n &amp;= \frac{2}{L} \int_{0}^{L} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi
 \end{align}\end{split}\]</div>
@@ -448,7 +449,7 @@ x     \textrm{   for } 0\leq x \leq \frac{\pi}{2}\\
 <div class="math notranslate nohighlight">
 \[g(x) = x (1-\cos(x))\]</div>
 <p>We also assume <span class="math notranslate nohighlight">\(c=1\)</span>, which represents the propagating speed of waves</p>
-<p>From <a class="reference internal" href="#equation-eq181">(132)</a>, we know the solution has a form of</p>
+<p>From <a class="reference internal" href="#equation-eq181">(181)</a>, we know the solution has a form of</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 y(x,t) = \sum_{n=1}^{\infty}[a_n\cos(nt)+b_n\sin(nt)]\sin(nx)
@@ -468,7 +469,7 @@ b_n &amp;= \frac{2}{n\pi c}\int_{0}^{\pi} g(\xi)\sin(\frac{n\pi \xi}{L})d\xi \\
 </div>
 <p>Now considering a more complicated case, where we have external forcing. i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq184">
-<span class="eqno">(135)<a class="headerlink" href="#equation-eq184" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
+<span class="eqno">(184)<a class="headerlink" href="#equation-eq184" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
 y_{tt} &amp;= c^2y_{xx}+x;\ \textrm{for } 0 &lt;x&lt; L, t&gt;0 \\
 y(0,t) &amp;=y(L,t) = 0, \\
 y(x,0) &amp;=x(L-x) = f(x) \\
@@ -476,33 +477,33 @@ y_t(x,0) &amp;=x(1+\cos(\frac{\pi x}{L})) = g(x)
 \end{align} \end{split}\]</div>
 <p>Similar to how we deal with heat equation with external forcing, we can assume the solution shares a form of</p>
 <div class="math notranslate nohighlight" id="equation-eq185">
-<span class="eqno">(136)<a class="headerlink" href="#equation-eq185" title="Link to this equation">#</a></span>\[y(x,t) = Y(x,t) + \psi(x)\]</div>
-<p>Substitute <a class="reference internal" href="#equation-eq185">(136)</a> back to <a class="reference internal" href="#equation-eq184">(135)</a>, we can have a homogeneous equation for <span class="math notranslate nohighlight">\(Y(x,t)\)</span>.</p>
+<span class="eqno">(185)<a class="headerlink" href="#equation-eq185" title="Link to this equation">#</a></span>\[y(x,t) = Y(x,t) + \psi(x)\]</div>
+<p>Substitute <a class="reference internal" href="#equation-eq185">(185)</a> back to <a class="reference internal" href="#equation-eq184">(184)</a>, we can have a homogeneous equation for <span class="math notranslate nohighlight">\(Y(x,t)\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-eq186">
-<span class="eqno">(137)<a class="headerlink" href="#equation-eq186" title="Link to this equation">#</a></span>\[Y_{tt} = c^2Y_{xx} \]</div>
+<span class="eqno">(186)<a class="headerlink" href="#equation-eq186" title="Link to this equation">#</a></span>\[Y_{tt} = c^2Y_{xx} \]</div>
 <p>and an 2nd-order ODE for the forcing term i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq187">
-<span class="eqno">(138)<a class="headerlink" href="#equation-eq187" title="Link to this equation">#</a></span>\[c^2\psi^{''} = -x \]</div>
-<p>Integrating <a class="reference internal" href="#equation-eq187">(138)</a> twice, we have</p>
+<span class="eqno">(187)<a class="headerlink" href="#equation-eq187" title="Link to this equation">#</a></span>\[c^2\psi^{''} = -x \]</div>
+<p>Integrating <a class="reference internal" href="#equation-eq187">(187)</a> twice, we have</p>
 <div class="math notranslate nohighlight" id="equation-eq188">
-<span class="eqno">(139)<a class="headerlink" href="#equation-eq188" title="Link to this equation">#</a></span>\[\psi(x) = -\frac{x^3}{6c^2}+\alpha x +\beta\]</div>
+<span class="eqno">(188)<a class="headerlink" href="#equation-eq188" title="Link to this equation">#</a></span>\[\psi(x) = -\frac{x^3}{6c^2}+\alpha x +\beta\]</div>
 <p>Now, look at boundary conditions,</p>
 <div class="math notranslate nohighlight" id="equation-eq189">
-<span class="eqno">(140)<a class="headerlink" href="#equation-eq189" title="Link to this equation">#</a></span>\[y(0,t) = 0 = Y(0,t)+\psi(0) = Y(0,t)+\beta\]</div>
-<p>To make <a class="reference internal" href="#equation-eq189">(140)</a> a homogeneous problem, we choose <span class="math notranslate nohighlight">\(beta=0\)</span>.
+<span class="eqno">(189)<a class="headerlink" href="#equation-eq189" title="Link to this equation">#</a></span>\[y(0,t) = 0 = Y(0,t)+\psi(0) = Y(0,t)+\beta\]</div>
+<p>To make <a class="reference internal" href="#equation-eq189">(189)</a> a homogeneous problem, we choose <span class="math notranslate nohighlight">\(beta=0\)</span>.
 For the other boundary condition,</p>
 <div class="math notranslate nohighlight" id="equation-eq190">
-<span class="eqno">(141)<a class="headerlink" href="#equation-eq190" title="Link to this equation">#</a></span>\[y(L,t) = 0 = Y(L,t)+\psi(L) = Y(L,t)-\frac{L^3}{6c^2}+\alpha L\]</div>
+<span class="eqno">(190)<a class="headerlink" href="#equation-eq190" title="Link to this equation">#</a></span>\[y(L,t) = 0 = Y(L,t)+\psi(L) = Y(L,t)-\frac{L^3}{6c^2}+\alpha L\]</div>
 <p>Let</p>
 <div class="math notranslate nohighlight" id="equation-eq191">
-<span class="eqno">(142)<a class="headerlink" href="#equation-eq191" title="Link to this equation">#</a></span>\[\alpha  = \frac{L^2}{6c^2}\]</div>
+<span class="eqno">(191)<a class="headerlink" href="#equation-eq191" title="Link to this equation">#</a></span>\[\alpha  = \frac{L^2}{6c^2}\]</div>
 <p>we can have the same homogeneous equation at the second boundary.</p>
-<p><a class="reference internal" href="#equation-eq191">(142)</a> indicates that</p>
+<p><a class="reference internal" href="#equation-eq191">(191)</a> indicates that</p>
 <div class="math notranslate nohighlight" id="equation-eq192">
-<span class="eqno">(143)<a class="headerlink" href="#equation-eq192" title="Link to this equation">#</a></span>\[\psi  = -\frac{x^3}{6c^2}+\frac{L^2}{6c^2}x = \frac{x}{6c^2}(L^2-x^2)\]</div>
+<span class="eqno">(192)<a class="headerlink" href="#equation-eq192" title="Link to this equation">#</a></span>\[\psi  = -\frac{x^3}{6c^2}+\frac{L^2}{6c^2}x = \frac{x}{6c^2}(L^2-x^2)\]</div>
 <p>With the result above, we can rewrite the entire set of wave equation to</p>
 <div class="math notranslate nohighlight" id="equation-eq193">
-<span class="eqno">(144)<a class="headerlink" href="#equation-eq193" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
+<span class="eqno">(193)<a class="headerlink" href="#equation-eq193" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
 Y_{tt} &amp;= c^2Y_{xx};\ \textrm{for } 0 &lt;x&lt; L, t&gt;0 \\
 Y(0,t) &amp;=Y(L,t) = 0, \\
 Y(x,0) &amp;=x(L-x)-\psi = x(L-x)- \frac{x}{6c^2}(L^2-x^2)\\
@@ -514,52 +515,52 @@ Y_t(x,0) &amp;=x(1+\cos(\frac{\pi x}{L})) = g(x)
 <h2>Wave Motion in an Unbounded Medium<a class="headerlink" href="#wave-motion-in-an-unbounded-medium" title="Link to this heading">#</a></h2>
 <p>Consider the problem</p>
 <div class="math notranslate nohighlight" id="equation-eq194">
-<span class="eqno">(145)<a class="headerlink" href="#equation-eq194" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
+<span class="eqno">(194)<a class="headerlink" href="#equation-eq194" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
 y_{tt}   &amp;= c^2y_{xx};\ \textrm{for } \infty &lt;x&lt; \infty, t&gt;0 \\
 y(x,0)   &amp;= f(x)\\
 y_t(x,0) &amp;= 0
 \end{align} \end{split}\]</div>
 <p>Similarly, using separation of variable, we have</p>
 <div class="math notranslate nohighlight" id="equation-eq195">
-<span class="eqno">(146)<a class="headerlink" href="#equation-eq195" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
+<span class="eqno">(195)<a class="headerlink" href="#equation-eq195" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
 X^{''}+\lambda X &amp;= 0 \\
 T^{''}+\lambda c^2T &amp;= 0 \\
 \end{align} \end{split}\]</div>
 <p>The first equation has a solution of</p>
 <div class="math notranslate nohighlight" id="equation-eq196">
-<span class="eqno">(147)<a class="headerlink" href="#equation-eq196" title="Link to this equation">#</a></span>\[\begin{align} 
+<span class="eqno">(196)<a class="headerlink" href="#equation-eq196" title="Link to this equation">#</a></span>\[\begin{align} 
 X = \sum_{n=0}^{\infty} a_n\cos(kx)+ b_n\sin(kx)
 \end{align} \]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-eq197">
-<span class="eqno">(148)<a class="headerlink" href="#equation-eq197" title="Link to this equation">#</a></span>\[\begin{align} 
+<span class="eqno">(197)<a class="headerlink" href="#equation-eq197" title="Link to this equation">#</a></span>\[\begin{align} 
 k=\frac{n\pi}{L}
 \end{align} \]</div>
 <p>Here we make the increment between two adjacent wave numbers small (<span class="math notranslate nohighlight">\(\sim 0\)</span>). i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq198">
-<span class="eqno">(149)<a class="headerlink" href="#equation-eq198" title="Link to this equation">#</a></span>\[\begin{align} 
+<span class="eqno">(198)<a class="headerlink" href="#equation-eq198" title="Link to this equation">#</a></span>\[\begin{align} 
 dk=\frac{\pi}{L}\sim 0 ;\ \textrm{where } L\rightarrow \infty
 \end{align} \]</div>
-<p>We can rewrite <a class="reference internal" href="#equation-eq196">(147)</a> into</p>
+<p>We can rewrite <a class="reference internal" href="#equation-eq196">(196)</a> into</p>
 <div class="math notranslate nohighlight" id="equation-eq199">
-<span class="eqno">(150)<a class="headerlink" href="#equation-eq199" title="Link to this equation">#</a></span>\[\begin{align} 
+<span class="eqno">(199)<a class="headerlink" href="#equation-eq199" title="Link to this equation">#</a></span>\[\begin{align} 
 X = \frac{1}{\pi} \sum_{n=0}^{\infty} A_n\cos(kx)+ B_n\sin(kx) dk = \frac{1}{\pi} \int_{k=0}^{\infty} A_k \cos(kx)+B_k\sin(kx) dk
 \end{align} \]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eq200">
-<span class="eqno">(151)<a class="headerlink" href="#equation-eq200" title="Link to this equation">#</a></span>\[\begin{align} 
+<span class="eqno">(200)<a class="headerlink" href="#equation-eq200" title="Link to this equation">#</a></span>\[\begin{align} 
 T_k = \cos(kct)
 \end{align} \]</div>
 <p>(readers can think about why T has a constant multiple of Fourier consine function as its solution?)</p>
-<p>According to <a class="reference internal" href="#equation-eq199">(150)</a>,  we know</p>
+<p>According to <a class="reference internal" href="#equation-eq199">(199)</a>,  we know</p>
 <div class="math notranslate nohighlight" id="equation-eq201">
-<span class="eqno">(152)<a class="headerlink" href="#equation-eq201" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
+<span class="eqno">(201)<a class="headerlink" href="#equation-eq201" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
 A_n &amp;=\int_{-\infty}^{\infty} f(\xi)\cos(k\xi)d\xi \\
 B_n &amp;=\int_{-\infty}^{\infty} f(\xi)\sin(k\xi)d\xi
 \end{align} \end{split}\]</div>
 <p>and the completed equation is</p>
 <div class="math notranslate nohighlight" id="equation-eq202">
-<span class="eqno">(153)<a class="headerlink" href="#equation-eq202" title="Link to this equation">#</a></span>\[\begin{align} 
+<span class="eqno">(202)<a class="headerlink" href="#equation-eq202" title="Link to this equation">#</a></span>\[\begin{align} 
 y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) dk
 \end{align} \]</div>
 <div class="admonition-example-2 admonition">
@@ -584,30 +585,30 @@ y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) d
 <p>Jean Le D’Alembert (1717-1783) developed a simple method to approach the wave equations, known as the D’Alembert’s Wave Solutions. In optical physics and atmospheric wave dynamics, it has a special name <em>dispersion relationships</em>. i.e., the relation between wave length and wave speed.</p>
 <p>Specifically, the D’Alembert’s wave solution describes</p>
 <div class="math notranslate nohighlight" id="equation-eq203">
-<span class="eqno">(154)<a class="headerlink" href="#equation-eq203" title="Link to this equation">#</a></span>\[y(x,t) = F(\xi)+G(\eta) = \frac{1}{2}[f(x-ct)+f(x+ct)]+\frac{1}{2c}\int_{x-ct}^{x+ct}g(x')dx'\]</div>
+<span class="eqno">(203)<a class="headerlink" href="#equation-eq203" title="Link to this equation">#</a></span>\[y(x,t) = F(\xi)+G(\eta) = \frac{1}{2}[f(x-ct)+f(x+ct)]+\frac{1}{2c}\int_{x-ct}^{x+ct}g(x')dx'\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-eq204">
-<span class="eqno">(155)<a class="headerlink" href="#equation-eq204" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(204)<a class="headerlink" href="#equation-eq204" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \xi &amp;= x-ct \\
 \eta &amp;= x+ct \\
 \end{align}\end{split}\]</div>
-<p>To show that, we first observe <a class="reference internal" href="#equation-eq195">(146)</a> and we can find the following two characteristic equations</p>
+<p>To show that, we first observe <a class="reference internal" href="#equation-eq195">(195)</a> and we can find the following two characteristic equations</p>
 <div class="math notranslate nohighlight" id="equation-eq205">
-<span class="eqno">(156)<a class="headerlink" href="#equation-eq205" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(205)<a class="headerlink" href="#equation-eq205" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 (\frac{\partial }{\partial t}-c\frac{\partial }{\partial x})y &amp;= 0 \\
 (\frac{\partial }{\partial t}+c\frac{\partial }{\partial x})y &amp;= 0 \\
 \end{align}\end{split}\]</div>
-<p>while <a class="reference internal" href="#equation-eq205">(156)</a> is a slightly more complicated form, we can try to convert it into a simpler question</p>
+<p>while <a class="reference internal" href="#equation-eq205">(205)</a> is a slightly more complicated form, we can try to convert it into a simpler question</p>
 <div class="math notranslate nohighlight" id="equation-eq206">
-<span class="eqno">(157)<a class="headerlink" href="#equation-eq206" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(206)<a class="headerlink" href="#equation-eq206" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \frac{\partial }{\partial \xi}y &amp;= 0 \\
 \frac{\partial }{\partial \eta}y &amp;= 0 \\
 \end{align}\end{split}\]</div>
-<p><a class="reference internal" href="#equation-eq206">(157)</a> is an ODE for <span class="math notranslate nohighlight">\(y\)</span>, which can be solved with direct integration. One can easily find y is independent of <span class="math notranslate nohighlight">\(\xi\)</span> and <span class="math notranslate nohighlight">\(\eta\)</span>. That means we gonna apply certain linear transform from <span class="math notranslate nohighlight">\(x,t\)</span> plane to <span class="math notranslate nohighlight">\(\xi,\eta\)</span> plane where <span class="math notranslate nohighlight">\(y\)</span> is a constant along <span class="math notranslate nohighlight">\(\xi\)</span> and <span class="math notranslate nohighlight">\(\eta\)</span>.</p>
+<p><a class="reference internal" href="#equation-eq206">(206)</a> is an ODE for <span class="math notranslate nohighlight">\(y\)</span>, which can be solved with direct integration. One can easily find y is independent of <span class="math notranslate nohighlight">\(\xi\)</span> and <span class="math notranslate nohighlight">\(\eta\)</span>. That means we gonna apply certain linear transform from <span class="math notranslate nohighlight">\(x,t\)</span> plane to <span class="math notranslate nohighlight">\(\xi,\eta\)</span> plane where <span class="math notranslate nohighlight">\(y\)</span> is a constant along <span class="math notranslate nohighlight">\(\xi\)</span> and <span class="math notranslate nohighlight">\(\eta\)</span>.</p>
 <p>To find the corresponding Jacobian matrix, we can first observe the original equation.
-<a class="reference internal" href="#equation-eq205">(156)</a> can be written as</p>
+<a class="reference internal" href="#equation-eq205">(205)</a> can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq207">
-<span class="eqno">(158)<a class="headerlink" href="#equation-eq207" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(207)<a class="headerlink" href="#equation-eq207" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 &lt;(-c,1)|(y_x,y_t)&gt; &amp;= 0 \\
 &lt;(c,1)|(y_x,y_t)&gt; &amp;= 0 \\
 \end{align}\end{split}\]</div>
@@ -616,36 +617,36 @@ y(x,t) = \frac{1}{\pi}\int_{k=0}^{\infty} [a_k \cos(kx)+b_k\sin(kx)]\cos(k ct) d
 <a class="reference internal image-reference" href="../_images/DAlambert.png"><img alt="../_images/DAlambert.png" src="../_images/DAlambert.png" style="width: 732.6px; height: 472.79999999999995px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">The D’Alambert’s wave solution.</span><a class="headerlink" href="#fig11" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">The D’Alambert’s wave solution.</span><a class="headerlink" href="#fig11" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Combining both, we have</p>
 <div class="math notranslate nohighlight" id="equation-eq208">
-<span class="eqno">(159)<a class="headerlink" href="#equation-eq208" title="Link to this equation">#</a></span>\[\begin{align}
+<span class="eqno">(208)<a class="headerlink" href="#equation-eq208" title="Link to this equation">#</a></span>\[\begin{align}
 u(x,t) = F(\xi)+ G(\eta)
 \end{align}\]</div>
 <p>Here we demonstrate how to derive the D’Alambert’s wave solution.
 According to the initial condition of the wave position, we know</p>
 <div class="math notranslate nohighlight" id="equation-eq209">
-<span class="eqno">(160)<a class="headerlink" href="#equation-eq209" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(209)<a class="headerlink" href="#equation-eq209" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 y(x,0)   &amp;= F(\xi)+ G(\eta) = f(x)\\
 y_t(x,0) &amp;= \frac{\partial F(\xi)}{\partial \xi}\frac{\partial \xi}{\partial t}+ \frac{\partial G(\eta)}{\partial \eta}\frac{\partial \eta}{\partial t}  = -cF^{'}(\xi)+cG^{'}(\eta) = g(x)\\
 \end{align}\end{split}\]</div>
 <p>Here if we properly choose an integral for the second equation (I will show that in a seconds), we will have</p>
 <div class="math notranslate nohighlight" id="equation-eq210">
-<span class="eqno">(161)<a class="headerlink" href="#equation-eq210" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(210)<a class="headerlink" href="#equation-eq210" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 y(x,0)   &amp;= F(x)+ G(x) = f(x)\\
 \int_{x_0}^{x} g(w) dw &amp;= -c F(x) + cG(x)\\
 \end{align}\end{split}\]</div>
 <p>Then we can represent <span class="math notranslate nohighlight">\(y\)</span> with the linear combination of the two equations above.</p>
 <div class="math notranslate nohighlight" id="equation-eq211">
-<span class="eqno">(162)<a class="headerlink" href="#equation-eq211" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(211)<a class="headerlink" href="#equation-eq211" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 F(x-ct)   &amp;= \frac{1}{2}f(x-ct)-\frac{1}{2c}\int_{x_0}^{x-ct} g(w) dw\\
 G(x+ct)   &amp;= \frac{1}{2}f(x+ct)+\frac{1}{2c}\int_{x_0}^{x+ct} g(w) dw\\
 \end{align}\end{split}\]</div>
 <p>Adding both together, we have solutions</p>
 <div class="math notranslate nohighlight" id="equation-eq212">
-<span class="eqno">(163)<a class="headerlink" href="#equation-eq212" title="Link to this equation">#</a></span>\[\begin{align}
+<span class="eqno">(212)<a class="headerlink" href="#equation-eq212" title="Link to this equation">#</a></span>\[\begin{align}
 u(x,t) = F(x-ct) + G(x+ct) = \frac{1}{2}[f(x-ct)+f(x+ct)]+\frac{1}{2c} \int_{x-ct}^{x+ct} g(w) dw
 \end{align}\]</div>
 </section>

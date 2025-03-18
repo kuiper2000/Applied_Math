@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Applied Math 2</title>
+    <title>Week 9 and 10: Special Functions &#8212; Applied Math 2</title>
   
   
   
@@ -60,6 +60,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ODE/Special_function';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -168,11 +170,12 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1stODE.html">Week 1 and 2: 1st-order ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2ndODE.html">Week 3 and 4: 2nd-order ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Laplace.html">Week 5 and 6: Laplace Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sturm_Liouville.html">Week 7 and 8:  Sturm-Liouville Theorem: Eigenfunctions and Fourier Series</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 9 and 10:  Special Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PDE/Heat_equation.html">Week 11:  Heat Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PDE/Wave_equation.html">Week 12:  Wave Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PDE/Laplace_equation.html">Week 13:  Laplace Equation</a></li>
@@ -282,7 +285,7 @@
       
       
       
-      <li><a href="../_sources/ODE/Special_function.ipynb" target="_blank"
+      <li><a href="../_sources/ODE/Special_function.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -292,7 +295,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -358,7 +361,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Week 9 and 10:  Special Functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -367,9 +370,20 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-functions-series-solutions-and-recurrence-relations">Special Functions, Series Solutions and Recurrence Relations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bessel-function">Bessel Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-origins-and-solutions">The origins and solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-bessel-function">Modified Bessel function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-function-and-recurrence-relations">Generating Function and Recurrence Relations</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legendre-polynomial">Legendre Polynomial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The origins and solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Generating Function and Recurrence Relations</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -380,8 +394,151 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="week-9-and-10-special-functions">
+<span id="specialf"></span><h1>Week 9 and 10:  Special Functions<a class="headerlink" href="#week-9-and-10-special-functions" title="Link to this heading">#</a></h1>
+<section id="special-functions-series-solutions-and-recurrence-relations">
+<h2>Special Functions, Series Solutions and Recurrence Relations<a class="headerlink" href="#special-functions-series-solutions-and-recurrence-relations" title="Link to this heading">#</a></h2>
+<p>Following the discussion of Sturm-Liouville form in the last chapter, we will go a step further to check the cases of  <span class="math notranslate nohighlight">\(r(x)\neq 1\)</span>,  <span class="math notranslate nohighlight">\(q(x)\neq 0\)</span>, and <span class="math notranslate nohighlight">\(p(x)\neq 0\)</span>. Indicating that we have inhomogeneous grid spacing. Some cases such as cylindrical coordinate, spherical harmonics and parabolic cylinder functions, all of their solutions correspond to a set of Sturm-Liouville equation with <span class="math notranslate nohighlight">\(r(x)\neq 1\)</span>,  <span class="math notranslate nohighlight">\(q(x)\neq 0\)</span>, and <span class="math notranslate nohighlight">\(p(x)\neq 0\)</span>. The reason why these special functions are important is that they have been widely used in geophysical fluid dynamics, quantum physics and electromagnetism. To solve these special functions, series solutions play the most important role where we will leverage it for finding the recurrence relation of each special function.</p>
+</section>
+<section id="bessel-function">
+<h2>Bessel Function<a class="headerlink" href="#bessel-function" title="Link to this heading">#</a></h2>
+<section id="the-origins-and-solutions">
+<h3>The origins and solutions<a class="headerlink" href="#the-origins-and-solutions" title="Link to this heading">#</a></h3>
+<p>Bessel function is the solution of Laplace equation on cylindrical coordinate. (see figure below). Considering a diffusion equation on a cylindrical coordinate,</p>
+<div class="math notranslate nohighlight" id="equation-eq94">
+<span class="eqno">(94)<a class="headerlink" href="#equation-eq94" title="Link to this equation">#</a></span>\[\nabla^2 \psi = \frac{1}{x}\frac{\partial}{\partial x} (x \frac{\partial \psi}{\partial x}) + \frac{1}{x^2} \frac{\partial^2 \psi}{\partial \phi^2}+\frac{\partial^2 \psi}{\partial z^2}\]</div>
+<figure class="align-default" id="fig10">
+<a class="reference internal image-reference" href="../_images/cylindrical.png"><img alt="../_images/cylindrical.png" src="../_images/cylindrical.png" style="width: 317.4px; height: 488.09999999999997px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Cylindrical coordinate.</span><a class="headerlink" href="#fig10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#equation-eq94">(94)</a> is a partial differential equation. While we will cover more details in the later chapter, let us assume that <a class="reference internal" href="#equation-eq94">(94)</a> can be simplified by introducing separation of variables. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq95">
+<span class="eqno">(95)<a class="headerlink" href="#equation-eq95" title="Link to this equation">#</a></span>\[\psi = X(x)\Phi(\phi)Z(z)\]</div>
+<p>where <span class="math notranslate nohighlight">\(X(x)\)</span>, <span class="math notranslate nohighlight">\(\Phi(\phi)\)</span> and <span class="math notranslate nohighlight">\(Z(z)\)</span> are radial, tangential and vertical structure of the solution.</p>
+<p>By substituting <a class="reference internal" href="#equation-eq95">(95)</a> into equation <a class="reference internal" href="#equation-eq94">(94)</a>, we can have</p>
+<div class="math notranslate nohighlight" id="equation-eq96">
+<span class="eqno">(96)<a class="headerlink" href="#equation-eq96" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\frac{d^2 }{dx^2}X+\frac{1}{x}\frac{d }{dx}X+(k^2-\frac{\mu^2}{x^2})X &amp;= 0 \\
+\frac{d^2 }{d\phi^2}\Phi+\mu^2\Phi &amp;= 0 \\
+\frac{d^2 }{dz^2}Z-k^2 Z &amp;= 0 \\
+\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span> are eigen values for vertical and tangential solutions respectively. Here, we focus on the radial structure given that the vertical and tangential solutions can be solved using Fourier series.</p>
+<p>By rearranging <a class="reference internal" href="#equation-eq96">(96)</a>, we can have</p>
+<div class="math notranslate nohighlight" id="equation-eq97">
+<span class="eqno">(97)<a class="headerlink" href="#equation-eq97" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\frac{d^2 }{dx^2}X+\frac{1}{x}\frac{d }{dx}X+(1-\frac{\mu^2}{k^2 x^2})X &amp;= 0 \\
+\textrm{or} &amp;  \\
+x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X+(x^2-\nu^2)X &amp;= 0 \\
+\end{align}\end{split}\]</div>
+<p>Observing <a class="reference internal" href="#equation-eq97">(97)</a>, one can find that this problem can be solved by combining Euler form with series solutions (we usually assume the solution has a form of <span class="math notranslate nohighlight">\(e^{At}\)</span>). By assuming the solution has a form of</p>
+<div class="math notranslate nohighlight" id="equation-eq98">
+<span class="eqno">(98)<a class="headerlink" href="#equation-eq98" title="Link to this equation">#</a></span>\[J= \sum_{n=0}^{\infty} c_n x^{n+r} \]</div>
+<p>which gives us</p>
+<div class="math notranslate nohighlight" id="equation-eq99">
+<span class="eqno">(99)<a class="headerlink" href="#equation-eq99" title="Link to this equation">#</a></span>\[J^{'}=\sum_{n=0}^{\infty} (n+r)c_n x^{n+r-1} \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq100">
+<span class="eqno">(100)<a class="headerlink" href="#equation-eq100" title="Link to this equation">#</a></span>\[J^{''}=\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r-2} \]</div>
+<p>Substituting <a class="reference internal" href="#equation-eq98">(98)</a>, <a class="reference internal" href="#equation-eq99">(99)</a>, and <a class="reference internal" href="#equation-eq100">(100)</a> into <a class="reference internal" href="#equation-eq97">(97)</a>, we can find</p>
+<div class="math notranslate nohighlight" id="equation-eq101">
+<span class="eqno">(101)<a class="headerlink" href="#equation-eq101" title="Link to this equation">#</a></span>\[\sum_{n=0}^{\infty} (n+r)(n+r-1)c_n x^{n+r} + \sum_{n=0}^{\infty} (n+r)c_n x^{n+r} + \sum_{n=0}^{\infty} c_n x^{n+r+2} - \sum_{n=0}^{\infty} \nu^2 c_n x^{n+r}=0\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight" id="equation-eq102">
+<span class="eqno">(102)<a class="headerlink" href="#equation-eq102" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+&amp; c_0[r(r-1)+r-\nu^2]x^{r}+ \\ 
+&amp; c_1[(r+1)(r)+(r+1)-\nu^2]x^{r+1}+ \\
+&amp; \sum_{n=2}^{\infty} [[(n+r)(n+r-1)+(n+r)-\nu^2]c_n+c_{n-2}]x^{n+r}=0
+\end{align}\end{split}\]</div>
+<p>To get a non-trivial solution, we need <span class="math notranslate nohighlight">\([r(r-1)+r-\nu^2]=0\)</span>, and <span class="math notranslate nohighlight">\([[(n+r)(n+r-1)+(n+r)-\nu^2]c_n+c_{n-2}]=0\)</span>. (reader can think why we don’t give the same constraint to <span class="math notranslate nohighlight">\([(r+1)(r)+(r+1)-\nu^2]\)</span>). This forms a complete set a recurrence relationship. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq103">
+<span class="eqno">(103)<a class="headerlink" href="#equation-eq103" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+&amp; r^2-\nu^2=0 \\
+&amp; (2\nu+1)c_1 = 0 \\
+&amp; [(n+r)(n+r+1)+(n+r)-\nu^2]c_n+c_{n-2}=0
+\end{align}\end{split}\]</div>
+<p>from the first equation, we know <span class="math notranslate nohighlight">\(r\pm \nu\)</span>. This also gives us <span class="math notranslate nohighlight">\(c_1=0\)</span> according to the second equation of <a class="reference internal" href="#equation-eq103">(103)</a>. Similarly, solving for <span class="math notranslate nohighlight">\(c_n\)</span>, we have a recurrence for <span class="math notranslate nohighlight">\(n\geq2\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq104">
+<span class="eqno">(104)<a class="headerlink" href="#equation-eq104" title="Link to this equation">#</a></span>\[c_n=-\frac{1}{n(n+2\nu)}c_{n-2}\]</div>
+<p>On the other hand, because <span class="math notranslate nohighlight">\(c_1=0\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq105">
+<span class="eqno">(105)<a class="headerlink" href="#equation-eq105" title="Link to this equation">#</a></span>\[c_3=c_5=c_7=\cdots=0\]</div>
+<p>according to <a class="reference internal" href="#equation-eq105">(105)</a>, we can find the entire equation is an even-indexed function (any odd-indexed term is dropped). This also indicates we can define a new index, <span class="math notranslate nohighlight">\(n=2N\)</span>, to rewrite <a class="reference internal" href="#equation-eq104">(104)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq106">
+<span class="eqno">(106)<a class="headerlink" href="#equation-eq106" title="Link to this equation">#</a></span>\[c_{2N}=-\frac{1}{2N(2N+2\nu)}c_{2(N-1)} = (-1)\frac{1}{2^2 [N(N+\nu)]}c_{2(N-1)} \]</div>
+<p>based on <a class="reference internal" href="#equation-eq106">(106)</a>, we can find the relation between <span class="math notranslate nohighlight">\(2N\)</span>th-order term with the <span class="math notranslate nohighlight">\(0\)</span>th-order term. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq107">
+<span class="eqno">(107)<a class="headerlink" href="#equation-eq107" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+c_{2N} &amp; =-\frac{1}{2N(2N+2\nu)}c_{2(N-1)} \\
+       &amp; = (-1)^2\frac{1}{2^4 [N(N+\nu)][(N-1)(N-1+\nu)]}c_{2(N-2)} \\
+       &amp; = \cdots \\
+       &amp; =  (-1)^N\frac{1}{2^{2N} [N(N+\nu)][(N-1)(N-1+\nu)]\cdots[(1)(1+\nu)]}c_{2(N-N)} 
+\end{align}\end{split}\]</div>
+<p>Therefore, the solution of Bessel function can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq108">
+<span class="eqno">(108)<a class="headerlink" href="#equation-eq108" title="Link to this equation">#</a></span>\[\begin{align}
+J = c_0\sum_{N=0}^{\infty} (-1)^N\frac{1}{2^{2N} N!(1+\nu)(2+\nu)(3+\nu)\cdots(N+\nu)} x^{2N+\nu}
+\end{align}\]</div>
+<p>This is a nontrivial solution of Bessel function of order <span class="math notranslate nohighlight">\(\nu\)</span> for any nonzero choice of constant <span class="math notranslate nohighlight">\(c_0\)</span>. This solution is usually expressed expressed in terms of the gamma function, which is defined as</p>
+<div class="math notranslate nohighlight" id="equation-eq109">
+<span class="eqno">(109)<a class="headerlink" href="#equation-eq109" title="Link to this equation">#</a></span>\[\begin{align}
+\Gamma = \int_{0}^{\infty} t^{x-1}e^{-t}dt
+\end{align}\]</div>
+<p>One can find that it looks very similar to the Laplace Transform of <span class="math notranslate nohighlight">\(t^{x-1}\)</span> indicating that we can solve the problem using integrate by part.</p>
+<div class="math notranslate nohighlight" id="equation-eq110">
+<span class="eqno">(110)<a class="headerlink" href="#equation-eq110" title="Link to this equation">#</a></span>\[\begin{align}
+\Gamma(x) = \int_{0}^{\infty} t^{x-1}e^{-t}dt = - t^{x-1}e^{-t}|_{t=0}^{t=\infty} + (x-1) \int_{0}^{\infty} t^{x-2}e^{-t} dt 
+\end{align}\]</div>
+<p>The term <span class="math notranslate nohighlight">\(-t^{x-1}e^{-t}|_{t=0}^{t=\infty}\)</span> is apparently 0, suggesting</p>
+<div class="math notranslate nohighlight" id="equation-eq111">
+<span class="eqno">(111)<a class="headerlink" href="#equation-eq111" title="Link to this equation">#</a></span>\[\begin{align}
+\Gamma(x) = (x-1) \int_{0}^{\infty} t^{x-2}e^{-t} dt =(x-1) \Gamma (x-1)
+\end{align}\]</div>
+<p>If we go all the way to <span class="math notranslate nohighlight">\(\Gamma(1)\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq112">
+<span class="eqno">(112)<a class="headerlink" href="#equation-eq112" title="Link to this equation">#</a></span>\[\begin{align}
+\Gamma(x) = (x-1)!\Gamma(1)
+\end{align}\]</div>
+<p>and given the fact <span class="math notranslate nohighlight">\(\Gamma(1)=1\)</span>, we find <span class="math notranslate nohighlight">\(\Gamma(x)=(x-1)!\)</span>. Similarly, one can prove <span class="math notranslate nohighlight">\(\Gamma(x+\nu+1) = (x+\nu)\cdots(3+\nu)(2+\nu)(1+\nu)\Gamma(\nu+1)\)</span>. Substitute this relation back to <a class="reference internal" href="#equation-eq108">(108)</a>, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq113">
+<span class="eqno">(113)<a class="headerlink" href="#equation-eq113" title="Link to this equation">#</a></span>\[\begin{align}
+J = c_0\sum_{N=0}^{\infty} (-1)^N\frac{\Gamma(\nu+1)}{2^{2N} N!\Gamma(n+\nu+1)} x^{2N+\nu}
+\end{align}\]</div>
+<p>for homogeneous problem, <span class="math notranslate nohighlight">\(c_0\)</span> can be an arbitrary (but nonzero) constant. If we choose, <span class="math notranslate nohighlight">\(c_0=\frac{1}{2^{\nu}\Gamma(1+\nu)}\)</span>, then the entire equation can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq114">
+<span class="eqno">(114)<a class="headerlink" href="#equation-eq114" title="Link to this equation">#</a></span>\[\begin{align}
+J = \sum_{N=0}^{\infty} (-1)^N\frac{1}{N!\Gamma(n+\nu+1)} (\frac{x}{2})^{2N+\nu}
+\end{align}\]</div>
+<p><a class="reference internal" href="#equation-eq114">(114)</a> is so-called <em>Bessel function of the first kind of order <span class="math notranslate nohighlight">\(\nu\)</span></em></p>
+<p>But don’t forget, the Bessel function is a 2nd-order ODE. This indicates we have another set of solution which is linearly independent of <a class="reference internal" href="#equation-eq114">(114)</a>. One such solution is the <em>Bessel function of the second kind</em> of order <span class="math notranslate nohighlight">\(\nu\)</span> (also known as Weber function), which is denoted <span class="math notranslate nohighlight">\(Y_{\nu}\)</span>. It’s related to the first kind as follows:</p>
+<div class="math notranslate nohighlight" id="equation-eq115">
+<span class="eqno">(115)<a class="headerlink" href="#equation-eq115" title="Link to this equation">#</a></span>\[\begin{align}
+Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(J_{-N}=(-1)^{N}J_{N}\)</span> (readers can try to prove this equation by assuming <span class="math notranslate nohighlight">\(N_{\textrm{new}}=N-\nu\)</span>). An alternative form of <a class="reference internal" href="#equation-eq115">(115)</a> to represent the second kind of Bessel function solution with <span class="math notranslate nohighlight">\(\nu=0\)</span> is</p>
+<div class="math notranslate nohighlight" id="equation-eq116">
+<span class="eqno">(116)<a class="headerlink" href="#equation-eq116" title="Link to this equation">#</a></span>\[\begin{align}
+Y_{0} = \frac{2}{\pi} [J_0(x)\ln(x)+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{2^{2n}(n!)^2}\phi(n)x^{2n}] + \frac{2}{\pi}(\gamma-\ln(2))J_0(x)
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi(n)=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}\)</span> and <span class="math notranslate nohighlight">\(\gamma=\lim_{n\rightarrow\infty}(\phi-\ln(x))\sim 0.57721566\cdots\)</span></p>
+<p>Back to <a class="reference internal" href="#equation-eq115">(115)</a>, when <span class="math notranslate nohighlight">\(\nu\rightarrow N\)</span> (N is an integer), readers can find the following relation according to L’Hôpital’s rule (I will leave this practice to readers).</p>
+<div class="math notranslate nohighlight" id="equation-eq117">
+<span class="eqno">(117)<a class="headerlink" href="#equation-eq117" title="Link to this equation">#</a></span>\[\begin{align}
+Y_{\nu} = \frac{J_{\nu}\cos(\nu \pi)-J_{-\nu}}{\sin(\pi \nu)} = \lim _{\nu\rightarrow N} [\frac{\partial J_{\nu}}{\partial \nu}-(-1)^N\frac{\partial J_{-\nu}}{\partial \nu}]
+\end{align}\]</div>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>To prove that <span class="math notranslate nohighlight">\(Y_{\pm\nu}=\lim _{\nu\rightarrow N} [\frac{\partial J_{\nu}}{\partial \nu}-(-1)^N\frac{\partial J_{-\nu}}{\partial \nu}]\)</span>  is a solution of Bessel function, we can take the derivative of the second equation of <a class="reference internal" href="#equation-eq97">(97)</a> with respect to <span class="math notranslate nohighlight">\(\nu\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial}{\partial \nu}[x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X+(x^2-\nu^2)X]= 0 \\\end{split}\]</div>
+<p>we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x^2\frac{d^2 }{dx^2}\frac{\partial}{\partial \nu}X+x\frac{d }{dx}\frac{\partial}{\partial \nu}X+(x^2-\nu^2)\frac{\partial}{\partial \nu}X= 2\nu X \\\end{split}\]</div>
+<p>if we let <span class="math notranslate nohighlight">\(X=J_{\nu}-(-1)^N J_{-\nu}\)</span>, we can find <span class="math notranslate nohighlight">\(\frac{\partial}{\partial \nu}J_{\pm\nu}\)</span> is the solution of Bessel function if and only if <span class="math notranslate nohighlight">\(2\nu X \rightarrow 0\)</span>. It’s not hard to find <span class="math notranslate nohighlight">\(J_{\pm\nu}=0\)</span>, given <span class="math notranslate nohighlight">\((-1)^NJ_{-\nu}= (-1)^{2N}J_{\nu}=J_{\nu}\)</span>.</p>
+</div>
+<p>Based on <a class="reference internal" href="#equation-eq114">(114)</a>, we can plot the solution of Bessel function of the first kind with different <span class="math notranslate nohighlight">\(\nu\)</span>.</p>
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Plots</span>
 <span class="k">using</span><span class="w"> </span><span class="n">SpecialFunctions</span>
 
@@ -396,86 +553,162 @@
 <span class="k">end</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">bessel_output</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">],</span><span class="n">xlims</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="nb">π</span><span class="p">),</span><span class="n">ylims</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">J_{0}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">bessel_output</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="o">:</span><span class="p">],</span><span class="n">xlims</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="nb">π</span><span class="p">),</span><span class="n">ylims</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">J_{1}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">bessel_output</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="o">:</span><span class="p">],</span><span class="n">xlims</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="nb">π</span><span class="p">),</span><span class="n">ylims</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">J_{2}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">bessel_output</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="o">:</span><span class="p">],</span><span class="n">xlims</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="nb">π</span><span class="p">),</span><span class="n">ylims</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">J_{3}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="c">#savefig(p1,&quot;Bessel_function.png&quot;)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/674c092cceb779768bc3b0be3437a383e5c1c9ec9304863b9faac1410f8979bc.svg" src="../_images/674c092cceb779768bc3b0be3437a383e5c1c9ec9304863b9faac1410f8979bc.svg" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Plots</span>
-<span class="k">using</span><span class="w"> </span><span class="n">SpecialFunctions</span>
-
-<span class="n">x</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mf">0.001</span><span class="o">*</span><span class="nb">im</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="nb">π</span><span class="o">*</span><span class="nb">im</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">bessel_output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zeros</span><span class="p">(</span><span class="kt">Complex</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span>
-<span class="k">for</span><span class="w"> </span><span class="n">nu</span><span class="w">  </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">:</span><span class="mi">4</span>
-<span class="w">    </span><span class="n">sum_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zero</span><span class="o">.</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">:</span><span class="mi">100</span>
-<span class="w">        </span><span class="n">sum_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.^</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">nu</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.^</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="o">+</span><span class="n">nu</span><span class="p">)</span><span class="o">+</span><span class="n">sum_x</span>
-<span class="w">    </span><span class="k">end</span>
-<span class="w">    </span><span class="n">bessel_output</span><span class="p">[</span><span class="n">nu</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nb">im</span><span class="p">)</span><span class="o">.^</span><span class="p">(</span><span class="o">-</span><span class="n">float</span><span class="p">(</span><span class="n">nu</span><span class="p">))</span><span class="o">*</span><span class="n">sum_x</span>
-<span class="k">end</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x2</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="nb">π</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">p1</span><span class="o">=</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">bessel_output</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">]),</span><span class="n">ylims</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">40</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">I_{0}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">bessel_output</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="o">:</span><span class="p">]),</span><span class="n">ylims</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">40</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">I_{1}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">bessel_output</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="o">:</span><span class="p">]),</span><span class="n">ylims</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">40</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">I_{2}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">bessel_output</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="o">:</span><span class="p">]),</span><span class="n">ylims</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">40</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">I_{3}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">savefig</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="s">&quot;Modified_Bessel_function.png&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;/Users/kaichiht/Library/CloudStorage/GoogleDrive-kuiper2000@gmail.com/My Drive/website-hugo/Applied_Math/ODE/Modified_Bessel_function.png&quot;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># plot Legendre Polynomial</span>
-<span class="c"># Coefficient Generator </span>
-
-<span class="n">x</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">a_even</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
-<span class="n">n_max</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w">   </span><span class="c">#give an even number</span>
-<span class="n">λ</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n_max</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">Legendre_even</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zeros</span><span class="p">(</span><span class="kt">Complex</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">Legendre_even</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">]</span><span class="w"> </span><span class="o">.=</span><span class="w"> </span><span class="n">a_even</span>
-<span class="n">count</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
-<span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">:</span><span class="mi">2</span><span class="o">:</span><span class="mi">100</span>
-<span class="w">    </span><span class="n">a_even</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">λ</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">a_even</span>
-<span class="w">    </span><span class="n">Legendre_even</span><span class="p">[</span><span class="n">count</span><span class="p">,</span><span class="o">:</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a_even</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="p">(</span><span class="n">float</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span>
-<span class="w">    </span><span class="n">count</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="n">count</span><span class="o">+</span><span class="mi">1</span>
-<span class="k">end</span>
-
-<span class="n">sum_Legendre_even</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">Legendre_even</span><span class="p">,</span><span class="n">dims</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">sum_Legendre_even</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/543378cb2b484ab33ef49f790eb1729ae1b0d52f1c1ca978797eb0f34972c639.svg" src="../_images/543378cb2b484ab33ef49f790eb1729ae1b0d52f1c1ca978797eb0f34972c639.svg" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<figure class="align-default" id="fig11">
+<img alt="../_images/Bessel_function.png" src="../_images/Bessel_function.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">An visualization of Bessel function solution of the first kind with <span class="math notranslate nohighlight">\(\nu=0-4\)</span></span><a class="headerlink" href="#fig11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The readers can also try to plot Bessel function solution of the second kind and visualize the result.</p>
+</section>
+<section id="modified-bessel-function">
+<h3>Modified Bessel function<a class="headerlink" href="#modified-bessel-function" title="Link to this heading">#</a></h3>
+<p>There is one special kind of Bessel function where the coordinate is defined on imaginary coordinate i.e., <span class="math notranslate nohighlight">\(x=ix\)</span>. If we use <span class="math notranslate nohighlight">\(ix\)</span> to replace <span class="math notranslate nohighlight">\(x\)</span> (or <span class="math notranslate nohighlight">\(k\)</span>=<span class="math notranslate nohighlight">\(ik\)</span>) in the first equation of <a class="reference internal" href="#equation-eq96">(96)</a>, we can have so-called modified Bessel function.</p>
+<div class="math notranslate nohighlight" id="equation-eq118">
+<span class="eqno">(118)<a class="headerlink" href="#equation-eq118" title="Link to this equation">#</a></span>\[x^2\frac{d^2 }{dx^2}X+x\frac{d }{dx}X-(x^2+\nu^2)X = 0 \]</div>
+<p>Modified Bessel function is a more widely used form in atmospheric science, where the wavy solution in radial direction (i.e., along <span class="math notranslate nohighlight">\(x\)</span>) becomes an exponent-like function where the solution is one-side bounded. i.e., <span class="math notranslate nohighlight">\(X=0\)</span> when <span class="math notranslate nohighlight">\(x=0\)</span> or <span class="math notranslate nohighlight">\(x=\infty\)</span>. On the other hand, the exponent-like function in <span class="math notranslate nohighlight">\(z\)</span> direction becomes a Fourier-series problem (i.e., Sturm-Liouville with <span class="math notranslate nohighlight">\(p(x)=1\)</span>). In atmospheric science, it is called <em>vertical normal mode decomposition</em>.</p>
+<p>The first kind of solution of the modified Bessel function is related to the original Bessel function as follows:</p>
+<div class="math notranslate nohighlight" id="equation-eq119">
+<span class="eqno">(119)<a class="headerlink" href="#equation-eq119" title="Link to this equation">#</a></span>\[I_{\nu} \equiv (i)^{-\nu}J_{\nu}(ix)\]</div>
+<p>and so is the second kind</p>
+<div class="math notranslate nohighlight" id="equation-eq120">
+<span class="eqno">(120)<a class="headerlink" href="#equation-eq120" title="Link to this equation">#</a></span>\[K_{\nu} \equiv \frac{\pi}{2}\frac{I_{-\nu}(x)-I_{\nu}(x)}{\sin(\nu \pi)};\ \textrm{with $\nu\rightarrow N$} \]</div>
+<p>The figure below visualizes the first kind solution of the modified Bessel function.</p>
+<figure class="align-default" id="fig12">
+<img alt="../_images/Modified_Bessel_function.png" src="../_images/Modified_Bessel_function.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">An visualization of modified Bessel function solution of the first kind with <span class="math notranslate nohighlight">\(\nu=0-4\)</span></span><a class="headerlink" href="#fig12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One can easily find the solution is bounded on one end but unbounded on the other end.</p>
+<p>A famous example of Bessel function is its application in solving the transverse circulation of tropical cyclone. For more details, readers can refer to paper Schubert and Hack 1982.</p>
+</section>
+<section id="generating-function-and-recurrence-relations">
+<h3>Generating Function and Recurrence Relations<a class="headerlink" href="#generating-function-and-recurrence-relations" title="Link to this heading">#</a></h3>
+<p>For all of these special function, we can find some kinds of generating functions which enable us to calculate the polynomial in a more efficient. For Bessel function, it’s generating function is related to</p>
+<div class="math notranslate nohighlight" id="equation-eq121">
+<span class="eqno">(121)<a class="headerlink" href="#equation-eq121" title="Link to this equation">#</a></span>\[e^{\frac{x(t-1/t)}{2}}\]</div>
+<p>is expanded in an infinite series in <span class="math notranslate nohighlight">\(t\)</span>, then the coefficient coefficient of <span class="math notranslate nohighlight">\(t^n\)</span> is <span class="math notranslate nohighlight">\(J_{n}(x)\)</span>. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq122">
+<span class="eqno">(122)<a class="headerlink" href="#equation-eq122" title="Link to this equation">#</a></span>\[e^{\frac{x(t-1/t)}{2}}=\sum_{-\infty}^{\infty}J_n(x)t^n\]</div>
+<p>For this reason, this is called the generating function for integer order Bessel functions of the first kind.
+One can further rewrite <a class="reference internal" href="#equation-eq122">(122)</a> into</p>
+<div class="math notranslate nohighlight" id="equation-eq123">
+<span class="eqno">(123)<a class="headerlink" href="#equation-eq123" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+e^{\frac{x(t-1/t)}{2}} &amp; =e^{\frac{xt}{2}}e^{\frac{-x}{2t}} \\
+                       &amp; =(\sum_{m=0}^{\infty}\frac{1}{m!}(\frac{xt}{2})^m)(\sum_{k=0}^{\infty}\frac{1}{k!}(-1)^{k}(\frac{x}{2t})^{k}) \\ 
+                       &amp; =(1+\frac{xt}{2}+\frac{1}{2!}\frac{x^2t^2}{2^2}+\frac{1}{3!}\frac{x^3t^3}{2^3}+\cdots)(1-\frac{x}{2t}+\frac{1}{2!}\frac{x^2}{2^2t^2}-\frac{1}{3!}\frac{x^3}{2^3t^3}+\cdots)
+\end{align}\end{split}\]</div>
+<p>For each n, determine the coefficient of <span class="math notranslate nohighlight">\(t^n\)</span>, we can find the corresponding Bessel function. To illustrate, look for the coefficient of <span class="math notranslate nohighlight">\(t^4\)</span> in this product. To retrieve the <span class="math notranslate nohighlight">\(t^4\)</span> term, it can be the multiplication of <span class="math notranslate nohighlight">\(\frac{1}{4!}\frac{x^4t^4}{2^4}\)</span> on the left with 1 on the right, or <span class="math notranslate nohighlight">\(\frac{1}{5!}\frac{x^5t^5}{2^5}\)</span> on the left with <span class="math notranslate nohighlight">\(\frac{x}{2t}\)</span> on the right…so on and so forth.</p>
+<p>The coefficient of <span class="math notranslate nohighlight">\(t^4\)</span> in the product of the two series can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq124">
+<span class="eqno">(124)<a class="headerlink" href="#equation-eq124" title="Link to this equation">#</a></span>\[\begin{align}
+&amp; \frac{1}{2^4 4!}x^4-\frac{1}{2^6 5!}x^5+\frac{1}{2^8 6!}x^6+\cdots...
+&amp; =\sum_{n=0}^{\infty}\frac{(-1)^n}{2^{2n+4}n!(n+4)!}x^{2n+4}=J_4(x)
+\end{align}\]</div>
+<p>In addition to the generative function of Bessel function solutions, the Bessel functions with different order ex:<span class="math notranslate nohighlight">\(\nu\)</span>, <span class="math notranslate nohighlight">\(\nu-1\)</span>, and <span class="math notranslate nohighlight">\(\nu+1\)</span> are related to each other in several important.</p>
+<div class="math notranslate nohighlight" id="equation-eq125">
+<span class="eqno">(125)<a class="headerlink" href="#equation-eq125" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+&amp;\frac{d}{dx}(x^{\nu}J_{\nu}(x))  =x^{\nu}J_{\nu-1}(x) \\
+&amp;\frac{d}{dx}(x^{-\nu}J_{\nu}(x)) =-x^{-\nu}J_{\nu+1}(x) 
+\end{align}\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq126">
+<span class="eqno">(126)<a class="headerlink" href="#equation-eq126" title="Link to this equation">#</a></span>\[\begin{align}
+\frac{2\nu}{x}J_{\nu}(x)=J_{\nu+1}(x)+J_{\nu-1}(x)
+\end{align}\]</div>
+<p>I will leave the proof to the readers. From <a class="reference internal" href="#equation-eq126">(126)</a>, one can easily use lower order Bessel function to retrieve higher order Bessel function.</p>
+</section>
+</section>
+<section id="legendre-polynomial">
+<h2>Legendre Polynomial<a class="headerlink" href="#legendre-polynomial" title="Link to this heading">#</a></h2>
+<p>Legendre is another very important and widely used function in atmospheric science, ex: the development of dynamical core, studying polar amplification, and solving Hadley circulation on a sphere. One can find that all of them are in a spherical coordinate. Indeed, one of the simplest way to decompose the phenomena on a sphere is using a spherical harmonics where the Fourier decomposition is applied to the zonal direction and the Legendre polynomial is applied to the meridional decomposition.</p>
+<section id="id1">
+<h3>The origins and solutions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>The Legendre polynomial arises from the spherical harmonics.</p>
+<figure class="align-default" id="fig13">
+<a class="reference internal image-reference" href="../_images/Spherical_map.png"><img alt="../_images/Spherical_map.png" src="../_images/Spherical_map.png" style="width: 429.0px; height: 427.5px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Spherical Coordinate</span><a class="headerlink" href="#fig13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For Laplace equation on a spherical coordinate, it can be written.</p>
+<div class="math notranslate nohighlight" id="equation-eq127">
+<span class="eqno">(127)<a class="headerlink" href="#equation-eq127" title="Link to this equation">#</a></span>\[\begin{align}
+\nabla^2 \psi = \frac{1}{r^2}\frac{\partial }{\partial r}(r^2 \frac{\partial}{\partial r} \psi)+\frac{1}{r^2\cos\theta}\frac{\partial}{\partial \theta}(\cos\theta \frac{\partial}{\partial \theta} \psi)+\frac{1}{r^2 \cos^2\theta} \frac{\partial^2}{\partial \phi^2}\psi
+\end{align}\]</div>
+<p>Again, if we applied separation of variable to <a class="reference internal" href="#equation-eq127">(127)</a> and let <span class="math notranslate nohighlight">\(\psi=R(r)\Theta(\theta)\Phi(\phi)\)</span>, we will have a set of ODEs and they are related to each others through eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq128">
+<span class="eqno">(128)<a class="headerlink" href="#equation-eq128" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+&amp;\frac{1}{R}\frac{d}{r}r^2\frac{dR}{dr} = \lambda \\
+&amp;\frac{1}{\phi}\frac{d^2\Phi}{d\phi^2}  = -m^2 \\
+&amp;\lambda \cos^2\theta+\frac{\cos\theta}{\Theta}\frac{d}{d\theta}(\cos\theta\frac{d\Theta}{d\theta}) = m^2
+\end{align}\end{split}\]</div>
+<p>Here we take the zonal average (average over <span class="math notranslate nohighlight">\(\phi\)</span>), the second equation becomes 0 and the third equation can be written as,</p>
+<div class="math notranslate nohighlight" id="equation-eq129">
+<span class="eqno">(129)<a class="headerlink" href="#equation-eq129" title="Link to this equation">#</a></span>\[\begin{align}
+&amp;\lambda \cos^2\theta+\frac{\cos\theta}{\Theta}\frac{d}{d\theta}(\cos\theta\frac{d\Theta}{d\theta}) = 0
+\end{align}\]</div>
+<p>From the equation above, we know the weighting function is <span class="math notranslate nohighlight">\(\cos\theta\)</span>. Since <span class="math notranslate nohighlight">\(d\sin\theta=\frac{1}{\cos\theta}d\theta\)</span>, we can further rewrite the above equation into</p>
+<div class="math notranslate nohighlight" id="equation-eq130">
+<span class="eqno">(130)<a class="headerlink" href="#equation-eq130" title="Link to this equation">#</a></span>\[\begin{align}
+&amp;\lambda \cos^2\theta \Theta+\cos^2\theta\frac{d}{d\sin\theta}((1-\sin^2\theta)\frac{d\Theta}{d\sin\theta}) = 0
+\end{align}\]</div>
+<p>Then subtract <span class="math notranslate nohighlight">\(\cos^2\theta\)</span> from both terms and let <span class="math notranslate nohighlight">\(\sin\theta=x\)</span>, we will have</p>
+<div class="math notranslate nohighlight" id="equation-eq131">
+<span class="eqno">(131)<a class="headerlink" href="#equation-eq131" title="Link to this equation">#</a></span>\[\begin{align}
+&amp;\lambda \Theta+\frac{d}{dx}((1-x^2)\frac{d\Theta}{dx}) = (1-x^2)\frac{d^2}{dx^2}\Theta -2x\Theta +\lambda \Theta 
+\end{align}\]</div>
+<p>which satisfies the Sturm-Liouville form given that the solution is bounded at both poles.</p>
+<p>Following the typical procedure of solving Sturm-Liouville problem, assume the solution has a form of</p>
+<div class="math notranslate nohighlight" id="equation-eq132">
+<span class="eqno">(132)<a class="headerlink" href="#equation-eq132" title="Link to this equation">#</a></span>\[\begin{align}
+\Theta=\sum_{n=0}^{\infty} a_nx^n
+\end{align}\]</div>
+<p>which gives us</p>
+<div class="math notranslate nohighlight" id="equation-eq133">
+<span class="eqno">(133)<a class="headerlink" href="#equation-eq133" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\Theta^{'}&amp;=\sum_{n=1}^{\infty} n a_nx^{n-1} \\
+\Theta^{''}&amp;=\sum_{n=2}^{\infty} n(n-1) a_nx^{n-2} \\
+\end{align}\end{split}\]</div>
+<p>Substitute <a class="reference internal" href="#equation-eq132">(132)</a> and <a class="reference internal" href="#equation-eq133">(133)</a> into,</p>
+<div class="math notranslate nohighlight" id="equation-eq134">
+<span class="eqno">(134)<a class="headerlink" href="#equation-eq134" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+&amp; \sum_{n=2}^{\infty} n(n-1) a_nx^{n-2} -\sum_{n=2}^{\infty} n(n-1) a_nx^{n}-2\sum_{n=1}^{\infty} n a_nx^{n}+\lambda \sum_{n=0}^{\infty} a_nx^n = 0\\
+&amp; \rightarrow \sum_{n=0}^{\infty} (n+2)(n+1) a_{n+2}x^{n}  -\sum_{n=2}^{\infty} n(n-1) a_nx^{n}-2\sum_{n=1}^{\infty} n a_nx^{n} +\lambda \sum_{n=0}^{\infty} a_nx^n = 0 
+\end{align}\end{split}\]</div>
+<p>Examine each order, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq135">
+<span class="eqno">(135)<a class="headerlink" href="#equation-eq135" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\textrm{0th order: } &amp; [(2)(1)a_{2}+\lambda a_0] x^0\\
+\textrm{1st order: } &amp; [(3)(2)a_{3}-2(1)a_1+\lambda a_1] x^1\\
+\textrm{nth order (n$\geq$2): } &amp; [(n+2)(n+1)a_{n+2}-n(n+1) a_n-2(n)a_n+\lambda a_n] x^n\\
+\end{align}\end{split}\]</div>
+<p>we obtain</p>
+<div class="math notranslate nohighlight" id="equation-eq136">
+<span class="eqno">(136)<a class="headerlink" href="#equation-eq136" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\textrm{0th order: } &amp; a_{2} =-\frac{\lambda}{2} a_0\\
+\textrm{1st order: } &amp; a_{3} =\frac{2-\lambda}{6} a_1\\
+\textrm{nth order (n$\geq$2): } &amp; a_{n+2}=\frac{n(n+1)-\lambda}{(n+2)(n+1)} a_n \\
+\end{align}\end{split}\]</div>
+<p>One can find, as long as we determine <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span>, we determine all of the higher order terms. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq137">
+<span class="eqno">(137)<a class="headerlink" href="#equation-eq137" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\Theta =&amp;\sum_{n=0}^{\infty} a_n x^n \\
+       =&amp;a_0[1+\frac{-\lambda}{2}x^2+\frac{-\lambda}{2}\frac{2(2-1)-\lambda}{(2+2)(2+1)}x^4+\cdots] + \\
+        &amp;a_1[x+\frac{2-\lambda}{6}x^3+\frac{2-\lambda}{6}\frac{3(3-1)-\lambda}{(3+2)(3+1)}x^5+\cdots]
+\end{align}\end{split}\]</div>
+<p>We can find something interesting from the second and third lines of <a class="reference internal" href="#equation-eq137">(137)</a>. The entire equation is truncated when <span class="math notranslate nohighlight">\(\lambda = n(n-1)\)</span>. If we further set one of <span class="math notranslate nohighlight">\(a_0\)</span> or <span class="math notranslate nohighlight">\(a_1\)</span> equals 0, all of the even/odd terms vanish. This will form so-called <em>Legendre Polynomials</em> where,</p>
+<div class="math notranslate nohighlight" id="equation-eq138">
+<span class="eqno">(138)<a class="headerlink" href="#equation-eq138" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+P_0(x) &amp; =1  \\
+P_1(x) &amp; =x  \\
+P_2(x) &amp; =\frac{1}{2}(3x^2-1) \\ 
+P_3(x) &amp; =\frac{1}{2}(5x^3-3x) \\
+P_4(x) &amp; =\frac{1}{8}(35x^4-30x^2+3) \\
+&amp; \cdots 
+\end{align}\end{split}\]</div>
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">sum_Legendre_even</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zeros</span><span class="p">(</span><span class="kt">Complex</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">sum_Legendre_even</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">]</span><span class="w"> </span><span class="o">.=</span><span class="w"> </span><span class="mi">1</span>
@@ -496,36 +729,50 @@
 <span class="k">end</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="o">=</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">sum_Legendre_even</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">])</span><span class="o">/</span><span class="n">maximum</span><span class="p">(</span><span class="n">broadcast</span><span class="p">(</span><span class="n">abs</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">sum_Legendre_even</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">]))),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">P_{0}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">real</span><span class="p">(</span><span class="n">sum_Legendre_even</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="o">:</span><span class="p">])</span><span class="o">/</span><span class="n">maximum</span><span class="p">(</span><span class="n">broadcast</span><span class="p">(</span><span class="n">abs</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">sum_Legendre_even</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="o">:</span><span class="p">]))),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">P_{2}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">sum_Legendre_even</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="o">:</span><span class="p">])</span><span class="o">/</span><span class="n">maximum</span><span class="p">(</span><span class="n">broadcast</span><span class="p">(</span><span class="n">abs</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">sum_Legendre_even</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="o">:</span><span class="p">]))),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">P_{4}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">plot!</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">real</span><span class="p">(</span><span class="n">sum_Legendre_even</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="o">:</span><span class="p">])</span><span class="o">/</span><span class="n">maximum</span><span class="p">(</span><span class="n">broadcast</span><span class="p">(</span><span class="n">abs</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">sum_Legendre_even</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="o">:</span><span class="p">]))),</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\$</span><span class="s">P_{6}(x)</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">savefig</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="s">&quot;Legendre_Polynomial.png&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;/Users/kaichiht/Library/CloudStorage/GoogleDrive-kuiper2000@gmail.com/My Drive/website-hugo/Applied_Math/ODE/Legendre_Polynomial.png&quot;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">maximum</span><span class="p">(</span><span class="n">broadcast</span><span class="p">(</span><span class="n">abs</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">sum_Legendre_even</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">])))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
-</div>
+<figure class="align-default" id="fig14">
+<img alt="../_images/Legendre_Polynomial.png" src="../_images/Legendre_Polynomial.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">An visualization of Legendre Polynomials with <span class="math notranslate nohighlight">\(n=0,2,4,6\)</span></span><a class="headerlink" href="#fig14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the figure above, one can find Legendre polynomials have maximum amplitude at both poles. This feature is caused by uneven weighting function in meridional direction. Recall that <span class="math notranslate nohighlight">\(dx=d\sin\theta\)</span>, this indicates the grid spacing is much smaller at the poles (or the area is weighted by <span class="math notranslate nohighlight">\(\cos\theta\)</span>). When the “heat” around the equator is diffused to the pole, the energy will be more concentrated due to the Earth geometry. This geometry effect plays an important in Polar Amplification, where we usually see more significant rising temperature at the pole than the equator (and of course there are many other physical processes lead to this result, but the geometry is the 0th order influence). Similar things happen in tropical cyclone intensification, where the inflow of angular momentum can accelerate the tropical cyclone tangential wind. This effect is more significant around the inner core of tropical cyclone.</p>
+</section>
+<section id="id2">
+<h3>Generating Function and Recurrence Relations<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Like Bessel function, Legendre Polynomial also has a generating function.
+Let</p>
+<div class="math notranslate nohighlight" id="equation-eq139">
+<span class="eqno">(139)<a class="headerlink" href="#equation-eq139" title="Link to this equation">#</a></span>\[\begin{align}
+L(x,t)=\frac{1}{\sqrt(1-2xt+t^2)}
+\end{align}\]</div>
+<p>For a given x, <span class="math notranslate nohighlight">\(L(x,t)\)</span> is a function which can be expanded in a power series about <span class="math notranslate nohighlight">\(t=0\)</span>. When this is done, the coefficient of <span class="math notranslate nohighlight">\(t^n\)</span> is <span class="math notranslate nohighlight">\(P_n(x)\)</span>, i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq140">
+<span class="eqno">(140)<a class="headerlink" href="#equation-eq140" title="Link to this equation">#</a></span>\[\begin{align}
+L(x,t)=\sum_{n=0}^{\infty} P_n(x)t^n
+\end{align}\]</div>
+<p>We can get some feeling for this result by looking at a few terms of the Maclaurin series (Taylor expansion at <span class="math notranslate nohighlight">\(t=0\)</span>).
+we know</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sqrt{1-w}} = 1+\frac{1}{2}w+\frac{3}{8}w^2+\frac{15}{48}w^3+\cdots\]</div>
+<p>for <span class="math notranslate nohighlight">\(-1&lt;w&lt;1\)</span>. Put <span class="math notranslate nohighlight">\(w=2xt-t^2\)</span> to obtain</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sqrt{1-(2xt-t^2)}} = 1+\frac{1}{2}(2xt-t^2)+\frac{3}{8}(2xt-t^2)^2+\frac{15}{48}(2xt-t^2)^3+\cdots\]</div>
+<p>Expand the each of these powers and collect the coefficient of each power of <span class="math notranslate nohighlight">\(t\)</span> to obtain</p>
+<div class="math notranslate nohighlight" id="equation-legendre-generating-function">
+<span class="eqno">(141)<a class="headerlink" href="#equation-legendre-generating-function" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\frac{1}{\sqrt{1-(2xt-t^2)}} &amp;= 1+xt-\frac{1}{2}t^2+\frac{3}{2}x^2t^2-\frac{3}{2}x^2t^3+\frac{3}{8}t^4+\frac{5}{2}x^3t^3+\cdots \\
+                             &amp;= 1+xt+(\frac{3}{2}x^2-\frac{1}{2})t^2+(-\frac{3}{2}x+\frac{5}{2}x^3)t^3+\cdots
+\end{align}\end{split}\]</div>
+<p>The generating function is sometimes useful in deriving general results. For example, we can use the generating function to show that <span class="math notranslate nohighlight">\(P_n(-1)=(-1)^n\)</span>. I will leave this questions to readers (HW).</p>
+<p>Similar to Bessel function, there are also a few recurrence relations in Legendre Polynomials</p>
+<div class="math notranslate nohighlight" id="equation-legendre-recurrence-relation">
+<span class="eqno">(142)<a class="headerlink" href="#equation-legendre-recurrence-relation" title="Link to this equation">#</a></span>\[\begin{align}
+(n+1)P_{n+1}(x)-(2n+1)xP_n(x)+nP_{n-1}(x)=0
+\end{align}\]</div>
+<p>This can be proved by an inductive argument (hint: differentiate the generating function with respect to <span class="math notranslate nohighlight">\(t\)</span> and multiply both sides with <span class="math notranslate nohighlight">\(\sqrt(1-2xt+t^2)\)</span>. Then reorganize the equation). I will also let readers to complete the proof.</p>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -536,16 +783,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "julia-1.8"
+            mode: "python"
         },
         kernelOptions: {
-            name: "julia-1.8",
+            name: "python3",
             path: "./ODE"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'julia-1.8'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -591,9 +838,20 @@
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-functions-series-solutions-and-recurrence-relations">Special Functions, Series Solutions and Recurrence Relations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bessel-function">Bessel Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-origins-and-solutions">The origins and solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-bessel-function">Modified Bessel function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-function-and-recurrence-relations">Generating Function and Recurrence Relations</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legendre-polynomial">Legendre Polynomial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The origins and solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Generating Function and Recurrence Relations</a></li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>
